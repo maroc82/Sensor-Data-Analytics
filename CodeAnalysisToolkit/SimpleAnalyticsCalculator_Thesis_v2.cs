@@ -12,7 +12,7 @@ using NUnit.Framework;
 namespace CodeAnalysisToolkit
 {
     [TestFixture]
-    public class SimpleAnalyticsCalculator_Thesis
+    public class SimpleAnalyticsCalculator_Thesis_v2
     {
         [TestCase]
         public void CalculateSimpleProjectStats()
