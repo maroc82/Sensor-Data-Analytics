@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\SVector.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file SVector.h
+ ** A simple expandable vector.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2001 by Neil Hodgson &lt;neilh@hare.net.au&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">SVECTOR_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">SVECTOR_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<comment type="block" format="doxygen" pos:line="15" pos:column="1">/**
+ * A simple expandable integer vector.
+ * Storage not allocated for elements until an element is used.
+ * This makes it very lightweight unless used so is a good match for optional features.
+ */</comment>
+<class pos:line="20" pos:column="1">class <name pos:line="20" pos:column="7">SVector</name> <block pos:line="20" pos:column="15">{<private type="default" pos:line="20" pos:column="16">
+	<enum pos:line="21" pos:column="9">enum <block pos:line="21" pos:column="14">{ <decl><name pos:line="21" pos:column="16">allocSize</name> <init pos:line="21" pos:column="26">= <expr><lit:literal type="number" pos:line="21" pos:column="28">4000</lit:literal></expr></init></decl> }</block>;</enum>
+
+	<decl_stmt><decl><type><name pos:line="23" pos:column="9">int</name> <type:modifier pos:line="23" pos:column="13">*</type:modifier></type><name pos:line="23" pos:column="14">v</name></decl>;</decl_stmt>				<comment type="line" format="doxygen" pos:line="23" pos:column="41">///&lt; The vector</comment>
+	<decl_stmt><decl><type><name pos:line="24" pos:column="9">unsigned</name> <name pos:line="24" pos:column="18">int</name></type> <name pos:line="24" pos:column="22">size</name></decl>;</decl_stmt>	<comment type="line" format="doxygen" pos:line="24" pos:column="33">///&lt; Number of elements allocated</comment>
+	<decl_stmt><decl><type><name pos:line="25" pos:column="9">unsigned</name> <name pos:line="25" pos:column="18">int</name></type> <name pos:line="25" pos:column="22">len</name></decl>;</decl_stmt>	<comment type="line" format="doxygen" pos:line="25" pos:column="33">///&lt; Number of elements used in vector</comment>
+
+	<comment type="block" format="doxygen" pos:line="27" pos:column="9">/** Internally allocate more elements than the user wants
+	 * to avoid thrashing the memory allocator. */</comment>
+	<function><type><name pos:line="29" pos:column="9">void</name></type> <name pos:line="29" pos:column="14">SizeTo</name><parameter_list pos:line="29" pos:column="20">(<param><decl><type><name pos:line="29" pos:column="21">int</name></type> <name pos:line="29" pos:column="25">newSize</name></decl></param>)</parameter_list> <block pos:line="29" pos:column="34">{
+		<if pos:line="30" pos:column="17">if <condition pos:line="30" pos:column="20">(<expr><name pos:line="30" pos:column="21">newSize</name> <op:operator pos:line="30" pos:column="29">&lt;</op:operator> <name pos:line="30" pos:column="31">allocSize</name></expr>)</condition><then pos:line="30" pos:column="41">
+			<expr_stmt><expr><name pos:line="31" pos:column="25">newSize</name> <op:operator pos:line="31" pos:column="33">+=</op:operator> <name pos:line="31" pos:column="36">allocSize</name></expr>;</expr_stmt></then>
+		<else pos:line="32" pos:column="17">else
+			<expr_stmt><expr><name pos:line="33" pos:column="25">newSize</name> <op:operator pos:line="33" pos:column="33">=</op:operator> <op:operator pos:line="33" pos:column="35">(</op:operator><name pos:line="33" pos:column="36">newSize</name> <op:operator pos:line="33" pos:column="44">*</op:operator> <lit:literal type="number" pos:line="33" pos:column="46">3</lit:literal><op:operator pos:line="33" pos:column="47">)</op:operator> <op:operator pos:line="33" pos:column="49">/</op:operator> <lit:literal type="number" pos:line="33" pos:column="51">2</lit:literal></expr>;</expr_stmt></else></if>
+		<decl_stmt><decl><type><name pos:line="34" pos:column="17">int</name> <type:modifier pos:line="34" pos:column="21">*</type:modifier></type><name pos:line="34" pos:column="22">newv</name> <init pos:line="34" pos:column="27">= <expr><op:operator pos:line="34" pos:column="29">new</op:operator> <name><name pos:line="34" pos:column="33">int</name><index pos:line="34" pos:column="36">[<expr><name pos:line="34" pos:column="37">newSize</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name pos:line="35" pos:column="17">size</name> <op:operator pos:line="35" pos:column="22">=</op:operator> <name pos:line="35" pos:column="24">newSize</name></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name pos:line="36" pos:column="9">unsigned</name> <name pos:line="36" pos:column="18">int</name></type> <name pos:line="36" pos:column="22">i</name><init pos:line="36" pos:column="23">=<expr><lit:literal type="number" pos:line="36" pos:column="24">0</lit:literal></expr></init></decl>;</decl_stmt>
+		<for pos:line="37" pos:column="17">for (<init pos:line="37" pos:column="22">;</init> <condition><expr><name pos:line="37" pos:column="24">i</name><op:operator pos:line="37" pos:column="25">&lt;</op:operator><name pos:line="37" pos:column="26">len</name></expr>;</condition> <incr><expr><name pos:line="37" pos:column="31">i</name><op:operator pos:line="37" pos:column="32">++</op:operator></expr></incr>) <block pos:line="37" pos:column="36">{
+			<expr_stmt><expr><name><name pos:line="38" pos:column="25">newv</name><index pos:line="38" pos:column="29">[<expr><name pos:line="38" pos:column="30">i</name></expr>]</index></name> <op:operator pos:line="38" pos:column="33">=</op:operator> <name><name pos:line="38" pos:column="35">v</name><index pos:line="38" pos:column="36">[<expr><name pos:line="38" pos:column="37">i</name></expr>]</index></name></expr>;</expr_stmt>
+		}</block></for>
+		<for pos:line="40" pos:column="17">for (<init pos:line="40" pos:column="22">;</init> <condition><expr><name pos:line="40" pos:column="24">i</name><op:operator pos:line="40" pos:column="25">&lt;</op:operator><name pos:line="40" pos:column="26">size</name></expr>;</condition> <incr><expr><name pos:line="40" pos:column="32">i</name><op:operator pos:line="40" pos:column="33">++</op:operator></expr></incr>) <block pos:line="40" pos:column="37">{
+			<expr_stmt><expr><name><name pos:line="41" pos:column="25">newv</name><index pos:line="41" pos:column="29">[<expr><name pos:line="41" pos:column="30">i</name></expr>]</index></name> <op:operator pos:line="41" pos:column="33">=</op:operator> <lit:literal type="number" pos:line="41" pos:column="35">0</lit:literal></expr>;</expr_stmt>
+		}</block></for>
+		<expr_stmt><expr><op:operator pos:line="43" pos:column="17">delete</op:operator> <index pos:line="43" pos:column="24">[]</index><name pos:line="43" pos:column="26">v</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="44" pos:column="17">v</name> <op:operator pos:line="44" pos:column="19">=</op:operator> <name pos:line="44" pos:column="21">newv</name></expr>;</expr_stmt>
+	}</block></function>
+
+</private><public pos:line="47" pos:column="1">public:
+	<constructor><name pos:line="48" pos:column="9">SVector</name><parameter_list pos:line="48" pos:column="16">()</parameter_list> <block pos:line="48" pos:column="19">{
+		<expr_stmt><expr><name pos:line="49" pos:column="17">v</name> <op:operator pos:line="49" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="49" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="50" pos:column="17">len</name> <op:operator pos:line="50" pos:column="21">=</op:operator> <lit:literal type="number" pos:line="50" pos:column="23">0</lit:literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="51" pos:column="17">size</name> <op:operator pos:line="51" pos:column="22">=</op:operator> <lit:literal type="number" pos:line="51" pos:column="24">0</lit:literal></expr>;</expr_stmt>
+	}</block></constructor>
+	<destructor><name pos:line="53" pos:column="9">~<name pos:line="53" pos:column="10">SVector</name></name><parameter_list pos:line="53" pos:column="17">()</parameter_list> <block pos:line="53" pos:column="20">{
+		<expr_stmt><expr><call><name pos:line="54" pos:column="17">Free</name><argument_list pos:line="54" pos:column="21">()</argument_list></call></expr>;</expr_stmt>
+	}</block></destructor>
+	<comment type="line" format="doxygen" pos:line="56" pos:column="9">/// Constructor from another vector.</comment>
+	<constructor><name pos:line="57" pos:column="9">SVector</name><parameter_list pos:line="57" pos:column="16">(<param><decl><type><specifier pos:line="57" pos:column="17">const</specifier> <name pos:line="57" pos:column="23">SVector</name> <type:modifier pos:line="57" pos:column="31">&amp;</type:modifier></type><name pos:line="57" pos:column="32">other</name></decl></param>)</parameter_list> <block pos:line="57" pos:column="39">{
+		<expr_stmt><expr><name pos:line="58" pos:column="17">v</name> <op:operator pos:line="58" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="58" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="59" pos:column="17">len</name> <op:operator pos:line="59" pos:column="21">=</op:operator> <lit:literal type="number" pos:line="59" pos:column="23">0</lit:literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="60" pos:column="17">size</name> <op:operator pos:line="60" pos:column="22">=</op:operator> <lit:literal type="number" pos:line="60" pos:column="24">0</lit:literal></expr>;</expr_stmt>
+		<if pos:line="61" pos:column="17">if <condition pos:line="61" pos:column="20">(<expr><call><name><name pos:line="61" pos:column="21">other</name><op:operator pos:line="61" pos:column="26">.</op:operator><name pos:line="61" pos:column="27">Length</name></name><argument_list pos:line="61" pos:column="33">()</argument_list></call> <op:operator pos:line="61" pos:column="36">&gt;</op:operator> <lit:literal type="number" pos:line="61" pos:column="38">0</lit:literal></expr>)</condition><then pos:line="61" pos:column="40"> <block pos:line="61" pos:column="41">{
+			<expr_stmt><expr><call><name pos:line="62" pos:column="25">SizeTo</name><argument_list pos:line="62" pos:column="31">(<argument><expr><call><name><name pos:line="62" pos:column="32">other</name><op:operator pos:line="62" pos:column="37">.</op:operator><name pos:line="62" pos:column="38">Length</name></name><argument_list pos:line="62" pos:column="44">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<for pos:line="63" pos:column="25">for (<init><decl><type><name pos:line="63" pos:column="30">int</name></type> <name pos:line="63" pos:column="34">i</name><init pos:line="63" pos:column="35">=<expr><lit:literal type="number" pos:line="63" pos:column="36">0</lit:literal></expr></init></decl>;</init> <condition><expr><name pos:line="63" pos:column="39">i</name><op:operator pos:line="63" pos:column="40">&lt;</op:operator><call><name><name pos:line="63" pos:column="41">other</name><op:operator pos:line="63" pos:column="46">.</op:operator><name pos:line="63" pos:column="47">Length</name></name><argument_list pos:line="63" pos:column="53">()</argument_list></call></expr>;</condition> <incr><expr><name pos:line="63" pos:column="57">i</name><op:operator pos:line="63" pos:column="58">++</op:operator></expr></incr>)
+				<expr_stmt><expr><name><name pos:line="64" pos:column="33">v</name><index pos:line="64" pos:column="34">[<expr><name pos:line="64" pos:column="35">i</name></expr>]</index></name> <op:operator pos:line="64" pos:column="38">=</op:operator> <name><name pos:line="64" pos:column="40">other</name><op:operator pos:line="64" pos:column="45">.</op:operator><name pos:line="64" pos:column="46">v</name><index pos:line="64" pos:column="47">[<expr><name pos:line="64" pos:column="48">i</name></expr>]</index></name></expr>;</expr_stmt></for>
+			<expr_stmt><expr><name pos:line="65" pos:column="25">len</name> <op:operator pos:line="65" pos:column="29">=</op:operator> <call><name><name pos:line="65" pos:column="31">other</name><op:operator pos:line="65" pos:column="36">.</op:operator><name pos:line="65" pos:column="37">Length</name></name><argument_list pos:line="65" pos:column="43">()</argument_list></call></expr>;</expr_stmt>
+		}</block></then></if>
+	}</block></constructor>
+	<comment type="line" format="doxygen" pos:line="68" pos:column="9">/// Copy constructor.</comment>
+	<function><type><name pos:line="69" pos:column="9">SVector</name> <type:modifier pos:line="69" pos:column="17">&amp;</type:modifier></type><name pos:line="69" pos:column="18">operator=</name><parameter_list pos:line="69" pos:column="27">(<param><decl><type><specifier pos:line="69" pos:column="28">const</specifier> <name pos:line="69" pos:column="34">SVector</name> <type:modifier pos:line="69" pos:column="42">&amp;</type:modifier></type><name pos:line="69" pos:column="43">other</name></decl></param>)</parameter_list> <block pos:line="69" pos:column="50">{
+		<if pos:line="70" pos:column="17">if <condition pos:line="70" pos:column="20">(<expr><name pos:line="70" pos:column="21">this</name> <op:operator pos:line="70" pos:column="26">!=</op:operator> <op:operator pos:line="70" pos:column="29">&amp;</op:operator><name pos:line="70" pos:column="30">other</name></expr>)</condition><then pos:line="70" pos:column="36"> <block pos:line="70" pos:column="37">{
+			<expr_stmt><expr><op:operator pos:line="71" pos:column="25">delete</op:operator> <index pos:line="71" pos:column="32">[]</index><name pos:line="71" pos:column="34">v</name></expr>;</expr_stmt>
+			<expr_stmt><expr><name pos:line="72" pos:column="25">v</name> <op:operator pos:line="72" pos:column="27">=</op:operator> <lit:literal type="number" pos:line="72" pos:column="29">0</lit:literal></expr>;</expr_stmt>
+			<expr_stmt><expr><name pos:line="73" pos:column="25">len</name> <op:operator pos:line="73" pos:column="29">=</op:operator> <lit:literal type="number" pos:line="73" pos:column="31">0</lit:literal></expr>;</expr_stmt>
+			<expr_stmt><expr><name pos:line="74" pos:column="25">size</name> <op:operator pos:line="74" pos:column="30">=</op:operator> <lit:literal type="number" pos:line="74" pos:column="32">0</lit:literal></expr>;</expr_stmt>
+			<if pos:line="75" pos:column="25">if <condition pos:line="75" pos:column="28">(<expr><call><name><name pos:line="75" pos:column="29">other</name><op:operator pos:line="75" pos:column="34">.</op:operator><name pos:line="75" pos:column="35">Length</name></name><argument_list pos:line="75" pos:column="41">()</argument_list></call> <op:operator pos:line="75" pos:column="44">&gt;</op:operator> <lit:literal type="number" pos:line="75" pos:column="46">0</lit:literal></expr>)</condition><then pos:line="75" pos:column="48"> <block pos:line="75" pos:column="49">{
+				<expr_stmt><expr><call><name pos:line="76" pos:column="33">SizeTo</name><argument_list pos:line="76" pos:column="39">(<argument><expr><call><name><name pos:line="76" pos:column="40">other</name><op:operator pos:line="76" pos:column="45">.</op:operator><name pos:line="76" pos:column="46">Length</name></name><argument_list pos:line="76" pos:column="52">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<for pos:line="77" pos:column="33">for (<init><decl><type><name pos:line="77" pos:column="38">int</name></type> <name pos:line="77" pos:column="42">i</name><init pos:line="77" pos:column="43">=<expr><lit:literal type="number" pos:line="77" pos:column="44">0</lit:literal></expr></init></decl>;</init> <condition><expr><name pos:line="77" pos:column="47">i</name><op:operator pos:line="77" pos:column="48">&lt;</op:operator><call><name><name pos:line="77" pos:column="49">other</name><op:operator pos:line="77" pos:column="54">.</op:operator><name pos:line="77" pos:column="55">Length</name></name><argument_list pos:line="77" pos:column="61">()</argument_list></call></expr>;</condition> <incr><expr><name pos:line="77" pos:column="65">i</name><op:operator pos:line="77" pos:column="66">++</op:operator></expr></incr>)
+					<expr_stmt><expr><name><name pos:line="78" pos:column="41">v</name><index pos:line="78" pos:column="42">[<expr><name pos:line="78" pos:column="43">i</name></expr>]</index></name> <op:operator pos:line="78" pos:column="46">=</op:operator> <name><name pos:line="78" pos:column="48">other</name><op:operator pos:line="78" pos:column="53">.</op:operator><name pos:line="78" pos:column="54">v</name><index pos:line="78" pos:column="55">[<expr><name pos:line="78" pos:column="56">i</name></expr>]</index></name></expr>;</expr_stmt></for>
+				<expr_stmt><expr><name pos:line="79" pos:column="33">len</name> <op:operator pos:line="79" pos:column="37">=</op:operator> <call><name><name pos:line="79" pos:column="39">other</name><op:operator pos:line="79" pos:column="44">.</op:operator><name pos:line="79" pos:column="45">Length</name></name><argument_list pos:line="79" pos:column="51">()</argument_list></call></expr>;</expr_stmt>
+			}</block></then></if>
+		}</block></then></if>
+		<return pos:line="82" pos:column="17">return <expr><op:operator pos:line="82" pos:column="24">*</op:operator><name pos:line="82" pos:column="25">this</name></expr>;</return>
+	}</block></function>
+	<comment type="block" format="doxygen" pos:line="84" pos:column="9">/** @brief Accessor.
+	 * Allows to access values from the list, and grows it if accessing
+	 * outside the current bounds. The returned value in this case is 0. */</comment>
+	<function><type><name pos:line="87" pos:column="9">int</name> <type:modifier pos:line="87" pos:column="13">&amp;</type:modifier></type><name pos:line="87" pos:column="14">operator[]</name><parameter_list pos:line="87" pos:column="24">(<param><decl><type><name pos:line="87" pos:column="25">unsigned</name> <name pos:line="87" pos:column="34">int</name></type> <name pos:line="87" pos:column="38">i</name></decl></param>)</parameter_list> <block pos:line="87" pos:column="41">{
+		<if pos:line="88" pos:column="17">if <condition pos:line="88" pos:column="20">(<expr><name pos:line="88" pos:column="21">i</name> <op:operator pos:line="88" pos:column="23">&gt;=</op:operator> <name pos:line="88" pos:column="26">len</name></expr>)</condition><then pos:line="88" pos:column="30"> <block pos:line="88" pos:column="31">{
+			<if pos:line="89" pos:column="25">if <condition pos:line="89" pos:column="28">(<expr><name pos:line="89" pos:column="29">i</name> <op:operator pos:line="89" pos:column="31">&gt;=</op:operator> <name pos:line="89" pos:column="34">size</name></expr>)</condition><then pos:line="89" pos:column="39"> <block pos:line="89" pos:column="40">{
+				<expr_stmt><expr><call><name pos:line="90" pos:column="33">SizeTo</name><argument_list pos:line="90" pos:column="39">(<argument><expr><name pos:line="90" pos:column="40">i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			}</block></then></if>
+			<expr_stmt><expr><name pos:line="92" pos:column="25">len</name> <op:operator pos:line="92" pos:column="29">=</op:operator> <name pos:line="92" pos:column="31">i</name><op:operator pos:line="92" pos:column="32">+</op:operator><lit:literal type="number" pos:line="92" pos:column="33">1</lit:literal></expr>;</expr_stmt>
+		}</block></then></if>
+		<return pos:line="94" pos:column="17">return <expr><name><name pos:line="94" pos:column="24">v</name><index pos:line="94" pos:column="25">[<expr><name pos:line="94" pos:column="26">i</name></expr>]</index></name></expr>;</return>
+	}</block></function>
+	<comment type="line" format="doxygen" pos:line="96" pos:column="9">/// Reset vector.</comment>
+	<function><type><name pos:line="97" pos:column="9">void</name></type> <name pos:line="97" pos:column="14">Free</name><parameter_list pos:line="97" pos:column="18">()</parameter_list> <block pos:line="97" pos:column="21">{
+		<expr_stmt><expr><op:operator pos:line="98" pos:column="17">delete</op:operator> <index pos:line="98" pos:column="24">[]</index><name pos:line="98" pos:column="26">v</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="99" pos:column="17">v</name> <op:operator pos:line="99" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="99" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="100" pos:column="17">size</name> <op:operator pos:line="100" pos:column="22">=</op:operator> <lit:literal type="number" pos:line="100" pos:column="24">0</lit:literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="101" pos:column="17">len</name> <op:operator pos:line="101" pos:column="21">=</op:operator> <lit:literal type="number" pos:line="101" pos:column="23">0</lit:literal></expr>;</expr_stmt>
+	}</block></function>
+	<comment type="block" format="doxygen" pos:line="103" pos:column="9">/** @brief Grow vector size.
+	 * Doesn't allow a vector to be shrinked. */</comment>
+	<function><type><name pos:line="105" pos:column="9">void</name></type> <name pos:line="105" pos:column="14">SetLength</name><parameter_list pos:line="105" pos:column="23">(<param><decl><type><name pos:line="105" pos:column="24">unsigned</name> <name pos:line="105" pos:column="33">int</name></type> <name pos:line="105" pos:column="37">newLength</name></decl></param>)</parameter_list> <block pos:line="105" pos:column="48">{
+		<if pos:line="106" pos:column="17">if <condition pos:line="106" pos:column="20">(<expr><name pos:line="106" pos:column="21">newLength</name> <op:operator pos:line="106" pos:column="31">&gt;</op:operator> <name pos:line="106" pos:column="33">len</name></expr>)</condition><then pos:line="106" pos:column="37"> <block pos:line="106" pos:column="38">{
+			<if pos:line="107" pos:column="25">if <condition pos:line="107" pos:column="28">(<expr><name pos:line="107" pos:column="29">newLength</name> <op:operator pos:line="107" pos:column="39">&gt;=</op:operator> <name pos:line="107" pos:column="42">size</name></expr>)</condition><then pos:line="107" pos:column="47"> <block pos:line="107" pos:column="48">{
+				<expr_stmt><expr><call><name pos:line="108" pos:column="33">SizeTo</name><argument_list pos:line="108" pos:column="39">(<argument><expr><name pos:line="108" pos:column="40">newLength</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			}</block></then></if>
+		}</block></then></if>
+		<expr_stmt><expr><name pos:line="111" pos:column="17">len</name> <op:operator pos:line="111" pos:column="21">=</op:operator> <name pos:line="111" pos:column="23">newLength</name></expr>;</expr_stmt>
+	}</block></function>
+	<comment type="line" format="doxygen" pos:line="113" pos:column="9">/// Get the current length (number of used elements) of the vector.</comment>
+	<function><type><name pos:line="114" pos:column="9">int</name></type> <name pos:line="114" pos:column="13">Length</name><parameter_list pos:line="114" pos:column="19">()</parameter_list> <specifier pos:line="114" pos:column="22">const</specifier> <block pos:line="114" pos:column="28">{
+		<return pos:line="115" pos:column="17">return <expr><name pos:line="115" pos:column="24">len</name></expr>;</return>
+	}</block></function>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="119" pos:column="1">#<cpp:directive pos:line="119" pos:column="2">ifdef</cpp:directive> <name pos:line="119" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="121" pos:column="1">#<cpp:directive pos:line="121" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="123" pos:column="1">#<cpp:directive pos:line="123" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

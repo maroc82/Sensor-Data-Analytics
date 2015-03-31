@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\MISC\Exception\Win32Exception.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">//This code was retrieved from</comment>
+<comment type="line" pos:line="2" pos:column="1">//http://www.thunderguy.com/semicolon/2002/08/15/visual-c-exception-handling/3/</comment>
+<comment type="line" pos:line="3" pos:column="1">//(Visual C++ exception handling)</comment>
+<comment type="line" pos:line="4" pos:column="1">//By Bennett</comment>
+<comment type="line" pos:line="5" pos:column="1">//Formatting Slightly modified for N++</comment>
+
+<comment type="line" pos:line="7" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="8" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="9" pos:column="1">//</comment>
+<comment type="line" pos:line="10" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="11" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="12" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="13" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="14" pos:column="1">//</comment>
+<comment type="line" pos:line="15" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="16" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="17" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="18" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="19" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="20" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="21" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="22" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="23" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="24" pos:column="1">//</comment>
+<comment type="line" pos:line="25" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="26" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="27" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="28" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="29" pos:column="1">//</comment>
+<comment type="line" pos:line="30" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="31" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="32" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<typedef pos:line="35" pos:column="1">typedef <type><specifier pos:line="35" pos:column="9">const</specifier> <name pos:line="35" pos:column="15">void</name><type:modifier pos:line="35" pos:column="19">*</type:modifier></type> <name pos:line="35" pos:column="21">ExceptionAddress</name>;</typedef> <comment type="line" pos:line="35" pos:column="39">// OK on Win32 platform</comment>
+
+<class pos:line="37" pos:column="1">class <name pos:line="37" pos:column="7">Win32Exception</name> <super pos:line="37" pos:column="22">: <specifier pos:line="37" pos:column="24">public</specifier> <name><name pos:line="37" pos:column="31">std</name><op:operator pos:line="37" pos:column="34">::</op:operator><name pos:line="37" pos:column="36">exception</name></name></super>
+<block pos:line="38" pos:column="1">{<private type="default" pos:line="38" pos:column="2">
+</private><public pos:line="39" pos:column="1">public:
+    <function_decl><type><specifier pos:line="40" pos:column="5">static</specifier> <name pos:line="40" pos:column="12">void</name></type> 		<name pos:line="40" pos:column="33">installHandler</name><parameter_list pos:line="40" pos:column="47">()</parameter_list>;</function_decl>
+    <function_decl><type><specifier pos:line="41" pos:column="5">static</specifier> <name pos:line="41" pos:column="12">void</name></type> 		<name pos:line="41" pos:column="33">removeHandler</name><parameter_list pos:line="41" pos:column="46">()</parameter_list>;</function_decl>
+    <function><type><specifier pos:line="42" pos:column="5">virtual</specifier> <specifier pos:line="42" pos:column="13">const</specifier> <name pos:line="42" pos:column="19">char</name><type:modifier pos:line="42" pos:column="23">*</type:modifier></type> <name pos:line="42" pos:column="25">what</name><parameter_list pos:line="42" pos:column="29">()</parameter_list>  <specifier pos:line="42" pos:column="33">const</specifier> <throw pos:line="42" pos:column="39">throw()</throw> <block pos:line="42" pos:column="47">{ <return pos:line="42" pos:column="49">return <expr><name pos:line="42" pos:column="56">_event</name></expr>;</return>    }</block></function><empty_stmt pos:line="42" pos:column="68">;</empty_stmt>
+    <function><type><name pos:line="43" pos:column="5">ExceptionAddress</name></type> 	<name pos:line="43" pos:column="25">where</name><parameter_list pos:line="43" pos:column="30">()</parameter_list> <specifier pos:line="43" pos:column="33">const</specifier>         <block pos:line="43" pos:column="47">{ <return pos:line="43" pos:column="49">return <expr><name pos:line="43" pos:column="56">_location</name></expr>;</return> }</block></function><empty_stmt pos:line="43" pos:column="68">;</empty_stmt>
+    <function><type><name pos:line="44" pos:column="5">unsigned</name> <name pos:line="44" pos:column="14">int</name></type>		<name pos:line="44" pos:column="33">code</name><parameter_list pos:line="44" pos:column="37">()</parameter_list>  <specifier pos:line="44" pos:column="41">const</specifier>         <block pos:line="44" pos:column="55">{ <return pos:line="44" pos:column="57">return <expr><name pos:line="44" pos:column="64">_code</name></expr>;</return>     }</block></function><empty_stmt pos:line="44" pos:column="76">;</empty_stmt>
+	<function><type><name pos:line="45" pos:column="9">EXCEPTION_POINTERS</name><type:modifier pos:line="45" pos:column="27">*</type:modifier></type> <name pos:line="45" pos:column="29">info</name><parameter_list pos:line="45" pos:column="33">()</parameter_list>  <specifier pos:line="45" pos:column="37">const</specifier>         <block pos:line="45" pos:column="51">{ <return pos:line="45" pos:column="53">return <expr><name pos:line="45" pos:column="60">_info</name></expr>;</return>     }</block></function><empty_stmt pos:line="45" pos:column="72">;</empty_stmt>
+	
+</public><protected pos:line="47" pos:column="1">protected:
+    <constructor_decl><name pos:line="48" pos:column="5">Win32Exception</name><parameter_list pos:line="48" pos:column="19">(<param><decl><type><name pos:line="48" pos:column="20">EXCEPTION_POINTERS</name> <type:modifier pos:line="48" pos:column="39">*</type:modifier></type> <name pos:line="48" pos:column="41">info</name></decl></param>)</parameter_list>;</constructor_decl>	<comment type="line" pos:line="48" pos:column="49">//Constructor only accessible by exception handler</comment>
+    <function_decl><type><specifier pos:line="49" pos:column="5">static</specifier> <name pos:line="49" pos:column="12">void</name></type> 		<name pos:line="49" pos:column="33">translate</name><parameter_list pos:line="49" pos:column="42">(<param><decl><type><name pos:line="49" pos:column="43">unsigned</name></type> <name pos:line="49" pos:column="52">code</name></decl></param>, <param><decl><type><name pos:line="49" pos:column="58">EXCEPTION_POINTERS</name> <type:modifier pos:line="49" pos:column="77">*</type:modifier></type> <name pos:line="49" pos:column="79">info</name></decl></param>)</parameter_list>;</function_decl>
+
+</protected><private pos:line="51" pos:column="1">private:
+    <decl_stmt><decl><type><specifier pos:line="52" pos:column="5">const</specifier> <name pos:line="52" pos:column="11">char</name> <type:modifier pos:line="52" pos:column="16">*</type:modifier></type> <name pos:line="52" pos:column="18">_event</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="53" pos:column="5">ExceptionAddress</name></type> <name pos:line="53" pos:column="22">_location</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="54" pos:column="5">unsigned</name> <name pos:line="54" pos:column="14">int</name></type> <name pos:line="54" pos:column="18">_code</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="56" pos:column="9">EXCEPTION_POINTERS</name> <type:modifier pos:line="56" pos:column="28">*</type:modifier></type> <name pos:line="56" pos:column="30">_info</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<class pos:line="59" pos:column="1">class <name pos:line="59" pos:column="7">Win32AccessViolation</name><super pos:line="59" pos:column="27">: <specifier pos:line="59" pos:column="29">public</specifier> <name pos:line="59" pos:column="36">Win32Exception</name></super>
+<block pos:line="60" pos:column="1">{<private type="default" pos:line="60" pos:column="2">
+</private><public pos:line="61" pos:column="1">public:
+    <function><type><name pos:line="62" pos:column="5">bool</name></type> 				<name pos:line="62" pos:column="41">isWrite</name><parameter_list pos:line="62" pos:column="48">()</parameter_list>    <specifier pos:line="62" pos:column="54">const</specifier> <block pos:line="62" pos:column="60">{ <return pos:line="62" pos:column="62">return <expr><name pos:line="62" pos:column="69">_isWrite</name></expr>;</return>    }</block></function><empty_stmt pos:line="62" pos:column="83">;</empty_stmt>
+    <function><type><name pos:line="63" pos:column="5">ExceptionAddress</name></type>	<name pos:line="63" pos:column="25">badAddress</name><parameter_list pos:line="63" pos:column="35">()</parameter_list> <specifier pos:line="63" pos:column="38">const</specifier> <block pos:line="63" pos:column="44">{ <return pos:line="63" pos:column="46">return <expr><name pos:line="63" pos:column="53">_badAddress</name></expr>;</return> }</block></function><empty_stmt pos:line="63" pos:column="67">;</empty_stmt>
+</public><private pos:line="64" pos:column="1">private:
+    <constructor_decl><name pos:line="65" pos:column="5">Win32AccessViolation</name><parameter_list pos:line="65" pos:column="25">(<param><decl><type><name pos:line="65" pos:column="26">EXCEPTION_POINTERS</name> <type:modifier pos:line="65" pos:column="45">*</type:modifier></type> <name pos:line="65" pos:column="47">info</name></decl></param>)</parameter_list>;</constructor_decl>
+
+    <decl_stmt><decl><type><name pos:line="67" pos:column="5">bool</name></type> <name pos:line="67" pos:column="10">_isWrite</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="68" pos:column="5">ExceptionAddress</name></type> <name pos:line="68" pos:column="22">_badAddress</name></decl>;</decl_stmt>
+
+    <function_decl><type><specifier pos:line="70" pos:column="5">friend</specifier> <name pos:line="70" pos:column="12">void</name></type> <name><name pos:line="70" pos:column="17">Win32Exception</name><op:operator pos:line="70" pos:column="31">::</op:operator><name pos:line="70" pos:column="33">translate</name></name><parameter_list pos:line="70" pos:column="42">(<param><decl><type><name pos:line="70" pos:column="43">unsigned</name></type> <name pos:line="70" pos:column="52">code</name></decl></param>, <param><decl><type><name pos:line="70" pos:column="58">EXCEPTION_POINTERS</name><type:modifier pos:line="70" pos:column="76">*</type:modifier></type> <name pos:line="70" pos:column="78">info</name></decl></param>)</parameter_list>;</function_decl>
+</private>}</block>;</class>
+</unit>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\WinControls\StatusBar\StatusBar.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">STATUS_BAR_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">STATUS_BAR_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">_WIN32_IE</name></cpp:ifndef>
+<cpp:define pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="33" pos:column="9">_WIN32_IE</name></cpp:macro>	<cpp:value pos:line="33" pos:column="25">0x0600</cpp:value></cpp:define>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//_WIN32_IE</comment>
+
+<class pos:line="36" pos:column="1">class <name pos:line="36" pos:column="7">StatusBar</name> <super pos:line="36" pos:column="17">: <specifier pos:line="36" pos:column="19">public</specifier> <name pos:line="36" pos:column="26">Window</name></super>
+<block pos:line="37" pos:column="1">{<private type="default" pos:line="37" pos:column="2">
+</private><public pos:line="38" pos:column="1">public :
+	<constructor><name pos:line="39" pos:column="9">StatusBar</name><parameter_list pos:line="39" pos:column="18">()</parameter_list> <member_list pos:line="39" pos:column="21">: <call><name pos:line="39" pos:column="23">Window</name><argument_list pos:line="39" pos:column="29">()</argument_list></call><op:operator pos:line="39" pos:column="31">,</op:operator> <call><name pos:line="39" pos:column="33">_partWidthArray</name><argument_list pos:line="39" pos:column="48">(<argument><expr><name pos:line="39" pos:column="49">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="39" pos:column="54">,</op:operator> <call><name pos:line="39" pos:column="56">_hloc</name><argument_list pos:line="39" pos:column="61">(<argument><expr><name pos:line="39" pos:column="62">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="39" pos:column="67">,</op:operator> <call><name pos:line="39" pos:column="69">_lpParts</name><argument_list pos:line="39" pos:column="77">(<argument><expr><name pos:line="39" pos:column="78">NULL</name></expr></argument>)</argument_list></call> </member_list><block pos:line="39" pos:column="84">{}</block></constructor><empty_stmt pos:line="39" pos:column="86">;</empty_stmt>
+	<destructor><specifier pos:line="40" pos:column="9">virtual</specifier> <name pos:line="40" pos:column="17">~<name pos:line="40" pos:column="18">StatusBar</name></name><parameter_list pos:line="40" pos:column="27">()</parameter_list><block pos:line="40" pos:column="29">{
+        <if pos:line="41" pos:column="9">if <condition pos:line="41" pos:column="12">(<expr><name pos:line="41" pos:column="13">_hloc</name></expr>)</condition><then pos:line="41" pos:column="19"> 
+        <block pos:line="42" pos:column="9">{
+            <expr_stmt><expr><call><name><op:operator pos:line="43" pos:column="13">::</op:operator><name pos:line="43" pos:column="15">LocalUnlock</name></name><argument_list pos:line="43" pos:column="26">(<argument><expr><name pos:line="43" pos:column="27">_hloc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><op:operator pos:line="44" pos:column="13">::</op:operator><name pos:line="44" pos:column="15">LocalFree</name></name><argument_list pos:line="44" pos:column="24">(<argument><expr><name pos:line="44" pos:column="25">_hloc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        }</block></then></if>
+		<if pos:line="46" pos:column="17">if <condition pos:line="46" pos:column="20">(<expr><name pos:line="46" pos:column="21">_partWidthArray</name></expr>)</condition><then pos:line="46" pos:column="37">
+			<expr_stmt><expr><op:operator pos:line="47" pos:column="25">delete</op:operator> <index pos:line="47" pos:column="32">[]</index> <name pos:line="47" pos:column="35">_partWidthArray</name></expr>;</expr_stmt></then></if>
+    }</block></destructor><empty_stmt pos:line="48" pos:column="6">;</empty_stmt>
+
+	<function_decl><type><specifier pos:line="50" pos:column="9">virtual</specifier> <name pos:line="50" pos:column="17">void</name></type> <name pos:line="50" pos:column="22">init</name><parameter_list pos:line="50" pos:column="26">(<param><decl><type><name pos:line="50" pos:column="27">HINSTANCE</name></type> <name pos:line="50" pos:column="37">hInst</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="44">HWND</name></type> <name pos:line="50" pos:column="49">hPere</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="56">int</name></type> <name pos:line="50" pos:column="60">nbParts</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="52" pos:column="9">bool</name></type> <name pos:line="52" pos:column="14">setPartWidth</name><parameter_list pos:line="52" pos:column="26">(<param><decl><type><name pos:line="52" pos:column="27">int</name></type> <name pos:line="52" pos:column="31">whichPart</name></decl></param>, <param><decl><type><name pos:line="52" pos:column="42">int</name></type> <name pos:line="52" pos:column="46">width</name></decl></param>)</parameter_list> <block pos:line="52" pos:column="53">{
+		<if pos:line="53" pos:column="17">if <condition pos:line="53" pos:column="20">(<expr><name pos:line="53" pos:column="21">whichPart</name> <op:operator pos:line="53" pos:column="31">&gt;=</op:operator> <name pos:line="53" pos:column="34">_nbParts</name></expr>)</condition><then pos:line="53" pos:column="43">
+			<return pos:line="54" pos:column="25">return <expr><lit:literal type="boolean" pos:line="54" pos:column="32">false</lit:literal></expr>;</return></then></if>
+
+		<expr_stmt><expr><name><name pos:line="56" pos:column="17">_partWidthArray</name><index pos:line="56" pos:column="32">[<expr><name pos:line="56" pos:column="33">whichPart</name></expr>]</index></name> <op:operator pos:line="56" pos:column="44">=</op:operator> <name pos:line="56" pos:column="46">width</name></expr>;</expr_stmt>
+		<return pos:line="57" pos:column="17">return <expr><lit:literal type="boolean" pos:line="57" pos:column="24">true</lit:literal></expr>;</return>
+	}</block></function><empty_stmt pos:line="58" pos:column="10">;</empty_stmt>
+	<function><type><specifier pos:line="59" pos:column="9">virtual</specifier> <name pos:line="59" pos:column="17">void</name></type> <name pos:line="59" pos:column="22">destroy</name><parameter_list pos:line="59" pos:column="29">()</parameter_list> <block pos:line="59" pos:column="32">{
+		<expr_stmt><expr><call><name><op:operator pos:line="60" pos:column="17">::</op:operator><name pos:line="60" pos:column="19">DestroyWindow</name></name><argument_list pos:line="60" pos:column="32">(<argument><expr><name pos:line="60" pos:column="33">_hSelf</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="61" pos:column="10">;</empty_stmt>
+
+    <function><type><specifier pos:line="63" pos:column="5">virtual</specifier> <name pos:line="63" pos:column="13">void</name></type> <name pos:line="63" pos:column="18">reSizeTo</name><parameter_list pos:line="63" pos:column="26">(<param><decl><type><name pos:line="63" pos:column="27">RECT</name> <type:modifier pos:line="63" pos:column="32">&amp;</type:modifier></type> <name pos:line="63" pos:column="34">rc</name></decl></param>)</parameter_list> <block pos:line="63" pos:column="38">{
+        <expr_stmt><expr><call><name><op:operator pos:line="64" pos:column="9">::</op:operator><name pos:line="64" pos:column="11">MoveWindow</name></name><argument_list pos:line="64" pos:column="21">(<argument><expr><name pos:line="64" pos:column="22">_hSelf</name></expr></argument>, <argument><expr><name><name pos:line="64" pos:column="30">rc</name><op:operator pos:line="64" pos:column="32">.</op:operator><name pos:line="64" pos:column="33">left</name></name></expr></argument>, <argument><expr><name><name pos:line="64" pos:column="39">rc</name><op:operator pos:line="64" pos:column="41">.</op:operator><name pos:line="64" pos:column="42">top</name></name></expr></argument>, <argument><expr><name><name pos:line="64" pos:column="47">rc</name><op:operator pos:line="64" pos:column="49">.</op:operator><name pos:line="64" pos:column="50">right</name></name></expr></argument>, <argument><expr><name><name pos:line="64" pos:column="57">rc</name><op:operator pos:line="64" pos:column="59">.</op:operator><name pos:line="64" pos:column="60">bottom</name></name></expr></argument>, <argument><expr><name pos:line="64" pos:column="68">TRUE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name pos:line="65" pos:column="9">adjustParts</name><argument_list pos:line="65" pos:column="20">(<argument><expr><name><name pos:line="65" pos:column="21">rc</name><op:operator pos:line="65" pos:column="23">.</op:operator><name pos:line="65" pos:column="24">right</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name pos:line="66" pos:column="9">redraw</name><argument_list pos:line="66" pos:column="15">()</argument_list></call></expr>;</expr_stmt>
+    }</block></function><empty_stmt pos:line="67" pos:column="6">;</empty_stmt>
+
+
+	<function><type><name pos:line="70" pos:column="9">int</name></type> <name pos:line="70" pos:column="13">getHeight</name><parameter_list pos:line="70" pos:column="22">()</parameter_list> <specifier pos:line="70" pos:column="25">const</specifier> <block pos:line="70" pos:column="31">{
+		<if pos:line="71" pos:column="17">if <condition pos:line="71" pos:column="20">(<expr><op:operator pos:line="71" pos:column="21">!</op:operator><call><name><op:operator pos:line="71" pos:column="22">::</op:operator><name pos:line="71" pos:column="24">IsWindowVisible</name></name><argument_list pos:line="71" pos:column="39">(<argument><expr><name pos:line="71" pos:column="40">_hSelf</name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="71" pos:column="48">
+			<return pos:line="72" pos:column="25">return <expr><lit:literal type="number" pos:line="72" pos:column="32">0</lit:literal></expr>;</return></then></if>
+		<return pos:line="73" pos:column="17">return <expr><call><name><name pos:line="73" pos:column="24">Window</name><op:operator pos:line="73" pos:column="30">::</op:operator><name pos:line="73" pos:column="32">getHeight</name></name><argument_list pos:line="73" pos:column="41">()</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="74" pos:column="10">;</empty_stmt>
+
+    <function><type><name pos:line="76" pos:column="5">bool</name></type> <name pos:line="76" pos:column="10">setText</name><parameter_list pos:line="76" pos:column="17">(<param><decl><type><specifier pos:line="76" pos:column="18">const</specifier> <name pos:line="76" pos:column="24">TCHAR</name> <type:modifier pos:line="76" pos:column="30">*</type:modifier></type><name pos:line="76" pos:column="31">str</name></decl></param>, <param><decl><type><name pos:line="76" pos:column="36">int</name></type> <name pos:line="76" pos:column="40">whichPart</name></decl></param>)</parameter_list> <specifier pos:line="76" pos:column="51">const</specifier> <block pos:line="76" pos:column="57">{
+        <if pos:line="77" pos:column="9">if <condition pos:line="77" pos:column="12">(<expr><name pos:line="77" pos:column="13">whichPart</name> <op:operator pos:line="77" pos:column="23">&gt;</op:operator> <name pos:line="77" pos:column="25">_nbParts</name></expr>)</condition><then pos:line="77" pos:column="34"> 
+            <return pos:line="78" pos:column="13">return <expr><lit:literal type="boolean" pos:line="78" pos:column="20">false</lit:literal></expr>;</return></then></if>
+		<return pos:line="79" pos:column="17">return <expr><op:operator pos:line="79" pos:column="24">(</op:operator><call><name><op:operator pos:line="79" pos:column="25">::</op:operator><name pos:line="79" pos:column="27">SendMessage</name></name><argument_list pos:line="79" pos:column="38">(<argument><expr><name pos:line="79" pos:column="39">_hSelf</name></expr></argument>, <argument><expr><name pos:line="79" pos:column="47">SB_SETTEXT</name></expr></argument>, <argument><expr><name pos:line="79" pos:column="59">whichPart</name></expr></argument>, <argument><expr><op:operator pos:line="79" pos:column="70">(</op:operator><name pos:line="79" pos:column="71">LPARAM</name><op:operator pos:line="79" pos:column="77">)</op:operator><name pos:line="79" pos:column="78">str</name></expr></argument>)</argument_list></call> <op:operator pos:line="79" pos:column="83">==</op:operator> <name pos:line="79" pos:column="86">TRUE</name><op:operator pos:line="79" pos:column="90">)</op:operator></expr>;</return>
+    }</block></function><empty_stmt pos:line="80" pos:column="6">;</empty_stmt>
+
+	<function_decl><type><name pos:line="82" pos:column="9">void</name></type> <name pos:line="82" pos:column="14">adjustParts</name><parameter_list pos:line="82" pos:column="25">(<param><decl><type><name pos:line="82" pos:column="26">int</name></type> <name pos:line="82" pos:column="30">clientWidth</name></decl></param>)</parameter_list>;</function_decl>
+
+</public><private pos:line="84" pos:column="1">private :
+    <decl_stmt><decl><type><name pos:line="85" pos:column="5">int</name></type> <name pos:line="85" pos:column="9">_nbParts</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="86" pos:column="5">int</name> <type:modifier pos:line="86" pos:column="9">*</type:modifier></type><name pos:line="86" pos:column="10">_partWidthArray</name></decl>;</decl_stmt>
+
+    <decl_stmt><decl><type><name pos:line="88" pos:column="5">HLOCAL</name></type> <name pos:line="88" pos:column="12">_hloc</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="89" pos:column="5">LPINT</name></type> <name pos:line="89" pos:column="11">_lpParts</name></decl>;</decl_stmt>    
+</private>}</block>;</class>
+
+<cpp:endif pos:line="92" pos:column="1">#<cpp:directive pos:line="92" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="92" pos:column="8">// STATUS_BAR_H</comment>
+</unit>

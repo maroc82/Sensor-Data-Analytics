@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\TinyXml\tinyXmlA\tinyxmlerrorA.cpp" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+www.sourceforge.net/projects/tinyxml
+Original code (2.0 and earlier )copyright (c) 2000-2002 Lee Thomason (www.grinninglizard.com)
+
+This software is provided 'as-is', without any express or implied 
+warranty. In no event will the authors be held liable for any 
+damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any 
+purpose, including commercial applications, and to alter it and 
+redistribute it freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must
+not claim that you wrote the original software. If you use this
+software in a product, an acknowledgment in the product documentation
+would be appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and
+must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source
+distribution.
+*/</comment>
+
+<cpp:include pos:line="25" pos:column="1">#<cpp:directive pos:line="25" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="25" pos:column="10">"precompiledHeaders.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="26" pos:column="1">#<cpp:directive pos:line="26" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="26" pos:column="10">"tinyxmlA.h"</lit:literal></cpp:file></cpp:include>
+
+<comment type="line" pos:line="28" pos:column="1">// The goal of the seperate error file is to make the first</comment>
+<comment type="line" pos:line="29" pos:column="1">// step towards localization. tinyxml (currently) only supports</comment>
+<comment type="line" pos:line="30" pos:column="1">// latin-1, but at least the error messages could now be translated.</comment>
+<comment type="line" pos:line="31" pos:column="1">//</comment>
+<comment type="line" pos:line="32" pos:column="1">// It also cleans up the code a bit.</comment>
+<comment type="line" pos:line="33" pos:column="1">//</comment>
+
+<decl_stmt><decl><type><specifier pos:line="35" pos:column="1">const</specifier> <name pos:line="35" pos:column="7">char</name><type:modifier pos:line="35" pos:column="11">*</type:modifier></type> <name><name pos:line="35" pos:column="13">TiXmlBaseA</name><op:operator pos:line="35" pos:column="23">::</op:operator><name pos:line="35" pos:column="25">errorString</name><index pos:line="35" pos:column="36">[ <expr><name pos:line="35" pos:column="38">TIXMLA_ERROR_STRING_COUNT</name></expr> ]</index></name> <init pos:line="35" pos:column="66">=
+<expr><block pos:line="36" pos:column="1">{
+	<expr><lit:literal type="string" pos:line="37" pos:column="9">"No error"</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="38" pos:column="9">"Error"</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="39" pos:column="9">"Failed to open file"</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="40" pos:column="9">"Memory allocation failed."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="41" pos:column="9">"Error parsing Element."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="42" pos:column="9">"Failed to read Element name"</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="43" pos:column="9">"Error reading Element value."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="44" pos:column="9">"Error reading Attributes."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="45" pos:column="9">"Error: empty tag."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="46" pos:column="9">"Error reading end tag."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="47" pos:column="9">"Error parsing Unknown."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="48" pos:column="9">"Error parsing Comment."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="49" pos:column="9">"Error parsing Declaration."</lit:literal></expr>,
+	<expr><lit:literal type="string" pos:line="50" pos:column="9">"Error document empty."</lit:literal></expr>
+}</block></expr></init></decl>;</decl_stmt>
+</unit>

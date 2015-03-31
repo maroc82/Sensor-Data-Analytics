@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="Java" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\Pedometer-master\src\main\java\de\j4velin\pedometer\AppUpdatedReceiver.java" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * Copyright 2013 Thomas Hoffmann
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+
+<package pos:line="17" pos:column="1">package <name><name pos:line="17" pos:column="9">de</name><op:operator pos:line="17" pos:column="11">.</op:operator><name pos:line="17" pos:column="12">j4velin</name><op:operator pos:line="17" pos:column="19">.</op:operator><name pos:line="17" pos:column="20">pedometer</name></name>;</package>
+
+<import pos:line="19" pos:column="1">import <name><name pos:line="19" pos:column="8">de</name><op:operator pos:line="19" pos:column="10">.</op:operator><name pos:line="19" pos:column="11">j4velin</name><op:operator pos:line="19" pos:column="18">.</op:operator><name pos:line="19" pos:column="19">pedometer</name><op:operator pos:line="19" pos:column="28">.</op:operator><name pos:line="19" pos:column="29">util</name><op:operator pos:line="19" pos:column="33">.</op:operator><name pos:line="19" pos:column="34">Logger</name></name>;</import>
+<import pos:line="20" pos:column="1">import <name><name pos:line="20" pos:column="8">android</name><op:operator pos:line="20" pos:column="15">.</op:operator><name pos:line="20" pos:column="16">content</name><op:operator pos:line="20" pos:column="23">.</op:operator><name pos:line="20" pos:column="24">BroadcastReceiver</name></name>;</import>
+<import pos:line="21" pos:column="1">import <name><name pos:line="21" pos:column="8">android</name><op:operator pos:line="21" pos:column="15">.</op:operator><name pos:line="21" pos:column="16">content</name><op:operator pos:line="21" pos:column="23">.</op:operator><name pos:line="21" pos:column="24">Context</name></name>;</import>
+<import pos:line="22" pos:column="1">import <name><name pos:line="22" pos:column="8">android</name><op:operator pos:line="22" pos:column="15">.</op:operator><name pos:line="22" pos:column="16">content</name><op:operator pos:line="22" pos:column="23">.</op:operator><name pos:line="22" pos:column="24">Intent</name></name>;</import>
+
+<class><specifier pos:line="24" pos:column="1">public</specifier> class <name pos:line="24" pos:column="14">AppUpdatedReceiver</name> <super><extends pos:line="24" pos:column="33">extends <name pos:line="24" pos:column="41">BroadcastReceiver</name></extends></super> <block pos:line="24" pos:column="59">{
+
+	<function><type><annotation pos:line="26" pos:column="9">@<name pos:line="26" pos:column="10">Override</name></annotation>
+	<specifier pos:line="27" pos:column="9">public</specifier> <name pos:line="27" pos:column="16">void</name></type> <name pos:line="27" pos:column="21">onReceive</name><parameter_list pos:line="27" pos:column="30">(<param><decl><type><specifier pos:line="27" pos:column="31">final</specifier> <name pos:line="27" pos:column="37">Context</name></type> <name pos:line="27" pos:column="45">context</name></decl></param>, <param><decl><type><specifier pos:line="27" pos:column="54">final</specifier> <name pos:line="27" pos:column="60">Intent</name></type> <name pos:line="27" pos:column="67">intent</name></decl></param>)</parameter_list> <block pos:line="27" pos:column="75">{
+		<if pos:line="28" pos:column="17">if <condition pos:line="28" pos:column="20">(<expr><name><name pos:line="28" pos:column="21">BuildConfig</name><op:operator pos:line="28" pos:column="32">.</op:operator><name pos:line="28" pos:column="33">DEBUG</name></name></expr>)</condition><then pos:line="28" pos:column="39">
+			<expr_stmt><expr><call><name><name pos:line="29" pos:column="25">Logger</name><op:operator pos:line="29" pos:column="31">.</op:operator><name pos:line="29" pos:column="32">log</name></name><argument_list pos:line="29" pos:column="35">(<argument><expr><lit:literal type="string" pos:line="29" pos:column="36">"app updated"</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+		<expr_stmt><expr><call><name><name pos:line="30" pos:column="17">context</name><op:operator pos:line="30" pos:column="24">.</op:operator><name pos:line="30" pos:column="25">startService</name></name><argument_list pos:line="30" pos:column="37">(<argument><expr><op:operator pos:line="30" pos:column="38">new</op:operator> <call><name pos:line="30" pos:column="42">Intent</name><argument_list pos:line="30" pos:column="48">(<argument><expr><name pos:line="30" pos:column="49">context</name></expr></argument>, <argument><expr><name><name pos:line="30" pos:column="58">SensorListener</name><op:operator pos:line="30" pos:column="72">.</op:operator><name pos:line="30" pos:column="73">class</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>		
+	}</block></function>
+
+}</block></class>
+</unit>

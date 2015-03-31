@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\include\ScintillaWidget.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/* Scintilla source code edit control */</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file ScintillaWidget.h
+ ** Definition of Scintilla widget for GTK+.
+ ** Only needed by GTK+ code but is harmless on other platforms.
+ **/</comment>
+<comment type="block" pos:line="6" pos:column="1">/* Copyright 1998-2001 by Neil Hodgson &lt;neilh@scintilla.org&gt;
+ * The License.txt file describes the conditions under which this software may be distributed. */</comment>
+
+<cpp:ifndef pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">ifndef</cpp:directive> <name pos:line="9" pos:column="9">SCINTILLAWIDGET_H</name></cpp:ifndef>
+<cpp:define pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="10" pos:column="9">SCINTILLAWIDGET_H</name></cpp:macro></cpp:define>
+
+<cpp:if pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">if</cpp:directive> <expr><call><name pos:line="12" pos:column="5">defined</name><argument_list pos:line="12" pos:column="12">(<argument><expr><name pos:line="12" pos:column="13">GTK</name></expr></argument>)</argument_list></call></expr></cpp:if>
+
+<cpp:ifdef pos:line="14" pos:column="1">#<cpp:directive pos:line="14" pos:column="2">ifdef</cpp:directive> <name pos:line="14" pos:column="8">__cplusplus</name></cpp:ifdef>
+<extern pos:line="15" pos:column="1">extern <lit:literal type="string" pos:line="15" pos:column="8">"C"</lit:literal> <block pos:line="15" pos:column="12">{
+<cpp:endif pos:line="16" pos:column="1">#<cpp:directive pos:line="16" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:define pos:line="18" pos:column="1">#<cpp:directive pos:line="18" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="18" pos:column="9">SCINTILLA</name><parameter_list pos:line="18" pos:column="18">(<param><type><name pos:line="18" pos:column="19">obj</name></type></param>)</parameter_list></cpp:macro>          <cpp:value pos:line="18" pos:column="33">G_TYPE_CHECK_INSTANCE_CAST (obj, scintilla_get_type (), ScintillaObject)</cpp:value></cpp:define>
+<cpp:define pos:line="19" pos:column="1">#<cpp:directive pos:line="19" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="19" pos:column="9">SCINTILLA_CLASS</name><parameter_list pos:line="19" pos:column="24">(<param><type><name pos:line="19" pos:column="25">klass</name></type></param>)</parameter_list></cpp:macro>  <cpp:value pos:line="19" pos:column="33">GTK_CHECK_CLASS_CAST (klass, scintilla_get_type (), ScintillaClass)</cpp:value></cpp:define>
+<cpp:define pos:line="20" pos:column="1">#<cpp:directive pos:line="20" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="20" pos:column="9">IS_SCINTILLA</name><parameter_list pos:line="20" pos:column="21">(<param><type><name pos:line="20" pos:column="22">obj</name></type></param>)</parameter_list></cpp:macro>       <cpp:value pos:line="20" pos:column="33">GTK_CHECK_TYPE (obj, scintilla_get_type ())</cpp:value></cpp:define>
+
+<typedef pos:line="22" pos:column="1">typedef <type pos:line="22" pos:column="9">struct <name pos:line="22" pos:column="16">_ScintillaObject</name></type> <name pos:line="22" pos:column="33">ScintillaObject</name>;</typedef>
+<typedef pos:line="23" pos:column="1">typedef <type pos:line="23" pos:column="9">struct <name pos:line="23" pos:column="16">_ScintillaClass</name></type>  <name pos:line="23" pos:column="33">ScintillaClass</name>;</typedef>
+
+<struct pos:line="25" pos:column="1">struct <name pos:line="25" pos:column="8">_ScintillaObject</name> <block pos:line="25" pos:column="25">{<public type="default" pos:line="25" pos:column="26">
+	<decl_stmt><decl><type><name pos:line="26" pos:column="9">GtkContainer</name></type> <name pos:line="26" pos:column="22">cont</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="27" pos:column="9">void</name> <type:modifier pos:line="27" pos:column="14">*</type:modifier></type><name pos:line="27" pos:column="15">pscin</name></decl>;</decl_stmt>
+</public>}</block>;</struct>
+
+<struct pos:line="30" pos:column="1">struct <name pos:line="30" pos:column="8">_ScintillaClass</name> <block pos:line="30" pos:column="24">{<public type="default" pos:line="30" pos:column="25">
+	<decl_stmt><decl><type><name pos:line="31" pos:column="9">GtkContainerClass</name></type> <name pos:line="31" pos:column="27">parent_class</name></decl>;</decl_stmt>
+
+	<function_decl><type><name pos:line="33" pos:column="9">void</name></type> (<type:modifier pos:line="33" pos:column="15">*</type:modifier> <name pos:line="33" pos:column="17">command</name>) <parameter_list pos:line="33" pos:column="26">(<param><decl><type><name pos:line="33" pos:column="27">ScintillaObject</name> <type:modifier pos:line="33" pos:column="43">*</type:modifier></type><name pos:line="33" pos:column="44">ttt</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="34" pos:column="9">void</name></type> (<type:modifier pos:line="34" pos:column="15">*</type:modifier> <name pos:line="34" pos:column="17">notify</name>) <parameter_list pos:line="34" pos:column="25">(<param><decl><type><name pos:line="34" pos:column="26">ScintillaObject</name> <type:modifier pos:line="34" pos:column="42">*</type:modifier></type><name pos:line="34" pos:column="43">ttt</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</struct>
+
+<function_decl><type><name pos:line="37" pos:column="1">GType</name></type>		<name pos:line="37" pos:column="17">scintilla_get_type</name>	<parameter_list pos:line="37" pos:column="41">(<param><decl><type><name pos:line="37" pos:column="42">void</name></type></decl></param>)</parameter_list>;</function_decl>
+<function_decl><type><name pos:line="38" pos:column="1">GtkWidget</name><type:modifier pos:line="38" pos:column="10">*</type:modifier></type>	<name pos:line="38" pos:column="17">scintilla_new</name>		<parameter_list pos:line="38" pos:column="41">(<param><decl><type><name pos:line="38" pos:column="42">void</name></type></decl></param>)</parameter_list>;</function_decl>
+<function_decl><type><name pos:line="39" pos:column="1">void</name></type>		<name pos:line="39" pos:column="17">scintilla_set_id</name>	<parameter_list pos:line="39" pos:column="41">(<param><decl><type><name pos:line="39" pos:column="42">ScintillaObject</name> <type:modifier pos:line="39" pos:column="58">*</type:modifier></type><name pos:line="39" pos:column="59">sci</name></decl></param>, <param><decl><type><name pos:line="39" pos:column="64">uptr_t</name></type> <name pos:line="39" pos:column="71">id</name></decl></param>)</parameter_list>;</function_decl>
+<function_decl><type><name pos:line="40" pos:column="1">sptr_t</name></type>		<name pos:line="40" pos:column="17">scintilla_send_message</name>	<parameter_list pos:line="40" pos:column="41">(<param><decl><type><name pos:line="40" pos:column="42">ScintillaObject</name> <type:modifier pos:line="40" pos:column="58">*</type:modifier></type><name pos:line="40" pos:column="59">sci</name></decl></param>,<param><decl><type><name pos:line="40" pos:column="63">unsigned</name> <name pos:line="40" pos:column="72">int</name></type> <name pos:line="40" pos:column="76">iMessage</name></decl></param>, <param><decl><type><name pos:line="40" pos:column="86">uptr_t</name></type> <name pos:line="40" pos:column="93">wParam</name></decl></param>, <param><decl><type><name pos:line="40" pos:column="101">sptr_t</name></type> <name pos:line="40" pos:column="108">lParam</name></decl></param>)</parameter_list>;</function_decl>
+<function_decl><type><name pos:line="41" pos:column="1">void</name></type>		<name pos:line="41" pos:column="17">scintilla_release_resources</name><parameter_list pos:line="41" pos:column="44">(<param><decl><type><name pos:line="41" pos:column="45">void</name></type></decl></param>)</parameter_list>;</function_decl>
+
+<cpp:define pos:line="43" pos:column="1">#<cpp:directive pos:line="43" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="43" pos:column="9">SCINTILLA_NOTIFY</name></cpp:macro> <cpp:value pos:line="43" pos:column="26">"sci-notify"</cpp:value></cpp:define>
+
+<cpp:ifdef pos:line="45" pos:column="1">#<cpp:directive pos:line="45" pos:column="2">ifdef</cpp:directive> <name pos:line="45" pos:column="8">__cplusplus</name></cpp:ifdef>
+}</block></extern>
+<cpp:endif pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="49" pos:column="1">#<cpp:directive pos:line="49" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="51" pos:column="1">#<cpp:directive pos:line="51" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

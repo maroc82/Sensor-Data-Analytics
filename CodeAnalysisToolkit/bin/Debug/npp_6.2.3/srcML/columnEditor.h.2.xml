@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\ScitillaComponent\columnEditor.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">COLUMNEDITOR_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">COLUMNEDITOR_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">COLUMNEDITOR_RC_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"columnEditor_rc.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//COLUMNEDITOR_RC_H</comment>
+
+<class_decl pos:line="36" pos:column="1">class <name pos:line="36" pos:column="7">ScintillaEditView</name>;</class_decl>
+
+<decl_stmt><decl><type><specifier pos:line="38" pos:column="1">const</specifier> <name pos:line="38" pos:column="7">bool</name></type> <name pos:line="38" pos:column="12">activeText</name> <init pos:line="38" pos:column="23">= <expr><lit:literal type="boolean" pos:line="38" pos:column="25">true</lit:literal></expr></init></decl>;</decl_stmt>
+<decl_stmt><decl><type><specifier pos:line="39" pos:column="1">const</specifier> <name pos:line="39" pos:column="7">bool</name></type> <name pos:line="39" pos:column="12">activeNumeric</name> <init pos:line="39" pos:column="26">= <expr><lit:literal type="boolean" pos:line="39" pos:column="28">false</lit:literal></expr></init></decl>;</decl_stmt>
+
+<class pos:line="41" pos:column="1">class <name pos:line="41" pos:column="7">ColumnEditorDlg</name> <super pos:line="41" pos:column="23">: <specifier pos:line="41" pos:column="25">public</specifier> <name pos:line="41" pos:column="32">StaticDialog</name></super>
+<block pos:line="42" pos:column="1">{<private type="default" pos:line="42" pos:column="2">
+</private><public pos:line="43" pos:column="1">public :
+	<constructor><name pos:line="44" pos:column="9">ColumnEditorDlg</name><parameter_list pos:line="44" pos:column="24">()</parameter_list> <member_list pos:line="44" pos:column="27">: <call><name pos:line="44" pos:column="29">StaticDialog</name><argument_list pos:line="44" pos:column="41">()</argument_list></call> </member_list><block pos:line="44" pos:column="44">{}</block></constructor><empty_stmt pos:line="44" pos:column="46">;</empty_stmt>
+
+	<function><type><name pos:line="46" pos:column="9">void</name></type> <name pos:line="46" pos:column="14">init</name><parameter_list pos:line="46" pos:column="18">(<param><decl><type><name pos:line="46" pos:column="19">HINSTANCE</name></type> <name pos:line="46" pos:column="29">hInst</name></decl></param>, <param><decl><type><name pos:line="46" pos:column="36">HWND</name></type> <name pos:line="46" pos:column="41">hPere</name></decl></param>, <param><decl><type><name pos:line="46" pos:column="48">ScintillaEditView</name> <type:modifier pos:line="46" pos:column="66">*</type:modifier><type:modifier pos:line="46" pos:column="67">*</type:modifier></type><name pos:line="46" pos:column="68">ppEditView</name></decl></param>)</parameter_list> <block pos:line="46" pos:column="80">{
+		<expr_stmt><expr><call><name><name pos:line="47" pos:column="17">Window</name><op:operator pos:line="47" pos:column="23">::</op:operator><name pos:line="47" pos:column="25">init</name></name><argument_list pos:line="47" pos:column="29">(<argument><expr><name pos:line="47" pos:column="30">hInst</name></expr></argument>, <argument><expr><name pos:line="47" pos:column="37">hPere</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if pos:line="48" pos:column="17">if <condition pos:line="48" pos:column="20">(<expr><op:operator pos:line="48" pos:column="21">!</op:operator><name pos:line="48" pos:column="22">ppEditView</name></expr>)</condition><then pos:line="48" pos:column="33">
+			<throw pos:line="49" pos:column="25">throw <expr><call><name><name pos:line="49" pos:column="31">std</name><op:operator pos:line="49" pos:column="34">::</op:operator><name pos:line="49" pos:column="36">runtime_error</name></name><argument_list pos:line="49" pos:column="49">(<argument><expr><lit:literal type="string" pos:line="49" pos:column="50">"StaticDialog::init : ppEditView is null."</lit:literal></expr></argument>)</argument_list></call></expr>;</throw></then></if>
+		<expr_stmt><expr><name pos:line="50" pos:column="17">_ppEditView</name> <op:operator pos:line="50" pos:column="29">=</op:operator> <name pos:line="50" pos:column="31">ppEditView</name></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="51" pos:column="10">;</empty_stmt>
+
+	<function><type><specifier pos:line="53" pos:column="9">virtual</specifier> <name pos:line="53" pos:column="17">void</name></type> <name pos:line="53" pos:column="22">create</name><parameter_list pos:line="53" pos:column="28">(<param><decl><type><name pos:line="53" pos:column="29">int</name></type> <name pos:line="53" pos:column="33">dialogID</name></decl></param>, <param><decl><type><name pos:line="53" pos:column="43">bool</name></type> <name pos:line="53" pos:column="48">isRTL</name> <init pos:line="53" pos:column="54">= <expr><lit:literal type="boolean" pos:line="53" pos:column="56">false</lit:literal></expr></init></decl></param>)</parameter_list> <block pos:line="53" pos:column="63">{
+		<expr_stmt><expr><call><name><name pos:line="54" pos:column="17">StaticDialog</name><op:operator pos:line="54" pos:column="29">::</op:operator><name pos:line="54" pos:column="31">create</name></name><argument_list pos:line="54" pos:column="37">(<argument><expr><name pos:line="54" pos:column="38">dialogID</name></expr></argument>, <argument><expr><name pos:line="54" pos:column="48">isRTL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="55" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="57" pos:column="9">void</name></type> <name pos:line="57" pos:column="14">doDialog</name><parameter_list pos:line="57" pos:column="22">(<param><decl><type><name pos:line="57" pos:column="23">bool</name></type> <name pos:line="57" pos:column="28">isRTL</name> <init pos:line="57" pos:column="34">= <expr><lit:literal type="boolean" pos:line="57" pos:column="36">false</lit:literal></expr></init></decl></param>)</parameter_list> <block pos:line="57" pos:column="43">{
+		<if pos:line="58" pos:column="17">if <condition pos:line="58" pos:column="20">(<expr><op:operator pos:line="58" pos:column="21">!</op:operator><call><name pos:line="58" pos:column="22">isCreated</name><argument_list pos:line="58" pos:column="31">()</argument_list></call></expr>)</condition><then pos:line="58" pos:column="34">
+			<expr_stmt><expr><call><name pos:line="59" pos:column="25">create</name><argument_list pos:line="59" pos:column="31">(<argument><expr><name pos:line="59" pos:column="32">IDD_COLUMNEDIT</name></expr></argument>, <argument><expr><name pos:line="59" pos:column="48">isRTL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+		<decl_stmt><decl><type><name pos:line="60" pos:column="17">bool</name></type> <name pos:line="60" pos:column="22">isTextMode</name> <init pos:line="60" pos:column="33">= <expr><op:operator pos:line="60" pos:column="35">(</op:operator><name pos:line="60" pos:column="36">BST_CHECKED</name> <op:operator pos:line="60" pos:column="48">==</op:operator> <call><name><op:operator pos:line="60" pos:column="51">::</op:operator><name pos:line="60" pos:column="53">SendDlgItemMessage</name></name><argument_list pos:line="60" pos:column="71">(<argument><expr><name pos:line="60" pos:column="72">_hSelf</name></expr></argument>, <argument><expr><name pos:line="60" pos:column="80">IDC_COL_TEXT_RADIO</name></expr></argument>, <argument><expr><name pos:line="60" pos:column="100">BM_GETCHECK</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="60" pos:column="113">0</lit:literal></expr></argument>, <argument><expr><lit:literal type="number" pos:line="60" pos:column="116">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="60" pos:column="118">)</op:operator></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name pos:line="61" pos:column="17">display</name><argument_list pos:line="61" pos:column="24">()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><op:operator pos:line="62" pos:column="17">::</op:operator><name pos:line="62" pos:column="19">SetFocus</name></name><argument_list pos:line="62" pos:column="27">(<argument><expr><call><name><op:operator pos:line="62" pos:column="28">::</op:operator><name pos:line="62" pos:column="30">GetDlgItem</name></name><argument_list pos:line="62" pos:column="40">(<argument><expr><name pos:line="62" pos:column="41">_hSelf</name></expr></argument>, <argument><expr><name pos:line="62" pos:column="49">isTextMode</name><op:operator pos:line="62" pos:column="59">?</op:operator><name pos:line="62" pos:column="60">IDC_COL_TEXT_EDIT</name><op:operator pos:line="62" pos:column="77">:</op:operator><name pos:line="62" pos:column="78">IDC_COL_INITNUM_EDIT</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="63" pos:column="10">;</empty_stmt>
+
+    <function_decl><type><specifier pos:line="65" pos:column="5">virtual</specifier> <name pos:line="65" pos:column="13">void</name></type> <name pos:line="65" pos:column="18">display</name><parameter_list pos:line="65" pos:column="25">(<param><decl><type><name pos:line="65" pos:column="26">bool</name></type> <name pos:line="65" pos:column="31">toShow</name> <init pos:line="65" pos:column="38">= <expr><lit:literal type="boolean" pos:line="65" pos:column="40">true</lit:literal></expr></init></decl></param>)</parameter_list> <specifier pos:line="65" pos:column="46">const</specifier>;</function_decl>
+
+	<function_decl><type><name pos:line="67" pos:column="9">void</name></type> <name pos:line="67" pos:column="14">switchTo</name><parameter_list pos:line="67" pos:column="22">(<param><decl><type><name pos:line="67" pos:column="23">bool</name></type> <name pos:line="67" pos:column="28">toText</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="69" pos:column="9">UCHAR</name></type> <name pos:line="69" pos:column="15">getFormat</name><parameter_list pos:line="69" pos:column="24">()</parameter_list>;</function_decl>
+
+</public><protected pos:line="71" pos:column="1">protected :
+	<function_decl><type><specifier pos:line="72" pos:column="9">virtual</specifier> <name pos:line="72" pos:column="17">BOOL</name> <name pos:line="72" pos:column="22">CALLBACK</name></type> <name pos:line="72" pos:column="31">run_dlgProc</name><parameter_list pos:line="72" pos:column="42">(<param><decl><type><name pos:line="72" pos:column="43">UINT</name></type> <name pos:line="72" pos:column="48">message</name></decl></param>, <param><decl><type><name pos:line="72" pos:column="57">WPARAM</name></type> <name pos:line="72" pos:column="64">wParam</name></decl></param>, <param><decl><type><name pos:line="72" pos:column="72">LPARAM</name></type> <name pos:line="72" pos:column="79">lParam</name></decl></param>)</parameter_list>;</function_decl>
+
+</protected><private pos:line="74" pos:column="1">private :
+
+    <decl_stmt><decl><type><name pos:line="76" pos:column="5">ScintillaEditView</name> <type:modifier pos:line="76" pos:column="23">*</type:modifier><type:modifier pos:line="76" pos:column="24">*</type:modifier></type><name pos:line="76" pos:column="25">_ppEditView</name></decl>;</decl_stmt>
+
+
+</private>}</block>;</class>
+<cpp:endif pos:line="80" pos:column="1">#<cpp:directive pos:line="80" pos:column="2">endif</cpp:directive></cpp:endif><comment type="line" pos:line="80" pos:column="7">// COLUMNEDITOR_H</comment>
+</unit>

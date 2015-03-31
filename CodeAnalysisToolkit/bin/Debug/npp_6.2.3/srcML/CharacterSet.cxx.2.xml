@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\lexlib\CharacterSet.cxx" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file CharacterSet.cxx
+ ** Simple case functions for ASCII.
+ ** Lexer infrastructure.
+ **/</comment>
+<comment type="line" pos:line="6" pos:column="1">// Copyright 1998-2010 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="7" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:include pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">include</cpp:directive> <cpp:file pos:line="9" pos:column="10">&lt;stdlib.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">include</cpp:directive> <cpp:file pos:line="10" pos:column="10">&lt;string.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">include</cpp:directive> <cpp:file pos:line="11" pos:column="10">&lt;ctype.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">include</cpp:directive> <cpp:file pos:line="12" pos:column="10">&lt;stdio.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">include</cpp:directive> <cpp:file pos:line="13" pos:column="10">&lt;assert.h&gt;</cpp:file></cpp:include>
+
+<cpp:include pos:line="15" pos:column="1">#<cpp:directive pos:line="15" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="15" pos:column="10">"CharacterSet.h"</lit:literal></cpp:file></cpp:include>
+
+<cpp:ifdef pos:line="17" pos:column="1">#<cpp:directive pos:line="17" pos:column="2">ifdef</cpp:directive> <name pos:line="17" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<using pos:line="18" pos:column="1">using namespace <name pos:line="18" pos:column="17">Scintilla</name>;</using>
+<cpp:endif pos:line="19" pos:column="1">#<cpp:directive pos:line="19" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:ifdef pos:line="21" pos:column="1">#<cpp:directive pos:line="21" pos:column="2">ifdef</cpp:directive> <name pos:line="21" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="22" pos:column="1">namespace <name pos:line="22" pos:column="11">Scintilla</name> <block pos:line="22" pos:column="21">{
+<cpp:endif pos:line="23" pos:column="1">#<cpp:directive pos:line="23" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<function><type><name pos:line="25" pos:column="1">int</name></type> <name pos:line="25" pos:column="5">CompareCaseInsensitive</name><parameter_list pos:line="25" pos:column="27">(<param><decl><type><specifier pos:line="25" pos:column="28">const</specifier> <name pos:line="25" pos:column="34">char</name> <type:modifier pos:line="25" pos:column="39">*</type:modifier></type><name pos:line="25" pos:column="40">a</name></decl></param>, <param><decl><type><specifier pos:line="25" pos:column="43">const</specifier> <name pos:line="25" pos:column="49">char</name> <type:modifier pos:line="25" pos:column="54">*</type:modifier></type><name pos:line="25" pos:column="55">b</name></decl></param>)</parameter_list> <block pos:line="25" pos:column="58">{
+	<while pos:line="26" pos:column="9">while <condition pos:line="26" pos:column="15">(<expr><op:operator pos:line="26" pos:column="16">*</op:operator><name pos:line="26" pos:column="17">a</name> <op:operator pos:line="26" pos:column="19">&amp;&amp;</op:operator> <op:operator pos:line="26" pos:column="22">*</op:operator><name pos:line="26" pos:column="23">b</name></expr>)</condition> <block pos:line="26" pos:column="26">{
+		<if pos:line="27" pos:column="17">if <condition pos:line="27" pos:column="20">(<expr><op:operator pos:line="27" pos:column="21">*</op:operator><name pos:line="27" pos:column="22">a</name> <op:operator pos:line="27" pos:column="24">!=</op:operator> <op:operator pos:line="27" pos:column="27">*</op:operator><name pos:line="27" pos:column="28">b</name></expr>)</condition><then pos:line="27" pos:column="30"> <block pos:line="27" pos:column="31">{
+			<decl_stmt><decl><type><name pos:line="28" pos:column="25">char</name></type> <name pos:line="28" pos:column="30">upperA</name> <init pos:line="28" pos:column="37">= <expr><call><name pos:line="28" pos:column="39">MakeUpperCase</name><argument_list pos:line="28" pos:column="52">(<argument><expr><op:operator pos:line="28" pos:column="53">*</op:operator><name pos:line="28" pos:column="54">a</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="29" pos:column="25">char</name></type> <name pos:line="29" pos:column="30">upperB</name> <init pos:line="29" pos:column="37">= <expr><call><name pos:line="29" pos:column="39">MakeUpperCase</name><argument_list pos:line="29" pos:column="52">(<argument><expr><op:operator pos:line="29" pos:column="53">*</op:operator><name pos:line="29" pos:column="54">b</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if pos:line="30" pos:column="25">if <condition pos:line="30" pos:column="28">(<expr><name pos:line="30" pos:column="29">upperA</name> <op:operator pos:line="30" pos:column="36">!=</op:operator> <name pos:line="30" pos:column="39">upperB</name></expr>)</condition><then pos:line="30" pos:column="46">
+				<return pos:line="31" pos:column="33">return <expr><name pos:line="31" pos:column="40">upperA</name> <op:operator pos:line="31" pos:column="47">-</op:operator> <name pos:line="31" pos:column="49">upperB</name></expr>;</return></then></if>
+		}</block></then></if>
+		<expr_stmt><expr><name pos:line="33" pos:column="17">a</name><op:operator pos:line="33" pos:column="18">++</op:operator></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="34" pos:column="17">b</name><op:operator pos:line="34" pos:column="18">++</op:operator></expr>;</expr_stmt>
+	}</block></while>
+	<comment type="line" pos:line="36" pos:column="9">// Either *a or *b is nul</comment>
+	<return pos:line="37" pos:column="9">return <expr><op:operator pos:line="37" pos:column="16">*</op:operator><name pos:line="37" pos:column="17">a</name> <op:operator pos:line="37" pos:column="19">-</op:operator> <op:operator pos:line="37" pos:column="21">*</op:operator><name pos:line="37" pos:column="22">b</name></expr>;</return>
+}</block></function>
+
+<function><type><name pos:line="40" pos:column="1">int</name></type> <name pos:line="40" pos:column="5">CompareNCaseInsensitive</name><parameter_list pos:line="40" pos:column="28">(<param><decl><type><specifier pos:line="40" pos:column="29">const</specifier> <name pos:line="40" pos:column="35">char</name> <type:modifier pos:line="40" pos:column="40">*</type:modifier></type><name pos:line="40" pos:column="41">a</name></decl></param>, <param><decl><type><specifier pos:line="40" pos:column="44">const</specifier> <name pos:line="40" pos:column="50">char</name> <type:modifier pos:line="40" pos:column="55">*</type:modifier></type><name pos:line="40" pos:column="56">b</name></decl></param>, <param><decl><type><name pos:line="40" pos:column="59">size_t</name></type> <name pos:line="40" pos:column="66">len</name></decl></param>)</parameter_list> <block pos:line="40" pos:column="71">{
+	<while pos:line="41" pos:column="9">while <condition pos:line="41" pos:column="15">(<expr><op:operator pos:line="41" pos:column="16">*</op:operator><name pos:line="41" pos:column="17">a</name> <op:operator pos:line="41" pos:column="19">&amp;&amp;</op:operator> <op:operator pos:line="41" pos:column="22">*</op:operator><name pos:line="41" pos:column="23">b</name> <op:operator pos:line="41" pos:column="25">&amp;&amp;</op:operator> <name pos:line="41" pos:column="28">len</name></expr>)</condition> <block pos:line="41" pos:column="33">{
+		<if pos:line="42" pos:column="17">if <condition pos:line="42" pos:column="20">(<expr><op:operator pos:line="42" pos:column="21">*</op:operator><name pos:line="42" pos:column="22">a</name> <op:operator pos:line="42" pos:column="24">!=</op:operator> <op:operator pos:line="42" pos:column="27">*</op:operator><name pos:line="42" pos:column="28">b</name></expr>)</condition><then pos:line="42" pos:column="30"> <block pos:line="42" pos:column="31">{
+			<decl_stmt><decl><type><name pos:line="43" pos:column="25">char</name></type> <name pos:line="43" pos:column="30">upperA</name> <init pos:line="43" pos:column="37">= <expr><call><name pos:line="43" pos:column="39">MakeUpperCase</name><argument_list pos:line="43" pos:column="52">(<argument><expr><op:operator pos:line="43" pos:column="53">*</op:operator><name pos:line="43" pos:column="54">a</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="44" pos:column="25">char</name></type> <name pos:line="44" pos:column="30">upperB</name> <init pos:line="44" pos:column="37">= <expr><call><name pos:line="44" pos:column="39">MakeUpperCase</name><argument_list pos:line="44" pos:column="52">(<argument><expr><op:operator pos:line="44" pos:column="53">*</op:operator><name pos:line="44" pos:column="54">b</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if pos:line="45" pos:column="25">if <condition pos:line="45" pos:column="28">(<expr><name pos:line="45" pos:column="29">upperA</name> <op:operator pos:line="45" pos:column="36">!=</op:operator> <name pos:line="45" pos:column="39">upperB</name></expr>)</condition><then pos:line="45" pos:column="46">
+				<return pos:line="46" pos:column="33">return <expr><name pos:line="46" pos:column="40">upperA</name> <op:operator pos:line="46" pos:column="47">-</op:operator> <name pos:line="46" pos:column="49">upperB</name></expr>;</return></then></if>
+		}</block></then></if>
+		<expr_stmt><expr><name pos:line="48" pos:column="17">a</name><op:operator pos:line="48" pos:column="18">++</op:operator></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="49" pos:column="17">b</name><op:operator pos:line="49" pos:column="18">++</op:operator></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="50" pos:column="17">len</name><op:operator pos:line="50" pos:column="20">--</op:operator></expr>;</expr_stmt>
+	}</block></while>
+	<if pos:line="52" pos:column="9">if <condition pos:line="52" pos:column="12">(<expr><name pos:line="52" pos:column="13">len</name> <op:operator pos:line="52" pos:column="17">==</op:operator> <lit:literal type="number" pos:line="52" pos:column="20">0</lit:literal></expr>)</condition><then pos:line="52" pos:column="22">
+		<return pos:line="53" pos:column="17">return <expr><lit:literal type="number" pos:line="53" pos:column="24">0</lit:literal></expr>;</return></then>
+	<else pos:line="54" pos:column="9">else
+		<comment type="line" pos:line="55" pos:column="17">// Either *a or *b is nul</comment>
+		<return pos:line="56" pos:column="17">return <expr><op:operator pos:line="56" pos:column="24">*</op:operator><name pos:line="56" pos:column="25">a</name> <op:operator pos:line="56" pos:column="27">-</op:operator> <op:operator pos:line="56" pos:column="29">*</op:operator><name pos:line="56" pos:column="30">b</name></expr>;</return></else></if>
+}</block></function>
+
+<cpp:ifdef pos:line="59" pos:column="1">#<cpp:directive pos:line="59" pos:column="2">ifdef</cpp:directive> <name pos:line="59" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="61" pos:column="1">#<cpp:directive pos:line="61" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

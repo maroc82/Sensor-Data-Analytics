@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\Notepad_plus_Window.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">NOTEPAD_PLUS_WINDOW_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">NOTEPAD_PLUS_WINDOW_H</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="32" pos:column="10">"Notepad_plus.h"</lit:literal></cpp:file></cpp:include>
+
+<class pos:line="34" pos:column="1">class <name pos:line="34" pos:column="7">Notepad_plus_Window</name> <super pos:line="34" pos:column="27">: <specifier pos:line="34" pos:column="29">public</specifier> <name pos:line="34" pos:column="36">Window</name></super> <block pos:line="34" pos:column="43">{<private type="default" pos:line="34" pos:column="44">
+</private><public pos:line="35" pos:column="1">public:
+	<constructor><name pos:line="36" pos:column="9">Notepad_plus_Window</name><parameter_list pos:line="36" pos:column="28">()</parameter_list> <block pos:line="36" pos:column="31">{}</block></constructor><empty_stmt pos:line="36" pos:column="33">;</empty_stmt>
+	<function_decl><type><name pos:line="37" pos:column="9">void</name></type> <name pos:line="37" pos:column="14">init</name><parameter_list pos:line="37" pos:column="18">(<param><decl><type><name pos:line="37" pos:column="19">HINSTANCE</name></type></decl></param>, <param><decl><type><name pos:line="37" pos:column="30">HWND</name></type></decl></param>, <param><decl><type><specifier pos:line="37" pos:column="36">const</specifier> <name pos:line="37" pos:column="42">TCHAR</name> <type:modifier pos:line="37" pos:column="48">*</type:modifier></type><name pos:line="37" pos:column="49">cmdLine</name></decl></param>, <param><decl><type><name pos:line="37" pos:column="58">CmdLineParams</name> <type:modifier pos:line="37" pos:column="72">*</type:modifier></type><name pos:line="37" pos:column="73">cmdLineParams</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="39" pos:column="9">bool</name></type> <name pos:line="39" pos:column="14">isDlgsMsg</name><parameter_list pos:line="39" pos:column="23">(<param><decl><type><name pos:line="39" pos:column="24">MSG</name> <type:modifier pos:line="39" pos:column="28">*</type:modifier></type><name pos:line="39" pos:column="29">msg</name></decl></param>, <param><decl><type><name pos:line="39" pos:column="34">bool</name></type> <name pos:line="39" pos:column="39">unicodeSupported</name></decl></param>)</parameter_list> <specifier pos:line="39" pos:column="57">const</specifier>;</function_decl>
+	
+	<function><type><name pos:line="41" pos:column="9">HACCEL</name></type> <name pos:line="41" pos:column="16">getAccTable</name><parameter_list pos:line="41" pos:column="27">()</parameter_list> <specifier pos:line="41" pos:column="30">const</specifier><block pos:line="41" pos:column="35">{
+		<return pos:line="42" pos:column="17">return <expr><call><name><name pos:line="42" pos:column="24">_notepad_plus_plus_core</name><op:operator pos:line="42" pos:column="47">.</op:operator><name pos:line="42" pos:column="48">getAccTable</name></name><argument_list pos:line="42" pos:column="59">()</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="43" pos:column="10">;</empty_stmt>
+	
+	<function><type><name pos:line="45" pos:column="9">bool</name></type> <name pos:line="45" pos:column="14">emergency</name><parameter_list pos:line="45" pos:column="23">(<param><decl><type><name pos:line="45" pos:column="24">generic_string</name></type> <name pos:line="45" pos:column="39">emergencySavedDir</name></decl></param>)</parameter_list>
+	<block pos:line="46" pos:column="9">{
+		<return pos:line="47" pos:column="17">return <expr><call><name><name pos:line="47" pos:column="24">_notepad_plus_plus_core</name><op:operator pos:line="47" pos:column="47">.</op:operator><name pos:line="47" pos:column="48">emergency</name></name><argument_list pos:line="47" pos:column="57">(<argument><expr><name pos:line="47" pos:column="58">emergencySavedDir</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="48" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="50" pos:column="9">bool</name></type> <name pos:line="50" pos:column="14">isPrelaunch</name><parameter_list pos:line="50" pos:column="25">()</parameter_list> <specifier pos:line="50" pos:column="28">const</specifier> <block pos:line="50" pos:column="34">{
+		<return pos:line="51" pos:column="17">return <expr><name pos:line="51" pos:column="24">_isPrelaunch</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="52" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="54" pos:column="9">void</name></type> <name pos:line="54" pos:column="14">setIsPrelaunch</name><parameter_list pos:line="54" pos:column="28">(<param><decl><type><name pos:line="54" pos:column="29">bool</name></type> <name pos:line="54" pos:column="34">val</name></decl></param>)</parameter_list> <block pos:line="54" pos:column="39">{
+		<expr_stmt><expr><name pos:line="55" pos:column="17">_isPrelaunch</name> <op:operator pos:line="55" pos:column="30">=</op:operator> <name pos:line="55" pos:column="32">val</name></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="56" pos:column="10">;</empty_stmt>
+
+    <function><type><specifier pos:line="58" pos:column="5">virtual</specifier> <name pos:line="58" pos:column="13">void</name></type> <name pos:line="58" pos:column="18">destroy</name><parameter_list pos:line="58" pos:column="25">()</parameter_list><block pos:line="58" pos:column="27">{
+        <expr_stmt><expr><call><name><op:operator pos:line="59" pos:column="9">::</op:operator><name pos:line="59" pos:column="11">DestroyWindow</name></name><argument_list pos:line="59" pos:column="24">(<argument><expr><name pos:line="59" pos:column="25">_hSelf</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></function><empty_stmt pos:line="60" pos:column="6">;</empty_stmt>
+
+	<function><type><specifier pos:line="62" pos:column="9">static</specifier> <specifier pos:line="62" pos:column="16">const</specifier> <name pos:line="62" pos:column="22">TCHAR</name> <type:modifier pos:line="62" pos:column="28">*</type:modifier></type> <name><name pos:line="62" pos:column="30">Notepad_plus_Window</name><op:operator pos:line="62" pos:column="49">::</op:operator><name pos:line="62" pos:column="51">getClassName</name></name><parameter_list pos:line="62" pos:column="63">()</parameter_list> <block pos:line="62" pos:column="66">{
+		<return pos:line="63" pos:column="17">return <expr><name pos:line="63" pos:column="24">_className</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="64" pos:column="10">;</empty_stmt>
+	<decl_stmt><decl><type><specifier pos:line="65" pos:column="9">static</specifier> <name pos:line="65" pos:column="16">HWND</name></type> <name pos:line="65" pos:column="21">gNppHWND</name></decl>;</decl_stmt>	<comment type="line" pos:line="65" pos:column="33">//static handle to Notepad++ window, NULL if non-existant</comment>
+	
+</public><private pos:line="67" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="68" pos:column="9">Notepad_plus</name></type> <name pos:line="68" pos:column="22">_notepad_plus_plus_core</name></decl>;</decl_stmt>
+	<function_decl><type><specifier pos:line="69" pos:column="9">static</specifier> <name pos:line="69" pos:column="16">LRESULT</name> <name pos:line="69" pos:column="24">CALLBACK</name></type> <name pos:line="69" pos:column="33">Notepad_plus_Proc</name><parameter_list pos:line="69" pos:column="50">(<param><decl><type><name pos:line="69" pos:column="51">HWND</name></type> <name pos:line="69" pos:column="56">hwnd</name></decl></param>, <param><decl><type><name pos:line="69" pos:column="62">UINT</name></type> <name pos:line="69" pos:column="67">Message</name></decl></param>, <param><decl><type><name pos:line="69" pos:column="76">WPARAM</name></type> <name pos:line="69" pos:column="83">wParam</name></decl></param>, <param><decl><type><name pos:line="69" pos:column="91">LPARAM</name></type> <name pos:line="69" pos:column="98">lParam</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="70" pos:column="9">LRESULT</name></type> <name pos:line="70" pos:column="17">runProc</name><parameter_list pos:line="70" pos:column="24">(<param><decl><type><name pos:line="70" pos:column="25">HWND</name></type> <name pos:line="70" pos:column="30">hwnd</name></decl></param>, <param><decl><type><name pos:line="70" pos:column="36">UINT</name></type> <name pos:line="70" pos:column="41">Message</name></decl></param>, <param><decl><type><name pos:line="70" pos:column="50">WPARAM</name></type> <name pos:line="70" pos:column="57">wParam</name></decl></param>, <param><decl><type><name pos:line="70" pos:column="65">LPARAM</name></type> <name pos:line="70" pos:column="72">lParam</name></decl></param>)</parameter_list>;</function_decl>
+
+	<decl_stmt><decl><type><specifier pos:line="72" pos:column="9">static</specifier> <specifier pos:line="72" pos:column="16">const</specifier> <name pos:line="72" pos:column="22">TCHAR</name></type> <name><name pos:line="72" pos:column="28">_className</name><index pos:line="72" pos:column="38">[<expr><lit:literal type="number" pos:line="72" pos:column="39">32</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="73" pos:column="9">bool</name></type> <name pos:line="73" pos:column="14">_isPrelaunch</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="74" pos:column="9">bool</name></type> <name pos:line="74" pos:column="14">_disablePluginsManager</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="77" pos:column="1">#<cpp:directive pos:line="77" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="77" pos:column="8">//NOTEPAD_PLUS_WINDOW_H</comment>
+</unit>

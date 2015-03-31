@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\ScitillaComponent\DocTabView.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">DOCTABVIEW_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">DOCTABVIEW_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">TAB_BAR_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"TabBar.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//TAB_BAR_H</comment>
+
+<cpp:ifndef pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">ifndef</cpp:directive> <name pos:line="36" pos:column="9">BUFFER_H</name></cpp:ifndef>
+<cpp:include pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="37" pos:column="10">"Buffer.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="38" pos:column="1">#<cpp:directive pos:line="38" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="38" pos:column="8">//BUFFER_H</comment>
+
+<decl_stmt><decl><type><specifier pos:line="40" pos:column="1">const</specifier> <name pos:line="40" pos:column="7">int</name></type> <name pos:line="40" pos:column="11">SAVED_IMG_INDEX</name> <init pos:line="40" pos:column="27">= <expr><lit:literal type="number" pos:line="40" pos:column="29">0</lit:literal></expr></init></decl>;</decl_stmt>
+<decl_stmt><decl><type><specifier pos:line="41" pos:column="1">const</specifier> <name pos:line="41" pos:column="7">int</name></type> <name pos:line="41" pos:column="11">UNSAVED_IMG_INDEX</name> <init pos:line="41" pos:column="29">= <expr><lit:literal type="number" pos:line="41" pos:column="31">1</lit:literal></expr></init></decl>;</decl_stmt>
+<decl_stmt><decl><type><specifier pos:line="42" pos:column="1">const</specifier> <name pos:line="42" pos:column="7">int</name></type> <name pos:line="42" pos:column="11">REDONLY_IMG_INDEX</name> <init pos:line="42" pos:column="29">= <expr><lit:literal type="number" pos:line="42" pos:column="31">2</lit:literal></expr></init></decl>;</decl_stmt>
+
+<class pos:line="44" pos:column="1">class <name pos:line="44" pos:column="7">DocTabView</name> <super pos:line="44" pos:column="18">: <specifier pos:line="44" pos:column="20">public</specifier> <name pos:line="44" pos:column="27">TabBarPlus</name></super>
+<block pos:line="45" pos:column="1">{<private type="default" pos:line="45" pos:column="2">
+</private><public pos:line="46" pos:column="1">public :
+	<constructor><name pos:line="47" pos:column="9">DocTabView</name><parameter_list pos:line="47" pos:column="19">()</parameter_list><member_list pos:line="47" pos:column="21">:<call><name pos:line="47" pos:column="22">TabBarPlus</name><argument_list pos:line="47" pos:column="32">()</argument_list></call><op:operator pos:line="47" pos:column="34">,</op:operator> <call><name pos:line="47" pos:column="36">_pView</name><argument_list pos:line="47" pos:column="42">(<argument><expr><name pos:line="47" pos:column="43">NULL</name></expr></argument>)</argument_list></call> </member_list><block pos:line="47" pos:column="49">{}</block></constructor><empty_stmt pos:line="47" pos:column="51">;</empty_stmt>
+	<destructor><specifier pos:line="48" pos:column="9">virtual</specifier> <name pos:line="48" pos:column="17">~<name pos:line="48" pos:column="18">DocTabView</name></name><parameter_list pos:line="48" pos:column="28">()</parameter_list><block pos:line="48" pos:column="30">{}</block></destructor><empty_stmt pos:line="48" pos:column="32">;</empty_stmt>
+	
+	<function><type><specifier pos:line="50" pos:column="9">virtual</specifier> <name pos:line="50" pos:column="17">void</name></type> <name pos:line="50" pos:column="22">destroy</name><parameter_list pos:line="50" pos:column="29">()</parameter_list> <block pos:line="50" pos:column="32">{
+		<expr_stmt><expr><call><name><name pos:line="51" pos:column="17">TabBarPlus</name><op:operator pos:line="51" pos:column="27">::</op:operator><name pos:line="51" pos:column="29">destroy</name></name><argument_list pos:line="51" pos:column="36">()</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="52" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="54" pos:column="9">void</name></type> <name pos:line="54" pos:column="14">init</name><parameter_list pos:line="54" pos:column="18">(<param><decl><type><name pos:line="54" pos:column="19">HINSTANCE</name></type> <name pos:line="54" pos:column="29">hInst</name></decl></param>, <param><decl><type><name pos:line="54" pos:column="36">HWND</name></type> <name pos:line="54" pos:column="41">parent</name></decl></param>, <param><decl><type><name pos:line="54" pos:column="49">ScintillaEditView</name> <type:modifier pos:line="54" pos:column="67">*</type:modifier></type> <name pos:line="54" pos:column="69">pView</name></decl></param>, <param><decl><type><name pos:line="54" pos:column="76">IconList</name> <type:modifier pos:line="54" pos:column="85">*</type:modifier></type><name pos:line="54" pos:column="86">pIconList</name> <init pos:line="54" pos:column="96">= <expr><name pos:line="54" pos:column="98">NULL</name></expr></init></decl></param>)</parameter_list>
+	<block pos:line="55" pos:column="9">{
+		<expr_stmt><expr><call><name><name pos:line="56" pos:column="17">TabBarPlus</name><op:operator pos:line="56" pos:column="27">::</op:operator><name pos:line="56" pos:column="29">init</name></name><argument_list pos:line="56" pos:column="33">(<argument><expr><name pos:line="56" pos:column="34">hInst</name></expr></argument>, <argument><expr><name pos:line="56" pos:column="41">parent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="57" pos:column="17">_pView</name> <op:operator pos:line="57" pos:column="24">=</op:operator> <name pos:line="57" pos:column="26">pView</name></expr>;</expr_stmt>
+		<if pos:line="58" pos:column="17">if <condition pos:line="58" pos:column="20">(<expr><name pos:line="58" pos:column="21">pIconList</name></expr>)</condition><then pos:line="58" pos:column="31">
+			<expr_stmt><expr><call><name><name pos:line="59" pos:column="25">TabBar</name><op:operator pos:line="59" pos:column="31">::</op:operator><name pos:line="59" pos:column="33">setImageList</name></name><argument_list pos:line="59" pos:column="45">(<argument><expr><call><name><name pos:line="59" pos:column="46">pIconList</name><op:operator pos:line="59" pos:column="55">-&gt;</op:operator><name pos:line="59" pos:column="57">getHandle</name></name><argument_list pos:line="59" pos:column="66">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+		<return pos:line="60" pos:column="17">return;</return>
+	}</block></function><empty_stmt pos:line="61" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="63" pos:column="9">void</name></type> <name pos:line="63" pos:column="14">addBuffer</name><parameter_list pos:line="63" pos:column="23">(<param><decl><type><name pos:line="63" pos:column="24">BufferID</name></type> <name pos:line="63" pos:column="33">buffer</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="64" pos:column="9">void</name></type> <name pos:line="64" pos:column="14">closeBuffer</name><parameter_list pos:line="64" pos:column="25">(<param><decl><type><name pos:line="64" pos:column="26">BufferID</name></type> <name pos:line="64" pos:column="35">buffer</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="65" pos:column="9">void</name></type> <name pos:line="65" pos:column="14">bufferUpdated</name><parameter_list pos:line="65" pos:column="27">(<param><decl><type><name pos:line="65" pos:column="28">Buffer</name> <type:modifier pos:line="65" pos:column="35">*</type:modifier></type> <name pos:line="65" pos:column="37">buffer</name></decl></param>, <param><decl><type><name pos:line="65" pos:column="45">int</name></type> <name pos:line="65" pos:column="49">mask</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="67" pos:column="9">bool</name></type> <name pos:line="67" pos:column="14">activateBuffer</name><parameter_list pos:line="67" pos:column="28">(<param><decl><type><name pos:line="67" pos:column="29">BufferID</name></type> <name pos:line="67" pos:column="38">buffer</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="69" pos:column="9">BufferID</name></type> <name pos:line="69" pos:column="18">activeBuffer</name><parameter_list pos:line="69" pos:column="30">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="70" pos:column="9">BufferID</name></type> <name pos:line="70" pos:column="18">findBufferByName</name><parameter_list pos:line="70" pos:column="34">(<param><decl><type><specifier pos:line="70" pos:column="35">const</specifier> <name pos:line="70" pos:column="41">TCHAR</name> <type:modifier pos:line="70" pos:column="47">*</type:modifier></type> <name pos:line="70" pos:column="49">fullfilename</name></decl></param>)</parameter_list>;</function_decl>	<comment type="line" pos:line="70" pos:column="65">//-1 if not found, something else otherwise</comment>
+
+	<function_decl><type><name pos:line="72" pos:column="9">int</name></type> <name pos:line="72" pos:column="13">getIndexByBuffer</name><parameter_list pos:line="72" pos:column="29">(<param><decl><type><name pos:line="72" pos:column="30">BufferID</name></type> <name pos:line="72" pos:column="39">id</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="73" pos:column="9">BufferID</name></type> <name pos:line="73" pos:column="18">getBufferByIndex</name><parameter_list pos:line="73" pos:column="34">(<param><decl><type><name pos:line="73" pos:column="35">int</name></type> <name pos:line="73" pos:column="39">index</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="75" pos:column="9">void</name></type> <name pos:line="75" pos:column="14">setBuffer</name><parameter_list pos:line="75" pos:column="23">(<param><decl><type><name pos:line="75" pos:column="24">int</name></type> <name pos:line="75" pos:column="28">index</name></decl></param>, <param><decl><type><name pos:line="75" pos:column="35">BufferID</name></type> <name pos:line="75" pos:column="44">id</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function><type><specifier pos:line="77" pos:column="9">static</specifier> <name pos:line="77" pos:column="16">bool</name></type> <name pos:line="77" pos:column="21">setHideTabBarStatus</name><parameter_list pos:line="77" pos:column="40">(<param><decl><type><name pos:line="77" pos:column="41">bool</name></type> <name pos:line="77" pos:column="46">hideOrNot</name></decl></param>)</parameter_list> <block pos:line="77" pos:column="57">{
+		<decl_stmt><decl><type><name pos:line="78" pos:column="17">bool</name></type> <name pos:line="78" pos:column="22">temp</name> <init pos:line="78" pos:column="27">= <expr><name pos:line="78" pos:column="29">_hideTabBarStatus</name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name pos:line="79" pos:column="17">_hideTabBarStatus</name> <op:operator pos:line="79" pos:column="35">=</op:operator> <name pos:line="79" pos:column="37">hideOrNot</name></expr>;</expr_stmt>
+		<return pos:line="80" pos:column="17">return <expr><name pos:line="80" pos:column="24">temp</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="81" pos:column="10">;</empty_stmt>
+
+	<function><type><specifier pos:line="83" pos:column="9">static</specifier> <name pos:line="83" pos:column="16">bool</name></type> <name pos:line="83" pos:column="21">getHideTabBarStatus</name><parameter_list pos:line="83" pos:column="40">()</parameter_list> <block pos:line="83" pos:column="43">{
+		<return pos:line="84" pos:column="17">return <expr><name pos:line="84" pos:column="24">_hideTabBarStatus</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="85" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><specifier pos:line="87" pos:column="9">virtual</specifier> <name pos:line="87" pos:column="17">void</name></type> <name pos:line="87" pos:column="22">reSizeTo</name><parameter_list pos:line="87" pos:column="30">(<param><decl><type><name pos:line="87" pos:column="31">RECT</name> <type:modifier pos:line="87" pos:column="36">&amp;</type:modifier></type> <name pos:line="87" pos:column="38">rc</name></decl></param>)</parameter_list>;</function_decl>
+
+</public><private pos:line="89" pos:column="1">private :
+	<decl_stmt><decl><type><name pos:line="90" pos:column="9">ScintillaEditView</name> <type:modifier pos:line="90" pos:column="27">*</type:modifier></type><name pos:line="90" pos:column="28">_pView</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="91" pos:column="9">static</specifier> <name pos:line="91" pos:column="16">bool</name></type> <name pos:line="91" pos:column="21">_hideTabBarStatus</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="94" pos:column="1">#<cpp:directive pos:line="94" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="94" pos:column="8">//DOCTABVIEW_H</comment>
+</unit>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Controls\IntEditTextPreference.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name><name pos:line="20" pos:column="7">Android</name><op:operator pos:line="20" pos:column="14">.</op:operator><name pos:line="20" pos:column="15">Content</name></name>;</using>
+<using pos:line="21" pos:column="1">using <name><name pos:line="21" pos:column="7">Android</name><op:operator pos:line="21" pos:column="14">.</op:operator><name pos:line="21" pos:column="15">Preferences</name></name>;</using>
+<using pos:line="22" pos:column="1">using <name><name pos:line="22" pos:column="7">Android</name><op:operator pos:line="22" pos:column="14">.</op:operator><name pos:line="22" pos:column="15">Util</name></name>;</using>
+
+<namespace pos:line="24" pos:column="1">namespace <name><name pos:line="24" pos:column="11">StepCounter</name><op:operator pos:line="24" pos:column="22">.</op:operator><name pos:line="24" pos:column="23">Controls</name></name>
+<block pos:line="25" pos:column="1">{
+	<comment type="line" pos:line="26" pos:column="9">/// &lt;summary&gt;</comment>
+	<comment type="line" pos:line="27" pos:column="9">/// Enforces and integer be entered in the edit text preference</comment>
+	<comment type="line" pos:line="28" pos:column="9">/// &lt;/summary&gt;</comment>
+	<class><specifier pos:line="29" pos:column="9">public</specifier> class <name pos:line="29" pos:column="22">IntEditTextPreference</name> <super pos:line="29" pos:column="44">: <name pos:line="29" pos:column="46">EditTextPreference</name></super>
+	<block pos:line="30" pos:column="9">{
+		<constructor><specifier pos:line="31" pos:column="17">public</specifier> <name pos:line="31" pos:column="24">IntEditTextPreference</name> <parameter_list pos:line="31" pos:column="46">(<param><decl><type><name pos:line="31" pos:column="47">Context</name></type> <name pos:line="31" pos:column="55">context</name></decl></param>)</parameter_list>
+            <member_list pos:line="32" pos:column="13">: <call><name pos:line="32" pos:column="15">base</name> <argument_list pos:line="32" pos:column="20">(<argument><expr><name pos:line="32" pos:column="21">context</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="33" pos:column="17">{
+		}</block></constructor>
+
+		<constructor><specifier pos:line="36" pos:column="17">public</specifier> <name pos:line="36" pos:column="24">IntEditTextPreference</name> <parameter_list pos:line="36" pos:column="46">(<param><decl><type><name pos:line="36" pos:column="47">Context</name></type> <name pos:line="36" pos:column="55">context</name></decl></param>, <param><decl><type><name pos:line="36" pos:column="64">IAttributeSet</name></type> <name pos:line="36" pos:column="78">attrs</name></decl></param>)</parameter_list>
+            <member_list pos:line="37" pos:column="13">: <call><name pos:line="37" pos:column="15">base</name> <argument_list pos:line="37" pos:column="20">(<argument><expr><name pos:line="37" pos:column="21">context</name></expr></argument>, <argument><expr><name pos:line="37" pos:column="30">attrs</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="38" pos:column="17">{
+
+		}</block></constructor>
+
+		<constructor><specifier pos:line="42" pos:column="17">public</specifier> <name pos:line="42" pos:column="24">IntEditTextPreference</name> <parameter_list pos:line="42" pos:column="46">(<param><decl><type><name pos:line="42" pos:column="47">Context</name></type> <name pos:line="42" pos:column="55">context</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="64">IAttributeSet</name></type> <name pos:line="42" pos:column="78">attrs</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="85">int</name></type> <name pos:line="42" pos:column="89">defStyle</name></decl></param>)</parameter_list>
+            <member_list pos:line="43" pos:column="13">: <call><name pos:line="43" pos:column="15">base</name> <argument_list pos:line="43" pos:column="20">(<argument><expr><name pos:line="43" pos:column="21">context</name></expr></argument>, <argument><expr><name pos:line="43" pos:column="30">attrs</name></expr></argument>, <argument><expr><name pos:line="43" pos:column="37">defStyle</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="44" pos:column="17">{
+		}</block></constructor>
+
+		<function><type><specifier pos:line="47" pos:column="17">protected</specifier> <specifier pos:line="47" pos:column="27">override</specifier> <name pos:line="47" pos:column="36">string</name></type> <name pos:line="47" pos:column="43">GetPersistedString</name> <parameter_list pos:line="47" pos:column="62">(<param><decl><type><name pos:line="47" pos:column="63">string</name></type> <name pos:line="47" pos:column="70">defaultReturnValue</name></decl></param>)</parameter_list>
+		<block pos:line="48" pos:column="17">{
+
+			<return pos:line="50" pos:column="25">return <expr><call><name pos:line="50" pos:column="32">GetPersistedInt</name> <argument_list pos:line="50" pos:column="48">(<argument><expr><lit:literal type="number" pos:line="50" pos:column="49">1</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="50" pos:column="51">.</op:operator><call><name pos:line="50" pos:column="52">ToString</name> <argument_list pos:line="50" pos:column="61">()</argument_list></call></expr>;</return>
+		}</block></function>
+
+		<function><type><specifier pos:line="53" pos:column="17">protected</specifier> <specifier pos:line="53" pos:column="27">override</specifier> <name pos:line="53" pos:column="36">bool</name></type> <name pos:line="53" pos:column="41">PersistString</name> <parameter_list pos:line="53" pos:column="55">(<param><decl><type><name pos:line="53" pos:column="56">string</name></type> <name pos:line="53" pos:column="63">value</name></decl></param>)</parameter_list>
+		<block pos:line="54" pos:column="17">{
+			<decl_stmt><decl><type><name pos:line="55" pos:column="25">int</name></type> <name pos:line="55" pos:column="29">persistValue</name></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name pos:line="56" pos:column="25">int</name><op:operator pos:line="56" pos:column="28">.</op:operator><name pos:line="56" pos:column="29">TryParse</name></name> <argument_list pos:line="56" pos:column="38">(<argument><expr><name pos:line="56" pos:column="39">value</name></expr></argument>, <argument><expr pos:line="56" pos:column="46">out <name pos:line="56" pos:column="50">persistValue</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<return pos:line="58" pos:column="25">return <expr><call><name pos:line="58" pos:column="32">PersistInt</name> <argument_list pos:line="58" pos:column="43">(<argument><expr><name pos:line="58" pos:column="44">persistValue</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+	}</block></class>
+}</block></namespace></unit>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\Decoration.h" pos:tabs="8"><comment type="block" format="doxygen" pos:line="1" pos:column="1">/** @file Decoration.h
+ ** Visual elements added over text.
+ **/</comment>
+<comment type="line" pos:line="4" pos:column="1">// Copyright 1998-2007 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="5" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="7" pos:column="1">#<cpp:directive pos:line="7" pos:column="2">ifndef</cpp:directive> <name pos:line="7" pos:column="9">DECORATION_H</name></cpp:ifndef>
+<cpp:define pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="8" pos:column="9">DECORATION_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">ifdef</cpp:directive> <name pos:line="10" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="11" pos:column="1">namespace <name pos:line="11" pos:column="11">Scintilla</name> <block pos:line="11" pos:column="21">{
+<cpp:endif pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<class pos:line="14" pos:column="1">class <name pos:line="14" pos:column="7">Decoration</name> <block pos:line="14" pos:column="18">{<private type="default" pos:line="14" pos:column="19">
+</private><public pos:line="15" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="16" pos:column="9">Decoration</name> <type:modifier pos:line="16" pos:column="20">*</type:modifier></type><name pos:line="16" pos:column="21">next</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="17" pos:column="9">RunStyles</name></type> <name pos:line="17" pos:column="19">rs</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="18" pos:column="9">int</name></type> <name pos:line="18" pos:column="13">indicator</name></decl>;</decl_stmt>
+
+	<constructor_decl><name pos:line="20" pos:column="9">Decoration</name><parameter_list pos:line="20" pos:column="19">(<param><decl><type><name pos:line="20" pos:column="20">int</name></type> <name pos:line="20" pos:column="24">indicator_</name></decl></param>)</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="21" pos:column="9">~<name pos:line="21" pos:column="10">Decoration</name></name><parameter_list pos:line="21" pos:column="20">()</parameter_list>;</destructor_decl>
+
+	<function_decl><type><name pos:line="23" pos:column="9">bool</name></type> <name pos:line="23" pos:column="14">Empty</name><parameter_list pos:line="23" pos:column="19">()</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<class pos:line="26" pos:column="1">class <name pos:line="26" pos:column="7">DecorationList</name> <block pos:line="26" pos:column="22">{<private type="default" pos:line="26" pos:column="23">
+	<decl_stmt><decl><type><name pos:line="27" pos:column="9">int</name></type> <name pos:line="27" pos:column="13">currentIndicator</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="28" pos:column="9">int</name></type> <name pos:line="28" pos:column="13">currentValue</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="29" pos:column="9">Decoration</name> <type:modifier pos:line="29" pos:column="20">*</type:modifier></type><name pos:line="29" pos:column="21">current</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="30" pos:column="9">int</name></type> <name pos:line="30" pos:column="13">lengthDocument</name></decl>;</decl_stmt>
+	<function_decl><type><name pos:line="31" pos:column="9">Decoration</name> <type:modifier pos:line="31" pos:column="20">*</type:modifier></type><name pos:line="31" pos:column="21">DecorationFromIndicator</name><parameter_list pos:line="31" pos:column="44">(<param><decl><type><name pos:line="31" pos:column="45">int</name></type> <name pos:line="31" pos:column="49">indicator</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="32" pos:column="9">Decoration</name> <type:modifier pos:line="32" pos:column="20">*</type:modifier></type><name pos:line="32" pos:column="21">Create</name><parameter_list pos:line="32" pos:column="27">(<param><decl><type><name pos:line="32" pos:column="28">int</name></type> <name pos:line="32" pos:column="32">indicator</name></decl></param>, <param><decl><type><name pos:line="32" pos:column="43">int</name></type> <name pos:line="32" pos:column="47">length</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="33" pos:column="9">void</name></type> <name pos:line="33" pos:column="14">Delete</name><parameter_list pos:line="33" pos:column="20">(<param><decl><type><name pos:line="33" pos:column="21">int</name></type> <name pos:line="33" pos:column="25">indicator</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="34" pos:column="9">void</name></type> <name pos:line="34" pos:column="14">DeleteAnyEmpty</name><parameter_list pos:line="34" pos:column="28">()</parameter_list>;</function_decl>
+</private><public pos:line="35" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="36" pos:column="9">Decoration</name> <type:modifier pos:line="36" pos:column="20">*</type:modifier></type><name pos:line="36" pos:column="21">root</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="37" pos:column="9">bool</name></type> <name pos:line="37" pos:column="14">clickNotified</name></decl>;</decl_stmt>
+
+	<constructor_decl><name pos:line="39" pos:column="9">DecorationList</name><parameter_list pos:line="39" pos:column="23">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="40" pos:column="9">~<name pos:line="40" pos:column="10">DecorationList</name></name><parameter_list pos:line="40" pos:column="24">()</parameter_list>;</destructor_decl>
+
+	<function_decl><type><name pos:line="42" pos:column="9">void</name></type> <name pos:line="42" pos:column="14">SetCurrentIndicator</name><parameter_list pos:line="42" pos:column="33">(<param><decl><type><name pos:line="42" pos:column="34">int</name></type> <name pos:line="42" pos:column="38">indicator</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="43" pos:column="9">int</name></type> <name pos:line="43" pos:column="13">GetCurrentIndicator</name><parameter_list pos:line="43" pos:column="32">()</parameter_list> <specifier pos:line="43" pos:column="35">const</specifier> <block pos:line="43" pos:column="41">{ <return pos:line="43" pos:column="43">return <expr><name pos:line="43" pos:column="50">currentIndicator</name></expr>;</return> }</block></function>
+
+	<function_decl><type><name pos:line="45" pos:column="9">void</name></type> <name pos:line="45" pos:column="14">SetCurrentValue</name><parameter_list pos:line="45" pos:column="29">(<param><decl><type><name pos:line="45" pos:column="30">int</name></type> <name pos:line="45" pos:column="34">value</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="46" pos:column="9">int</name></type> <name pos:line="46" pos:column="13">GetCurrentValue</name><parameter_list pos:line="46" pos:column="28">()</parameter_list> <specifier pos:line="46" pos:column="31">const</specifier> <block pos:line="46" pos:column="37">{ <return pos:line="46" pos:column="39">return <expr><name pos:line="46" pos:column="46">currentValue</name></expr>;</return> }</block></function>
+
+	<comment type="line" pos:line="48" pos:column="9">// Returns true if some values may have changed</comment>
+	<function_decl><type><name pos:line="49" pos:column="9">bool</name></type> <name pos:line="49" pos:column="14">FillRange</name><parameter_list pos:line="49" pos:column="23">(<param><decl><type><name pos:line="49" pos:column="24">int</name> <type:modifier pos:line="49" pos:column="28">&amp;</type:modifier></type><name pos:line="49" pos:column="29">position</name></decl></param>, <param><decl><type><name pos:line="49" pos:column="39">int</name></type> <name pos:line="49" pos:column="43">value</name></decl></param>, <param><decl><type><name pos:line="49" pos:column="50">int</name> <type:modifier pos:line="49" pos:column="54">&amp;</type:modifier></type><name pos:line="49" pos:column="55">fillLength</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="51" pos:column="9">void</name></type> <name pos:line="51" pos:column="14">InsertSpace</name><parameter_list pos:line="51" pos:column="25">(<param><decl><type><name pos:line="51" pos:column="26">int</name></type> <name pos:line="51" pos:column="30">position</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="40">int</name></type> <name pos:line="51" pos:column="44">insertLength</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="52" pos:column="9">void</name></type> <name pos:line="52" pos:column="14">DeleteRange</name><parameter_list pos:line="52" pos:column="25">(<param><decl><type><name pos:line="52" pos:column="26">int</name></type> <name pos:line="52" pos:column="30">position</name></decl></param>, <param><decl><type><name pos:line="52" pos:column="40">int</name></type> <name pos:line="52" pos:column="44">deleteLength</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="54" pos:column="9">int</name></type> <name pos:line="54" pos:column="13">AllOnFor</name><parameter_list pos:line="54" pos:column="21">(<param><decl><type><name pos:line="54" pos:column="22">int</name></type> <name pos:line="54" pos:column="26">position</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="55" pos:column="9">int</name></type> <name pos:line="55" pos:column="13">ValueAt</name><parameter_list pos:line="55" pos:column="20">(<param><decl><type><name pos:line="55" pos:column="21">int</name></type> <name pos:line="55" pos:column="25">indicator</name></decl></param>, <param><decl><type><name pos:line="55" pos:column="36">int</name></type> <name pos:line="55" pos:column="40">position</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="56" pos:column="9">int</name></type> <name pos:line="56" pos:column="13">Start</name><parameter_list pos:line="56" pos:column="18">(<param><decl><type><name pos:line="56" pos:column="19">int</name></type> <name pos:line="56" pos:column="23">indicator</name></decl></param>, <param><decl><type><name pos:line="56" pos:column="34">int</name></type> <name pos:line="56" pos:column="38">position</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="57" pos:column="9">int</name></type> <name pos:line="57" pos:column="13">End</name><parameter_list pos:line="57" pos:column="16">(<param><decl><type><name pos:line="57" pos:column="17">int</name></type> <name pos:line="57" pos:column="21">indicator</name></decl></param>, <param><decl><type><name pos:line="57" pos:column="32">int</name></type> <name pos:line="57" pos:column="36">position</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="60" pos:column="1">#<cpp:directive pos:line="60" pos:column="2">ifdef</cpp:directive> <name pos:line="60" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="62" pos:column="1">#<cpp:directive pos:line="62" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="64" pos:column="1">#<cpp:directive pos:line="64" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

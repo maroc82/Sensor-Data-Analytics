@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Database\StepEntryRepositoryADO.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name pos:line="20" pos:column="7">System</name>;</using>
+<using pos:line="21" pos:column="1">using <name><name pos:line="21" pos:column="7">System</name><op:operator pos:line="21" pos:column="13">.</op:operator><name pos:line="21" pos:column="14">Collections</name><op:operator pos:line="21" pos:column="25">.</op:operator><name pos:line="21" pos:column="26">Generic</name></name>;</using>
+<using pos:line="22" pos:column="1">using <name><name pos:line="22" pos:column="7">System</name><op:operator pos:line="22" pos:column="13">.</op:operator><name pos:line="22" pos:column="14">IO</name></name>;</using>
+
+<namespace pos:line="24" pos:column="1">namespace <name><name pos:line="24" pos:column="11">StepCounter</name><op:operator pos:line="24" pos:column="22">.</op:operator><name pos:line="24" pos:column="23">Database</name></name> <block pos:line="24" pos:column="32">{
+	<class><specifier pos:line="25" pos:column="9">public</specifier> class <name pos:line="25" pos:column="22">StepEntryRepositoryADO</name> <block pos:line="25" pos:column="45">{
+		<decl_stmt><decl><type><name pos:line="26" pos:column="17">StepEntryDatabase</name></type> <name pos:line="26" pos:column="35">db</name> <init pos:line="26" pos:column="38">= <expr><name pos:line="26" pos:column="40">null</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier pos:line="27" pos:column="17">protected</specifier> <specifier pos:line="27" pos:column="27">static</specifier> <name pos:line="27" pos:column="34">string</name></type> <name pos:line="27" pos:column="41">dbLocation</name></decl>;</decl_stmt>		
+		<decl_stmt><decl><type><specifier pos:line="28" pos:column="17">protected</specifier> <specifier pos:line="28" pos:column="27">static</specifier> <name pos:line="28" pos:column="34">StepEntryRepositoryADO</name></type> <name pos:line="28" pos:column="57">me</name></decl>;</decl_stmt>		
+
+		<constructor><specifier pos:line="30" pos:column="17">static</specifier> <name pos:line="30" pos:column="24">StepEntryRepositoryADO</name> <parameter_list pos:line="30" pos:column="47">()</parameter_list>
+		<block pos:line="31" pos:column="17">{
+			<expr_stmt><expr><name pos:line="32" pos:column="25">me</name> <op:operator pos:line="32" pos:column="28">=</op:operator> <op:operator pos:line="32" pos:column="30">new</op:operator> <call><name pos:line="32" pos:column="34">StepEntryRepositoryADO</name><argument_list pos:line="32" pos:column="56">()</argument_list></call></expr>;</expr_stmt>
+		}</block></constructor>
+
+		<constructor><specifier pos:line="35" pos:column="17">protected</specifier> <name pos:line="35" pos:column="27">StepEntryRepositoryADO</name> <parameter_list pos:line="35" pos:column="50">()</parameter_list>
+		<block pos:line="36" pos:column="17">{
+			<comment type="line" pos:line="37" pos:column="25">// set the db location</comment>
+			<expr_stmt><expr><name pos:line="38" pos:column="25">dbLocation</name> <op:operator pos:line="38" pos:column="36">=</op:operator> <name pos:line="38" pos:column="38">DatabaseFilePath</name></expr>;</expr_stmt>
+
+			<comment type="line" pos:line="40" pos:column="25">// instantiate the database	</comment>
+			<expr_stmt><expr><name pos:line="41" pos:column="25">db</name> <op:operator pos:line="41" pos:column="28">=</op:operator> <op:operator pos:line="41" pos:column="30">new</op:operator> <call><name pos:line="41" pos:column="34">StepEntryDatabase</name><argument_list pos:line="41" pos:column="51">(<argument><expr><name pos:line="41" pos:column="52">dbLocation</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></constructor>
+
+		<decl_stmt><decl><type><specifier pos:line="44" pos:column="17">public</specifier> <specifier pos:line="44" pos:column="24">static</specifier> <name pos:line="44" pos:column="31">string</name></type> <name pos:line="44" pos:column="38">DatabaseFilePath</name> <block pos:line="44" pos:column="55">{
+			<function><name pos:line="45" pos:column="25">get</name> <block pos:line="45" pos:column="29">{ 
+				<decl_stmt><decl><type><name pos:line="46" pos:column="33">var</name></type> <name pos:line="46" pos:column="37">sqliteFilename</name> <init pos:line="46" pos:column="52">= <expr><lit:literal type="string" pos:line="46" pos:column="54">"MyStepCounter.db3"</lit:literal></expr></init></decl>;</decl_stmt>
+				<cpp:if pos:line="47" pos:column="33">#<cpp:directive pos:line="47" pos:column="34">if</cpp:directive> <expr><name pos:line="47" pos:column="37">NETFX_CORE</name></expr></cpp:if>
+				<decl_stmt><decl><type><name pos:line="48" pos:column="33">var</name></type> <name pos:line="48" pos:column="37">path</name> <init pos:line="48" pos:column="42">= <expr><call><name><name pos:line="48" pos:column="44">Path</name><op:operator pos:line="48" pos:column="48">.</op:operator><name pos:line="48" pos:column="49">Combine</name></name><argument_list pos:line="48" pos:column="56">(<argument><expr><name><name pos:line="48" pos:column="57">Windows</name><op:operator pos:line="48" pos:column="64">.</op:operator><name pos:line="48" pos:column="65">Storage</name><op:operator pos:line="48" pos:column="72">.</op:operator><name pos:line="48" pos:column="73">ApplicationData</name><op:operator pos:line="48" pos:column="88">.</op:operator><name pos:line="48" pos:column="89">Current</name><op:operator pos:line="48" pos:column="96">.</op:operator><name pos:line="48" pos:column="97">LocalFolder</name><op:operator pos:line="48" pos:column="108">.</op:operator><name pos:line="48" pos:column="109">Path</name></name></expr></argument>, <argument><expr><name pos:line="48" pos:column="115">sqliteFilename</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<cpp:else pos:line="49" pos:column="33">#<cpp:directive pos:line="49" pos:column="34">else</cpp:directive></cpp:else>
+
+				<cpp:if pos:line="51" pos:column="33">#<cpp:directive pos:line="51" pos:column="34">if</cpp:directive> <expr><name pos:line="51" pos:column="37">SILVERLIGHT</name></expr></cpp:if>
+				<comment type="line" pos:line="52" pos:column="33">// Windows Phone expects a local path, not absolute</comment>
+				<decl_stmt><decl><type><name pos:line="53" pos:column="33">var</name></type> <name pos:line="53" pos:column="37">path</name> <init pos:line="53" pos:column="42">= <expr><name pos:line="53" pos:column="44">sqliteFilename</name></expr></init></decl>;</decl_stmt>
+				<cpp:else pos:line="54" pos:column="33">#<cpp:directive pos:line="54" pos:column="34">else</cpp:directive></cpp:else>
+
+				<cpp:if pos:line="56" pos:column="33">#<cpp:directive pos:line="56" pos:column="34">if</cpp:directive> <expr><name pos:line="56" pos:column="37">__ANDROID__</name></expr></cpp:if>
+				<comment type="line" pos:line="57" pos:column="33">// Just use whatever directory SpecialFolder.Personal returns</comment>
+				<decl_stmt><decl><type><name pos:line="58" pos:column="33">string</name></type> <name pos:line="58" pos:column="40">libraryPath</name> <init pos:line="58" pos:column="52">= <expr><call><name><name pos:line="58" pos:column="54">Environment</name><op:operator pos:line="58" pos:column="65">.</op:operator><name pos:line="58" pos:column="66">GetFolderPath</name></name><argument_list pos:line="58" pos:column="79">(<argument><expr><name><name pos:line="58" pos:column="80">Environment</name><op:operator pos:line="58" pos:column="91">.</op:operator><name pos:line="58" pos:column="92">SpecialFolder</name><op:operator pos:line="58" pos:column="105">.</op:operator><name pos:line="58" pos:column="106">Personal</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<cpp:else pos:line="59" pos:column="33">#<cpp:directive pos:line="59" pos:column="34">else</cpp:directive></cpp:else>
+				<comment type="line" pos:line="60" pos:column="33">// we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms</comment>
+				<comment type="line" pos:line="61" pos:column="33">// (they don't want non-user-generated data in Documents)</comment>
+				<decl_stmt><decl><type><name pos:line="62" pos:column="33">string</name></type> <name pos:line="62" pos:column="40">documentsPath</name> <init pos:line="62" pos:column="54">= <expr><call><name><name pos:line="62" pos:column="56">Environment</name><op:operator pos:line="62" pos:column="67">.</op:operator><name pos:line="62" pos:column="68">GetFolderPath</name></name> <argument_list pos:line="62" pos:column="82">(<argument><expr><name><name pos:line="62" pos:column="83">Environment</name><op:operator pos:line="62" pos:column="94">.</op:operator><name pos:line="62" pos:column="95">SpecialFolder</name><op:operator pos:line="62" pos:column="108">.</op:operator><name pos:line="62" pos:column="109">Personal</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> <comment type="line" pos:line="62" pos:column="120">// Documents folder</comment>
+				<decl_stmt><decl><type><name pos:line="63" pos:column="33">string</name></type> <name pos:line="63" pos:column="40">libraryPath</name> <init pos:line="63" pos:column="52">= <expr><call><name><name pos:line="63" pos:column="54">Path</name><op:operator pos:line="63" pos:column="58">.</op:operator><name pos:line="63" pos:column="59">Combine</name></name> <argument_list pos:line="63" pos:column="67">(<argument><expr><name pos:line="63" pos:column="68">documentsPath</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="63" pos:column="83">".."</lit:literal></expr></argument>, <argument><expr><lit:literal type="string" pos:line="63" pos:column="89">"Library"</lit:literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> <comment type="line" pos:line="63" pos:column="101">// Library folder</comment>
+				<cpp:endif pos:line="64" pos:column="33">#<cpp:directive pos:line="64" pos:column="34">endif</cpp:directive></cpp:endif>
+				<decl_stmt><decl><type><name pos:line="65" pos:column="33">var</name></type> <name pos:line="65" pos:column="37">path</name> <init pos:line="65" pos:column="42">= <expr><call><name><name pos:line="65" pos:column="44">Path</name><op:operator pos:line="65" pos:column="48">.</op:operator><name pos:line="65" pos:column="49">Combine</name></name> <argument_list pos:line="65" pos:column="57">(<argument><expr><name pos:line="65" pos:column="58">libraryPath</name></expr></argument>, <argument><expr><name pos:line="65" pos:column="71">sqliteFilename</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<cpp:endif pos:line="66" pos:column="33">#<cpp:directive pos:line="66" pos:column="34">endif</cpp:directive></cpp:endif>
+
+				<cpp:endif pos:line="68" pos:column="33">#<cpp:directive pos:line="68" pos:column="34">endif</cpp:directive></cpp:endif>
+				<return pos:line="69" pos:column="33">return <expr><name pos:line="69" pos:column="40">path</name></expr>;</return>	
+			}</block></function>
+		}</block></decl></decl_stmt>
+
+		<function><type><specifier pos:line="73" pos:column="17">public</specifier> <specifier pos:line="73" pos:column="24">static</specifier> <name pos:line="73" pos:column="31">StepEntry</name></type> <name pos:line="73" pos:column="41">GetStepEntry</name><parameter_list pos:line="73" pos:column="53">(<param><decl><type><name pos:line="73" pos:column="54">DateTime</name></type> <name pos:line="73" pos:column="63">time</name></decl></param>)</parameter_list>
+		<block pos:line="74" pos:column="17">{
+			<return pos:line="75" pos:column="25">return <expr><call><name><name pos:line="75" pos:column="32">me</name><op:operator pos:line="75" pos:column="34">.</op:operator><name pos:line="75" pos:column="35">db</name><op:operator pos:line="75" pos:column="37">.</op:operator><name pos:line="75" pos:column="38">GetItem</name></name><argument_list pos:line="75" pos:column="45">(<argument><expr><name pos:line="75" pos:column="46">time</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+
+		<function><type><specifier pos:line="78" pos:column="17">public</specifier> <specifier pos:line="78" pos:column="24">static</specifier> <name><name pos:line="78" pos:column="31">IEnumerable</name><argument_list pos:line="78" pos:column="42">&lt;<argument><name pos:line="78" pos:column="43">StepEntry</name></argument>&gt;</argument_list></name></type> <name pos:line="78" pos:column="54">GetStepEntries</name> <parameter_list pos:line="78" pos:column="69">()</parameter_list>
+		<block pos:line="79" pos:column="17">{
+			<return pos:line="80" pos:column="25">return <expr><call><name><name pos:line="80" pos:column="32">me</name><op:operator pos:line="80" pos:column="34">.</op:operator><name pos:line="80" pos:column="35">db</name><op:operator pos:line="80" pos:column="37">.</op:operator><name pos:line="80" pos:column="38">GetItems</name></name><argument_list pos:line="80" pos:column="46">(<argument><expr><lit:literal type="number" pos:line="80" pos:column="47">31</lit:literal></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+
+		<function><type><specifier pos:line="83" pos:column="17">public</specifier> <specifier pos:line="83" pos:column="24">static</specifier> <name pos:line="83" pos:column="31">int</name></type> <name pos:line="83" pos:column="35">SaveStepEntry</name> <parameter_list pos:line="83" pos:column="49">(<param><decl><type><name pos:line="83" pos:column="50">StepEntry</name></type> <name pos:line="83" pos:column="60">item</name></decl></param>)</parameter_list>
+		<block pos:line="84" pos:column="17">{
+			<return pos:line="85" pos:column="25">return <expr><call><name><name pos:line="85" pos:column="32">me</name><op:operator pos:line="85" pos:column="34">.</op:operator><name pos:line="85" pos:column="35">db</name><op:operator pos:line="85" pos:column="37">.</op:operator><name pos:line="85" pos:column="38">SaveItem</name></name><argument_list pos:line="85" pos:column="46">(<argument><expr><name pos:line="85" pos:column="47">item</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+
+		<function><type><specifier pos:line="88" pos:column="17">public</specifier> <specifier pos:line="88" pos:column="24">static</specifier> <name pos:line="88" pos:column="31">int</name></type> <name pos:line="88" pos:column="35">DeleteStepEntry</name><parameter_list pos:line="88" pos:column="50">(<param><decl><type><name pos:line="88" pos:column="51">int</name></type> <name pos:line="88" pos:column="55">id</name></decl></param>)</parameter_list>
+		<block pos:line="89" pos:column="17">{
+			<return pos:line="90" pos:column="25">return <expr><call><name><name pos:line="90" pos:column="32">me</name><op:operator pos:line="90" pos:column="34">.</op:operator><name pos:line="90" pos:column="35">db</name><op:operator pos:line="90" pos:column="37">.</op:operator><name pos:line="90" pos:column="38">DeleteItem</name></name><argument_list pos:line="90" pos:column="48">(<argument><expr><name pos:line="90" pos:column="49">id</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+	}</block></class>
+}</block></namespace>
+
+</unit>

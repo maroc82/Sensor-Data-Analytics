@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\MISC\Exception\MiniDumper.cpp" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">//Adapted from http://www.codeproject.com/KB/debug/postmortemdebug_standalone1.aspx#_Reading_a_Minidump_with%20Visual%20Stud</comment>
+<comment type="line" pos:line="2" pos:column="1">//Modified for use by Npp</comment>
+
+<comment type="line" pos:line="4" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">//</comment>
+<comment type="line" pos:line="7" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="8" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="9" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="10" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="11" pos:column="1">//</comment>
+<comment type="line" pos:line="12" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="13" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="14" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="15" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="16" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="17" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="18" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="19" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="20" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="21" pos:column="1">//</comment>
+<comment type="line" pos:line="22" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="23" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="24" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="25" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="26" pos:column="1">//</comment>
+<comment type="line" pos:line="27" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="28" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="29" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:include pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="32" pos:column="10">"precompiledHeaders.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"MiniDumper.h"</lit:literal></cpp:file></cpp:include>
+
+<decl_stmt><decl><type><name pos:line="35" pos:column="1">LPCTSTR</name></type> <name pos:line="35" pos:column="9">msgTitle</name> <init pos:line="35" pos:column="18">= <expr><call><name pos:line="35" pos:column="20">TEXT</name><argument_list pos:line="35" pos:column="24">(<argument><expr><lit:literal type="string" pos:line="35" pos:column="25">"Notepad++ crash analysis"</lit:literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+<constructor><name><name pos:line="37" pos:column="1">MiniDumper</name><op:operator pos:line="37" pos:column="11">::</op:operator><name pos:line="37" pos:column="13">MiniDumper</name></name><parameter_list pos:line="37" pos:column="23">()</parameter_list>
+<block pos:line="38" pos:column="1">{
+}</block></constructor>
+
+<function><type><name pos:line="41" pos:column="1">bool</name></type> <name><name pos:line="41" pos:column="6">MiniDumper</name><op:operator pos:line="41" pos:column="16">::</op:operator><name pos:line="41" pos:column="18">writeDump</name></name><parameter_list pos:line="41" pos:column="27">(<param><decl><type><name pos:line="41" pos:column="28">EXCEPTION_POINTERS</name> <type:modifier pos:line="41" pos:column="47">*</type:modifier></type> <name pos:line="41" pos:column="49">pExceptionInfo</name></decl></param>)</parameter_list>
+<block pos:line="42" pos:column="1">{
+	<decl_stmt><decl><type><name pos:line="43" pos:column="9">TCHAR</name></type> <name><name pos:line="43" pos:column="15">szDumpPath</name><index pos:line="43" pos:column="25">[<expr><name pos:line="43" pos:column="26">MAX_PATH</name></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="44" pos:column="9">TCHAR</name></type> <name><name pos:line="44" pos:column="15">szScratch</name><index pos:line="44" pos:column="24">[<expr><name pos:line="44" pos:column="25">MAX_PATH</name></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="45" pos:column="9">LPCTSTR</name></type> <name pos:line="45" pos:column="17">szResult</name> <init pos:line="45" pos:column="26">= <expr><name pos:line="45" pos:column="28">NULL</name></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="46" pos:column="9">bool</name></type> <name pos:line="46" pos:column="14">retval</name> <init pos:line="46" pos:column="21">= <expr><lit:literal type="boolean" pos:line="46" pos:column="23">false</lit:literal></expr></init></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="48" pos:column="9">HMODULE</name></type> <name pos:line="48" pos:column="17">hDll</name> <init pos:line="48" pos:column="22">= <expr><call><name><op:operator pos:line="48" pos:column="24">::</op:operator><name pos:line="48" pos:column="26">LoadLibrary</name></name><argument_list pos:line="48" pos:column="37">( <argument><expr><call><name pos:line="48" pos:column="39">TEXT</name><argument_list pos:line="48" pos:column="43">(<argument><expr><lit:literal type="string" pos:line="48" pos:column="44">"DBGHELP.DLL"</lit:literal></expr></argument>)</argument_list></call></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>	<comment type="line" pos:line="48" pos:column="65">//that wont work on older windows version than XP, #care :)</comment>
+
+	<if pos:line="50" pos:column="9">if <condition pos:line="50" pos:column="12">(<expr><name pos:line="50" pos:column="13">hDll</name></expr>)</condition><then pos:line="50" pos:column="18">
+	<block pos:line="51" pos:column="9">{
+		<decl_stmt><decl><type><name pos:line="52" pos:column="17">MINIDUMPWRITEDUMP</name></type> <name pos:line="52" pos:column="35">pDump</name> <init pos:line="52" pos:column="41">= <expr><op:operator pos:line="52" pos:column="43">(</op:operator><name pos:line="52" pos:column="44">MINIDUMPWRITEDUMP</name><op:operator pos:line="52" pos:column="61">)</op:operator><call><name><op:operator pos:line="52" pos:column="62">::</op:operator><name pos:line="52" pos:column="64">GetProcAddress</name></name><argument_list pos:line="52" pos:column="78">( <argument><expr><name pos:line="52" pos:column="80">hDll</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="52" pos:column="86">"MiniDumpWriteDump"</lit:literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if pos:line="53" pos:column="17">if <condition pos:line="53" pos:column="20">(<expr><name pos:line="53" pos:column="21">pDump</name></expr>)</condition><then pos:line="53" pos:column="27">
+		<block pos:line="54" pos:column="17">{
+			<expr_stmt><expr><call><name><op:operator pos:line="55" pos:column="25">::</op:operator><name pos:line="55" pos:column="27">GetModuleFileName</name></name><argument_list pos:line="55" pos:column="44">(<argument><expr><name pos:line="55" pos:column="45">NULL</name></expr></argument>, <argument><expr><name pos:line="55" pos:column="51">szDumpPath</name></expr></argument>, <argument><expr><name pos:line="55" pos:column="63">MAX_PATH</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><op:operator pos:line="56" pos:column="25">::</op:operator><name pos:line="56" pos:column="27">PathRemoveFileSpec</name></name><argument_list pos:line="56" pos:column="45">(<argument><expr><name pos:line="56" pos:column="46">szDumpPath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name pos:line="57" pos:column="25">lstrcat</name><argument_list pos:line="57" pos:column="32">(<argument><expr><name pos:line="57" pos:column="33">szDumpPath</name></expr></argument>, <argument><expr><call><name pos:line="57" pos:column="45">TEXT</name><argument_list pos:line="57" pos:column="49">(<argument><expr><lit:literal type="string" pos:line="57" pos:column="50">"\\NppDump.dmp"</lit:literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<comment type="line" pos:line="59" pos:column="25">// ask the user if they want to save a dump file</comment>
+			<decl_stmt><decl><type><name pos:line="60" pos:column="25">int</name></type> <name pos:line="60" pos:column="29">msgret</name> <init pos:line="60" pos:column="36">= <expr><call><name><op:operator pos:line="60" pos:column="38">::</op:operator><name pos:line="60" pos:column="40">MessageBox</name></name><argument_list pos:line="60" pos:column="50">(<argument><expr><name pos:line="60" pos:column="51">NULL</name></expr></argument>, <argument><expr><call><name pos:line="60" pos:column="57">TEXT</name><argument_list pos:line="60" pos:column="61">(<argument><expr><lit:literal type="string" pos:line="60" pos:column="62">"Do you want to save a dump file?\r\nDoing so can aid in developing Notepad++."</lit:literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name pos:line="60" pos:column="144">msgTitle</name></expr></argument>, <argument><expr><name pos:line="60" pos:column="154">MB_YESNO</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if pos:line="61" pos:column="25">if <condition pos:line="61" pos:column="28">(<expr><name pos:line="61" pos:column="29">msgret</name> <op:operator pos:line="61" pos:column="36">==</op:operator> <name pos:line="61" pos:column="39">IDYES</name></expr>)</condition><then pos:line="61" pos:column="45">
+			<block pos:line="62" pos:column="25">{
+				<comment type="line" pos:line="63" pos:column="33">// create the file</comment>
+				<decl_stmt><decl><type><name pos:line="64" pos:column="33">HANDLE</name></type> <name pos:line="64" pos:column="40">hFile</name> <init pos:line="64" pos:column="46">= <expr><call><name><op:operator pos:line="64" pos:column="48">::</op:operator><name pos:line="64" pos:column="50">CreateFile</name></name><argument_list pos:line="64" pos:column="60">( <argument><expr><name pos:line="64" pos:column="62">szDumpPath</name></expr></argument>, <argument><expr><name pos:line="64" pos:column="74">GENERIC_WRITE</name></expr></argument>, <argument><expr><name pos:line="64" pos:column="89">FILE_SHARE_WRITE</name></expr></argument>, <argument><expr><name pos:line="64" pos:column="107">NULL</name></expr></argument>, <argument><expr><name pos:line="64" pos:column="113">CREATE_ALWAYS</name></expr></argument>,
+											<argument><expr><name pos:line="65" pos:column="89">FILE_ATTRIBUTE_NORMAL</name></expr></argument>, <argument><expr><name pos:line="65" pos:column="112">NULL</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+				<if pos:line="67" pos:column="33">if <condition pos:line="67" pos:column="36">(<expr><name pos:line="67" pos:column="37">hFile</name><op:operator pos:line="67" pos:column="42">!=</op:operator><name pos:line="67" pos:column="44">INVALID_HANDLE_VALUE</name></expr>)</condition><then pos:line="67" pos:column="65">
+				<block pos:line="68" pos:column="33">{
+					<decl_stmt><decl><type><name pos:line="69" pos:column="41">_MINIDUMP_EXCEPTION_INFORMATION</name></type> <name pos:line="69" pos:column="73">ExInfo</name></decl>;</decl_stmt>
+
+					<expr_stmt><expr><name><name pos:line="71" pos:column="41">ExInfo</name><op:operator pos:line="71" pos:column="47">.</op:operator><name pos:line="71" pos:column="48">ThreadId</name></name> <op:operator pos:line="71" pos:column="57">=</op:operator> <call><name><op:operator pos:line="71" pos:column="59">::</op:operator><name pos:line="71" pos:column="61">GetCurrentThreadId</name></name><argument_list pos:line="71" pos:column="79">()</argument_list></call></expr>;</expr_stmt>
+					<expr_stmt><expr><name><name pos:line="72" pos:column="41">ExInfo</name><op:operator pos:line="72" pos:column="47">.</op:operator><name pos:line="72" pos:column="48">ExceptionPointers</name></name> <op:operator pos:line="72" pos:column="66">=</op:operator> <name pos:line="72" pos:column="68">pExceptionInfo</name></expr>;</expr_stmt>
+					<expr_stmt><expr><name><name pos:line="73" pos:column="41">ExInfo</name><op:operator pos:line="73" pos:column="47">.</op:operator><name pos:line="73" pos:column="48">ClientPointers</name></name> <op:operator pos:line="73" pos:column="63">=</op:operator> <name pos:line="73" pos:column="65">NULL</name></expr>;</expr_stmt>
+
+					<comment type="line" pos:line="75" pos:column="41">// write the dump</comment>
+					<decl_stmt><decl><type><name pos:line="76" pos:column="41">BOOL</name></type> <name pos:line="76" pos:column="46">bOK</name> <init pos:line="76" pos:column="50">= <expr><call><name pos:line="76" pos:column="52">pDump</name><argument_list pos:line="76" pos:column="57">( <argument><expr><call><name pos:line="76" pos:column="59">GetCurrentProcess</name><argument_list pos:line="76" pos:column="76">()</argument_list></call></expr></argument>, <argument><expr><call><name pos:line="76" pos:column="80">GetCurrentProcessId</name><argument_list pos:line="76" pos:column="99">()</argument_list></call></expr></argument>, <argument><expr><name pos:line="76" pos:column="103">hFile</name></expr></argument>, <argument><expr><name pos:line="76" pos:column="110">MiniDumpNormal</name></expr></argument>, <argument><expr><op:operator pos:line="76" pos:column="126">&amp;</op:operator><name pos:line="76" pos:column="127">ExInfo</name></expr></argument>, <argument><expr><name pos:line="76" pos:column="135">NULL</name></expr></argument>, <argument><expr><name pos:line="76" pos:column="141">NULL</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+					<if pos:line="77" pos:column="41">if <condition pos:line="77" pos:column="44">(<expr><name pos:line="77" pos:column="45">bOK</name></expr>)</condition><then pos:line="77" pos:column="49">
+					<block pos:line="78" pos:column="41">{
+						<expr_stmt><expr><call><name pos:line="79" pos:column="49">wsprintf</name><argument_list pos:line="79" pos:column="57">( <argument><expr><name pos:line="79" pos:column="59">szScratch</name></expr></argument>, <argument><expr><call><name pos:line="79" pos:column="70">TEXT</name><argument_list pos:line="79" pos:column="74">(<argument><expr><lit:literal type="string" pos:line="79" pos:column="75">"Saved dump file to '%s'"</lit:literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name pos:line="79" pos:column="103">szDumpPath</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+						<expr_stmt><expr><name pos:line="80" pos:column="49">szResult</name> <op:operator pos:line="80" pos:column="58">=</op:operator> <name pos:line="80" pos:column="60">szScratch</name></expr>;</expr_stmt>
+						<expr_stmt><expr><name pos:line="81" pos:column="49">retval</name> <op:operator pos:line="81" pos:column="56">=</op:operator> <lit:literal type="boolean" pos:line="81" pos:column="58">true</lit:literal></expr>;</expr_stmt>
+					}</block></then>
+					<else pos:line="83" pos:column="41">else
+					<block pos:line="84" pos:column="41">{
+						<expr_stmt><expr><call><name pos:line="85" pos:column="49">wsprintf</name><argument_list pos:line="85" pos:column="57">( <argument><expr><name pos:line="85" pos:column="59">szScratch</name></expr></argument>, <argument><expr><call><name pos:line="85" pos:column="70">TEXT</name><argument_list pos:line="85" pos:column="74">(<argument><expr><lit:literal type="string" pos:line="85" pos:column="75">"Failed to save dump file to '%s' (error %d)"</lit:literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name pos:line="85" pos:column="123">szDumpPath</name></expr></argument>, <argument><expr><call><name pos:line="85" pos:column="135">GetLastError</name><argument_list pos:line="85" pos:column="147">()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+						<expr_stmt><expr><name pos:line="86" pos:column="49">szResult</name> <op:operator pos:line="86" pos:column="58">=</op:operator> <name pos:line="86" pos:column="60">szScratch</name></expr>;</expr_stmt>
+					}</block></else></if>
+					<expr_stmt><expr><call><name><op:operator pos:line="88" pos:column="41">::</op:operator><name pos:line="88" pos:column="43">CloseHandle</name></name><argument_list pos:line="88" pos:column="54">(<argument><expr><name pos:line="88" pos:column="55">hFile</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				}</block></then>
+				<else pos:line="90" pos:column="33">else
+				<block pos:line="91" pos:column="33">{
+					<expr_stmt><expr><call><name pos:line="92" pos:column="41">wsprintf</name><argument_list pos:line="92" pos:column="49">( <argument><expr><name pos:line="92" pos:column="51">szScratch</name></expr></argument>, <argument><expr><call><name pos:line="92" pos:column="62">TEXT</name><argument_list pos:line="92" pos:column="66">(<argument><expr><lit:literal type="string" pos:line="92" pos:column="67">"Failed to create dump file '%s' (error %d)"</lit:literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name pos:line="92" pos:column="114">szDumpPath</name></expr></argument>, <argument><expr><call><name pos:line="92" pos:column="126">GetLastError</name><argument_list pos:line="92" pos:column="138">()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+					<expr_stmt><expr><name pos:line="93" pos:column="41">szResult</name> <op:operator pos:line="93" pos:column="50">=</op:operator> <name pos:line="93" pos:column="52">szScratch</name></expr>;</expr_stmt>
+				}</block></else></if>
+			}</block></then></if>
+		}</block></then>
+		<else pos:line="97" pos:column="17">else
+		<block pos:line="98" pos:column="17">{
+			<expr_stmt><expr><name pos:line="99" pos:column="25">szResult</name> <op:operator pos:line="99" pos:column="34">=</op:operator> <call><name pos:line="99" pos:column="36">TEXT</name><argument_list pos:line="99" pos:column="40">(<argument><expr><lit:literal type="string" pos:line="99" pos:column="41">"The debugging DLL is outdated,\r\nfind a recent copy of dbghelp.dll and install it."</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></else></if>
+	}</block></then>
+	<else pos:line="102" pos:column="9">else
+	<block pos:line="103" pos:column="9">{
+		<expr_stmt><expr><name pos:line="104" pos:column="17">szResult</name> <op:operator pos:line="104" pos:column="26">=</op:operator> <call><name pos:line="104" pos:column="28">TEXT</name><argument_list pos:line="104" pos:column="32">(<argument><expr><lit:literal type="string" pos:line="104" pos:column="33">"Unable to load the debugging DLL,\r\nfind a recent copy of dbghelp.dll and install it."</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></else></if>
+
+	<if pos:line="107" pos:column="9">if <condition pos:line="107" pos:column="12">(<expr><name pos:line="107" pos:column="13">szResult</name></expr>)</condition><then pos:line="107" pos:column="22">
+		<expr_stmt><expr><call><name><op:operator pos:line="108" pos:column="17">::</op:operator><name pos:line="108" pos:column="19">MessageBox</name></name><argument_list pos:line="108" pos:column="29">(<argument><expr><name pos:line="108" pos:column="30">NULL</name></expr></argument>, <argument><expr><name pos:line="108" pos:column="36">szResult</name></expr></argument>, <argument><expr><name pos:line="108" pos:column="46">msgTitle</name></expr></argument>, <argument><expr><name pos:line="108" pos:column="56">MB_OK</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+
+	<return pos:line="110" pos:column="9">return <expr><name pos:line="110" pos:column="16">retval</name></expr>;</return>
+}</block></function>
+</unit>

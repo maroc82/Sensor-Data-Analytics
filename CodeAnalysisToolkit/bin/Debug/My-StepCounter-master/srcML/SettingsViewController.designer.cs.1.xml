@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter\Views\SettingsViewController.designer.cs" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// WARNING</comment>
+<comment type="line" pos:line="2" pos:column="1">//</comment>
+<comment type="line" pos:line="3" pos:column="1">// This file has been generated automatically by Xamarin Studio from the outlets and</comment>
+<comment type="line" pos:line="4" pos:column="1">// actions declared in your storyboard file.</comment>
+<comment type="line" pos:line="5" pos:column="1">// Manual changes to this file will not be maintained.</comment>
+<comment type="line" pos:line="6" pos:column="1">//</comment>
+<using pos:line="7" pos:column="1">using <name pos:line="7" pos:column="7">System</name>;</using>
+<using pos:line="8" pos:column="1">using <name pos:line="8" pos:column="7">Foundation</name>;</using>
+<using pos:line="9" pos:column="1">using <name pos:line="9" pos:column="7">UIKit</name>;</using>
+<using pos:line="10" pos:column="1">using <name><name pos:line="10" pos:column="7">System</name><op:operator pos:line="10" pos:column="13">.</op:operator><name pos:line="10" pos:column="14">CodeDom</name><op:operator pos:line="10" pos:column="21">.</op:operator><name pos:line="10" pos:column="22">Compiler</name></name>;</using>
+
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">StepCounter</name>
+<block pos:line="13" pos:column="1">{
+	<class><attribute pos:line="14" pos:column="9">[<expr><call><name pos:line="14" pos:column="10">Register</name> <argument_list pos:line="14" pos:column="19">(<argument><expr><lit:literal type="string" pos:line="14" pos:column="20">"SettingsViewController"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+	<specifier pos:line="15" pos:column="9">partial</specifier> class <name pos:line="15" pos:column="23">SettingsViewController</name>
+	<block pos:line="16" pos:column="9">{
+		<decl_stmt><decl><type><attribute pos:line="17" pos:column="17">[<expr><name pos:line="17" pos:column="18">Outlet</name></expr>]</attribute>
+		<attribute pos:line="18" pos:column="17">[<expr><call><name pos:line="18" pos:column="18">GeneratedCode</name> <argument_list pos:line="18" pos:column="32">(<argument><expr><lit:literal type="string" pos:line="18" pos:column="33">"iOS Designer"</lit:literal></expr></argument>, <argument><expr><lit:literal type="string" pos:line="18" pos:column="49">"1.0"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+		<name pos:line="19" pos:column="17">UIBarButtonItem</name></type> <name pos:line="19" pos:column="33">btnBack</name> <block pos:line="19" pos:column="41">{ <function_decl><name pos:line="19" pos:column="43">get</name>;</function_decl> <function_decl><name pos:line="19" pos:column="48">set</name>;</function_decl> }</block></decl></decl_stmt>
+
+		<decl_stmt><decl><type><attribute pos:line="21" pos:column="17">[<expr><name pos:line="21" pos:column="18">Outlet</name></expr>]</attribute>
+		<attribute pos:line="22" pos:column="17">[<expr><call><name pos:line="22" pos:column="18">GeneratedCode</name> <argument_list pos:line="22" pos:column="32">(<argument><expr><lit:literal type="string" pos:line="22" pos:column="33">"iOS Designer"</lit:literal></expr></argument>, <argument><expr><lit:literal type="string" pos:line="22" pos:column="49">"1.0"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+		<name pos:line="23" pos:column="17">UIImageView</name></type> <name pos:line="23" pos:column="29">imgLogo</name> <block pos:line="23" pos:column="37">{ <function_decl><name pos:line="23" pos:column="39">get</name>;</function_decl> <function_decl><name pos:line="23" pos:column="44">set</name>;</function_decl> }</block></decl></decl_stmt>
+
+		<decl_stmt><decl><type><attribute pos:line="25" pos:column="17">[<expr><name pos:line="25" pos:column="18">Outlet</name></expr>]</attribute>
+		<attribute pos:line="26" pos:column="17">[<expr><call><name pos:line="26" pos:column="18">GeneratedCode</name> <argument_list pos:line="26" pos:column="32">(<argument><expr><lit:literal type="string" pos:line="26" pos:column="33">"iOS Designer"</lit:literal></expr></argument>, <argument><expr><lit:literal type="string" pos:line="26" pos:column="49">"1.0"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+		<name pos:line="27" pos:column="17">UILabel</name></type> <name pos:line="27" pos:column="25">lblBuiltWithXamarin</name> <block pos:line="27" pos:column="45">{ <function_decl><name pos:line="27" pos:column="47">get</name>;</function_decl> <function_decl><name pos:line="27" pos:column="52">set</name>;</function_decl> }</block></decl></decl_stmt>
+
+		<decl_stmt><decl><type><attribute pos:line="29" pos:column="17">[<expr><name pos:line="29" pos:column="18">Outlet</name></expr>]</attribute>
+		<attribute pos:line="30" pos:column="17">[<expr><call><name pos:line="30" pos:column="18">GeneratedCode</name> <argument_list pos:line="30" pos:column="32">(<argument><expr><lit:literal type="string" pos:line="30" pos:column="33">"iOS Designer"</lit:literal></expr></argument>, <argument><expr><lit:literal type="string" pos:line="30" pos:column="49">"1.0"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+		<name pos:line="31" pos:column="17">UILabel</name></type> <name pos:line="31" pos:column="25">lblByMJJM</name> <block pos:line="31" pos:column="35">{ <function_decl><name pos:line="31" pos:column="37">get</name>;</function_decl> <function_decl><name pos:line="31" pos:column="42">set</name>;</function_decl> }</block></decl></decl_stmt>
+
+		<function_decl><type><attribute pos:line="33" pos:column="17">[<expr><call><name pos:line="33" pos:column="18">Action</name> <argument_list pos:line="33" pos:column="25">(<argument><expr><lit:literal type="string" pos:line="33" pos:column="26">"btnBack_Activated:"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+		<attribute pos:line="34" pos:column="17">[<expr><call><name pos:line="34" pos:column="18">GeneratedCode</name> <argument_list pos:line="34" pos:column="32">(<argument><expr><lit:literal type="string" pos:line="34" pos:column="33">"iOS Designer"</lit:literal></expr></argument>, <argument><expr><lit:literal type="string" pos:line="34" pos:column="49">"1.0"</lit:literal></expr></argument>)</argument_list></call></expr>]</attribute>
+		<specifier pos:line="35" pos:column="17">partial</specifier> <name pos:line="35" pos:column="25">void</name></type> <name pos:line="35" pos:column="30">btnBack_Activated</name> <parameter_list pos:line="35" pos:column="48">(<param><decl><type><name pos:line="35" pos:column="49">UIBarButtonItem</name></type> <name pos:line="35" pos:column="65">sender</name></decl></param>)</parameter_list>;</function_decl>
+
+		<function><type><name pos:line="37" pos:column="17">void</name></type> <name pos:line="37" pos:column="22">ReleaseDesignerOutlets</name> <parameter_list pos:line="37" pos:column="45">()</parameter_list>
+		<block pos:line="38" pos:column="17">{
+			<if pos:line="39" pos:column="25">if <condition pos:line="39" pos:column="28">(<expr><name pos:line="39" pos:column="29">btnBack</name> <op:operator pos:line="39" pos:column="37">!=</op:operator> <name pos:line="39" pos:column="40">null</name></expr>)</condition><then pos:line="39" pos:column="45"> <block pos:line="39" pos:column="46">{
+				<expr_stmt><expr><call><name><name pos:line="40" pos:column="33">btnBack</name><op:operator pos:line="40" pos:column="40">.</op:operator><name pos:line="40" pos:column="41">Dispose</name></name> <argument_list pos:line="40" pos:column="49">()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name pos:line="41" pos:column="33">btnBack</name> <op:operator pos:line="41" pos:column="41">=</op:operator> <name pos:line="41" pos:column="43">null</name></expr>;</expr_stmt>
+			}</block></then></if>
+			<if pos:line="43" pos:column="25">if <condition pos:line="43" pos:column="28">(<expr><name pos:line="43" pos:column="29">imgLogo</name> <op:operator pos:line="43" pos:column="37">!=</op:operator> <name pos:line="43" pos:column="40">null</name></expr>)</condition><then pos:line="43" pos:column="45"> <block pos:line="43" pos:column="46">{
+				<expr_stmt><expr><call><name><name pos:line="44" pos:column="33">imgLogo</name><op:operator pos:line="44" pos:column="40">.</op:operator><name pos:line="44" pos:column="41">Dispose</name></name> <argument_list pos:line="44" pos:column="49">()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name pos:line="45" pos:column="33">imgLogo</name> <op:operator pos:line="45" pos:column="41">=</op:operator> <name pos:line="45" pos:column="43">null</name></expr>;</expr_stmt>
+			}</block></then></if>
+			<if pos:line="47" pos:column="25">if <condition pos:line="47" pos:column="28">(<expr><name pos:line="47" pos:column="29">lblBuiltWithXamarin</name> <op:operator pos:line="47" pos:column="49">!=</op:operator> <name pos:line="47" pos:column="52">null</name></expr>)</condition><then pos:line="47" pos:column="57"> <block pos:line="47" pos:column="58">{
+				<expr_stmt><expr><call><name><name pos:line="48" pos:column="33">lblBuiltWithXamarin</name><op:operator pos:line="48" pos:column="52">.</op:operator><name pos:line="48" pos:column="53">Dispose</name></name> <argument_list pos:line="48" pos:column="61">()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name pos:line="49" pos:column="33">lblBuiltWithXamarin</name> <op:operator pos:line="49" pos:column="53">=</op:operator> <name pos:line="49" pos:column="55">null</name></expr>;</expr_stmt>
+			}</block></then></if>
+			<if pos:line="51" pos:column="25">if <condition pos:line="51" pos:column="28">(<expr><name pos:line="51" pos:column="29">lblByMJJM</name> <op:operator pos:line="51" pos:column="39">!=</op:operator> <name pos:line="51" pos:column="42">null</name></expr>)</condition><then pos:line="51" pos:column="47"> <block pos:line="51" pos:column="48">{
+				<expr_stmt><expr><call><name><name pos:line="52" pos:column="33">lblByMJJM</name><op:operator pos:line="52" pos:column="42">.</op:operator><name pos:line="52" pos:column="43">Dispose</name></name> <argument_list pos:line="52" pos:column="51">()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name pos:line="53" pos:column="33">lblByMJJM</name> <op:operator pos:line="53" pos:column="43">=</op:operator> <name pos:line="53" pos:column="45">null</name></expr>;</expr_stmt>
+			}</block></then></if>
+		}</block></function>
+	}</block></class>
+}</block></namespace>
+</unit>

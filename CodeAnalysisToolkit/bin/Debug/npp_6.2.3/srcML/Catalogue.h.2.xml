@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\Catalogue.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file Catalogue.h
+ ** Lexer infrastructure.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2010 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">CATALOGUE_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">CATALOGUE_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<class pos:line="15" pos:column="1">class <name pos:line="15" pos:column="7">Catalogue</name> <block pos:line="15" pos:column="17">{<private type="default" pos:line="15" pos:column="18">
+</private><public pos:line="16" pos:column="1">public:
+	<function_decl><type><specifier pos:line="17" pos:column="9">static</specifier> <specifier pos:line="17" pos:column="16">const</specifier> <name pos:line="17" pos:column="22">LexerModule</name> <type:modifier pos:line="17" pos:column="34">*</type:modifier></type><name pos:line="17" pos:column="35">Find</name><parameter_list pos:line="17" pos:column="39">(<param><decl><type><name pos:line="17" pos:column="40">int</name></type> <name pos:line="17" pos:column="44">language</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="18" pos:column="9">static</specifier> <specifier pos:line="18" pos:column="16">const</specifier> <name pos:line="18" pos:column="22">LexerModule</name> <type:modifier pos:line="18" pos:column="34">*</type:modifier></type><name pos:line="18" pos:column="35">Find</name><parameter_list pos:line="18" pos:column="39">(<param><decl><type><specifier pos:line="18" pos:column="40">const</specifier> <name pos:line="18" pos:column="46">char</name> <type:modifier pos:line="18" pos:column="51">*</type:modifier></type><name pos:line="18" pos:column="52">languageName</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="19" pos:column="9">static</specifier> <name pos:line="19" pos:column="16">void</name></type> <name pos:line="19" pos:column="21">AddLexerModule</name><parameter_list pos:line="19" pos:column="35">(<param><decl><type><name pos:line="19" pos:column="36">LexerModule</name> <type:modifier pos:line="19" pos:column="48">*</type:modifier></type><name pos:line="19" pos:column="49">plm</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="22" pos:column="1">#<cpp:directive pos:line="22" pos:column="2">ifdef</cpp:directive> <name pos:line="22" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="24" pos:column="1">#<cpp:directive pos:line="24" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="26" pos:column="1">#<cpp:directive pos:line="26" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

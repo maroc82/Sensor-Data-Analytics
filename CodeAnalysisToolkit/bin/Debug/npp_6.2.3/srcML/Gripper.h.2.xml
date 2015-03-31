@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\WinControls\dockingwnd\Gripper.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// this file is part of docking functionality for Notepad++</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2006 Jens Lorenz &lt;jens.plugin.npp@gmx.de&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">// </comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">// </comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">// </comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">GRIPPER_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">GRIPPER_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">DOCKING_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"Docking.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//DOCKING_H</comment>
+
+<cpp:ifndef pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">ifndef</cpp:directive> <name pos:line="36" pos:column="9">DOCKING_RESOURCE_H</name></cpp:ifndef>
+<cpp:include pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="37" pos:column="10">"dockingResource.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="38" pos:column="1">#<cpp:directive pos:line="38" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="38" pos:column="8">//DOCKING_RESOURCE_H</comment>
+
+<class_decl pos:line="40" pos:column="1">class <name pos:line="40" pos:column="7">DockingCont</name>;</class_decl>
+<class_decl pos:line="41" pos:column="1">class <name pos:line="41" pos:column="7">DockingManager</name>;</class_decl>
+
+<comment type="line" pos:line="43" pos:column="1">// For the following #define see the comments at drawRectangle() definition. (jg)</comment>
+<cpp:define pos:line="44" pos:column="1">#<cpp:directive pos:line="44" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="44" pos:column="9">USE_LOCKWINDOWUPDATE</name></cpp:macro></cpp:define>
+<comment type="line" pos:line="45" pos:column="1">//#undef USE_LOCKWINDOWUPDATE</comment>
+
+
+<comment type="line" pos:line="48" pos:column="1">// Used by getRectAndStyle() to draw the drag rectangle</comment>
+<decl_stmt><decl><type><specifier pos:line="49" pos:column="1">static</specifier> <specifier pos:line="49" pos:column="8">const</specifier> <name pos:line="49" pos:column="14">WORD</name></type> <name><name pos:line="49" pos:column="19">DotPattern</name><index pos:line="49" pos:column="29">[]</index></name> <init pos:line="49" pos:column="32">= 
+<expr><block pos:line="50" pos:column="1">{
+	<expr><lit:literal type="number" pos:line="51" pos:column="9">0x00aa</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="17">0x0055</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="25">0x00aa</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="33">0x0055</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="41">0x00aa</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="49">0x0055</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="57">0x00aa</lit:literal></expr>, <expr><lit:literal type="number" pos:line="51" pos:column="65">0x0055</lit:literal></expr>
+}</block></expr></init></decl>;</decl_stmt>
+
+
+<cpp:define pos:line="55" pos:column="1">#<cpp:directive pos:line="55" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="55" pos:column="9">MDLG_CLASS_NAME</name></cpp:macro> <cpp:value pos:line="55" pos:column="25">TEXT("moveDlg")</cpp:value></cpp:define>
+
+
+<class pos:line="58" pos:column="1">class <name pos:line="58" pos:column="7">Gripper</name>
+<block pos:line="59" pos:column="1">{<private type="default" pos:line="59" pos:column="2">
+</private><public pos:line="60" pos:column="1">public:
+	<constructor_decl><name pos:line="61" pos:column="9">Gripper</name><parameter_list pos:line="61" pos:column="16">()</parameter_list>;</constructor_decl>
+    
+	<function><type><name pos:line="63" pos:column="9">void</name></type> <name pos:line="63" pos:column="14">init</name><parameter_list pos:line="63" pos:column="18">(<param><decl><type><name pos:line="63" pos:column="19">HINSTANCE</name></type> <name pos:line="63" pos:column="29">hInst</name></decl></param>, <param><decl><type><name pos:line="63" pos:column="36">HWND</name></type> <name pos:line="63" pos:column="41">hParent</name></decl></param>)</parameter_list> <block pos:line="63" pos:column="50">{
+		<expr_stmt><expr><name pos:line="64" pos:column="17">_hInst</name>   <op:operator pos:line="64" pos:column="26">=</op:operator> <name pos:line="64" pos:column="28">hInst</name></expr>;</expr_stmt>	
+		<expr_stmt><expr><name pos:line="65" pos:column="17">_hParent</name> <op:operator pos:line="65" pos:column="26">=</op:operator> <name pos:line="65" pos:column="28">hParent</name></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="66" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="68" pos:column="9">void</name></type> <name pos:line="68" pos:column="14">startGrip</name><parameter_list pos:line="68" pos:column="23">(<param><decl><type><name pos:line="68" pos:column="24">DockingCont</name><type:modifier pos:line="68" pos:column="35">*</type:modifier></type> <name pos:line="68" pos:column="37">pCont</name></decl></param>, <param><decl><type><name pos:line="68" pos:column="44">DockingManager</name><type:modifier pos:line="68" pos:column="58">*</type:modifier></type> <name pos:line="68" pos:column="60">pDockMgr</name></decl></param>)</parameter_list>;</function_decl>
+
+	<destructor><name pos:line="70" pos:column="9">~<name pos:line="70" pos:column="10">Gripper</name></name><parameter_list pos:line="70" pos:column="17">()</parameter_list> <block pos:line="70" pos:column="20">{
+		<if pos:line="71" pos:column="17">if <condition pos:line="71" pos:column="20">(<expr><name pos:line="71" pos:column="21">_hdc</name></expr>)</condition><then pos:line="71" pos:column="26"> <block pos:line="71" pos:column="27">{
+			<comment type="line" pos:line="72" pos:column="25">// usually this should already have been done by a call to drawRectangle(),</comment>
+			<comment type="line" pos:line="73" pos:column="25">// here just for cases where usual handling was interrupted (jg)</comment>
+			<cpp:ifdef pos:line="74" pos:column="25">#<cpp:directive pos:line="74" pos:column="26">ifdef</cpp:directive> <name pos:line="74" pos:column="32">USE_LOCKWINDOWUPDATE</name></cpp:ifdef>
+			<expr_stmt><expr><call><name><op:operator pos:line="75" pos:column="25">::</op:operator><name pos:line="75" pos:column="27">LockWindowUpdate</name></name><argument_list pos:line="75" pos:column="43">(<argument><expr><name pos:line="75" pos:column="44">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<cpp:endif pos:line="76" pos:column="25">#<cpp:directive pos:line="76" pos:column="26">endif</cpp:directive></cpp:endif>
+			<expr_stmt><expr><call><name><op:operator pos:line="77" pos:column="25">::</op:operator><name pos:line="77" pos:column="27">ReleaseDC</name></name><argument_list pos:line="77" pos:column="36">(<argument><expr><lit:literal type="number" pos:line="77" pos:column="37">0</lit:literal></expr></argument>, <argument><expr><name pos:line="77" pos:column="40">_hdc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></then></if>
+		<if pos:line="79" pos:column="17">if <condition pos:line="79" pos:column="20">(<expr><name pos:line="79" pos:column="21">_hbm</name></expr>)</condition><then pos:line="79" pos:column="26"> <block pos:line="79" pos:column="27">{
+			<expr_stmt><expr><call><name><op:operator pos:line="80" pos:column="25">::</op:operator><name pos:line="80" pos:column="27">DeleteObject</name></name><argument_list pos:line="80" pos:column="39">(<argument><expr><name pos:line="80" pos:column="40">_hbm</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></then></if>
+		<if pos:line="82" pos:column="17">if <condition pos:line="82" pos:column="20">(<expr><name pos:line="82" pos:column="21">_hbrush</name></expr>)</condition><then pos:line="82" pos:column="29"> <block pos:line="82" pos:column="30">{
+			<expr_stmt><expr><call><name><op:operator pos:line="83" pos:column="25">::</op:operator><name pos:line="83" pos:column="27">DeleteObject</name></name><argument_list pos:line="83" pos:column="39">(<argument><expr><name pos:line="83" pos:column="40">_hbrush</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></then></if>
+	}</block></destructor><empty_stmt pos:line="85" pos:column="10">;</empty_stmt>
+
+</public><protected pos:line="87" pos:column="1">protected :
+
+	<function_decl><type><name pos:line="89" pos:column="9">void</name></type> <name pos:line="89" pos:column="14">create</name><parameter_list pos:line="89" pos:column="20">()</parameter_list>;</function_decl>
+
+	<function_decl><type><specifier pos:line="91" pos:column="9">static</specifier> <name pos:line="91" pos:column="16">LRESULT</name> <name pos:line="91" pos:column="24">CALLBACK</name></type> <name pos:line="91" pos:column="33">staticWinProc</name><parameter_list pos:line="91" pos:column="46">(<param><decl><type><name pos:line="91" pos:column="47">HWND</name></type> <name pos:line="91" pos:column="52">hwnd</name></decl></param>, <param><decl><type><name pos:line="91" pos:column="58">UINT</name></type> <name pos:line="91" pos:column="63">Message</name></decl></param>, <param><decl><type><name pos:line="91" pos:column="72">WPARAM</name></type> <name pos:line="91" pos:column="79">wParam</name></decl></param>, <param><decl><type><name pos:line="91" pos:column="87">LPARAM</name></type> <name pos:line="91" pos:column="94">lParam</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="92" pos:column="9">LRESULT</name></type> <name pos:line="92" pos:column="17">runProc</name><parameter_list pos:line="92" pos:column="24">(<param><decl><type><name pos:line="92" pos:column="25">UINT</name></type> <name pos:line="92" pos:column="30">Message</name></decl></param>, <param><decl><type><name pos:line="92" pos:column="39">WPARAM</name></type> <name pos:line="92" pos:column="46">wParam</name></decl></param>, <param><decl><type><name pos:line="92" pos:column="54">LPARAM</name></type> <name pos:line="92" pos:column="61">lParam</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="94" pos:column="9">void</name></type> <name pos:line="94" pos:column="14">onMove</name><parameter_list pos:line="94" pos:column="20">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="95" pos:column="9">void</name></type> <name pos:line="95" pos:column="14">onButtonUp</name><parameter_list pos:line="95" pos:column="24">()</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="97" pos:column="9">void</name></type> <name pos:line="97" pos:column="14">doTabReordering</name><parameter_list pos:line="97" pos:column="29">(<param><decl><type><name pos:line="97" pos:column="30">POINT</name></type> <name pos:line="97" pos:column="36">pt</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="98" pos:column="9">void</name></type> <name pos:line="98" pos:column="14">drawRectangle</name><parameter_list pos:line="98" pos:column="27">(<param><decl><type><specifier pos:line="98" pos:column="28">const</specifier> <name pos:line="98" pos:column="34">POINT</name><type:modifier pos:line="98" pos:column="39">*</type:modifier></type> <name pos:line="98" pos:column="41">pPt</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="99" pos:column="9">void</name></type> <name pos:line="99" pos:column="14">getMousePoints</name><parameter_list pos:line="99" pos:column="28">(<param><decl><type><name pos:line="99" pos:column="29">POINT</name><type:modifier pos:line="99" pos:column="34">*</type:modifier></type> <name pos:line="99" pos:column="36">pt</name></decl></param>, <param><decl><type><name pos:line="99" pos:column="40">POINT</name><type:modifier pos:line="99" pos:column="45">*</type:modifier></type> <name pos:line="99" pos:column="47">ptPrev</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="100" pos:column="9">void</name></type> <name pos:line="100" pos:column="14">getMovingRect</name><parameter_list pos:line="100" pos:column="27">(<param><decl><type><name pos:line="100" pos:column="28">POINT</name></type> <name pos:line="100" pos:column="34">pt</name></decl></param>, <param><decl><type><name pos:line="100" pos:column="38">RECT</name> <type:modifier pos:line="100" pos:column="43">*</type:modifier></type><name pos:line="100" pos:column="44">rc</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="101" pos:column="9">DockingCont</name> <type:modifier pos:line="101" pos:column="21">*</type:modifier></type> <name pos:line="101" pos:column="23">contHitTest</name><parameter_list pos:line="101" pos:column="34">(<param><decl><type><name pos:line="101" pos:column="35">POINT</name></type> <name pos:line="101" pos:column="41">pt</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="102" pos:column="9">DockingCont</name> <type:modifier pos:line="102" pos:column="21">*</type:modifier></type> <name pos:line="102" pos:column="23">workHitTest</name><parameter_list pos:line="102" pos:column="34">(<param><decl><type><name pos:line="102" pos:column="35">POINT</name></type> <name pos:line="102" pos:column="41">pt</name></decl></param>, <param><decl><type><name pos:line="102" pos:column="45">RECT</name> <type:modifier pos:line="102" pos:column="50">*</type:modifier></type><name pos:line="102" pos:column="51">rcCont</name> <init pos:line="102" pos:column="58">= <expr><name pos:line="102" pos:column="60">NULL</name></expr></init></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="104" pos:column="9">void</name></type> <name pos:line="104" pos:column="14">initTabInformation</name><parameter_list pos:line="104" pos:column="32">()</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="106" pos:column="9">void</name></type> <name pos:line="106" pos:column="14">CalcRectToScreen</name><parameter_list pos:line="106" pos:column="30">(<param><decl><type><name pos:line="106" pos:column="31">HWND</name></type> <name pos:line="106" pos:column="36">hWnd</name></decl></param>, <param><decl><type><name pos:line="106" pos:column="42">RECT</name> <type:modifier pos:line="106" pos:column="47">*</type:modifier></type><name pos:line="106" pos:column="48">rc</name></decl></param>)</parameter_list> <block pos:line="106" pos:column="52">{
+		<expr_stmt><expr><call><name pos:line="107" pos:column="17">ClientRectToScreenRect</name><argument_list pos:line="107" pos:column="39">(<argument><expr><name pos:line="107" pos:column="40">hWnd</name></expr></argument>, <argument><expr><name pos:line="107" pos:column="46">rc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="108" pos:column="17">ShrinkRcToSize</name><argument_list pos:line="108" pos:column="31">(<argument><expr><name pos:line="108" pos:column="32">rc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="109" pos:column="10">;</empty_stmt>
+	<function><type><name pos:line="110" pos:column="9">void</name></type> <name pos:line="110" pos:column="14">CalcRectToClient</name><parameter_list pos:line="110" pos:column="30">(<param><decl><type><name pos:line="110" pos:column="31">HWND</name></type> <name pos:line="110" pos:column="36">hWnd</name></decl></param>, <param><decl><type><name pos:line="110" pos:column="42">RECT</name> <type:modifier pos:line="110" pos:column="47">*</type:modifier></type><name pos:line="110" pos:column="48">rc</name></decl></param>)</parameter_list> <block pos:line="110" pos:column="52">{
+		<expr_stmt><expr><call><name pos:line="111" pos:column="17">ScreenRectToClientRect</name><argument_list pos:line="111" pos:column="39">(<argument><expr><name pos:line="111" pos:column="40">hWnd</name></expr></argument>, <argument><expr><name pos:line="111" pos:column="46">rc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="112" pos:column="17">ShrinkRcToSize</name><argument_list pos:line="112" pos:column="31">(<argument><expr><name pos:line="112" pos:column="32">rc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="113" pos:column="10">;</empty_stmt>
+	<function><type><name pos:line="114" pos:column="9">void</name></type> <name pos:line="114" pos:column="14">ShrinkRcToSize</name><parameter_list pos:line="114" pos:column="28">(<param><decl><type><name pos:line="114" pos:column="29">RECT</name> <type:modifier pos:line="114" pos:column="34">*</type:modifier></type><name pos:line="114" pos:column="35">rc</name></decl></param>)</parameter_list> <block pos:line="114" pos:column="39">{
+		<expr_stmt><expr><name><name pos:line="115" pos:column="17">rc</name><op:operator pos:line="115" pos:column="19">-&gt;</op:operator><name pos:line="115" pos:column="21">right</name></name>	<op:operator pos:line="115" pos:column="33">-=</op:operator> <name><name pos:line="115" pos:column="36">rc</name><op:operator pos:line="115" pos:column="38">-&gt;</op:operator><name pos:line="115" pos:column="40">left</name></name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name pos:line="116" pos:column="17">rc</name><op:operator pos:line="116" pos:column="19">-&gt;</op:operator><name pos:line="116" pos:column="21">bottom</name></name>	<op:operator pos:line="116" pos:column="33">-=</op:operator> <name><name pos:line="116" pos:column="36">rc</name><op:operator pos:line="116" pos:column="38">-&gt;</op:operator><name pos:line="116" pos:column="40">top</name></name></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="117" pos:column="10">;</empty_stmt>
+	<function><type><name pos:line="118" pos:column="9">void</name></type> <name pos:line="118" pos:column="14">DoCalcGripperRect</name><parameter_list pos:line="118" pos:column="31">(<param><decl><type><name pos:line="118" pos:column="32">RECT</name><type:modifier pos:line="118" pos:column="36">*</type:modifier></type> <name pos:line="118" pos:column="38">rc</name></decl></param>, <param><decl><type><name pos:line="118" pos:column="42">RECT</name></type> <name pos:line="118" pos:column="47">rcCorr</name></decl></param>, <param><decl><type><name pos:line="118" pos:column="55">POINT</name></type> <name pos:line="118" pos:column="61">pt</name></decl></param>)</parameter_list> <block pos:line="118" pos:column="65">{
+		<if pos:line="119" pos:column="17">if <condition pos:line="119" pos:column="20">(<expr><op:operator pos:line="119" pos:column="21">(</op:operator><name><name pos:line="119" pos:column="22">rc</name><op:operator pos:line="119" pos:column="24">-&gt;</op:operator><name pos:line="119" pos:column="26">left</name></name> <op:operator pos:line="119" pos:column="31">+</op:operator> <name><name pos:line="119" pos:column="33">rc</name><op:operator pos:line="119" pos:column="35">-&gt;</op:operator><name pos:line="119" pos:column="37">right</name></name><op:operator pos:line="119" pos:column="42">)</op:operator> <op:operator pos:line="119" pos:column="44">&lt;</op:operator> <name><name pos:line="119" pos:column="46">pt</name><op:operator pos:line="119" pos:column="48">.</op:operator><name pos:line="119" pos:column="49">x</name></name></expr>)</condition><then pos:line="119" pos:column="51">
+			<expr_stmt><expr><name><name pos:line="120" pos:column="25">rc</name><op:operator pos:line="120" pos:column="27">-&gt;</op:operator><name pos:line="120" pos:column="29">left</name></name> <op:operator pos:line="120" pos:column="34">=</op:operator> <name><name pos:line="120" pos:column="36">pt</name><op:operator pos:line="120" pos:column="38">.</op:operator><name pos:line="120" pos:column="39">x</name></name> <op:operator pos:line="120" pos:column="41">-</op:operator> <lit:literal type="number" pos:line="120" pos:column="43">20</lit:literal></expr>;</expr_stmt></then></if>
+		<if pos:line="121" pos:column="17">if <condition pos:line="121" pos:column="20">(<expr><op:operator pos:line="121" pos:column="21">(</op:operator><name><name pos:line="121" pos:column="22">rc</name><op:operator pos:line="121" pos:column="24">-&gt;</op:operator><name pos:line="121" pos:column="26">top</name></name> <op:operator pos:line="121" pos:column="30">+</op:operator> <name><name pos:line="121" pos:column="32">rc</name><op:operator pos:line="121" pos:column="34">-&gt;</op:operator><name pos:line="121" pos:column="36">bottom</name></name><op:operator pos:line="121" pos:column="42">)</op:operator> <op:operator pos:line="121" pos:column="44">&lt;</op:operator> <name><name pos:line="121" pos:column="46">pt</name><op:operator pos:line="121" pos:column="48">.</op:operator><name pos:line="121" pos:column="49">y</name></name></expr>)</condition><then pos:line="121" pos:column="51">
+			<expr_stmt><expr><name><name pos:line="122" pos:column="25">rc</name><op:operator pos:line="122" pos:column="27">-&gt;</op:operator><name pos:line="122" pos:column="29">top</name></name>  <op:operator pos:line="122" pos:column="34">+=</op:operator> <name><name pos:line="122" pos:column="37">rcCorr</name><op:operator pos:line="122" pos:column="43">.</op:operator><name pos:line="122" pos:column="44">bottom</name></name> <op:operator pos:line="122" pos:column="51">-</op:operator> <name><name pos:line="122" pos:column="53">rc</name><op:operator pos:line="122" pos:column="55">-&gt;</op:operator><name pos:line="122" pos:column="57">bottom</name></name></expr>;</expr_stmt></then></if>
+	}</block></function><empty_stmt pos:line="123" pos:column="10">;</empty_stmt>
+
+</protected><private pos:line="125" pos:column="1">private:
+	<comment type="line" pos:line="126" pos:column="9">// Handle</comment>
+	<decl_stmt><decl><type><name pos:line="127" pos:column="9">HINSTANCE</name></type> <name pos:line="127" pos:column="19">_hInst</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="128" pos:column="9">HWND</name></type> <name pos:line="128" pos:column="14">_hParent</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="129" pos:column="9">HWND</name></type> <name pos:line="129" pos:column="14">_hSelf</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="131" pos:column="9">// data of container</comment>
+	<decl_stmt><decl><type><name pos:line="132" pos:column="9">tDockMgr</name></type> <name pos:line="132" pos:column="18">_dockData</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="133" pos:column="9">DockingManager</name> <type:modifier pos:line="133" pos:column="24">*</type:modifier></type><name pos:line="133" pos:column="25">_pDockMgr</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="134" pos:column="9">DockingCont</name> <type:modifier pos:line="134" pos:column="21">*</type:modifier></type><name pos:line="134" pos:column="22">_pCont</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="136" pos:column="9">// mouse offset in moving rectangle</comment>
+	<decl_stmt><decl><type><name pos:line="137" pos:column="9">POINT</name></type> <name pos:line="137" pos:column="15">_ptOffset</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="139" pos:column="9">// remembers old mouse point</comment>
+	<decl_stmt><decl><type><name pos:line="140" pos:column="9">POINT</name></type> <name pos:line="140" pos:column="15">_ptOld</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="141" pos:column="9">BOOL</name></type> <name pos:line="141" pos:column="14">_bPtOldValid</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="143" pos:column="9">// remember last drawn rectangle (jg)</comment>
+	<decl_stmt><decl><type><name pos:line="144" pos:column="9">RECT</name></type> <name pos:line="144" pos:column="14">_rcPrev</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="146" pos:column="9">// for sorting tabs</comment>
+	<decl_stmt><decl><type><name pos:line="147" pos:column="9">HWND</name></type> <name pos:line="147" pos:column="14">_hTab</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="148" pos:column="9">HWND</name></type> <name pos:line="148" pos:column="14">_hTabSource</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="149" pos:column="9">BOOL</name></type> <name pos:line="149" pos:column="14">_startMovingFromTab</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="150" pos:column="9">int</name></type>	<name pos:line="150" pos:column="17">_iItem</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="151" pos:column="9">RECT</name></type> <name pos:line="151" pos:column="14">_rcItem</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="152" pos:column="9">TCITEM</name></type> <name pos:line="152" pos:column="16">_tcItem</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="154" pos:column="9">HDC</name></type> <name pos:line="154" pos:column="13">_hdc</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="155" pos:column="9">HBITMAP</name></type> <name pos:line="155" pos:column="17">_hbm</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="156" pos:column="9">HBRUSH</name></type> <name pos:line="156" pos:column="16">_hbrush</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="158" pos:column="9">// is class registered</comment>
+	<decl_stmt><decl><type><specifier pos:line="159" pos:column="9">static</specifier> <name pos:line="159" pos:column="16">BOOL</name></type> <name pos:line="159" pos:column="21">_isRegistered</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="162" pos:column="1">#<cpp:directive pos:line="162" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="162" pos:column="8">// GRIPPER_H</comment>
+</unit>

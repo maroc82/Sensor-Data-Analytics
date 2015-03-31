@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\resource.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">RESOURCE_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">RESOURCE_H</name></cpp:macro></cpp:define>
+
+<cpp:define pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="32" pos:column="9">NOTEPAD_PLUS_VERSION</name></cpp:macro> <cpp:value pos:line="32" pos:column="30">TEXT("Notepad++ v6.2.3")</cpp:value></cpp:define>
+
+<comment type="line" pos:line="34" pos:column="1">// should be X.Y : ie. if VERSION_DIGITALVALUE == 4, 7, 1, 0 , then X = 4, Y = 71 </comment>
+<comment type="line" pos:line="35" pos:column="1">// ex : #define VERSION_VALUE TEXT("5.63\0")</comment>
+<cpp:define pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="36" pos:column="9">VERSION_VALUE</name></cpp:macro> <cpp:value pos:line="36" pos:column="23">TEXT("6.23\0")</cpp:value></cpp:define>
+<cpp:define pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="37" pos:column="9">VERSION_DIGITALVALUE</name></cpp:macro> <cpp:value pos:line="37" pos:column="30">6, 2, 3, 0</cpp:value></cpp:define>
+
+<cpp:ifdef pos:line="39" pos:column="1">#<cpp:directive pos:line="39" pos:column="2">ifdef</cpp:directive> <name pos:line="39" pos:column="8">UNICODE</name></cpp:ifdef>
+<cpp:define pos:line="40" pos:column="1">#<cpp:directive pos:line="40" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="40" pos:column="9">UNICODE_ANSI_MODE</name></cpp:macro> <cpp:value pos:line="40" pos:column="27">TEXT("(UNICODE)")</cpp:value></cpp:define>
+<cpp:else pos:line="41" pos:column="1">#<cpp:directive pos:line="41" pos:column="2">else</cpp:directive></cpp:else>
+<cpp:define pos:line="42" pos:column="1">#<cpp:directive pos:line="42" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="42" pos:column="9">UNICODE_ANSI_MODE</name></cpp:macro> <cpp:value pos:line="42" pos:column="27">TEXT("(ANSI)")</cpp:value></cpp:define>
+<cpp:endif pos:line="43" pos:column="1">#<cpp:directive pos:line="43" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:ifndef pos:line="45" pos:column="1">#<cpp:directive pos:line="45" pos:column="2">ifndef</cpp:directive> <name pos:line="45" pos:column="9">IDC_STATIC</name></cpp:ifndef>
+<cpp:define pos:line="46" pos:column="1">#<cpp:directive pos:line="46" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="46" pos:column="9">IDC_STATIC</name></cpp:macro>	<cpp:value pos:line="46" pos:column="25">-1</cpp:value></cpp:define>
+<cpp:endif pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:define pos:line="49" pos:column="1">#<cpp:directive pos:line="49" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="49" pos:column="9">IDI_M30ICON</name></cpp:macro>				<cpp:value pos:line="49" pos:column="49">100</cpp:value></cpp:define>
+<cpp:define pos:line="50" pos:column="1">#<cpp:directive pos:line="50" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="50" pos:column="9">IDI_CHAMELEON</name></cpp:macro>			<cpp:value pos:line="50" pos:column="41">101</cpp:value></cpp:define>
+<cpp:define pos:line="51" pos:column="1">#<cpp:directive pos:line="51" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="51" pos:column="9">IDR_RT_MANIFEST</name></cpp:macro>         <cpp:value pos:line="51" pos:column="33">103</cpp:value></cpp:define>
+
+<cpp:define pos:line="53" pos:column="1">#<cpp:directive pos:line="53" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="53" pos:column="9">IDI_NEW_OFF_ICON</name></cpp:macro>      <cpp:value pos:line="53" pos:column="31">201</cpp:value></cpp:define>
+<cpp:define pos:line="54" pos:column="1">#<cpp:directive pos:line="54" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="54" pos:column="9">IDI_OPEN_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="54" pos:column="31">202</cpp:value></cpp:define>
+<cpp:define pos:line="55" pos:column="1">#<cpp:directive pos:line="55" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="55" pos:column="9">IDI_CLOSE_OFF_ICON</name></cpp:macro>    <cpp:value pos:line="55" pos:column="31">203</cpp:value></cpp:define>
+<cpp:define pos:line="56" pos:column="1">#<cpp:directive pos:line="56" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="56" pos:column="9">IDI_CLOSEALL_OFF_ICON</name></cpp:macro> <cpp:value pos:line="56" pos:column="31">204</cpp:value></cpp:define>
+<cpp:define pos:line="57" pos:column="1">#<cpp:directive pos:line="57" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="57" pos:column="9">IDI_SAVE_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="57" pos:column="31">205</cpp:value></cpp:define>
+<cpp:define pos:line="58" pos:column="1">#<cpp:directive pos:line="58" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="58" pos:column="9">IDI_SAVEALL_OFF_ICON</name></cpp:macro>  <cpp:value pos:line="58" pos:column="31">206</cpp:value></cpp:define>
+<cpp:define pos:line="59" pos:column="1">#<cpp:directive pos:line="59" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="59" pos:column="9">IDI_CUT_OFF_ICON</name></cpp:macro>      <cpp:value pos:line="59" pos:column="31">207</cpp:value></cpp:define>   
+<cpp:define pos:line="60" pos:column="1">#<cpp:directive pos:line="60" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="60" pos:column="9">IDI_COPY_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="60" pos:column="31">208</cpp:value></cpp:define>   
+<cpp:define pos:line="61" pos:column="1">#<cpp:directive pos:line="61" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="61" pos:column="9">IDI_PASTE_OFF_ICON</name></cpp:macro>    <cpp:value pos:line="61" pos:column="31">209</cpp:value></cpp:define>   
+<cpp:define pos:line="62" pos:column="1">#<cpp:directive pos:line="62" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="62" pos:column="9">IDI_UNDO_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="62" pos:column="31">210</cpp:value></cpp:define>
+<cpp:define pos:line="63" pos:column="1">#<cpp:directive pos:line="63" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="63" pos:column="9">IDI_REDO_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="63" pos:column="31">211</cpp:value></cpp:define>   
+<cpp:define pos:line="64" pos:column="1">#<cpp:directive pos:line="64" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="64" pos:column="9">IDI_FIND_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="64" pos:column="31">212</cpp:value></cpp:define>   
+<cpp:define pos:line="65" pos:column="1">#<cpp:directive pos:line="65" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="65" pos:column="9">IDI_REPLACE_OFF_ICON</name></cpp:macro>  <cpp:value pos:line="65" pos:column="31">213</cpp:value></cpp:define>
+<cpp:define pos:line="66" pos:column="1">#<cpp:directive pos:line="66" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="66" pos:column="9">IDI_ZOOMIN_OFF_ICON</name></cpp:macro>   <cpp:value pos:line="66" pos:column="31">214</cpp:value></cpp:define>
+<cpp:define pos:line="67" pos:column="1">#<cpp:directive pos:line="67" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="67" pos:column="9">IDI_ZOOMOUT_OFF_ICON</name></cpp:macro>  <cpp:value pos:line="67" pos:column="31">215</cpp:value></cpp:define>
+<cpp:define pos:line="68" pos:column="1">#<cpp:directive pos:line="68" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="68" pos:column="9">IDI_VIEW_UD_DLG_OFF_ICON</name></cpp:macro> <cpp:value pos:line="68" pos:column="34">216</cpp:value></cpp:define>
+<cpp:define pos:line="69" pos:column="1">#<cpp:directive pos:line="69" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="69" pos:column="9">IDI_PRINT_OFF_ICON</name></cpp:macro>    <cpp:value pos:line="69" pos:column="31">217</cpp:value></cpp:define>
+<cpp:define pos:line="70" pos:column="1">#<cpp:directive pos:line="70" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="70" pos:column="9">IDI_VIEW_ALL_CHAR_ON_ICON</name></cpp:macro>  <cpp:value pos:line="70" pos:column="36">218</cpp:value></cpp:define>
+<cpp:define pos:line="71" pos:column="1">#<cpp:directive pos:line="71" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="71" pos:column="9">IDI_VIEW_INDENT_ON_ICON</name></cpp:macro> <cpp:value pos:line="71" pos:column="33">219</cpp:value></cpp:define>
+<cpp:define pos:line="72" pos:column="1">#<cpp:directive pos:line="72" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="72" pos:column="9">IDI_VIEW_WRAP_ON_ICON</name></cpp:macro> <cpp:value pos:line="72" pos:column="31">220</cpp:value></cpp:define>
+
+<cpp:define pos:line="74" pos:column="1">#<cpp:directive pos:line="74" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="74" pos:column="9">IDI_STARTRECORD_OFF_ICON</name></cpp:macro>     <cpp:value pos:line="74" pos:column="38">221</cpp:value></cpp:define>
+<cpp:define pos:line="75" pos:column="1">#<cpp:directive pos:line="75" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="75" pos:column="9">IDI_STARTRECORD_ON_ICON</name></cpp:macro>      <cpp:value pos:line="75" pos:column="38">222</cpp:value></cpp:define>
+<cpp:define pos:line="76" pos:column="1">#<cpp:directive pos:line="76" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="76" pos:column="9">IDI_STARTRECORD_DISABLE_ICON</name></cpp:macro> <cpp:value pos:line="76" pos:column="38">223</cpp:value></cpp:define>
+<cpp:define pos:line="77" pos:column="1">#<cpp:directive pos:line="77" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="77" pos:column="9">IDI_STOPRECORD_OFF_ICON</name></cpp:macro>      <cpp:value pos:line="77" pos:column="38">224</cpp:value></cpp:define>
+<cpp:define pos:line="78" pos:column="1">#<cpp:directive pos:line="78" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="78" pos:column="9">IDI_STOPRECORD_ON_ICON</name></cpp:macro>       <cpp:value pos:line="78" pos:column="38">225</cpp:value></cpp:define>
+<cpp:define pos:line="79" pos:column="1">#<cpp:directive pos:line="79" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="79" pos:column="9">IDI_STOPRECORD_DISABLE_ICON</name></cpp:macro>  <cpp:value pos:line="79" pos:column="38">226</cpp:value></cpp:define>
+<cpp:define pos:line="80" pos:column="1">#<cpp:directive pos:line="80" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="80" pos:column="9">IDI_PLAYRECORD_OFF_ICON</name></cpp:macro>      <cpp:value pos:line="80" pos:column="38">227</cpp:value></cpp:define>
+<cpp:define pos:line="81" pos:column="1">#<cpp:directive pos:line="81" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="81" pos:column="9">IDI_PLAYRECORD_ON_ICON</name></cpp:macro>       <cpp:value pos:line="81" pos:column="38">228</cpp:value></cpp:define>
+<cpp:define pos:line="82" pos:column="1">#<cpp:directive pos:line="82" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="82" pos:column="9">IDI_PLAYRECORD_DISABLE_ICON</name></cpp:macro>  <cpp:value pos:line="82" pos:column="38">229</cpp:value></cpp:define>
+<cpp:define pos:line="83" pos:column="1">#<cpp:directive pos:line="83" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="83" pos:column="9">IDI_SAVERECORD_OFF_ICON</name></cpp:macro>  	 <cpp:value pos:line="83" pos:column="42">230</cpp:value></cpp:define>
+<cpp:define pos:line="84" pos:column="1">#<cpp:directive pos:line="84" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="84" pos:column="9">IDI_SAVERECORD_ON_ICON</name></cpp:macro>  	 <cpp:value pos:line="84" pos:column="42">231</cpp:value></cpp:define>
+<cpp:define pos:line="85" pos:column="1">#<cpp:directive pos:line="85" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="85" pos:column="9">IDI_SAVERECORD_DISABLE_ICON</name></cpp:macro>  <cpp:value pos:line="85" pos:column="38">232</cpp:value></cpp:define>
+
+<comment type="line" pos:line="87" pos:column="1">// multi run macro</comment>
+<cpp:define pos:line="88" pos:column="1">#<cpp:directive pos:line="88" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="88" pos:column="9">IDI_MMPLAY_DIS_ICON</name></cpp:macro>					<cpp:value pos:line="88" pos:column="65">233</cpp:value></cpp:define>
+<cpp:define pos:line="89" pos:column="1">#<cpp:directive pos:line="89" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="89" pos:column="9">IDI_MMPLAY_OFF_ICON</name></cpp:macro>					<cpp:value pos:line="89" pos:column="65">234</cpp:value></cpp:define>
+<cpp:define pos:line="90" pos:column="1">#<cpp:directive pos:line="90" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="90" pos:column="9">IDI_MMPLAY_ON_ICON</name></cpp:macro>					<cpp:value pos:line="90" pos:column="65">235</cpp:value></cpp:define>
+
+<cpp:define pos:line="92" pos:column="1">#<cpp:directive pos:line="92" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="92" pos:column="9">IDI_NEW_ON_ICON</name></cpp:macro>      <cpp:value pos:line="92" pos:column="30">301</cpp:value></cpp:define>
+<cpp:define pos:line="93" pos:column="1">#<cpp:directive pos:line="93" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="93" pos:column="9">IDI_OPEN_ON_ICON</name></cpp:macro>     <cpp:value pos:line="93" pos:column="30">302</cpp:value></cpp:define>
+<cpp:define pos:line="94" pos:column="1">#<cpp:directive pos:line="94" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="94" pos:column="9">IDI_CLOSE_ON_ICON</name></cpp:macro>    <cpp:value pos:line="94" pos:column="30">303</cpp:value></cpp:define>
+<cpp:define pos:line="95" pos:column="1">#<cpp:directive pos:line="95" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="95" pos:column="9">IDI_CLOSEALL_ON_ICON</name></cpp:macro> <cpp:value pos:line="95" pos:column="30">304</cpp:value></cpp:define>
+<cpp:define pos:line="96" pos:column="1">#<cpp:directive pos:line="96" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="96" pos:column="9">IDI_SAVE_ON_ICON</name></cpp:macro>     <cpp:value pos:line="96" pos:column="30">305</cpp:value></cpp:define>
+<cpp:define pos:line="97" pos:column="1">#<cpp:directive pos:line="97" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="97" pos:column="9">IDI_SAVEALL_ON_ICON</name></cpp:macro>  <cpp:value pos:line="97" pos:column="30">306</cpp:value></cpp:define>
+<cpp:define pos:line="98" pos:column="1">#<cpp:directive pos:line="98" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="98" pos:column="9">IDI_CUT_ON_ICON</name></cpp:macro>      <cpp:value pos:line="98" pos:column="30">307</cpp:value></cpp:define>
+<cpp:define pos:line="99" pos:column="1">#<cpp:directive pos:line="99" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="99" pos:column="9">IDI_COPY_ON_ICON</name></cpp:macro>     <cpp:value pos:line="99" pos:column="30">308</cpp:value></cpp:define>
+<cpp:define pos:line="100" pos:column="1">#<cpp:directive pos:line="100" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="100" pos:column="9">IDI_PASTE_ON_ICON</name></cpp:macro>    <cpp:value pos:line="100" pos:column="30">309</cpp:value></cpp:define>
+<cpp:define pos:line="101" pos:column="1">#<cpp:directive pos:line="101" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="101" pos:column="9">IDI_UNDO_ON_ICON</name></cpp:macro>     <cpp:value pos:line="101" pos:column="30">310</cpp:value></cpp:define>
+<cpp:define pos:line="102" pos:column="1">#<cpp:directive pos:line="102" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="102" pos:column="9">IDI_REDO_ON_ICON</name></cpp:macro>     <cpp:value pos:line="102" pos:column="30">311</cpp:value></cpp:define>
+<cpp:define pos:line="103" pos:column="1">#<cpp:directive pos:line="103" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="103" pos:column="9">IDI_FIND_ON_ICON</name></cpp:macro>     <cpp:value pos:line="103" pos:column="30">312</cpp:value></cpp:define>
+<cpp:define pos:line="104" pos:column="1">#<cpp:directive pos:line="104" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="104" pos:column="9">IDI_REPLACE_ON_ICON</name></cpp:macro>  <cpp:value pos:line="104" pos:column="30">313</cpp:value></cpp:define>
+<cpp:define pos:line="105" pos:column="1">#<cpp:directive pos:line="105" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="105" pos:column="9">IDI_ZOOMIN_ON_ICON</name></cpp:macro>   <cpp:value pos:line="105" pos:column="30">314</cpp:value></cpp:define>
+<cpp:define pos:line="106" pos:column="1">#<cpp:directive pos:line="106" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="106" pos:column="9">IDI_ZOOMOUT_ON_ICON</name></cpp:macro>  <cpp:value pos:line="106" pos:column="30">315</cpp:value></cpp:define>
+<cpp:define pos:line="107" pos:column="1">#<cpp:directive pos:line="107" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="107" pos:column="9">IDI_VIEW_UD_DLG_ON_ICON</name></cpp:macro> <cpp:value pos:line="107" pos:column="33">316</cpp:value></cpp:define>
+<cpp:define pos:line="108" pos:column="1">#<cpp:directive pos:line="108" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="108" pos:column="9">IDI_PRINT_ON_ICON</name></cpp:macro>    <cpp:value pos:line="108" pos:column="30">317</cpp:value></cpp:define>
+<cpp:define pos:line="109" pos:column="1">#<cpp:directive pos:line="109" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="109" pos:column="9">IDI_VIEW_ALL_CHAR_OFF_ICON</name></cpp:macro>  <cpp:value pos:line="109" pos:column="37">318</cpp:value></cpp:define>
+<cpp:define pos:line="110" pos:column="1">#<cpp:directive pos:line="110" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="110" pos:column="9">IDI_VIEW_INDENT_OFF_ICON</name></cpp:macro> <cpp:value pos:line="110" pos:column="34">319</cpp:value></cpp:define>
+<cpp:define pos:line="111" pos:column="1">#<cpp:directive pos:line="111" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="111" pos:column="9">IDI_VIEW_WRAP_OFF_ICON</name></cpp:macro> <cpp:value pos:line="111" pos:column="32">320</cpp:value></cpp:define>
+
+<comment type="line" pos:line="113" pos:column="1">//#define	IDI_NEW_DISABLE_ICON  401</comment>
+<comment type="line" pos:line="114" pos:column="1">//#define	IDI_OPEN_ON_ICON      402</comment>
+<cpp:define pos:line="115" pos:column="1">#<cpp:directive pos:line="115" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="115" pos:column="9">IDI_SAVE_DISABLE_ICON</name></cpp:macro>   <cpp:value pos:line="115" pos:column="33">403</cpp:value></cpp:define>  
+<cpp:define pos:line="116" pos:column="1">#<cpp:directive pos:line="116" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="116" pos:column="9">IDI_SAVEALL_DISABLE_ICON</name></cpp:macro> <cpp:value pos:line="116" pos:column="34">404</cpp:value></cpp:define>
+<comment type="line" pos:line="117" pos:column="1">//#define	IDI_CLOSE_ON_ICON       405</comment>
+<comment type="line" pos:line="118" pos:column="1">//#define	IDI_CLOSEALL_ON_ICON    406</comment>
+<cpp:define pos:line="119" pos:column="1">#<cpp:directive pos:line="119" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="119" pos:column="9">IDI_CUT_DISABLE_ICON</name></cpp:macro>      <cpp:value pos:line="119" pos:column="35">407</cpp:value></cpp:define>
+<cpp:define pos:line="120" pos:column="1">#<cpp:directive pos:line="120" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="120" pos:column="9">IDI_COPY_DISABLE_ICON</name></cpp:macro>     <cpp:value pos:line="120" pos:column="35">408</cpp:value></cpp:define>
+<cpp:define pos:line="121" pos:column="1">#<cpp:directive pos:line="121" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="121" pos:column="9">IDI_PASTE_DISABLE_ICON</name></cpp:macro>   <cpp:value pos:line="121" pos:column="34">409</cpp:value></cpp:define>
+<cpp:define pos:line="122" pos:column="1">#<cpp:directive pos:line="122" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="122" pos:column="9">IDI_UNDO_DISABLE_ICON</name></cpp:macro>    <cpp:value pos:line="122" pos:column="34">410</cpp:value></cpp:define>
+<cpp:define pos:line="123" pos:column="1">#<cpp:directive pos:line="123" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="123" pos:column="9">IDI_REDO_DISABLE_ICON</name></cpp:macro>    <cpp:value pos:line="123" pos:column="34">411</cpp:value></cpp:define>
+<cpp:define pos:line="124" pos:column="1">#<cpp:directive pos:line="124" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="124" pos:column="9">IDI_DELETE_ICON</name></cpp:macro>             <cpp:value pos:line="124" pos:column="37">412</cpp:value></cpp:define>
+
+<cpp:define pos:line="126" pos:column="1">#<cpp:directive pos:line="126" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="126" pos:column="9">IDI_SYNCV_OFF_ICON</name></cpp:macro>		<cpp:value pos:line="126" pos:column="41">413</cpp:value></cpp:define>
+<cpp:define pos:line="127" pos:column="1">#<cpp:directive pos:line="127" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="127" pos:column="9">IDI_SYNCV_ON_ICON</name></cpp:macro>		<cpp:value pos:line="127" pos:column="41">414</cpp:value></cpp:define>
+<cpp:define pos:line="128" pos:column="1">#<cpp:directive pos:line="128" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="128" pos:column="9">IDI_SYNCV_DISABLE_ICON</name></cpp:macro>	<cpp:value pos:line="128" pos:column="33">415</cpp:value></cpp:define>
+
+<cpp:define pos:line="130" pos:column="1">#<cpp:directive pos:line="130" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="130" pos:column="9">IDI_SYNCH_OFF_ICON</name></cpp:macro>		<cpp:value pos:line="130" pos:column="41">416</cpp:value></cpp:define>
+<cpp:define pos:line="131" pos:column="1">#<cpp:directive pos:line="131" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="131" pos:column="9">IDI_SYNCH_ON_ICON</name></cpp:macro>		<cpp:value pos:line="131" pos:column="41">417</cpp:value></cpp:define>
+<cpp:define pos:line="132" pos:column="1">#<cpp:directive pos:line="132" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="132" pos:column="9">IDI_SYNCH_DISABLE_ICON</name></cpp:macro>	<cpp:value pos:line="132" pos:column="33">418</cpp:value></cpp:define>
+
+<cpp:define pos:line="134" pos:column="1">#<cpp:directive pos:line="134" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="134" pos:column="9">IDI_SAVED_ICON</name></cpp:macro>       <cpp:value pos:line="134" pos:column="30">501</cpp:value></cpp:define>
+<cpp:define pos:line="135" pos:column="1">#<cpp:directive pos:line="135" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="135" pos:column="9">IDI_UNSAVED_ICON</name></cpp:macro>     <cpp:value pos:line="135" pos:column="30">502</cpp:value></cpp:define>
+<cpp:define pos:line="136" pos:column="1">#<cpp:directive pos:line="136" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="136" pos:column="9">IDI_READONLY_ICON</name></cpp:macro>     <cpp:value pos:line="136" pos:column="31">503</cpp:value></cpp:define>
+<cpp:define pos:line="137" pos:column="1">#<cpp:directive pos:line="137" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="137" pos:column="9">IDI_FIND_RESULT_ICON</name></cpp:macro>  <cpp:value pos:line="137" pos:column="31">504</cpp:value></cpp:define>
+
+<cpp:define pos:line="139" pos:column="1">#<cpp:directive pos:line="139" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="139" pos:column="9">IDI_PROJECT_WORKSPACE</name></cpp:macro>		<cpp:value pos:line="139" pos:column="41">601</cpp:value></cpp:define>
+<cpp:define pos:line="140" pos:column="1">#<cpp:directive pos:line="140" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="140" pos:column="9">IDI_PROJECT_WORKSPACEDIRTY</name></cpp:macro>	<cpp:value pos:line="140" pos:column="41">602</cpp:value></cpp:define>
+<cpp:define pos:line="141" pos:column="1">#<cpp:directive pos:line="141" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="141" pos:column="9">IDI_PROJECT_PROJECT</name></cpp:macro>			<cpp:value pos:line="141" pos:column="49">603</cpp:value></cpp:define>
+<cpp:define pos:line="142" pos:column="1">#<cpp:directive pos:line="142" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="142" pos:column="9">IDI_PROJECT_FOLDEROPEN</name></cpp:macro>		<cpp:value pos:line="142" pos:column="41">604</cpp:value></cpp:define>
+<cpp:define pos:line="143" pos:column="1">#<cpp:directive pos:line="143" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="143" pos:column="9">IDI_PROJECT_FOLDERCLOSE</name></cpp:macro>		<cpp:value pos:line="143" pos:column="41">605</cpp:value></cpp:define>
+<cpp:define pos:line="144" pos:column="1">#<cpp:directive pos:line="144" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="144" pos:column="9">IDI_PROJECT_FILE</name></cpp:macro>			<cpp:value pos:line="144" pos:column="49">606</cpp:value></cpp:define>
+<cpp:define pos:line="145" pos:column="1">#<cpp:directive pos:line="145" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="145" pos:column="9">IDI_PROJECT_FILEINVALID</name></cpp:macro>		<cpp:value pos:line="145" pos:column="41">607</cpp:value></cpp:define>
+
+<cpp:define pos:line="147" pos:column="1">#<cpp:directive pos:line="147" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="147" pos:column="9">IDC_MY_CUR</name></cpp:macro>     <cpp:value pos:line="147" pos:column="24">1402</cpp:value></cpp:define>
+<cpp:define pos:line="148" pos:column="1">#<cpp:directive pos:line="148" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="148" pos:column="9">IDC_UP_ARROW</name></cpp:macro>  <cpp:value pos:line="148" pos:column="23">1403</cpp:value></cpp:define>
+<cpp:define pos:line="149" pos:column="1">#<cpp:directive pos:line="149" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="149" pos:column="9">IDC_DRAG_TAB</name></cpp:macro>    <cpp:value pos:line="149" pos:column="25">1404</cpp:value></cpp:define>
+<cpp:define pos:line="150" pos:column="1">#<cpp:directive pos:line="150" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="150" pos:column="9">IDC_DRAG_INTERDIT_TAB</name></cpp:macro> <cpp:value pos:line="150" pos:column="31">1405</cpp:value></cpp:define>
+<cpp:define pos:line="151" pos:column="1">#<cpp:directive pos:line="151" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="151" pos:column="9">IDC_DRAG_PLUS_TAB</name></cpp:macro> <cpp:value pos:line="151" pos:column="27">1406</cpp:value></cpp:define>
+<cpp:define pos:line="152" pos:column="1">#<cpp:directive pos:line="152" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="152" pos:column="9">IDC_DRAG_OUT_TAB</name></cpp:macro> <cpp:value pos:line="152" pos:column="26">1407</cpp:value></cpp:define>
+
+<cpp:define pos:line="154" pos:column="1">#<cpp:directive pos:line="154" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="154" pos:column="9">IDC_MACRO_RECORDING</name></cpp:macro> <cpp:value pos:line="154" pos:column="29">1408</cpp:value></cpp:define>
+
+<cpp:define pos:line="156" pos:column="1">#<cpp:directive pos:line="156" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="156" pos:column="9">IDR_SAVEALL</name></cpp:macro>			<cpp:value pos:line="156" pos:column="41">1500</cpp:value></cpp:define>
+<cpp:define pos:line="157" pos:column="1">#<cpp:directive pos:line="157" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="157" pos:column="9">IDR_CLOSEFILE</name></cpp:macro>		<cpp:value pos:line="157" pos:column="33">1501</cpp:value></cpp:define>
+<cpp:define pos:line="158" pos:column="1">#<cpp:directive pos:line="158" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="158" pos:column="9">IDR_CLOSEALL</name></cpp:macro>		<cpp:value pos:line="158" pos:column="33">1502</cpp:value></cpp:define>
+<cpp:define pos:line="159" pos:column="1">#<cpp:directive pos:line="159" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="159" pos:column="9">IDR_FIND</name></cpp:macro>				<cpp:value pos:line="159" pos:column="49">1503</cpp:value></cpp:define>
+<cpp:define pos:line="160" pos:column="1">#<cpp:directive pos:line="160" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="160" pos:column="9">IDR_REPLACE</name></cpp:macro>			<cpp:value pos:line="160" pos:column="41">1504</cpp:value></cpp:define>
+<cpp:define pos:line="161" pos:column="1">#<cpp:directive pos:line="161" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="161" pos:column="9">IDR_ZOOMIN</name></cpp:macro>			<cpp:value pos:line="161" pos:column="41">1505</cpp:value></cpp:define>
+<cpp:define pos:line="162" pos:column="1">#<cpp:directive pos:line="162" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="162" pos:column="9">IDR_ZOOMOUT</name></cpp:macro>		<cpp:value pos:line="162" pos:column="33">1506</cpp:value></cpp:define>
+<cpp:define pos:line="163" pos:column="1">#<cpp:directive pos:line="163" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="163" pos:column="9">IDR_WRAP</name></cpp:macro>			<cpp:value pos:line="163" pos:column="41">1507</cpp:value></cpp:define>
+<cpp:define pos:line="164" pos:column="1">#<cpp:directive pos:line="164" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="164" pos:column="9">IDR_INVISIBLECHAR</name></cpp:macro>	<cpp:value pos:line="164" pos:column="33">1508</cpp:value></cpp:define>
+<cpp:define pos:line="165" pos:column="1">#<cpp:directive pos:line="165" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="165" pos:column="9">IDR_INDENTGUIDE</name></cpp:macro>		<cpp:value pos:line="165" pos:column="33">1509</cpp:value></cpp:define>
+<cpp:define pos:line="166" pos:column="1">#<cpp:directive pos:line="166" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="166" pos:column="9">IDR_SHOWPANNEL</name></cpp:macro>		<cpp:value pos:line="166" pos:column="33">1510</cpp:value></cpp:define>
+<cpp:define pos:line="167" pos:column="1">#<cpp:directive pos:line="167" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="167" pos:column="9">IDR_STARTRECORD</name></cpp:macro>		<cpp:value pos:line="167" pos:column="33">1511</cpp:value></cpp:define>
+<cpp:define pos:line="168" pos:column="1">#<cpp:directive pos:line="168" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="168" pos:column="9">IDR_STOPRECORD</name></cpp:macro>		<cpp:value pos:line="168" pos:column="33">1512</cpp:value></cpp:define>
+<cpp:define pos:line="169" pos:column="1">#<cpp:directive pos:line="169" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="169" pos:column="9">IDR_PLAYRECORD</name></cpp:macro>		<cpp:value pos:line="169" pos:column="33">1513</cpp:value></cpp:define>
+<cpp:define pos:line="170" pos:column="1">#<cpp:directive pos:line="170" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="170" pos:column="9">IDR_SAVERECORD</name></cpp:macro>		<cpp:value pos:line="170" pos:column="33">1514</cpp:value></cpp:define>
+<cpp:define pos:line="171" pos:column="1">#<cpp:directive pos:line="171" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="171" pos:column="9">IDR_SYNCV</name></cpp:macro>		<cpp:value pos:line="171" pos:column="33">1515</cpp:value></cpp:define>
+<cpp:define pos:line="172" pos:column="1">#<cpp:directive pos:line="172" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="172" pos:column="9">IDR_SYNCH</name></cpp:macro>		<cpp:value pos:line="172" pos:column="33">1516</cpp:value></cpp:define>
+<cpp:define pos:line="173" pos:column="1">#<cpp:directive pos:line="173" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="173" pos:column="9">IDR_FILENEW</name></cpp:macro>		<cpp:value pos:line="173" pos:column="33">1517</cpp:value></cpp:define>
+<cpp:define pos:line="174" pos:column="1">#<cpp:directive pos:line="174" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="174" pos:column="9">IDR_FILEOPEN</name></cpp:macro>	<cpp:value pos:line="174" pos:column="25">1518</cpp:value></cpp:define>
+<cpp:define pos:line="175" pos:column="1">#<cpp:directive pos:line="175" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="175" pos:column="9">IDR_FILESAVE</name></cpp:macro>	<cpp:value pos:line="175" pos:column="25">1519</cpp:value></cpp:define>
+<cpp:define pos:line="176" pos:column="1">#<cpp:directive pos:line="176" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="176" pos:column="9">IDR_PRINT</name></cpp:macro>		<cpp:value pos:line="176" pos:column="33">1520</cpp:value></cpp:define>
+<cpp:define pos:line="177" pos:column="1">#<cpp:directive pos:line="177" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="177" pos:column="9">IDR_CUT</name></cpp:macro>			<cpp:value pos:line="177" pos:column="33">1521</cpp:value></cpp:define>
+<cpp:define pos:line="178" pos:column="1">#<cpp:directive pos:line="178" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="178" pos:column="9">IDR_COPY</name></cpp:macro>		<cpp:value pos:line="178" pos:column="33">1522</cpp:value></cpp:define>
+<cpp:define pos:line="179" pos:column="1">#<cpp:directive pos:line="179" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="179" pos:column="9">IDR_PASTE</name></cpp:macro>		<cpp:value pos:line="179" pos:column="33">1523</cpp:value></cpp:define>
+<cpp:define pos:line="180" pos:column="1">#<cpp:directive pos:line="180" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="180" pos:column="9">IDR_UNDO</name></cpp:macro>		<cpp:value pos:line="180" pos:column="33">1524</cpp:value></cpp:define>
+<cpp:define pos:line="181" pos:column="1">#<cpp:directive pos:line="181" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="181" pos:column="9">IDR_REDO</name></cpp:macro>		<cpp:value pos:line="181" pos:column="33">1525</cpp:value></cpp:define>
+<cpp:define pos:line="182" pos:column="1">#<cpp:directive pos:line="182" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="182" pos:column="9">IDR_M_PLAYRECORD</name></cpp:macro>	<cpp:value pos:line="182" pos:column="33">1526</cpp:value></cpp:define>
+
+<cpp:define pos:line="184" pos:column="1">#<cpp:directive pos:line="184" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="184" pos:column="9">IDR_CLOSETAB</name></cpp:macro>     <cpp:value pos:line="184" pos:column="26">1530</cpp:value></cpp:define>
+<cpp:define pos:line="185" pos:column="1">#<cpp:directive pos:line="185" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="185" pos:column="9">IDR_CLOSETAB_INACT</name></cpp:macro>     <cpp:value pos:line="185" pos:column="32">1531</cpp:value></cpp:define>
+<cpp:define pos:line="186" pos:column="1">#<cpp:directive pos:line="186" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="186" pos:column="9">IDR_CLOSETAB_HOVER</name></cpp:macro>     <cpp:value pos:line="186" pos:column="32">1532</cpp:value></cpp:define>
+<cpp:define pos:line="187" pos:column="1">#<cpp:directive pos:line="187" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="187" pos:column="9">IDR_CLOSETAB_PUSH</name></cpp:macro>     <cpp:value pos:line="187" pos:column="31">1533</cpp:value></cpp:define>
+
+<cpp:define pos:line="189" pos:column="1">#<cpp:directive pos:line="189" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="189" pos:column="9">ID_MACRO</name></cpp:macro> <cpp:value pos:line="189" pos:column="18">20000</cpp:value></cpp:define>
+<cpp:define pos:line="190" pos:column="1">#<cpp:directive pos:line="190" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="190" pos:column="9">ID_MACRO_LIMIT</name></cpp:macro> <cpp:value pos:line="190" pos:column="24">20200</cpp:value></cpp:define>
+
+<cpp:define pos:line="192" pos:column="1">#<cpp:directive pos:line="192" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="192" pos:column="9">ID_USER_CMD</name></cpp:macro> <cpp:value pos:line="192" pos:column="21">21000</cpp:value></cpp:define>
+<cpp:define pos:line="193" pos:column="1">#<cpp:directive pos:line="193" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="193" pos:column="9">ID_USER_CMD_LIMIT</name></cpp:macro> <cpp:value pos:line="193" pos:column="27">21200</cpp:value></cpp:define>
+
+<cpp:define pos:line="195" pos:column="1">#<cpp:directive pos:line="195" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="195" pos:column="9">ID_PLUGINS_CMD</name></cpp:macro> <cpp:value pos:line="195" pos:column="24">22000</cpp:value></cpp:define>
+<cpp:define pos:line="196" pos:column="1">#<cpp:directive pos:line="196" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="196" pos:column="9">ID_PLUGINS_CMD_LIMIT</name></cpp:macro> <cpp:value pos:line="196" pos:column="30">22500</cpp:value></cpp:define>
+
+<cpp:define pos:line="198" pos:column="1">#<cpp:directive pos:line="198" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="198" pos:column="9">ID_PLUGINS_CMD_DYNAMIC</name></cpp:macro>       <cpp:value pos:line="198" pos:column="38">23000</cpp:value></cpp:define>
+<cpp:define pos:line="199" pos:column="1">#<cpp:directive pos:line="199" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="199" pos:column="9">ID_PLUGINS_CMD_DYNAMIC_LIMIT</name></cpp:macro> <cpp:value pos:line="199" pos:column="38">24999</cpp:value></cpp:define> 
+
+<cpp:define pos:line="201" pos:column="1">#<cpp:directive pos:line="201" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="201" pos:column="9">MARKER_PLUGINS</name></cpp:macro>          <cpp:value pos:line="201" pos:column="33">3</cpp:value></cpp:define>
+<cpp:define pos:line="202" pos:column="1">#<cpp:directive pos:line="202" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="202" pos:column="9">MARKER_PLUGINS_LIMIT</name></cpp:macro>   <cpp:value pos:line="202" pos:column="32">19</cpp:value></cpp:define>
+<comment type="block" pos:line="203" pos:column="1">/*UNLOAD
+#define ID_PLUGINS_REMOVING 22501
+#define ID_PLUGINS_REMOVING_END 22600
+*/</comment>
+
+
+<comment type="line" pos:line="209" pos:column="1">//#define IDM 40000</comment>
+
+<cpp:define pos:line="211" pos:column="1">#<cpp:directive pos:line="211" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="211" pos:column="9">IDCMD</name></cpp:macro> <cpp:value pos:line="211" pos:column="15">50000</cpp:value></cpp:define>
+	<comment type="line" pos:line="212" pos:column="9">//#define	IDM_EDIT_AUTOCOMPLETE    			(IDCMD+0)</comment>
+	<comment type="line" pos:line="213" pos:column="9">//#define	IDM_EDIT_AUTOCOMPLETE_CURRENTFILE	(IDCMD+1)</comment>
+	
+	<cpp:define pos:line="215" pos:column="9">#<cpp:directive pos:line="215" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="215" pos:column="17">IDC_PREV_DOC</name></cpp:macro>					<cpp:value pos:line="215" pos:column="65">(IDCMD+3)</cpp:value></cpp:define>
+	<cpp:define pos:line="216" pos:column="9">#<cpp:directive pos:line="216" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="216" pos:column="17">IDC_NEXT_DOC</name></cpp:macro>					<cpp:value pos:line="216" pos:column="65">(IDCMD+4)</cpp:value></cpp:define>
+	<cpp:define pos:line="217" pos:column="9">#<cpp:directive pos:line="217" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="217" pos:column="17">IDC_EDIT_TOGGLEMACRORECORDING</name></cpp:macro>	<cpp:value pos:line="217" pos:column="49">(IDCMD+5)</cpp:value></cpp:define>
+	<comment type="line" pos:line="218" pos:column="9">//#define	IDC_KEY_HOME					(IDCMD+6)</comment>
+	<comment type="line" pos:line="219" pos:column="9">//#define	IDC_KEY_END						(IDCMD+7)</comment>
+	<comment type="line" pos:line="220" pos:column="9">//#define	IDC_KEY_SELECT_2_HOME			(IDCMD+8)</comment>
+	<comment type="line" pos:line="221" pos:column="9">//#define	IDC_KEY_SELECT_2_END			(IDCMD+9)</comment>
+	
+<cpp:define pos:line="223" pos:column="1">#<cpp:directive pos:line="223" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="223" pos:column="9">IDCMD_LIMIT</name></cpp:macro>		    			<cpp:value pos:line="223" pos:column="57">(IDCMD+20)</cpp:value></cpp:define>
+
+<cpp:define pos:line="225" pos:column="1">#<cpp:directive pos:line="225" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="225" pos:column="9">IDSCINTILLA</name></cpp:macro> <cpp:value pos:line="225" pos:column="21">60000</cpp:value></cpp:define>				
+	<cpp:define pos:line="226" pos:column="9">#<cpp:directive pos:line="226" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="226" pos:column="17">IDSCINTILLA_KEY_HOME</name></cpp:macro>        <cpp:value pos:line="226" pos:column="45">(IDSCINTILLA+0)</cpp:value></cpp:define>
+	<cpp:define pos:line="227" pos:column="9">#<cpp:directive pos:line="227" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="227" pos:column="17">IDSCINTILLA_KEY_HOME_WRAP</name></cpp:macro>   <cpp:value pos:line="227" pos:column="45">(IDSCINTILLA+1)</cpp:value></cpp:define>
+	<cpp:define pos:line="228" pos:column="9">#<cpp:directive pos:line="228" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="228" pos:column="17">IDSCINTILLA_KEY_END</name></cpp:macro>         <cpp:value pos:line="228" pos:column="45">(IDSCINTILLA+2)</cpp:value></cpp:define>
+	<cpp:define pos:line="229" pos:column="9">#<cpp:directive pos:line="229" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="229" pos:column="17">IDSCINTILLA_KEY_END_WRAP</name></cpp:macro>    <cpp:value pos:line="229" pos:column="45">(IDSCINTILLA+3)</cpp:value></cpp:define>
+	<cpp:define pos:line="230" pos:column="9">#<cpp:directive pos:line="230" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="230" pos:column="17">IDSCINTILLA_KEY_LINE_DUP</name></cpp:macro>    <cpp:value pos:line="230" pos:column="45">(IDSCINTILLA+4)</cpp:value></cpp:define>
+	<cpp:define pos:line="231" pos:column="9">#<cpp:directive pos:line="231" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="231" pos:column="17">IDSCINTILLA_KEY_LINE_CUT</name></cpp:macro>    <cpp:value pos:line="231" pos:column="45">(IDSCINTILLA+5)</cpp:value></cpp:define>
+	<cpp:define pos:line="232" pos:column="9">#<cpp:directive pos:line="232" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="232" pos:column="17">IDSCINTILLA_KEY_LINE_DEL</name></cpp:macro>    <cpp:value pos:line="232" pos:column="45">(IDSCINTILLA+6)</cpp:value></cpp:define>
+	<cpp:define pos:line="233" pos:column="9">#<cpp:directive pos:line="233" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="233" pos:column="17">IDSCINTILLA_KEY_LINE_TRANS</name></cpp:macro>  <cpp:value pos:line="233" pos:column="45">(IDSCINTILLA+7)</cpp:value></cpp:define>
+	<cpp:define pos:line="234" pos:column="9">#<cpp:directive pos:line="234" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="234" pos:column="17">IDSCINTILLA_KEY_LINE_COPY</name></cpp:macro>   <cpp:value pos:line="234" pos:column="45">(IDSCINTILLA+8)</cpp:value></cpp:define>
+	<cpp:define pos:line="235" pos:column="9">#<cpp:directive pos:line="235" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="235" pos:column="17">IDSCINTILLA_KEY_CUT</name></cpp:macro>         <cpp:value pos:line="235" pos:column="45">(IDSCINTILLA+9)</cpp:value></cpp:define>
+	<cpp:define pos:line="236" pos:column="9">#<cpp:directive pos:line="236" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="236" pos:column="17">IDSCINTILLA_KEY_COPY</name></cpp:macro>        <cpp:value pos:line="236" pos:column="45">(IDSCINTILLA+10)</cpp:value></cpp:define>
+	<cpp:define pos:line="237" pos:column="9">#<cpp:directive pos:line="237" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="237" pos:column="17">IDSCINTILLA_KEY_PASTE</name></cpp:macro>       <cpp:value pos:line="237" pos:column="45">(IDSCINTILLA+11)</cpp:value></cpp:define>
+	<cpp:define pos:line="238" pos:column="9">#<cpp:directive pos:line="238" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="238" pos:column="17">IDSCINTILLA_KEY_DEL</name></cpp:macro>         <cpp:value pos:line="238" pos:column="45">(IDSCINTILLA+12)</cpp:value></cpp:define>
+	<cpp:define pos:line="239" pos:column="9">#<cpp:directive pos:line="239" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="239" pos:column="17">IDSCINTILLA_KEY_SELECTALL</name></cpp:macro>   <cpp:value pos:line="239" pos:column="45">(IDSCINTILLA+13)</cpp:value></cpp:define>
+	<cpp:define pos:line="240" pos:column="9">#<cpp:directive pos:line="240" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="240" pos:column="17">IDSCINTILLA_KEY_OUTDENT</name></cpp:macro>     <cpp:value pos:line="240" pos:column="45">(IDSCINTILLA+14)</cpp:value></cpp:define>
+	<cpp:define pos:line="241" pos:column="9">#<cpp:directive pos:line="241" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="241" pos:column="17">IDSCINTILLA_KEY_UNDO</name></cpp:macro>        <cpp:value pos:line="241" pos:column="45">(IDSCINTILLA+15)</cpp:value></cpp:define>
+	<cpp:define pos:line="242" pos:column="9">#<cpp:directive pos:line="242" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="242" pos:column="17">IDSCINTILLA_KEY_REDO</name></cpp:macro>        <cpp:value pos:line="242" pos:column="45">(IDSCINTILLA+16)</cpp:value></cpp:define>
+<cpp:define pos:line="243" pos:column="1">#<cpp:directive pos:line="243" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="243" pos:column="9">IDSCINTILLA_LIMIT</name></cpp:macro>		<cpp:value pos:line="243" pos:column="41">(IDSCINTILLA+30)</cpp:value></cpp:define>
+
+<cpp:define pos:line="245" pos:column="1">#<cpp:directive pos:line="245" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="245" pos:column="9">IDD_FILEVIEW_DIALOG</name></cpp:macro>				<cpp:value pos:line="245" pos:column="57">1000</cpp:value></cpp:define>
+
+<cpp:define pos:line="247" pos:column="1">#<cpp:directive pos:line="247" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="247" pos:column="9">IDC_MINIMIZED_TRAY</name></cpp:macro>         <cpp:value pos:line="247" pos:column="36">67001</cpp:value></cpp:define>
+
+<cpp:define pos:line="249" pos:column="1">#<cpp:directive pos:line="249" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="249" pos:column="9">IDD_CREATE_DIRECTORY</name></cpp:macro>			<cpp:value pos:line="249" pos:column="49">1100</cpp:value></cpp:define>
+<cpp:define pos:line="250" pos:column="1">#<cpp:directive pos:line="250" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="250" pos:column="9">IDC_STATIC_CURRENT_FOLDER</name></cpp:macro>       <cpp:value pos:line="250" pos:column="41">1101</cpp:value></cpp:define>
+<cpp:define pos:line="251" pos:column="1">#<cpp:directive pos:line="251" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="251" pos:column="9">IDC_EDIT_NEW_FOLDER</name></cpp:macro>             <cpp:value pos:line="251" pos:column="41">1102</cpp:value></cpp:define>
+
+<cpp:define pos:line="253" pos:column="1">#<cpp:directive pos:line="253" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="253" pos:column="9">IDD_INSERT_INPUT_TEXT</name></cpp:macro>			<cpp:value pos:line="253" pos:column="49">1200</cpp:value></cpp:define>
+<cpp:define pos:line="254" pos:column="1">#<cpp:directive pos:line="254" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="254" pos:column="9">IDC_EDIT_INPUT_VALUE</name></cpp:macro>			<cpp:value pos:line="254" pos:column="49">1201</cpp:value></cpp:define>
+<cpp:define pos:line="255" pos:column="1">#<cpp:directive pos:line="255" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="255" pos:column="9">IDC_STATIC_INPUT_TITLE</name></cpp:macro>			<cpp:value pos:line="255" pos:column="49">1202</cpp:value></cpp:define>
+<cpp:define pos:line="256" pos:column="1">#<cpp:directive pos:line="256" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="256" pos:column="9">IDC_ICON_INPUT_ICON</name></cpp:macro>				<cpp:value pos:line="256" pos:column="57">1203</cpp:value></cpp:define>
+
+<cpp:define pos:line="258" pos:column="1">#<cpp:directive pos:line="258" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="258" pos:column="9">IDR_M30_MENU</name></cpp:macro>					<cpp:value pos:line="258" pos:column="57">1500</cpp:value></cpp:define>
+
+<cpp:define pos:line="260" pos:column="1">#<cpp:directive pos:line="260" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="260" pos:column="9">IDR_SYSTRAYPOPUP_MENU</name></cpp:macro>			<cpp:value pos:line="260" pos:column="49">1501</cpp:value></cpp:define>
+
+<comment type="line" pos:line="262" pos:column="1">// #define	IDD_FIND_REPLACE_DLG		1600</comment>
+
+<cpp:define pos:line="264" pos:column="1">#<cpp:directive pos:line="264" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="264" pos:column="9">IDD_ABOUTBOX</name></cpp:macro> <cpp:value pos:line="264" pos:column="22">1700</cpp:value></cpp:define>
+<cpp:define pos:line="265" pos:column="1">#<cpp:directive pos:line="265" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="265" pos:column="9">IDC_LICENCE_EDIT</name></cpp:macro> <cpp:value pos:line="265" pos:column="26">1701</cpp:value></cpp:define>
+<cpp:define pos:line="266" pos:column="1">#<cpp:directive pos:line="266" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="266" pos:column="9">IDC_HOME_ADDR</name></cpp:macro>		<cpp:value pos:line="266" pos:column="33">1702</cpp:value></cpp:define>
+<cpp:define pos:line="267" pos:column="1">#<cpp:directive pos:line="267" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="267" pos:column="9">IDC_EMAIL_ADDR</name></cpp:macro>		<cpp:value pos:line="267" pos:column="33">1703</cpp:value></cpp:define>
+<cpp:define pos:line="268" pos:column="1">#<cpp:directive pos:line="268" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="268" pos:column="9">IDC_ONLINEHELP_ADDR</name></cpp:macro> <cpp:value pos:line="268" pos:column="29">1704</cpp:value></cpp:define>
+<cpp:define pos:line="269" pos:column="1">#<cpp:directive pos:line="269" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="269" pos:column="9">IDC_AUTHOR_NAME</name></cpp:macro> <cpp:value pos:line="269" pos:column="25">1705</cpp:value></cpp:define>
+<cpp:define pos:line="270" pos:column="1">#<cpp:directive pos:line="270" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="270" pos:column="9">IDC_BUILD_DATETIME</name></cpp:macro> <cpp:value pos:line="270" pos:column="28">1706</cpp:value></cpp:define>		<comment type="line" pos:line="270" pos:column="41">//LS: CompileDateInAboutDialog: Automatically insert compile date as additional version info in About-dialog!</comment>
+<comment type="line" pos:line="271" pos:column="1">//#define	IDD_USER_DEFINE_BOX 				 1800</comment>
+
+<comment type="line" pos:line="273" pos:column="1">//#define	IDD_RUN_DLG      1900</comment>
+
+<cpp:define pos:line="275" pos:column="1">#<cpp:directive pos:line="275" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="275" pos:column="9">IDD_GOLINE</name></cpp:macro>		<cpp:value pos:line="275" pos:column="33">2000</cpp:value></cpp:define>
+<cpp:define pos:line="276" pos:column="1">#<cpp:directive pos:line="276" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="276" pos:column="9">ID_GOLINE_EDIT</name></cpp:macro>	<cpp:value pos:line="276" pos:column="25">(IDD_GOLINE + 1)</cpp:value></cpp:define>
+<cpp:define pos:line="277" pos:column="1">#<cpp:directive pos:line="277" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="277" pos:column="9">ID_CURRLINE</name></cpp:macro>		<cpp:value pos:line="277" pos:column="33">(IDD_GOLINE + 2)</cpp:value></cpp:define>
+<cpp:define pos:line="278" pos:column="1">#<cpp:directive pos:line="278" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="278" pos:column="9">ID_LASTLINE</name></cpp:macro>		<cpp:value pos:line="278" pos:column="33">(IDD_GOLINE + 3)</cpp:value></cpp:define>
+<cpp:define pos:line="279" pos:column="1">#<cpp:directive pos:line="279" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="279" pos:column="9">ID_URHERE_STATIC</name></cpp:macro>           <cpp:value pos:line="279" pos:column="36">(IDD_GOLINE + 4)</cpp:value></cpp:define>
+<cpp:define pos:line="280" pos:column="1">#<cpp:directive pos:line="280" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="280" pos:column="9">ID_UGO_STATIC</name></cpp:macro>                 <cpp:value pos:line="280" pos:column="39">(IDD_GOLINE + 5)</cpp:value></cpp:define>
+<cpp:define pos:line="281" pos:column="1">#<cpp:directive pos:line="281" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="281" pos:column="9">ID_NOMORETHAN_STATIC</name></cpp:macro>   <cpp:value pos:line="281" pos:column="32">(IDD_GOLINE + 6)</cpp:value></cpp:define>
+<cpp:define pos:line="282" pos:column="1">#<cpp:directive pos:line="282" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="282" pos:column="9">IDC_RADIO_GOTOLINE</name></cpp:macro>   <cpp:value pos:line="282" pos:column="30">(IDD_GOLINE + 7)</cpp:value></cpp:define>
+<cpp:define pos:line="283" pos:column="1">#<cpp:directive pos:line="283" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="283" pos:column="9">IDC_RADIO_GOTOOFFSET</name></cpp:macro>   <cpp:value pos:line="283" pos:column="32">(IDD_GOLINE + 8)</cpp:value></cpp:define>
+
+<comment type="line" pos:line="285" pos:column="1">// voir columnEditor_rc.h</comment>
+<comment type="line" pos:line="286" pos:column="1">//#define	IDD_COLUMNEDIT   2020</comment>
+
+
+<comment type="line" pos:line="289" pos:column="1">//#define	IDD_COLOUR_POPUP   2100</comment>
+
+<comment type="line" pos:line="291" pos:column="1">// See WordStyleDlgRes.h</comment>
+<comment type="line" pos:line="292" pos:column="1">//#define	IDD_STYLER_DLG	2200</comment>
+<comment type="line" pos:line="293" pos:column="1">//#define IDD_GLOBAL_STYLER_DLG	2300</comment>
+
+<cpp:define pos:line="295" pos:column="1">#<cpp:directive pos:line="295" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="295" pos:column="9">IDD_VALUE_DLG</name></cpp:macro>       <cpp:value pos:line="295" pos:column="29">2400</cpp:value></cpp:define>
+<cpp:define pos:line="296" pos:column="1">#<cpp:directive pos:line="296" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="296" pos:column="9">IDC_VALUE_STATIC</name></cpp:macro>  <cpp:value pos:line="296" pos:column="27">2401</cpp:value></cpp:define>
+<cpp:define pos:line="297" pos:column="1">#<cpp:directive pos:line="297" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="297" pos:column="9">IDC_VALUE_EDIT</name></cpp:macro>      <cpp:value pos:line="297" pos:column="29">2402</cpp:value></cpp:define>
+
+<cpp:define pos:line="299" pos:column="1">#<cpp:directive pos:line="299" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="299" pos:column="9">IDD_BUTTON_DLG</name></cpp:macro>       <cpp:value pos:line="299" pos:column="30">2410</cpp:value></cpp:define>
+<cpp:define pos:line="300" pos:column="1">#<cpp:directive pos:line="300" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="300" pos:column="9">IDC_RESTORE_BUTTON</name></cpp:macro>  <cpp:value pos:line="300" pos:column="29">2411</cpp:value></cpp:define>
+
+<comment type="line" pos:line="302" pos:column="1">// see TaskListDlg_rc.h</comment>
+<comment type="line" pos:line="303" pos:column="1">//#define	IDD_TASKLIST_DLG    2450</comment>
+<cpp:define pos:line="304" pos:column="1">#<cpp:directive pos:line="304" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="304" pos:column="9">IDD_SETTING_DLG</name></cpp:macro>    <cpp:value pos:line="304" pos:column="28">2500</cpp:value></cpp:define>
+
+
+
+<comment type="line" pos:line="308" pos:column="1">//See ShortcutMapper_rc.h</comment>
+<comment type="line" pos:line="309" pos:column="1">//#define	IDD_SHORTCUTMAPPER_DLG      2600</comment>
+
+<comment type="line" pos:line="311" pos:column="1">//See ansiCharPanel_rc.h</comment>
+<comment type="line" pos:line="312" pos:column="1">//#define	IDD_ANSIASCII_PANEL      2700</comment>
+
+<comment type="line" pos:line="314" pos:column="1">//See clipboardHistoryPanel_rc.h</comment>
+<comment type="line" pos:line="315" pos:column="1">//#define	IDD_CLIPBOARDHISTORY_PANEL      2800</comment>
+
+<comment type="line" pos:line="317" pos:column="1">//See findCharsInRange_rc.h</comment>
+<comment type="line" pos:line="318" pos:column="1">//#define	IDD_FINDCHARACTERS      2900</comment>
+
+<comment type="line" pos:line="320" pos:column="1">//See VerticalFileSwitcher_rc.h</comment>
+<comment type="line" pos:line="321" pos:column="1">//#define	IDD_FILESWITCHER_PANEL      3000</comment>
+
+<comment type="line" pos:line="323" pos:column="1">//See ProjectPanel_rc.h</comment>
+<comment type="line" pos:line="324" pos:column="1">//#define	IDD_PROJECTPANEL      3100</comment>
+<comment type="line" pos:line="325" pos:column="1">//#define	IDD_FILERELOCALIZER_DIALOG  3200</comment>
+
+<comment type="line" pos:line="327" pos:column="1">//See documentMap_rc.h</comment>
+<comment type="line" pos:line="328" pos:column="1">//#define	IDD_DOCUMENTMAP      3300</comment>
+
+<comment type="line" pos:line="330" pos:column="1">//See functionListPanel_rc.h</comment>
+<comment type="line" pos:line="331" pos:column="1">//#define	IDD_FUNCLIST_PANEL   3400</comment>
+
+
+<comment type="line" pos:line="334" pos:column="1">// See regExtDlg.h</comment>
+<comment type="line" pos:line="335" pos:column="1">//#define	IDD_REGEXT 4000</comment>
+
+<comment type="line" pos:line="337" pos:column="1">// See shortcutRc.h</comment>
+<comment type="line" pos:line="338" pos:column="1">//#define	IDD_SHORTCUT_DLG      5000</comment>
+
+<comment type="line" pos:line="340" pos:column="1">// See preference.rc</comment>
+<comment type="line" pos:line="341" pos:column="1">//#define	IDD_PREFERENCE_BOX 6000</comment>
+
+<cpp:define pos:line="343" pos:column="1">#<cpp:directive pos:line="343" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="343" pos:column="9">NOTEPADPLUS_USER_INTERNAL</name></cpp:macro>     <cpp:value pos:line="343" pos:column="39">(WM_USER + 0000)</cpp:value></cpp:define>
+	<cpp:define pos:line="344" pos:column="9">#<cpp:directive pos:line="344" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="344" pos:column="17">NPPM_INTERNAL_USERCMDLIST_MODIFIED</name></cpp:macro>      <cpp:value pos:line="344" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 1)</cpp:value></cpp:define>
+	<cpp:define pos:line="345" pos:column="9">#<cpp:directive pos:line="345" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="345" pos:column="17">NPPM_INTERNAL_CMDLIST_MODIFIED</name></cpp:macro>          <cpp:value pos:line="345" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 2)</cpp:value></cpp:define>
+	<cpp:define pos:line="346" pos:column="9">#<cpp:directive pos:line="346" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="346" pos:column="17">NPPM_INTERNAL_MACROLIST_MODIFIED</name></cpp:macro>        <cpp:value pos:line="346" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 3)</cpp:value></cpp:define>
+	<cpp:define pos:line="347" pos:column="9">#<cpp:directive pos:line="347" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="347" pos:column="17">NPPM_INTERNAL_PLUGINCMDLIST_MODIFIED</name></cpp:macro>    <cpp:value pos:line="347" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 4)</cpp:value></cpp:define>
+	<cpp:define pos:line="348" pos:column="9">#<cpp:directive pos:line="348" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="348" pos:column="17">NPPM_INTERNAL_CLEARSCINTILLAKEY</name></cpp:macro>         <cpp:value pos:line="348" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 5)</cpp:value></cpp:define>
+	<cpp:define pos:line="349" pos:column="9">#<cpp:directive pos:line="349" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="349" pos:column="17">NPPM_INTERNAL_BINDSCINTILLAKEY</name></cpp:macro>	        <cpp:value pos:line="349" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 6)</cpp:value></cpp:define>
+	<cpp:define pos:line="350" pos:column="9">#<cpp:directive pos:line="350" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="350" pos:column="17">NPPM_INTERNAL_SCINTILLAKEYMODIFIED</name></cpp:macro>      <cpp:value pos:line="350" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 7)</cpp:value></cpp:define>
+	<cpp:define pos:line="351" pos:column="9">#<cpp:directive pos:line="351" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="351" pos:column="17">NPPM_INTERNAL_SCINTILLAFINFERCOLLAPSE</name></cpp:macro>   <cpp:value pos:line="351" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 8)</cpp:value></cpp:define>
+	<cpp:define pos:line="352" pos:column="9">#<cpp:directive pos:line="352" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="352" pos:column="17">NPPM_INTERNAL_SCINTILLAFINFERUNCOLLAPSE</name></cpp:macro> <cpp:value pos:line="352" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 9)</cpp:value></cpp:define>
+	<cpp:define pos:line="353" pos:column="9">#<cpp:directive pos:line="353" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="353" pos:column="17">NPPM_INTERNAL_DISABLEAUTOUPDATE</name></cpp:macro>			<cpp:value pos:line="353" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 10)</cpp:value></cpp:define>
+	<cpp:define pos:line="354" pos:column="9">#<cpp:directive pos:line="354" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="354" pos:column="17">NPPM_INTERNAL_SETTING_HISTORY_SIZE</name></cpp:macro>		<cpp:value pos:line="354" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 11)</cpp:value></cpp:define>
+	<cpp:define pos:line="355" pos:column="9">#<cpp:directive pos:line="355" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="355" pos:column="17">NPPM_INTERNAL_ISTABBARREDUCED</name></cpp:macro>			<cpp:value pos:line="355" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 12)</cpp:value></cpp:define>
+	<cpp:define pos:line="356" pos:column="9">#<cpp:directive pos:line="356" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="356" pos:column="17">NPPM_INTERNAL_ISFOCUSEDTAB</name></cpp:macro>				<cpp:value pos:line="356" pos:column="73">(NOTEPADPLUS_USER_INTERNAL + 13)</cpp:value></cpp:define>
+	<cpp:define pos:line="357" pos:column="9">#<cpp:directive pos:line="357" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="357" pos:column="17">NPPM_INTERNAL_GETMENU</name></cpp:macro>					<cpp:value pos:line="357" pos:column="73">(NOTEPADPLUS_USER_INTERNAL + 14)</cpp:value></cpp:define>
+	<cpp:define pos:line="358" pos:column="9">#<cpp:directive pos:line="358" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="358" pos:column="17">NPPM_INTERNAL_CLEARINDICATOR</name></cpp:macro>			<cpp:value pos:line="358" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 15)</cpp:value></cpp:define>
+	<cpp:define pos:line="359" pos:column="9">#<cpp:directive pos:line="359" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="359" pos:column="17">NPPM_INTERNAL_SCINTILLAFINFERCOPY</name></cpp:macro>       <cpp:value pos:line="359" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 16)</cpp:value></cpp:define>
+	<cpp:define pos:line="360" pos:column="9">#<cpp:directive pos:line="360" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="360" pos:column="17">NPPM_INTERNAL_SCINTILLAFINFERSELECTALL</name></cpp:macro>  <cpp:value pos:line="360" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 17)</cpp:value></cpp:define>
+	<cpp:define pos:line="361" pos:column="9">#<cpp:directive pos:line="361" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="361" pos:column="17">NPPM_INTERNAL_SETCARETWIDTH</name></cpp:macro>             <cpp:value pos:line="361" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 18)</cpp:value></cpp:define>
+	<cpp:define pos:line="362" pos:column="9">#<cpp:directive pos:line="362" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="362" pos:column="17">NPPM_INTERNAL_SETCARETBLINKRATE</name></cpp:macro>         <cpp:value pos:line="362" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 19)</cpp:value></cpp:define>
+	<cpp:define pos:line="363" pos:column="9">#<cpp:directive pos:line="363" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="363" pos:column="17">NPPM_INTERNAL_CLEARINDICATORTAGMATCH</name></cpp:macro>	<cpp:value pos:line="363" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 20)</cpp:value></cpp:define>
+	<cpp:define pos:line="364" pos:column="9">#<cpp:directive pos:line="364" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="364" pos:column="17">NPPM_INTERNAL_CLEARINDICATORTAGATTR</name></cpp:macro>		<cpp:value pos:line="364" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 21)</cpp:value></cpp:define>
+	<cpp:define pos:line="365" pos:column="9">#<cpp:directive pos:line="365" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="365" pos:column="17">NPPM_INTERNAL_SWITCHVIEWFROMHWND</name></cpp:macro>		<cpp:value pos:line="365" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 22)</cpp:value></cpp:define>
+	<cpp:define pos:line="366" pos:column="9">#<cpp:directive pos:line="366" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="366" pos:column="17">NPPM_INTERNAL_UPDATETITLEBAR</name></cpp:macro>			<cpp:value pos:line="366" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 23)</cpp:value></cpp:define>
+	<cpp:define pos:line="367" pos:column="9">#<cpp:directive pos:line="367" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="367" pos:column="17">NPPM_INTERNAL_CANCEL_FIND_IN_FILES</name></cpp:macro>		<cpp:value pos:line="367" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 24)</cpp:value></cpp:define>
+	<cpp:define pos:line="368" pos:column="9">#<cpp:directive pos:line="368" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="368" pos:column="17">NPPM_INTERNAL_RELOADNATIVELANG</name></cpp:macro>			<cpp:value pos:line="368" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 25)</cpp:value></cpp:define>
+	<cpp:define pos:line="369" pos:column="9">#<cpp:directive pos:line="369" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="369" pos:column="17">NPPM_INTERNAL_PLUGINSHORTCUTMOTIFIED</name></cpp:macro>	<cpp:value pos:line="369" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 26)</cpp:value></cpp:define>
+	<cpp:define pos:line="370" pos:column="9">#<cpp:directive pos:line="370" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="370" pos:column="17">NPPM_INTERNAL_SCINTILLAFINFERCLEARALL</name></cpp:macro>	<cpp:value pos:line="370" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 27)</cpp:value></cpp:define>
+	<cpp:define pos:line="371" pos:column="9">#<cpp:directive pos:line="371" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="371" pos:column="17">NPPM_INTERNAL_SETTING_EDGE_SIZE</name></cpp:macro>			<cpp:value pos:line="371" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 28)</cpp:value></cpp:define>
+	<cpp:define pos:line="372" pos:column="9">#<cpp:directive pos:line="372" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="372" pos:column="17">NPPM_INTERNAL_SETTING_TAB_REPLCESPACE</name></cpp:macro>	<cpp:value pos:line="372" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 29)</cpp:value></cpp:define>
+	<cpp:define pos:line="373" pos:column="9">#<cpp:directive pos:line="373" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="373" pos:column="17">NPPM_INTERNAL_SETTING_TAB_SIZE</name></cpp:macro>			<cpp:value pos:line="373" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 30)</cpp:value></cpp:define>
+	<cpp:define pos:line="374" pos:column="9">#<cpp:directive pos:line="374" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="374" pos:column="17">NPPM_INTERNAL_RELOADSTYLERS</name></cpp:macro>				<cpp:value pos:line="374" pos:column="73">(NOTEPADPLUS_USER_INTERNAL + 31)</cpp:value></cpp:define>
+	<cpp:define pos:line="375" pos:column="9">#<cpp:directive pos:line="375" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="375" pos:column="17">NPPM_INTERNAL_DOCORDERCHANGED</name></cpp:macro>			<cpp:value pos:line="375" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 32)</cpp:value></cpp:define>
+	<cpp:define pos:line="376" pos:column="9">#<cpp:directive pos:line="376" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="376" pos:column="17">NPPM_INTERNAL_SETMULTISELCTION</name></cpp:macro>          <cpp:value pos:line="376" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 33)</cpp:value></cpp:define>
+	<cpp:define pos:line="377" pos:column="9">#<cpp:directive pos:line="377" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="377" pos:column="17">NPPM_INTERNAL_SCINTILLAFINFEROPENALL</name></cpp:macro> 	<cpp:value pos:line="377" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 34)</cpp:value></cpp:define>
+	<cpp:define pos:line="378" pos:column="9">#<cpp:directive pos:line="378" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="378" pos:column="17">NPPM_INTERNAL_RECENTFILELIST_UPDATE</name></cpp:macro> 	<cpp:value pos:line="378" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 35)</cpp:value></cpp:define>
+	<cpp:define pos:line="379" pos:column="9">#<cpp:directive pos:line="379" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="379" pos:column="17">NPPM_INTERNAL_RECENTFILELIST_SWITCH</name></cpp:macro> 	<cpp:value pos:line="379" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 36)</cpp:value></cpp:define>
+	<cpp:define pos:line="380" pos:column="9">#<cpp:directive pos:line="380" pos:column="10">define</cpp:directive>	<cpp:macro><name pos:line="380" pos:column="17">NPPM_INTERNAL_GETSCINTEDTVIEW</name></cpp:macro>       	<cpp:value pos:line="380" pos:column="57">(NOTEPADPLUS_USER_INTERNAL + 37)</cpp:value></cpp:define>
+	<cpp:define pos:line="381" pos:column="9">#<cpp:directive pos:line="381" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="381" pos:column="17">NPPM_INTERNAL_SETDOCMAPCHECK</name></cpp:macro>			<cpp:value pos:line="381" pos:column="65">(NOTEPADPLUS_USER_INTERNAL + 38)</cpp:value></cpp:define>
+
+	<comment type="line" pos:line="383" pos:column="9">//wParam: 0</comment>
+	<comment type="line" pos:line="384" pos:column="9">//lParam: document new index</comment>
+<comment type="line" pos:line="385" pos:column="1">// See Notepad_plus_msgs.h</comment>
+<comment type="line" pos:line="386" pos:column="1">//#define NOTEPADPLUS_USER   (WM_USER + 1000)</comment>
+
+	<comment type="line" pos:line="388" pos:column="9">//</comment>
+	<comment type="line" pos:line="389" pos:column="9">// Used by Doc Monitor plugin</comment>
+	<comment type="line" pos:line="390" pos:column="9">//</comment>
+	<cpp:define pos:line="391" pos:column="9">#<cpp:directive pos:line="391" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="391" pos:column="17">NPPM_INTERNAL_CHECKDOCSTATUS</name></cpp:macro> <cpp:value pos:line="391" pos:column="46">(NPPMSG + 53)</cpp:value></cpp:define>
+	<comment type="line" pos:line="392" pos:column="9">// VOID NPPM_CHECKDOCSTATUS(BOOL, 0)</comment>
+	<comment type="line" pos:line="393" pos:column="9">// check all opened documents status.</comment>
+	<comment type="line" pos:line="394" pos:column="9">// If files are modified, then reloaod (with or without prompt, it depends on settings).</comment>
+	<comment type="line" pos:line="395" pos:column="9">// if files are deleted, then prompt user to close the documents</comment>
+
+	<cpp:define pos:line="397" pos:column="9">#<cpp:directive pos:line="397" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="397" pos:column="17">NPPM_INTERNAL_ENABLECHECKDOCOPT</name></cpp:macro> <cpp:value pos:line="397" pos:column="49">(NPPMSG + 54)</cpp:value></cpp:define>
+	<comment type="line" pos:line="398" pos:column="9">// VOID NPPM_ENABLECHECKDOCOPT(OPT, 0)</comment>
+		<comment type="line" pos:line="399" pos:column="17">// where OPT is :</comment>
+		<cpp:define pos:line="400" pos:column="17">#<cpp:directive pos:line="400" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="400" pos:column="25">CHECKDOCOPT_NONE</name></cpp:macro> <cpp:value pos:line="400" pos:column="42">0</cpp:value></cpp:define>
+		<cpp:define pos:line="401" pos:column="17">#<cpp:directive pos:line="401" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="401" pos:column="25">CHECKDOCOPT_UPDATESILENTLY</name></cpp:macro> <cpp:value pos:line="401" pos:column="52">1</cpp:value></cpp:define>
+		<cpp:define pos:line="402" pos:column="17">#<cpp:directive pos:line="402" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="402" pos:column="25">CHECKDOCOPT_UPDATEGO2END</name></cpp:macro> <cpp:value pos:line="402" pos:column="50">2</cpp:value></cpp:define>
+
+	<cpp:define pos:line="404" pos:column="9">#<cpp:directive pos:line="404" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="404" pos:column="17">NPPM_INTERNAL_GETCHECKDOCOPT</name></cpp:macro> <cpp:value pos:line="404" pos:column="46">(NPPMSG + 55)</cpp:value></cpp:define>
+	<comment type="line" pos:line="405" pos:column="9">// INT NPPM_GETCHECKDOCOPT(0, 0)</comment>
+	<cpp:define pos:line="406" pos:column="9">#<cpp:directive pos:line="406" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="406" pos:column="17">NPPM_INTERNAL_SETCHECKDOCOPT</name></cpp:macro> <cpp:value pos:line="406" pos:column="46">(NPPMSG + 56)</cpp:value></cpp:define>
+	<comment type="line" pos:line="407" pos:column="9">// INT NPPM_SETCHECKDOCOPT(OPT, 0)</comment>
+
+	<comment type="line" pos:line="409" pos:column="9">//</comment>
+	<comment type="line" pos:line="410" pos:column="9">// Used by netnote plugin</comment>
+	<comment type="line" pos:line="411" pos:column="9">//</comment>
+	<cpp:define pos:line="412" pos:column="9">#<cpp:directive pos:line="412" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="412" pos:column="17">NPPM_INTERNAL_SETFILENAME</name></cpp:macro> <cpp:value pos:line="412" pos:column="43">(NPPMSG + 63)</cpp:value></cpp:define>
+	<comment type="line" pos:line="413" pos:column="9">//wParam: BufferID to rename</comment>
+	<comment type="line" pos:line="414" pos:column="9">//lParam: name to set (TCHAR*)</comment>
+	<comment type="line" pos:line="415" pos:column="9">//Buffer must have been previously unnamed (eg "new 1" document types)</comment>
+
+
+
+<cpp:define pos:line="419" pos:column="1">#<cpp:directive pos:line="419" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="419" pos:column="9">SCINTILLA_USER</name></cpp:macro>     <cpp:value pos:line="419" pos:column="28">(WM_USER + 2000)</cpp:value></cpp:define>
+
+
+<cpp:define pos:line="422" pos:column="1">#<cpp:directive pos:line="422" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="422" pos:column="9">MACRO_USER</name></cpp:macro>    <cpp:value pos:line="422" pos:column="23">(WM_USER + 4000)</cpp:value></cpp:define>
+	<cpp:define pos:line="423" pos:column="9">#<cpp:directive pos:line="423" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="423" pos:column="17">WM_GETCURRENTMACROSTATUS</name></cpp:macro> <cpp:value pos:line="423" pos:column="42">(MACRO_USER + 01)</cpp:value></cpp:define>
+	<cpp:define pos:line="424" pos:column="9">#<cpp:directive pos:line="424" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="424" pos:column="17">WM_MACRODLGRUNMACRO</name></cpp:macro>       <cpp:value pos:line="424" pos:column="43">(MACRO_USER + 02)</cpp:value></cpp:define>
+
+
+<comment type="line" pos:line="427" pos:column="1">// See Notepad_plus_msgs.h</comment>
+<comment type="line" pos:line="428" pos:column="1">//#define	RUNCOMMAND_USER    (WM_USER + 3000)</comment>
+<cpp:define pos:line="429" pos:column="1">#<cpp:directive pos:line="429" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="429" pos:column="9">SPLITTER_USER</name></cpp:macro>      <cpp:value pos:line="429" pos:column="28">(WM_USER + 4000)</cpp:value></cpp:define>
+<cpp:define pos:line="430" pos:column="1">#<cpp:directive pos:line="430" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="430" pos:column="9">WORDSTYLE_USER</name></cpp:macro>     <cpp:value pos:line="430" pos:column="28">(WM_USER + 5000)</cpp:value></cpp:define>
+<cpp:define pos:line="431" pos:column="1">#<cpp:directive pos:line="431" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="431" pos:column="9">COLOURPOPUP_USER</name></cpp:macro>   <cpp:value pos:line="431" pos:column="28">(WM_USER + 6000)</cpp:value></cpp:define>
+<cpp:define pos:line="432" pos:column="1">#<cpp:directive pos:line="432" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="432" pos:column="9">BABYGRID_USER</name></cpp:macro>      <cpp:value pos:line="432" pos:column="28">(WM_USER + 7000)</cpp:value></cpp:define>
+
+<comment type="line" pos:line="434" pos:column="1">//#define	IDD_DOCKING_MNG 	(IDM  + 7000)</comment>
+
+<cpp:define pos:line="436" pos:column="1">#<cpp:directive pos:line="436" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="436" pos:column="9">MENUINDEX_FILE</name></cpp:macro>     <cpp:value pos:line="436" pos:column="28">0</cpp:value></cpp:define>
+<cpp:define pos:line="437" pos:column="1">#<cpp:directive pos:line="437" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="437" pos:column="9">MENUINDEX_EDIT</name></cpp:macro>     <cpp:value pos:line="437" pos:column="28">1</cpp:value></cpp:define>
+<cpp:define pos:line="438" pos:column="1">#<cpp:directive pos:line="438" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="438" pos:column="9">MENUINDEX_SEARCH</name></cpp:macro>   <cpp:value pos:line="438" pos:column="28">2</cpp:value></cpp:define>
+<cpp:define pos:line="439" pos:column="1">#<cpp:directive pos:line="439" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="439" pos:column="9">MENUINDEX_VIEW</name></cpp:macro>     <cpp:value pos:line="439" pos:column="28">3</cpp:value></cpp:define>
+<cpp:define pos:line="440" pos:column="1">#<cpp:directive pos:line="440" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="440" pos:column="9">MENUINDEX_FORMAT</name></cpp:macro>   <cpp:value pos:line="440" pos:column="28">4</cpp:value></cpp:define>
+<cpp:define pos:line="441" pos:column="1">#<cpp:directive pos:line="441" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="441" pos:column="9">MENUINDEX_LANGUAGE</name></cpp:macro> <cpp:value pos:line="441" pos:column="28">5</cpp:value></cpp:define>
+<cpp:define pos:line="442" pos:column="1">#<cpp:directive pos:line="442" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="442" pos:column="9">MENUINDEX_SETTINGS</name></cpp:macro> <cpp:value pos:line="442" pos:column="28">6</cpp:value></cpp:define>
+<cpp:define pos:line="443" pos:column="1">#<cpp:directive pos:line="443" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="443" pos:column="9">MENUINDEX_MACRO</name></cpp:macro>    <cpp:value pos:line="443" pos:column="28">7</cpp:value></cpp:define>
+<cpp:define pos:line="444" pos:column="1">#<cpp:directive pos:line="444" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="444" pos:column="9">MENUINDEX_RUN</name></cpp:macro>      <cpp:value pos:line="444" pos:column="28">8</cpp:value></cpp:define>
+<cpp:define pos:line="445" pos:column="1">#<cpp:directive pos:line="445" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="445" pos:column="9">MENUINDEX_PLUGINS</name></cpp:macro>  <cpp:value pos:line="445" pos:column="28">9</cpp:value></cpp:define> 
+
+<cpp:endif pos:line="447" pos:column="1">#<cpp:directive pos:line="447" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="447" pos:column="8">// RESOURCE_H</comment>
+
+
+</unit>

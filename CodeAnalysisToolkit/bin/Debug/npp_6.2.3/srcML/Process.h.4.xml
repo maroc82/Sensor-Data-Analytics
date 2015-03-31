@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\MISC\Process\ProcessAvecThread\Process.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">PROCESSUS_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">PROCESSUS_H</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">include</cpp:directive> <cpp:file pos:line="32" pos:column="10">&lt;windows.h&gt;</cpp:file></cpp:include>
+<comment type="line" pos:line="33" pos:column="1">//#include &lt;string&gt;</comment>
+<using pos:line="34" pos:column="1">using namespace <name pos:line="34" pos:column="17">std</name>;</using>
+
+<class pos:line="36" pos:column="1">class <name pos:line="36" pos:column="7">Process</name> 
+<block pos:line="37" pos:column="1">{<private type="default" pos:line="37" pos:column="2">
+</private><public pos:line="38" pos:column="1">public:
+	<constructor><name pos:line="39" pos:column="9">Process</name><parameter_list pos:line="39" pos:column="16">()</parameter_list> <block pos:line="39" pos:column="19">{}</block></constructor><empty_stmt pos:line="39" pos:column="21">;</empty_stmt>
+	<constructor><name pos:line="40" pos:column="9">Process</name><parameter_list pos:line="40" pos:column="16">(<param><decl><type><specifier pos:line="40" pos:column="17">const</specifier> <name pos:line="40" pos:column="23">TCHAR</name> <type:modifier pos:line="40" pos:column="29">*</type:modifier></type><name pos:line="40" pos:column="30">cmd</name></decl></param>, <param><decl><type><specifier pos:line="40" pos:column="35">const</specifier> <name pos:line="40" pos:column="41">TCHAR</name> <type:modifier pos:line="40" pos:column="47">*</type:modifier></type><name pos:line="40" pos:column="48">cDir</name></decl></param>)</parameter_list>
+		<member_list pos:line="41" pos:column="17">: <call><name pos:line="41" pos:column="19">_stdoutStr</name><argument_list pos:line="41" pos:column="29">(<argument><expr><call><name pos:line="41" pos:column="30">TEXT</name><argument_list pos:line="41" pos:column="34">(<argument><expr><lit:literal type="string" pos:line="41" pos:column="35">""</lit:literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><op:operator pos:line="41" pos:column="39">,</op:operator> <call><name pos:line="41" pos:column="41">_stderrStr</name><argument_list pos:line="41" pos:column="51">(<argument><expr><call><name pos:line="41" pos:column="52">TEXT</name><argument_list pos:line="41" pos:column="56">(<argument><expr><lit:literal type="string" pos:line="41" pos:column="57">""</lit:literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><op:operator pos:line="41" pos:column="61">,</op:operator> <call><name pos:line="41" pos:column="63">_hPipeOutR</name><argument_list pos:line="41" pos:column="73">(<argument><expr><name pos:line="41" pos:column="74">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="41" pos:column="79">,</op:operator>
+		<call><name pos:line="42" pos:column="17">_hPipeErrR</name><argument_list pos:line="42" pos:column="27">(<argument><expr><name pos:line="42" pos:column="28">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="42" pos:column="33">,</op:operator> <call><name pos:line="42" pos:column="35">_hProcess</name><argument_list pos:line="42" pos:column="44">(<argument><expr><name pos:line="42" pos:column="45">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="42" pos:column="50">,</op:operator> <call><name pos:line="42" pos:column="52">_hProcessThread</name><argument_list pos:line="42" pos:column="67">(<argument><expr><name pos:line="42" pos:column="68">NULL</name></expr></argument>)</argument_list></call> </member_list><block pos:line="42" pos:column="74">{
+
+		<expr_stmt><expr><call><name pos:line="44" pos:column="17">lstrcpy</name><argument_list pos:line="44" pos:column="24">(<argument><expr><name pos:line="44" pos:column="25">_command</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="35">cmd</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="45" pos:column="17">lstrcpy</name><argument_list pos:line="45" pos:column="24">(<argument><expr><name pos:line="45" pos:column="25">_curDir</name></expr></argument>, <argument><expr><name pos:line="45" pos:column="34">cDir</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></constructor><empty_stmt pos:line="46" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="48" pos:column="9">BOOL</name></type> <name pos:line="48" pos:column="14">run</name><parameter_list pos:line="48" pos:column="17">()</parameter_list>;</function_decl>
+
+	<function><type><specifier pos:line="50" pos:column="9">const</specifier> <name pos:line="50" pos:column="15">TCHAR</name> <type:modifier pos:line="50" pos:column="21">*</type:modifier></type> <name pos:line="50" pos:column="23">getStdout</name><parameter_list pos:line="50" pos:column="32">()</parameter_list> <specifier pos:line="50" pos:column="35">const</specifier> <block pos:line="50" pos:column="41">{
+		<return pos:line="51" pos:column="17">return <expr><call><name><name pos:line="51" pos:column="24">_stdoutStr</name><op:operator pos:line="51" pos:column="34">.</op:operator><name pos:line="51" pos:column="35">c_str</name></name><argument_list pos:line="51" pos:column="40">()</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="52" pos:column="10">;</empty_stmt>
+	
+	<function><type><specifier pos:line="54" pos:column="9">const</specifier> <name pos:line="54" pos:column="15">TCHAR</name> <type:modifier pos:line="54" pos:column="21">*</type:modifier></type> <name pos:line="54" pos:column="23">getStderr</name><parameter_list pos:line="54" pos:column="32">()</parameter_list> <specifier pos:line="54" pos:column="35">const</specifier> <block pos:line="54" pos:column="41">{
+		<return pos:line="55" pos:column="17">return <expr><call><name><name pos:line="55" pos:column="24">_stderrStr</name><op:operator pos:line="55" pos:column="34">.</op:operator><name pos:line="55" pos:column="35">c_str</name></name><argument_list pos:line="55" pos:column="40">()</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="56" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="58" pos:column="9">int</name></type> <name pos:line="58" pos:column="13">getExitCode</name><parameter_list pos:line="58" pos:column="24">()</parameter_list> <specifier pos:line="58" pos:column="27">const</specifier> <block pos:line="58" pos:column="33">{
+		<return pos:line="59" pos:column="17">return <expr><name pos:line="59" pos:column="24">_exitCode</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="60" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="62" pos:column="9">bool</name></type> <name pos:line="62" pos:column="14">hasStdout</name><parameter_list pos:line="62" pos:column="23">()</parameter_list> <block pos:line="62" pos:column="26">{
+		<return pos:line="63" pos:column="17">return <expr><op:operator pos:line="63" pos:column="24">(</op:operator><call><name><name pos:line="63" pos:column="25">_stdoutStr</name><op:operator pos:line="63" pos:column="35">.</op:operator><name pos:line="63" pos:column="36">compare</name></name><argument_list pos:line="63" pos:column="43">(<argument><expr><call><name pos:line="63" pos:column="44">TEXT</name><argument_list pos:line="63" pos:column="48">(<argument><expr><lit:literal type="string" pos:line="63" pos:column="49">""</lit:literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> <op:operator pos:line="63" pos:column="54">!=</op:operator> <lit:literal type="number" pos:line="63" pos:column="57">0</lit:literal><op:operator pos:line="63" pos:column="58">)</op:operator></expr>;</return>
+	}</block></function><empty_stmt pos:line="64" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="66" pos:column="9">bool</name></type> <name pos:line="66" pos:column="14">hasStderr</name><parameter_list pos:line="66" pos:column="23">()</parameter_list> <block pos:line="66" pos:column="26">{
+		<return pos:line="67" pos:column="17">return <expr><op:operator pos:line="67" pos:column="24">(</op:operator><call><name><name pos:line="67" pos:column="25">_stderrStr</name><op:operator pos:line="67" pos:column="35">.</op:operator><name pos:line="67" pos:column="36">compare</name></name><argument_list pos:line="67" pos:column="43">(<argument><expr><call><name pos:line="67" pos:column="44">TEXT</name><argument_list pos:line="67" pos:column="48">(<argument><expr><lit:literal type="string" pos:line="67" pos:column="49">""</lit:literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> <op:operator pos:line="67" pos:column="54">!=</op:operator> <lit:literal type="number" pos:line="67" pos:column="57">0</lit:literal><op:operator pos:line="67" pos:column="58">)</op:operator></expr>;</return>
+	}</block></function><empty_stmt pos:line="68" pos:column="10">;</empty_stmt>
+
+</public><protected pos:line="70" pos:column="1">protected:
+	<comment type="line" pos:line="71" pos:column="9">// LES ENTREES</comment>
+    <decl_stmt><decl><type><name pos:line="72" pos:column="5">TCHAR</name></type> <name><name pos:line="72" pos:column="11">_command</name><index pos:line="72" pos:column="19">[<expr><lit:literal type="number" pos:line="72" pos:column="20">256</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="73" pos:column="9">TCHAR</name></type> <name><name pos:line="73" pos:column="15">_curDir</name><index pos:line="73" pos:column="22">[<expr><lit:literal type="number" pos:line="73" pos:column="23">256</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	
+	<comment type="line" pos:line="75" pos:column="9">// LES SORTIES</comment>
+	<decl_stmt><decl><type><name pos:line="76" pos:column="9">generic_string</name></type> <name pos:line="76" pos:column="24">_stdoutStr</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="77" pos:column="9">generic_string</name></type> <name pos:line="77" pos:column="24">_stderrStr</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="78" pos:column="9">int</name></type> <name pos:line="78" pos:column="13">_exitCode</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="80" pos:column="9">// LES HANDLES</comment>
+    <decl_stmt><decl><type><name pos:line="81" pos:column="5">HANDLE</name></type> <name pos:line="81" pos:column="12">_hPipeOutR</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="82" pos:column="9">HANDLE</name></type> <name pos:line="82" pos:column="16">_hPipeErrR</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="83" pos:column="9">HANDLE</name></type> <name pos:line="83" pos:column="16">_hProcess</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="84" pos:column="9">HANDLE</name></type> <name pos:line="84" pos:column="16">_hProcessThread</name></decl>;</decl_stmt>
+
+    <comment type="line" pos:line="86" pos:column="5">//UINT _pid;   // process ID assigned by caller</comment>
+	
+	<function><type><specifier pos:line="88" pos:column="9">static</specifier> <name pos:line="88" pos:column="16">DWORD</name> <name pos:line="88" pos:column="22">WINAPI</name></type> <name pos:line="88" pos:column="29">staticListenerStdOut</name><parameter_list pos:line="88" pos:column="49">(<param><decl><type><name pos:line="88" pos:column="50">void</name> <type:modifier pos:line="88" pos:column="55">*</type:modifier></type> <name pos:line="88" pos:column="57">myself</name></decl></param>)</parameter_list><block pos:line="88" pos:column="64">{
+		<expr_stmt><expr><op:operator pos:line="89" pos:column="17">(</op:operator><op:operator pos:line="89" pos:column="18">(</op:operator><name pos:line="89" pos:column="19">Process</name> <op:operator pos:line="89" pos:column="27">*</op:operator><op:operator pos:line="89" pos:column="28">)</op:operator><name pos:line="89" pos:column="29">myself</name><op:operator pos:line="89" pos:column="35">)</op:operator><op:operator pos:line="89" pos:column="36">-&gt;</op:operator><call><name pos:line="89" pos:column="38">listenerStdOut</name><argument_list pos:line="89" pos:column="52">()</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="90" pos:column="17">return <expr><lit:literal type="number" pos:line="90" pos:column="24">0</lit:literal></expr>;</return>
+	}</block></function><empty_stmt pos:line="91" pos:column="10">;</empty_stmt>
+	<function><type><specifier pos:line="92" pos:column="9">static</specifier> <name pos:line="92" pos:column="16">DWORD</name> <name pos:line="92" pos:column="22">WINAPI</name></type> <name pos:line="92" pos:column="29">staticListenerStdErr</name><parameter_list pos:line="92" pos:column="49">(<param><decl><type><name pos:line="92" pos:column="50">void</name> <type:modifier pos:line="92" pos:column="55">*</type:modifier></type> <name pos:line="92" pos:column="57">myself</name></decl></param>)</parameter_list> <block pos:line="92" pos:column="65">{
+		<expr_stmt><expr><op:operator pos:line="93" pos:column="17">(</op:operator><op:operator pos:line="93" pos:column="18">(</op:operator><name pos:line="93" pos:column="19">Process</name> <op:operator pos:line="93" pos:column="27">*</op:operator><op:operator pos:line="93" pos:column="28">)</op:operator><name pos:line="93" pos:column="29">myself</name><op:operator pos:line="93" pos:column="35">)</op:operator><op:operator pos:line="93" pos:column="36">-&gt;</op:operator><call><name pos:line="93" pos:column="38">listenerStdErr</name><argument_list pos:line="93" pos:column="52">()</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="94" pos:column="17">return <expr><lit:literal type="number" pos:line="94" pos:column="24">0</lit:literal></expr>;</return>
+	}</block></function><empty_stmt pos:line="95" pos:column="10">;</empty_stmt>
+	<function_decl><type><name pos:line="96" pos:column="9">void</name></type> <name pos:line="96" pos:column="14">listenerStdOut</name><parameter_list pos:line="96" pos:column="28">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="97" pos:column="9">void</name></type> <name pos:line="97" pos:column="14">listenerStdErr</name><parameter_list pos:line="97" pos:column="28">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="98" pos:column="9">void</name></type> <name pos:line="98" pos:column="14">error</name><parameter_list pos:line="98" pos:column="19">(<param><decl><type><specifier pos:line="98" pos:column="20">const</specifier> <name pos:line="98" pos:column="26">TCHAR</name> <type:modifier pos:line="98" pos:column="32">*</type:modifier></type><name pos:line="98" pos:column="33">txt2display</name></decl></param>, <param><decl><type><name pos:line="98" pos:column="46">BOOL</name> <type:modifier pos:line="98" pos:column="51">&amp;</type:modifier></type> <name pos:line="98" pos:column="53">returnCode</name></decl></param>, <param><decl><type><name pos:line="98" pos:column="65">int</name></type> <name pos:line="98" pos:column="69">errCode</name></decl></param>)</parameter_list>;</function_decl>
+</protected>}</block>;</class>
+
+<cpp:endif pos:line="101" pos:column="1">#<cpp:directive pos:line="101" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="101" pos:column="8">//PROCESSUS_H</comment>
+
+</unit>

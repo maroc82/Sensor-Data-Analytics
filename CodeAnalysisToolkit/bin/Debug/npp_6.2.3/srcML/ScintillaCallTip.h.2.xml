@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\macosx\ScintillaCallTip.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ *  ScintillaMacOSX.h
+ *  tutorial
+ *
+ *  Created by Evan Jones on Sun Sep 01 2002.
+ *  Copyright (c) 2002 __MyCompanyName__. All rights reserved.
+ *
+ */</comment>
+<cpp:ifndef pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">ifndef</cpp:directive> <name pos:line="9" pos:column="9">SCINTILLA_CALLTIP_H</name></cpp:ifndef>
+<cpp:define pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="10" pos:column="9">SCINTILLA_CALLTIP_H</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="12" pos:column="10">"TView.h"</lit:literal></cpp:file></cpp:include>
+
+<cpp:include pos:line="14" pos:column="1">#<cpp:directive pos:line="14" pos:column="2">include</cpp:directive> <cpp:file pos:line="14" pos:column="10">&lt;stdlib.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="15" pos:column="1">#<cpp:directive pos:line="15" pos:column="2">include</cpp:directive> <cpp:file pos:line="15" pos:column="10">&lt;string.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="16" pos:column="1">#<cpp:directive pos:line="16" pos:column="2">include</cpp:directive> <cpp:file pos:line="16" pos:column="10">&lt;stdio.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="17" pos:column="1">#<cpp:directive pos:line="17" pos:column="2">include</cpp:directive> <cpp:file pos:line="17" pos:column="10">&lt;ctype.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="18" pos:column="1">#<cpp:directive pos:line="18" pos:column="2">include</cpp:directive> <cpp:file pos:line="18" pos:column="10">&lt;time.h&gt;</cpp:file></cpp:include>
+
+<cpp:include pos:line="20" pos:column="1">#<cpp:directive pos:line="20" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="20" pos:column="10">"Platform.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="21" pos:column="1">#<cpp:directive pos:line="21" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="21" pos:column="10">"Scintilla.h"</lit:literal></cpp:file></cpp:include>
+
+<decl_stmt><decl><type><specifier pos:line="23" pos:column="1">static</specifier> <specifier pos:line="23" pos:column="8">const</specifier> <name pos:line="23" pos:column="14">OSType</name></type> <name pos:line="23" pos:column="21">scintillaCallTipType</name> <init pos:line="23" pos:column="42">= <expr><lit:literal type="char" pos:line="23" pos:column="44">'Scct'</lit:literal></expr></init></decl>;</decl_stmt>
+
+<namespace pos:line="25" pos:column="1">namespace <name pos:line="25" pos:column="11">Scintilla</name> <block pos:line="25" pos:column="21">{
+
+<class pos:line="27" pos:column="1">class <name pos:line="27" pos:column="7">ScintillaCallTip</name> <super pos:line="27" pos:column="24">: <specifier pos:line="27" pos:column="26">public</specifier> <name pos:line="27" pos:column="33">TView</name></super>
+<block pos:line="28" pos:column="1">{<private type="default" pos:line="28" pos:column="2">
+</private><public pos:line="29" pos:column="1">public:
+    <comment type="line" pos:line="30" pos:column="5">// Private so ScintillaCallTip objects can not be copied</comment>
+    <constructor><name pos:line="31" pos:column="5">ScintillaCallTip</name><parameter_list pos:line="31" pos:column="21">(<param><decl><type><specifier pos:line="31" pos:column="22">const</specifier></type> <name pos:line="31" pos:column="28">ScintillaCallTip</name> <type:modifier pos:line="31" pos:column="45">&amp;</type:modifier></decl></param>)</parameter_list> <member_list pos:line="31" pos:column="48">: <call><name pos:line="31" pos:column="50">TView</name><argument_list pos:line="31" pos:column="55">( <argument><expr><name pos:line="31" pos:column="57">NULL</name></expr></argument> )</argument_list></call> </member_list><block pos:line="31" pos:column="64">{}</block></constructor>
+    <function><type><name pos:line="32" pos:column="5">ScintillaCallTip</name> <type:modifier pos:line="32" pos:column="22">&amp;</type:modifier></type><name pos:line="32" pos:column="23">operator=</name><parameter_list pos:line="32" pos:column="32">(<param><decl><type><specifier pos:line="32" pos:column="33">const</specifier></type> <name pos:line="32" pos:column="39">ScintillaCallTip</name> <type:modifier pos:line="32" pos:column="56">&amp;</type:modifier></decl></param>)</parameter_list> <block pos:line="32" pos:column="59">{ <return pos:line="32" pos:column="61">return <expr><op:operator pos:line="32" pos:column="68">*</op:operator> <name pos:line="32" pos:column="70">this</name></expr>;</return> }</block></function>
+    <destructor><name pos:line="33" pos:column="5">~<name pos:line="33" pos:column="6">ScintillaCallTip</name></name><parameter_list pos:line="33" pos:column="22">()</parameter_list> <block pos:line="33" pos:column="25">{}</block></destructor><empty_stmt pos:line="33" pos:column="27">;</empty_stmt>
+
+</public><public pos:line="35" pos:column="1">public:
+    <comment type="block" format="doxygen" pos:line="36" pos:column="5">/** This is the class ID that we've assigned to Scintilla. */</comment>
+    <decl_stmt><decl><type><specifier pos:line="37" pos:column="5">static</specifier> <specifier pos:line="37" pos:column="12">const</specifier> <name pos:line="37" pos:column="18">CFStringRef</name></type> <name pos:line="37" pos:column="30">kScintillaCallTipClassID</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier pos:line="38" pos:column="5">static</specifier> <specifier pos:line="38" pos:column="12">const</specifier> <name pos:line="38" pos:column="18">ControlKind</name></type> <name pos:line="38" pos:column="30">kScintillaCallTipKind</name></decl>;</decl_stmt>
+
+    <constructor_decl><name pos:line="40" pos:column="5">ScintillaCallTip</name><parameter_list pos:line="40" pos:column="21">( <param><decl><type><name pos:line="40" pos:column="23">void</name><type:modifier pos:line="40" pos:column="27">*</type:modifier></type> <name pos:line="40" pos:column="29">windowid</name></decl></param> )</parameter_list>;</constructor_decl>
+
+    <comment type="block" format="doxygen" pos:line="42" pos:column="5">/** Returns the HIView object kind, needed to subclass TView. */</comment>
+    <function><type><specifier pos:line="43" pos:column="5">virtual</specifier> <name pos:line="43" pos:column="13">ControlKind</name></type> <name pos:line="43" pos:column="25">GetKind</name><parameter_list pos:line="43" pos:column="32">()</parameter_list> <block pos:line="43" pos:column="35">{ <return pos:line="43" pos:column="37">return <expr><name pos:line="43" pos:column="44">kScintillaCallTipKind</name></expr>;</return> }</block></function>
+
+</public><private pos:line="45" pos:column="1">private:
+
+    <function_decl><type><specifier pos:line="47" pos:column="5">virtual</specifier> <name pos:line="47" pos:column="13">ControlPartCode</name></type> <name pos:line="47" pos:column="29">HitTest</name><parameter_list pos:line="47" pos:column="36">( <param><decl><type><specifier pos:line="47" pos:column="38">const</specifier> <name pos:line="47" pos:column="44">HIPoint</name><type:modifier pos:line="47" pos:column="51">&amp;</type:modifier></type> <name pos:line="47" pos:column="53">where</name></decl></param> )</parameter_list>;</function_decl>
+    <function_decl><type><specifier pos:line="48" pos:column="5">virtual</specifier> <name pos:line="48" pos:column="13">void</name></type> <name pos:line="48" pos:column="18">Draw</name><parameter_list pos:line="48" pos:column="22">( <param><decl><type><name pos:line="48" pos:column="24">RgnHandle</name></type> <name pos:line="48" pos:column="34">rgn</name></decl></param>, <param><decl><type><name pos:line="48" pos:column="39">CGContextRef</name></type> <name pos:line="48" pos:column="52">gc</name></decl></param> )</parameter_list>;</function_decl>
+    <function_decl><type><specifier pos:line="49" pos:column="5">virtual</specifier> <name pos:line="49" pos:column="13">OSStatus</name></type> <name pos:line="49" pos:column="22">MouseDown</name><parameter_list pos:line="49" pos:column="31">( <param><decl><type><name pos:line="49" pos:column="33">HIPoint</name><type:modifier pos:line="49" pos:column="40">&amp;</type:modifier></type> <name pos:line="49" pos:column="42">location</name></decl></param>, <param><decl><type><name pos:line="49" pos:column="52">UInt32</name></type> <name pos:line="49" pos:column="59">modifiers</name></decl></param>, <param><decl><type><name pos:line="49" pos:column="70">EventMouseButton</name></type> <name pos:line="49" pos:column="87">button</name></decl></param>, <param><decl><type><name pos:line="49" pos:column="95">UInt32</name></type> <name pos:line="49" pos:column="102">clickCount</name></decl></param> )</parameter_list>;</function_decl>
+    <function_decl><type><specifier pos:line="50" pos:column="5">virtual</specifier> <name pos:line="50" pos:column="13">OSStatus</name></type> <name pos:line="50" pos:column="22">MouseUp</name><parameter_list pos:line="50" pos:column="29">( <param><decl><type><name pos:line="50" pos:column="31">HIPoint</name><type:modifier pos:line="50" pos:column="38">&amp;</type:modifier></type> <name pos:line="50" pos:column="40">location</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="50">UInt32</name></type> <name pos:line="50" pos:column="57">modifiers</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="68">EventMouseButton</name></type> <name pos:line="50" pos:column="85">button</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="93">UInt32</name></type> <name pos:line="50" pos:column="100">clickCount</name></decl></param> )</parameter_list>;</function_decl>
+    <function_decl><type><specifier pos:line="51" pos:column="5">virtual</specifier> <name pos:line="51" pos:column="13">OSStatus</name></type> <name pos:line="51" pos:column="22">MouseDragged</name><parameter_list pos:line="51" pos:column="34">( <param><decl><type><name pos:line="51" pos:column="36">HIPoint</name><type:modifier pos:line="51" pos:column="43">&amp;</type:modifier></type> <name pos:line="51" pos:column="45">location</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="55">UInt32</name></type> <name pos:line="51" pos:column="62">modifiers</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="73">EventMouseButton</name></type> <name pos:line="51" pos:column="90">button</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="98">UInt32</name></type> <name pos:line="51" pos:column="105">clickCount</name></decl></param> )</parameter_list>;</function_decl>
+
+</private><public pos:line="53" pos:column="1">public:
+    <function_decl><type><specifier pos:line="54" pos:column="5">static</specifier> <name pos:line="54" pos:column="12">HIViewRef</name></type> <name pos:line="54" pos:column="22">Create</name><parameter_list pos:line="54" pos:column="28">()</parameter_list>;</function_decl>
+</public><private pos:line="55" pos:column="1">private:
+    <function_decl><type><specifier pos:line="56" pos:column="5">static</specifier> <name pos:line="56" pos:column="12">OSStatus</name></type> <name pos:line="56" pos:column="21">Construct</name><parameter_list pos:line="56" pos:column="30">( <param><decl><type><name pos:line="56" pos:column="32">HIViewRef</name></type> <name pos:line="56" pos:column="42">inControl</name></decl></param>, <param><decl><type><name pos:line="56" pos:column="53">TView</name><type:modifier pos:line="56" pos:column="58">*</type:modifier><type:modifier pos:line="56" pos:column="59">*</type:modifier></type> <name pos:line="56" pos:column="61">outView</name></decl></param> )</parameter_list>;</function_decl>
+    
+</private>}</block>;</class>
+
+
+}</block></namespace>
+
+
+<cpp:endif pos:line="64" pos:column="1">#<cpp:directive pos:line="64" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

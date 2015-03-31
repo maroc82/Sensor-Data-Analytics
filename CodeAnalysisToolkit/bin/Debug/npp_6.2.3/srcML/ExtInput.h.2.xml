@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\macosx\ExtInput.h" pos:tabs="8"><comment type="block" format="doxygen" pos:line="1" pos:column="1">/*******************************************************************************
+
+Copyright (c) 2007 Adobe Systems Incorporated
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+********************************************************************************/</comment>
+
+<cpp:ifndef pos:line="24" pos:column="1">#<cpp:directive pos:line="24" pos:column="2">ifndef</cpp:directive> <name pos:line="24" pos:column="9">_ExtInput_h</name></cpp:ifndef>
+<cpp:define pos:line="25" pos:column="1">#<cpp:directive pos:line="25" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="25" pos:column="9">_ExtInput_h</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="27" pos:column="1">#<cpp:directive pos:line="27" pos:column="2">include</cpp:directive> <cpp:file pos:line="27" pos:column="10">&lt;Carbon/Carbon.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="28" pos:column="1">#<cpp:directive pos:line="28" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="28" pos:column="10">"Scintilla.h"</lit:literal></cpp:file></cpp:include>
+
+<namespace pos:line="30" pos:column="1">namespace <name pos:line="30" pos:column="11">Scintilla</name>
+<block pos:line="31" pos:column="1">{
+
+<comment type="block" format="doxygen" pos:line="33" pos:column="1">/**
+The ExtInput class provides TSM input services to Scintilla.
+It uses the indicators 0 and 1 (see SCI_INDICSETSTYLE) to apply
+underlines to partially converted text.
+*/</comment>
+
+<class pos:line="39" pos:column="1">class <name pos:line="39" pos:column="7">ExtInput</name>
+<block pos:line="40" pos:column="1">{<private type="default" pos:line="40" pos:column="2">
+</private><public pos:line="41" pos:column="1">public:
+	<comment type="block" format="doxygen" pos:line="42" pos:column="9">/**
+	Attach extended input to a HIView with attached Scintilla. This installs the needed
+	event handlers etc.
+	*/</comment>
+	<function_decl><type><specifier pos:line="46" pos:column="9">static</specifier>	<name pos:line="46" pos:column="17">void</name></type>		<name pos:line="46" pos:column="33">attach</name> <parameter_list pos:line="46" pos:column="40">(<param><decl><type><name pos:line="46" pos:column="41">HIViewRef</name></type> <name pos:line="46" pos:column="51">ref</name></decl></param>)</parameter_list>;</function_decl>
+	<comment type="block" format="doxygen" pos:line="47" pos:column="9">/**
+	Detach extended input from a HIViewwith attached Scintilla. 
+	*/</comment>
+	<function_decl><type><specifier pos:line="50" pos:column="9">static</specifier>	<name pos:line="50" pos:column="17">void</name></type>		<name pos:line="50" pos:column="33">detach</name> <parameter_list pos:line="50" pos:column="40">(<param><decl><type><name pos:line="50" pos:column="41">HIViewRef</name></type> <name pos:line="50" pos:column="51">ref</name></decl></param>)</parameter_list>;</function_decl>
+	<comment type="block" format="doxygen" pos:line="51" pos:column="9">/**
+	Activate or deactivate extended input. This method should be called whenever
+	the view gains or loses focus.
+	*/</comment>
+	<function_decl><type><specifier pos:line="55" pos:column="9">static</specifier>	<name pos:line="55" pos:column="17">void</name></type>		<name pos:line="55" pos:column="33">activate</name> <parameter_list pos:line="55" pos:column="42">(<param><decl><type><name pos:line="55" pos:column="43">HIViewRef</name></type> <name pos:line="55" pos:column="53">ref</name></decl></param>, <param><decl><type><name pos:line="55" pos:column="58">bool</name></type> <name pos:line="55" pos:column="63">on</name></decl></param>)</parameter_list>;</function_decl>
+	<comment type="block" format="doxygen" pos:line="56" pos:column="9">/**
+	Terminate extended input.
+	*/</comment>
+	<function_decl><type><specifier pos:line="59" pos:column="9">static</specifier>	<name pos:line="59" pos:column="17">void</name></type>		<name pos:line="59" pos:column="33">stop</name> <parameter_list pos:line="59" pos:column="38">(<param><decl><type><name pos:line="59" pos:column="39">HIViewRef</name></type> <name pos:line="59" pos:column="49">ref</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+}</block></namespace>	<comment type="line" pos:line="62" pos:column="9">// end namespace</comment>
+
+<cpp:endif pos:line="64" pos:column="1">#<cpp:directive pos:line="64" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

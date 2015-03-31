@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter\Main.cs" pos:tabs="8"><using pos:line="1" pos:column="1">using <name pos:line="1" pos:column="7">UIKit</name>;</using>
+
+<namespace pos:line="3" pos:column="1">namespace <name pos:line="3" pos:column="11">StepCounter</name>
+<block pos:line="4" pos:column="1">{
+	<class><specifier pos:line="5" pos:column="9">public</specifier> class <name pos:line="5" pos:column="22">Application</name>
+	<block pos:line="6" pos:column="9">{
+		<comment type="line" pos:line="7" pos:column="17">// This is the main entry point of the application.</comment>
+		<function><type><specifier pos:line="8" pos:column="17">static</specifier> <name pos:line="8" pos:column="24">void</name></type> <name pos:line="8" pos:column="29">Main</name> <parameter_list pos:line="8" pos:column="34">(<param><decl><type><name><name pos:line="8" pos:column="35">string</name><index pos:line="8" pos:column="41">[]</index></name></type> <name pos:line="8" pos:column="44">args</name></decl></param>)</parameter_list>
+		<block pos:line="9" pos:column="17">{
+            <expr_stmt><expr><call><name><name pos:line="10" pos:column="13">UIApplication</name><op:operator pos:line="10" pos:column="26">.</op:operator><name pos:line="10" pos:column="27">Main</name></name><argument_list pos:line="10" pos:column="31">(<argument><expr><name pos:line="10" pos:column="32">args</name></expr></argument>, <argument><expr><name pos:line="10" pos:column="38">null</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="10" pos:column="44">"AppDelegate"</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></function>
+	}</block></class>
+}</block></namespace>
+</unit>

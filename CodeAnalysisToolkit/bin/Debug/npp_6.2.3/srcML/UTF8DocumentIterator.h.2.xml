@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\boostregex\UTF8DocumentIterator.h" pos:tabs="8"><cpp:ifndef pos:line="1" pos:column="1">#<cpp:directive pos:line="1" pos:column="2">ifndef</cpp:directive> <name pos:line="1" pos:column="9">UTF8DOCUMENTITERATOR_H_3452843291318441149</name></cpp:ifndef>
+<cpp:define pos:line="2" pos:column="1">#<cpp:directive pos:line="2" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="2" pos:column="9">UTF8DOCUMENTITERATOR_H_3452843291318441149</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="4" pos:column="1">#<cpp:directive pos:line="4" pos:column="2">include</cpp:directive> <cpp:file pos:line="4" pos:column="10">&lt;stdlib.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="5" pos:column="1">#<cpp:directive pos:line="5" pos:column="2">include</cpp:directive> <cpp:file pos:line="5" pos:column="10">&lt;iterator&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="6" pos:column="1">#<cpp:directive pos:line="6" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="6" pos:column="10">"Platform.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="7" pos:column="1">#<cpp:directive pos:line="7" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="7" pos:column="10">"SplitVector.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="8" pos:column="10">"Partitioning.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="9" pos:column="10">"RunStyles.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="10" pos:column="10">"CellBuffer.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="11" pos:column="10">"CharClassify.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="12" pos:column="10">"Decoration.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">include</cpp:directive> <cpp:file pos:line="13" pos:column="10">&lt;ILexer.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="14" pos:column="1">#<cpp:directive pos:line="14" pos:column="2">include</cpp:directive> <cpp:file pos:line="14" pos:column="10">&lt;Document.h&gt;</cpp:file></cpp:include>
+
+<class pos:line="16" pos:column="1">class <name pos:line="16" pos:column="7">UTF8DocumentIterator</name> <super pos:line="16" pos:column="28">: <specifier pos:line="16" pos:column="30">public</specifier> <name><name pos:line="16" pos:column="37">std</name><op:operator pos:line="16" pos:column="40">::</op:operator><name><name pos:line="16" pos:column="42">iterator</name><argument_list pos:line="16" pos:column="50">&lt;<argument><expr><name><name pos:line="16" pos:column="51">std</name><op:operator pos:line="16" pos:column="54">::</op:operator><name pos:line="16" pos:column="56">bidirectional_iterator_tag</name></name></expr></argument>, <argument><expr><name pos:line="16" pos:column="84">wchar_t</name></expr></argument>&gt;</argument_list></name></name></super>
+<block pos:line="17" pos:column="1">{<private type="default" pos:line="17" pos:column="2">
+</private><public pos:line="18" pos:column="1">public:
+        <constructor><name pos:line="19" pos:column="9">UTF8DocumentIterator</name><parameter_list pos:line="19" pos:column="29">()</parameter_list> <member_list pos:line="19" pos:column="32">: 
+                <call><name pos:line="20" pos:column="17">m_doc</name><argument_list pos:line="20" pos:column="22">(<argument><expr><lit:literal type="number" pos:line="20" pos:column="23">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="20" pos:column="25">,</op:operator> 
+                <call><name pos:line="21" pos:column="17">m_pos</name><argument_list pos:line="21" pos:column="22">(<argument><expr><lit:literal type="number" pos:line="21" pos:column="23">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="21" pos:column="25">,</op:operator>
+                <call><name pos:line="22" pos:column="17">m_end</name><argument_list pos:line="22" pos:column="22">(<argument><expr><lit:literal type="number" pos:line="22" pos:column="23">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="22" pos:column="25">,</op:operator>
+				<call><name pos:line="23" pos:column="33">m_characterIndex</name><argument_list pos:line="23" pos:column="49">(<argument><expr><lit:literal type="number" pos:line="23" pos:column="50">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="23" pos:column="52">,</op:operator>
+				<call><name pos:line="24" pos:column="33">m_utf8Length</name><argument_list pos:line="24" pos:column="45">(<argument><expr><lit:literal type="number" pos:line="24" pos:column="46">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="24" pos:column="48">,</op:operator>
+				<call><name pos:line="25" pos:column="33">m_utf16Length</name><argument_list pos:line="25" pos:column="46">(<argument><expr><lit:literal type="number" pos:line="25" pos:column="47">0</lit:literal></expr></argument>)</argument_list></call>
+        </member_list><block pos:line="26" pos:column="9">{
+        }</block></constructor>
+
+        <constructor><name pos:line="29" pos:column="9">UTF8DocumentIterator</name><parameter_list pos:line="29" pos:column="29">(<param><decl><type><name pos:line="29" pos:column="30">Document</name><type:modifier pos:line="29" pos:column="38">*</type:modifier></type> <name pos:line="29" pos:column="40">doc</name></decl></param>, <param><decl><type><name pos:line="29" pos:column="45">int</name></type> <name pos:line="29" pos:column="49">pos</name></decl></param>, <param><decl><type><name pos:line="29" pos:column="54">int</name></type> <name pos:line="29" pos:column="58">end</name></decl></param>)</parameter_list> <member_list pos:line="29" pos:column="63">: 
+                <call><name pos:line="30" pos:column="17">m_doc</name><argument_list pos:line="30" pos:column="22">(<argument><expr><name pos:line="30" pos:column="23">doc</name></expr></argument>)</argument_list></call><op:operator pos:line="30" pos:column="27">,</op:operator>
+                <call><name pos:line="31" pos:column="17">m_pos</name><argument_list pos:line="31" pos:column="22">(<argument><expr><name pos:line="31" pos:column="23">pos</name></expr></argument>)</argument_list></call><op:operator pos:line="31" pos:column="27">,</op:operator>
+                <call><name pos:line="32" pos:column="17">m_end</name><argument_list pos:line="32" pos:column="22">(<argument><expr><name pos:line="32" pos:column="23">end</name></expr></argument>)</argument_list></call><op:operator pos:line="32" pos:column="27">,</op:operator>
+				<call><name pos:line="33" pos:column="33">m_characterIndex</name><argument_list pos:line="33" pos:column="49">(<argument><expr><lit:literal type="number" pos:line="33" pos:column="50">0</lit:literal></expr></argument>)</argument_list></call>
+        </member_list><block pos:line="34" pos:column="9">{
+                <comment type="line" pos:line="35" pos:column="17">// Check for debug builds</comment>
+                <expr_stmt><expr><call><name pos:line="36" pos:column="17">PLATFORM_ASSERT</name><argument_list pos:line="36" pos:column="32">(<argument><expr><name pos:line="36" pos:column="33">m_pos</name> <op:operator pos:line="36" pos:column="39">&lt;=</op:operator> <name pos:line="36" pos:column="42">m_end</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+                <comment type="line" pos:line="38" pos:column="17">// Ensure for release.</comment>
+                <if pos:line="39" pos:column="17">if <condition pos:line="39" pos:column="20">(<expr><name pos:line="39" pos:column="21">m_pos</name> <op:operator pos:line="39" pos:column="27">&gt;</op:operator> <name pos:line="39" pos:column="29">m_end</name></expr>)</condition><then pos:line="39" pos:column="35">
+                <block pos:line="40" pos:column="17">{
+                        <expr_stmt><expr><name pos:line="41" pos:column="25">m_pos</name> <op:operator pos:line="41" pos:column="31">=</op:operator> <name pos:line="41" pos:column="33">m_end</name></expr>;</expr_stmt>
+                }</block></then></if>
+				<expr_stmt><expr><call><name pos:line="43" pos:column="33">readCharacter</name><argument_list pos:line="43" pos:column="46">()</argument_list></call></expr>;</expr_stmt>
+        }</block></constructor>
+
+        <constructor><name pos:line="46" pos:column="9">UTF8DocumentIterator</name><parameter_list pos:line="46" pos:column="29">(<param><decl><type><specifier pos:line="46" pos:column="30">const</specifier> <name pos:line="46" pos:column="36">UTF8DocumentIterator</name><type:modifier pos:line="46" pos:column="56">&amp;</type:modifier></type> <name pos:line="46" pos:column="58">copy</name></decl></param>)</parameter_list> <member_list pos:line="46" pos:column="64">:
+                <call><name pos:line="47" pos:column="17">m_doc</name><argument_list pos:line="47" pos:column="22">(<argument><expr><name><name pos:line="47" pos:column="23">copy</name><op:operator pos:line="47" pos:column="27">.</op:operator><name pos:line="47" pos:column="28">m_doc</name></name></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="34">,</op:operator>
+                <call><name pos:line="48" pos:column="17">m_pos</name><argument_list pos:line="48" pos:column="22">(<argument><expr><name><name pos:line="48" pos:column="23">copy</name><op:operator pos:line="48" pos:column="27">.</op:operator><name pos:line="48" pos:column="28">m_pos</name></name></expr></argument>)</argument_list></call><op:operator pos:line="48" pos:column="34">,</op:operator>
+                <call><name pos:line="49" pos:column="17">m_end</name><argument_list pos:line="49" pos:column="22">(<argument><expr><name><name pos:line="49" pos:column="23">copy</name><op:operator pos:line="49" pos:column="27">.</op:operator><name pos:line="49" pos:column="28">m_end</name></name></expr></argument>)</argument_list></call><op:operator pos:line="49" pos:column="34">,</op:operator>
+				<call><name pos:line="50" pos:column="33">m_characterIndex</name><argument_list pos:line="50" pos:column="49">(<argument><expr><name><name pos:line="50" pos:column="50">copy</name><op:operator pos:line="50" pos:column="54">.</op:operator><name pos:line="50" pos:column="55">m_characterIndex</name></name></expr></argument>)</argument_list></call><op:operator pos:line="50" pos:column="72">,</op:operator>
+				<call><name pos:line="51" pos:column="33">m_utf8Length</name><argument_list pos:line="51" pos:column="45">(<argument><expr><name><name pos:line="51" pos:column="46">copy</name><op:operator pos:line="51" pos:column="50">.</op:operator><name pos:line="51" pos:column="51">m_utf8Length</name></name></expr></argument>)</argument_list></call><op:operator pos:line="51" pos:column="64">,</op:operator>
+				<call><name pos:line="52" pos:column="33">m_utf16Length</name><argument_list pos:line="52" pos:column="46">(<argument><expr><name><name pos:line="52" pos:column="47">copy</name><op:operator pos:line="52" pos:column="51">.</op:operator><name pos:line="52" pos:column="52">m_utf16Length</name></name></expr></argument>)</argument_list></call>
+        </member_list><block pos:line="53" pos:column="9">{
+                <comment type="line" pos:line="54" pos:column="17">// Check for debug builds</comment>
+                <expr_stmt><expr><call><name pos:line="55" pos:column="17">PLATFORM_ASSERT</name><argument_list pos:line="55" pos:column="32">(<argument><expr><name pos:line="55" pos:column="33">m_pos</name> <op:operator pos:line="55" pos:column="39">&lt;=</op:operator> <name pos:line="55" pos:column="42">m_end</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name><name pos:line="56" pos:column="33">m_character</name><index pos:line="56" pos:column="44">[<expr><lit:literal type="number" pos:line="56" pos:column="45">0</lit:literal></expr>]</index></name> <op:operator pos:line="56" pos:column="48">=</op:operator> <name><name pos:line="56" pos:column="50">copy</name><op:operator pos:line="56" pos:column="54">.</op:operator><name pos:line="56" pos:column="55">m_character</name><index pos:line="56" pos:column="66">[<expr><lit:literal type="number" pos:line="56" pos:column="67">0</lit:literal></expr>]</index></name></expr>;</expr_stmt>
+				<expr_stmt><expr><name><name pos:line="57" pos:column="33">m_character</name><index pos:line="57" pos:column="44">[<expr><lit:literal type="number" pos:line="57" pos:column="45">1</lit:literal></expr>]</index></name> <op:operator pos:line="57" pos:column="48">=</op:operator> <name><name pos:line="57" pos:column="50">copy</name><op:operator pos:line="57" pos:column="54">.</op:operator><name pos:line="57" pos:column="55">m_character</name><index pos:line="57" pos:column="66">[<expr><lit:literal type="number" pos:line="57" pos:column="67">1</lit:literal></expr>]</index></name></expr>;</expr_stmt>
+
+                <comment type="line" pos:line="59" pos:column="17">// Ensure for release.</comment>
+                <if pos:line="60" pos:column="17">if <condition pos:line="60" pos:column="20">(<expr><name pos:line="60" pos:column="21">m_pos</name> <op:operator pos:line="60" pos:column="27">&gt;</op:operator> <name pos:line="60" pos:column="29">m_end</name></expr>)</condition><then pos:line="60" pos:column="35">
+                <block pos:line="61" pos:column="17">{
+                        <expr_stmt><expr><name pos:line="62" pos:column="25">m_pos</name> <op:operator pos:line="62" pos:column="31">=</op:operator> <name pos:line="62" pos:column="33">m_end</name></expr>;</expr_stmt>
+                }</block></then></if>
+        }</block></constructor>
+
+        <function><type><name pos:line="66" pos:column="9">bool</name></type> <name pos:line="66" pos:column="14">operator ==</name> <parameter_list pos:line="66" pos:column="26">(<param><decl><type><specifier pos:line="66" pos:column="27">const</specifier> <name pos:line="66" pos:column="33">UTF8DocumentIterator</name><type:modifier pos:line="66" pos:column="53">&amp;</type:modifier></type> <name pos:line="66" pos:column="55">other</name></decl></param>)</parameter_list> <specifier pos:line="66" pos:column="62">const</specifier>
+        <block pos:line="67" pos:column="9">{
+                <return pos:line="68" pos:column="17">return <expr><op:operator pos:line="68" pos:column="24">(</op:operator><call><name pos:line="68" pos:column="25">ended</name><argument_list pos:line="68" pos:column="30">()</argument_list></call> <op:operator pos:line="68" pos:column="33">==</op:operator> <call><name><name pos:line="68" pos:column="36">other</name><op:operator pos:line="68" pos:column="41">.</op:operator><name pos:line="68" pos:column="42">ended</name></name><argument_list pos:line="68" pos:column="47">()</argument_list></call><op:operator pos:line="68" pos:column="49">)</op:operator> <op:operator pos:line="68" pos:column="51">&amp;&amp;</op:operator> <op:operator pos:line="68" pos:column="54">(</op:operator><name pos:line="68" pos:column="55">m_doc</name> <op:operator pos:line="68" pos:column="61">==</op:operator> <name><name pos:line="68" pos:column="64">other</name><op:operator pos:line="68" pos:column="69">.</op:operator><name pos:line="68" pos:column="70">m_doc</name></name><op:operator pos:line="68" pos:column="75">)</op:operator> <op:operator pos:line="68" pos:column="77">&amp;&amp;</op:operator> <op:operator pos:line="68" pos:column="80">(</op:operator><name pos:line="68" pos:column="81">m_pos</name> <op:operator pos:line="68" pos:column="87">==</op:operator> <name><name pos:line="68" pos:column="90">other</name><op:operator pos:line="68" pos:column="95">.</op:operator><name pos:line="68" pos:column="96">m_pos</name></name><op:operator pos:line="68" pos:column="101">)</op:operator></expr>;</return>
+        }</block></function>
+
+        <function><type><name pos:line="71" pos:column="9">bool</name></type> <name pos:line="71" pos:column="14">operator !=</name> <parameter_list pos:line="71" pos:column="26">(<param><decl><type><specifier pos:line="71" pos:column="27">const</specifier> <name pos:line="71" pos:column="33">UTF8DocumentIterator</name><type:modifier pos:line="71" pos:column="53">&amp;</type:modifier></type> <name pos:line="71" pos:column="55">other</name></decl></param>)</parameter_list> <specifier pos:line="71" pos:column="62">const</specifier>
+        <block pos:line="72" pos:column="9">{
+                <return pos:line="73" pos:column="17">return <expr><op:operator pos:line="73" pos:column="24">!</op:operator><op:operator pos:line="73" pos:column="25">(</op:operator><op:operator pos:line="73" pos:column="26">*</op:operator><name pos:line="73" pos:column="27">this</name> <op:operator pos:line="73" pos:column="32">==</op:operator> <name pos:line="73" pos:column="35">other</name><op:operator pos:line="73" pos:column="40">)</op:operator></expr>;</return>
+        }</block></function>
+
+        <function><type><name pos:line="76" pos:column="9">wchar_t</name></type> <name pos:line="76" pos:column="17">operator *</name> <parameter_list pos:line="76" pos:column="28">()</parameter_list> <specifier pos:line="76" pos:column="31">const</specifier>
+        <block pos:line="77" pos:column="9">{
+			<return pos:line="78" pos:column="25">return <expr><name><name pos:line="78" pos:column="32">m_character</name><index pos:line="78" pos:column="43">[<expr><name pos:line="78" pos:column="44">m_characterIndex</name></expr>]</index></name></expr>;</return>
+        }</block></function>
+
+		<function><type><name pos:line="81" pos:column="17">UTF8DocumentIterator</name><type:modifier pos:line="81" pos:column="37">&amp;</type:modifier></type> <name pos:line="81" pos:column="39">operator =</name> <parameter_list pos:line="81" pos:column="50">(<param><decl><type><name pos:line="81" pos:column="51">int</name></type> <name pos:line="81" pos:column="55">other</name></decl></param>)</parameter_list>
+		<block pos:line="82" pos:column="17">{
+			<expr_stmt><expr><name pos:line="83" pos:column="25">m_pos</name> <op:operator pos:line="83" pos:column="31">=</op:operator> <name pos:line="83" pos:column="33">other</name></expr>;</expr_stmt>
+			<return pos:line="84" pos:column="25">return <expr><op:operator pos:line="84" pos:column="32">*</op:operator><name pos:line="84" pos:column="33">this</name></expr>;</return>
+		}</block></function>
+
+        <function><type><name pos:line="87" pos:column="9">UTF8DocumentIterator</name><type:modifier pos:line="87" pos:column="29">&amp;</type:modifier></type> <name pos:line="87" pos:column="31">operator ++</name> <parameter_list pos:line="87" pos:column="43">()</parameter_list>
+        <block pos:line="88" pos:column="9">{
+                <expr_stmt><expr><call><name pos:line="89" pos:column="17">PLATFORM_ASSERT</name><argument_list pos:line="89" pos:column="32">(<argument><expr><name pos:line="89" pos:column="33">m_pos</name> <op:operator pos:line="89" pos:column="39">&lt;</op:operator> <name pos:line="89" pos:column="41">m_end</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<if pos:line="90" pos:column="33">if <condition pos:line="90" pos:column="36">(<expr><lit:literal type="number" pos:line="90" pos:column="37">2</lit:literal> <op:operator pos:line="90" pos:column="39">==</op:operator> <name pos:line="90" pos:column="42">m_utf16Length</name> <op:operator pos:line="90" pos:column="56">&amp;&amp;</op:operator> <lit:literal type="number" pos:line="90" pos:column="59">0</lit:literal> <op:operator pos:line="90" pos:column="61">==</op:operator> <name pos:line="90" pos:column="64">m_characterIndex</name></expr>)</condition><then pos:line="90" pos:column="81">
+				<block pos:line="91" pos:column="33">{
+					<expr_stmt><expr><name pos:line="92" pos:column="41">m_characterIndex</name> <op:operator pos:line="92" pos:column="58">=</op:operator> <lit:literal type="number" pos:line="92" pos:column="60">1</lit:literal></expr>;</expr_stmt>
+				}</block></then>
+				<else pos:line="94" pos:column="33">else
+				<block pos:line="95" pos:column="33">{
+					<expr_stmt><expr><name pos:line="96" pos:column="41">m_pos</name> <op:operator pos:line="96" pos:column="47">+=</op:operator> <name pos:line="96" pos:column="50">m_utf8Length</name></expr>;</expr_stmt>
+					
+					<if pos:line="98" pos:column="41">if <condition pos:line="98" pos:column="44">(<expr><name pos:line="98" pos:column="45">m_pos</name> <op:operator pos:line="98" pos:column="51">&gt;</op:operator> <name pos:line="98" pos:column="53">m_end</name></expr>)</condition><then pos:line="98" pos:column="59">
+					<block pos:line="99" pos:column="41">{
+						<expr_stmt><expr><name pos:line="100" pos:column="49">m_pos</name> <op:operator pos:line="100" pos:column="55">=</op:operator> <name pos:line="100" pos:column="57">m_end</name></expr>;</expr_stmt>
+					}</block></then></if>
+					<expr_stmt><expr><name pos:line="102" pos:column="41">m_characterIndex</name> <op:operator pos:line="102" pos:column="58">=</op:operator> <lit:literal type="number" pos:line="102" pos:column="60">0</lit:literal></expr>;</expr_stmt>
+					<expr_stmt><expr><call><name pos:line="103" pos:column="41">readCharacter</name><argument_list pos:line="103" pos:column="54">()</argument_list></call></expr>;</expr_stmt>		
+				}</block></else></if>
+                <return pos:line="105" pos:column="17">return <expr><op:operator pos:line="105" pos:column="24">*</op:operator><name pos:line="105" pos:column="25">this</name></expr>;</return>
+        }</block></function>
+
+        <function><type><name pos:line="108" pos:column="9">UTF8DocumentIterator</name><type:modifier pos:line="108" pos:column="29">&amp;</type:modifier></type> <name pos:line="108" pos:column="31">operator --</name> <parameter_list pos:line="108" pos:column="43">()</parameter_list>
+        <block pos:line="109" pos:column="9">{
+			<if pos:line="110" pos:column="25">if <condition pos:line="110" pos:column="28">(<expr><name pos:line="110" pos:column="29">m_utf16Length</name> <op:operator pos:line="110" pos:column="43">==</op:operator> <lit:literal type="number" pos:line="110" pos:column="46">2</lit:literal> <op:operator pos:line="110" pos:column="48">&amp;&amp;</op:operator> <name pos:line="110" pos:column="51">m_characterIndex</name> <op:operator pos:line="110" pos:column="68">==</op:operator> <lit:literal type="number" pos:line="110" pos:column="71">1</lit:literal></expr>)</condition><then pos:line="110" pos:column="73">
+			<block pos:line="111" pos:column="25">{
+				<expr_stmt><expr><name pos:line="112" pos:column="33">m_characterIndex</name> <op:operator pos:line="112" pos:column="50">=</op:operator> <lit:literal type="number" pos:line="112" pos:column="52">0</lit:literal></expr>;</expr_stmt>
+			}</block></then>
+			<else pos:line="114" pos:column="25">else
+			<block pos:line="115" pos:column="25">{
+                <expr_stmt><expr><op:operator pos:line="116" pos:column="17">--</op:operator><name pos:line="116" pos:column="19">m_pos</name></expr>;</expr_stmt>
+				<comment type="line" pos:line="117" pos:column="33">// Skip past the UTF-8 extension bytes</comment>
+				<while pos:line="118" pos:column="33">while <condition pos:line="118" pos:column="39">(<expr><lit:literal type="number" pos:line="118" pos:column="40">0x80</lit:literal> <op:operator pos:line="118" pos:column="45">==</op:operator> <op:operator pos:line="118" pos:column="48">(</op:operator><call><name><name pos:line="118" pos:column="49">m_doc</name><op:operator pos:line="118" pos:column="54">-&gt;</op:operator><name pos:line="118" pos:column="56">CharAt</name></name><argument_list pos:line="118" pos:column="62">(<argument><expr><name pos:line="118" pos:column="63">m_pos</name></expr></argument>)</argument_list></call> <op:operator pos:line="118" pos:column="70">&amp;</op:operator> <lit:literal type="number" pos:line="118" pos:column="72">0xC0</lit:literal><op:operator pos:line="118" pos:column="76">)</op:operator> <op:operator pos:line="118" pos:column="78">&amp;&amp;</op:operator> <name pos:line="118" pos:column="81">m_pos</name> <op:operator pos:line="118" pos:column="87">&gt;</op:operator> <lit:literal type="number" pos:line="118" pos:column="89">0</lit:literal></expr>)</condition>
+					<expr_stmt><expr><op:operator pos:line="119" pos:column="41">--</op:operator><name pos:line="119" pos:column="43">m_pos</name></expr>;</expr_stmt></while>
+
+				<expr_stmt><expr><call><name pos:line="121" pos:column="33">readCharacter</name><argument_list pos:line="121" pos:column="46">()</argument_list></call></expr>;</expr_stmt>
+				<if pos:line="122" pos:column="33">if <condition pos:line="122" pos:column="36">(<expr><name pos:line="122" pos:column="37">m_utf16Length</name> <op:operator pos:line="122" pos:column="51">==</op:operator> <lit:literal type="number" pos:line="122" pos:column="54">2</lit:literal></expr>)</condition><then pos:line="122" pos:column="56">
+				<block pos:line="123" pos:column="33">{
+					<expr_stmt><expr><name pos:line="124" pos:column="41">m_characterIndex</name> <op:operator pos:line="124" pos:column="58">=</op:operator> <lit:literal type="number" pos:line="124" pos:column="60">1</lit:literal></expr>;</expr_stmt>
+				}</block></then></if>
+			}</block></else></if>
+            <return pos:line="127" pos:column="13">return <expr><op:operator pos:line="127" pos:column="20">*</op:operator><name pos:line="127" pos:column="21">this</name></expr>;</return>
+        }</block></function>
+
+        <function><type><name pos:line="130" pos:column="9">int</name></type> <name pos:line="130" pos:column="13">pos</name><parameter_list pos:line="130" pos:column="16">()</parameter_list> <specifier pos:line="130" pos:column="19">const</specifier>
+        <block pos:line="131" pos:column="9">{
+                <return pos:line="132" pos:column="17">return <expr><name pos:line="132" pos:column="24">m_pos</name></expr>;</return>
+        }</block></function>
+
+</public><private pos:line="135" pos:column="1">private:
+		<function_decl><type><name pos:line="136" pos:column="17">void</name></type> <name pos:line="136" pos:column="22">readCharacter</name><parameter_list pos:line="136" pos:column="35">()</parameter_list>;</function_decl>
+
+
+        <function><type><name pos:line="139" pos:column="9">bool</name></type> <name pos:line="139" pos:column="14">ended</name><parameter_list pos:line="139" pos:column="19">()</parameter_list> <specifier pos:line="139" pos:column="22">const</specifier>
+        <block pos:line="140" pos:column="9">{
+                <return pos:line="141" pos:column="17">return <expr><name pos:line="141" pos:column="24">m_pos</name> <op:operator pos:line="141" pos:column="30">&gt;=</op:operator> <name pos:line="141" pos:column="33">m_end</name></expr>;</return>
+        }</block></function>
+
+        <decl_stmt><decl><type><name pos:line="144" pos:column="9">int</name></type> <name pos:line="144" pos:column="13">m_pos</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name pos:line="145" pos:column="17">wchar_t</name></type> <name><name pos:line="145" pos:column="25">m_character</name><index pos:line="145" pos:column="36">[<expr><lit:literal type="number" pos:line="145" pos:column="37">2</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name pos:line="146" pos:column="17">int</name></type> <name pos:line="146" pos:column="21">m_characterIndex</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name pos:line="147" pos:column="9">int</name></type> <name pos:line="147" pos:column="13">m_end</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name pos:line="148" pos:column="17">int</name></type> <name pos:line="148" pos:column="21">m_utf8Length</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name pos:line="149" pos:column="17">int</name></type> <name pos:line="149" pos:column="21">m_utf16Length</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name pos:line="150" pos:column="9">Document</name><type:modifier pos:line="150" pos:column="17">*</type:modifier></type> <name pos:line="150" pos:column="19">m_doc</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier pos:line="151" pos:column="17">static</specifier> <specifier pos:line="151" pos:column="24">const</specifier> <name pos:line="151" pos:column="30">unsigned</name> <name pos:line="151" pos:column="39">char</name></type> <name><name pos:line="151" pos:column="44">m_firstByteMask</name><index pos:line="151" pos:column="59">[]</index></name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="154" pos:column="1">#<cpp:directive pos:line="154" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="154" pos:column="8">// UTF8DOCUMENTITERATOR_H_3452843291318441149</comment>
+</unit>

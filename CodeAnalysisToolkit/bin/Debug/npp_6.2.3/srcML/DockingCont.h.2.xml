@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\WinControls\dockingwnd\DockingCont.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// this file is part of docking functionality for Notepad++</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2005 Jens Lorenz &lt;jens.plugin.npp@gmx.de&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">// </comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">// </comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">// </comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">DOCKINGCONT</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">DOCKINGCONT</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">RESOURCE_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"resource.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//RESOURCE_H</comment>
+
+<cpp:ifndef pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">ifndef</cpp:directive> <name pos:line="36" pos:column="9">DOCKING_H</name></cpp:ifndef>
+<cpp:include pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="37" pos:column="10">"Docking.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="38" pos:column="1">#<cpp:directive pos:line="38" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="38" pos:column="8">//DOCKING_H</comment>
+
+<using pos:line="40" pos:column="1">using namespace <name pos:line="40" pos:column="17">std</name>;</using>
+
+
+<comment type="line" pos:line="43" pos:column="1">// window styles</comment>
+<cpp:define pos:line="44" pos:column="1">#<cpp:directive pos:line="44" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="44" pos:column="9">POPUP_STYLES</name></cpp:macro>		<cpp:value pos:line="44" pos:column="33">(WS_POPUP|WS_CLIPSIBLINGS|WS_CAPTION|WS_SYSMENU|WS_THICKFRAME|WS_MAXIMIZEBOX)</cpp:value></cpp:define>
+<cpp:define pos:line="45" pos:column="1">#<cpp:directive pos:line="45" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="45" pos:column="9">POPUP_EXSTYLES</name></cpp:macro>		<cpp:value pos:line="45" pos:column="33">(WS_EX_CONTROLPARENT|WS_EX_WINDOWEDGE|WS_EX_TOOLWINDOW)</cpp:value></cpp:define>
+<cpp:define pos:line="46" pos:column="1">#<cpp:directive pos:line="46" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="46" pos:column="9">CHILD_STYLES</name></cpp:macro>		<cpp:value pos:line="46" pos:column="33">(WS_CHILD)</cpp:value></cpp:define>
+<cpp:define pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="47" pos:column="9">CHILD_EXSTYLES</name></cpp:macro>		<cpp:value pos:line="47" pos:column="33">(0x00000000L)</cpp:value></cpp:define>
+
+<cpp:define pos:line="49" pos:column="1">#<cpp:directive pos:line="49" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="49" pos:column="9">MIN_TABWIDTH</name></cpp:macro>		<cpp:value pos:line="49" pos:column="33">24</cpp:value></cpp:define>
+
+
+<enum pos:line="52" pos:column="1">enum <name pos:line="52" pos:column="6">eMousePos</name> <block pos:line="52" pos:column="16">{
+	<decl><name pos:line="53" pos:column="9">posOutside</name></decl><op:operator pos:line="53" pos:column="19">,</op:operator>
+	<decl><name pos:line="54" pos:column="9">posCaption</name></decl><op:operator pos:line="54" pos:column="19">,</op:operator>
+	<decl><name pos:line="55" pos:column="9">posClose</name></decl>
+}</block>;</enum>
+
+<comment type="line" pos:line="58" pos:column="1">// some fix modify values for GUI</comment>
+<cpp:define pos:line="59" pos:column="1">#<cpp:directive pos:line="59" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="59" pos:column="9">HIGH_CAPTION</name></cpp:macro>		<cpp:value pos:line="59" pos:column="33">18</cpp:value></cpp:define>
+<cpp:define pos:line="60" pos:column="1">#<cpp:directive pos:line="60" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="60" pos:column="9">HIGH_TAB</name></cpp:macro>			<cpp:value pos:line="60" pos:column="41">20</cpp:value></cpp:define>
+<cpp:define pos:line="61" pos:column="1">#<cpp:directive pos:line="61" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="61" pos:column="9">CAPTION_GAP</name></cpp:macro>			<cpp:value pos:line="61" pos:column="41">2</cpp:value></cpp:define>
+<cpp:define pos:line="62" pos:column="1">#<cpp:directive pos:line="62" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="62" pos:column="9">CLOSEBTN_POS_LEFT</name></cpp:macro>	<cpp:value pos:line="62" pos:column="33">3</cpp:value></cpp:define>
+<cpp:define pos:line="63" pos:column="1">#<cpp:directive pos:line="63" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="63" pos:column="9">CLOSEBTN_POS_TOP</name></cpp:macro>	<cpp:value pos:line="63" pos:column="33">3</cpp:value></cpp:define>
+
+
+
+
+<class pos:line="68" pos:column="1">class <name pos:line="68" pos:column="7">DockingCont</name> <super pos:line="68" pos:column="19">: <specifier pos:line="68" pos:column="21">public</specifier> <name pos:line="68" pos:column="28">StaticDialog</name></super>
+<block pos:line="69" pos:column="1">{<private type="default" pos:line="69" pos:column="2">
+</private><public pos:line="70" pos:column="1">public:
+	<constructor_decl><name pos:line="71" pos:column="9">DockingCont</name><parameter_list pos:line="71" pos:column="20">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="72" pos:column="9">~<name pos:line="72" pos:column="10">DockingCont</name></name><parameter_list pos:line="72" pos:column="21">()</parameter_list>;</destructor_decl>
+
+	<function><type><name pos:line="74" pos:column="9">HWND</name></type> <name pos:line="74" pos:column="14">getTabWnd</name><parameter_list pos:line="74" pos:column="23">()</parameter_list> <block pos:line="74" pos:column="26">{
+		<return pos:line="75" pos:column="17">return <expr><name pos:line="75" pos:column="24">_hContTab</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="76" pos:column="10">;</empty_stmt>
+	<function><type><name pos:line="77" pos:column="9">HWND</name></type> <name pos:line="77" pos:column="14">getCaptionWnd</name><parameter_list pos:line="77" pos:column="27">()</parameter_list> <block pos:line="77" pos:column="30">{ 
+		<if pos:line="78" pos:column="17">if <condition pos:line="78" pos:column="20">(<expr><name pos:line="78" pos:column="21">_isFloating</name> <op:operator pos:line="78" pos:column="33">==</op:operator> <lit:literal type="boolean" pos:line="78" pos:column="36">false</lit:literal></expr>)</condition><then pos:line="78" pos:column="42">
+			<return pos:line="79" pos:column="25">return <expr><name pos:line="79" pos:column="32">_hCaption</name></expr>;</return></then>
+		<else pos:line="80" pos:column="17">else
+			<return pos:line="81" pos:column="25">return <expr><name pos:line="81" pos:column="32">_hSelf</name></expr>;</return></else></if>
+	}</block></function><empty_stmt pos:line="82" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="84" pos:column="9">tTbData</name><type:modifier pos:line="84" pos:column="16">*</type:modifier></type> <name pos:line="84" pos:column="18">createToolbar</name><parameter_list pos:line="84" pos:column="31">(<param><decl><type><name pos:line="84" pos:column="32">tTbData</name></type> <name pos:line="84" pos:column="40">data</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="85" pos:column="9">void</name></type>	 <name pos:line="85" pos:column="18">removeToolbar</name><parameter_list pos:line="85" pos:column="31">(<param><decl><type><name pos:line="85" pos:column="32">tTbData</name></type> <name pos:line="85" pos:column="40">data</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="86" pos:column="9">tTbData</name><type:modifier pos:line="86" pos:column="16">*</type:modifier></type> <name pos:line="86" pos:column="18">findToolbarByWnd</name><parameter_list pos:line="86" pos:column="34">(<param><decl><type><name pos:line="86" pos:column="35">HWND</name></type> <name pos:line="86" pos:column="40">hClient</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="87" pos:column="9">tTbData</name><type:modifier pos:line="87" pos:column="16">*</type:modifier></type> <name pos:line="87" pos:column="18">findToolbarByName</name><parameter_list pos:line="87" pos:column="35">(<param><decl><type><name pos:line="87" pos:column="36">TCHAR</name><type:modifier pos:line="87" pos:column="41">*</type:modifier></type> <name pos:line="87" pos:column="43">pszName</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="89" pos:column="9">void</name></type> <name pos:line="89" pos:column="14">showToolbar</name><parameter_list pos:line="89" pos:column="25">(<param><decl><type><name pos:line="89" pos:column="26">tTbData</name> <type:modifier pos:line="89" pos:column="34">*</type:modifier></type><name pos:line="89" pos:column="35">pTbData</name></decl></param>, <param><decl><type><name pos:line="89" pos:column="44">BOOL</name></type> <name pos:line="89" pos:column="49">state</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="91" pos:column="9">BOOL</name></type> <name pos:line="91" pos:column="14">updateInfo</name><parameter_list pos:line="91" pos:column="24">(<param><decl><type><name pos:line="91" pos:column="25">HWND</name></type> <name pos:line="91" pos:column="30">hClient</name></decl></param>)</parameter_list> <block pos:line="91" pos:column="39">{
+		<for pos:line="92" pos:column="17">for (<init><decl><type><name pos:line="92" pos:column="22">size_t</name></type> <name pos:line="92" pos:column="29">iTb</name> <init pos:line="92" pos:column="33">= <expr><lit:literal type="number" pos:line="92" pos:column="35">0</lit:literal></expr></init></decl>;</init> <condition><expr><name pos:line="92" pos:column="38">iTb</name> <op:operator pos:line="92" pos:column="42">&lt;</op:operator> <call><name><name pos:line="92" pos:column="44">_vTbData</name><op:operator pos:line="92" pos:column="52">.</op:operator><name pos:line="92" pos:column="53">size</name></name><argument_list pos:line="92" pos:column="57">()</argument_list></call></expr>;</condition> <incr><expr><name pos:line="92" pos:column="61">iTb</name><op:operator pos:line="92" pos:column="64">++</op:operator></expr></incr>)
+		<block pos:line="93" pos:column="17">{
+			<if pos:line="94" pos:column="25">if <condition pos:line="94" pos:column="28">(<expr><name><name pos:line="94" pos:column="29">_vTbData</name><index pos:line="94" pos:column="37">[<expr><name pos:line="94" pos:column="38">iTb</name></expr>]</index></name><op:operator pos:line="94" pos:column="42">-&gt;</op:operator><name pos:line="94" pos:column="44">hClient</name> <op:operator pos:line="94" pos:column="52">==</op:operator> <name pos:line="94" pos:column="55">hClient</name></expr>)</condition><then pos:line="94" pos:column="63">
+			<block pos:line="95" pos:column="25">{
+				<expr_stmt><expr><call><name pos:line="96" pos:column="33">updateCaption</name><argument_list pos:line="96" pos:column="46">()</argument_list></call></expr>;</expr_stmt>
+				<return pos:line="97" pos:column="33">return <expr><name pos:line="97" pos:column="40">TRUE</name></expr>;</return>
+			}</block></then></if>
+		}</block></for>
+		<return pos:line="100" pos:column="17">return <expr><name pos:line="100" pos:column="24">FALSE</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="101" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="103" pos:column="9">void</name></type> <name pos:line="103" pos:column="14">setActiveTb</name><parameter_list pos:line="103" pos:column="25">(<param><decl><type><name pos:line="103" pos:column="26">tTbData</name><type:modifier pos:line="103" pos:column="33">*</type:modifier></type> <name pos:line="103" pos:column="35">pTbData</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="104" pos:column="9">void</name></type> <name pos:line="104" pos:column="14">setActiveTb</name><parameter_list pos:line="104" pos:column="25">(<param><decl><type><name pos:line="104" pos:column="26">INT</name></type> <name pos:line="104" pos:column="30">iItem</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="105" pos:column="9">INT</name></type> <name pos:line="105" pos:column="13">getActiveTb</name><parameter_list pos:line="105" pos:column="24">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="106" pos:column="9">tTbData</name> <type:modifier pos:line="106" pos:column="17">*</type:modifier></type> <name pos:line="106" pos:column="19">getDataOfActiveTb</name><parameter_list pos:line="106" pos:column="36">()</parameter_list>;</function_decl>
+	<function><type><name><name pos:line="107" pos:column="9">vector</name><argument_list pos:line="107" pos:column="15">&lt;<argument><expr><name pos:line="107" pos:column="16">tTbData</name> <type:modifier pos:line="107" pos:column="24">*</type:modifier></expr></argument>&gt;</argument_list></name></type> <name pos:line="107" pos:column="27">getDataOfAllTb</name><parameter_list pos:line="107" pos:column="41">()</parameter_list> <block pos:line="107" pos:column="44">{
+		<return pos:line="108" pos:column="17">return <expr><name pos:line="108" pos:column="24">_vTbData</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="109" pos:column="10">;</empty_stmt>
+	<function_decl><type><name><name pos:line="110" pos:column="9">vector</name><argument_list pos:line="110" pos:column="15">&lt;<argument><expr><name pos:line="110" pos:column="16">tTbData</name> <type:modifier pos:line="110" pos:column="24">*</type:modifier></expr></argument>&gt;</argument_list></name></type> <name pos:line="110" pos:column="27">getDataOfVisTb</name><parameter_list pos:line="110" pos:column="41">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="111" pos:column="9">bool</name></type> <name pos:line="111" pos:column="14">isTbVis</name><parameter_list pos:line="111" pos:column="21">(<param><decl><type><name pos:line="111" pos:column="22">tTbData</name><type:modifier pos:line="111" pos:column="29">*</type:modifier></type> <name pos:line="111" pos:column="31">data</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="113" pos:column="9">void</name></type> <name pos:line="113" pos:column="14">doDialog</name><parameter_list pos:line="113" pos:column="22">(<param><decl><type><name pos:line="113" pos:column="23">bool</name></type> <name pos:line="113" pos:column="28">willBeShown</name> <init pos:line="113" pos:column="40">= <expr><lit:literal type="boolean" pos:line="113" pos:column="42">true</lit:literal></expr></init></decl></param>, <name pos:line="113" pos:column="48">bool</name> <name pos:line="113" pos:column="53">isFloating</name> <op:operator pos:line="113" pos:column="64">=</op:operator> <lit:literal type="boolean" pos:line="113" pos:column="66">false</lit:literal>)</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="115" pos:column="9">bool</name></type> <name pos:line="115" pos:column="14">isFloating</name><parameter_list pos:line="115" pos:column="24">()</parameter_list> <block pos:line="115" pos:column="27">{
+		<return pos:line="116" pos:column="17">return <expr><name pos:line="116" pos:column="24">_isFloating</name></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="119" pos:column="9">INT</name></type> <name pos:line="119" pos:column="13">getElementCnt</name><parameter_list pos:line="119" pos:column="26">()</parameter_list> <block pos:line="119" pos:column="29">{
+		<return pos:line="120" pos:column="17">return <expr><call><name><name pos:line="120" pos:column="24">_vTbData</name><op:operator pos:line="120" pos:column="32">.</op:operator><name pos:line="120" pos:column="33">size</name></name><argument_list pos:line="120" pos:column="37">()</argument_list></call></expr>;</return>
+	}</block></function>
+
+	<comment type="line" pos:line="123" pos:column="9">// interface function for gripper</comment>
+	<function><type><name pos:line="124" pos:column="9">BOOL</name></type> <name pos:line="124" pos:column="14">startMovingFromTab</name><parameter_list pos:line="124" pos:column="32">()</parameter_list> <block pos:line="124" pos:column="35">{
+		<decl_stmt><decl><type><name pos:line="125" pos:column="17">BOOL</name></type>	<name pos:line="125" pos:column="25">dragFromTabTemp</name> <init pos:line="125" pos:column="41">= <expr><name pos:line="125" pos:column="43">_dragFromTab</name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name pos:line="126" pos:column="17">_dragFromTab</name> <op:operator pos:line="126" pos:column="30">=</op:operator> <name pos:line="126" pos:column="32">FALSE</name></expr>;</expr_stmt>
+		<return pos:line="127" pos:column="17">return <expr><name pos:line="127" pos:column="24">dragFromTabTemp</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="128" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="130" pos:column="9">void</name></type> <name pos:line="130" pos:column="14">setCaptionTop</name><parameter_list pos:line="130" pos:column="27">(<param><decl><type><name pos:line="130" pos:column="28">BOOL</name></type> <name pos:line="130" pos:column="33">isTopCaption</name></decl></param>)</parameter_list> <block pos:line="130" pos:column="47">{
+		<expr_stmt><expr><name pos:line="131" pos:column="17">_isTopCaption</name> <op:operator pos:line="131" pos:column="31">=</op:operator> <op:operator pos:line="131" pos:column="33">(</op:operator><name pos:line="131" pos:column="34">isTopCaption</name> <op:operator pos:line="131" pos:column="47">==</op:operator> <name pos:line="131" pos:column="50">CAPTION_TOP</name><op:operator pos:line="131" pos:column="61">)</op:operator></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="132" pos:column="17">onSize</name><argument_list pos:line="132" pos:column="23">()</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="133" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="135" pos:column="9">void</name></type> <name pos:line="135" pos:column="14">focusClient</name><parameter_list pos:line="135" pos:column="25">()</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="137" pos:column="9">void</name></type> <name pos:line="137" pos:column="14">SetActive</name><parameter_list pos:line="137" pos:column="23">(<param><decl><type><name pos:line="137" pos:column="24">BOOL</name></type> <name pos:line="137" pos:column="29">bState</name></decl></param>)</parameter_list> <block pos:line="137" pos:column="37">{
+		<expr_stmt><expr><name pos:line="138" pos:column="17">_isActive</name> <op:operator pos:line="138" pos:column="27">=</op:operator> <name pos:line="138" pos:column="29">bState</name></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="139" pos:column="17">updateCaption</name><argument_list pos:line="139" pos:column="30">()</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="140" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="142" pos:column="9">void</name></type> <name pos:line="142" pos:column="14">setTabStyle</name><parameter_list pos:line="142" pos:column="25">(<param><decl><type><specifier pos:line="142" pos:column="26">const</specifier> <name pos:line="142" pos:column="32">BOOL</name> <type:modifier pos:line="142" pos:column="37">&amp;</type:modifier></type> <name pos:line="142" pos:column="39">bDrawOgLine</name></decl></param>)</parameter_list> <block pos:line="142" pos:column="52">{
+		<expr_stmt><expr><name pos:line="143" pos:column="17">_bDrawOgLine</name> <op:operator pos:line="143" pos:column="30">=</op:operator> <name pos:line="143" pos:column="32">bDrawOgLine</name></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="144" pos:column="17">RedrawWindow</name><argument_list pos:line="144" pos:column="29">(<argument><expr><name pos:line="144" pos:column="30">_hContTab</name></expr></argument>, <argument><expr><name pos:line="144" pos:column="41">NULL</name></expr></argument>, <argument><expr><name pos:line="144" pos:column="47">NULL</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="144" pos:column="53">0</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="145" pos:column="10">;</empty_stmt>
+
+    <function><type><specifier pos:line="147" pos:column="5">virtual</specifier> <name pos:line="147" pos:column="13">void</name></type> <name pos:line="147" pos:column="18">destroy</name><parameter_list pos:line="147" pos:column="25">()</parameter_list> <block pos:line="147" pos:column="28">{
+		<for pos:line="148" pos:column="17">for (<init><decl><type><name pos:line="148" pos:column="22">INT</name></type> <name pos:line="148" pos:column="26">iTb</name> <init pos:line="148" pos:column="30">= <expr><call><name><name pos:line="148" pos:column="32">_vTbData</name><op:operator pos:line="148" pos:column="40">.</op:operator><name pos:line="148" pos:column="41">size</name></name><argument_list pos:line="148" pos:column="45">()</argument_list></call></expr></init></decl>;</init> <condition><expr><name pos:line="148" pos:column="49">iTb</name> <op:operator pos:line="148" pos:column="53">&gt;</op:operator> <lit:literal type="number" pos:line="148" pos:column="55">0</lit:literal></expr>;</condition> <incr><expr><name pos:line="148" pos:column="58">iTb</name><op:operator pos:line="148" pos:column="61">--</op:operator></expr></incr>)
+		<block pos:line="149" pos:column="17">{
+			<expr_stmt><expr><op:operator pos:line="150" pos:column="25">delete</op:operator> <name><name pos:line="150" pos:column="32">_vTbData</name><index pos:line="150" pos:column="40">[<expr><name pos:line="150" pos:column="41">iTb</name><op:operator pos:line="150" pos:column="44">-</op:operator><lit:literal type="number" pos:line="150" pos:column="45">1</lit:literal></expr>]</index></name></expr>;</expr_stmt>
+		}</block></for>
+		<expr_stmt><expr><call><name><op:operator pos:line="152" pos:column="17">::</op:operator><name pos:line="152" pos:column="19">DestroyWindow</name></name><argument_list pos:line="152" pos:column="32">(<argument><expr><name pos:line="152" pos:column="33">_hSelf</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="153" pos:column="10">;</empty_stmt>
+
+</public><protected pos:line="155" pos:column="1">protected :
+
+	<comment type="line" pos:line="157" pos:column="9">// Subclassing caption</comment>
+	<function_decl><type><name pos:line="158" pos:column="9">LRESULT</name></type> <name pos:line="158" pos:column="17">runProcCaption</name><parameter_list pos:line="158" pos:column="31">(<param><decl><type><name pos:line="158" pos:column="32">HWND</name></type> <name pos:line="158" pos:column="37">hwnd</name></decl></param>, <param><decl><type><name pos:line="158" pos:column="43">UINT</name></type> <name pos:line="158" pos:column="48">Message</name></decl></param>, <param><decl><type><name pos:line="158" pos:column="57">WPARAM</name></type> <name pos:line="158" pos:column="64">wParam</name></decl></param>, <param><decl><type><name pos:line="158" pos:column="72">LPARAM</name></type> <name pos:line="158" pos:column="79">lParam</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><specifier pos:line="159" pos:column="9">static</specifier> <name pos:line="159" pos:column="16">LRESULT</name> <name pos:line="159" pos:column="24">CALLBACK</name></type> <name pos:line="159" pos:column="33">wndCaptionProc</name><parameter_list pos:line="159" pos:column="47">(<param><decl><type><name pos:line="159" pos:column="48">HWND</name></type> <name pos:line="159" pos:column="53">hwnd</name></decl></param>, <param><decl><type><name pos:line="159" pos:column="59">UINT</name></type> <name pos:line="159" pos:column="64">Message</name></decl></param>, <param><decl><type><name pos:line="159" pos:column="73">WPARAM</name></type> <name pos:line="159" pos:column="80">wParam</name></decl></param>, <param><decl><type><name pos:line="159" pos:column="88">LPARAM</name></type> <name pos:line="159" pos:column="95">lParam</name></decl></param>)</parameter_list> <block pos:line="159" pos:column="103">{
+		<return pos:line="160" pos:column="17">return <expr><op:operator pos:line="160" pos:column="24">(</op:operator><op:operator pos:line="160" pos:column="25">(</op:operator><op:operator pos:line="160" pos:column="26">(</op:operator><name pos:line="160" pos:column="27">DockingCont</name> <op:operator pos:line="160" pos:column="39">*</op:operator><op:operator pos:line="160" pos:column="40">)</op:operator><op:operator pos:line="160" pos:column="41">(</op:operator><call><name><op:operator pos:line="160" pos:column="42">::</op:operator><name pos:line="160" pos:column="44">GetWindowLongPtr</name></name><argument_list pos:line="160" pos:column="60">(<argument><expr><name pos:line="160" pos:column="61">hwnd</name></expr></argument>, <argument><expr><name pos:line="160" pos:column="67">GWL_USERDATA</name></expr></argument>)</argument_list></call><op:operator pos:line="160" pos:column="80">)</op:operator><op:operator pos:line="160" pos:column="81">)</op:operator><op:operator pos:line="160" pos:column="82">-&gt;</op:operator><call><name pos:line="160" pos:column="84">runProcCaption</name><argument_list pos:line="160" pos:column="98">(<argument><expr><name pos:line="160" pos:column="99">hwnd</name></expr></argument>, <argument><expr><name pos:line="160" pos:column="105">Message</name></expr></argument>, <argument><expr><name pos:line="160" pos:column="114">wParam</name></expr></argument>, <argument><expr><name pos:line="160" pos:column="122">lParam</name></expr></argument>)</argument_list></call><op:operator pos:line="160" pos:column="129">)</op:operator></expr>;</return>
+	}</block></function><empty_stmt pos:line="161" pos:column="10">;</empty_stmt>
+
+	<comment type="line" pos:line="163" pos:column="9">// Subclassing tab</comment>
+	<function_decl><type><name pos:line="164" pos:column="9">LRESULT</name></type> <name pos:line="164" pos:column="17">runProcTab</name><parameter_list pos:line="164" pos:column="27">(<param><decl><type><name pos:line="164" pos:column="28">HWND</name></type> <name pos:line="164" pos:column="33">hwnd</name></decl></param>, <param><decl><type><name pos:line="164" pos:column="39">UINT</name></type> <name pos:line="164" pos:column="44">Message</name></decl></param>, <param><decl><type><name pos:line="164" pos:column="53">WPARAM</name></type> <name pos:line="164" pos:column="60">wParam</name></decl></param>, <param><decl><type><name pos:line="164" pos:column="68">LPARAM</name></type> <name pos:line="164" pos:column="75">lParam</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><specifier pos:line="165" pos:column="9">static</specifier> <name pos:line="165" pos:column="16">LRESULT</name> <name pos:line="165" pos:column="24">CALLBACK</name></type> <name pos:line="165" pos:column="33">wndTabProc</name><parameter_list pos:line="165" pos:column="43">(<param><decl><type><name pos:line="165" pos:column="44">HWND</name></type> <name pos:line="165" pos:column="49">hwnd</name></decl></param>, <param><decl><type><name pos:line="165" pos:column="55">UINT</name></type> <name pos:line="165" pos:column="60">Message</name></decl></param>, <param><decl><type><name pos:line="165" pos:column="69">WPARAM</name></type> <name pos:line="165" pos:column="76">wParam</name></decl></param>, <param><decl><type><name pos:line="165" pos:column="84">LPARAM</name></type> <name pos:line="165" pos:column="91">lParam</name></decl></param>)</parameter_list> <block pos:line="165" pos:column="99">{
+		<return pos:line="166" pos:column="17">return <expr><op:operator pos:line="166" pos:column="24">(</op:operator><op:operator pos:line="166" pos:column="25">(</op:operator><op:operator pos:line="166" pos:column="26">(</op:operator><name pos:line="166" pos:column="27">DockingCont</name> <op:operator pos:line="166" pos:column="39">*</op:operator><op:operator pos:line="166" pos:column="40">)</op:operator><op:operator pos:line="166" pos:column="41">(</op:operator><call><name><op:operator pos:line="166" pos:column="42">::</op:operator><name pos:line="166" pos:column="44">GetWindowLongPtr</name></name><argument_list pos:line="166" pos:column="60">(<argument><expr><name pos:line="166" pos:column="61">hwnd</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="67">GWL_USERDATA</name></expr></argument>)</argument_list></call><op:operator pos:line="166" pos:column="80">)</op:operator><op:operator pos:line="166" pos:column="81">)</op:operator><op:operator pos:line="166" pos:column="82">-&gt;</op:operator><call><name pos:line="166" pos:column="84">runProcTab</name><argument_list pos:line="166" pos:column="94">(<argument><expr><name pos:line="166" pos:column="95">hwnd</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="101">Message</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="110">wParam</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="118">lParam</name></expr></argument>)</argument_list></call><op:operator pos:line="166" pos:column="125">)</op:operator></expr>;</return>
+	}</block></function><empty_stmt pos:line="167" pos:column="10">;</empty_stmt>
+
+    <function_decl><type><specifier pos:line="169" pos:column="5">virtual</specifier> <name pos:line="169" pos:column="13">BOOL</name> <name pos:line="169" pos:column="18">CALLBACK</name></type> <name pos:line="169" pos:column="27">run_dlgProc</name><parameter_list pos:line="169" pos:column="38">(<param><decl><type><name pos:line="169" pos:column="39">UINT</name></type> <name pos:line="169" pos:column="44">message</name></decl></param>, <param><decl><type><name pos:line="169" pos:column="53">WPARAM</name></type> <name pos:line="169" pos:column="60">wParam</name></decl></param>, <param><decl><type><name pos:line="169" pos:column="68">LPARAM</name></type> <name pos:line="169" pos:column="75">lParam</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="171" pos:column="9">// drawing functions</comment>
+	<function_decl><type><name pos:line="172" pos:column="9">void</name></type> <name pos:line="172" pos:column="14">drawCaptionItem</name><parameter_list pos:line="172" pos:column="29">(<param><decl><type><name pos:line="172" pos:column="30">DRAWITEMSTRUCT</name> <type:modifier pos:line="172" pos:column="45">*</type:modifier></type><name pos:line="172" pos:column="46">pDrawItemStruct</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="173" pos:column="9">void</name></type> <name pos:line="173" pos:column="14">drawTabItem</name><parameter_list pos:line="173" pos:column="25">(<param><decl><type><name pos:line="173" pos:column="26">DRAWITEMSTRUCT</name> <type:modifier pos:line="173" pos:column="41">*</type:modifier></type><name pos:line="173" pos:column="42">pDrawItemStruct</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="174" pos:column="9">void</name></type> <name pos:line="174" pos:column="14">onSize</name><parameter_list pos:line="174" pos:column="20">()</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="176" pos:column="9">// functions for caption handling and drawing</comment>
+	<function_decl><type><name pos:line="177" pos:column="9">eMousePos</name></type> <name pos:line="177" pos:column="19">isInRect</name><parameter_list pos:line="177" pos:column="27">(<param><decl><type><name pos:line="177" pos:column="28">HWND</name></type> <name pos:line="177" pos:column="33">hwnd</name></decl></param>, <param><decl><type><name pos:line="177" pos:column="39">INT</name></type> <name pos:line="177" pos:column="43">x</name></decl></param>, <param><decl><type><name pos:line="177" pos:column="46">INT</name></type> <name pos:line="177" pos:column="50">y</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="179" pos:column="9">// handling of toolbars</comment>
+	<function_decl><type><name pos:line="180" pos:column="9">void</name></type> <name pos:line="180" pos:column="14">doClose</name><parameter_list pos:line="180" pos:column="21">()</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="182" pos:column="9">// return new item</comment>
+	<function_decl><type><name pos:line="183" pos:column="9">INT</name></type>  <name pos:line="183" pos:column="14">SearchPosInTab</name><parameter_list pos:line="183" pos:column="28">(<param><decl><type><name pos:line="183" pos:column="29">tTbData</name><type:modifier pos:line="183" pos:column="36">*</type:modifier></type> <name pos:line="183" pos:column="38">pTbData</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="184" pos:column="9">void</name></type> <name pos:line="184" pos:column="14">SelectTab</name><parameter_list pos:line="184" pos:column="23">(<param><decl><type><name pos:line="184" pos:column="24">INT</name></type> <name pos:line="184" pos:column="28">iTab</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="186" pos:column="9">INT</name></type>  <name pos:line="186" pos:column="14">hideToolbar</name><parameter_list pos:line="186" pos:column="25">(<param><decl><type><name pos:line="186" pos:column="26">tTbData</name><type:modifier pos:line="186" pos:column="33">*</type:modifier></type> <name pos:line="186" pos:column="35">pTbData</name></decl></param>, <param><decl><type><name pos:line="186" pos:column="44">BOOL</name></type> <name pos:line="186" pos:column="49">hideClient</name> <init pos:line="186" pos:column="60">= <expr><name pos:line="186" pos:column="62">TRUE</name></expr></init></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="187" pos:column="9">void</name></type> <name pos:line="187" pos:column="14">viewToolbar</name><parameter_list pos:line="187" pos:column="25">(<param><decl><type><name pos:line="187" pos:column="26">tTbData</name> <type:modifier pos:line="187" pos:column="34">*</type:modifier></type><name pos:line="187" pos:column="35">pTbData</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="188" pos:column="9">INT</name></type>  <name pos:line="188" pos:column="14">removeTab</name><parameter_list pos:line="188" pos:column="23">(<param><decl><type><name pos:line="188" pos:column="24">tTbData</name><type:modifier pos:line="188" pos:column="31">*</type:modifier></type> <name pos:line="188" pos:column="33">pTbData</name></decl></param>)</parameter_list> <block pos:line="188" pos:column="42">{
+		<return pos:line="189" pos:column="17">return <expr><call><name pos:line="189" pos:column="24">hideToolbar</name><argument_list pos:line="189" pos:column="35">(<argument><expr><name pos:line="189" pos:column="36">pTbData</name></expr></argument>, <argument><expr><name pos:line="189" pos:column="45">FALSE</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="190" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="192" pos:column="9">bool</name></type> <name pos:line="192" pos:column="14">updateCaption</name><parameter_list pos:line="192" pos:column="27">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="193" pos:column="9">LPARAM</name></type> <name pos:line="193" pos:column="16">NotifyParent</name><parameter_list pos:line="193" pos:column="28">(<param><decl><type><name pos:line="193" pos:column="29">UINT</name></type> <name pos:line="193" pos:column="34">message</name></decl></param>)</parameter_list>;</function_decl>
+
+</protected><private pos:line="195" pos:column="1">private:
+	<comment type="line" pos:line="196" pos:column="9">// handles</comment>
+	<decl_stmt><decl><type><name pos:line="197" pos:column="9">BOOL</name></type>					<name pos:line="197" pos:column="49">_isActive</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="198" pos:column="9">bool</name></type>					<name pos:line="198" pos:column="49">_isFloating</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="199" pos:column="9">HWND</name></type>					<name pos:line="199" pos:column="49">_hCaption</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="200" pos:column="9">HWND</name></type>					<name pos:line="200" pos:column="49">_hContTab</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="202" pos:column="9">// horizontal font for caption and tab</comment>
+	<decl_stmt><decl><type><name pos:line="203" pos:column="9">HFONT</name></type>					<name pos:line="203" pos:column="49">_hFont</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="205" pos:column="9">// caption params</comment>
+	<decl_stmt><decl><type><name pos:line="206" pos:column="9">BOOL</name></type>					<name pos:line="206" pos:column="49">_isTopCaption</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="207" pos:column="9">generic_string</name></type>		    <name pos:line="207" pos:column="37">_pszCaption</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="209" pos:column="9">BOOL</name></type>					<name pos:line="209" pos:column="49">_isMouseDown</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="210" pos:column="9">BOOL</name></type>					<name pos:line="210" pos:column="49">_isMouseClose</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="211" pos:column="9">BOOL</name></type>					<name pos:line="211" pos:column="49">_isMouseOver</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="212" pos:column="9">RECT</name></type>					<name pos:line="212" pos:column="49">_rcCaption</name></decl>;</decl_stmt>
+	
+	<comment type="line" pos:line="214" pos:column="9">// tab style</comment>
+	<decl_stmt><decl><type><name pos:line="215" pos:column="9">BOOL</name></type>					<name pos:line="215" pos:column="49">_bDrawOgLine</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="217" pos:column="9">// Important value for DlgMoving class</comment>
+	<decl_stmt><decl><type><name pos:line="218" pos:column="9">BOOL</name></type>					<name pos:line="218" pos:column="49">_dragFromTab</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="220" pos:column="9">// subclassing handle for caption</comment>
+	<decl_stmt><decl><type><name pos:line="221" pos:column="9">WNDPROC</name></type>					<name pos:line="221" pos:column="49">_hDefaultCaptionProc</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="223" pos:column="9">// subclassing handle for tab</comment>
+	<decl_stmt><decl><type><name pos:line="224" pos:column="9">WNDPROC</name></type>					<name pos:line="224" pos:column="49">_hDefaultTabProc</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="226" pos:column="9">// for moving and reordering</comment>
+	<decl_stmt><decl><type><name pos:line="227" pos:column="9">UINT</name></type>					<name pos:line="227" pos:column="49">_prevItem</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="228" pos:column="9">BOOL</name></type>					<name pos:line="228" pos:column="49">_beginDrag</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="229" pos:column="9">HIMAGELIST</name></type>				<name pos:line="229" pos:column="49">_hImageList</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="231" pos:column="9">// Is tooltip</comment>
+	<decl_stmt><decl><type><name pos:line="232" pos:column="9">BOOL</name></type>					<name pos:line="232" pos:column="49">_bTabTTHover</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="233" pos:column="9">INT</name></type>						<name pos:line="233" pos:column="57">_iLastHovered</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="235" pos:column="9">BOOL</name></type>					<name pos:line="235" pos:column="49">_bCaptionTT</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="236" pos:column="9">BOOL</name></type>					<name pos:line="236" pos:column="49">_bCapTTHover</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="237" pos:column="9">eMousePos</name></type>				<name pos:line="237" pos:column="49">_hoverMPos</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="239" pos:column="9">// data of added windows</comment>
+	<decl_stmt><decl><type><name><name pos:line="240" pos:column="9">vector</name><argument_list pos:line="240" pos:column="15">&lt;<argument><expr><name pos:line="240" pos:column="16">tTbData</name> <type:modifier pos:line="240" pos:column="24">*</type:modifier></expr></argument>&gt;</argument_list></name></type>		<name pos:line="240" pos:column="41">_vTbData</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+
+
+<cpp:endif pos:line="245" pos:column="1">#<cpp:directive pos:line="245" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="245" pos:column="8">// DOCKINGCONT</comment>
+</unit>

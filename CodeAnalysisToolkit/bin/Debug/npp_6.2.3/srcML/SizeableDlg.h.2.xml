@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\WinControls\WindowsDlg\SizeableDlg.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">SIZABLE_DLG_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">SIZABLE_DLG_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">WINDOWS_DLG_RC_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"WindowsDlgRc.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//WINDOWS_DLG_RC_H</comment>
+
+<cpp:ifndef pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">ifndef</cpp:directive> <name pos:line="36" pos:column="9">WINMGR_H</name></cpp:ifndef>
+<cpp:include pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="37" pos:column="10">"WinMgr.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="38" pos:column="1">#<cpp:directive pos:line="38" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="38" pos:column="8">//WINMGR_H</comment>
+
+<class pos:line="40" pos:column="1">class <name pos:line="40" pos:column="7">SizeableDlg</name> <super pos:line="40" pos:column="19">: <specifier pos:line="40" pos:column="21">public</specifier> <name pos:line="40" pos:column="28">StaticDialog</name></super> <block pos:line="40" pos:column="41">{<private type="default" pos:line="40" pos:column="42">
+	<typedef pos:line="41" pos:column="9">typedef <type><name pos:line="41" pos:column="17">StaticDialog</name></type> <name pos:line="41" pos:column="30">MyBaseClass</name>;</typedef>
+</private><public pos:line="42" pos:column="1">public:
+	<constructor_decl><name pos:line="43" pos:column="9">SizeableDlg</name><parameter_list pos:line="43" pos:column="20">(<param><decl><type><name pos:line="43" pos:column="21">WINRECT</name><type:modifier pos:line="43" pos:column="28">*</type:modifier></type> <name pos:line="43" pos:column="30">pWinMap</name></decl></param>)</parameter_list>;</constructor_decl>
+
+</public><protected pos:line="45" pos:column="1">protected:
+	<decl_stmt><decl><type><name pos:line="46" pos:column="9">CWinMgr</name></type> <name pos:line="46" pos:column="17">_winMgr</name></decl>;</decl_stmt>	  <comment type="line" pos:line="46" pos:column="35">// window manager</comment>
+
+	<function_decl><type><specifier pos:line="48" pos:column="9">virtual</specifier> <name pos:line="48" pos:column="17">BOOL</name> <name pos:line="48" pos:column="22">CALLBACK</name></type> <name pos:line="48" pos:column="31">run_dlgProc</name><parameter_list pos:line="48" pos:column="42">(<param><decl><type><name pos:line="48" pos:column="43">UINT</name></type> <name pos:line="48" pos:column="48">message</name></decl></param>, <param><decl><type><name pos:line="48" pos:column="57">WPARAM</name></type> <name pos:line="48" pos:column="64">wParam</name></decl></param>, <param><decl><type><name pos:line="48" pos:column="72">LPARAM</name></type> <name pos:line="48" pos:column="79">lParam</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="49" pos:column="9">virtual</specifier> <name pos:line="49" pos:column="17">BOOL</name></type> <name pos:line="49" pos:column="22">onInitDialog</name><parameter_list pos:line="49" pos:column="34">()</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="50" pos:column="9">virtual</specifier> <name pos:line="50" pos:column="17">void</name></type> <name pos:line="50" pos:column="22">onSize</name><parameter_list pos:line="50" pos:column="28">(<param><decl><type><name pos:line="50" pos:column="29">UINT</name></type> <name pos:line="50" pos:column="34">nType</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="41">int</name></type> <name pos:line="50" pos:column="45">cx</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="49">int</name></type> <name pos:line="50" pos:column="53">cy</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="51" pos:column="9">virtual</specifier> <name pos:line="51" pos:column="17">void</name></type> <name pos:line="51" pos:column="22">onGetMinMaxInfo</name><parameter_list pos:line="51" pos:column="37">(<param><decl><type><name pos:line="51" pos:column="38">MINMAXINFO</name><type:modifier pos:line="51" pos:column="48">*</type:modifier></type> <name pos:line="51" pos:column="50">lpMMI</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="52" pos:column="9">virtual</specifier> <name pos:line="52" pos:column="17">LRESULT</name></type> <name pos:line="52" pos:column="25">onWinMgr</name><parameter_list pos:line="52" pos:column="33">(<param><decl><type><name pos:line="52" pos:column="34">WPARAM</name></type> <name pos:line="52" pos:column="41">wp</name></decl></param>, <param><decl><type><name pos:line="52" pos:column="45">LPARAM</name></type> <name pos:line="52" pos:column="52">lp</name></decl></param>)</parameter_list>;</function_decl>
+</protected>}</block>;</class>
+
+<cpp:endif pos:line="55" pos:column="1">#<cpp:directive pos:line="55" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="55" pos:column="8">//SIZABLE_DLG_H</comment>
+</unit>

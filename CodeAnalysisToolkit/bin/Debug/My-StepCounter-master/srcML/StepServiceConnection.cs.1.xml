@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Services\StepServiceConnection.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name><name pos:line="20" pos:column="7">Android</name><op:operator pos:line="20" pos:column="14">.</op:operator><name pos:line="20" pos:column="15">Content</name></name>;</using>
+<using pos:line="21" pos:column="1">using <name><name pos:line="21" pos:column="7">Android</name><op:operator pos:line="21" pos:column="14">.</op:operator><name pos:line="21" pos:column="15">OS</name></name>;</using>
+<using pos:line="22" pos:column="1">using <name><name pos:line="22" pos:column="7">StepCounter</name><op:operator pos:line="22" pos:column="18">.</op:operator><name pos:line="22" pos:column="19">Activities</name></name>;</using>
+
+<namespace pos:line="24" pos:column="1">namespace <name><name pos:line="24" pos:column="11">StepCounter</name><op:operator pos:line="24" pos:column="22">.</op:operator><name pos:line="24" pos:column="23">Services</name></name>
+<block pos:line="25" pos:column="1">{
+	<class><specifier pos:line="26" pos:column="9">public</specifier> class <name pos:line="26" pos:column="22">StepServiceConnection</name> <super pos:line="26" pos:column="44">: <name><name pos:line="26" pos:column="46">Java</name><op:operator pos:line="26" pos:column="50">.</op:operator><name pos:line="26" pos:column="51">Lang</name><op:operator pos:line="26" pos:column="55">.</op:operator><name pos:line="26" pos:column="56">Object</name></name>, <name pos:line="26" pos:column="64">IServiceConnection</name></super>
+	<block pos:line="27" pos:column="9">{
+		<decl_stmt><decl><type><name pos:line="28" pos:column="17">MainActivity</name></type> <name pos:line="28" pos:column="30">activity</name></decl>;</decl_stmt>
+
+		<constructor><specifier pos:line="30" pos:column="17">public</specifier> <name pos:line="30" pos:column="24">StepServiceConnection</name> <parameter_list pos:line="30" pos:column="46">(<param><decl><type><name pos:line="30" pos:column="47">MainActivity</name></type> <name pos:line="30" pos:column="60">activity</name></decl></param>)</parameter_list>
+		<block pos:line="31" pos:column="17">{
+			<expr_stmt><expr><name><name pos:line="32" pos:column="25">this</name><op:operator pos:line="32" pos:column="29">.</op:operator><name pos:line="32" pos:column="30">activity</name></name> <op:operator pos:line="32" pos:column="39">=</op:operator> <name pos:line="32" pos:column="41">activity</name></expr>;</expr_stmt>
+		}</block></constructor>
+
+		<function><type><specifier pos:line="35" pos:column="17">public</specifier> <name pos:line="35" pos:column="24">void</name></type> <name pos:line="35" pos:column="29">OnServiceConnected</name> <parameter_list pos:line="35" pos:column="48">(<param><decl><type><name pos:line="35" pos:column="49">ComponentName</name></type> <name pos:line="35" pos:column="63">name</name></decl></param>, <param><decl><type><name pos:line="35" pos:column="69">IBinder</name></type> <name pos:line="35" pos:column="77">service</name></decl></param>)</parameter_list>
+		<block pos:line="36" pos:column="17">{
+			<decl_stmt><decl><type><name pos:line="37" pos:column="25">var</name></type> <name pos:line="37" pos:column="29">serviceBinder</name> <init pos:line="37" pos:column="43">= <expr><name pos:line="37" pos:column="45">service</name> <op:operator pos:line="37" pos:column="53">as</op:operator> <name pos:line="37" pos:column="56">StepServiceBinder</name></expr></init></decl>;</decl_stmt>
+			<if pos:line="38" pos:column="25">if <condition pos:line="38" pos:column="28">(<expr><name pos:line="38" pos:column="29">serviceBinder</name> <op:operator pos:line="38" pos:column="43">!=</op:operator> <name pos:line="38" pos:column="46">null</name></expr>)</condition><then pos:line="38" pos:column="51"> <block pos:line="38" pos:column="52">{
+				<expr_stmt><expr><name><name pos:line="39" pos:column="33">activity</name><op:operator pos:line="39" pos:column="41">.</op:operator><name pos:line="39" pos:column="42">Binder</name></name> <op:operator pos:line="39" pos:column="49">=</op:operator> <name pos:line="39" pos:column="51">serviceBinder</name></expr>;</expr_stmt>
+				<expr_stmt><expr><name><name pos:line="40" pos:column="33">activity</name><op:operator pos:line="40" pos:column="41">.</op:operator><name pos:line="40" pos:column="42">IsBound</name></name> <op:operator pos:line="40" pos:column="50">=</op:operator> <lit:literal type="boolean" pos:line="40" pos:column="52">true</lit:literal></expr>;</expr_stmt>
+			}</block></then></if>
+		}</block></function>
+
+		<function><type><specifier pos:line="44" pos:column="17">public</specifier> <name pos:line="44" pos:column="24">void</name></type> <name pos:line="44" pos:column="29">OnServiceDisconnected</name> <parameter_list pos:line="44" pos:column="51">(<param><decl><type><name pos:line="44" pos:column="52">ComponentName</name></type> <name pos:line="44" pos:column="66">name</name></decl></param>)</parameter_list>
+		<block pos:line="45" pos:column="17">{
+			<expr_stmt><expr><name><name pos:line="46" pos:column="25">activity</name><op:operator pos:line="46" pos:column="33">.</op:operator><name pos:line="46" pos:column="34">IsBound</name></name> <op:operator pos:line="46" pos:column="42">=</op:operator> <lit:literal type="boolean" pos:line="46" pos:column="44">false</lit:literal></expr>;</expr_stmt>
+		}</block></function>
+	}</block></class>
+}</block></namespace>
+
+</unit>

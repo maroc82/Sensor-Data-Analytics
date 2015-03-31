@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\macosx\TCarbonEvent.cxx" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+    File:		TCarbonEvent.cp
+    
+    Version:	1.0
+
+	Disclaimer:	IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc.
+				("Apple") in consideration of your agreement to the following terms, and your
+				use, installation, modification or redistribution of this Apple software
+				constitutes acceptance of these terms.  If you do not agree with these terms,
+				please do not use, install, modify or redistribute this Apple software.
+
+				In consideration of your agreement to abide by the following terms, and subject
+				to these terms, Apple grants you a personal, non-exclusive license, under AppleÕs
+				copyrights in this original Apple software (the "Apple Software"), to use,
+				reproduce, modify and redistribute the Apple Software, with or without
+				modifications, in source and/or binary forms; provided that if you redistribute
+				the Apple Software in its entirety and without modifications, you must retain
+				this notice and the following text and disclaimers in all such redistributions of
+				the Apple Software.  Neither the name, trademarks, service marks or logos of
+				Apple Computer, Inc. may be used to endorse or promote products derived from the
+				Apple Software without specific prior written permission from Apple.  Except as
+				expressly stated in this notice, no other rights or licenses, express or implied,
+				are granted by Apple herein, including but not limited to any patent rights that
+				may be infringed by your derivative works or by other works in which the Apple
+				Software may be incorporated.
+
+				The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+				WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+				WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+				PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
+				COMBINATION WITH YOUR PRODUCTS.
+
+				IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
+				CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+				GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+				ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION
+				OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+				(INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN
+				ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+	Copyright © 2002 Apple Computer, Inc., All Rights Reserved
+*/</comment>
+
+<cpp:include pos:line="44" pos:column="1">#<cpp:directive pos:line="44" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="44" pos:column="10">"TCarbonEvent.h"</lit:literal></cpp:file></cpp:include>
+
+<comment type="line" pos:line="46" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="47" pos:column="1">//	TCarbonEvent constructor</comment>
+<comment type="line" pos:line="48" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="49" pos:column="1">//</comment>
+<constructor><name><name pos:line="50" pos:column="1">TCarbonEvent</name><op:operator pos:line="50" pos:column="13">::</op:operator><name pos:line="50" pos:column="15">TCarbonEvent</name></name><parameter_list pos:line="50" pos:column="27">(
+	<param><decl><type><name pos:line="51" pos:column="9">UInt32</name></type>				<name pos:line="51" pos:column="41">inClass</name></decl></param>,
+	<param><decl><type><name pos:line="52" pos:column="9">UInt32</name></type>				<name pos:line="52" pos:column="41">inKind</name></decl></param> )</parameter_list>
+<block pos:line="53" pos:column="1">{
+	<expr_stmt><expr><call><name pos:line="54" pos:column="9">CreateEvent</name><argument_list pos:line="54" pos:column="20">( <argument><expr><name pos:line="54" pos:column="22">NULL</name></expr></argument>, <argument><expr><name pos:line="54" pos:column="28">inClass</name></expr></argument>, <argument><expr><name pos:line="54" pos:column="37">inKind</name></expr></argument>, <argument><expr><call><name pos:line="54" pos:column="45">GetCurrentEventTime</name><argument_list pos:line="54" pos:column="64">()</argument_list></call></expr></argument>, <argument><expr><lit:literal type="number" pos:line="54" pos:column="68">0</lit:literal></expr></argument>, <argument><expr><op:operator pos:line="54" pos:column="71">&amp;</op:operator><name pos:line="54" pos:column="72">fEvent</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+}</block></constructor>
+
+<comment type="line" pos:line="57" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="58" pos:column="1">//	TCarbonEvent constructor</comment>
+<comment type="line" pos:line="59" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="60" pos:column="1">//</comment>
+<constructor><name><name pos:line="61" pos:column="1">TCarbonEvent</name><op:operator pos:line="61" pos:column="13">::</op:operator><name pos:line="61" pos:column="15">TCarbonEvent</name></name><parameter_list pos:line="61" pos:column="27">(
+	<param><decl><type><name pos:line="62" pos:column="9">EventRef</name></type>			<name pos:line="62" pos:column="41">inEvent</name></decl></param> )</parameter_list>
+<block pos:line="63" pos:column="1">{
+	<expr_stmt><expr><name pos:line="64" pos:column="9">fEvent</name> <op:operator pos:line="64" pos:column="16">=</op:operator> <name pos:line="64" pos:column="18">inEvent</name></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name pos:line="65" pos:column="9">RetainEvent</name><argument_list pos:line="65" pos:column="20">( <argument><expr><name pos:line="65" pos:column="22">fEvent</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+}</block></constructor>
+
+<comment type="line" pos:line="68" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="69" pos:column="1">//	TCarbonEvent destructor</comment>
+<comment type="line" pos:line="70" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="71" pos:column="1">//</comment>
+<destructor><name><name pos:line="72" pos:column="1">TCarbonEvent</name><op:operator pos:line="72" pos:column="13">::</op:operator>~<name pos:line="72" pos:column="16">TCarbonEvent</name></name><parameter_list pos:line="72" pos:column="28">()</parameter_list>
+<block pos:line="73" pos:column="1">{
+	<expr_stmt><expr><call><name pos:line="74" pos:column="9">ReleaseEvent</name><argument_list pos:line="74" pos:column="21">( <argument><expr><name pos:line="74" pos:column="23">fEvent</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+}</block></destructor>
+
+<comment type="line" pos:line="77" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="78" pos:column="1">//	GetClass</comment>
+<comment type="line" pos:line="79" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="80" pos:column="1">//</comment>
+<function><type><name pos:line="81" pos:column="1">UInt32</name></type> <name><name pos:line="81" pos:column="8">TCarbonEvent</name><op:operator pos:line="81" pos:column="20">::</op:operator><name pos:line="81" pos:column="22">GetClass</name></name><parameter_list pos:line="81" pos:column="30">()</parameter_list> <specifier pos:line="81" pos:column="33">const</specifier>
+<block pos:line="82" pos:column="1">{
+	<return pos:line="83" pos:column="9">return <expr><call><name pos:line="83" pos:column="16">GetEventClass</name><argument_list pos:line="83" pos:column="29">( <argument><expr><name pos:line="83" pos:column="31">fEvent</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="86" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="87" pos:column="1">//	GetKind</comment>
+<comment type="line" pos:line="88" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="89" pos:column="1">//</comment>
+<function><type><name pos:line="90" pos:column="1">UInt32</name></type> <name><name pos:line="90" pos:column="8">TCarbonEvent</name><op:operator pos:line="90" pos:column="20">::</op:operator><name pos:line="90" pos:column="22">GetKind</name></name><parameter_list pos:line="90" pos:column="29">()</parameter_list> <specifier pos:line="90" pos:column="32">const</specifier>
+<block pos:line="91" pos:column="1">{
+	<return pos:line="92" pos:column="9">return <expr><call><name pos:line="92" pos:column="16">GetEventKind</name><argument_list pos:line="92" pos:column="28">( <argument><expr><name pos:line="92" pos:column="30">fEvent</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="95" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="96" pos:column="1">//	SetTime</comment>
+<comment type="line" pos:line="97" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="98" pos:column="1">//</comment>
+<function><type><name pos:line="99" pos:column="1">void</name></type> <name><name pos:line="99" pos:column="6">TCarbonEvent</name><op:operator pos:line="99" pos:column="18">::</op:operator><name pos:line="99" pos:column="20">SetTime</name></name><parameter_list pos:line="99" pos:column="27">(
+	<param><decl><type><name pos:line="100" pos:column="9">EventTime</name></type>			<name pos:line="100" pos:column="41">inTime</name></decl></param> )</parameter_list>
+<block pos:line="101" pos:column="1">{
+	<expr_stmt><expr><call><name pos:line="102" pos:column="9">SetEventTime</name><argument_list pos:line="102" pos:column="21">( <argument><expr><name pos:line="102" pos:column="23">fEvent</name></expr></argument>, <argument><expr><name pos:line="102" pos:column="31">inTime</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+}</block></function>
+
+<comment type="line" pos:line="105" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="106" pos:column="1">//	GetTime</comment>
+<comment type="line" pos:line="107" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="108" pos:column="1">//</comment>
+<function><type><name pos:line="109" pos:column="1">EventTime</name></type> <name><name pos:line="109" pos:column="11">TCarbonEvent</name><op:operator pos:line="109" pos:column="23">::</op:operator><name pos:line="109" pos:column="25">GetTime</name></name><parameter_list pos:line="109" pos:column="32">()</parameter_list> <specifier pos:line="109" pos:column="35">const</specifier>
+<block pos:line="110" pos:column="1">{
+	<return pos:line="111" pos:column="9">return <expr><call><name pos:line="111" pos:column="16">GetEventTime</name><argument_list pos:line="111" pos:column="28">( <argument><expr><name pos:line="111" pos:column="30">fEvent</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="114" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="115" pos:column="1">//	Retain</comment>
+<comment type="line" pos:line="116" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="117" pos:column="1">//</comment>
+<function><type><name pos:line="118" pos:column="1">void</name></type> <name><name pos:line="118" pos:column="6">TCarbonEvent</name><op:operator pos:line="118" pos:column="18">::</op:operator><name pos:line="118" pos:column="20">Retain</name></name><parameter_list pos:line="118" pos:column="26">()</parameter_list>
+<block pos:line="119" pos:column="1">{
+	<expr_stmt><expr><call><name pos:line="120" pos:column="9">RetainEvent</name><argument_list pos:line="120" pos:column="20">( <argument><expr><name pos:line="120" pos:column="22">fEvent</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+}</block></function>
+
+<comment type="line" pos:line="123" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="124" pos:column="1">//	Release</comment>
+<comment type="line" pos:line="125" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="126" pos:column="1">//</comment>
+<function><type><name pos:line="127" pos:column="1">void</name></type> <name><name pos:line="127" pos:column="6">TCarbonEvent</name><op:operator pos:line="127" pos:column="18">::</op:operator><name pos:line="127" pos:column="20">Release</name></name><parameter_list pos:line="127" pos:column="27">()</parameter_list>
+<block pos:line="128" pos:column="1">{
+	<expr_stmt><expr><call><name pos:line="129" pos:column="9">ReleaseEvent</name><argument_list pos:line="129" pos:column="21">( <argument><expr><name pos:line="129" pos:column="23">fEvent</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+}</block></function>
+
+<comment type="line" pos:line="132" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="133" pos:column="1">//	PostToQueue</comment>
+<comment type="line" pos:line="134" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="135" pos:column="1">//</comment>
+<function><type><name pos:line="136" pos:column="1">OSStatus</name></type> <name><name pos:line="136" pos:column="10">TCarbonEvent</name><op:operator pos:line="136" pos:column="22">::</op:operator><name pos:line="136" pos:column="24">PostToQueue</name></name><parameter_list pos:line="136" pos:column="35">(
+	<param><decl><type><name pos:line="137" pos:column="9">EventQueueRef</name></type>		<name pos:line="137" pos:column="33">inQueue</name></decl></param>,
+	<param><decl><type><name pos:line="138" pos:column="9">EventPriority</name></type>		<name pos:line="138" pos:column="33">inPriority</name></decl></param> )</parameter_list>
+<block pos:line="139" pos:column="1">{
+	<return pos:line="140" pos:column="9">return <expr><call><name pos:line="140" pos:column="16">PostEventToQueue</name><argument_list pos:line="140" pos:column="32">( <argument><expr><name pos:line="140" pos:column="34">inQueue</name></expr></argument>, <argument><expr><name pos:line="140" pos:column="43">fEvent</name></expr></argument>, <argument><expr><name pos:line="140" pos:column="51">inPriority</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="143" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="144" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="145" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="146" pos:column="1">//</comment>
+<function><type><name pos:line="147" pos:column="1">OSStatus</name></type> <name><name pos:line="147" pos:column="10">TCarbonEvent</name><op:operator pos:line="147" pos:column="22">::</op:operator><name pos:line="147" pos:column="24">SetParameter</name></name><parameter_list pos:line="147" pos:column="36">(
+	<param><decl><type><name pos:line="148" pos:column="9">EventParamName</name></type>		<name pos:line="148" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="149" pos:column="9">EventParamType</name></type>		<name pos:line="149" pos:column="33">inType</name></decl></param>,
+	<param><decl><type><name pos:line="150" pos:column="9">UInt32</name></type>				<name pos:line="150" pos:column="41">inSize</name></decl></param>,
+	<param><decl><type><specifier pos:line="151" pos:column="9">const</specifier> <name pos:line="151" pos:column="15">void</name><type:modifier pos:line="151" pos:column="19">*</type:modifier></type>			<name pos:line="151" pos:column="41">inData</name></decl></param> )</parameter_list>
+<block pos:line="152" pos:column="1">{
+	<return pos:line="153" pos:column="9">return <expr><call><name pos:line="153" pos:column="16">SetEventParameter</name><argument_list pos:line="153" pos:column="33">( <argument><expr><name pos:line="153" pos:column="35">fEvent</name></expr></argument>, <argument><expr><name pos:line="153" pos:column="43">inName</name></expr></argument>, <argument><expr><name pos:line="153" pos:column="51">inType</name></expr></argument>, <argument><expr><name pos:line="153" pos:column="59">inSize</name></expr></argument>, <argument><expr><name pos:line="153" pos:column="67">inData</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="156" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="157" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="158" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="159" pos:column="1">//</comment>
+<function><type><name pos:line="160" pos:column="1">OSStatus</name></type> <name><name pos:line="160" pos:column="10">TCarbonEvent</name><op:operator pos:line="160" pos:column="22">::</op:operator><name pos:line="160" pos:column="24">GetParameter</name></name><parameter_list pos:line="160" pos:column="36">(
+	<param><decl><type><name pos:line="161" pos:column="9">EventParamName</name></type>		<name pos:line="161" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="162" pos:column="9">EventParamType</name></type>		<name pos:line="162" pos:column="33">inType</name></decl></param>,
+	<param><decl><type><name pos:line="163" pos:column="9">UInt32</name></type>				<name pos:line="163" pos:column="41">inBufferSize</name></decl></param>,
+	<param><decl><type><name pos:line="164" pos:column="9">void</name><type:modifier pos:line="164" pos:column="13">*</type:modifier></type>				<name pos:line="164" pos:column="41">outData</name></decl></param> )</parameter_list>
+<block pos:line="165" pos:column="1">{
+	<return pos:line="166" pos:column="9">return <expr><call><name pos:line="166" pos:column="16">GetEventParameter</name><argument_list pos:line="166" pos:column="33">( <argument><expr><name pos:line="166" pos:column="35">fEvent</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="43">inName</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="51">inType</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="59">NULL</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="65">inBufferSize</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="79">NULL</name></expr></argument>, <argument><expr><name pos:line="166" pos:column="85">outData</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="169" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="170" pos:column="1">//	GetParameterType</comment>
+<comment type="line" pos:line="171" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="172" pos:column="1">//</comment>
+<function><type><name pos:line="173" pos:column="1">OSStatus</name></type> <name><name pos:line="173" pos:column="10">TCarbonEvent</name><op:operator pos:line="173" pos:column="22">::</op:operator><name pos:line="173" pos:column="24">GetParameterType</name></name><parameter_list pos:line="173" pos:column="40">(
+	<param><decl><type><name pos:line="174" pos:column="9">EventParamName</name></type>		<name pos:line="174" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="175" pos:column="9">EventParamType</name><type:modifier pos:line="175" pos:column="23">*</type:modifier></type>		<name pos:line="175" pos:column="33">outType</name></decl></param> )</parameter_list>
+<block pos:line="176" pos:column="1">{
+	<return pos:line="177" pos:column="9">return <expr><call><name pos:line="177" pos:column="16">GetEventParameter</name><argument_list pos:line="177" pos:column="33">( <argument><expr><name pos:line="177" pos:column="35">fEvent</name></expr></argument>, <argument><expr><name pos:line="177" pos:column="43">inName</name></expr></argument>, <argument><expr><name pos:line="177" pos:column="51">typeWildCard</name></expr></argument>, <argument><expr><name pos:line="177" pos:column="65">outType</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="177" pos:column="74">0</lit:literal></expr></argument>, <argument><expr><name pos:line="177" pos:column="77">NULL</name></expr></argument>, <argument><expr><name pos:line="177" pos:column="83">NULL</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="180" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="181" pos:column="1">//	GetParameterSize</comment>
+<comment type="line" pos:line="182" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="183" pos:column="1">//</comment>
+<function><type><name pos:line="184" pos:column="1">OSStatus</name></type> <name><name pos:line="184" pos:column="10">TCarbonEvent</name><op:operator pos:line="184" pos:column="22">::</op:operator><name pos:line="184" pos:column="24">GetParameterSize</name></name><parameter_list pos:line="184" pos:column="40">(
+	<param><decl><type><name pos:line="185" pos:column="9">EventParamName</name></type>		<name pos:line="185" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="186" pos:column="9">UInt32</name><type:modifier pos:line="186" pos:column="15">*</type:modifier></type>				<name pos:line="186" pos:column="41">outSize</name></decl></param> )</parameter_list>
+<block pos:line="187" pos:column="1">{
+	<return pos:line="188" pos:column="9">return <expr><call><name pos:line="188" pos:column="16">GetEventParameter</name><argument_list pos:line="188" pos:column="33">( <argument><expr><name pos:line="188" pos:column="35">fEvent</name></expr></argument>, <argument><expr><name pos:line="188" pos:column="43">inName</name></expr></argument>, <argument><expr><name pos:line="188" pos:column="51">typeWildCard</name></expr></argument>, <argument><expr><name pos:line="188" pos:column="65">NULL</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="188" pos:column="71">0</lit:literal></expr></argument>, <argument><expr><name pos:line="188" pos:column="74">outSize</name></expr></argument>, <argument><expr><name pos:line="188" pos:column="83">NULL</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="191" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="192" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="193" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="194" pos:column="1">//</comment>
+<function><type><name pos:line="195" pos:column="1">OSStatus</name></type> <name><name pos:line="195" pos:column="10">TCarbonEvent</name><op:operator pos:line="195" pos:column="22">::</op:operator><name pos:line="195" pos:column="24">SetParameter</name></name><parameter_list pos:line="195" pos:column="36">(
+	<param><decl><type><name pos:line="196" pos:column="9">EventParamName</name></type>		<name pos:line="196" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="197" pos:column="9">Boolean</name></type>				<name pos:line="197" pos:column="41">inValue</name></decl></param> )</parameter_list>
+<block pos:line="198" pos:column="1">{
+	<return pos:line="199" pos:column="9">return <expr><call><name><name pos:line="199" pos:column="16">SetParameter</name><argument_list pos:line="199" pos:column="28">&lt;<argument><expr><name pos:line="199" pos:column="29">Boolean</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="199" pos:column="37">( <argument><expr><name pos:line="199" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="199" pos:column="47">typeBoolean</name></expr></argument>, <argument><expr><name pos:line="199" pos:column="60">inValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="202" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="203" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="204" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="205" pos:column="1">//</comment>
+<function><type><name pos:line="206" pos:column="1">OSStatus</name></type> <name><name pos:line="206" pos:column="10">TCarbonEvent</name><op:operator pos:line="206" pos:column="22">::</op:operator><name pos:line="206" pos:column="24">GetParameter</name></name><parameter_list pos:line="206" pos:column="36">(
+	<param><decl><type><name pos:line="207" pos:column="9">EventParamName</name></type>		<name pos:line="207" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="208" pos:column="9">Boolean</name><type:modifier pos:line="208" pos:column="16">*</type:modifier></type>			<name pos:line="208" pos:column="41">outValue</name></decl></param> )</parameter_list>
+<block pos:line="209" pos:column="1">{
+	<return pos:line="210" pos:column="9">return <expr><call><name><name pos:line="210" pos:column="16">GetParameter</name><argument_list pos:line="210" pos:column="28">&lt;<argument><expr><name pos:line="210" pos:column="29">Boolean</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="210" pos:column="37">( <argument><expr><name pos:line="210" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="210" pos:column="47">typeBoolean</name></expr></argument>, <argument><expr><name pos:line="210" pos:column="60">outValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="213" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="214" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="215" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="216" pos:column="1">//</comment>
+<function><type><name pos:line="217" pos:column="1">OSStatus</name></type> <name><name pos:line="217" pos:column="10">TCarbonEvent</name><op:operator pos:line="217" pos:column="22">::</op:operator><name pos:line="217" pos:column="24">SetParameter</name></name><parameter_list pos:line="217" pos:column="36">(
+	<param><decl><type><name pos:line="218" pos:column="9">EventParamName</name></type>		<name pos:line="218" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="219" pos:column="9">bool</name></type>				<name pos:line="219" pos:column="41">inValue</name></decl></param> )</parameter_list>
+<block pos:line="220" pos:column="1">{
+	<return pos:line="221" pos:column="9">return <expr><call><name><name pos:line="221" pos:column="16">SetParameter</name><argument_list pos:line="221" pos:column="28">&lt;<argument><expr><name pos:line="221" pos:column="29">Boolean</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="221" pos:column="37">( <argument><expr><name pos:line="221" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="221" pos:column="47">typeBoolean</name></expr></argument>, <argument><expr><op:operator pos:line="221" pos:column="60">(</op:operator><name pos:line="221" pos:column="61">Boolean</name><op:operator pos:line="221" pos:column="68">)</op:operator> <name pos:line="221" pos:column="70">inValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="224" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="225" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="226" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="227" pos:column="1">//</comment>
+<function><type><name pos:line="228" pos:column="1">OSStatus</name></type> <name><name pos:line="228" pos:column="10">TCarbonEvent</name><op:operator pos:line="228" pos:column="22">::</op:operator><name pos:line="228" pos:column="24">GetParameter</name></name><parameter_list pos:line="228" pos:column="36">(
+	<param><decl><type><name pos:line="229" pos:column="9">EventParamName</name></type>		<name pos:line="229" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="230" pos:column="9">bool</name><type:modifier pos:line="230" pos:column="13">*</type:modifier></type>				<name pos:line="230" pos:column="41">outValue</name></decl></param> )</parameter_list>
+<block pos:line="231" pos:column="1">{
+	<return pos:line="232" pos:column="9">return <expr><call><name><name pos:line="232" pos:column="16">GetParameter</name><argument_list pos:line="232" pos:column="28">&lt;<argument><expr><name pos:line="232" pos:column="29">Boolean</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="232" pos:column="37">( <argument><expr><name pos:line="232" pos:column="39">inName</name></expr></argument>, <argument><expr><sizeof pos:line="232" pos:column="47">sizeof<argument_list pos:line="232" pos:column="53">( <argument><expr><name pos:line="232" pos:column="55">Boolean</name></expr></argument> )</argument_list></sizeof></expr></argument>, <argument><expr><op:operator pos:line="232" pos:column="66">(</op:operator><name pos:line="232" pos:column="67">Boolean</name><op:operator pos:line="232" pos:column="74">*</op:operator><op:operator pos:line="232" pos:column="75">)</op:operator> <name pos:line="232" pos:column="77">outValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="235" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="236" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="237" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="238" pos:column="1">//</comment>
+<function><type><name pos:line="239" pos:column="1">OSStatus</name></type> <name><name pos:line="239" pos:column="10">TCarbonEvent</name><op:operator pos:line="239" pos:column="22">::</op:operator><name pos:line="239" pos:column="24">SetParameter</name></name><parameter_list pos:line="239" pos:column="36">(
+	<param><decl><type><name pos:line="240" pos:column="9">EventParamName</name></type>		<name pos:line="240" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="241" pos:column="9">Point</name></type>				<name pos:line="241" pos:column="41">inPt</name></decl></param> )</parameter_list>
+<block pos:line="242" pos:column="1">{
+	<return pos:line="243" pos:column="9">return <expr><call><name><name pos:line="243" pos:column="16">SetParameter</name><argument_list pos:line="243" pos:column="28">&lt;<argument><expr><name pos:line="243" pos:column="29">Point</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="243" pos:column="35">( <argument><expr><name pos:line="243" pos:column="37">inName</name></expr></argument>, <argument><expr><name pos:line="243" pos:column="45">typeQDPoint</name></expr></argument>, <argument><expr><name pos:line="243" pos:column="58">inPt</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="246" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="247" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="248" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="249" pos:column="1">//</comment>
+<function><type><name pos:line="250" pos:column="1">OSStatus</name></type> <name><name pos:line="250" pos:column="10">TCarbonEvent</name><op:operator pos:line="250" pos:column="22">::</op:operator><name pos:line="250" pos:column="24">GetParameter</name></name><parameter_list pos:line="250" pos:column="36">(
+	<param><decl><type><name pos:line="251" pos:column="9">EventParamName</name></type>		<name pos:line="251" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="252" pos:column="9">Point</name><type:modifier pos:line="252" pos:column="14">*</type:modifier></type>				<name pos:line="252" pos:column="41">outPt</name></decl></param> )</parameter_list>
+<block pos:line="253" pos:column="1">{
+	<return pos:line="254" pos:column="9">return <expr><call><name><name pos:line="254" pos:column="16">GetParameter</name><argument_list pos:line="254" pos:column="28">&lt;<argument><expr><name pos:line="254" pos:column="29">Point</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="254" pos:column="35">( <argument><expr><name pos:line="254" pos:column="37">inName</name></expr></argument>, <argument><expr><name pos:line="254" pos:column="45">typeQDPoint</name></expr></argument>, <argument><expr><name pos:line="254" pos:column="58">outPt</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="257" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="258" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="259" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="260" pos:column="1">//</comment>
+<function><type><name pos:line="261" pos:column="1">OSStatus</name></type> <name><name pos:line="261" pos:column="10">TCarbonEvent</name><op:operator pos:line="261" pos:column="22">::</op:operator><name pos:line="261" pos:column="24">SetParameter</name></name><parameter_list pos:line="261" pos:column="36">(
+	<param><decl><type><name pos:line="262" pos:column="9">EventParamName</name></type>		<name pos:line="262" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><specifier pos:line="263" pos:column="9">const</specifier> <name pos:line="263" pos:column="15">HIPoint</name><type:modifier pos:line="263" pos:column="22">&amp;</type:modifier></type>		<name pos:line="263" pos:column="33">inPt</name></decl></param> )</parameter_list>
+<block pos:line="264" pos:column="1">{
+	<return pos:line="265" pos:column="9">return <expr><call><name><name pos:line="265" pos:column="16">SetParameter</name><argument_list pos:line="265" pos:column="28">&lt;<argument><expr><name pos:line="265" pos:column="29">HIPoint</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="265" pos:column="37">( <argument><expr><name pos:line="265" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="265" pos:column="47">typeHIPoint</name></expr></argument>, <argument><expr><name pos:line="265" pos:column="60">inPt</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="268" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="269" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="270" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="271" pos:column="1">//</comment>
+<function><type><name pos:line="272" pos:column="1">OSStatus</name></type> <name><name pos:line="272" pos:column="10">TCarbonEvent</name><op:operator pos:line="272" pos:column="22">::</op:operator><name pos:line="272" pos:column="24">GetParameter</name></name><parameter_list pos:line="272" pos:column="36">(
+	<param><decl><type><name pos:line="273" pos:column="9">EventParamName</name></type>		<name pos:line="273" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="274" pos:column="9">HIPoint</name><type:modifier pos:line="274" pos:column="16">*</type:modifier></type>			<name pos:line="274" pos:column="41">outPt</name></decl></param> )</parameter_list>
+<block pos:line="275" pos:column="1">{
+	<return pos:line="276" pos:column="9">return <expr><call><name><name pos:line="276" pos:column="16">GetParameter</name><argument_list pos:line="276" pos:column="28">&lt;<argument><expr><name pos:line="276" pos:column="29">HIPoint</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="276" pos:column="37">( <argument><expr><name pos:line="276" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="276" pos:column="47">typeHIPoint</name></expr></argument>, <argument><expr><name pos:line="276" pos:column="60">outPt</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="279" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="280" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="281" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="282" pos:column="1">//</comment>
+<function><type><name pos:line="283" pos:column="1">OSStatus</name></type> <name><name pos:line="283" pos:column="10">TCarbonEvent</name><op:operator pos:line="283" pos:column="22">::</op:operator><name pos:line="283" pos:column="24">SetParameter</name></name><parameter_list pos:line="283" pos:column="36">(
+	<param><decl><type><name pos:line="284" pos:column="9">EventParamName</name></type>		<name pos:line="284" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><specifier pos:line="285" pos:column="9">const</specifier> <name pos:line="285" pos:column="15">Rect</name><type:modifier pos:line="285" pos:column="19">&amp;</type:modifier></type>			<name pos:line="285" pos:column="41">inRect</name></decl></param> )</parameter_list>
+<block pos:line="286" pos:column="1">{
+	<return pos:line="287" pos:column="9">return <expr><call><name><name pos:line="287" pos:column="16">SetParameter</name><argument_list pos:line="287" pos:column="28">&lt;<argument><expr><name pos:line="287" pos:column="29">Rect</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="287" pos:column="34">( <argument><expr><name pos:line="287" pos:column="36">inName</name></expr></argument>, <argument><expr><name pos:line="287" pos:column="44">typeQDRectangle</name></expr></argument>, <argument><expr><name pos:line="287" pos:column="61">inRect</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="290" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="291" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="292" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="293" pos:column="1">//</comment>
+<function><type><name pos:line="294" pos:column="1">OSStatus</name></type> <name><name pos:line="294" pos:column="10">TCarbonEvent</name><op:operator pos:line="294" pos:column="22">::</op:operator><name pos:line="294" pos:column="24">GetParameter</name></name><parameter_list pos:line="294" pos:column="36">(
+	<param><decl><type><name pos:line="295" pos:column="9">EventParamName</name></type>		<name pos:line="295" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="296" pos:column="9">Rect</name><type:modifier pos:line="296" pos:column="13">*</type:modifier></type>				<name pos:line="296" pos:column="41">outRect</name></decl></param> )</parameter_list>
+<block pos:line="297" pos:column="1">{
+	<return pos:line="298" pos:column="9">return <expr><call><name><name pos:line="298" pos:column="16">GetParameter</name><argument_list pos:line="298" pos:column="28">&lt;<argument><expr><name pos:line="298" pos:column="29">Rect</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="298" pos:column="34">( <argument><expr><name pos:line="298" pos:column="36">inName</name></expr></argument>, <argument><expr><name pos:line="298" pos:column="44">typeQDRectangle</name></expr></argument>, <argument><expr><name pos:line="298" pos:column="61">outRect</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="301" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="302" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="303" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="304" pos:column="1">//</comment>
+<function><type><name pos:line="305" pos:column="1">OSStatus</name></type> <name><name pos:line="305" pos:column="10">TCarbonEvent</name><op:operator pos:line="305" pos:column="22">::</op:operator><name pos:line="305" pos:column="24">SetParameter</name></name><parameter_list pos:line="305" pos:column="36">(
+	<param><decl><type><name pos:line="306" pos:column="9">EventParamName</name></type>		<name pos:line="306" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><specifier pos:line="307" pos:column="9">const</specifier> <name pos:line="307" pos:column="15">HIRect</name><type:modifier pos:line="307" pos:column="21">&amp;</type:modifier></type>		<name pos:line="307" pos:column="33">inRect</name></decl></param> )</parameter_list>
+<block pos:line="308" pos:column="1">{
+	<return pos:line="309" pos:column="9">return <expr><call><name><name pos:line="309" pos:column="16">SetParameter</name><argument_list pos:line="309" pos:column="28">&lt;<argument><expr><name pos:line="309" pos:column="29">HIRect</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="309" pos:column="36">( <argument><expr><name pos:line="309" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="309" pos:column="46">typeHIRect</name></expr></argument>, <argument><expr><name pos:line="309" pos:column="58">inRect</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="312" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="313" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="314" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="315" pos:column="1">//</comment>
+<function><type><name pos:line="316" pos:column="1">OSStatus</name></type> <name><name pos:line="316" pos:column="10">TCarbonEvent</name><op:operator pos:line="316" pos:column="22">::</op:operator><name pos:line="316" pos:column="24">GetParameter</name></name><parameter_list pos:line="316" pos:column="36">(
+	<param><decl><type><name pos:line="317" pos:column="9">EventParamName</name></type>		<name pos:line="317" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="318" pos:column="9">HIRect</name><type:modifier pos:line="318" pos:column="15">*</type:modifier></type>				<name pos:line="318" pos:column="41">outRect</name></decl></param> )</parameter_list>
+<block pos:line="319" pos:column="1">{
+	<return pos:line="320" pos:column="9">return <expr><call><name><name pos:line="320" pos:column="16">GetParameter</name><argument_list pos:line="320" pos:column="28">&lt;<argument><expr><name pos:line="320" pos:column="29">HIRect</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="320" pos:column="36">( <argument><expr><name pos:line="320" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="320" pos:column="46">typeHIRect</name></expr></argument>, <argument><expr><name pos:line="320" pos:column="58">outRect</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="323" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="324" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="325" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="326" pos:column="1">//</comment>
+<function><type><name pos:line="327" pos:column="1">OSStatus</name></type> <name><name pos:line="327" pos:column="10">TCarbonEvent</name><op:operator pos:line="327" pos:column="22">::</op:operator><name pos:line="327" pos:column="24">SetParameter</name></name><parameter_list pos:line="327" pos:column="36">(
+	<param><decl><type><name pos:line="328" pos:column="9">EventParamName</name></type>		<name pos:line="328" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><specifier pos:line="329" pos:column="9">const</specifier> <name pos:line="329" pos:column="15">HISize</name><type:modifier pos:line="329" pos:column="21">&amp;</type:modifier></type>		<name pos:line="329" pos:column="33">inSize</name></decl></param> )</parameter_list>
+<block pos:line="330" pos:column="1">{
+	<return pos:line="331" pos:column="9">return <expr><call><name><name pos:line="331" pos:column="16">SetParameter</name><argument_list pos:line="331" pos:column="28">&lt;<argument><expr><name pos:line="331" pos:column="29">HISize</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="331" pos:column="36">( <argument><expr><name pos:line="331" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="331" pos:column="46">typeHISize</name></expr></argument>, <argument><expr><name pos:line="331" pos:column="58">inSize</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="334" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="335" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="336" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="337" pos:column="1">//</comment>
+<function><type><name pos:line="338" pos:column="1">OSStatus</name></type> <name><name pos:line="338" pos:column="10">TCarbonEvent</name><op:operator pos:line="338" pos:column="22">::</op:operator><name pos:line="338" pos:column="24">GetParameter</name></name><parameter_list pos:line="338" pos:column="36">(
+	<param><decl><type><name pos:line="339" pos:column="9">EventParamName</name></type>		<name pos:line="339" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="340" pos:column="9">HISize</name><type:modifier pos:line="340" pos:column="15">*</type:modifier></type>				<name pos:line="340" pos:column="41">outSize</name></decl></param> )</parameter_list>
+<block pos:line="341" pos:column="1">{
+	<return pos:line="342" pos:column="9">return <expr><call><name><name pos:line="342" pos:column="16">GetParameter</name><argument_list pos:line="342" pos:column="28">&lt;<argument><expr><name pos:line="342" pos:column="29">HISize</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="342" pos:column="36">( <argument><expr><name pos:line="342" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="342" pos:column="46">typeHISize</name></expr></argument>, <argument><expr><name pos:line="342" pos:column="58">outSize</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="345" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="346" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="347" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="348" pos:column="1">//</comment>
+<function><type><name pos:line="349" pos:column="1">OSStatus</name></type> <name><name pos:line="349" pos:column="10">TCarbonEvent</name><op:operator pos:line="349" pos:column="22">::</op:operator><name pos:line="349" pos:column="24">SetParameter</name></name><parameter_list pos:line="349" pos:column="36">(
+	<param><decl><type><name pos:line="350" pos:column="9">EventParamName</name></type>		<name pos:line="350" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="351" pos:column="9">RgnHandle</name></type>			<name pos:line="351" pos:column="41">inRegion</name></decl></param> )</parameter_list>
+<block pos:line="352" pos:column="1">{
+	<return pos:line="353" pos:column="9">return <expr><call><name><name pos:line="353" pos:column="16">SetParameter</name><argument_list pos:line="353" pos:column="28">&lt;<argument><expr><name pos:line="353" pos:column="29">RgnHandle</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="353" pos:column="39">( <argument><expr><name pos:line="353" pos:column="41">inName</name></expr></argument>, <argument><expr><name pos:line="353" pos:column="49">typeQDRgnHandle</name></expr></argument>, <argument><expr><name pos:line="353" pos:column="66">inRegion</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="356" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="357" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="358" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="359" pos:column="1">//</comment>
+<function><type><name pos:line="360" pos:column="1">OSStatus</name></type> <name><name pos:line="360" pos:column="10">TCarbonEvent</name><op:operator pos:line="360" pos:column="22">::</op:operator><name pos:line="360" pos:column="24">GetParameter</name></name><parameter_list pos:line="360" pos:column="36">(
+	<param><decl><type><name pos:line="361" pos:column="9">EventParamName</name></type>		<name pos:line="361" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="362" pos:column="9">RgnHandle</name><type:modifier pos:line="362" pos:column="18">*</type:modifier></type>			<name pos:line="362" pos:column="41">outRegion</name></decl></param> )</parameter_list>
+<block pos:line="363" pos:column="1">{
+	<return pos:line="364" pos:column="9">return <expr><call><name><name pos:line="364" pos:column="16">GetParameter</name><argument_list pos:line="364" pos:column="28">&lt;<argument><expr><name pos:line="364" pos:column="29">RgnHandle</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="364" pos:column="39">( <argument><expr><name pos:line="364" pos:column="41">inName</name></expr></argument>, <argument><expr><name pos:line="364" pos:column="49">typeQDRgnHandle</name></expr></argument>, <argument><expr><name pos:line="364" pos:column="66">outRegion</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="367" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="368" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="369" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="370" pos:column="1">//</comment>
+<function><type><name pos:line="371" pos:column="1">OSStatus</name></type> <name><name pos:line="371" pos:column="10">TCarbonEvent</name><op:operator pos:line="371" pos:column="22">::</op:operator><name pos:line="371" pos:column="24">SetParameter</name></name><parameter_list pos:line="371" pos:column="36">(
+	<param><decl><type><name pos:line="372" pos:column="9">EventParamName</name></type>		<name pos:line="372" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="373" pos:column="9">WindowRef</name></type>			<name pos:line="373" pos:column="41">inWindow</name></decl></param> )</parameter_list>
+<block pos:line="374" pos:column="1">{
+	<return pos:line="375" pos:column="9">return <expr><call><name><name pos:line="375" pos:column="16">SetParameter</name><argument_list pos:line="375" pos:column="28">&lt;<argument><expr><name pos:line="375" pos:column="29">WindowRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="375" pos:column="39">( <argument><expr><name pos:line="375" pos:column="41">inName</name></expr></argument>, <argument><expr><name pos:line="375" pos:column="49">typeWindowRef</name></expr></argument>, <argument><expr><name pos:line="375" pos:column="64">inWindow</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="378" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="379" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="380" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="381" pos:column="1">//</comment>
+<function><type><name pos:line="382" pos:column="1">OSStatus</name></type> <name><name pos:line="382" pos:column="10">TCarbonEvent</name><op:operator pos:line="382" pos:column="22">::</op:operator><name pos:line="382" pos:column="24">GetParameter</name></name><parameter_list pos:line="382" pos:column="36">(
+	<param><decl><type><name pos:line="383" pos:column="9">EventParamName</name></type>		<name pos:line="383" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="384" pos:column="9">WindowRef</name><type:modifier pos:line="384" pos:column="18">*</type:modifier></type>			<name pos:line="384" pos:column="41">outWindow</name></decl></param> )</parameter_list>
+<block pos:line="385" pos:column="1">{
+	<return pos:line="386" pos:column="9">return <expr><call><name><name pos:line="386" pos:column="16">GetParameter</name><argument_list pos:line="386" pos:column="28">&lt;<argument><expr><name pos:line="386" pos:column="29">WindowRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="386" pos:column="39">( <argument><expr><name pos:line="386" pos:column="41">inName</name></expr></argument>, <argument><expr><name pos:line="386" pos:column="49">typeWindowRef</name></expr></argument>, <argument><expr><name pos:line="386" pos:column="64">outWindow</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="389" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="390" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="391" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="392" pos:column="1">//</comment>
+<function><type><name pos:line="393" pos:column="1">OSStatus</name></type> <name><name pos:line="393" pos:column="10">TCarbonEvent</name><op:operator pos:line="393" pos:column="22">::</op:operator><name pos:line="393" pos:column="24">SetParameter</name></name><parameter_list pos:line="393" pos:column="36">(
+	<param><decl><type><name pos:line="394" pos:column="9">EventParamName</name></type>		<name pos:line="394" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="395" pos:column="9">ControlRef</name></type>			<name pos:line="395" pos:column="41">inControl</name></decl></param> )</parameter_list>
+<block pos:line="396" pos:column="1">{
+	<return pos:line="397" pos:column="9">return <expr><call><name><name pos:line="397" pos:column="16">SetParameter</name><argument_list pos:line="397" pos:column="28">&lt;<argument><expr><name pos:line="397" pos:column="29">ControlRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="397" pos:column="40">( <argument><expr><name pos:line="397" pos:column="42">inName</name></expr></argument>, <argument><expr><name pos:line="397" pos:column="50">typeControlRef</name></expr></argument>, <argument><expr><name pos:line="397" pos:column="66">inControl</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="400" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="401" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="402" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="403" pos:column="1">//</comment>
+<function><type><name pos:line="404" pos:column="1">OSStatus</name></type> <name><name pos:line="404" pos:column="10">TCarbonEvent</name><op:operator pos:line="404" pos:column="22">::</op:operator><name pos:line="404" pos:column="24">GetParameter</name></name><parameter_list pos:line="404" pos:column="36">(
+	<param><decl><type><name pos:line="405" pos:column="9">EventParamName</name></type>		<name pos:line="405" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="406" pos:column="9">ControlRef</name><type:modifier pos:line="406" pos:column="19">*</type:modifier></type> <name pos:line="406" pos:column="21">outControl</name></decl></param> )</parameter_list>
+<block pos:line="407" pos:column="1">{
+	<return pos:line="408" pos:column="9">return <expr><call><name><name pos:line="408" pos:column="16">GetParameter</name><argument_list pos:line="408" pos:column="28">&lt;<argument><expr><name pos:line="408" pos:column="29">ControlRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="408" pos:column="40">( <argument><expr><name pos:line="408" pos:column="42">inName</name></expr></argument>, <argument><expr><name pos:line="408" pos:column="50">typeControlRef</name></expr></argument>, <argument><expr><name pos:line="408" pos:column="66">outControl</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="411" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="412" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="413" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="414" pos:column="1">//</comment>
+<function><type><name pos:line="415" pos:column="1">OSStatus</name></type> <name><name pos:line="415" pos:column="10">TCarbonEvent</name><op:operator pos:line="415" pos:column="22">::</op:operator><name pos:line="415" pos:column="24">SetParameter</name></name><parameter_list pos:line="415" pos:column="36">(
+	<param><decl><type><name pos:line="416" pos:column="9">EventParamName</name></type>		<name pos:line="416" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="417" pos:column="9">MenuRef</name></type>				<name pos:line="417" pos:column="41">inMenu</name></decl></param> )</parameter_list>
+<block pos:line="418" pos:column="1">{
+	<return pos:line="419" pos:column="9">return <expr><call><name><name pos:line="419" pos:column="16">SetParameter</name><argument_list pos:line="419" pos:column="28">&lt;<argument><expr><name pos:line="419" pos:column="29">MenuRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="419" pos:column="37">( <argument><expr><name pos:line="419" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="419" pos:column="47">typeMenuRef</name></expr></argument>, <argument><expr><name pos:line="419" pos:column="60">inMenu</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="422" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="423" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="424" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="425" pos:column="1">//</comment>
+<function><type><name pos:line="426" pos:column="1">OSStatus</name></type> <name><name pos:line="426" pos:column="10">TCarbonEvent</name><op:operator pos:line="426" pos:column="22">::</op:operator><name pos:line="426" pos:column="24">GetParameter</name></name><parameter_list pos:line="426" pos:column="36">(
+	<param><decl><type><name pos:line="427" pos:column="9">EventParamName</name></type>		<name pos:line="427" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="428" pos:column="9">MenuRef</name><type:modifier pos:line="428" pos:column="16">*</type:modifier></type>			<name pos:line="428" pos:column="41">outMenu</name></decl></param> )</parameter_list>
+<block pos:line="429" pos:column="1">{
+	<return pos:line="430" pos:column="9">return <expr><call><name><name pos:line="430" pos:column="16">GetParameter</name><argument_list pos:line="430" pos:column="28">&lt;<argument><expr><name pos:line="430" pos:column="29">MenuRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="430" pos:column="37">( <argument><expr><name pos:line="430" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="430" pos:column="47">typeMenuRef</name></expr></argument>, <argument><expr><name pos:line="430" pos:column="60">outMenu</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="433" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="434" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="435" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="436" pos:column="1">//</comment>
+<function><type><name pos:line="437" pos:column="1">OSStatus</name></type> <name><name pos:line="437" pos:column="10">TCarbonEvent</name><op:operator pos:line="437" pos:column="22">::</op:operator><name pos:line="437" pos:column="24">SetParameter</name></name><parameter_list pos:line="437" pos:column="36">(
+	<param><decl><type><name pos:line="438" pos:column="9">EventParamName</name></type>		<name pos:line="438" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="439" pos:column="9">DragRef</name></type>				<name pos:line="439" pos:column="41">inDrag</name></decl></param> )</parameter_list>
+<block pos:line="440" pos:column="1">{
+	<return pos:line="441" pos:column="9">return <expr><call><name><name pos:line="441" pos:column="16">SetParameter</name><argument_list pos:line="441" pos:column="28">&lt;<argument><expr><name pos:line="441" pos:column="29">DragRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="441" pos:column="37">( <argument><expr><name pos:line="441" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="441" pos:column="47">typeDragRef</name></expr></argument>, <argument><expr><name pos:line="441" pos:column="60">inDrag</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="444" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="445" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="446" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="447" pos:column="1">//</comment>
+<function><type><name pos:line="448" pos:column="1">OSStatus</name></type> <name><name pos:line="448" pos:column="10">TCarbonEvent</name><op:operator pos:line="448" pos:column="22">::</op:operator><name pos:line="448" pos:column="24">GetParameter</name></name><parameter_list pos:line="448" pos:column="36">(
+	<param><decl><type><name pos:line="449" pos:column="9">EventParamName</name></type>		<name pos:line="449" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="450" pos:column="9">DragRef</name><type:modifier pos:line="450" pos:column="16">*</type:modifier></type>			<name pos:line="450" pos:column="41">outDrag</name></decl></param> )</parameter_list>
+<block pos:line="451" pos:column="1">{
+	<return pos:line="452" pos:column="9">return <expr><call><name><name pos:line="452" pos:column="16">GetParameter</name><argument_list pos:line="452" pos:column="28">&lt;<argument><expr><name pos:line="452" pos:column="29">DragRef</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="452" pos:column="37">( <argument><expr><name pos:line="452" pos:column="39">inName</name></expr></argument>, <argument><expr><name pos:line="452" pos:column="47">typeDragRef</name></expr></argument>, <argument><expr><name pos:line="452" pos:column="60">outDrag</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="455" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="456" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="457" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="458" pos:column="1">//</comment>
+<function><type><name pos:line="459" pos:column="1">OSStatus</name></type> <name><name pos:line="459" pos:column="10">TCarbonEvent</name><op:operator pos:line="459" pos:column="22">::</op:operator><name pos:line="459" pos:column="24">SetParameter</name></name><parameter_list pos:line="459" pos:column="36">(
+	<param><decl><type><name pos:line="460" pos:column="9">EventParamName</name></type>		<name pos:line="460" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="461" pos:column="9">UInt32</name></type>				<name pos:line="461" pos:column="41">inValue</name></decl></param> )</parameter_list>
+<block pos:line="462" pos:column="1">{
+	<return pos:line="463" pos:column="9">return <expr><call><name><name pos:line="463" pos:column="16">SetParameter</name><argument_list pos:line="463" pos:column="28">&lt;<argument><expr><name pos:line="463" pos:column="29">UInt32</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="463" pos:column="36">( <argument><expr><name pos:line="463" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="463" pos:column="46">typeUInt32</name></expr></argument>, <argument><expr><name pos:line="463" pos:column="58">inValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="466" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="467" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="468" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="469" pos:column="1">//</comment>
+<function><type><name pos:line="470" pos:column="1">OSStatus</name></type> <name><name pos:line="470" pos:column="10">TCarbonEvent</name><op:operator pos:line="470" pos:column="22">::</op:operator><name pos:line="470" pos:column="24">GetParameter</name></name><parameter_list pos:line="470" pos:column="36">(
+	<param><decl><type><name pos:line="471" pos:column="9">EventParamName</name></type>		<name pos:line="471" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="472" pos:column="9">UInt32</name><type:modifier pos:line="472" pos:column="15">*</type:modifier></type>				<name pos:line="472" pos:column="41">outValue</name></decl></param> )</parameter_list>
+<block pos:line="473" pos:column="1">{
+	<return pos:line="474" pos:column="9">return <expr><call><name><name pos:line="474" pos:column="16">GetParameter</name><argument_list pos:line="474" pos:column="28">&lt;<argument><expr><name pos:line="474" pos:column="29">UInt32</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="474" pos:column="36">( <argument><expr><name pos:line="474" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="474" pos:column="46">typeUInt32</name></expr></argument>, <argument><expr><name pos:line="474" pos:column="58">outValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="477" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="478" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="479" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="480" pos:column="1">//</comment>
+<function><type><name pos:line="481" pos:column="1">OSStatus</name></type> <name><name pos:line="481" pos:column="10">TCarbonEvent</name><op:operator pos:line="481" pos:column="22">::</op:operator><name pos:line="481" pos:column="24">SetParameter</name></name><parameter_list pos:line="481" pos:column="36">(
+	<param><decl><type><name pos:line="482" pos:column="9">EventParamName</name></type>		<name pos:line="482" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><specifier pos:line="483" pos:column="9">const</specifier> <name pos:line="483" pos:column="15">HICommand</name><type:modifier pos:line="483" pos:column="24">&amp;</type:modifier></type>	<name pos:line="483" pos:column="33">inValue</name></decl></param> )</parameter_list>
+<block pos:line="484" pos:column="1">{
+	<return pos:line="485" pos:column="9">return <expr><call><name><name pos:line="485" pos:column="16">SetParameter</name><argument_list pos:line="485" pos:column="28">&lt;<argument><expr><name pos:line="485" pos:column="29">HICommand</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="485" pos:column="39">( <argument><expr><name pos:line="485" pos:column="41">inName</name></expr></argument>, <argument><expr><name pos:line="485" pos:column="49">typeHICommand</name></expr></argument>, <argument><expr><name pos:line="485" pos:column="64">inValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="488" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="489" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="490" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="491" pos:column="1">//</comment>
+<function><type><name pos:line="492" pos:column="1">OSStatus</name></type> <name><name pos:line="492" pos:column="10">TCarbonEvent</name><op:operator pos:line="492" pos:column="22">::</op:operator><name pos:line="492" pos:column="24">GetParameter</name></name><parameter_list pos:line="492" pos:column="36">(
+	<param><decl><type><name pos:line="493" pos:column="9">EventParamName</name></type>		<name pos:line="493" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="494" pos:column="9">HICommand</name><type:modifier pos:line="494" pos:column="18">*</type:modifier></type>			<name pos:line="494" pos:column="41">outValue</name></decl></param> )</parameter_list>
+<block pos:line="495" pos:column="1">{
+	<return pos:line="496" pos:column="9">return <expr><call><name><name pos:line="496" pos:column="16">GetParameter</name><argument_list pos:line="496" pos:column="28">&lt;<argument><expr><name pos:line="496" pos:column="29">HICommand</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="496" pos:column="39">( <argument><expr><name pos:line="496" pos:column="41">inName</name></expr></argument>, <argument><expr><name pos:line="496" pos:column="49">typeHICommand</name></expr></argument>, <argument><expr><name pos:line="496" pos:column="64">outValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="499" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="500" pos:column="1">//	SetParameter</comment>
+<comment type="line" pos:line="501" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="502" pos:column="1">//</comment>
+<function><type><name pos:line="503" pos:column="1">OSStatus</name></type> <name><name pos:line="503" pos:column="10">TCarbonEvent</name><op:operator pos:line="503" pos:column="22">::</op:operator><name pos:line="503" pos:column="24">SetParameter</name></name><parameter_list pos:line="503" pos:column="36">(
+	<param><decl><type><name pos:line="504" pos:column="9">EventParamName</name></type>			<name pos:line="504" pos:column="41">inName</name></decl></param>,
+	<param><decl><type><specifier pos:line="505" pos:column="9">const</specifier> <name pos:line="505" pos:column="15">ControlPartCode</name><type:modifier pos:line="505" pos:column="30">&amp;</type:modifier></type>	<name pos:line="505" pos:column="33">inValue</name></decl></param> )</parameter_list>
+<block pos:line="506" pos:column="1">{
+	<return pos:line="507" pos:column="9">return <expr><call><name><name pos:line="507" pos:column="16">SetParameter</name><argument_list pos:line="507" pos:column="28">&lt;<argument><expr><name pos:line="507" pos:column="29">ControlPartCode</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="507" pos:column="45">( <argument><expr><name pos:line="507" pos:column="47">inName</name></expr></argument>, <argument><expr><name pos:line="507" pos:column="55">typeControlPartCode</name></expr></argument>, <argument><expr><name pos:line="507" pos:column="76">inValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+
+<comment type="line" pos:line="510" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="511" pos:column="1">//	GetParameter</comment>
+<comment type="line" pos:line="512" pos:column="1">//-----------------------------------------------------------------------------------</comment>
+<comment type="line" pos:line="513" pos:column="1">//</comment>
+<function><type><name pos:line="514" pos:column="1">OSStatus</name></type> <name><name pos:line="514" pos:column="10">TCarbonEvent</name><op:operator pos:line="514" pos:column="22">::</op:operator><name pos:line="514" pos:column="24">GetParameter</name></name><parameter_list pos:line="514" pos:column="36">(
+	<param><decl><type><name pos:line="515" pos:column="9">EventParamName</name></type>		<name pos:line="515" pos:column="33">inName</name></decl></param>,
+	<param><decl><type><name pos:line="516" pos:column="9">ControlPartCode</name><type:modifier pos:line="516" pos:column="24">*</type:modifier></type>	<name pos:line="516" pos:column="33">outValue</name></decl></param> )</parameter_list>
+<block pos:line="517" pos:column="1">{
+	<return pos:line="518" pos:column="9">return <expr><call><name><name pos:line="518" pos:column="16">GetParameter</name><argument_list pos:line="518" pos:column="28">&lt;<argument><expr><name pos:line="518" pos:column="29">ControlPartCode</name></expr></argument>&gt;</argument_list></name><argument_list pos:line="518" pos:column="45">( <argument><expr><name pos:line="518" pos:column="47">inName</name></expr></argument>, <argument><expr><name pos:line="518" pos:column="55">typeControlPartCode</name></expr></argument>, <argument><expr><name pos:line="518" pos:column="76">outValue</name></expr></argument> )</argument_list></call></expr>;</return>
+}</block></function>
+</unit>

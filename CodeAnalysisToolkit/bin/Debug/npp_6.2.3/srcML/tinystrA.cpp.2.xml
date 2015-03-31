@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\TinyXml\tinyXmlA\tinystrA.cpp" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+www.sourceforge.net/projects/tinyxml
+Original file by Yves Berquin.
+
+This software is provided 'as-is', without any express or implied 
+warranty. In no event will the authors be held liable for any 
+damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any 
+purpose, including commercial applications, and to alter it and 
+redistribute it freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must 
+not claim that you wrote the original software. If you use this 
+software in a product, an acknowledgment in the product documentation 
+would be appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and
+must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source 
+distribution.
+*/</comment>
+
+<cpp:include pos:line="25" pos:column="1">#<cpp:directive pos:line="25" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="25" pos:column="10">"precompiledHeaders.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="26" pos:column="1">#<cpp:directive pos:line="26" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="26" pos:column="10">"tinyxmlA.h"</lit:literal></cpp:file></cpp:include>
+
+<cpp:ifndef pos:line="28" pos:column="1">#<cpp:directive pos:line="28" pos:column="2">ifndef</cpp:directive> <name pos:line="28" pos:column="9">TIXMLA_USE_STL</name></cpp:ifndef>
+
+
+
+
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"tinystrA.h"</lit:literal></cpp:file></cpp:include>
+
+<comment type="line" pos:line="35" pos:column="1">// TiXmlStringA constructor, based on a C string</comment>
+<constructor><name><name pos:line="36" pos:column="1">TiXmlStringA</name><op:operator pos:line="36" pos:column="13">::</op:operator><name pos:line="36" pos:column="15">TiXmlStringA</name></name> <parameter_list pos:line="36" pos:column="28">(<param><decl><type><specifier pos:line="36" pos:column="29">const</specifier> <name pos:line="36" pos:column="35">char</name><type:modifier pos:line="36" pos:column="39">*</type:modifier></type> <name pos:line="36" pos:column="41">instring</name></decl></param>)</parameter_list>
+<block pos:line="37" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="38" pos:column="5">unsigned</name></type> <name pos:line="38" pos:column="14">newlen</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="39" pos:column="5">char</name> <type:modifier pos:line="39" pos:column="10">*</type:modifier></type> <name pos:line="39" pos:column="12">newstring</name></decl>;</decl_stmt>
+
+    <if pos:line="41" pos:column="5">if <condition pos:line="41" pos:column="8">(<expr><op:operator pos:line="41" pos:column="9">!</op:operator><name pos:line="41" pos:column="10">instring</name></expr>)</condition><then pos:line="41" pos:column="19">
+    <block pos:line="42" pos:column="5">{
+        <expr_stmt><expr><name pos:line="43" pos:column="9">allocated</name> <op:operator pos:line="43" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="43" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="44" pos:column="9">cstring</name> <op:operator pos:line="44" pos:column="17">=</op:operator> <name pos:line="44" pos:column="19">NULL</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="45" pos:column="9">current_length</name> <op:operator pos:line="45" pos:column="24">=</op:operator> <lit:literal type="number" pos:line="45" pos:column="26">0</lit:literal></expr>;</expr_stmt>
+        <return pos:line="46" pos:column="9">return;</return>
+    }</block></then></if>
+    <expr_stmt><expr><name pos:line="48" pos:column="5">newlen</name> <op:operator pos:line="48" pos:column="12">=</op:operator> <call><name pos:line="48" pos:column="14">strlen</name> <argument_list pos:line="48" pos:column="21">(<argument><expr><name pos:line="48" pos:column="22">instring</name></expr></argument>)</argument_list></call> <op:operator pos:line="48" pos:column="32">+</op:operator> <lit:literal type="number" pos:line="48" pos:column="34">1</lit:literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="49" pos:column="5">newstring</name> <op:operator pos:line="49" pos:column="15">=</op:operator> <op:operator pos:line="49" pos:column="17">new</op:operator> <name><name pos:line="49" pos:column="21">char</name> <index pos:line="49" pos:column="26">[<expr><name pos:line="49" pos:column="27">newlen</name></expr>]</index></name></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name pos:line="50" pos:column="5">memcpy</name> <argument_list pos:line="50" pos:column="12">(<argument><expr><name pos:line="50" pos:column="13">newstring</name></expr></argument>, <argument><expr><name pos:line="50" pos:column="24">instring</name></expr></argument>, <argument><expr><name pos:line="50" pos:column="34">newlen</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="line" pos:line="51" pos:column="5">// strcpy (newstring, instring);</comment>
+    <expr_stmt><expr><name pos:line="52" pos:column="5">allocated</name> <op:operator pos:line="52" pos:column="15">=</op:operator> <name pos:line="52" pos:column="17">newlen</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="53" pos:column="5">cstring</name> <op:operator pos:line="53" pos:column="13">=</op:operator> <name pos:line="53" pos:column="15">newstring</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="54" pos:column="5">current_length</name> <op:operator pos:line="54" pos:column="20">=</op:operator> <name pos:line="54" pos:column="22">newlen</name> <op:operator pos:line="54" pos:column="29">-</op:operator> <lit:literal type="number" pos:line="54" pos:column="31">1</lit:literal></expr>;</expr_stmt>
+}</block></constructor>
+
+<comment type="line" pos:line="57" pos:column="1">// TiXmlStringA copy constructor</comment>
+<constructor><name><name pos:line="58" pos:column="1">TiXmlStringA</name><op:operator pos:line="58" pos:column="13">::</op:operator><name pos:line="58" pos:column="15">TiXmlStringA</name></name> <parameter_list pos:line="58" pos:column="28">(<param><decl><type><specifier pos:line="58" pos:column="29">const</specifier> <name pos:line="58" pos:column="35">TiXmlStringA</name><type:modifier pos:line="58" pos:column="47">&amp;</type:modifier></type> <name pos:line="58" pos:column="49">copy</name></decl></param>)</parameter_list>
+<block pos:line="59" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="60" pos:column="5">unsigned</name></type> <name pos:line="60" pos:column="14">newlen</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="61" pos:column="5">char</name> <type:modifier pos:line="61" pos:column="10">*</type:modifier></type> <name pos:line="61" pos:column="12">newstring</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="63" pos:column="9">// Prevent copy to self!</comment>
+	<if pos:line="64" pos:column="9">if <condition pos:line="64" pos:column="12">( <expr><op:operator pos:line="64" pos:column="14">&amp;</op:operator><name pos:line="64" pos:column="15">copy</name> <op:operator pos:line="64" pos:column="20">==</op:operator> <name pos:line="64" pos:column="23">this</name></expr> )</condition><then pos:line="64" pos:column="29">
+		<return pos:line="65" pos:column="17">return;</return></then></if>
+
+    <if pos:line="67" pos:column="5">if <condition pos:line="67" pos:column="8">(<expr><op:operator pos:line="67" pos:column="9">!</op:operator> <name><name pos:line="67" pos:column="11">copy</name> <op:operator pos:line="67" pos:column="16">.</op:operator> <name pos:line="67" pos:column="18">allocated</name></name></expr>)</condition><then pos:line="67" pos:column="28">
+    <block pos:line="68" pos:column="5">{
+        <expr_stmt><expr><name pos:line="69" pos:column="9">allocated</name> <op:operator pos:line="69" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="69" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="70" pos:column="9">cstring</name> <op:operator pos:line="70" pos:column="17">=</op:operator> <name pos:line="70" pos:column="19">NULL</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="71" pos:column="9">current_length</name> <op:operator pos:line="71" pos:column="24">=</op:operator> <lit:literal type="number" pos:line="71" pos:column="26">0</lit:literal></expr>;</expr_stmt>
+        <return pos:line="72" pos:column="9">return;</return>
+    }</block></then></if>
+    <expr_stmt><expr><name pos:line="74" pos:column="5">newlen</name> <op:operator pos:line="74" pos:column="12">=</op:operator> <call><name><name pos:line="74" pos:column="14">copy</name> <op:operator pos:line="74" pos:column="19">.</op:operator> <name pos:line="74" pos:column="21">length</name></name> <argument_list pos:line="74" pos:column="28">()</argument_list></call> <op:operator pos:line="74" pos:column="31">+</op:operator> <lit:literal type="number" pos:line="74" pos:column="33">1</lit:literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="75" pos:column="5">newstring</name> <op:operator pos:line="75" pos:column="15">=</op:operator> <op:operator pos:line="75" pos:column="17">new</op:operator> <name><name pos:line="75" pos:column="21">char</name> <index pos:line="75" pos:column="26">[<expr><name pos:line="75" pos:column="27">newlen</name></expr>]</index></name></expr>;</expr_stmt>
+    <comment type="line" pos:line="76" pos:column="5">// strcpy (newstring, copy . cstring);</comment>
+    <expr_stmt><expr><call><name pos:line="77" pos:column="5">memcpy</name> <argument_list pos:line="77" pos:column="12">(<argument><expr><name pos:line="77" pos:column="13">newstring</name></expr></argument>, <argument><expr><name><name pos:line="77" pos:column="24">copy</name> <op:operator pos:line="77" pos:column="29">.</op:operator> <name pos:line="77" pos:column="31">cstring</name></name></expr></argument>, <argument><expr><name pos:line="77" pos:column="40">newlen</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="78" pos:column="5">allocated</name> <op:operator pos:line="78" pos:column="15">=</op:operator> <name pos:line="78" pos:column="17">newlen</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="79" pos:column="5">cstring</name> <op:operator pos:line="79" pos:column="13">=</op:operator> <name pos:line="79" pos:column="15">newstring</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="80" pos:column="5">current_length</name> <op:operator pos:line="80" pos:column="20">=</op:operator> <name pos:line="80" pos:column="22">newlen</name> <op:operator pos:line="80" pos:column="29">-</op:operator> <lit:literal type="number" pos:line="80" pos:column="31">1</lit:literal></expr>;</expr_stmt>
+}</block></constructor>
+
+<comment type="line" pos:line="83" pos:column="1">// TiXmlStringA = operator. Safe when assign own content</comment>
+<function><type><name pos:line="84" pos:column="1">void</name></type> <name><name pos:line="84" pos:column="6">TiXmlStringA</name> <op:operator pos:line="84" pos:column="19">::</op:operator><name pos:line="84" pos:column="21">operator =</name></name> <parameter_list pos:line="84" pos:column="32">(<param><decl><type><specifier pos:line="84" pos:column="33">const</specifier> <name pos:line="84" pos:column="39">char</name> <type:modifier pos:line="84" pos:column="44">*</type:modifier></type> <name pos:line="84" pos:column="46">content</name></decl></param>)</parameter_list>
+<block pos:line="85" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="86" pos:column="5">unsigned</name></type> <name pos:line="86" pos:column="14">newlen</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="87" pos:column="5">char</name> <type:modifier pos:line="87" pos:column="10">*</type:modifier></type> <name pos:line="87" pos:column="12">newstring</name></decl>;</decl_stmt>
+
+    <if pos:line="89" pos:column="5">if <condition pos:line="89" pos:column="8">(<expr><op:operator pos:line="89" pos:column="9">!</op:operator> <name pos:line="89" pos:column="11">content</name></expr>)</condition><then pos:line="89" pos:column="19">
+    <block pos:line="90" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="91" pos:column="9">empty_it</name> <argument_list pos:line="91" pos:column="18">()</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="92" pos:column="9">return;</return>
+    }</block></then></if>
+    <expr_stmt><expr><name pos:line="94" pos:column="5">newlen</name> <op:operator pos:line="94" pos:column="12">=</op:operator> <call><name pos:line="94" pos:column="14">strlen</name> <argument_list pos:line="94" pos:column="21">(<argument><expr><name pos:line="94" pos:column="22">content</name></expr></argument>)</argument_list></call> <op:operator pos:line="94" pos:column="31">+</op:operator> <lit:literal type="number" pos:line="94" pos:column="33">1</lit:literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="95" pos:column="5">newstring</name> <op:operator pos:line="95" pos:column="15">=</op:operator> <op:operator pos:line="95" pos:column="17">new</op:operator> <name><name pos:line="95" pos:column="21">char</name> <index pos:line="95" pos:column="26">[<expr><name pos:line="95" pos:column="27">newlen</name></expr>]</index></name></expr>;</expr_stmt>
+    <comment type="line" pos:line="96" pos:column="5">// strcpy (newstring, content);</comment>
+    <expr_stmt><expr><call><name pos:line="97" pos:column="5">memcpy</name> <argument_list pos:line="97" pos:column="12">(<argument><expr><name pos:line="97" pos:column="13">newstring</name></expr></argument>, <argument><expr><name pos:line="97" pos:column="24">content</name></expr></argument>, <argument><expr><name pos:line="97" pos:column="33">newlen</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name pos:line="98" pos:column="5">empty_it</name> <argument_list pos:line="98" pos:column="14">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="99" pos:column="5">allocated</name> <op:operator pos:line="99" pos:column="15">=</op:operator> <name pos:line="99" pos:column="17">newlen</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="100" pos:column="5">cstring</name> <op:operator pos:line="100" pos:column="13">=</op:operator> <name pos:line="100" pos:column="15">newstring</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="101" pos:column="5">current_length</name> <op:operator pos:line="101" pos:column="20">=</op:operator> <name pos:line="101" pos:column="22">newlen</name> <op:operator pos:line="101" pos:column="29">-</op:operator> <lit:literal type="number" pos:line="101" pos:column="31">1</lit:literal></expr>;</expr_stmt>
+}</block></function>
+
+<comment type="line" pos:line="104" pos:column="1">// = operator. Safe when assign own content</comment>
+<function><type><name pos:line="105" pos:column="1">void</name></type> <name><name pos:line="105" pos:column="6">TiXmlStringA</name> <op:operator pos:line="105" pos:column="19">::</op:operator><name pos:line="105" pos:column="21">operator =</name></name> <parameter_list pos:line="105" pos:column="32">(<param><decl><type><specifier pos:line="105" pos:column="33">const</specifier> <name pos:line="105" pos:column="39">TiXmlStringA</name> <type:modifier pos:line="105" pos:column="52">&amp;</type:modifier></type> <name pos:line="105" pos:column="54">copy</name></decl></param>)</parameter_list>
+<block pos:line="106" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="107" pos:column="5">unsigned</name></type> <name pos:line="107" pos:column="14">newlen</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="108" pos:column="5">char</name> <type:modifier pos:line="108" pos:column="10">*</type:modifier></type> <name pos:line="108" pos:column="12">newstring</name></decl>;</decl_stmt>
+
+    <if pos:line="110" pos:column="5">if <condition pos:line="110" pos:column="8">(<expr><op:operator pos:line="110" pos:column="9">!</op:operator> <call><name><name pos:line="110" pos:column="11">copy</name> <op:operator pos:line="110" pos:column="16">.</op:operator> <name pos:line="110" pos:column="18">length</name></name> <argument_list pos:line="110" pos:column="25">()</argument_list></call></expr>)</condition><then pos:line="110" pos:column="28">
+    <block pos:line="111" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="112" pos:column="9">empty_it</name> <argument_list pos:line="112" pos:column="18">()</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="113" pos:column="9">return;</return>
+    }</block></then></if>
+    <expr_stmt><expr><name pos:line="115" pos:column="5">newlen</name> <op:operator pos:line="115" pos:column="12">=</op:operator> <call><name><name pos:line="115" pos:column="14">copy</name> <op:operator pos:line="115" pos:column="19">.</op:operator> <name pos:line="115" pos:column="21">length</name></name> <argument_list pos:line="115" pos:column="28">()</argument_list></call> <op:operator pos:line="115" pos:column="31">+</op:operator> <lit:literal type="number" pos:line="115" pos:column="33">1</lit:literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="116" pos:column="5">newstring</name> <op:operator pos:line="116" pos:column="15">=</op:operator> <op:operator pos:line="116" pos:column="17">new</op:operator> <name><name pos:line="116" pos:column="21">char</name> <index pos:line="116" pos:column="26">[<expr><name pos:line="116" pos:column="27">newlen</name></expr>]</index></name></expr>;</expr_stmt>
+    <comment type="line" pos:line="117" pos:column="5">// strcpy (newstring, copy . c_str ());</comment>
+    <expr_stmt><expr><call><name pos:line="118" pos:column="5">memcpy</name> <argument_list pos:line="118" pos:column="12">(<argument><expr><name pos:line="118" pos:column="13">newstring</name></expr></argument>, <argument><expr><call><name><name pos:line="118" pos:column="24">copy</name> <op:operator pos:line="118" pos:column="29">.</op:operator> <name pos:line="118" pos:column="31">c_str</name></name> <argument_list pos:line="118" pos:column="37">()</argument_list></call></expr></argument>, <argument><expr><name pos:line="118" pos:column="41">newlen</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name pos:line="119" pos:column="5">empty_it</name> <argument_list pos:line="119" pos:column="14">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="120" pos:column="5">allocated</name> <op:operator pos:line="120" pos:column="15">=</op:operator> <name pos:line="120" pos:column="17">newlen</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="121" pos:column="5">cstring</name> <op:operator pos:line="121" pos:column="13">=</op:operator> <name pos:line="121" pos:column="15">newstring</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name pos:line="122" pos:column="5">current_length</name> <op:operator pos:line="122" pos:column="20">=</op:operator> <name pos:line="122" pos:column="22">newlen</name> <op:operator pos:line="122" pos:column="29">-</op:operator> <lit:literal type="number" pos:line="122" pos:column="31">1</lit:literal></expr>;</expr_stmt>
+}</block></function>
+
+
+<comment type="line" format="doxygen" pos:line="126" pos:column="1">//// Checks if a TiXmlStringA contains only whitespace (same rules as isspace)</comment>
+<comment type="line" pos:line="127" pos:column="1">//bool TiXmlStringA::isblank () const</comment>
+<comment type="line" pos:line="128" pos:column="1">//{</comment>
+<comment type="line" pos:line="129" pos:column="1">//    char * lookup;</comment>
+<comment type="line" pos:line="130" pos:column="1">//    for (lookup = cstring; * lookup; lookup++)</comment>
+<comment type="line" pos:line="131" pos:column="1">//        if (! isspace (* lookup))</comment>
+<comment type="line" pos:line="132" pos:column="1">//            return false;</comment>
+<comment type="line" pos:line="133" pos:column="1">//    return true;</comment>
+<comment type="line" pos:line="134" pos:column="1">//}</comment>
+
+<comment type="line" pos:line="136" pos:column="1">// append a const char * to an existing TiXmlStringA</comment>
+<function><type><name pos:line="137" pos:column="1">void</name></type> <name><name pos:line="137" pos:column="6">TiXmlStringA</name><op:operator pos:line="137" pos:column="18">::</op:operator><name pos:line="137" pos:column="20">append</name></name><parameter_list pos:line="137" pos:column="26">( <param><decl><type><specifier pos:line="137" pos:column="28">const</specifier> <name pos:line="137" pos:column="34">char</name><type:modifier pos:line="137" pos:column="38">*</type:modifier></type> <name pos:line="137" pos:column="40">str</name></decl></param>, <param><decl><type><name pos:line="137" pos:column="45">int</name></type> <name pos:line="137" pos:column="49">len</name></decl></param> )</parameter_list>
+<block pos:line="138" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="139" pos:column="5">char</name> <type:modifier pos:line="139" pos:column="10">*</type:modifier></type> <name pos:line="139" pos:column="12">new_string</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="140" pos:column="5">unsigned</name></type> <name pos:line="140" pos:column="14">new_alloc</name></decl><op:operator pos:line="140" pos:column="23">,</op:operator> <decl><type ref="prev"/><name pos:line="140" pos:column="25">new_size</name></decl><op:operator pos:line="140" pos:column="33">,</op:operator> <decl><type ref="prev"/><name pos:line="140" pos:column="35">size_suffix</name></decl>;</decl_stmt>
+
+    <expr_stmt><expr><name pos:line="142" pos:column="5">size_suffix</name> <op:operator pos:line="142" pos:column="17">=</op:operator> <call><name pos:line="142" pos:column="19">strlen</name> <argument_list pos:line="142" pos:column="26">(<argument><expr><name pos:line="142" pos:column="27">str</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if pos:line="143" pos:column="5">if <condition pos:line="143" pos:column="8">(<expr><name pos:line="143" pos:column="9">len</name> <op:operator pos:line="143" pos:column="13">&lt;</op:operator> <op:operator pos:line="143" pos:column="15">(</op:operator><name pos:line="143" pos:column="16">int</name><op:operator pos:line="143" pos:column="19">)</op:operator> <name pos:line="143" pos:column="21">size_suffix</name></expr>)</condition><then pos:line="143" pos:column="33">
+        <expr_stmt><expr><name pos:line="144" pos:column="9">size_suffix</name> <op:operator pos:line="144" pos:column="21">=</op:operator> <name pos:line="144" pos:column="23">len</name></expr>;</expr_stmt></then></if>
+    <if pos:line="145" pos:column="5">if <condition pos:line="145" pos:column="8">(<expr><op:operator pos:line="145" pos:column="9">!</op:operator> <name pos:line="145" pos:column="11">size_suffix</name></expr>)</condition><then pos:line="145" pos:column="23">
+        <return pos:line="146" pos:column="9">return;</return></then></if>
+
+    <expr_stmt><expr><name pos:line="148" pos:column="5">new_size</name> <op:operator pos:line="148" pos:column="14">=</op:operator> <call><name pos:line="148" pos:column="16">length</name> <argument_list pos:line="148" pos:column="23">()</argument_list></call> <op:operator pos:line="148" pos:column="26">+</op:operator> <name pos:line="148" pos:column="28">size_suffix</name> <op:operator pos:line="148" pos:column="40">+</op:operator> <lit:literal type="number" pos:line="148" pos:column="42">1</lit:literal></expr>;</expr_stmt>
+    <comment type="line" pos:line="149" pos:column="5">// check if we need to expand</comment>
+    <if pos:line="150" pos:column="5">if <condition pos:line="150" pos:column="8">(<expr><name pos:line="150" pos:column="9">new_size</name> <op:operator pos:line="150" pos:column="18">&gt;</op:operator> <name pos:line="150" pos:column="20">allocated</name></expr>)</condition><then pos:line="150" pos:column="30">
+    <block pos:line="151" pos:column="5">{
+        <comment type="line" pos:line="152" pos:column="9">// compute new size</comment>
+        <expr_stmt><expr><name pos:line="153" pos:column="9">new_alloc</name> <op:operator pos:line="153" pos:column="19">=</op:operator> <call><name pos:line="153" pos:column="21">assign_new_size</name> <argument_list pos:line="153" pos:column="37">(<argument><expr><name pos:line="153" pos:column="38">new_size</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="155" pos:column="9">// allocate new buffer</comment>
+        <expr_stmt><expr><name pos:line="156" pos:column="9">new_string</name> <op:operator pos:line="156" pos:column="20">=</op:operator> <op:operator pos:line="156" pos:column="22">new</op:operator> <name><name pos:line="156" pos:column="26">char</name> <index pos:line="156" pos:column="31">[<expr><name pos:line="156" pos:column="32">new_alloc</name></expr>]</index></name></expr>;</expr_stmt>        
+        <expr_stmt><expr><name><name pos:line="157" pos:column="9">new_string</name> <index pos:line="157" pos:column="20">[<expr><lit:literal type="number" pos:line="157" pos:column="21">0</lit:literal></expr>]</index></name> <op:operator pos:line="157" pos:column="24">=</op:operator> <lit:literal type="number" pos:line="157" pos:column="26">0</lit:literal></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="159" pos:column="9">// copy the previous allocated buffer into this one</comment>
+        <if pos:line="160" pos:column="9">if <condition pos:line="160" pos:column="12">(<expr><name pos:line="160" pos:column="13">allocated</name> <op:operator pos:line="160" pos:column="23">&amp;&amp;</op:operator> <name pos:line="160" pos:column="26">cstring</name></expr>)</condition><then pos:line="160" pos:column="34">
+            <comment type="line" pos:line="161" pos:column="13">// strcpy (new_string, cstring);</comment>
+            <expr_stmt><expr><call><name pos:line="162" pos:column="13">memcpy</name> <argument_list pos:line="162" pos:column="20">(<argument><expr><name pos:line="162" pos:column="21">new_string</name></expr></argument>, <argument><expr><name pos:line="162" pos:column="33">cstring</name></expr></argument>, <argument><expr><call><name pos:line="162" pos:column="42">length</name> <argument_list pos:line="162" pos:column="49">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+
+        <comment type="line" pos:line="164" pos:column="9">// append the suffix. It does exist, otherwize we wouldn't be expanding </comment>
+        <comment type="line" pos:line="165" pos:column="9">// strncat (new_string, str, len);</comment>
+        <expr_stmt><expr><call><name pos:line="166" pos:column="9">memcpy</name> <argument_list pos:line="166" pos:column="16">(<argument><expr><name pos:line="166" pos:column="17">new_string</name> <op:operator pos:line="166" pos:column="28">+</op:operator> <call><name pos:line="166" pos:column="30">length</name> <argument_list pos:line="166" pos:column="37">()</argument_list></call></expr></argument>, 
+                <argument><expr><name pos:line="167" pos:column="17">str</name></expr></argument>,
+                <argument><expr><name pos:line="168" pos:column="17">size_suffix</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="170" pos:column="9">// return previsously allocated buffer if any</comment>
+        <if pos:line="171" pos:column="9">if <condition pos:line="171" pos:column="12">(<expr><name pos:line="171" pos:column="13">allocated</name> <op:operator pos:line="171" pos:column="23">&amp;&amp;</op:operator> <name pos:line="171" pos:column="26">cstring</name></expr>)</condition><then pos:line="171" pos:column="34">
+            <expr_stmt><expr><op:operator pos:line="172" pos:column="13">delete</op:operator> <index pos:line="172" pos:column="20">[]</index> <name pos:line="172" pos:column="23">cstring</name></expr>;</expr_stmt></then></if>
+
+        <comment type="line" pos:line="174" pos:column="9">// update member variables</comment>
+        <expr_stmt><expr><name pos:line="175" pos:column="9">cstring</name> <op:operator pos:line="175" pos:column="17">=</op:operator> <name pos:line="175" pos:column="19">new_string</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="176" pos:column="9">allocated</name> <op:operator pos:line="176" pos:column="19">=</op:operator> <name pos:line="176" pos:column="21">new_alloc</name></expr>;</expr_stmt>
+    }</block></then>
+    <else pos:line="178" pos:column="5">else
+    <block pos:line="179" pos:column="5">{
+        <comment type="line" pos:line="180" pos:column="9">// we know we can safely append the new string</comment>
+        <comment type="line" pos:line="181" pos:column="9">// strncat (cstring, str, len);</comment>
+        <expr_stmt><expr><call><name pos:line="182" pos:column="9">memcpy</name> <argument_list pos:line="182" pos:column="16">(<argument><expr><name pos:line="182" pos:column="17">cstring</name> <op:operator pos:line="182" pos:column="25">+</op:operator> <call><name pos:line="182" pos:column="27">length</name> <argument_list pos:line="182" pos:column="34">()</argument_list></call></expr></argument>, 
+                <argument><expr><name pos:line="183" pos:column="17">str</name></expr></argument>,
+                <argument><expr><name pos:line="184" pos:column="17">size_suffix</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></else></if>
+    <expr_stmt><expr><name pos:line="186" pos:column="5">current_length</name> <op:operator pos:line="186" pos:column="20">=</op:operator> <name pos:line="186" pos:column="22">new_size</name> <op:operator pos:line="186" pos:column="31">-</op:operator> <lit:literal type="number" pos:line="186" pos:column="33">1</lit:literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name pos:line="187" pos:column="5">cstring</name> <index pos:line="187" pos:column="13">[<expr><name pos:line="187" pos:column="14">current_length</name></expr>]</index></name> <op:operator pos:line="187" pos:column="30">=</op:operator> <lit:literal type="number" pos:line="187" pos:column="32">0</lit:literal></expr>;</expr_stmt>
+}</block></function>
+
+
+<comment type="line" pos:line="191" pos:column="1">// append a const char * to an existing TiXmlStringA</comment>
+<function><type><name pos:line="192" pos:column="1">void</name></type> <name><name pos:line="192" pos:column="6">TiXmlStringA</name><op:operator pos:line="192" pos:column="18">::</op:operator><name pos:line="192" pos:column="20">append</name></name><parameter_list pos:line="192" pos:column="26">( <param><decl><type><specifier pos:line="192" pos:column="28">const</specifier> <name pos:line="192" pos:column="34">char</name> <type:modifier pos:line="192" pos:column="39">*</type:modifier></type> <name pos:line="192" pos:column="41">suffix</name></decl></param> )</parameter_list>
+<block pos:line="193" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="194" pos:column="5">char</name> <type:modifier pos:line="194" pos:column="10">*</type:modifier></type> <name pos:line="194" pos:column="12">new_string</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="195" pos:column="5">unsigned</name></type> <name pos:line="195" pos:column="14">new_alloc</name></decl><op:operator pos:line="195" pos:column="23">,</op:operator> <decl><type ref="prev"/><name pos:line="195" pos:column="25">new_size</name></decl>;</decl_stmt>
+
+    <expr_stmt><expr><name pos:line="197" pos:column="5">new_size</name> <op:operator pos:line="197" pos:column="14">=</op:operator> <call><name pos:line="197" pos:column="16">length</name> <argument_list pos:line="197" pos:column="23">()</argument_list></call> <op:operator pos:line="197" pos:column="26">+</op:operator> <call><name pos:line="197" pos:column="28">strlen</name> <argument_list pos:line="197" pos:column="35">(<argument><expr><name pos:line="197" pos:column="36">suffix</name></expr></argument>)</argument_list></call> <op:operator pos:line="197" pos:column="44">+</op:operator> <lit:literal type="number" pos:line="197" pos:column="46">1</lit:literal></expr>;</expr_stmt>
+    <comment type="line" pos:line="198" pos:column="5">// check if we need to expand</comment>
+    <if pos:line="199" pos:column="5">if <condition pos:line="199" pos:column="8">(<expr><name pos:line="199" pos:column="9">new_size</name> <op:operator pos:line="199" pos:column="18">&gt;</op:operator> <name pos:line="199" pos:column="20">allocated</name></expr>)</condition><then pos:line="199" pos:column="30">
+    <block pos:line="200" pos:column="5">{
+        <comment type="line" pos:line="201" pos:column="9">// compute new size</comment>
+        <expr_stmt><expr><name pos:line="202" pos:column="9">new_alloc</name> <op:operator pos:line="202" pos:column="19">=</op:operator> <call><name pos:line="202" pos:column="21">assign_new_size</name> <argument_list pos:line="202" pos:column="37">(<argument><expr><name pos:line="202" pos:column="38">new_size</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="204" pos:column="9">// allocate new buffer</comment>
+        <expr_stmt><expr><name pos:line="205" pos:column="9">new_string</name> <op:operator pos:line="205" pos:column="20">=</op:operator> <op:operator pos:line="205" pos:column="22">new</op:operator> <name><name pos:line="205" pos:column="26">char</name> <index pos:line="205" pos:column="31">[<expr><name pos:line="205" pos:column="32">new_alloc</name></expr>]</index></name></expr>;</expr_stmt>        
+        <expr_stmt><expr><name><name pos:line="206" pos:column="9">new_string</name> <index pos:line="206" pos:column="20">[<expr><lit:literal type="number" pos:line="206" pos:column="21">0</lit:literal></expr>]</index></name> <op:operator pos:line="206" pos:column="24">=</op:operator> <lit:literal type="number" pos:line="206" pos:column="26">0</lit:literal></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="208" pos:column="9">// copy the previous allocated buffer into this one</comment>
+        <if pos:line="209" pos:column="9">if <condition pos:line="209" pos:column="12">(<expr><name pos:line="209" pos:column="13">allocated</name> <op:operator pos:line="209" pos:column="23">&amp;&amp;</op:operator> <name pos:line="209" pos:column="26">cstring</name></expr>)</condition><then pos:line="209" pos:column="34">
+            <expr_stmt><expr><call><name pos:line="210" pos:column="13">memcpy</name> <argument_list pos:line="210" pos:column="20">(<argument><expr><name pos:line="210" pos:column="21">new_string</name></expr></argument>, <argument><expr><name pos:line="210" pos:column="33">cstring</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="210" pos:column="42">1</lit:literal> <op:operator pos:line="210" pos:column="44">+</op:operator> <call><name pos:line="210" pos:column="46">length</name> <argument_list pos:line="210" pos:column="53">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+            <comment type="line" pos:line="211" pos:column="13">// strcpy (new_string, cstring);</comment>
+
+        <comment type="line" pos:line="213" pos:column="9">// append the suffix. It does exist, otherwize we wouldn't be expanding </comment>
+        <comment type="line" pos:line="214" pos:column="9">// strcat (new_string, suffix);</comment>
+        <expr_stmt><expr><call><name pos:line="215" pos:column="9">memcpy</name> <argument_list pos:line="215" pos:column="16">(<argument><expr><name pos:line="215" pos:column="17">new_string</name> <op:operator pos:line="215" pos:column="28">+</op:operator> <call><name pos:line="215" pos:column="30">length</name> <argument_list pos:line="215" pos:column="37">()</argument_list></call></expr></argument>, 
+                <argument><expr><name pos:line="216" pos:column="17">suffix</name></expr></argument>,
+                <argument><expr><call><name pos:line="217" pos:column="17">strlen</name> <argument_list pos:line="217" pos:column="24">(<argument><expr><name pos:line="217" pos:column="25">suffix</name></expr></argument>)</argument_list></call> <op:operator pos:line="217" pos:column="33">+</op:operator> <lit:literal type="number" pos:line="217" pos:column="35">1</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="219" pos:column="9">// return previsously allocated buffer if any</comment>
+        <if pos:line="220" pos:column="9">if <condition pos:line="220" pos:column="12">(<expr><name pos:line="220" pos:column="13">allocated</name> <op:operator pos:line="220" pos:column="23">&amp;&amp;</op:operator> <name pos:line="220" pos:column="26">cstring</name></expr>)</condition><then pos:line="220" pos:column="34">
+            <expr_stmt><expr><op:operator pos:line="221" pos:column="13">delete</op:operator> <index pos:line="221" pos:column="20">[]</index> <name pos:line="221" pos:column="23">cstring</name></expr>;</expr_stmt></then></if>
+
+        <comment type="line" pos:line="223" pos:column="9">// update member variables</comment>
+        <expr_stmt><expr><name pos:line="224" pos:column="9">cstring</name> <op:operator pos:line="224" pos:column="17">=</op:operator> <name pos:line="224" pos:column="19">new_string</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="225" pos:column="9">allocated</name> <op:operator pos:line="225" pos:column="19">=</op:operator> <name pos:line="225" pos:column="21">new_alloc</name></expr>;</expr_stmt>
+    }</block></then>
+    <else pos:line="227" pos:column="5">else
+    <block pos:line="228" pos:column="5">{
+        <comment type="line" pos:line="229" pos:column="9">// we know we can safely append the new string</comment>
+        <comment type="line" pos:line="230" pos:column="9">// strcat (cstring, suffix);</comment>
+        <expr_stmt><expr><call><name pos:line="231" pos:column="9">memcpy</name> <argument_list pos:line="231" pos:column="16">(<argument><expr><name pos:line="231" pos:column="17">cstring</name> <op:operator pos:line="231" pos:column="25">+</op:operator> <call><name pos:line="231" pos:column="27">length</name> <argument_list pos:line="231" pos:column="34">()</argument_list></call></expr></argument>, 
+                <argument><expr><name pos:line="232" pos:column="17">suffix</name></expr></argument>, 
+                <argument><expr><call><name pos:line="233" pos:column="17">strlen</name> <argument_list pos:line="233" pos:column="24">(<argument><expr><name pos:line="233" pos:column="25">suffix</name></expr></argument>)</argument_list></call> <op:operator pos:line="233" pos:column="33">+</op:operator> <lit:literal type="number" pos:line="233" pos:column="35">1</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></else></if>
+    <expr_stmt><expr><name pos:line="235" pos:column="5">current_length</name> <op:operator pos:line="235" pos:column="20">=</op:operator> <name pos:line="235" pos:column="22">new_size</name> <op:operator pos:line="235" pos:column="31">-</op:operator> <lit:literal type="number" pos:line="235" pos:column="33">1</lit:literal></expr>;</expr_stmt>
+}</block></function>
+
+<comment type="line" pos:line="238" pos:column="1">// Check for TiXmlStringA equuivalence</comment>
+<comment type="line" pos:line="239" pos:column="1">//bool TiXmlStringA::operator == (const TiXmlStringA &amp; compare) const</comment>
+<comment type="line" pos:line="240" pos:column="1">//{</comment>
+<comment type="line" pos:line="241" pos:column="1">//    return (! strcmp (c_str (), compare . c_str ()));</comment>
+<comment type="line" pos:line="242" pos:column="1">//}</comment>
+
+<comment type="line" pos:line="244" pos:column="1">//unsigned TiXmlStringA::length () const</comment>
+<comment type="line" pos:line="245" pos:column="1">//{</comment>
+<comment type="line" pos:line="246" pos:column="1">//    if (allocated)</comment>
+<comment type="line" pos:line="247" pos:column="1">//        // return strlen (cstring);</comment>
+<comment type="line" pos:line="248" pos:column="1">//        return current_length;</comment>
+<comment type="line" pos:line="249" pos:column="1">//    return 0;</comment>
+<comment type="line" pos:line="250" pos:column="1">//}</comment>
+
+
+<function><type><name pos:line="253" pos:column="1">unsigned</name></type> <name><name pos:line="253" pos:column="10">TiXmlStringA</name><op:operator pos:line="253" pos:column="22">::</op:operator><name pos:line="253" pos:column="24">find</name></name> <parameter_list pos:line="253" pos:column="29">(<param><decl><type><name pos:line="253" pos:column="30">char</name></type> <name pos:line="253" pos:column="35">tofind</name></decl></param>, <param><decl><type><name pos:line="253" pos:column="43">unsigned</name></type> <name pos:line="253" pos:column="52">offset</name></decl></param>)</parameter_list> <specifier pos:line="253" pos:column="60">const</specifier>
+<block pos:line="254" pos:column="1">{
+    <decl_stmt><decl><type><name pos:line="255" pos:column="5">char</name> <type:modifier pos:line="255" pos:column="10">*</type:modifier></type> <name pos:line="255" pos:column="12">lookup</name></decl>;</decl_stmt>
+
+    <if pos:line="257" pos:column="5">if <condition pos:line="257" pos:column="8">(<expr><name pos:line="257" pos:column="9">offset</name> <op:operator pos:line="257" pos:column="16">&gt;=</op:operator> <call><name pos:line="257" pos:column="19">length</name> <argument_list pos:line="257" pos:column="26">()</argument_list></call></expr>)</condition><then pos:line="257" pos:column="29">
+        <return pos:line="258" pos:column="9">return <expr><op:operator pos:line="258" pos:column="16">(</op:operator><name pos:line="258" pos:column="17">unsigned</name><op:operator pos:line="258" pos:column="25">)</op:operator> <name pos:line="258" pos:column="27">notfound</name></expr>;</return></then></if>
+    <for pos:line="259" pos:column="5">for (<init><expr><name pos:line="259" pos:column="10">lookup</name> <op:operator pos:line="259" pos:column="17">=</op:operator> <name pos:line="259" pos:column="19">cstring</name> <op:operator pos:line="259" pos:column="27">+</op:operator> <name pos:line="259" pos:column="29">offset</name></expr>;</init> <condition><expr><op:operator pos:line="259" pos:column="37">*</op:operator> <name pos:line="259" pos:column="39">lookup</name></expr>;</condition> <incr><expr><name pos:line="259" pos:column="47">lookup</name><op:operator pos:line="259" pos:column="53">++</op:operator></expr></incr>)
+        <if pos:line="260" pos:column="9">if <condition pos:line="260" pos:column="12">(<expr><op:operator pos:line="260" pos:column="13">*</op:operator> <name pos:line="260" pos:column="15">lookup</name> <op:operator pos:line="260" pos:column="22">==</op:operator> <name pos:line="260" pos:column="25">tofind</name></expr>)</condition><then pos:line="260" pos:column="32">
+            <return pos:line="261" pos:column="13">return <expr><name pos:line="261" pos:column="20">lookup</name> <op:operator pos:line="261" pos:column="27">-</op:operator> <name pos:line="261" pos:column="29">cstring</name></expr>;</return></then></if></for>
+    <return pos:line="262" pos:column="5">return <expr><op:operator pos:line="262" pos:column="12">(</op:operator><name pos:line="262" pos:column="13">unsigned</name><op:operator pos:line="262" pos:column="21">)</op:operator> <name pos:line="262" pos:column="23">notfound</name></expr>;</return>
+}</block></function>
+
+
+<function><type><name pos:line="266" pos:column="1">bool</name></type> <name><name pos:line="266" pos:column="6">TiXmlStringA</name><op:operator pos:line="266" pos:column="18">::</op:operator><name pos:line="266" pos:column="20">operator ==</name></name> <parameter_list pos:line="266" pos:column="32">(<param><decl><type><specifier pos:line="266" pos:column="33">const</specifier> <name pos:line="266" pos:column="39">TiXmlStringA</name> <type:modifier pos:line="266" pos:column="52">&amp;</type:modifier></type> <name pos:line="266" pos:column="54">compare</name></decl></param>)</parameter_list> <specifier pos:line="266" pos:column="63">const</specifier>
+<block pos:line="267" pos:column="1">{
+	<if pos:line="268" pos:column="9">if <condition pos:line="268" pos:column="12">( <expr><name pos:line="268" pos:column="14">allocated</name> <op:operator pos:line="268" pos:column="24">&amp;&amp;</op:operator> <name><name pos:line="268" pos:column="27">compare</name><op:operator pos:line="268" pos:column="34">.</op:operator><name pos:line="268" pos:column="35">allocated</name></name></expr> )</condition><then pos:line="268" pos:column="46">
+	<block pos:line="269" pos:column="9">{
+		<expr_stmt><expr><call><name pos:line="270" pos:column="17">assert</name><argument_list pos:line="270" pos:column="23">( <argument><expr><name pos:line="270" pos:column="25">cstring</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="271" pos:column="17">assert</name><argument_list pos:line="271" pos:column="23">( <argument><expr><name><name pos:line="271" pos:column="25">compare</name><op:operator pos:line="271" pos:column="32">.</op:operator><name pos:line="271" pos:column="33">cstring</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="272" pos:column="17">return <expr><op:operator pos:line="272" pos:column="24">(</op:operator> <call><name pos:line="272" pos:column="26">strcmp</name><argument_list pos:line="272" pos:column="32">( <argument><expr><name pos:line="272" pos:column="34">cstring</name></expr></argument>, <argument><expr><name><name pos:line="272" pos:column="43">compare</name><op:operator pos:line="272" pos:column="50">.</op:operator><name pos:line="272" pos:column="51">cstring</name></name></expr></argument> )</argument_list></call> <op:operator pos:line="272" pos:column="61">==</op:operator> <lit:literal type="number" pos:line="272" pos:column="64">0</lit:literal> <op:operator pos:line="272" pos:column="66">)</op:operator></expr>;</return>
+ 	}</block></then></if>
+	<return pos:line="274" pos:column="9">return <expr><lit:literal type="boolean" pos:line="274" pos:column="16">false</lit:literal></expr>;</return>
+}</block></function>
+
+
+<function><type><name pos:line="278" pos:column="1">bool</name></type> <name><name pos:line="278" pos:column="6">TiXmlStringA</name><op:operator pos:line="278" pos:column="18">::</op:operator><name pos:line="278" pos:column="20">operator &lt;</name></name> <parameter_list pos:line="278" pos:column="31">(<param><decl><type><specifier pos:line="278" pos:column="32">const</specifier> <name pos:line="278" pos:column="38">TiXmlStringA</name> <type:modifier pos:line="278" pos:column="51">&amp;</type:modifier></type> <name pos:line="278" pos:column="53">compare</name></decl></param>)</parameter_list> <specifier pos:line="278" pos:column="62">const</specifier>
+<block pos:line="279" pos:column="1">{
+	<if pos:line="280" pos:column="9">if <condition pos:line="280" pos:column="12">( <expr><name pos:line="280" pos:column="14">allocated</name> <op:operator pos:line="280" pos:column="24">&amp;&amp;</op:operator> <name><name pos:line="280" pos:column="27">compare</name><op:operator pos:line="280" pos:column="34">.</op:operator><name pos:line="280" pos:column="35">allocated</name></name></expr> )</condition><then pos:line="280" pos:column="46">
+	<block pos:line="281" pos:column="9">{
+		<expr_stmt><expr><call><name pos:line="282" pos:column="17">assert</name><argument_list pos:line="282" pos:column="23">( <argument><expr><name pos:line="282" pos:column="25">cstring</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="283" pos:column="17">assert</name><argument_list pos:line="283" pos:column="23">( <argument><expr><name><name pos:line="283" pos:column="25">compare</name><op:operator pos:line="283" pos:column="32">.</op:operator><name pos:line="283" pos:column="33">cstring</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="284" pos:column="17">return <expr><op:operator pos:line="284" pos:column="24">(</op:operator> <call><name pos:line="284" pos:column="26">strcmp</name><argument_list pos:line="284" pos:column="32">( <argument><expr><name pos:line="284" pos:column="34">cstring</name></expr></argument>, <argument><expr><name><name pos:line="284" pos:column="43">compare</name><op:operator pos:line="284" pos:column="50">.</op:operator><name pos:line="284" pos:column="51">cstring</name></name></expr></argument> )</argument_list></call> <op:operator pos:line="284" pos:column="61">&gt;</op:operator> <lit:literal type="number" pos:line="284" pos:column="63">0</lit:literal> <op:operator pos:line="284" pos:column="65">)</op:operator></expr>;</return>
+ 	}</block></then></if>
+	<return pos:line="286" pos:column="9">return <expr><lit:literal type="boolean" pos:line="286" pos:column="16">false</lit:literal></expr>;</return>
+}</block></function>
+
+
+<function><type><name pos:line="290" pos:column="1">bool</name></type> <name><name pos:line="290" pos:column="6">TiXmlStringA</name><op:operator pos:line="290" pos:column="18">::</op:operator><name pos:line="290" pos:column="20">operator &gt;</name></name> <parameter_list pos:line="290" pos:column="31">(<param><decl><type><specifier pos:line="290" pos:column="32">const</specifier> <name pos:line="290" pos:column="38">TiXmlStringA</name> <type:modifier pos:line="290" pos:column="51">&amp;</type:modifier></type> <name pos:line="290" pos:column="53">compare</name></decl></param>)</parameter_list> <specifier pos:line="290" pos:column="62">const</specifier>
+<block pos:line="291" pos:column="1">{
+	<if pos:line="292" pos:column="9">if <condition pos:line="292" pos:column="12">( <expr><name pos:line="292" pos:column="14">allocated</name> <op:operator pos:line="292" pos:column="24">&amp;&amp;</op:operator> <name><name pos:line="292" pos:column="27">compare</name><op:operator pos:line="292" pos:column="34">.</op:operator><name pos:line="292" pos:column="35">allocated</name></name></expr> )</condition><then pos:line="292" pos:column="46">
+	<block pos:line="293" pos:column="9">{
+		<expr_stmt><expr><call><name pos:line="294" pos:column="17">assert</name><argument_list pos:line="294" pos:column="23">( <argument><expr><name pos:line="294" pos:column="25">cstring</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name pos:line="295" pos:column="17">assert</name><argument_list pos:line="295" pos:column="23">( <argument><expr><name><name pos:line="295" pos:column="25">compare</name><op:operator pos:line="295" pos:column="32">.</op:operator><name pos:line="295" pos:column="33">cstring</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="296" pos:column="17">return <expr><op:operator pos:line="296" pos:column="24">(</op:operator> <call><name pos:line="296" pos:column="26">strcmp</name><argument_list pos:line="296" pos:column="32">( <argument><expr><name pos:line="296" pos:column="34">cstring</name></expr></argument>, <argument><expr><name><name pos:line="296" pos:column="43">compare</name><op:operator pos:line="296" pos:column="50">.</op:operator><name pos:line="296" pos:column="51">cstring</name></name></expr></argument> )</argument_list></call> <op:operator pos:line="296" pos:column="61">&lt;</op:operator> <lit:literal type="number" pos:line="296" pos:column="63">0</lit:literal> <op:operator pos:line="296" pos:column="65">)</op:operator></expr>;</return>
+ 	}</block></then></if>
+	<return pos:line="298" pos:column="9">return <expr><lit:literal type="boolean" pos:line="298" pos:column="16">false</lit:literal></expr>;</return>
+}</block></function>
+
+
+<cpp:endif pos:line="302" pos:column="1">#<cpp:directive pos:line="302" pos:column="2">endif</cpp:directive></cpp:endif>	<comment type="line" pos:line="302" pos:column="9">// TIXMLA_USE_STL</comment>
+</unit>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\MISC\FileNameStringSplitter.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">FILENAME_STRING_SPLITTER_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">FILENAME_STRING_SPLITTER_H</name></cpp:macro></cpp:define>
+
+<typedef pos:line="32" pos:column="1">typedef <type><name><name pos:line="32" pos:column="9">std</name><op:operator pos:line="32" pos:column="12">::</op:operator><name><name pos:line="32" pos:column="14">vector</name><argument_list pos:line="32" pos:column="20">&lt;<argument><expr><name pos:line="32" pos:column="21">generic_string</name></expr></argument>&gt;</argument_list></name></name></type> <name pos:line="32" pos:column="37">stringVector</name>;</typedef>
+
+<class pos:line="34" pos:column="1">class <name pos:line="34" pos:column="7">FileNameStringSplitter</name>
+<block pos:line="35" pos:column="1">{<private type="default" pos:line="35" pos:column="2">
+</private><public pos:line="36" pos:column="1">public :
+	<constructor><name pos:line="37" pos:column="9">FileNameStringSplitter</name><parameter_list pos:line="37" pos:column="31">(<param><decl><type><specifier pos:line="37" pos:column="32">const</specifier> <name pos:line="37" pos:column="38">TCHAR</name> <type:modifier pos:line="37" pos:column="44">*</type:modifier></type><name pos:line="37" pos:column="45">fileNameStr</name></decl></param>)</parameter_list>  <block pos:line="37" pos:column="59">{
+		<comment type="line" pos:line="38" pos:column="17">//if (!fileNameStr) return;</comment>
+		<decl_stmt><decl><type><name pos:line="39" pos:column="17">TCHAR</name> <type:modifier pos:line="39" pos:column="23">*</type:modifier></type><name pos:line="39" pos:column="24">pStr</name> <init pos:line="39" pos:column="29">= <expr><name pos:line="39" pos:column="31">NULL</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name pos:line="40" pos:column="17">bool</name></type> <name pos:line="40" pos:column="22">isInsideQuotes</name> <init pos:line="40" pos:column="37">= <expr><lit:literal type="boolean" pos:line="40" pos:column="39">false</lit:literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier pos:line="41" pos:column="17">const</specifier> <name pos:line="41" pos:column="23">int</name></type> <name pos:line="41" pos:column="27">filePathLength</name> <init pos:line="41" pos:column="42">= <expr><name pos:line="41" pos:column="44">MAX_PATH</name></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name pos:line="43" pos:column="17">TCHAR</name></type> <name><name pos:line="43" pos:column="23">str</name><index pos:line="43" pos:column="26">[<expr><name pos:line="43" pos:column="27">filePathLength</name></expr>]</index></name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name pos:line="44" pos:column="17">int</name></type> <name pos:line="44" pos:column="21">i</name> <init pos:line="44" pos:column="23">= <expr><lit:literal type="number" pos:line="44" pos:column="25">0</lit:literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name pos:line="45" pos:column="9">bool</name></type> <name pos:line="45" pos:column="14">fini</name> <init pos:line="45" pos:column="19">= <expr><lit:literal type="boolean" pos:line="45" pos:column="21">false</lit:literal></expr></init></decl>;</decl_stmt>
+		<for pos:line="46" pos:column="17">for (<init><expr><name pos:line="46" pos:column="22">pStr</name> <op:operator pos:line="46" pos:column="27">=</op:operator> <op:operator pos:line="46" pos:column="29">(</op:operator><name pos:line="46" pos:column="30">TCHAR</name> <op:operator pos:line="46" pos:column="36">*</op:operator><op:operator pos:line="46" pos:column="37">)</op:operator><name pos:line="46" pos:column="38">fileNameStr</name></expr> ;</init> <condition><expr><op:operator pos:line="46" pos:column="52">!</op:operator><name pos:line="46" pos:column="53">fini</name></expr> ;</condition> <incr/>)
+		<block pos:line="47" pos:column="17">{
+			<if pos:line="48" pos:column="25">if <condition pos:line="48" pos:column="28">(<expr><name pos:line="48" pos:column="29">i</name> <op:operator pos:line="48" pos:column="31">&gt;=</op:operator> <name pos:line="48" pos:column="34">filePathLength</name></expr>)</condition><then pos:line="48" pos:column="49">
+				<break pos:line="49" pos:column="33">break;</break></then></if>
+
+			<switch pos:line="51" pos:column="25">switch <condition pos:line="51" pos:column="32">(<expr><op:operator pos:line="51" pos:column="33">*</op:operator><name pos:line="51" pos:column="34">pStr</name></expr>)</condition>
+			<block pos:line="52" pos:column="25">{
+				<case pos:line="53" pos:column="33">case <expr><lit:literal type="char" pos:line="53" pos:column="38">'"'</lit:literal></expr> :
+					<if pos:line="54" pos:column="41">if <condition pos:line="54" pos:column="44">(<expr><name pos:line="54" pos:column="45">isInsideQuotes</name></expr>)</condition><then pos:line="54" pos:column="60">
+					<block pos:line="55" pos:column="41">{
+						<expr_stmt><expr><name><name pos:line="56" pos:column="49">str</name><index pos:line="56" pos:column="52">[<expr><name pos:line="56" pos:column="53">i</name></expr>]</index></name> <op:operator pos:line="56" pos:column="56">=</op:operator> <lit:literal type="char" pos:line="56" pos:column="58">'\0'</lit:literal></expr>;</expr_stmt>
+                        <if pos:line="57" pos:column="25">if <condition pos:line="57" pos:column="28">(<expr><name><name pos:line="57" pos:column="29">str</name><index pos:line="57" pos:column="32">[<expr><lit:literal type="number" pos:line="57" pos:column="33">0</lit:literal></expr>]</index></name></expr>)</condition><then pos:line="57" pos:column="36">
+							<expr_stmt><expr><call><name><name pos:line="58" pos:column="57">_fileNames</name><op:operator pos:line="58" pos:column="67">.</op:operator><name pos:line="58" pos:column="68">push_back</name></name><argument_list pos:line="58" pos:column="77">(<argument><expr><call><name pos:line="58" pos:column="78">generic_string</name><argument_list pos:line="58" pos:column="92">(<argument><expr><name pos:line="58" pos:column="93">str</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+						<expr_stmt><expr><name pos:line="59" pos:column="49">i</name> <op:operator pos:line="59" pos:column="51">=</op:operator> <lit:literal type="number" pos:line="59" pos:column="53">0</lit:literal></expr>;</expr_stmt>
+					}</block></then></if>
+					<expr_stmt><expr><name pos:line="61" pos:column="41">isInsideQuotes</name> <op:operator pos:line="61" pos:column="56">=</op:operator> <op:operator pos:line="61" pos:column="58">!</op:operator><name pos:line="61" pos:column="59">isInsideQuotes</name></expr>;</expr_stmt>
+					<expr_stmt><expr><name pos:line="62" pos:column="41">pStr</name><op:operator pos:line="62" pos:column="45">++</op:operator></expr>;</expr_stmt>
+					<break pos:line="63" pos:column="41">break;</break>
+				
+				</case><case pos:line="65" pos:column="33">case <expr><lit:literal type="char" pos:line="65" pos:column="38">' '</lit:literal></expr> :
+					<if pos:line="66" pos:column="41">if <condition pos:line="66" pos:column="44">(<expr><name pos:line="66" pos:column="45">isInsideQuotes</name></expr>)</condition><then pos:line="66" pos:column="60">
+					<block pos:line="67" pos:column="41">{
+						<expr_stmt><expr><name><name pos:line="68" pos:column="49">str</name><index pos:line="68" pos:column="52">[<expr><name pos:line="68" pos:column="53">i</name></expr>]</index></name> <op:operator pos:line="68" pos:column="56">=</op:operator> <op:operator pos:line="68" pos:column="58">*</op:operator><name pos:line="68" pos:column="59">pStr</name></expr>;</expr_stmt>
+						<expr_stmt><expr><name pos:line="69" pos:column="49">i</name><op:operator pos:line="69" pos:column="50">++</op:operator></expr>;</expr_stmt> 
+					}</block></then>
+					<else pos:line="71" pos:column="41">else
+					<block pos:line="72" pos:column="41">{
+						<expr_stmt><expr><name><name pos:line="73" pos:column="49">str</name><index pos:line="73" pos:column="52">[<expr><name pos:line="73" pos:column="53">i</name></expr>]</index></name> <op:operator pos:line="73" pos:column="56">=</op:operator> <lit:literal type="char" pos:line="73" pos:column="58">'\0'</lit:literal></expr>;</expr_stmt>
+                        <if pos:line="74" pos:column="25">if <condition pos:line="74" pos:column="28">(<expr><name><name pos:line="74" pos:column="29">str</name><index pos:line="74" pos:column="32">[<expr><lit:literal type="number" pos:line="74" pos:column="33">0</lit:literal></expr>]</index></name></expr>)</condition><then pos:line="74" pos:column="36">
+							<expr_stmt><expr><call><name><name pos:line="75" pos:column="57">_fileNames</name><op:operator pos:line="75" pos:column="67">.</op:operator><name pos:line="75" pos:column="68">push_back</name></name><argument_list pos:line="75" pos:column="77">(<argument><expr><call><name pos:line="75" pos:column="78">generic_string</name><argument_list pos:line="75" pos:column="92">(<argument><expr><name pos:line="75" pos:column="93">str</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+						<expr_stmt><expr><name pos:line="76" pos:column="49">i</name> <op:operator pos:line="76" pos:column="51">=</op:operator> <lit:literal type="number" pos:line="76" pos:column="53">0</lit:literal></expr>;</expr_stmt>
+					}</block></else></if>
+                    <expr_stmt><expr><name pos:line="78" pos:column="21">pStr</name><op:operator pos:line="78" pos:column="25">++</op:operator></expr>;</expr_stmt>
+					<break pos:line="79" pos:column="41">break;</break>
+					
+                </case><case pos:line="81" pos:column="17">case <expr><lit:literal type="char" pos:line="81" pos:column="22">'\0'</lit:literal></expr> :
+                    <expr_stmt><expr><name><name pos:line="82" pos:column="21">str</name><index pos:line="82" pos:column="24">[<expr><name pos:line="82" pos:column="25">i</name></expr>]</index></name> <op:operator pos:line="82" pos:column="28">=</op:operator> <op:operator pos:line="82" pos:column="30">*</op:operator><name pos:line="82" pos:column="31">pStr</name></expr>;</expr_stmt>
+                    <if pos:line="83" pos:column="21">if <condition pos:line="83" pos:column="24">(<expr><name><name pos:line="83" pos:column="25">str</name><index pos:line="83" pos:column="28">[<expr><lit:literal type="number" pos:line="83" pos:column="29">0</lit:literal></expr>]</index></name></expr>)</condition><then pos:line="83" pos:column="32">
+						<expr_stmt><expr><call><name><name pos:line="84" pos:column="49">_fileNames</name><op:operator pos:line="84" pos:column="59">.</op:operator><name pos:line="84" pos:column="60">push_back</name></name><argument_list pos:line="84" pos:column="69">(<argument><expr><call><name pos:line="84" pos:column="70">generic_string</name><argument_list pos:line="84" pos:column="84">(<argument><expr><name pos:line="84" pos:column="85">str</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+                    <expr_stmt><expr><name pos:line="85" pos:column="21">fini</name> <op:operator pos:line="85" pos:column="26">=</op:operator> <lit:literal type="boolean" pos:line="85" pos:column="28">true</lit:literal></expr>;</expr_stmt>
+					<break pos:line="86" pos:column="41">break;</break>
+
+				</case><default pos:line="88" pos:column="33">default :
+					<expr_stmt><expr><name><name pos:line="89" pos:column="41">str</name><index pos:line="89" pos:column="44">[<expr><name pos:line="89" pos:column="45">i</name></expr>]</index></name> <op:operator pos:line="89" pos:column="48">=</op:operator> <op:operator pos:line="89" pos:column="50">*</op:operator><name pos:line="89" pos:column="51">pStr</name></expr>;</expr_stmt>
+					<expr_stmt><expr><name pos:line="90" pos:column="41">i</name><op:operator pos:line="90" pos:column="42">++</op:operator></expr>;</expr_stmt> <expr_stmt><expr><name pos:line="90" pos:column="46">pStr</name><op:operator pos:line="90" pos:column="50">++</op:operator></expr>;</expr_stmt>
+					<break pos:line="91" pos:column="41">break;</break>
+			</default>}</block></switch>
+		}</block></for>
+	}</block></constructor><empty_stmt pos:line="94" pos:column="10">;</empty_stmt>
+	
+	<function><type><specifier pos:line="96" pos:column="9">const</specifier> <name pos:line="96" pos:column="15">TCHAR</name> <type:modifier pos:line="96" pos:column="21">*</type:modifier></type> <name pos:line="96" pos:column="23">getFileName</name><parameter_list pos:line="96" pos:column="34">(<param><decl><type><name pos:line="96" pos:column="35">int</name></type> <name pos:line="96" pos:column="39">index</name></decl></param>)</parameter_list> <specifier pos:line="96" pos:column="46">const</specifier> <block pos:line="96" pos:column="52">{
+		<return pos:line="97" pos:column="17">return <expr><name><name pos:line="97" pos:column="24">_fileNames</name><index pos:line="97" pos:column="34">[<expr><name pos:line="97" pos:column="35">index</name></expr>]</index></name><op:operator pos:line="97" pos:column="41">.</op:operator><call><name pos:line="97" pos:column="42">c_str</name><argument_list pos:line="97" pos:column="47">()</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="98" pos:column="10">;</empty_stmt>
+	
+	<function><type><name pos:line="100" pos:column="9">int</name></type> <name pos:line="100" pos:column="13">size</name><parameter_list pos:line="100" pos:column="17">()</parameter_list> <specifier pos:line="100" pos:column="20">const</specifier> <block pos:line="100" pos:column="26">{
+		<return pos:line="101" pos:column="17">return <expr><call><name pos:line="101" pos:column="24">int</name><argument_list pos:line="101" pos:column="27">(<argument><expr><call><name><name pos:line="101" pos:column="28">_fileNames</name><op:operator pos:line="101" pos:column="38">.</op:operator><name pos:line="101" pos:column="39">size</name></name><argument_list pos:line="101" pos:column="43">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function><empty_stmt pos:line="102" pos:column="10">;</empty_stmt>
+	
+</public><private pos:line="104" pos:column="1">private :
+	<decl_stmt><decl><type><name pos:line="105" pos:column="9">stringVector</name></type> <name pos:line="105" pos:column="22">_fileNames</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="108" pos:column="1">#<cpp:directive pos:line="108" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="108" pos:column="8">//FILENAME_STRING_SPLITTER_H</comment>
+</unit>

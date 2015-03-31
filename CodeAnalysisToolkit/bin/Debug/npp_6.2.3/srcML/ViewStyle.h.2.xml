@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\ViewStyle.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file ViewStyle.h
+ ** Store information on how the document is to be viewed.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2001 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">VIEWSTYLE_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">VIEWSTYLE_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<comment type="block" format="doxygen" pos:line="15" pos:column="1">/**
+ */</comment>
+<class pos:line="17" pos:column="1">class <name pos:line="17" pos:column="7">MarginStyle</name> <block pos:line="17" pos:column="19">{<private type="default" pos:line="17" pos:column="20">
+</private><public pos:line="18" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="19" pos:column="9">int</name></type> <name pos:line="19" pos:column="13">style</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="20" pos:column="9">int</name></type> <name pos:line="20" pos:column="13">width</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="21" pos:column="9">int</name></type> <name pos:line="21" pos:column="13">mask</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="22" pos:column="9">bool</name></type> <name pos:line="22" pos:column="14">sensitive</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="23" pos:column="9">int</name></type> <name pos:line="23" pos:column="13">cursor</name></decl>;</decl_stmt>
+	<constructor_decl><name pos:line="24" pos:column="9">MarginStyle</name><parameter_list pos:line="24" pos:column="20">()</parameter_list>;</constructor_decl>
+</public>}</block>;</class>
+
+<comment type="block" format="doxygen" pos:line="27" pos:column="1">/**
+ */</comment>
+<class pos:line="29" pos:column="1">class <name pos:line="29" pos:column="7">FontNames</name> <block pos:line="29" pos:column="17">{<private type="default" pos:line="29" pos:column="18">
+</private><private pos:line="30" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="31" pos:column="9">char</name> <type:modifier pos:line="31" pos:column="14">*</type:modifier><type:modifier pos:line="31" pos:column="15">*</type:modifier></type><name pos:line="31" pos:column="16">names</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="32" pos:column="9">int</name></type> <name pos:line="32" pos:column="13">size</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="33" pos:column="9">int</name></type> <name pos:line="33" pos:column="13">max</name></decl>;</decl_stmt>
+
+</private><public pos:line="35" pos:column="1">public:
+	<constructor_decl><name pos:line="36" pos:column="9">FontNames</name><parameter_list pos:line="36" pos:column="18">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="37" pos:column="9">~<name pos:line="37" pos:column="10">FontNames</name></name><parameter_list pos:line="37" pos:column="19">()</parameter_list>;</destructor_decl>
+	<function_decl><type><name pos:line="38" pos:column="9">void</name></type> <name pos:line="38" pos:column="14">Clear</name><parameter_list pos:line="38" pos:column="19">()</parameter_list>;</function_decl>
+	<function_decl><type><specifier pos:line="39" pos:column="9">const</specifier> <name pos:line="39" pos:column="15">char</name> <type:modifier pos:line="39" pos:column="20">*</type:modifier></type><name pos:line="39" pos:column="21">Save</name><parameter_list pos:line="39" pos:column="25">(<param><decl><type><specifier pos:line="39" pos:column="26">const</specifier> <name pos:line="39" pos:column="32">char</name> <type:modifier pos:line="39" pos:column="37">*</type:modifier></type><name pos:line="39" pos:column="38">name</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<class pos:line="42" pos:column="1">class <name pos:line="42" pos:column="7">FontRealised</name> <super pos:line="42" pos:column="20">: <specifier pos:line="42" pos:column="22">public</specifier> <name pos:line="42" pos:column="29">FontSpecification</name>, <specifier pos:line="42" pos:column="48">public</specifier> <name pos:line="42" pos:column="55">FontMeasurements</name></super> <block pos:line="42" pos:column="72">{<private type="default" pos:line="42" pos:column="73">
+	<comment type="line" pos:line="43" pos:column="9">// Private so FontRealised objects can not be copied</comment>
+	<constructor_decl><name pos:line="44" pos:column="9">FontRealised</name><parameter_list pos:line="44" pos:column="21">(<param><decl><type><specifier pos:line="44" pos:column="22">const</specifier></type> <name pos:line="44" pos:column="28">FontRealised</name> <type:modifier pos:line="44" pos:column="41">&amp;</type:modifier></decl></param>)</parameter_list>;</constructor_decl>
+	<function_decl><type><name pos:line="45" pos:column="9">FontRealised</name> <type:modifier pos:line="45" pos:column="22">&amp;</type:modifier></type><name pos:line="45" pos:column="23">operator=</name><parameter_list pos:line="45" pos:column="32">(<param><decl><type><specifier pos:line="45" pos:column="33">const</specifier></type> <name pos:line="45" pos:column="39">FontRealised</name> <type:modifier pos:line="45" pos:column="52">&amp;</type:modifier></decl></param>)</parameter_list>;</function_decl>
+</private><public pos:line="46" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="47" pos:column="9">Font</name></type> <name pos:line="47" pos:column="14">font</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="48" pos:column="9">FontRealised</name> <type:modifier pos:line="48" pos:column="22">*</type:modifier></type><name pos:line="48" pos:column="23">frNext</name></decl>;</decl_stmt>
+	<constructor_decl><name pos:line="49" pos:column="9">FontRealised</name><parameter_list pos:line="49" pos:column="21">(<param><decl><type><specifier pos:line="49" pos:column="22">const</specifier> <name pos:line="49" pos:column="28">FontSpecification</name> <type:modifier pos:line="49" pos:column="46">&amp;</type:modifier></type><name pos:line="49" pos:column="47">fs</name></decl></param>)</parameter_list>;</constructor_decl>
+	<destructor_decl><specifier pos:line="50" pos:column="9">virtual</specifier> <name pos:line="50" pos:column="17">~<name pos:line="50" pos:column="18">FontRealised</name></name><parameter_list pos:line="50" pos:column="30">()</parameter_list>;</destructor_decl>
+	<function_decl><type><name pos:line="51" pos:column="9">void</name></type> <name pos:line="51" pos:column="14">Realise</name><parameter_list pos:line="51" pos:column="21">(<param><decl><type><name pos:line="51" pos:column="22">Surface</name> <type:modifier pos:line="51" pos:column="30">&amp;</type:modifier></type><name pos:line="51" pos:column="31">surface</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="40">int</name></type> <name pos:line="51" pos:column="44">zoomLevel</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="52" pos:column="9">FontRealised</name> <type:modifier pos:line="52" pos:column="22">*</type:modifier></type><name pos:line="52" pos:column="23">Find</name><parameter_list pos:line="52" pos:column="27">(<param><decl><type><specifier pos:line="52" pos:column="28">const</specifier> <name pos:line="52" pos:column="34">FontSpecification</name> <type:modifier pos:line="52" pos:column="52">&amp;</type:modifier></type><name pos:line="52" pos:column="53">fs</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="53" pos:column="9">void</name></type> <name pos:line="53" pos:column="14">FindMaxAscentDescent</name><parameter_list pos:line="53" pos:column="34">(<param><decl><type><name pos:line="53" pos:column="35">unsigned</name> <name pos:line="53" pos:column="44">int</name> <type:modifier pos:line="53" pos:column="48">&amp;</type:modifier></type><name pos:line="53" pos:column="49">maxAscent</name></decl></param>, <param><decl><type><name pos:line="53" pos:column="60">unsigned</name> <name pos:line="53" pos:column="69">int</name> <type:modifier pos:line="53" pos:column="73">&amp;</type:modifier></type><name pos:line="53" pos:column="74">maxDescent</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<enum pos:line="56" pos:column="1">enum <name pos:line="56" pos:column="6">IndentView</name> <block pos:line="56" pos:column="17">{<decl><name pos:line="56" pos:column="18">ivNone</name></decl><op:operator pos:line="56" pos:column="24">,</op:operator> <decl><name pos:line="56" pos:column="26">ivReal</name></decl><op:operator pos:line="56" pos:column="32">,</op:operator> <decl><name pos:line="56" pos:column="34">ivLookForward</name></decl><op:operator pos:line="56" pos:column="47">,</op:operator> <decl><name pos:line="56" pos:column="49">ivLookBoth</name></decl>}</block>;</enum>
+
+<enum pos:line="58" pos:column="1">enum <name pos:line="58" pos:column="6">WhiteSpaceVisibility</name> <block pos:line="58" pos:column="27">{<decl><name pos:line="58" pos:column="28">wsInvisible</name><init pos:line="58" pos:column="39">=<expr><lit:literal type="number" pos:line="58" pos:column="40">0</lit:literal></expr></init></decl><op:operator pos:line="58" pos:column="41">,</op:operator> <decl><name pos:line="58" pos:column="43">wsVisibleAlways</name><init pos:line="58" pos:column="58">=<expr><lit:literal type="number" pos:line="58" pos:column="59">1</lit:literal></expr></init></decl><op:operator pos:line="58" pos:column="60">,</op:operator> <decl><name pos:line="58" pos:column="62">wsVisibleAfterIndent</name><init pos:line="58" pos:column="82">=<expr><lit:literal type="number" pos:line="58" pos:column="83">2</lit:literal></expr></init></decl>}</block>;</enum>
+
+<comment type="block" format="doxygen" pos:line="60" pos:column="1">/**
+ */</comment>
+<class pos:line="62" pos:column="1">class <name pos:line="62" pos:column="7">ViewStyle</name> <block pos:line="62" pos:column="17">{<private type="default" pos:line="62" pos:column="18">
+</private><public pos:line="63" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="64" pos:column="9">FontNames</name></type> <name pos:line="64" pos:column="19">fontNames</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="65" pos:column="9">FontRealised</name> <type:modifier pos:line="65" pos:column="22">*</type:modifier></type><name pos:line="65" pos:column="23">frFirst</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="66" pos:column="9">size_t</name></type> <name pos:line="66" pos:column="16">stylesSize</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="67" pos:column="9">Style</name> <type:modifier pos:line="67" pos:column="15">*</type:modifier></type><name pos:line="67" pos:column="16">styles</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="68" pos:column="9">LineMarker</name></type> <name><name pos:line="68" pos:column="20">markers</name><index pos:line="68" pos:column="27">[<expr><name pos:line="68" pos:column="28">MARKER_MAX</name> <op:operator pos:line="68" pos:column="39">+</op:operator> <lit:literal type="number" pos:line="68" pos:column="41">1</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="69" pos:column="9">Indicator</name></type> <name><name pos:line="69" pos:column="19">indicators</name><index pos:line="69" pos:column="29">[<expr><name pos:line="69" pos:column="30">INDIC_MAX</name> <op:operator pos:line="69" pos:column="40">+</op:operator> <lit:literal type="number" pos:line="69" pos:column="42">1</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="70" pos:column="9">int</name></type> <name pos:line="70" pos:column="13">lineHeight</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="71" pos:column="9">unsigned</name> <name pos:line="71" pos:column="18">int</name></type> <name pos:line="71" pos:column="22">maxAscent</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="72" pos:column="9">unsigned</name> <name pos:line="72" pos:column="18">int</name></type> <name pos:line="72" pos:column="22">maxDescent</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="73" pos:column="9">unsigned</name> <name pos:line="73" pos:column="18">int</name></type> <name pos:line="73" pos:column="22">aveCharWidth</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="74" pos:column="9">unsigned</name> <name pos:line="74" pos:column="18">int</name></type> <name pos:line="74" pos:column="22">spaceWidth</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="75" pos:column="9">bool</name></type> <name pos:line="75" pos:column="14">selforeset</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="76" pos:column="9">ColourPair</name></type> <name pos:line="76" pos:column="20">selforeground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="77" pos:column="9">ColourPair</name></type> <name pos:line="77" pos:column="20">selAdditionalForeground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="78" pos:column="9">bool</name></type> <name pos:line="78" pos:column="14">selbackset</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="79" pos:column="9">ColourPair</name></type> <name pos:line="79" pos:column="20">selbackground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="80" pos:column="9">ColourPair</name></type> <name pos:line="80" pos:column="20">selAdditionalBackground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="81" pos:column="9">ColourPair</name></type> <name pos:line="81" pos:column="20">selbackground2</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="82" pos:column="9">int</name></type> <name pos:line="82" pos:column="13">selAlpha</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="83" pos:column="9">int</name></type> <name pos:line="83" pos:column="13">selAdditionalAlpha</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="84" pos:column="9">bool</name></type> <name pos:line="84" pos:column="14">selEOLFilled</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="85" pos:column="9">bool</name></type> <name pos:line="85" pos:column="14">whitespaceForegroundSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="86" pos:column="9">ColourPair</name></type> <name pos:line="86" pos:column="20">whitespaceForeground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="87" pos:column="9">bool</name></type> <name pos:line="87" pos:column="14">whitespaceBackgroundSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="88" pos:column="9">ColourPair</name></type> <name pos:line="88" pos:column="20">whitespaceBackground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="89" pos:column="9">ColourPair</name></type> <name pos:line="89" pos:column="20">selbar</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="90" pos:column="9">ColourPair</name></type> <name pos:line="90" pos:column="20">selbarlight</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="91" pos:column="9">bool</name></type> <name pos:line="91" pos:column="14">foldmarginColourSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="92" pos:column="9">ColourPair</name></type> <name pos:line="92" pos:column="20">foldmarginColour</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="93" pos:column="9">bool</name></type> <name pos:line="93" pos:column="14">foldmarginHighlightColourSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="94" pos:column="9">ColourPair</name></type> <name pos:line="94" pos:column="20">foldmarginHighlightColour</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="95" pos:column="9">bool</name></type> <name pos:line="95" pos:column="14">hotspotForegroundSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="96" pos:column="9">ColourPair</name></type> <name pos:line="96" pos:column="20">hotspotForeground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="97" pos:column="9">bool</name></type> <name pos:line="97" pos:column="14">hotspotBackgroundSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="98" pos:column="9">ColourPair</name></type> <name pos:line="98" pos:column="20">hotspotBackground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="99" pos:column="9">bool</name></type> <name pos:line="99" pos:column="14">hotspotUnderline</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="100" pos:column="9">bool</name></type> <name pos:line="100" pos:column="14">hotspotSingleLine</name></decl>;</decl_stmt>
+	<comment type="line" format="doxygen" pos:line="101" pos:column="9">/// Margins are ordered: Line Numbers, Selection Margin, Spacing Margin</comment>
+	<enum pos:line="102" pos:column="9">enum <block pos:line="102" pos:column="14">{ <decl><name pos:line="102" pos:column="16">margins</name><init pos:line="102" pos:column="23">=<expr><lit:literal type="number" pos:line="102" pos:column="24">5</lit:literal></expr></init></decl> }</block>;</enum>
+	<decl_stmt><decl><type><name pos:line="103" pos:column="9">int</name></type> <name pos:line="103" pos:column="13">leftMarginWidth</name></decl>;</decl_stmt>	<comment type="line" format="doxygen" pos:line="103" pos:column="33">///&lt; Spacing margin on left of text</comment>
+	<decl_stmt><decl><type><name pos:line="104" pos:column="9">int</name></type> <name pos:line="104" pos:column="13">rightMarginWidth</name></decl>;</decl_stmt>	<comment type="line" format="doxygen" pos:line="104" pos:column="33">///&lt; Spacing margin on left of text</comment>
+	<decl_stmt><decl><type><name pos:line="105" pos:column="9">bool</name></type> <name pos:line="105" pos:column="14">symbolMargin</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="106" pos:column="9">int</name></type> <name pos:line="106" pos:column="13">maskInLine</name></decl>;</decl_stmt>	<comment type="line" format="doxygen" pos:line="106" pos:column="25">///&lt; Mask for markers to be put into text because there is nowhere for them to go in margin</comment>
+	<decl_stmt><decl><type><name pos:line="107" pos:column="9">MarginStyle</name></type> <name><name pos:line="107" pos:column="21">ms</name><index pos:line="107" pos:column="23">[<expr><name pos:line="107" pos:column="24">margins</name></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="108" pos:column="9">int</name></type> <name pos:line="108" pos:column="13">fixedColumnWidth</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="109" pos:column="9">int</name></type> <name pos:line="109" pos:column="13">zoomLevel</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="110" pos:column="9">WhiteSpaceVisibility</name></type> <name pos:line="110" pos:column="30">viewWhitespace</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="111" pos:column="9">int</name></type> <name pos:line="111" pos:column="13">whitespaceSize</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="112" pos:column="9">IndentView</name></type> <name pos:line="112" pos:column="20">viewIndentationGuides</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="113" pos:column="9">bool</name></type> <name pos:line="113" pos:column="14">viewEOL</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="114" pos:column="9">bool</name></type> <name pos:line="114" pos:column="14">showMarkedLines</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="115" pos:column="9">ColourPair</name></type> <name pos:line="115" pos:column="20">caretcolour</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="116" pos:column="9">ColourPair</name></type> <name pos:line="116" pos:column="20">additionalCaretColour</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="117" pos:column="9">bool</name></type> <name pos:line="117" pos:column="14">showCaretLineBackground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="118" pos:column="9">bool</name></type> <name pos:line="118" pos:column="14">showCaretLineBackgroundAlways</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="119" pos:column="9">ColourPair</name></type> <name pos:line="119" pos:column="20">caretLineBackground</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="120" pos:column="9">int</name></type> <name pos:line="120" pos:column="13">caretLineAlpha</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="121" pos:column="9">ColourPair</name></type> <name pos:line="121" pos:column="20">edgecolour</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="122" pos:column="9">int</name></type> <name pos:line="122" pos:column="13">edgeState</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="123" pos:column="9">int</name></type> <name pos:line="123" pos:column="13">caretStyle</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="124" pos:column="9">int</name></type> <name pos:line="124" pos:column="13">caretWidth</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="125" pos:column="9">bool</name></type> <name pos:line="125" pos:column="14">someStylesProtected</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="126" pos:column="9">bool</name></type> <name pos:line="126" pos:column="14">someStylesForceCase</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="127" pos:column="9">int</name></type> <name pos:line="127" pos:column="13">extraFontFlag</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="128" pos:column="9">int</name></type> <name pos:line="128" pos:column="13">extraAscent</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="129" pos:column="9">int</name></type> <name pos:line="129" pos:column="13">extraDescent</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="130" pos:column="9">int</name></type> <name pos:line="130" pos:column="13">marginStyleOffset</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="131" pos:column="9">int</name></type> <name pos:line="131" pos:column="13">annotationVisible</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="132" pos:column="9">int</name></type> <name pos:line="132" pos:column="13">annotationStyleOffset</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="133" pos:column="9">bool</name></type> <name pos:line="133" pos:column="14">braceHighlightIndicatorSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="134" pos:column="9">int</name></type> <name pos:line="134" pos:column="13">braceHighlightIndicator</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="135" pos:column="9">bool</name></type> <name pos:line="135" pos:column="14">braceBadLightIndicatorSet</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="136" pos:column="9">int</name></type> <name pos:line="136" pos:column="13">braceBadLightIndicator</name></decl>;</decl_stmt>
+
+	<constructor_decl><name pos:line="138" pos:column="9">ViewStyle</name><parameter_list pos:line="138" pos:column="18">()</parameter_list>;</constructor_decl>
+	<constructor_decl><name pos:line="139" pos:column="9">ViewStyle</name><parameter_list pos:line="139" pos:column="18">(<param><decl><type><specifier pos:line="139" pos:column="19">const</specifier> <name pos:line="139" pos:column="25">ViewStyle</name> <type:modifier pos:line="139" pos:column="35">&amp;</type:modifier></type><name pos:line="139" pos:column="36">source</name></decl></param>)</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="140" pos:column="9">~<name pos:line="140" pos:column="10">ViewStyle</name></name><parameter_list pos:line="140" pos:column="19">()</parameter_list>;</destructor_decl>
+	<function_decl><type><name pos:line="141" pos:column="9">void</name></type> <name pos:line="141" pos:column="14">Init</name><parameter_list pos:line="141" pos:column="18">(<param><decl><type><name pos:line="141" pos:column="19">size_t</name></type> <name pos:line="141" pos:column="26">stylesSize_</name><init pos:line="141" pos:column="37">=<expr><lit:literal type="number" pos:line="141" pos:column="38">64</lit:literal></expr></init></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="142" pos:column="9">void</name></type> <name pos:line="142" pos:column="14">CreateFont</name><parameter_list pos:line="142" pos:column="24">(<param><decl><type><specifier pos:line="142" pos:column="25">const</specifier> <name pos:line="142" pos:column="31">FontSpecification</name> <type:modifier pos:line="142" pos:column="49">&amp;</type:modifier></type><name pos:line="142" pos:column="50">fs</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="143" pos:column="9">void</name></type> <name pos:line="143" pos:column="14">RefreshColourPalette</name><parameter_list pos:line="143" pos:column="34">(<param><decl><type><name pos:line="143" pos:column="35">Palette</name> <type:modifier pos:line="143" pos:column="43">&amp;</type:modifier></type><name pos:line="143" pos:column="44">pal</name></decl></param>, <param><decl><type><name pos:line="143" pos:column="49">bool</name></type> <name pos:line="143" pos:column="54">want</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="144" pos:column="9">void</name></type> <name pos:line="144" pos:column="14">Refresh</name><parameter_list pos:line="144" pos:column="21">(<param><decl><type><name pos:line="144" pos:column="22">Surface</name> <type:modifier pos:line="144" pos:column="30">&amp;</type:modifier></type><name pos:line="144" pos:column="31">surface</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="145" pos:column="9">void</name></type> <name pos:line="145" pos:column="14">AllocStyles</name><parameter_list pos:line="145" pos:column="25">(<param><decl><type><name pos:line="145" pos:column="26">size_t</name></type> <name pos:line="145" pos:column="33">sizeNew</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="146" pos:column="9">void</name></type> <name pos:line="146" pos:column="14">EnsureStyle</name><parameter_list pos:line="146" pos:column="25">(<param><decl><type><name pos:line="146" pos:column="26">size_t</name></type> <name pos:line="146" pos:column="33">index</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="147" pos:column="9">void</name></type> <name pos:line="147" pos:column="14">ResetDefaultStyle</name><parameter_list pos:line="147" pos:column="31">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="148" pos:column="9">void</name></type> <name pos:line="148" pos:column="14">ClearStyles</name><parameter_list pos:line="148" pos:column="25">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="149" pos:column="9">void</name></type> <name pos:line="149" pos:column="14">SetStyleFontName</name><parameter_list pos:line="149" pos:column="30">(<param><decl><type><name pos:line="149" pos:column="31">int</name></type> <name pos:line="149" pos:column="35">styleIndex</name></decl></param>, <param><decl><type><specifier pos:line="149" pos:column="47">const</specifier> <name pos:line="149" pos:column="53">char</name> <type:modifier pos:line="149" pos:column="58">*</type:modifier></type><name pos:line="149" pos:column="59">name</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="150" pos:column="9">bool</name></type> <name pos:line="150" pos:column="14">ProtectionActive</name><parameter_list pos:line="150" pos:column="30">()</parameter_list> <specifier pos:line="150" pos:column="33">const</specifier>;</function_decl>
+	<function_decl><type><name pos:line="151" pos:column="9">bool</name></type> <name pos:line="151" pos:column="14">ValidStyle</name><parameter_list pos:line="151" pos:column="24">(<param><decl><type><name pos:line="151" pos:column="25">size_t</name></type> <name pos:line="151" pos:column="32">styleIndex</name></decl></param>)</parameter_list> <specifier pos:line="151" pos:column="44">const</specifier>;</function_decl>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="154" pos:column="1">#<cpp:directive pos:line="154" pos:column="2">ifdef</cpp:directive> <name pos:line="154" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="156" pos:column="1">#<cpp:directive pos:line="156" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="158" pos:column="1">#<cpp:directive pos:line="158" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\Utf8_16.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Utf8_16.h</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C) 2002 Scott Kirkwood</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// Permission to use, copy, modify, distribute and sell this code</comment>
+<comment type="line" pos:line="5" pos:column="1">// and its documentation for any purpose is hereby granted without fee,</comment>
+<comment type="line" pos:line="6" pos:column="1">// provided that the above copyright notice appear in all copies or</comment>
+<comment type="line" pos:line="7" pos:column="1">// any derived copies.  Scott Kirkwood makes no representations</comment>
+<comment type="line" pos:line="8" pos:column="1">// about the suitability of this software for any purpose.</comment>
+<comment type="line" pos:line="9" pos:column="1">// It is provided "as is" without express or implied warranty.</comment>
+<comment type="line" pos:line="10" pos:column="1">//</comment>
+<comment type="line" pos:line="11" pos:column="1">// Notes: Used the UTF information I found at:</comment>
+<comment type="line" pos:line="12" pos:column="1">//   http://www.cl.cam.ac.uk/~mgk25/unicode.html</comment>
+<comment type="line" format="doxygen" pos:line="13" pos:column="1">////////////////////////////////////////////////////////////////////////////////</comment>
+<comment type="line" pos:line="14" pos:column="1">// </comment>
+<comment type="line" pos:line="15" pos:column="1">// Modificated 2006 Jens Lorenz</comment>
+<comment type="line" pos:line="16" pos:column="1">// </comment>
+<comment type="line" pos:line="17" pos:column="1">// - Clean up the sources</comment>
+<comment type="line" pos:line="18" pos:column="1">// - Removing UCS-Bug in Utf8_Iter</comment>
+<comment type="line" pos:line="19" pos:column="1">// - Add convert function in Utf8_16_Write</comment>
+<comment type="line" format="doxygen" pos:line="20" pos:column="1">////////////////////////////////////////////////////////////////////////////////</comment>
+
+<cpp:ifndef pos:line="22" pos:column="1">#<cpp:directive pos:line="22" pos:column="2">ifndef</cpp:directive> <name pos:line="22" pos:column="9">UTF8_16_H</name></cpp:ifndef>
+
+<cpp:pragma pos:line="24" pos:column="1">#<cpp:directive pos:line="24" pos:column="2">pragma</cpp:directive> once</cpp:pragma>
+
+<cpp:ifndef pos:line="26" pos:column="1">#<cpp:directive pos:line="26" pos:column="2">ifndef</cpp:directive> <name pos:line="26" pos:column="9">PARAMETERS_H</name></cpp:ifndef>
+<cpp:include pos:line="27" pos:column="1">#<cpp:directive pos:line="27" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="27" pos:column="10">"Parameters.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="28" pos:column="1">#<cpp:directive pos:line="28" pos:column="2">endif</cpp:directive></cpp:endif><comment type="line" pos:line="28" pos:column="7">// PARAMETERS_H</comment>
+
+<cpp:ifdef pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">ifdef</cpp:directive> <name pos:line="30" pos:column="8">_MSC_VER</name></cpp:ifdef>
+<cpp:pragma pos:line="31" pos:column="1">#<cpp:directive pos:line="31" pos:column="2">pragma</cpp:directive> warning(disable: 4514)</cpp:pragma> <comment type="line" pos:line="31" pos:column="32">// nreferenced inline function has been removed</comment>
+<cpp:endif pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<class pos:line="34" pos:column="1">class <name pos:line="34" pos:column="7">Utf8_16</name> <block pos:line="34" pos:column="15">{<private type="default" pos:line="34" pos:column="16">
+</private><public pos:line="35" pos:column="1">public:
+	<typedef pos:line="36" pos:column="9">typedef <type><name pos:line="36" pos:column="17">unsigned</name> <name pos:line="36" pos:column="26">short</name></type> <name pos:line="36" pos:column="32">utf16</name>;</typedef> <comment type="line" pos:line="36" pos:column="39">// 16 bits</comment>
+	<typedef pos:line="37" pos:column="9">typedef <type><name pos:line="37" pos:column="17">UCHAR</name></type> <name pos:line="37" pos:column="23">utf8</name>;</typedef> <comment type="line" pos:line="37" pos:column="29">// 8 bits</comment>
+	<typedef pos:line="38" pos:column="9">typedef <type><name pos:line="38" pos:column="17">UCHAR</name></type> <name pos:line="38" pos:column="23">ubyte</name>;</typedef>
+	<decl_stmt><decl><type><specifier pos:line="39" pos:column="9">static</specifier> <specifier pos:line="39" pos:column="16">const</specifier> <name pos:line="39" pos:column="22">utf8</name></type> <name><name pos:line="39" pos:column="27">k_Boms</name><index pos:line="39" pos:column="33">[<expr><name pos:line="39" pos:column="34">uniEnd</name></expr>]</index><index pos:line="39" pos:column="41">[<expr><lit:literal type="number" pos:line="39" pos:column="42">3</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+</public>}</block>;</class>
+
+<comment type="line" pos:line="42" pos:column="1">// Reads UTF-16 and outputs UTF-8</comment>
+<class pos:line="43" pos:column="1">class <name pos:line="43" pos:column="7">Utf16_Iter</name> <super pos:line="43" pos:column="18">: <specifier pos:line="43" pos:column="20">public</specifier> <name pos:line="43" pos:column="27">Utf8_16</name></super> <block pos:line="43" pos:column="35">{<private type="default" pos:line="43" pos:column="36">
+</private><public pos:line="44" pos:column="1">public:
+	<enum pos:line="45" pos:column="9">enum <name pos:line="45" pos:column="14">eState</name> <block pos:line="45" pos:column="21">{
+	    <decl><name pos:line="46" pos:column="13">eStart</name></decl><op:operator pos:line="46" pos:column="19">,</op:operator>
+	    <decl><name pos:line="47" pos:column="13">e2Bytes2</name></decl><op:operator pos:line="47" pos:column="21">,</op:operator>
+	    <decl><name pos:line="48" pos:column="13">e3Bytes2</name></decl><op:operator pos:line="48" pos:column="21">,</op:operator>
+	    <decl><name pos:line="49" pos:column="13">e3Bytes3</name></decl>
+	}</block>;</enum>
+
+	<constructor_decl><name pos:line="52" pos:column="9">Utf16_Iter</name><parameter_list pos:line="52" pos:column="19">()</parameter_list>;</constructor_decl>
+	<function_decl><type><name pos:line="53" pos:column="9">void</name></type> <name pos:line="53" pos:column="14">reset</name><parameter_list pos:line="53" pos:column="19">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="54" pos:column="9">void</name></type> <name pos:line="54" pos:column="14">set</name><parameter_list pos:line="54" pos:column="17">(<param><decl><type><specifier pos:line="54" pos:column="18">const</specifier> <name pos:line="54" pos:column="24">ubyte</name><type:modifier pos:line="54" pos:column="29">*</type:modifier></type> <name pos:line="54" pos:column="31">pBuf</name></decl></param>, <param><decl><type><name pos:line="54" pos:column="37">size_t</name></type> <name pos:line="54" pos:column="44">nLen</name></decl></param>, <param><decl><type><name pos:line="54" pos:column="50">UniMode</name></type> <name pos:line="54" pos:column="58">eEncoding</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="55" pos:column="9">utf8</name></type> <name pos:line="55" pos:column="14">get</name><parameter_list pos:line="55" pos:column="17">()</parameter_list> <specifier pos:line="55" pos:column="20">const</specifier> <block pos:line="55" pos:column="26">{ <return pos:line="55" pos:column="28">return <expr><name pos:line="55" pos:column="35">m_nCur</name></expr>;</return> }</block></function><empty_stmt pos:line="55" pos:column="44">;</empty_stmt>
+	<function_decl><type><name pos:line="56" pos:column="9">void</name></type> <name pos:line="56" pos:column="14">operator++</name><parameter_list pos:line="56" pos:column="24">()</parameter_list>;</function_decl>
+	<function><type><name pos:line="57" pos:column="9">eState</name></type> <name pos:line="57" pos:column="16">getState</name><parameter_list pos:line="57" pos:column="24">()</parameter_list> <block pos:line="57" pos:column="27">{ <return pos:line="57" pos:column="29">return <expr><name pos:line="57" pos:column="36">m_eState</name></expr>;</return> }</block></function><empty_stmt pos:line="57" pos:column="47">;</empty_stmt>
+	<function><name pos:line="58" pos:column="9">operator bool</name><parameter_list pos:line="58" pos:column="22">()</parameter_list> <block pos:line="58" pos:column="25">{ <return pos:line="58" pos:column="27">return <expr><name pos:line="58" pos:column="34">m_pRead</name> <op:operator pos:line="58" pos:column="42">&lt;=</op:operator> <name pos:line="58" pos:column="45">m_pEnd</name></expr>;</return> }</block></function><empty_stmt pos:line="58" pos:column="54">;</empty_stmt>
+
+</public><protected pos:line="60" pos:column="1">protected:
+	<function_decl><type><name pos:line="61" pos:column="9">void</name></type> <name pos:line="61" pos:column="14">toStart</name><parameter_list pos:line="61" pos:column="21">()</parameter_list>;</function_decl> <comment type="line" pos:line="61" pos:column="25">// Put to start state, swap bytes if necessary</comment>
+
+</protected><protected pos:line="63" pos:column="1">protected:
+	<decl_stmt><decl><type><name pos:line="64" pos:column="9">UniMode</name></type> <name pos:line="64" pos:column="17">m_eEncoding</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="65" pos:column="9">eState</name></type> <name pos:line="65" pos:column="16">m_eState</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="66" pos:column="9">utf8</name></type> <name pos:line="66" pos:column="14">m_nCur</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="67" pos:column="9">utf16</name></type> <name pos:line="67" pos:column="15">m_nCur16</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="68" pos:column="9">const</specifier> <name pos:line="68" pos:column="15">ubyte</name><type:modifier pos:line="68" pos:column="20">*</type:modifier></type> <name pos:line="68" pos:column="22">m_pBuf</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="69" pos:column="9">const</specifier> <name pos:line="69" pos:column="15">ubyte</name><type:modifier pos:line="69" pos:column="20">*</type:modifier></type> <name pos:line="69" pos:column="22">m_pRead</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="70" pos:column="9">const</specifier> <name pos:line="70" pos:column="15">ubyte</name><type:modifier pos:line="70" pos:column="20">*</type:modifier></type> <name pos:line="70" pos:column="22">m_pEnd</name></decl>;</decl_stmt>
+</protected>}</block>;</class>
+
+<comment type="line" pos:line="73" pos:column="1">// Reads UTF-8 and outputs UTF-16</comment>
+<class pos:line="74" pos:column="1">class <name pos:line="74" pos:column="7">Utf8_Iter</name> <super pos:line="74" pos:column="17">: <specifier pos:line="74" pos:column="19">public</specifier> <name pos:line="74" pos:column="26">Utf8_16</name></super> <block pos:line="74" pos:column="34">{<private type="default" pos:line="74" pos:column="35">
+</private><public pos:line="75" pos:column="1">public:
+	<constructor_decl><name pos:line="76" pos:column="9">Utf8_Iter</name><parameter_list pos:line="76" pos:column="18">()</parameter_list>;</constructor_decl>
+	<function_decl><type><name pos:line="77" pos:column="9">void</name></type> <name pos:line="77" pos:column="14">reset</name><parameter_list pos:line="77" pos:column="19">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="78" pos:column="9">void</name></type> <name pos:line="78" pos:column="14">set</name><parameter_list pos:line="78" pos:column="17">(<param><decl><type><specifier pos:line="78" pos:column="18">const</specifier> <name pos:line="78" pos:column="24">ubyte</name><type:modifier pos:line="78" pos:column="29">*</type:modifier></type> <name pos:line="78" pos:column="31">pBuf</name></decl></param>, <param><decl><type><name pos:line="78" pos:column="37">size_t</name></type> <name pos:line="78" pos:column="44">nLen</name></decl></param>, <param><decl><type><name pos:line="78" pos:column="50">UniMode</name></type> <name pos:line="78" pos:column="58">eEncoding</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="79" pos:column="9">utf16</name></type> <name pos:line="79" pos:column="15">get</name><parameter_list pos:line="79" pos:column="18">()</parameter_list> <specifier pos:line="79" pos:column="21">const</specifier> <block pos:line="79" pos:column="27">{
+<cpp:ifdef pos:line="80" pos:column="1">#<cpp:directive pos:line="80" pos:column="2">ifdef</cpp:directive> <name pos:line="80" pos:column="8">_DEBUG</name></cpp:ifdef>
+		<expr_stmt><expr><call><name pos:line="81" pos:column="17">assert</name><argument_list pos:line="81" pos:column="23">(<argument><expr><name pos:line="81" pos:column="24">m_eState</name> <op:operator pos:line="81" pos:column="33">==</op:operator> <name pos:line="81" pos:column="36">eStart</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+<cpp:endif pos:line="82" pos:column="1">#<cpp:directive pos:line="82" pos:column="2">endif</cpp:directive></cpp:endif>
+		<return pos:line="83" pos:column="17">return <expr><name pos:line="83" pos:column="24">m_nCur</name></expr>;</return>
+	}</block></function>
+	<function><type><name pos:line="85" pos:column="9">bool</name></type> <name pos:line="85" pos:column="14">canGet</name><parameter_list pos:line="85" pos:column="20">()</parameter_list> <specifier pos:line="85" pos:column="23">const</specifier> <block pos:line="85" pos:column="29">{ <return pos:line="85" pos:column="31">return <expr><name pos:line="85" pos:column="38">m_eState</name> <op:operator pos:line="85" pos:column="47">==</op:operator> <name pos:line="85" pos:column="50">eStart</name></expr>;</return> }</block></function>
+	<function_decl><type><name pos:line="86" pos:column="9">void</name></type> <name pos:line="86" pos:column="14">operator++</name><parameter_list pos:line="86" pos:column="24">()</parameter_list>;</function_decl>
+	<function><name pos:line="87" pos:column="9">operator bool</name><parameter_list pos:line="87" pos:column="22">()</parameter_list> <block pos:line="87" pos:column="25">{ <return pos:line="87" pos:column="27">return <expr><name pos:line="87" pos:column="34">m_pRead</name> <op:operator pos:line="87" pos:column="42">&lt;=</op:operator> <name pos:line="87" pos:column="45">m_pEnd</name></expr>;</return> }</block></function>
+
+</public><protected pos:line="89" pos:column="1">protected:
+	<function_decl><type><name pos:line="90" pos:column="9">void</name></type> <name pos:line="90" pos:column="14">swap</name><parameter_list pos:line="90" pos:column="18">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="91" pos:column="9">void</name></type> <name pos:line="91" pos:column="14">toStart</name><parameter_list pos:line="91" pos:column="21">()</parameter_list>;</function_decl> <comment type="line" pos:line="91" pos:column="25">// Put to start state, swap bytes if necessary</comment>
+	<enum pos:line="92" pos:column="9">enum <name pos:line="92" pos:column="14">eState</name> <block pos:line="92" pos:column="21">{
+	    <decl><name pos:line="93" pos:column="13">eStart</name></decl><op:operator pos:line="93" pos:column="19">,</op:operator>
+	    <decl><name pos:line="94" pos:column="13">e2Bytes_Byte2</name></decl><op:operator pos:line="94" pos:column="26">,</op:operator>
+	    <decl><name pos:line="95" pos:column="13">e3Bytes_Byte2</name></decl><op:operator pos:line="95" pos:column="26">,</op:operator>
+	    <decl><name pos:line="96" pos:column="13">e3Bytes_Byte3</name></decl>
+	}</block>;</enum>
+</protected><protected pos:line="98" pos:column="1">protected:
+	<decl_stmt><decl><type><name pos:line="99" pos:column="9">UniMode</name></type> <name pos:line="99" pos:column="17">m_eEncoding</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="100" pos:column="9">eState</name></type> <name pos:line="100" pos:column="16">m_eState</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="101" pos:column="9">utf16</name></type> <name pos:line="101" pos:column="15">m_nCur</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="102" pos:column="9">const</specifier> <name pos:line="102" pos:column="15">ubyte</name><type:modifier pos:line="102" pos:column="20">*</type:modifier></type> <name pos:line="102" pos:column="22">m_pBuf</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="103" pos:column="9">const</specifier> <name pos:line="103" pos:column="15">ubyte</name><type:modifier pos:line="103" pos:column="20">*</type:modifier></type> <name pos:line="103" pos:column="22">m_pRead</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="104" pos:column="9">const</specifier> <name pos:line="104" pos:column="15">ubyte</name><type:modifier pos:line="104" pos:column="20">*</type:modifier></type> <name pos:line="104" pos:column="22">m_pEnd</name></decl>;</decl_stmt>
+</protected>}</block>;</class>
+
+<comment type="line" pos:line="107" pos:column="1">// Reads UTF16 and outputs UTF8</comment>
+<enum pos:line="108" pos:column="1">enum <name pos:line="108" pos:column="6">u78</name> <block pos:line="108" pos:column="10">{<decl><name pos:line="108" pos:column="11">utf8NoBOM</name><init pos:line="108" pos:column="20">=<expr><lit:literal type="number" pos:line="108" pos:column="21">0</lit:literal></expr></init></decl><op:operator pos:line="108" pos:column="22">,</op:operator> <decl><name pos:line="108" pos:column="24">ascii7bits</name><init pos:line="108" pos:column="34">=<expr><lit:literal type="number" pos:line="108" pos:column="35">1</lit:literal></expr></init></decl><op:operator pos:line="108" pos:column="36">,</op:operator> <decl><name pos:line="108" pos:column="38">ascii8bits</name><init pos:line="108" pos:column="48">=<expr><lit:literal type="number" pos:line="108" pos:column="49">2</lit:literal></expr></init></decl>}</block>;</enum>
+<class pos:line="109" pos:column="1">class <name pos:line="109" pos:column="7">Utf8_16_Read</name> <super pos:line="109" pos:column="20">: <specifier pos:line="109" pos:column="22">public</specifier> <name pos:line="109" pos:column="29">Utf8_16</name></super> <block pos:line="109" pos:column="37">{<private type="default" pos:line="109" pos:column="38">
+</private><public pos:line="110" pos:column="1">public:
+	<constructor_decl><name pos:line="111" pos:column="9">Utf8_16_Read</name><parameter_list pos:line="111" pos:column="21">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="112" pos:column="9">~<name pos:line="112" pos:column="10">Utf8_16_Read</name></name><parameter_list pos:line="112" pos:column="22">()</parameter_list>;</destructor_decl>
+
+	<function_decl><type><name pos:line="114" pos:column="9">size_t</name></type> <name pos:line="114" pos:column="16">convert</name><parameter_list pos:line="114" pos:column="23">(<param><decl><type><name pos:line="114" pos:column="24">char</name><type:modifier pos:line="114" pos:column="28">*</type:modifier></type> <name pos:line="114" pos:column="30">buf</name></decl></param>, <param><decl><type><name pos:line="114" pos:column="35">size_t</name></type> <name pos:line="114" pos:column="42">len</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="115" pos:column="9">char</name><type:modifier pos:line="115" pos:column="13">*</type:modifier></type> <name pos:line="115" pos:column="15">getNewBuf</name><parameter_list pos:line="115" pos:column="24">()</parameter_list> <block pos:line="115" pos:column="27">{ <return pos:line="115" pos:column="29">return <expr><call><name><name pos:line="115" pos:column="36">reinterpret_cast</name><argument_list pos:line="115" pos:column="52">&lt;<argument><expr><name pos:line="115" pos:column="53">char</name> <op:operator pos:line="115" pos:column="58">*</op:operator></expr></argument>&gt;</argument_list></name><argument_list pos:line="115" pos:column="60">(<argument><expr><name pos:line="115" pos:column="61">m_pNewBuf</name></expr></argument>)</argument_list></call></expr>;</return> }</block></function>
+
+	<function><type><name pos:line="117" pos:column="9">UniMode</name></type> <name pos:line="117" pos:column="17">getEncoding</name><parameter_list pos:line="117" pos:column="28">()</parameter_list> <specifier pos:line="117" pos:column="31">const</specifier> <block pos:line="117" pos:column="37">{ <return pos:line="117" pos:column="39">return <expr><name pos:line="117" pos:column="46">m_eEncoding</name></expr>;</return> }</block></function>
+	<function_decl><type><name pos:line="118" pos:column="9">size_t</name></type> <name pos:line="118" pos:column="16">calcCurPos</name><parameter_list pos:line="118" pos:column="26">(<param><decl><type><name pos:line="118" pos:column="27">size_t</name></type> <name pos:line="118" pos:column="34">pos</name></decl></param>)</parameter_list>;</function_decl>
+    <function_decl><type><specifier pos:line="119" pos:column="5">static</specifier> <name pos:line="119" pos:column="12">UniMode</name></type> <name pos:line="119" pos:column="20">determineEncoding</name><parameter_list pos:line="119" pos:column="37">(<param><decl><type><specifier pos:line="119" pos:column="38">const</specifier> <name pos:line="119" pos:column="44">unsigned</name> <name pos:line="119" pos:column="53">char</name> <type:modifier pos:line="119" pos:column="58">*</type:modifier></type><name pos:line="119" pos:column="59">buf</name></decl></param>, <param><decl><type><name pos:line="119" pos:column="64">int</name></type> <name pos:line="119" pos:column="68">bufLen</name></decl></param>)</parameter_list>;</function_decl>
+
+</public><protected pos:line="121" pos:column="1">protected:
+	<function_decl><type><name pos:line="122" pos:column="9">void</name></type> <name pos:line="122" pos:column="14">determineEncoding</name><parameter_list pos:line="122" pos:column="31">()</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="124" pos:column="9">u78</name></type> <name pos:line="124" pos:column="13">utf8_7bits_8bits</name><parameter_list pos:line="124" pos:column="29">()</parameter_list>;</function_decl>
+</protected><private pos:line="125" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="126" pos:column="9">UniMode</name></type>    <name pos:line="126" pos:column="20">m_eEncoding</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="127" pos:column="9">ubyte</name><type:modifier pos:line="127" pos:column="14">*</type:modifier></type>          <name pos:line="127" pos:column="25">m_pBuf</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="128" pos:column="9">ubyte</name><type:modifier pos:line="128" pos:column="14">*</type:modifier></type>          <name pos:line="128" pos:column="25">m_pNewBuf</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="129" pos:column="9">size_t</name></type>          <name pos:line="129" pos:column="25">m_nBufSize</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="130" pos:column="9">size_t</name></type>			<name pos:line="130" pos:column="33">m_nSkip</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="131" pos:column="9">bool</name></type>            <name pos:line="131" pos:column="25">m_bFirstRead</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="132" pos:column="9">size_t</name></type>          <name pos:line="132" pos:column="25">m_nLen</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="133" pos:column="9">Utf16_Iter</name></type>      <name pos:line="133" pos:column="25">m_Iter16</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<comment type="line" pos:line="136" pos:column="1">// Read in a UTF-8 buffer and write out to UTF-16 or UTF-8</comment>
+<class pos:line="137" pos:column="1">class <name pos:line="137" pos:column="7">Utf8_16_Write</name> <super pos:line="137" pos:column="21">: <specifier pos:line="137" pos:column="23">public</specifier> <name pos:line="137" pos:column="30">Utf8_16</name></super> <block pos:line="137" pos:column="38">{<private type="default" pos:line="137" pos:column="39">
+</private><public pos:line="138" pos:column="1">public:
+	<constructor_decl><name pos:line="139" pos:column="9">Utf8_16_Write</name><parameter_list pos:line="139" pos:column="22">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="140" pos:column="9">~<name pos:line="140" pos:column="10">Utf8_16_Write</name></name><parameter_list pos:line="140" pos:column="23">()</parameter_list>;</destructor_decl>
+
+	<function_decl><type><name pos:line="142" pos:column="9">void</name></type> <name pos:line="142" pos:column="14">setEncoding</name><parameter_list pos:line="142" pos:column="25">(<param><decl><type><name pos:line="142" pos:column="26">UniMode</name></type> <name pos:line="142" pos:column="34">eType</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="144" pos:column="9">FILE</name> <type:modifier pos:line="144" pos:column="14">*</type:modifier></type> <name pos:line="144" pos:column="16">fopen</name><parameter_list pos:line="144" pos:column="21">(<param><decl><type><specifier pos:line="144" pos:column="22">const</specifier> <name pos:line="144" pos:column="28">TCHAR</name> <type:modifier pos:line="144" pos:column="34">*</type:modifier></type><name pos:line="144" pos:column="35">_name</name></decl></param>, <param><decl><type><specifier pos:line="144" pos:column="42">const</specifier> <name pos:line="144" pos:column="48">TCHAR</name> <type:modifier pos:line="144" pos:column="54">*</type:modifier></type><name pos:line="144" pos:column="55">_type</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="145" pos:column="9">size_t</name></type> <name pos:line="145" pos:column="16">fwrite</name><parameter_list pos:line="145" pos:column="22">(<param><decl><type><specifier pos:line="145" pos:column="23">const</specifier> <name pos:line="145" pos:column="29">void</name><type:modifier pos:line="145" pos:column="33">*</type:modifier></type> <name pos:line="145" pos:column="35">p</name></decl></param>, <param><decl><type><name pos:line="145" pos:column="38">size_t</name></type> <name pos:line="145" pos:column="45">_size</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="146" pos:column="9">void</name></type>   <name pos:line="146" pos:column="16">fclose</name><parameter_list pos:line="146" pos:column="22">()</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="148" pos:column="9">size_t</name></type> <name pos:line="148" pos:column="16">convert</name><parameter_list pos:line="148" pos:column="23">(<param><decl><type><name pos:line="148" pos:column="24">char</name><type:modifier pos:line="148" pos:column="28">*</type:modifier></type> <name pos:line="148" pos:column="30">p</name></decl></param>, <param><decl><type><name pos:line="148" pos:column="33">size_t</name></type> <name pos:line="148" pos:column="40">_size</name></decl></param>)</parameter_list>;</function_decl>
+	<function><type><name pos:line="149" pos:column="9">char</name><type:modifier pos:line="149" pos:column="13">*</type:modifier></type> <name pos:line="149" pos:column="15">getNewBuf</name><parameter_list pos:line="149" pos:column="24">()</parameter_list> <block pos:line="149" pos:column="27">{ <return pos:line="149" pos:column="29">return <expr><call><name><name pos:line="149" pos:column="36">reinterpret_cast</name><argument_list pos:line="149" pos:column="52">&lt;<argument><expr><name pos:line="149" pos:column="53">char</name><op:operator pos:line="149" pos:column="57">*</op:operator></expr></argument>&gt;</argument_list></name><argument_list pos:line="149" pos:column="59">(<argument><expr><name pos:line="149" pos:column="60">m_pNewBuf</name></expr></argument>)</argument_list></call></expr>;</return> }</block></function>
+	<function_decl><type><name pos:line="150" pos:column="9">size_t</name></type> <name pos:line="150" pos:column="16">calcCurPos</name><parameter_list pos:line="150" pos:column="26">(<param><decl><type><name pos:line="150" pos:column="27">size_t</name></type> <name pos:line="150" pos:column="34">pos</name></decl></param>)</parameter_list>;</function_decl>
+
+</public><protected pos:line="152" pos:column="1">protected:
+	<decl_stmt><decl><type><name pos:line="153" pos:column="9">UniMode</name></type> <name pos:line="153" pos:column="17">m_eEncoding</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="154" pos:column="9">FILE</name><type:modifier pos:line="154" pos:column="13">*</type:modifier></type> <name pos:line="154" pos:column="15">m_pFile</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="155" pos:column="9">ubyte</name><type:modifier pos:line="155" pos:column="14">*</type:modifier></type> <name pos:line="155" pos:column="16">m_pNewBuf</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="156" pos:column="9">size_t</name></type> <name pos:line="156" pos:column="16">m_nBufSize</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="157" pos:column="9">bool</name></type> <name pos:line="157" pos:column="14">m_bFirstWrite</name></decl>;</decl_stmt>
+</protected>}</block>;</class>
+
+<cpp:endif pos:line="160" pos:column="1">#<cpp:directive pos:line="160" pos:column="2">endif</cpp:directive></cpp:endif><comment type="line" pos:line="160" pos:column="7">// UTF8_16_H</comment>
+</unit>

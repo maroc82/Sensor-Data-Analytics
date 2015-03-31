@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\ScitillaComponent\SmartHighlighter.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// this file is part of notepad++</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Harry &lt;harrybharry@users.sourceforge.net&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">// </comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">// </comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">// </comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+<cpp:ifndef pos:line="28" pos:column="1">#<cpp:directive pos:line="28" pos:column="2">ifndef</cpp:directive> <name pos:line="28" pos:column="9">SMARTHIGHLIGHTER_H</name></cpp:ifndef>
+<cpp:define pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="29" pos:column="9">SMARTHIGHLIGHTER_H</name></cpp:macro></cpp:define>
+
+<class_decl pos:line="31" pos:column="1">class <name pos:line="31" pos:column="7">ScintillaEditView</name>;</class_decl>
+<class_decl pos:line="32" pos:column="1">class <name pos:line="32" pos:column="7">FindReplaceDlg</name>;</class_decl>
+
+<class pos:line="34" pos:column="1">class <name pos:line="34" pos:column="7">SmartHighlighter</name> <block pos:line="34" pos:column="24">{<private type="default" pos:line="34" pos:column="25">
+</private><public pos:line="35" pos:column="1">public:
+	<constructor_decl><name pos:line="36" pos:column="9">SmartHighlighter</name><parameter_list pos:line="36" pos:column="25">(<param><decl><type><name pos:line="36" pos:column="26">FindReplaceDlg</name> <type:modifier pos:line="36" pos:column="41">*</type:modifier></type> <name pos:line="36" pos:column="43">pFRDlg</name></decl></param>)</parameter_list>;</constructor_decl>
+	<function_decl><type><name pos:line="37" pos:column="9">void</name></type> <name pos:line="37" pos:column="14">highlightView</name><parameter_list pos:line="37" pos:column="27">(<param><decl><type><name pos:line="37" pos:column="28">ScintillaEditView</name> <type:modifier pos:line="37" pos:column="46">*</type:modifier></type> <name pos:line="37" pos:column="48">pHighlightView</name></decl></param>)</parameter_list>;</function_decl>
+</public><private pos:line="38" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="39" pos:column="9">FindReplaceDlg</name> <type:modifier pos:line="39" pos:column="24">*</type:modifier></type> <name pos:line="39" pos:column="26">_pFRDlg</name></decl>;</decl_stmt>
+
+	<function_decl><type><name pos:line="41" pos:column="9">bool</name></type> <name pos:line="41" pos:column="14">isQualifiedWord</name><parameter_list pos:line="41" pos:column="29">(<param><decl><type><specifier pos:line="41" pos:column="30">const</specifier> <name pos:line="41" pos:column="36">char</name> <type:modifier pos:line="41" pos:column="41">*</type:modifier></type><name pos:line="41" pos:column="42">str</name></decl></param>)</parameter_list> <specifier pos:line="41" pos:column="47">const</specifier>;</function_decl>
+	<function_decl><type><name pos:line="42" pos:column="9">bool</name></type> <name pos:line="42" pos:column="14">isWordChar</name><parameter_list pos:line="42" pos:column="24">(<param><decl><type><name pos:line="42" pos:column="25">char</name></type> <name pos:line="42" pos:column="30">ch</name></decl></param>)</parameter_list> <specifier pos:line="42" pos:column="34">const</specifier>;</function_decl>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="45" pos:column="1">#<cpp:directive pos:line="45" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="45" pos:column="8">//SMARTHIGHLIGHTER_H</comment></unit>

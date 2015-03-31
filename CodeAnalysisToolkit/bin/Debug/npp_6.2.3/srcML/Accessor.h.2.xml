@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\lexlib\Accessor.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file Accessor.h
+ ** Interfaces between Scintilla and lexers.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2010 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">ACCESSOR_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">ACCESSOR_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<enum pos:line="15" pos:column="1">enum <block pos:line="15" pos:column="6">{ <decl><name pos:line="15" pos:column="8">wsSpace</name> <init pos:line="15" pos:column="16">= <expr><lit:literal type="number" pos:line="15" pos:column="18">1</lit:literal></expr></init></decl><op:operator pos:line="15" pos:column="19">,</op:operator> <decl><name pos:line="15" pos:column="21">wsTab</name> <init pos:line="15" pos:column="27">= <expr><lit:literal type="number" pos:line="15" pos:column="29">2</lit:literal></expr></init></decl><op:operator pos:line="15" pos:column="30">,</op:operator> <decl><name pos:line="15" pos:column="32">wsSpaceTab</name> <init pos:line="15" pos:column="43">= <expr><lit:literal type="number" pos:line="15" pos:column="45">4</lit:literal></expr></init></decl><op:operator pos:line="15" pos:column="46">,</op:operator> <decl><name pos:line="15" pos:column="48">wsInconsistent</name><init pos:line="15" pos:column="62">=<expr><lit:literal type="number" pos:line="15" pos:column="63">8</lit:literal></expr></init></decl>}</block>;</enum>
+
+<class_decl pos:line="17" pos:column="1">class <name pos:line="17" pos:column="7">Accessor</name>;</class_decl>
+<class_decl pos:line="18" pos:column="1">class <name pos:line="18" pos:column="7">WordList</name>;</class_decl>
+<class_decl pos:line="19" pos:column="1">class <name pos:line="19" pos:column="7">PropSetSimple</name>;</class_decl>
+
+<typedef pos:line="21" pos:column="1">typedef <function_decl><type><name pos:line="21" pos:column="9">bool</name></type> (<type:modifier pos:line="21" pos:column="15">*</type:modifier><name pos:line="21" pos:column="16">PFNIsCommentLeader</name>)<parameter_list pos:line="21" pos:column="35">(<param><decl><type><name pos:line="21" pos:column="36">Accessor</name> <type:modifier pos:line="21" pos:column="45">&amp;</type:modifier></type><name pos:line="21" pos:column="46">styler</name></decl></param>, <param><decl><type><name pos:line="21" pos:column="54">int</name></type> <name pos:line="21" pos:column="58">pos</name></decl></param>, <param><decl><type><name pos:line="21" pos:column="63">int</name></type> <name pos:line="21" pos:column="67">len</name></decl></param>)</parameter_list>;</function_decl></typedef>
+
+<class pos:line="23" pos:column="1">class <name pos:line="23" pos:column="7">Accessor</name> <super pos:line="23" pos:column="16">: <specifier pos:line="23" pos:column="18">public</specifier> <name pos:line="23" pos:column="25">LexAccessor</name></super> <block pos:line="23" pos:column="37">{<private type="default" pos:line="23" pos:column="38">
+</private><public pos:line="24" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="25" pos:column="9">PropSetSimple</name> <type:modifier pos:line="25" pos:column="23">*</type:modifier></type><name pos:line="25" pos:column="24">pprops</name></decl>;</decl_stmt>
+	<constructor_decl><name pos:line="26" pos:column="9">Accessor</name><parameter_list pos:line="26" pos:column="17">(<param><decl><type><name pos:line="26" pos:column="18">IDocument</name> <type:modifier pos:line="26" pos:column="28">*</type:modifier></type><name pos:line="26" pos:column="29">pAccess_</name></decl></param>, <param><decl><type><name pos:line="26" pos:column="39">PropSetSimple</name> <type:modifier pos:line="26" pos:column="53">*</type:modifier></type><name pos:line="26" pos:column="54">pprops_</name></decl></param>)</parameter_list>;</constructor_decl>
+	<function_decl><type><name pos:line="27" pos:column="9">int</name></type> <name pos:line="27" pos:column="13">GetPropertyInt</name><parameter_list pos:line="27" pos:column="27">(<param><decl><type><specifier pos:line="27" pos:column="28">const</specifier></type> <name pos:line="27" pos:column="34">char</name> <type:modifier pos:line="27" pos:column="39">*</type:modifier></decl></param>, <param><decl><type><name pos:line="27" pos:column="42">int</name></type> <name pos:line="27" pos:column="46">defaultValue</name><init pos:line="27" pos:column="58">=<expr><lit:literal type="number" pos:line="27" pos:column="59">0</lit:literal></expr></init></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="28" pos:column="9">int</name></type> <name pos:line="28" pos:column="13">IndentAmount</name><parameter_list pos:line="28" pos:column="25">(<param><decl><type><name pos:line="28" pos:column="26">int</name></type> <name pos:line="28" pos:column="30">line</name></decl></param>, <param><decl><type><name pos:line="28" pos:column="36">int</name> <type:modifier pos:line="28" pos:column="40">*</type:modifier></type><name pos:line="28" pos:column="41">flags</name></decl></param>, <param><decl><type><name pos:line="28" pos:column="48">PFNIsCommentLeader</name></type> <name pos:line="28" pos:column="67">pfnIsCommentLeader</name> <init pos:line="28" pos:column="86">= <expr><lit:literal type="number" pos:line="28" pos:column="88">0</lit:literal></expr></init></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="31" pos:column="1">#<cpp:directive pos:line="31" pos:column="2">ifdef</cpp:directive> <name pos:line="31" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="35" pos:column="1">#<cpp:directive pos:line="35" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

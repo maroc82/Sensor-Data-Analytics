@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ABB.SrcML</id>
+    <version>4.1.14.49</version>
+    <title>ABB.SrcML</title>
+    <authors>ABB</authors>
+    <owners>ABB</owners>
+    <licenseUrl>https://raw.github.com/abb-iss/SrcML.NET/master/epl-v10.txt</licenseUrl>
+    <projectUrl>https://github.com/abb-iss/SrcML.NET</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SrcML.NET functionality (includes classes for generating SrcML and monitoring directories).</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>SrcML.NET parsing</tags>
+    <dependencies>
+      <dependency id="log4net" version="2.0.0" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\KeyMap.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file KeyMap.h
+ ** Defines a mapping between keystrokes and commands.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2001 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">KEYTOCOMMAND_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">KEYTOCOMMAND_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:define pos:line="15" pos:column="1">#<cpp:directive pos:line="15" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="15" pos:column="9">SCI_NORM</name></cpp:macro> <cpp:value pos:line="15" pos:column="18">0</cpp:value></cpp:define>
+<cpp:define pos:line="16" pos:column="1">#<cpp:directive pos:line="16" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="16" pos:column="9">SCI_SHIFT</name></cpp:macro> <cpp:value pos:line="16" pos:column="19">SCMOD_SHIFT</cpp:value></cpp:define>
+<cpp:define pos:line="17" pos:column="1">#<cpp:directive pos:line="17" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="17" pos:column="9">SCI_CTRL</name></cpp:macro> <cpp:value pos:line="17" pos:column="18">SCMOD_CTRL</cpp:value></cpp:define>
+<cpp:define pos:line="18" pos:column="1">#<cpp:directive pos:line="18" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="18" pos:column="9">SCI_ALT</name></cpp:macro> <cpp:value pos:line="18" pos:column="17">SCMOD_ALT</cpp:value></cpp:define>
+<cpp:define pos:line="19" pos:column="1">#<cpp:directive pos:line="19" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="19" pos:column="9">SCI_CSHIFT</name></cpp:macro> <cpp:value pos:line="19" pos:column="20">(SCI_CTRL | SCI_SHIFT)</cpp:value></cpp:define>
+<cpp:define pos:line="20" pos:column="1">#<cpp:directive pos:line="20" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="20" pos:column="9">SCI_ASHIFT</name></cpp:macro> <cpp:value pos:line="20" pos:column="20">(SCI_ALT | SCI_SHIFT)</cpp:value></cpp:define>
+
+<comment type="block" format="doxygen" pos:line="22" pos:column="1">/**
+ */</comment>
+<class pos:line="24" pos:column="1">class <name pos:line="24" pos:column="7">KeyToCommand</name> <block pos:line="24" pos:column="20">{<private type="default" pos:line="24" pos:column="21">
+</private><public pos:line="25" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="26" pos:column="9">int</name></type> <name pos:line="26" pos:column="13">key</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="27" pos:column="9">int</name></type> <name pos:line="27" pos:column="13">modifiers</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="28" pos:column="9">unsigned</name> <name pos:line="28" pos:column="18">int</name></type> <name pos:line="28" pos:column="22">msg</name></decl>;</decl_stmt>
+</public>}</block>;</class>
+
+<comment type="block" format="doxygen" pos:line="31" pos:column="1">/**
+ */</comment>
+<class pos:line="33" pos:column="1">class <name pos:line="33" pos:column="7">KeyMap</name> <block pos:line="33" pos:column="14">{<private type="default" pos:line="33" pos:column="15">
+	<decl_stmt><decl><type><name pos:line="34" pos:column="9">KeyToCommand</name> <type:modifier pos:line="34" pos:column="22">*</type:modifier></type><name pos:line="34" pos:column="23">kmap</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="35" pos:column="9">int</name></type> <name pos:line="35" pos:column="13">len</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="36" pos:column="9">int</name></type> <name pos:line="36" pos:column="13">alloc</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier pos:line="37" pos:column="9">static</specifier> <specifier pos:line="37" pos:column="16">const</specifier> <name pos:line="37" pos:column="22">KeyToCommand</name></type> <name><name pos:line="37" pos:column="35">MapDefault</name><index pos:line="37" pos:column="45">[]</index></name></decl>;</decl_stmt>
+
+</private><public pos:line="39" pos:column="1">public:
+	<constructor_decl><name pos:line="40" pos:column="9">KeyMap</name><parameter_list pos:line="40" pos:column="15">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="41" pos:column="9">~<name pos:line="41" pos:column="10">KeyMap</name></name><parameter_list pos:line="41" pos:column="16">()</parameter_list>;</destructor_decl>
+	<function_decl><type><name pos:line="42" pos:column="9">void</name></type> <name pos:line="42" pos:column="14">Clear</name><parameter_list pos:line="42" pos:column="19">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="43" pos:column="9">void</name></type> <name pos:line="43" pos:column="14">AssignCmdKey</name><parameter_list pos:line="43" pos:column="26">(<param><decl><type><name pos:line="43" pos:column="27">int</name></type> <name pos:line="43" pos:column="31">key</name></decl></param>, <param><decl><type><name pos:line="43" pos:column="36">int</name></type> <name pos:line="43" pos:column="40">modifiers</name></decl></param>, <param><decl><type><name pos:line="43" pos:column="51">unsigned</name> <name pos:line="43" pos:column="60">int</name></type> <name pos:line="43" pos:column="64">msg</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="44" pos:column="9">unsigned</name> <name pos:line="44" pos:column="18">int</name></type> <name pos:line="44" pos:column="22">Find</name><parameter_list pos:line="44" pos:column="26">(<param><decl><type><name pos:line="44" pos:column="27">int</name></type> <name pos:line="44" pos:column="31">key</name></decl></param>, <param><decl><type><name pos:line="44" pos:column="36">int</name></type> <name pos:line="44" pos:column="40">modifiers</name></decl></param>)</parameter_list>;</function_decl>	<comment type="line" pos:line="44" pos:column="57">// 0 returned on failure</comment>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">ifdef</cpp:directive> <name pos:line="47" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="49" pos:column="1">#<cpp:directive pos:line="49" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="51" pos:column="1">#<cpp:directive pos:line="51" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\cocoa\QuartzTextStyleAttribute.h" pos:tabs="8"><comment type="block" format="doxygen" pos:line="1" pos:column="1">/**
+ *  QuartzTextStyleAttribute.h
+ *
+ *  Original Code by Evan Jones on Wed Oct 02 2002.
+ *  Contributors:
+ *  Shane Caraveo, ActiveState
+ *  Bernd Paradies, Adobe
+ *
+ */</comment>
+
+
+<cpp:ifndef pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">ifndef</cpp:directive> <name pos:line="12" pos:column="9">_QUARTZ_TEXT_STYLE_ATTRIBUTE_H</name></cpp:ifndef>
+<cpp:define pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="13" pos:column="9">_QUARTZ_TEXT_STYLE_ATTRIBUTE_H</name></cpp:macro></cpp:define>
+
+<class pos:line="15" pos:column="1">class <name pos:line="15" pos:column="7">QuartzFont</name>
+<block pos:line="16" pos:column="1">{<private type="default" pos:line="16" pos:column="2">
+</private><public pos:line="17" pos:column="1">public:
+    <comment type="block" format="doxygen" pos:line="18" pos:column="5">/** Create a font style from a name. */</comment>
+	<constructor><name pos:line="19" pos:column="9">QuartzFont</name><parameter_list pos:line="19" pos:column="19">( <param><decl><type><specifier pos:line="19" pos:column="21">const</specifier> <name pos:line="19" pos:column="27">char</name><type:modifier pos:line="19" pos:column="31">*</type:modifier></type> <name pos:line="19" pos:column="33">name</name></decl></param>, <param><decl><type><name pos:line="19" pos:column="39">int</name></type> <name pos:line="19" pos:column="43">length</name></decl></param>, <param><decl><type><name pos:line="19" pos:column="51">float</name></type> <name pos:line="19" pos:column="57">size</name></decl></param>, <param><decl><type><name pos:line="19" pos:column="63">bool</name></type> <name pos:line="19" pos:column="68">bold</name></decl></param>, <param><decl><type><name pos:line="19" pos:column="74">bool</name></type> <name pos:line="19" pos:column="79">italic</name></decl></param> )</parameter_list>
+    <block pos:line="20" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="21" pos:column="9">assert</name><argument_list pos:line="21" pos:column="15">( <argument><expr><name pos:line="21" pos:column="17">name</name> <op:operator pos:line="21" pos:column="22">!=</op:operator> <name pos:line="21" pos:column="25">NULL</name> <op:operator pos:line="21" pos:column="30">&amp;&amp;</op:operator> <name pos:line="21" pos:column="33">length</name> <op:operator pos:line="21" pos:column="40">&gt;</op:operator> <lit:literal type="number" pos:line="21" pos:column="42">0</lit:literal> <op:operator pos:line="21" pos:column="44">&amp;&amp;</op:operator> <name><name pos:line="21" pos:column="47">name</name><index pos:line="21" pos:column="51">[<expr><name pos:line="21" pos:column="52">length</name></expr>]</index></name> <op:operator pos:line="21" pos:column="60">==</op:operator> <lit:literal type="char" pos:line="21" pos:column="63">'\0'</lit:literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name pos:line="23" pos:column="17">CFStringRef</name></type> <name pos:line="23" pos:column="29">fontName</name> <init pos:line="23" pos:column="38">= <expr><call><name pos:line="23" pos:column="40">CFStringCreateWithCString</name><argument_list pos:line="23" pos:column="65">(<argument><expr><name pos:line="23" pos:column="66">kCFAllocatorDefault</name></expr></argument>, <argument><expr><name pos:line="23" pos:column="87">name</name></expr></argument>, <argument><expr><name pos:line="23" pos:column="93">kCFStringEncodingMacRoman</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name pos:line="24" pos:column="17">assert</name><argument_list pos:line="24" pos:column="23">(<argument><expr><name pos:line="24" pos:column="24">fontName</name> <op:operator pos:line="24" pos:column="33">!=</op:operator> <name pos:line="24" pos:column="36">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<if pos:line="26" pos:column="17">if <condition pos:line="26" pos:column="20">(<expr><name pos:line="26" pos:column="21">bold</name> <op:operator pos:line="26" pos:column="26">||</op:operator> <name pos:line="26" pos:column="29">italic</name></expr>)</condition><then pos:line="26" pos:column="36">
+		<block pos:line="27" pos:column="17">{
+			<decl_stmt><decl><type><name pos:line="28" pos:column="25">CTFontSymbolicTraits</name></type> <name pos:line="28" pos:column="46">desiredTrait</name> <init pos:line="28" pos:column="59">= <expr><lit:literal type="number" pos:line="28" pos:column="61">0</lit:literal></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="29" pos:column="25">CTFontSymbolicTraits</name></type> <name pos:line="29" pos:column="46">traitMask</name> <init pos:line="29" pos:column="56">= <expr><lit:literal type="number" pos:line="29" pos:column="58">0</lit:literal></expr></init></decl>;</decl_stmt>
+
+			<comment type="line" pos:line="31" pos:column="25">// if bold was specified, add the trait</comment>
+			<if pos:line="32" pos:column="25">if <condition pos:line="32" pos:column="28">(<expr><name pos:line="32" pos:column="29">bold</name></expr>)</condition><then pos:line="32" pos:column="34"> <block pos:line="32" pos:column="35">{
+				<expr_stmt><expr><name pos:line="33" pos:column="33">desiredTrait</name> <op:operator pos:line="33" pos:column="46">|=</op:operator> <name pos:line="33" pos:column="49">kCTFontBoldTrait</name></expr>;</expr_stmt>
+				<expr_stmt><expr><name pos:line="34" pos:column="33">traitMask</name> <op:operator pos:line="34" pos:column="43">|=</op:operator> <name pos:line="34" pos:column="46">kCTFontBoldTrait</name></expr>;</expr_stmt>
+			}</block></then></if>
+
+			<comment type="line" pos:line="37" pos:column="25">// if italic was specified, add the trait</comment>
+			<if pos:line="38" pos:column="25">if <condition pos:line="38" pos:column="28">(<expr><name pos:line="38" pos:column="29">italic</name></expr>)</condition><then pos:line="38" pos:column="36"> <block pos:line="38" pos:column="37">{
+				<expr_stmt><expr><name pos:line="39" pos:column="33">desiredTrait</name> <op:operator pos:line="39" pos:column="46">|=</op:operator> <name pos:line="39" pos:column="49">kCTFontItalicTrait</name></expr>;</expr_stmt>
+				<expr_stmt><expr><name pos:line="40" pos:column="33">traitMask</name> <op:operator pos:line="40" pos:column="43">|=</op:operator> <name pos:line="40" pos:column="46">kCTFontItalicTrait</name></expr>;</expr_stmt>
+			}</block></then></if>
+
+			<comment type="line" pos:line="43" pos:column="25">// create a font and then a copy of it with the sym traits</comment>
+			<decl_stmt><decl><type><name pos:line="44" pos:column="25">CTFontRef</name></type> <name pos:line="44" pos:column="35">iFont</name> <init pos:line="44" pos:column="41">= <expr><call><name><op:operator pos:line="44" pos:column="43">::</op:operator><name pos:line="44" pos:column="45">CTFontCreateWithName</name></name><argument_list pos:line="44" pos:column="65">(<argument><expr><name pos:line="44" pos:column="66">fontName</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="76">size</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="82">NULL</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name pos:line="45" pos:column="25">fontid</name> <op:operator pos:line="45" pos:column="32">=</op:operator> <call><name><op:operator pos:line="45" pos:column="34">::</op:operator><name pos:line="45" pos:column="36">CTFontCreateCopyWithSymbolicTraits</name></name><argument_list pos:line="45" pos:column="70">(<argument><expr><name pos:line="45" pos:column="71">iFont</name></expr></argument>, <argument><expr><name pos:line="45" pos:column="78">size</name></expr></argument>, <argument><expr><name pos:line="45" pos:column="84">NULL</name></expr></argument>, <argument><expr><name pos:line="45" pos:column="90">desiredTrait</name></expr></argument>, <argument><expr><name pos:line="45" pos:column="104">traitMask</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name pos:line="46" pos:column="25">CFRelease</name><argument_list pos:line="46" pos:column="34">(<argument><expr><name pos:line="46" pos:column="35">iFont</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></then>
+		<else pos:line="48" pos:column="17">else
+		<block pos:line="49" pos:column="17">{
+			<comment type="line" pos:line="50" pos:column="25">// create the font, no traits</comment>
+			<expr_stmt><expr><name pos:line="51" pos:column="25">fontid</name> <op:operator pos:line="51" pos:column="32">=</op:operator> <call><name><op:operator pos:line="51" pos:column="34">::</op:operator><name pos:line="51" pos:column="36">CTFontCreateWithName</name></name><argument_list pos:line="51" pos:column="56">(<argument><expr><name pos:line="51" pos:column="57">fontName</name></expr></argument>, <argument><expr><name pos:line="51" pos:column="67">size</name></expr></argument>, <argument><expr><name pos:line="51" pos:column="73">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></else></if>
+    }</block></constructor>
+
+	<function><type><name pos:line="55" pos:column="9">CTFontRef</name></type> <name pos:line="55" pos:column="19">getFontID</name><parameter_list pos:line="55" pos:column="28">()</parameter_list>
+    <block pos:line="56" pos:column="5">{
+        <return pos:line="57" pos:column="9">return <expr><name pos:line="57" pos:column="16">fontid</name></expr>;</return>
+    }</block></function>
+
+</public><private pos:line="60" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="61" pos:column="9">CTFontRef</name></type> <name pos:line="61" pos:column="19">fontid</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="64" pos:column="1">#<cpp:directive pos:line="64" pos:column="2">endif</cpp:directive></cpp:endif>
+
+</unit>

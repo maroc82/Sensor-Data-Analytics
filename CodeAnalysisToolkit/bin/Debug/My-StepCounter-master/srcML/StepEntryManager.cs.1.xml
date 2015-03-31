@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Database\StepEntryManager.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name pos:line="20" pos:column="7">System</name>;</using>
+<using pos:line="21" pos:column="1">using <name><name pos:line="21" pos:column="7">System</name><op:operator pos:line="21" pos:column="13">.</op:operator><name pos:line="21" pos:column="14">Collections</name><op:operator pos:line="21" pos:column="25">.</op:operator><name pos:line="21" pos:column="26">Generic</name></name>;</using>
+
+<namespace pos:line="23" pos:column="1">namespace <name><name pos:line="23" pos:column="11">StepCounter</name><op:operator pos:line="23" pos:column="22">.</op:operator><name pos:line="23" pos:column="23">Database</name></name> <block pos:line="23" pos:column="32">{
+	<comment type="line" pos:line="24" pos:column="9">/// &lt;summary&gt;</comment>
+	<comment type="line" pos:line="25" pos:column="9">/// Manager classes are an abstraction on the data access layers</comment>
+	<comment type="line" pos:line="26" pos:column="9">/// &lt;/summary&gt;</comment>
+	<class><specifier pos:line="27" pos:column="9">public</specifier> <specifier pos:line="27" pos:column="16">static</specifier> class <name pos:line="27" pos:column="29">StepEntryManager</name> <block pos:line="27" pos:column="46">{
+
+		<constructor><specifier pos:line="29" pos:column="17">static</specifier> <name pos:line="29" pos:column="24">StepEntryManager</name> <parameter_list pos:line="29" pos:column="41">()</parameter_list>
+		<block pos:line="30" pos:column="17">{
+		}</block></constructor>
+		
+		<function><type><specifier pos:line="33" pos:column="17">public</specifier> <specifier pos:line="33" pos:column="24">static</specifier> <name pos:line="33" pos:column="31">StepEntry</name></type> <name pos:line="33" pos:column="41">GetStepEntry</name><parameter_list pos:line="33" pos:column="53">(<param><decl><type><name pos:line="33" pos:column="54">DateTime</name></type> <name pos:line="33" pos:column="63">time</name></decl></param>)</parameter_list>
+		<block pos:line="34" pos:column="17">{
+			<return pos:line="35" pos:column="25">return <expr><call><name><name pos:line="35" pos:column="32">StepEntryRepositoryADO</name><op:operator pos:line="35" pos:column="54">.</op:operator><name pos:line="35" pos:column="55">GetStepEntry</name></name><argument_list pos:line="35" pos:column="67">(<argument><expr><name pos:line="35" pos:column="68">time</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+		
+		<function><type><specifier pos:line="38" pos:column="17">public</specifier> <specifier pos:line="38" pos:column="24">static</specifier> <name><name pos:line="38" pos:column="31">IList</name><argument_list pos:line="38" pos:column="36">&lt;<argument><name pos:line="38" pos:column="37">StepEntry</name></argument>&gt;</argument_list></name></type> <name pos:line="38" pos:column="48">GetStepEntries</name> <parameter_list pos:line="38" pos:column="63">()</parameter_list>
+		<block pos:line="39" pos:column="17">{
+			<return pos:line="40" pos:column="25">return <expr><op:operator pos:line="40" pos:column="32">new</op:operator> <call><name><name pos:line="40" pos:column="36">List</name><argument_list pos:line="40" pos:column="40">&lt;<argument><name pos:line="40" pos:column="41">StepEntry</name></argument>&gt;</argument_list></name><argument_list pos:line="40" pos:column="51">(<argument><expr><call><name><name pos:line="40" pos:column="52">StepEntryRepositoryADO</name><op:operator pos:line="40" pos:column="74">.</op:operator><name pos:line="40" pos:column="75">GetStepEntries</name></name><argument_list pos:line="40" pos:column="89">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+		
+		<function><type><specifier pos:line="43" pos:column="17">public</specifier> <specifier pos:line="43" pos:column="24">static</specifier> <name pos:line="43" pos:column="31">int</name></type> <name pos:line="43" pos:column="35">SaveStepEntry</name><parameter_list pos:line="43" pos:column="48">(<param><decl><type><name pos:line="43" pos:column="49">StepEntry</name></type> <name pos:line="43" pos:column="59">item</name></decl></param>)</parameter_list>
+		<block pos:line="44" pos:column="17">{
+			<return pos:line="45" pos:column="25">return <expr><call><name><name pos:line="45" pos:column="32">StepEntryRepositoryADO</name><op:operator pos:line="45" pos:column="54">.</op:operator><name pos:line="45" pos:column="55">SaveStepEntry</name></name><argument_list pos:line="45" pos:column="68">(<argument><expr><name pos:line="45" pos:column="69">item</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+		
+		<function><type><specifier pos:line="48" pos:column="17">public</specifier> <specifier pos:line="48" pos:column="24">static</specifier> <name pos:line="48" pos:column="31">int</name></type> <name pos:line="48" pos:column="35">DeleteStepEntry</name><parameter_list pos:line="48" pos:column="50">(<param><decl><type><name pos:line="48" pos:column="51">int</name></type> <name pos:line="48" pos:column="55">id</name></decl></param>)</parameter_list>
+		<block pos:line="49" pos:column="17">{
+			<return pos:line="50" pos:column="25">return <expr><call><name><name pos:line="50" pos:column="32">StepEntryRepositoryADO</name><op:operator pos:line="50" pos:column="54">.</op:operator><name pos:line="50" pos:column="55">DeleteStepEntry</name></name><argument_list pos:line="50" pos:column="70">(<argument><expr><name pos:line="50" pos:column="71">id</name></expr></argument>)</argument_list></call></expr>;</return>
+		}</block></function>
+	}</block></class>
+}</block></namespace></unit>

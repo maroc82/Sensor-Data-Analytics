@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\AutoComplete.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file AutoComplete.h
+ ** Defines the auto completion list box.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2003 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">AUTOCOMPLETE_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">AUTOCOMPLETE_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<comment type="block" format="doxygen" pos:line="15" pos:column="1">/**
+ */</comment>
+<class pos:line="17" pos:column="1">class <name pos:line="17" pos:column="7">AutoComplete</name> <block pos:line="17" pos:column="20">{<private type="default" pos:line="17" pos:column="21">
+	<decl_stmt><decl><type><name pos:line="18" pos:column="9">bool</name></type> <name pos:line="18" pos:column="14">active</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="19" pos:column="9">char</name></type> <name><name pos:line="19" pos:column="14">stopChars</name><index pos:line="19" pos:column="23">[<expr><lit:literal type="number" pos:line="19" pos:column="24">256</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="20" pos:column="9">char</name></type> <name><name pos:line="20" pos:column="14">fillUpChars</name><index pos:line="20" pos:column="25">[<expr><lit:literal type="number" pos:line="20" pos:column="26">256</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="21" pos:column="9">char</name></type> <name pos:line="21" pos:column="14">separator</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="22" pos:column="9">char</name></type> <name pos:line="22" pos:column="14">typesep</name></decl>;</decl_stmt> <comment type="line" pos:line="22" pos:column="23">// Type seperator</comment>
+
+</private><public pos:line="24" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="25" pos:column="9">bool</name></type> <name pos:line="25" pos:column="14">ignoreCase</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="26" pos:column="9">bool</name></type> <name pos:line="26" pos:column="14">chooseSingle</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="27" pos:column="9">ListBox</name> <type:modifier pos:line="27" pos:column="17">*</type:modifier></type><name pos:line="27" pos:column="18">lb</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="28" pos:column="9">int</name></type> <name pos:line="28" pos:column="13">posStart</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="29" pos:column="9">int</name></type> <name pos:line="29" pos:column="13">startLen</name></decl>;</decl_stmt>
+	<comment type="line" format="doxygen" pos:line="30" pos:column="9">/// Should autocompletion be canceled if editor's currentPos &lt;= startPos?</comment>
+	<decl_stmt><decl><type><name pos:line="31" pos:column="9">bool</name></type> <name pos:line="31" pos:column="14">cancelAtStartPos</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="32" pos:column="9">bool</name></type> <name pos:line="32" pos:column="14">autoHide</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="33" pos:column="9">bool</name></type> <name pos:line="33" pos:column="14">dropRestOfWord</name></decl>;</decl_stmt>
+
+	<constructor_decl><name pos:line="35" pos:column="9">AutoComplete</name><parameter_list pos:line="35" pos:column="21">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="36" pos:column="9">~<name pos:line="36" pos:column="10">AutoComplete</name></name><parameter_list pos:line="36" pos:column="22">()</parameter_list>;</destructor_decl>
+
+	<comment type="line" format="doxygen" pos:line="38" pos:column="9">/// Is the auto completion list displayed?</comment>
+	<function_decl><type><name pos:line="39" pos:column="9">bool</name></type> <name pos:line="39" pos:column="14">Active</name><parameter_list pos:line="39" pos:column="20">()</parameter_list> <specifier pos:line="39" pos:column="23">const</specifier>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="41" pos:column="9">/// Display the auto completion list positioned to be near a character position</comment>
+	<function_decl><type><name pos:line="42" pos:column="9">void</name></type> <name pos:line="42" pos:column="14">Start</name><parameter_list pos:line="42" pos:column="19">(<param><decl><type><name pos:line="42" pos:column="20">Window</name> <type:modifier pos:line="42" pos:column="27">&amp;</type:modifier></type><name pos:line="42" pos:column="28">parent</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="36">int</name></type> <name pos:line="42" pos:column="40">ctrlID</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="48">int</name></type> <name pos:line="42" pos:column="52">position</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="62">Point</name></type> <name pos:line="42" pos:column="68">location</name></decl></param>,
+		<param><decl><type><name pos:line="43" pos:column="17">int</name></type> <name pos:line="43" pos:column="21">startLen_</name></decl></param>, <param><decl><type><name pos:line="43" pos:column="32">int</name></type> <name pos:line="43" pos:column="36">lineHeight</name></decl></param>, <param><decl><type><name pos:line="43" pos:column="48">bool</name></type> <name pos:line="43" pos:column="53">unicodeMode</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="45" pos:column="9">/// The stop chars are characters which, when typed, cause the auto completion list to disappear</comment>
+	<function_decl><type><name pos:line="46" pos:column="9">void</name></type> <name pos:line="46" pos:column="14">SetStopChars</name><parameter_list pos:line="46" pos:column="26">(<param><decl><type><specifier pos:line="46" pos:column="27">const</specifier> <name pos:line="46" pos:column="33">char</name> <type:modifier pos:line="46" pos:column="38">*</type:modifier></type><name pos:line="46" pos:column="39">stopChars_</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="47" pos:column="9">bool</name></type> <name pos:line="47" pos:column="14">IsStopChar</name><parameter_list pos:line="47" pos:column="24">(<param><decl><type><name pos:line="47" pos:column="25">char</name></type> <name pos:line="47" pos:column="30">ch</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="49" pos:column="9">/// The fillup chars are characters which, when typed, fill up the selected word</comment>
+	<function_decl><type><name pos:line="50" pos:column="9">void</name></type> <name pos:line="50" pos:column="14">SetFillUpChars</name><parameter_list pos:line="50" pos:column="28">(<param><decl><type><specifier pos:line="50" pos:column="29">const</specifier> <name pos:line="50" pos:column="35">char</name> <type:modifier pos:line="50" pos:column="40">*</type:modifier></type><name pos:line="50" pos:column="41">fillUpChars_</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="51" pos:column="9">bool</name></type> <name pos:line="51" pos:column="14">IsFillUpChar</name><parameter_list pos:line="51" pos:column="26">(<param><decl><type><name pos:line="51" pos:column="27">char</name></type> <name pos:line="51" pos:column="32">ch</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="53" pos:column="9">/// The separator character is used when interpreting the list in SetList</comment>
+	<function_decl><type><name pos:line="54" pos:column="9">void</name></type> <name pos:line="54" pos:column="14">SetSeparator</name><parameter_list pos:line="54" pos:column="26">(<param><decl><type><name pos:line="54" pos:column="27">char</name></type> <name pos:line="54" pos:column="32">separator_</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="55" pos:column="9">char</name></type> <name pos:line="55" pos:column="14">GetSeparator</name><parameter_list pos:line="55" pos:column="26">()</parameter_list> <specifier pos:line="55" pos:column="29">const</specifier>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="57" pos:column="9">/// The typesep character is used for seperating the word from the type</comment>
+	<function_decl><type><name pos:line="58" pos:column="9">void</name></type> <name pos:line="58" pos:column="14">SetTypesep</name><parameter_list pos:line="58" pos:column="24">(<param><decl><type><name pos:line="58" pos:column="25">char</name></type> <name pos:line="58" pos:column="30">separator_</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="59" pos:column="9">char</name></type> <name pos:line="59" pos:column="14">GetTypesep</name><parameter_list pos:line="59" pos:column="24">()</parameter_list> <specifier pos:line="59" pos:column="27">const</specifier>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="61" pos:column="9">/// The list string contains a sequence of words separated by the separator character</comment>
+	<function_decl><type><name pos:line="62" pos:column="9">void</name></type> <name pos:line="62" pos:column="14">SetList</name><parameter_list pos:line="62" pos:column="21">(<param><decl><type><specifier pos:line="62" pos:column="22">const</specifier> <name pos:line="62" pos:column="28">char</name> <type:modifier pos:line="62" pos:column="33">*</type:modifier></type><name pos:line="62" pos:column="34">list</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="64" pos:column="9">void</name></type> <name pos:line="64" pos:column="14">Show</name><parameter_list pos:line="64" pos:column="18">(<param><decl><type><name pos:line="64" pos:column="19">bool</name></type> <name pos:line="64" pos:column="24">show</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="65" pos:column="9">void</name></type> <name pos:line="65" pos:column="14">Cancel</name><parameter_list pos:line="65" pos:column="20">()</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="67" pos:column="9">/// Move the current list element by delta, scrolling appropriately</comment>
+	<function_decl><type><name pos:line="68" pos:column="9">void</name></type> <name pos:line="68" pos:column="14">Move</name><parameter_list pos:line="68" pos:column="18">(<param><decl><type><name pos:line="68" pos:column="19">int</name></type> <name pos:line="68" pos:column="23">delta</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="70" pos:column="9">/// Select a list element that starts with word as the current element</comment>
+	<function_decl><type><name pos:line="71" pos:column="9">void</name></type> <name pos:line="71" pos:column="14">Select</name><parameter_list pos:line="71" pos:column="20">(<param><decl><type><specifier pos:line="71" pos:column="21">const</specifier> <name pos:line="71" pos:column="27">char</name> <type:modifier pos:line="71" pos:column="32">*</type:modifier></type><name pos:line="71" pos:column="33">word</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="74" pos:column="1">#<cpp:directive pos:line="74" pos:column="2">ifdef</cpp:directive> <name pos:line="74" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="76" pos:column="1">#<cpp:directive pos:line="76" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="78" pos:column="1">#<cpp:directive pos:line="78" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

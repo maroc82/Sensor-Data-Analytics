@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\lastRecentFileList.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">LASTRECENTFILELIST_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">LASTRECENTFILELIST_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">PARAMETERS_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"Parameters.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="34" pos:column="8">//PARAMETERS_H</comment>
+
+<struct pos:line="36" pos:column="1">struct <name pos:line="36" pos:column="8">RecentItem</name> <block pos:line="36" pos:column="19">{<public type="default" pos:line="36" pos:column="20">
+	<decl_stmt><decl><type><name pos:line="37" pos:column="9">int</name></type> <name pos:line="37" pos:column="13">_id</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="38" pos:column="9">generic_string</name></type> <name pos:line="38" pos:column="24">_name</name></decl>;</decl_stmt>
+	<constructor><name pos:line="39" pos:column="9">RecentItem</name><parameter_list pos:line="39" pos:column="19">(<param><decl><type><specifier pos:line="39" pos:column="20">const</specifier> <name pos:line="39" pos:column="26">TCHAR</name> <type:modifier pos:line="39" pos:column="32">*</type:modifier></type> <name pos:line="39" pos:column="34">name</name></decl></param>)</parameter_list> <member_list pos:line="39" pos:column="40">: <call><name pos:line="39" pos:column="42">_name</name><argument_list pos:line="39" pos:column="47">(<argument><expr><name pos:line="39" pos:column="48">name</name></expr></argument>)</argument_list></call> </member_list><block pos:line="39" pos:column="54">{}</block></constructor><empty_stmt pos:line="39" pos:column="56">;</empty_stmt>
+</public>}</block>;</struct>
+
+<typedef pos:line="42" pos:column="1">typedef <type><name><name pos:line="42" pos:column="9">std</name><op:operator pos:line="42" pos:column="12">::</op:operator><name><name pos:line="42" pos:column="14">deque</name><argument_list pos:line="42" pos:column="19">&lt;<argument><expr><name pos:line="42" pos:column="20">RecentItem</name></expr></argument>&gt;</argument_list></name></name></type> <name pos:line="42" pos:column="32">recentList</name>;</typedef>
+
+<class pos:line="44" pos:column="1">class <name pos:line="44" pos:column="7">LastRecentFileList</name>
+<block pos:line="45" pos:column="1">{<private type="default" pos:line="45" pos:column="2">
+</private><public pos:line="46" pos:column="1">public :
+	<constructor><name pos:line="47" pos:column="9">LastRecentFileList</name><parameter_list pos:line="47" pos:column="27">()</parameter_list> <member_list pos:line="47" pos:column="30">: <call><name pos:line="47" pos:column="32">_hasSeparators</name><argument_list pos:line="47" pos:column="46">(<argument><expr><lit:literal type="boolean" pos:line="47" pos:column="47">false</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="53">,</op:operator> <call><name pos:line="47" pos:column="55">_size</name><argument_list pos:line="47" pos:column="60">(<argument><expr><lit:literal type="number" pos:line="47" pos:column="61">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="63">,</op:operator> <call><name pos:line="47" pos:column="65">_locked</name><argument_list pos:line="47" pos:column="72">(<argument><expr><lit:literal type="boolean" pos:line="47" pos:column="73">false</lit:literal></expr></argument>)</argument_list></call> </member_list><block pos:line="47" pos:column="80">{
+		<expr_stmt><expr><name pos:line="48" pos:column="17">_userMax</name> <op:operator pos:line="48" pos:column="26">=</op:operator> <op:operator pos:line="48" pos:column="28">(</op:operator><call><name><name pos:line="48" pos:column="29">NppParameters</name><op:operator pos:line="48" pos:column="42">::</op:operator><name pos:line="48" pos:column="44">getInstance</name></name><argument_list pos:line="48" pos:column="55">()</argument_list></call><op:operator pos:line="48" pos:column="57">)</op:operator><op:operator pos:line="48" pos:column="58">-&gt;</op:operator><call><name pos:line="48" pos:column="60">getNbMaxRecentFile</name><argument_list pos:line="48" pos:column="78">()</argument_list></call></expr>;</expr_stmt>
+	}</block></constructor><empty_stmt pos:line="49" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="51" pos:column="9">void</name></type> <name pos:line="51" pos:column="14">initMenu</name><parameter_list pos:line="51" pos:column="22">(<param><decl><type><name pos:line="51" pos:column="23">HMENU</name></type> <name pos:line="51" pos:column="29">hMenu</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="36">int</name></type> <name pos:line="51" pos:column="40">idBase</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="48">int</name></type> <name pos:line="51" pos:column="52">posBase</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="61">bool</name></type> <name pos:line="51" pos:column="66">doSubMenu</name> <init pos:line="51" pos:column="76">= <expr><lit:literal type="boolean" pos:line="51" pos:column="78">false</lit:literal></expr></init></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="52" pos:column="9">void</name></type> <name pos:line="52" pos:column="14">switchMode</name><parameter_list pos:line="52" pos:column="24">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="53" pos:column="9">void</name></type> <name pos:line="53" pos:column="14">updateMenu</name><parameter_list pos:line="53" pos:column="24">()</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="55" pos:column="9">void</name></type> <name pos:line="55" pos:column="14">add</name><parameter_list pos:line="55" pos:column="17">(<param><decl><type><specifier pos:line="55" pos:column="18">const</specifier> <name pos:line="55" pos:column="24">TCHAR</name> <type:modifier pos:line="55" pos:column="30">*</type:modifier></type><name pos:line="55" pos:column="31">fn</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="56" pos:column="9">void</name></type> <name pos:line="56" pos:column="14">remove</name><parameter_list pos:line="56" pos:column="20">(<param><decl><type><specifier pos:line="56" pos:column="21">const</specifier> <name pos:line="56" pos:column="27">TCHAR</name> <type:modifier pos:line="56" pos:column="33">*</type:modifier></type><name pos:line="56" pos:column="34">fn</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="57" pos:column="9">void</name></type> <name pos:line="57" pos:column="14">remove</name><parameter_list pos:line="57" pos:column="20">(<param><decl><type><name pos:line="57" pos:column="21">int</name></type> <name pos:line="57" pos:column="25">index</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="58" pos:column="9">void</name></type> <name pos:line="58" pos:column="14">clear</name><parameter_list pos:line="58" pos:column="19">()</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="60" pos:column="9">int</name></type> <name pos:line="60" pos:column="13">getSize</name><parameter_list pos:line="60" pos:column="20">()</parameter_list> <block pos:line="60" pos:column="23">{
+		<return pos:line="61" pos:column="17">return <expr><name pos:line="61" pos:column="24">_size</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="62" pos:column="10">;</empty_stmt>
+
+
+	<function><type><name pos:line="65" pos:column="9">int</name></type> <name pos:line="65" pos:column="13">getMaxNbLRF</name><parameter_list pos:line="65" pos:column="24">()</parameter_list> <specifier pos:line="65" pos:column="27">const</specifier> <block pos:line="65" pos:column="33">{
+		<return pos:line="66" pos:column="17">return <expr><name pos:line="66" pos:column="24">NB_MAX_LRF_FILE</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="67" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="69" pos:column="9">int</name></type> <name pos:line="69" pos:column="13">getUserMaxNbLRF</name><parameter_list pos:line="69" pos:column="28">()</parameter_list> <specifier pos:line="69" pos:column="31">const</specifier> <block pos:line="69" pos:column="37">{
+		<return pos:line="70" pos:column="17">return <expr><name pos:line="70" pos:column="24">_userMax</name></expr>;</return>
+	}</block></function><empty_stmt pos:line="71" pos:column="10">;</empty_stmt>
+	
+	<function_decl><type><name pos:line="73" pos:column="9">generic_string</name> <type:modifier pos:line="73" pos:column="24">&amp;</type:modifier></type> <name pos:line="73" pos:column="26">getItem</name><parameter_list pos:line="73" pos:column="33">(<param><decl><type><name pos:line="73" pos:column="34">int</name></type> <name pos:line="73" pos:column="38">id</name></decl></param>)</parameter_list>;</function_decl>	<comment type="line" pos:line="73" pos:column="49">//use menu id</comment>
+	<function_decl><type><name pos:line="74" pos:column="9">generic_string</name> <type:modifier pos:line="74" pos:column="24">&amp;</type:modifier></type> <name pos:line="74" pos:column="26">getIndex</name><parameter_list pos:line="74" pos:column="34">(<param><decl><type><name pos:line="74" pos:column="35">int</name></type> <name pos:line="74" pos:column="39">index</name></decl></param>)</parameter_list>;</function_decl>	<comment type="line" pos:line="74" pos:column="49">//use menu id</comment>
+
+	<function_decl><type><name pos:line="76" pos:column="9">void</name></type> <name pos:line="76" pos:column="14">setUserMaxNbLRF</name><parameter_list pos:line="76" pos:column="29">(<param><decl><type><name pos:line="76" pos:column="30">int</name></type> <name pos:line="76" pos:column="34">size</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="78" pos:column="9">void</name></type> <name pos:line="78" pos:column="14">saveLRFL</name><parameter_list pos:line="78" pos:column="22">()</parameter_list>;</function_decl>
+
+	<function><type><name pos:line="80" pos:column="9">void</name></type> <name pos:line="80" pos:column="14">setLock</name><parameter_list pos:line="80" pos:column="21">(<param><decl><type><name pos:line="80" pos:column="22">bool</name></type> <name pos:line="80" pos:column="27">lock</name></decl></param>)</parameter_list> <block pos:line="80" pos:column="33">{
+		<expr_stmt><expr><name pos:line="81" pos:column="17">_locked</name> <op:operator pos:line="81" pos:column="25">=</op:operator> <name pos:line="81" pos:column="27">lock</name></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="82" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="84" pos:column="9">void</name></type> <name pos:line="84" pos:column="14">setLangEncoding</name><parameter_list pos:line="84" pos:column="29">(<param><decl><type><name pos:line="84" pos:column="30">int</name></type> <name pos:line="84" pos:column="34">nativeLangEncoding</name></decl></param>)</parameter_list> <block pos:line="84" pos:column="54">{
+		<expr_stmt><expr><name pos:line="85" pos:column="17">_nativeLangEncoding</name> <op:operator pos:line="85" pos:column="37">=</op:operator> <name pos:line="85" pos:column="39">nativeLangEncoding</name></expr>;</expr_stmt>
+	}</block></function><empty_stmt pos:line="86" pos:column="10">;</empty_stmt>
+
+	<function><type><name pos:line="88" pos:column="9">bool</name></type> <name pos:line="88" pos:column="14">isSubMenuMode</name><parameter_list pos:line="88" pos:column="27">()</parameter_list> <specifier pos:line="88" pos:column="30">const</specifier> <block pos:line="88" pos:column="36">{
+		<return pos:line="89" pos:column="17">return <expr><op:operator pos:line="89" pos:column="24">(</op:operator><name pos:line="89" pos:column="25">_hParentMenu</name> <op:operator pos:line="89" pos:column="38">!=</op:operator> <name pos:line="89" pos:column="41">NULL</name><op:operator pos:line="89" pos:column="45">)</op:operator></expr>;</return>
+	}</block></function><empty_stmt pos:line="90" pos:column="10">;</empty_stmt>
+
+</public><private pos:line="92" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="93" pos:column="9">recentList</name></type> <name pos:line="93" pos:column="20">_lrfl</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="94" pos:column="9">int</name></type> <name pos:line="94" pos:column="13">_userMax</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="95" pos:column="9">int</name></type> <name pos:line="95" pos:column="13">_size</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="96" pos:column="9">int</name></type> <name pos:line="96" pos:column="13">_nativeLangEncoding</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:line="98" pos:column="9">// For the menu</comment>
+	<decl_stmt><decl><type><name pos:line="99" pos:column="9">HMENU</name></type> <name pos:line="99" pos:column="15">_hParentMenu</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="100" pos:column="9">HMENU</name></type> <name pos:line="100" pos:column="15">_hMenu</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="101" pos:column="9">int</name></type> <name pos:line="101" pos:column="13">_posBase</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="102" pos:column="9">int</name></type> <name pos:line="102" pos:column="13">_idBase</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="103" pos:column="9">bool</name></type> <name><name pos:line="103" pos:column="14">_idFreeArray</name><index pos:line="103" pos:column="26">[<expr><name pos:line="103" pos:column="27">NB_MAX_LRF_FILE</name></expr>]</index></name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="104" pos:column="9">bool</name></type> <name pos:line="104" pos:column="14">_hasSeparators</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="105" pos:column="9">bool</name></type> <name pos:line="105" pos:column="14">_locked</name></decl>;</decl_stmt>
+
+	<function_decl><type><name pos:line="107" pos:column="9">int</name></type> <name pos:line="107" pos:column="13">find</name><parameter_list pos:line="107" pos:column="17">(<param><decl><type><specifier pos:line="107" pos:column="18">const</specifier> <name pos:line="107" pos:column="24">TCHAR</name> <type:modifier pos:line="107" pos:column="30">*</type:modifier></type><name pos:line="107" pos:column="31">fn</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="109" pos:column="9">int</name></type> <name pos:line="109" pos:column="13">popFirstAvailableID</name><parameter_list pos:line="109" pos:column="32">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="110" pos:column="9">void</name></type> <name pos:line="110" pos:column="14">setAvailable</name><parameter_list pos:line="110" pos:column="26">(<param><decl><type><name pos:line="110" pos:column="27">int</name></type> <name pos:line="110" pos:column="31">id</name></decl></param>)</parameter_list>;</function_decl>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="113" pos:column="1">#<cpp:directive pos:line="113" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="113" pos:column="8">//LASTRECENTFILELIST_H</comment>
+</unit>

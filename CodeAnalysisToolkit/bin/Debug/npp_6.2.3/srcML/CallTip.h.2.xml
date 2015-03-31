@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\CallTip.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file CallTip.h
+ ** Interface to the call tip control.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2001 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">CALLTIP_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">CALLTIP_H</name></cpp:macro></cpp:define>
+
+<cpp:ifdef pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">ifdef</cpp:directive> <name pos:line="11" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<namespace pos:line="12" pos:column="1">namespace <name pos:line="12" pos:column="11">Scintilla</name> <block pos:line="12" pos:column="21">{
+<cpp:endif pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<comment type="block" format="doxygen" pos:line="15" pos:column="1">/**
+ */</comment>
+<class pos:line="17" pos:column="1">class <name pos:line="17" pos:column="7">CallTip</name> <block pos:line="17" pos:column="15">{<private type="default" pos:line="17" pos:column="16">
+	<decl_stmt><decl><type><name pos:line="18" pos:column="9">int</name></type> <name pos:line="18" pos:column="13">startHighlight</name></decl>;</decl_stmt>    <comment type="line" pos:line="18" pos:column="32">// character offset to start and...</comment>
+	<decl_stmt><decl><type><name pos:line="19" pos:column="9">int</name></type> <name pos:line="19" pos:column="13">endHighlight</name></decl>;</decl_stmt>      <comment type="line" pos:line="19" pos:column="32">// ...end of highlighted text</comment>
+	<decl_stmt><decl><type><name pos:line="20" pos:column="9">char</name> <type:modifier pos:line="20" pos:column="14">*</type:modifier></type><name pos:line="20" pos:column="15">val</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="21" pos:column="9">Font</name></type> <name pos:line="21" pos:column="14">font</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="22" pos:column="9">PRectangle</name></type> <name pos:line="22" pos:column="20">rectUp</name></decl>;</decl_stmt>      <comment type="line" pos:line="22" pos:column="33">// rectangle of last up angle in the tip</comment>
+	<decl_stmt><decl><type><name pos:line="23" pos:column="9">PRectangle</name></type> <name pos:line="23" pos:column="20">rectDown</name></decl>;</decl_stmt>    <comment type="line" pos:line="23" pos:column="33">// rectangle of last down arrow in the tip</comment>
+	<decl_stmt><decl><type><name pos:line="24" pos:column="9">int</name></type> <name pos:line="24" pos:column="13">lineHeight</name></decl>;</decl_stmt>         <comment type="line" pos:line="24" pos:column="33">// vertical line spacing</comment>
+	<decl_stmt><decl><type><name pos:line="25" pos:column="9">int</name></type> <name pos:line="25" pos:column="13">offsetMain</name></decl>;</decl_stmt>         <comment type="line" pos:line="25" pos:column="33">// The alignment point of the call tip</comment>
+	<decl_stmt><decl><type><name pos:line="26" pos:column="9">int</name></type> <name pos:line="26" pos:column="13">tabSize</name></decl>;</decl_stmt>            <comment type="line" pos:line="26" pos:column="33">// Tab size in pixels, &lt;=0 no TAB expand</comment>
+	<decl_stmt><decl><type><name pos:line="27" pos:column="9">bool</name></type> <name pos:line="27" pos:column="14">useStyleCallTip</name></decl>;</decl_stmt>   <comment type="line" pos:line="27" pos:column="33">// if true, STYLE_CALLTIP should be used</comment>
+
+	<comment type="line" pos:line="29" pos:column="9">// Private so CallTip objects can not be copied</comment>
+	<constructor_decl><name pos:line="30" pos:column="9">CallTip</name><parameter_list pos:line="30" pos:column="16">(<param><decl><type><specifier pos:line="30" pos:column="17">const</specifier></type> <name pos:line="30" pos:column="23">CallTip</name> <type:modifier pos:line="30" pos:column="31">&amp;</type:modifier></decl></param>)</parameter_list>;</constructor_decl>
+	<function_decl><type><name pos:line="31" pos:column="9">CallTip</name> <type:modifier pos:line="31" pos:column="17">&amp;</type:modifier></type><name pos:line="31" pos:column="18">operator=</name><parameter_list pos:line="31" pos:column="27">(<param><decl><type><specifier pos:line="31" pos:column="28">const</specifier></type> <name pos:line="31" pos:column="34">CallTip</name> <type:modifier pos:line="31" pos:column="42">&amp;</type:modifier></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="32" pos:column="9">void</name></type> <name pos:line="32" pos:column="14">DrawChunk</name><parameter_list pos:line="32" pos:column="23">(<param><decl><type><name pos:line="32" pos:column="24">Surface</name> <type:modifier pos:line="32" pos:column="32">*</type:modifier></type><name pos:line="32" pos:column="33">surface</name></decl></param>, <param><decl><type><name pos:line="32" pos:column="42">int</name> <type:modifier pos:line="32" pos:column="46">&amp;</type:modifier></type><name pos:line="32" pos:column="47">x</name></decl></param>, <param><decl><type><specifier pos:line="32" pos:column="50">const</specifier> <name pos:line="32" pos:column="56">char</name> <type:modifier pos:line="32" pos:column="61">*</type:modifier></type><name pos:line="32" pos:column="62">s</name></decl></param>,
+		<param><decl><type><name pos:line="33" pos:column="17">int</name></type> <name pos:line="33" pos:column="21">posStart</name></decl></param>, <param><decl><type><name pos:line="33" pos:column="31">int</name></type> <name pos:line="33" pos:column="35">posEnd</name></decl></param>, <param><decl><type><name pos:line="33" pos:column="43">int</name></type> <name pos:line="33" pos:column="47">ytext</name></decl></param>, <param><decl><type><name pos:line="33" pos:column="54">PRectangle</name></type> <name pos:line="33" pos:column="65">rcClient</name></decl></param>,
+		<param><decl><type><name pos:line="34" pos:column="17">bool</name></type> <name pos:line="34" pos:column="22">highlight</name></decl></param>, <param><decl><type><name pos:line="34" pos:column="33">bool</name></type> <name pos:line="34" pos:column="38">draw</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="35" pos:column="9">int</name></type> <name pos:line="35" pos:column="13">PaintContents</name><parameter_list pos:line="35" pos:column="26">(<param><decl><type><name pos:line="35" pos:column="27">Surface</name> <type:modifier pos:line="35" pos:column="35">*</type:modifier></type><name pos:line="35" pos:column="36">surfaceWindow</name></decl></param>, <param><decl><type><name pos:line="35" pos:column="51">bool</name></type> <name pos:line="35" pos:column="56">draw</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="36" pos:column="9">bool</name></type> <name pos:line="36" pos:column="14">IsTabCharacter</name><parameter_list pos:line="36" pos:column="28">(<param><decl><type><name pos:line="36" pos:column="29">char</name></type> <name pos:line="36" pos:column="34">c</name></decl></param>)</parameter_list> <specifier pos:line="36" pos:column="37">const</specifier>;</function_decl>
+	<function_decl><type><name pos:line="37" pos:column="9">int</name></type> <name pos:line="37" pos:column="13">NextTabPos</name><parameter_list pos:line="37" pos:column="23">(<param><decl><type><name pos:line="37" pos:column="24">int</name></type> <name pos:line="37" pos:column="28">x</name></decl></param>)</parameter_list>;</function_decl>
+
+</private><public pos:line="39" pos:column="1">public:
+	<decl_stmt><decl><type><name pos:line="40" pos:column="9">Window</name></type> <name pos:line="40" pos:column="16">wCallTip</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="41" pos:column="9">Window</name></type> <name pos:line="41" pos:column="16">wDraw</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="42" pos:column="9">bool</name></type> <name pos:line="42" pos:column="14">inCallTipMode</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="43" pos:column="9">int</name></type> <name pos:line="43" pos:column="13">posStartCallTip</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="44" pos:column="9">ColourPair</name></type> <name pos:line="44" pos:column="20">colourBG</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="45" pos:column="9">ColourPair</name></type> <name pos:line="45" pos:column="20">colourUnSel</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="46" pos:column="9">ColourPair</name></type> <name pos:line="46" pos:column="20">colourSel</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="47" pos:column="9">ColourPair</name></type> <name pos:line="47" pos:column="20">colourShade</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="48" pos:column="9">ColourPair</name></type> <name pos:line="48" pos:column="20">colourLight</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="49" pos:column="9">int</name></type> <name pos:line="49" pos:column="13">codePage</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="50" pos:column="9">int</name></type> <name pos:line="50" pos:column="13">clickPlace</name></decl>;</decl_stmt>
+
+	<constructor_decl><name pos:line="52" pos:column="9">CallTip</name><parameter_list pos:line="52" pos:column="16">()</parameter_list>;</constructor_decl>
+	<destructor_decl><name pos:line="53" pos:column="9">~<name pos:line="53" pos:column="10">CallTip</name></name><parameter_list pos:line="53" pos:column="17">()</parameter_list>;</destructor_decl>
+
+	<comment type="line" format="doxygen" pos:line="55" pos:column="9">/// Claim or accept palette entries for the colours required to paint a calltip.</comment>
+	<function_decl><type><name pos:line="56" pos:column="9">void</name></type> <name pos:line="56" pos:column="14">RefreshColourPalette</name><parameter_list pos:line="56" pos:column="34">(<param><decl><type><name pos:line="56" pos:column="35">Palette</name> <type:modifier pos:line="56" pos:column="43">&amp;</type:modifier></type><name pos:line="56" pos:column="44">pal</name></decl></param>, <param><decl><type><name pos:line="56" pos:column="49">bool</name></type> <name pos:line="56" pos:column="54">want</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="58" pos:column="9">void</name></type> <name pos:line="58" pos:column="14">PaintCT</name><parameter_list pos:line="58" pos:column="21">(<param><decl><type><name pos:line="58" pos:column="22">Surface</name> <type:modifier pos:line="58" pos:column="30">*</type:modifier></type><name pos:line="58" pos:column="31">surfaceWindow</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="60" pos:column="9">void</name></type> <name pos:line="60" pos:column="14">MouseClick</name><parameter_list pos:line="60" pos:column="24">(<param><decl><type><name pos:line="60" pos:column="25">Point</name></type> <name pos:line="60" pos:column="31">pt</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="62" pos:column="9">/// Setup the calltip and return a rectangle of the area required.</comment>
+	<function_decl><type><name pos:line="63" pos:column="9">PRectangle</name></type> <name pos:line="63" pos:column="20">CallTipStart</name><parameter_list pos:line="63" pos:column="32">(<param><decl><type><name pos:line="63" pos:column="33">int</name></type> <name pos:line="63" pos:column="37">pos</name></decl></param>, <param><decl><type><name pos:line="63" pos:column="42">Point</name></type> <name pos:line="63" pos:column="48">pt</name></decl></param>, <param><decl><type><specifier pos:line="63" pos:column="52">const</specifier> <name pos:line="63" pos:column="58">char</name> <type:modifier pos:line="63" pos:column="63">*</type:modifier></type><name pos:line="63" pos:column="64">defn</name></decl></param>,
+		<param><decl><type><specifier pos:line="64" pos:column="17">const</specifier> <name pos:line="64" pos:column="23">char</name> <type:modifier pos:line="64" pos:column="28">*</type:modifier></type><name pos:line="64" pos:column="29">faceName</name></decl></param>, <param><decl><type><name pos:line="64" pos:column="39">int</name></type> <name pos:line="64" pos:column="43">size</name></decl></param>, <param><decl><type><name pos:line="64" pos:column="49">int</name></type> <name pos:line="64" pos:column="53">codePage_</name></decl></param>,
+		<param><decl><type><name pos:line="65" pos:column="17">int</name></type> <name pos:line="65" pos:column="21">characterSet</name></decl></param>, <param><decl><type><name pos:line="65" pos:column="35">Window</name> <type:modifier pos:line="65" pos:column="42">&amp;</type:modifier></type><name pos:line="65" pos:column="43">wParent</name></decl></param>)</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="67" pos:column="9">void</name></type> <name pos:line="67" pos:column="14">CallTipCancel</name><parameter_list pos:line="67" pos:column="27">()</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="69" pos:column="9">/// Set a range of characters to be displayed in a highlight style.</comment>
+	<comment type="line" format="doxygen" pos:line="70" pos:column="9">/// Commonly used to highlight the current parameter.</comment>
+	<function_decl><type><name pos:line="71" pos:column="9">void</name></type> <name pos:line="71" pos:column="14">SetHighlight</name><parameter_list pos:line="71" pos:column="26">(<param><decl><type><name pos:line="71" pos:column="27">int</name></type> <name pos:line="71" pos:column="31">start</name></decl></param>, <param><decl><type><name pos:line="71" pos:column="38">int</name></type> <name pos:line="71" pos:column="42">end</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="73" pos:column="9">/// Set the tab size in pixels for the call tip. 0 or -ve means no tab expand.</comment>
+	<function_decl><type><name pos:line="74" pos:column="9">void</name></type> <name pos:line="74" pos:column="14">SetTabSize</name><parameter_list pos:line="74" pos:column="24">(<param><decl><type><name pos:line="74" pos:column="25">int</name></type> <name pos:line="74" pos:column="29">tabSz</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" format="doxygen" pos:line="76" pos:column="9">/// Used to determine which STYLE_xxxx to use for call tip information</comment>
+	<function><type><name pos:line="77" pos:column="9">bool</name></type> <name pos:line="77" pos:column="14">UseStyleCallTip</name><parameter_list pos:line="77" pos:column="29">()</parameter_list> <specifier pos:line="77" pos:column="32">const</specifier> <block pos:line="77" pos:column="38">{ <return pos:line="77" pos:column="40">return <expr><name pos:line="77" pos:column="47">useStyleCallTip</name></expr>;</return>}</block></function>
+
+	<comment type="line" pos:line="79" pos:column="9">// Modify foreground and background colours</comment>
+	<function_decl><type><name pos:line="80" pos:column="9">void</name></type> <name pos:line="80" pos:column="14">SetForeBack</name><parameter_list pos:line="80" pos:column="25">(<param><decl><type><specifier pos:line="80" pos:column="26">const</specifier> <name pos:line="80" pos:column="32">ColourPair</name> <type:modifier pos:line="80" pos:column="43">&amp;</type:modifier></type><name pos:line="80" pos:column="44">fore</name></decl></param>, <param><decl><type><specifier pos:line="80" pos:column="50">const</specifier> <name pos:line="80" pos:column="56">ColourPair</name> <type:modifier pos:line="80" pos:column="67">&amp;</type:modifier></type><name pos:line="80" pos:column="68">back</name></decl></param>)</parameter_list>;</function_decl>
+</public>}</block>;</class>
+
+<cpp:ifdef pos:line="83" pos:column="1">#<cpp:directive pos:line="83" pos:column="2">ifdef</cpp:directive> <name pos:line="83" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+}</block></namespace>
+<cpp:endif pos:line="85" pos:column="1">#<cpp:directive pos:line="85" pos:column="2">endif</cpp:directive></cpp:endif>
+
+<cpp:endif pos:line="87" pos:column="1">#<cpp:directive pos:line="87" pos:column="2">endif</cpp:directive></cpp:endif>
+</unit>

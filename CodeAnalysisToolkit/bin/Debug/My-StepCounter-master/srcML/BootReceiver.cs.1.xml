@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Services\BootReceiver.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name><name pos:line="20" pos:column="7">Android</name><op:operator pos:line="20" pos:column="14">.</op:operator><name pos:line="20" pos:column="15">App</name></name>;</using>
+<using pos:line="21" pos:column="1">using <name><name pos:line="21" pos:column="7">Android</name><op:operator pos:line="21" pos:column="14">.</op:operator><name pos:line="21" pos:column="15">Content</name></name>;</using>
+
+<namespace pos:line="23" pos:column="1">namespace <name><name pos:line="23" pos:column="11">StepCounter</name><op:operator pos:line="23" pos:column="22">.</op:operator><name pos:line="23" pos:column="23">Services</name></name>
+<block pos:line="24" pos:column="1">{
+	<decl_stmt><decl><type><attribute pos:line="25" pos:column="9">[<expr><name pos:line="25" pos:column="10">BroadcastReceiver</name></expr>]</attribute></type>
+	[<name pos:line="26" pos:column="10">IntentFilter</name><argument_list pos:line="26" pos:column="22">(<argument><expr><op:operator pos:line="26" pos:column="23">new</op:operator> <index pos:line="26" pos:column="27">[]</index><block pos:line="26" pos:column="29">{<expr><lit:literal type="string" pos:line="26" pos:column="30">"android.intent.action.BOOT_COMPLETED"</lit:literal></expr><op:operator pos:line="26" pos:column="68">,</op:operator> <expr><lit:literal type="string" pos:line="26" pos:column="70">"android.intent.action.MY_PACKAGE_REPLACED"</lit:literal></expr>}</block></expr></argument>)</argument_list>]
+	public <name pos:line="27" pos:column="16">class</name> <name pos:line="27" pos:column="22">BootReceiver</name> <op:operator pos:line="27" pos:column="35">:</op:operator> <name pos:line="27" pos:column="37">BroadcastReceiver</name>
+	<block pos:line="28" pos:column="9">{
+		<function><type><specifier pos:line="29" pos:column="17">public</specifier> <specifier pos:line="29" pos:column="24">override</specifier> <name pos:line="29" pos:column="33">void</name></type> <name pos:line="29" pos:column="38">OnReceive</name> <parameter_list pos:line="29" pos:column="48">(<param><decl><type><name pos:line="29" pos:column="49">Context</name></type> <name pos:line="29" pos:column="57">context</name></decl></param>, <param><decl><type><name pos:line="29" pos:column="66">Intent</name></type> <name pos:line="29" pos:column="73">intent</name></decl></param>)</parameter_list>
+		<block pos:line="30" pos:column="17">{
+			<decl_stmt><decl><type><name pos:line="31" pos:column="25">var</name></type> <name pos:line="31" pos:column="29">stepServiceIntent</name> <init pos:line="31" pos:column="47">= <expr><op:operator pos:line="31" pos:column="49">new</op:operator> <call><name pos:line="31" pos:column="53">Intent</name><argument_list pos:line="31" pos:column="59">(<argument><expr><name pos:line="31" pos:column="60">context</name></expr></argument>, <argument><expr><call><name pos:line="31" pos:column="69">typeof</name><argument_list pos:line="31" pos:column="75">(<argument><expr><name pos:line="31" pos:column="76">StepService</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name pos:line="32" pos:column="25">context</name><op:operator pos:line="32" pos:column="32">.</op:operator><name pos:line="32" pos:column="33">StartService</name></name><argument_list pos:line="32" pos:column="45">(<argument><expr><name pos:line="32" pos:column="46">stepServiceIntent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		}</block></function>
+	}</block></decl></decl_stmt>
+}</block></namespace>
+
+</unit>

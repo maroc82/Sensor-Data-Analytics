@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\WinControls\dockingwnd\Docking.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// this file is part of Notepad++</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2005 Jens Lorenz &lt;jens.plugin.npp@gmx.de&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">// </comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">// </comment>
+<comment type="line" pos:line="9" pos:column="1">// // Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">// </comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">// </comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">DOCKING_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">DOCKING_H</name></cpp:macro></cpp:define>
+
+<comment type="line" pos:line="32" pos:column="1">// ATTENTION : It's a part of interface header, so don't include the others header here</comment>
+
+<comment type="line" pos:line="34" pos:column="1">// styles for containers</comment>
+<cpp:define pos:line="35" pos:column="1">#<cpp:directive pos:line="35" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="35" pos:column="9">CAPTION_TOP</name></cpp:macro>				<cpp:value pos:line="35" pos:column="49">TRUE</cpp:value></cpp:define>
+<cpp:define pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="36" pos:column="9">CAPTION_BOTTOM</name></cpp:macro>			<cpp:value pos:line="36" pos:column="41">FALSE</cpp:value></cpp:define>
+
+<comment type="line" pos:line="38" pos:column="1">//   defines for docking manager</comment>
+<cpp:define pos:line="39" pos:column="1">#<cpp:directive pos:line="39" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="39" pos:column="9">CONT_LEFT</name></cpp:macro>		<cpp:value pos:line="39" pos:column="33">0</cpp:value></cpp:define>
+<cpp:define pos:line="40" pos:column="1">#<cpp:directive pos:line="40" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="40" pos:column="9">CONT_RIGHT</name></cpp:macro>		<cpp:value pos:line="40" pos:column="33">1</cpp:value></cpp:define>
+<cpp:define pos:line="41" pos:column="1">#<cpp:directive pos:line="41" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="41" pos:column="9">CONT_TOP</name></cpp:macro>		<cpp:value pos:line="41" pos:column="33">2</cpp:value></cpp:define>
+<cpp:define pos:line="42" pos:column="1">#<cpp:directive pos:line="42" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="42" pos:column="9">CONT_BOTTOM</name></cpp:macro>		<cpp:value pos:line="42" pos:column="33">3</cpp:value></cpp:define>
+<cpp:define pos:line="43" pos:column="1">#<cpp:directive pos:line="43" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="43" pos:column="9">DOCKCONT_MAX</name></cpp:macro>	<cpp:value pos:line="43" pos:column="25">4</cpp:value></cpp:define>
+
+<comment type="line" pos:line="45" pos:column="1">// mask params for plugins of internal dialogs</comment>
+<cpp:define pos:line="46" pos:column="1">#<cpp:directive pos:line="46" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="46" pos:column="9">DWS_ICONTAB</name></cpp:macro>			<cpp:value pos:line="46" pos:column="41">0x00000001</cpp:value></cpp:define>			<comment type="line" pos:line="46" pos:column="73">// Icon for tabs are available</comment>
+<cpp:define pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="47" pos:column="9">DWS_ICONBAR</name></cpp:macro>			<cpp:value pos:line="47" pos:column="41">0x00000002</cpp:value></cpp:define>			<comment type="line" pos:line="47" pos:column="73">// Icon for icon bar are available (currently not supported)</comment>
+<cpp:define pos:line="48" pos:column="1">#<cpp:directive pos:line="48" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="48" pos:column="9">DWS_ADDINFO</name></cpp:macro>			<cpp:value pos:line="48" pos:column="41">0x00000004</cpp:value></cpp:define>			<comment type="line" pos:line="48" pos:column="73">// Additional information are in use</comment>
+<cpp:define pos:line="49" pos:column="1">#<cpp:directive pos:line="49" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="49" pos:column="9">DWS_PARAMSALL</name></cpp:macro>		<cpp:value pos:line="49" pos:column="33">(DWS_ICONTAB|DWS_ICONBAR|DWS_ADDINFO)</cpp:value></cpp:define>
+
+<comment type="line" pos:line="51" pos:column="1">// default docking values for first call of plugin</comment>
+<cpp:define pos:line="52" pos:column="1">#<cpp:directive pos:line="52" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="52" pos:column="9">DWS_DF_CONT_LEFT</name></cpp:macro>	<cpp:value pos:line="52" pos:column="33">(CONT_LEFT	&lt;&lt; 28)</cpp:value></cpp:define>	<comment type="line" pos:line="52" pos:column="57">// default docking on left</comment>
+<cpp:define pos:line="53" pos:column="1">#<cpp:directive pos:line="53" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="53" pos:column="9">DWS_DF_CONT_RIGHT</name></cpp:macro>	<cpp:value pos:line="53" pos:column="33">(CONT_RIGHT	&lt;&lt; 28)</cpp:value></cpp:define>	<comment type="line" pos:line="53" pos:column="57">// default docking on right</comment>
+<cpp:define pos:line="54" pos:column="1">#<cpp:directive pos:line="54" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="54" pos:column="9">DWS_DF_CONT_TOP</name></cpp:macro>		<cpp:value pos:line="54" pos:column="33">(CONT_TOP	&lt;&lt; 28)</cpp:value></cpp:define>	<comment type="line" pos:line="54" pos:column="57">// default docking on top</comment>
+<cpp:define pos:line="55" pos:column="1">#<cpp:directive pos:line="55" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="55" pos:column="9">DWS_DF_CONT_BOTTOM</name></cpp:macro>	<cpp:value pos:line="55" pos:column="33">(CONT_BOTTOM &lt;&lt; 28)</cpp:value></cpp:define>	<comment type="line" pos:line="55" pos:column="57">// default docking on bottom</comment>
+<cpp:define pos:line="56" pos:column="1">#<cpp:directive pos:line="56" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="56" pos:column="9">DWS_DF_FLOATING</name></cpp:macro>		<cpp:value pos:line="56" pos:column="33">0x80000000</cpp:value></cpp:define>			<comment type="line" pos:line="56" pos:column="65">// default state is floating</comment>
+
+
+<typedef pos:line="59" pos:column="1">typedef <type><struct pos:line="59" pos:column="9">struct <block pos:line="59" pos:column="16">{<public type="default" pos:line="59" pos:column="17">
+	<decl_stmt><decl><type><name pos:line="60" pos:column="9">HWND</name></type>		<name pos:line="60" pos:column="25">hClient</name></decl>;</decl_stmt>		<comment type="line" pos:line="60" pos:column="49">// client Window Handle</comment>
+	<decl_stmt><decl><type><specifier pos:line="61" pos:column="9">const</specifier> <name pos:line="61" pos:column="15">TCHAR</name>	<type:modifier pos:line="61" pos:column="25">*</type:modifier></type><name pos:line="61" pos:column="26">pszName</name></decl>;</decl_stmt>		<comment type="line" pos:line="61" pos:column="49">// name of plugin (shown in window)</comment>
+	<decl_stmt><decl><type><name pos:line="62" pos:column="9">int</name></type>			<name pos:line="62" pos:column="33">dlgID</name></decl>;</decl_stmt>			<comment type="line" pos:line="62" pos:column="57">// a funcItem provides the function pointer to start a dialog. Please parse here these ID</comment>
+
+	<comment type="line" pos:line="64" pos:column="9">// user modifications</comment>
+	<decl_stmt><decl><type><name pos:line="65" pos:column="9">UINT</name></type>		<name pos:line="65" pos:column="25">uMask</name></decl>;</decl_stmt>			<comment type="line" pos:line="65" pos:column="49">// mask params: look to above defines</comment>
+	<decl_stmt><decl><type><name pos:line="66" pos:column="9">HICON</name></type>		<name pos:line="66" pos:column="25">hIconTab</name></decl>;</decl_stmt>		<comment type="line" pos:line="66" pos:column="49">// icon for tabs</comment>
+	<decl_stmt><decl><type><specifier pos:line="67" pos:column="9">const</specifier> <name pos:line="67" pos:column="15">TCHAR</name> <type:modifier pos:line="67" pos:column="21">*</type:modifier></type><name pos:line="67" pos:column="22">pszAddInfo</name></decl>;</decl_stmt>		<comment type="line" pos:line="67" pos:column="49">// for plugin to display additional informations</comment>
+
+	<comment type="line" pos:line="69" pos:column="9">// internal data, do not use !!!</comment>
+	<decl_stmt><decl><type><name pos:line="70" pos:column="9">RECT</name></type>		<name pos:line="70" pos:column="25">rcFloat</name></decl>;</decl_stmt>		<comment type="line" pos:line="70" pos:column="49">// floating position</comment>
+	<decl_stmt><decl><type><name pos:line="71" pos:column="9">int</name></type>			<name pos:line="71" pos:column="33">iPrevCont</name></decl>;</decl_stmt>		<comment type="line" pos:line="71" pos:column="57">// stores the privious container (toggling between float and dock)</comment>
+	<decl_stmt><decl><type><specifier pos:line="72" pos:column="9">const</specifier> <name pos:line="72" pos:column="15">TCHAR</name><type:modifier pos:line="72" pos:column="20">*</type:modifier></type>	<name pos:line="72" pos:column="25">pszModuleName</name></decl>;</decl_stmt>	<comment type="line" pos:line="72" pos:column="41">// it's the plugin file name. It's used to identify the plugin</comment>
+</public>}</block></struct></type> <name pos:line="73" pos:column="3">tTbData</name>;</typedef>
+
+
+<typedef pos:line="76" pos:column="1">typedef <type><struct pos:line="76" pos:column="9">struct <block pos:line="76" pos:column="16">{<public type="default" pos:line="76" pos:column="17">
+	<decl_stmt><decl><type><name pos:line="77" pos:column="9">HWND</name></type>		<name pos:line="77" pos:column="25">hWnd</name></decl>;</decl_stmt>							<comment type="line" pos:line="77" pos:column="81">// the docking manager wnd</comment>
+	<decl_stmt><decl><type><name pos:line="78" pos:column="9">RECT</name></type>		<name><name pos:line="78" pos:column="25">rcRegion</name><index pos:line="78" pos:column="33">[<expr><name pos:line="78" pos:column="34">DOCKCONT_MAX</name></expr>]</index></name></decl>;</decl_stmt>			<comment type="line" pos:line="78" pos:column="65">// position of docked dialogs</comment>
+</public>}</block></struct></type> <name pos:line="79" pos:column="3">tDockMgr</name>;</typedef>
+
+
+<cpp:define pos:line="82" pos:column="1">#<cpp:directive pos:line="82" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="82" pos:column="9">HIT_TEST_THICKNESS</name></cpp:macro>		<cpp:value pos:line="82" pos:column="41">20</cpp:value></cpp:define>
+<cpp:define pos:line="83" pos:column="1">#<cpp:directive pos:line="83" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="83" pos:column="9">SPLITTER_WIDTH</name></cpp:macro>			<cpp:value pos:line="83" pos:column="41">4</cpp:value></cpp:define>
+
+
+<cpp:endif pos:line="86" pos:column="1">#<cpp:directive pos:line="86" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="86" pos:column="8">// DOCKING_H</comment>
+</unit>

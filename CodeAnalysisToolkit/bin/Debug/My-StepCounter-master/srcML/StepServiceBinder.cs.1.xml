@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Services\StepServiceBinder.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name><name pos:line="20" pos:column="7">Android</name><op:operator pos:line="20" pos:column="14">.</op:operator><name pos:line="20" pos:column="15">OS</name></name>;</using>
+
+<namespace pos:line="22" pos:column="1">namespace <name><name pos:line="22" pos:column="11">StepCounter</name><op:operator pos:line="22" pos:column="22">.</op:operator><name pos:line="22" pos:column="23">Services</name></name>
+<block pos:line="23" pos:column="1">{
+	<class><specifier pos:line="24" pos:column="9">public</specifier> class <name pos:line="24" pos:column="22">StepServiceBinder</name> <super pos:line="24" pos:column="40">: <name pos:line="24" pos:column="42">Binder</name></super>
+	<block pos:line="25" pos:column="9">{
+		<decl_stmt><decl><type><name pos:line="26" pos:column="17">StepService</name></type> <name pos:line="26" pos:column="29">stepService</name></decl>;</decl_stmt>
+		<constructor><specifier pos:line="27" pos:column="17">public</specifier> <name pos:line="27" pos:column="24">StepServiceBinder</name> <parameter_list pos:line="27" pos:column="42">(<param><decl><type><name pos:line="27" pos:column="43">StepService</name></type> <name pos:line="27" pos:column="55">service</name></decl></param>)</parameter_list>
+		<block pos:line="28" pos:column="17">{
+			<expr_stmt><expr><name><name pos:line="29" pos:column="25">this</name><op:operator pos:line="29" pos:column="29">.</op:operator><name pos:line="29" pos:column="30">stepService</name></name> <op:operator pos:line="29" pos:column="42">=</op:operator> <name pos:line="29" pos:column="44">service</name></expr>;</expr_stmt>
+		}</block></constructor>
+
+		<decl_stmt><decl><type><specifier pos:line="32" pos:column="17">public</specifier> <name pos:line="32" pos:column="24">StepService</name></type> <name pos:line="32" pos:column="36">StepService</name>
+		<block pos:line="33" pos:column="17">{
+			<function><name pos:line="34" pos:column="25">get</name> <block pos:line="34" pos:column="29">{ <return pos:line="34" pos:column="31">return <expr><name pos:line="34" pos:column="38">stepService</name></expr>;</return> }</block></function>
+		}</block></decl></decl_stmt>
+	}</block></class>
+}</block></namespace>
+
+</unit>

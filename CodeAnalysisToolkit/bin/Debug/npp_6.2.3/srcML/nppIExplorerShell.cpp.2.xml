@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\tools\IExplorerShell\nppIExplorerShell.cpp" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+<cpp:include pos:line="28" pos:column="1">#<cpp:directive pos:line="28" pos:column="2">include</cpp:directive> <cpp:file pos:line="28" pos:column="10">&lt;windows.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">include</cpp:directive> <cpp:file pos:line="29" pos:column="10">&lt;shlwapi.h&gt;</cpp:file></cpp:include>
+
+<decl_stmt><decl><type><specifier pos:line="31" pos:column="1">const</specifier> <name pos:line="31" pos:column="7">int</name></type> <name pos:line="31" pos:column="11">CMD_LEN</name> <init pos:line="31" pos:column="19">= <expr><lit:literal type="number" pos:line="31" pos:column="21">512</lit:literal></expr></init></decl>;</decl_stmt>
+<decl_stmt><decl><type><specifier pos:line="32" pos:column="1">const</specifier> <name pos:line="32" pos:column="7">int</name></type> <name pos:line="32" pos:column="11">PARAM_LEN</name> <init pos:line="32" pos:column="21">= <expr><lit:literal type="number" pos:line="32" pos:column="23">1024</lit:literal></expr></init></decl>;</decl_stmt>
+<decl_stmt><decl><type><specifier pos:line="33" pos:column="1">const</specifier> <name pos:line="33" pos:column="7">char</name> <type:modifier pos:line="33" pos:column="12">*</type:modifier></type><name pos:line="33" pos:column="13">NPP</name> <init pos:line="33" pos:column="17">= <expr><lit:literal type="string" pos:line="33" pos:column="19">"\\notepad++.exe"</lit:literal></expr></init></decl>;</decl_stmt>
+<decl_stmt><decl><type><specifier pos:line="34" pos:column="1">const</specifier> <name pos:line="34" pos:column="7">char</name> <type:modifier pos:line="34" pos:column="12">*</type:modifier></type><name pos:line="34" pos:column="13">FLAG_LEXER_HTML</name> <init pos:line="34" pos:column="29">= <expr><lit:literal type="string" pos:line="34" pos:column="31">"-lhtml "</lit:literal></expr></init></decl>;</decl_stmt>
+
+<function><type><name pos:line="36" pos:column="1">int</name> <name pos:line="36" pos:column="5">WINAPI</name></type> <name pos:line="36" pos:column="12">WinMain</name><parameter_list pos:line="36" pos:column="19">(<param><decl><type><name pos:line="36" pos:column="20">HINSTANCE</name></type> <name pos:line="36" pos:column="30">hInstance</name></decl></param>, <param><decl><type><name pos:line="36" pos:column="41">HINSTANCE</name></type></decl></param>, <param><decl><type><name pos:line="36" pos:column="52">LPSTR</name></type> <name pos:line="36" pos:column="58">lpszCmdLine</name></decl></param>, <param><decl><type><name pos:line="36" pos:column="71">int</name></type> <name pos:line="36" pos:column="75">nCmdShow</name></decl></param>)</parameter_list>
+<block pos:line="37" pos:column="1">{
+	<decl_stmt><decl><type><name pos:line="38" pos:column="9">char</name></type> <name><name pos:line="38" pos:column="14">cmd</name><index pos:line="38" pos:column="17">[<expr><name pos:line="38" pos:column="18">CMD_LEN</name></expr>]</index></name></decl>;</decl_stmt>
+	<expr_stmt><expr><call><name><op:operator pos:line="39" pos:column="9">::</op:operator><name pos:line="39" pos:column="11">GetModuleFileName</name></name><argument_list pos:line="39" pos:column="28">(<argument><expr><name pos:line="39" pos:column="29">NULL</name></expr></argument>, <argument><expr><name pos:line="39" pos:column="35">cmd</name></expr></argument>, <argument><expr><name pos:line="39" pos:column="40">CMD_LEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name pos:line="40" pos:column="9">PathRemoveFileSpec</name><argument_list pos:line="40" pos:column="27">(<argument><expr><name pos:line="40" pos:column="28">cmd</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name pos:line="41" pos:column="9">strcat</name><argument_list pos:line="41" pos:column="15">(<argument><expr><name pos:line="41" pos:column="16">cmd</name></expr></argument>, <argument><expr><name pos:line="41" pos:column="21">NPP</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	<decl_stmt><decl><type><name pos:line="43" pos:column="9">char</name></type> <name><name pos:line="43" pos:column="14">param</name><index pos:line="43" pos:column="19">[<expr><name pos:line="43" pos:column="20">PARAM_LEN</name></expr>]</index></name> <init pos:line="43" pos:column="31">= <expr><lit:literal type="string" pos:line="43" pos:column="33">""</lit:literal></expr></init></decl>;</decl_stmt>
+	
+	<expr_stmt><expr><call><name pos:line="45" pos:column="9">strcat</name><argument_list pos:line="45" pos:column="15">(<argument><expr><call><name pos:line="45" pos:column="16">strcat</name><argument_list pos:line="45" pos:column="22">(<argument><expr><name pos:line="45" pos:column="23">param</name></expr></argument>, <argument><expr><name pos:line="45" pos:column="30">FLAG_LEXER_HTML</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name pos:line="45" pos:column="48">lpszCmdLine</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name><op:operator pos:line="46" pos:column="9">::</op:operator><name pos:line="46" pos:column="11">MessageBox</name></name><argument_list pos:line="46" pos:column="21">(<argument><expr><name pos:line="46" pos:column="22">NULL</name></expr></argument>, <argument><expr><name pos:line="46" pos:column="28">param</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="46" pos:column="35">""</lit:literal></expr></argument>, <argument><expr><name pos:line="46" pos:column="39">MB_OK</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<decl_stmt><decl><type><name pos:line="47" pos:column="9">HINSTANCE</name></type> <name pos:line="47" pos:column="19">hInst</name> <init pos:line="47" pos:column="25">= <expr><call><name><op:operator pos:line="47" pos:column="27">::</op:operator><name pos:line="47" pos:column="29">ShellExecute</name></name><argument_list pos:line="47" pos:column="41">(<argument><expr><name pos:line="47" pos:column="42">NULL</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="47" pos:column="48">"open"</lit:literal></expr></argument>, <argument><expr><name pos:line="47" pos:column="56">cmd</name></expr></argument>, <argument><expr><name pos:line="47" pos:column="61">param</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="47" pos:column="68">"."</lit:literal></expr></argument>, <argument><expr><name pos:line="47" pos:column="73">SW_SHOW</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	<return pos:line="48" pos:column="9">return <expr><op:operator pos:line="48" pos:column="16">(</op:operator><name pos:line="48" pos:column="17">UINT</name><op:operator pos:line="48" pos:column="21">)</op:operator><lit:literal type="number" pos:line="48" pos:column="22">0</lit:literal></expr>;</return>
+}</block></function>
+
+</unit>

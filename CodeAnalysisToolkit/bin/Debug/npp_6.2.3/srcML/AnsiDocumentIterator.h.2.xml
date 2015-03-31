@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\boostregex\AnsiDocumentIterator.h" pos:tabs="8"><cpp:ifndef pos:line="1" pos:column="1">#<cpp:directive pos:line="1" pos:column="2">ifndef</cpp:directive> <name pos:line="1" pos:column="9">ANSIDOCUMENTITERATOR_H_12481491281240</name></cpp:ifndef>
+<cpp:define pos:line="2" pos:column="1">#<cpp:directive pos:line="2" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="2" pos:column="9">ANSIDOCUMENTITERATOR_H_12481491281240</name></cpp:macro></cpp:define>
+
+<class pos:line="4" pos:column="1">class <name pos:line="4" pos:column="7">AnsiDocumentIterator</name> <super pos:line="4" pos:column="28">: <specifier pos:line="4" pos:column="30">public</specifier> <name><name pos:line="4" pos:column="37">std</name><op:operator pos:line="4" pos:column="40">::</op:operator><name><name pos:line="4" pos:column="42">iterator</name><argument_list pos:line="4" pos:column="50">&lt;<argument><expr><name><name pos:line="4" pos:column="51">std</name><op:operator pos:line="4" pos:column="54">::</op:operator><name pos:line="4" pos:column="56">bidirectional_iterator_tag</name></name></expr></argument>, <argument><expr><name pos:line="4" pos:column="84">char</name></expr></argument>&gt;</argument_list></name></name></super>
+<block pos:line="5" pos:column="1">{<private type="default" pos:line="5" pos:column="2">
+</private><public pos:line="6" pos:column="1">public:
+	<constructor><name pos:line="7" pos:column="9">AnsiDocumentIterator</name><parameter_list pos:line="7" pos:column="29">()</parameter_list> <member_list pos:line="7" pos:column="32">: 
+		<call><name pos:line="8" pos:column="17">m_doc</name><argument_list pos:line="8" pos:column="22">(<argument><expr><lit:literal type="number" pos:line="8" pos:column="23">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="8" pos:column="25">,</op:operator> 
+		<call><name pos:line="9" pos:column="17">m_pos</name><argument_list pos:line="9" pos:column="22">(<argument><expr><lit:literal type="number" pos:line="9" pos:column="23">0</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="9" pos:column="25">,</op:operator>
+		<call><name pos:line="10" pos:column="17">m_end</name><argument_list pos:line="10" pos:column="22">(<argument><expr><lit:literal type="number" pos:line="10" pos:column="23">0</lit:literal></expr></argument>)</argument_list></call>
+	</member_list><block pos:line="11" pos:column="9">{
+	}</block></constructor>
+
+	<constructor><name pos:line="14" pos:column="9">AnsiDocumentIterator</name><parameter_list pos:line="14" pos:column="29">(<param><decl><type><name pos:line="14" pos:column="30">Document</name><type:modifier pos:line="14" pos:column="38">*</type:modifier></type> <name pos:line="14" pos:column="40">doc</name></decl></param>, <param><decl><type><name pos:line="14" pos:column="45">int</name></type> <name pos:line="14" pos:column="49">pos</name></decl></param>, <param><decl><type><name pos:line="14" pos:column="54">int</name></type> <name pos:line="14" pos:column="58">end</name></decl></param>)</parameter_list> <member_list pos:line="14" pos:column="63">: 
+		<call><name pos:line="15" pos:column="17">m_doc</name><argument_list pos:line="15" pos:column="22">(<argument><expr><name pos:line="15" pos:column="23">doc</name></expr></argument>)</argument_list></call><op:operator pos:line="15" pos:column="27">,</op:operator>
+		<call><name pos:line="16" pos:column="17">m_pos</name><argument_list pos:line="16" pos:column="22">(<argument><expr><name pos:line="16" pos:column="23">pos</name></expr></argument>)</argument_list></call><op:operator pos:line="16" pos:column="27">,</op:operator>
+		<call><name pos:line="17" pos:column="17">m_end</name><argument_list pos:line="17" pos:column="22">(<argument><expr><name pos:line="17" pos:column="23">end</name></expr></argument>)</argument_list></call>
+	</member_list><block pos:line="18" pos:column="9">{
+		<comment type="line" pos:line="19" pos:column="17">// Check for debug builds</comment>
+		<expr_stmt><expr><call><name pos:line="20" pos:column="17">PLATFORM_ASSERT</name><argument_list pos:line="20" pos:column="32">(<argument><expr><name pos:line="20" pos:column="33">m_pos</name> <op:operator pos:line="20" pos:column="39">&lt;=</op:operator> <name pos:line="20" pos:column="42">m_end</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line" pos:line="22" pos:column="17">// Ensure for release.</comment>
+		<if pos:line="23" pos:column="17">if <condition pos:line="23" pos:column="20">(<expr><name pos:line="23" pos:column="21">m_pos</name> <op:operator pos:line="23" pos:column="27">&gt;</op:operator> <name pos:line="23" pos:column="29">m_end</name></expr>)</condition><then pos:line="23" pos:column="35">
+		<block pos:line="24" pos:column="17">{
+			<expr_stmt><expr><name pos:line="25" pos:column="25">m_pos</name> <op:operator pos:line="25" pos:column="31">=</op:operator> <name pos:line="25" pos:column="33">m_end</name></expr>;</expr_stmt>
+		}</block></then></if>
+	}</block></constructor>
+
+	<constructor><name pos:line="29" pos:column="9">AnsiDocumentIterator</name><parameter_list pos:line="29" pos:column="29">(<param><decl><type><specifier pos:line="29" pos:column="30">const</specifier> <name pos:line="29" pos:column="36">AnsiDocumentIterator</name><type:modifier pos:line="29" pos:column="56">&amp;</type:modifier></type> <name pos:line="29" pos:column="58">copy</name></decl></param>)</parameter_list> <member_list pos:line="29" pos:column="64">:
+		<call><name pos:line="30" pos:column="17">m_doc</name><argument_list pos:line="30" pos:column="22">(<argument><expr><name><name pos:line="30" pos:column="23">copy</name><op:operator pos:line="30" pos:column="27">.</op:operator><name pos:line="30" pos:column="28">m_doc</name></name></expr></argument>)</argument_list></call><op:operator pos:line="30" pos:column="34">,</op:operator>
+		<call><name pos:line="31" pos:column="17">m_pos</name><argument_list pos:line="31" pos:column="22">(<argument><expr><name><name pos:line="31" pos:column="23">copy</name><op:operator pos:line="31" pos:column="27">.</op:operator><name pos:line="31" pos:column="28">m_pos</name></name></expr></argument>)</argument_list></call><op:operator pos:line="31" pos:column="34">,</op:operator>
+		<call><name pos:line="32" pos:column="17">m_end</name><argument_list pos:line="32" pos:column="22">(<argument><expr><name><name pos:line="32" pos:column="23">copy</name><op:operator pos:line="32" pos:column="27">.</op:operator><name pos:line="32" pos:column="28">m_end</name></name></expr></argument>)</argument_list></call>
+	</member_list><block pos:line="33" pos:column="9">{
+		<comment type="line" pos:line="34" pos:column="17">// Check for debug builds</comment>
+		<expr_stmt><expr><call><name pos:line="35" pos:column="17">PLATFORM_ASSERT</name><argument_list pos:line="35" pos:column="32">(<argument><expr><name pos:line="35" pos:column="33">m_pos</name> <op:operator pos:line="35" pos:column="39">&lt;=</op:operator> <name pos:line="35" pos:column="42">m_end</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line" pos:line="37" pos:column="17">// Ensure for release.</comment>
+		<if pos:line="38" pos:column="17">if <condition pos:line="38" pos:column="20">(<expr><name pos:line="38" pos:column="21">m_pos</name> <op:operator pos:line="38" pos:column="27">&gt;</op:operator> <name pos:line="38" pos:column="29">m_end</name></expr>)</condition><then pos:line="38" pos:column="35">
+		<block pos:line="39" pos:column="17">{
+			<expr_stmt><expr><name pos:line="40" pos:column="25">m_pos</name> <op:operator pos:line="40" pos:column="31">=</op:operator> <name pos:line="40" pos:column="33">m_end</name></expr>;</expr_stmt>
+		}</block></then></if>
+	}</block></constructor>
+
+	<function><type><name pos:line="44" pos:column="9">bool</name></type> <name pos:line="44" pos:column="14">operator ==</name> <parameter_list pos:line="44" pos:column="26">(<param><decl><type><specifier pos:line="44" pos:column="27">const</specifier> <name pos:line="44" pos:column="33">AnsiDocumentIterator</name><type:modifier pos:line="44" pos:column="53">&amp;</type:modifier></type> <name pos:line="44" pos:column="55">other</name></decl></param>)</parameter_list> <specifier pos:line="44" pos:column="62">const</specifier>
+	<block pos:line="45" pos:column="9">{
+		<return pos:line="46" pos:column="17">return <expr><op:operator pos:line="46" pos:column="24">(</op:operator><call><name pos:line="46" pos:column="25">ended</name><argument_list pos:line="46" pos:column="30">()</argument_list></call> <op:operator pos:line="46" pos:column="33">==</op:operator> <call><name><name pos:line="46" pos:column="36">other</name><op:operator pos:line="46" pos:column="41">.</op:operator><name pos:line="46" pos:column="42">ended</name></name><argument_list pos:line="46" pos:column="47">()</argument_list></call><op:operator pos:line="46" pos:column="49">)</op:operator> <op:operator pos:line="46" pos:column="51">&amp;&amp;</op:operator> <op:operator pos:line="46" pos:column="54">(</op:operator><name pos:line="46" pos:column="55">m_doc</name> <op:operator pos:line="46" pos:column="61">==</op:operator> <name><name pos:line="46" pos:column="64">other</name><op:operator pos:line="46" pos:column="69">.</op:operator><name pos:line="46" pos:column="70">m_doc</name></name><op:operator pos:line="46" pos:column="75">)</op:operator> <op:operator pos:line="46" pos:column="77">&amp;&amp;</op:operator> <op:operator pos:line="46" pos:column="80">(</op:operator><name pos:line="46" pos:column="81">m_pos</name> <op:operator pos:line="46" pos:column="87">==</op:operator> <name><name pos:line="46" pos:column="90">other</name><op:operator pos:line="46" pos:column="95">.</op:operator><name pos:line="46" pos:column="96">m_pos</name></name><op:operator pos:line="46" pos:column="101">)</op:operator></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="49" pos:column="9">bool</name></type> <name pos:line="49" pos:column="14">operator !=</name> <parameter_list pos:line="49" pos:column="26">(<param><decl><type><specifier pos:line="49" pos:column="27">const</specifier> <name pos:line="49" pos:column="33">AnsiDocumentIterator</name><type:modifier pos:line="49" pos:column="53">&amp;</type:modifier></type> <name pos:line="49" pos:column="55">other</name></decl></param>)</parameter_list> <specifier pos:line="49" pos:column="62">const</specifier>
+	<block pos:line="50" pos:column="9">{
+		<return pos:line="51" pos:column="17">return <expr><op:operator pos:line="51" pos:column="24">!</op:operator><op:operator pos:line="51" pos:column="25">(</op:operator><op:operator pos:line="51" pos:column="26">*</op:operator><name pos:line="51" pos:column="27">this</name> <op:operator pos:line="51" pos:column="32">==</op:operator> <name pos:line="51" pos:column="35">other</name><op:operator pos:line="51" pos:column="40">)</op:operator></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="54" pos:column="9">char</name></type> <name pos:line="54" pos:column="14">operator *</name> <parameter_list pos:line="54" pos:column="25">()</parameter_list> <specifier pos:line="54" pos:column="28">const</specifier>
+	<block pos:line="55" pos:column="9">{
+		<return pos:line="56" pos:column="17">return <expr><call><name pos:line="56" pos:column="24">charAt</name><argument_list pos:line="56" pos:column="30">(<argument><expr><name pos:line="56" pos:column="31">m_pos</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="59" pos:column="9">AnsiDocumentIterator</name><type:modifier pos:line="59" pos:column="29">&amp;</type:modifier></type> <name pos:line="59" pos:column="31">operator ++</name> <parameter_list pos:line="59" pos:column="43">()</parameter_list>
+	<block pos:line="60" pos:column="9">{
+		<expr_stmt><expr><call><name pos:line="61" pos:column="17">PLATFORM_ASSERT</name><argument_list pos:line="61" pos:column="32">(<argument><expr><name pos:line="61" pos:column="33">m_pos</name> <op:operator pos:line="61" pos:column="39">&lt;</op:operator> <name pos:line="61" pos:column="41">m_end</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><name pos:line="63" pos:column="17">m_pos</name><op:operator pos:line="63" pos:column="22">++</op:operator></expr>;</expr_stmt>
+		<return pos:line="64" pos:column="17">return <expr><op:operator pos:line="64" pos:column="24">*</op:operator><name pos:line="64" pos:column="25">this</name></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="67" pos:column="9">AnsiDocumentIterator</name><type:modifier pos:line="67" pos:column="29">&amp;</type:modifier></type> <name pos:line="67" pos:column="31">operator --</name> <parameter_list pos:line="67" pos:column="43">()</parameter_list>
+	<block pos:line="68" pos:column="9">{
+		<expr_stmt><expr><name pos:line="69" pos:column="17">m_pos</name><op:operator pos:line="69" pos:column="22">--</op:operator></expr>;</expr_stmt>
+		<return pos:line="70" pos:column="17">return <expr><op:operator pos:line="70" pos:column="24">*</op:operator><name pos:line="70" pos:column="25">this</name></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="73" pos:column="9">int</name></type> <name pos:line="73" pos:column="13">pos</name><parameter_list pos:line="73" pos:column="16">()</parameter_list> <specifier pos:line="73" pos:column="19">const</specifier>
+	<block pos:line="74" pos:column="9">{
+		<return pos:line="75" pos:column="17">return <expr><name pos:line="75" pos:column="24">m_pos</name></expr>;</return>
+	}</block></function>
+
+</public><private pos:line="78" pos:column="1">private:
+	<function><type><name pos:line="79" pos:column="9">char</name></type> <name pos:line="79" pos:column="14">charAt</name><parameter_list pos:line="79" pos:column="20">(<param><decl><type><name pos:line="79" pos:column="21">int</name></type> <name pos:line="79" pos:column="25">position</name></decl></param>)</parameter_list> <specifier pos:line="79" pos:column="35">const</specifier>
+	<block pos:line="80" pos:column="9">{
+		<return pos:line="81" pos:column="17">return <expr><call><name><name pos:line="81" pos:column="24">m_doc</name><op:operator pos:line="81" pos:column="29">-&gt;</op:operator><name pos:line="81" pos:column="31">CharAt</name></name><argument_list pos:line="81" pos:column="37">(<argument><expr><name pos:line="81" pos:column="38">position</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function>
+
+	<function><type><name pos:line="84" pos:column="9">bool</name></type> <name pos:line="84" pos:column="14">ended</name><parameter_list pos:line="84" pos:column="19">()</parameter_list> <specifier pos:line="84" pos:column="22">const</specifier>
+	<block pos:line="85" pos:column="9">{
+		<return pos:line="86" pos:column="17">return <expr><name pos:line="86" pos:column="24">m_pos</name> <op:operator pos:line="86" pos:column="30">==</op:operator> <name pos:line="86" pos:column="33">m_end</name></expr>;</return>
+	}</block></function>
+
+	<decl_stmt><decl><type><name pos:line="89" pos:column="9">int</name></type> <name pos:line="89" pos:column="13">m_pos</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="90" pos:column="9">int</name></type> <name pos:line="90" pos:column="13">m_end</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="91" pos:column="9">Document</name><type:modifier pos:line="91" pos:column="17">*</type:modifier></type> <name pos:line="91" pos:column="19">m_doc</name></decl>;</decl_stmt>
+</private>}</block>;
+
+<cpp:endif pos:line="94" pos:column="1">#<cpp:directive pos:line="94" pos:column="2">endif</cpp:directive></cpp:endif></class></unit>

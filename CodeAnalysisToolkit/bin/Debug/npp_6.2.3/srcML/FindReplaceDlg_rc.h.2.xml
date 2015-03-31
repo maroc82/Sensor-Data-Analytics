@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\ScitillaComponent\FindReplaceDlg_rc.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">FINDREPLACE_DLG_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">FINDREPLACE_DLG_H</name></cpp:macro></cpp:define>
+
+<cpp:define pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="32" pos:column="9">IDD_FIND_REPLACE_DLG</name></cpp:macro>			<cpp:value pos:line="32" pos:column="49">1600</cpp:value></cpp:define>
+<cpp:define pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="33" pos:column="9">IDFINDWHAT</name></cpp:macro>						<cpp:value pos:line="33" pos:column="65">1601</cpp:value></cpp:define>
+<cpp:define pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="34" pos:column="9">IDREPLACEWITH</name></cpp:macro>					<cpp:value pos:line="34" pos:column="57">1602</cpp:value></cpp:define>
+<cpp:define pos:line="35" pos:column="1">#<cpp:directive pos:line="35" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="35" pos:column="9">IDWHOLEWORD</name></cpp:macro>						<cpp:value pos:line="35" pos:column="65">1603</cpp:value></cpp:define>
+<cpp:define pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="36" pos:column="9">IDF_WHOLEWORD</name></cpp:macro>	<cpp:value pos:line="36" pos:column="25">1</cpp:value></cpp:define>
+<cpp:define pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="37" pos:column="9">IDMATCHCASE</name></cpp:macro>						<cpp:value pos:line="37" pos:column="65">1604</cpp:value></cpp:define>
+<cpp:define pos:line="38" pos:column="1">#<cpp:directive pos:line="38" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="38" pos:column="9">IDF_MATCHCASE</name></cpp:macro>	<cpp:value pos:line="38" pos:column="25">2</cpp:value></cpp:define>
+
+<cpp:define pos:line="40" pos:column="1">#<cpp:directive pos:line="40" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="40" pos:column="9">IDREGEXP</name></cpp:macro>						<cpp:value pos:line="40" pos:column="65">1605</cpp:value></cpp:define>
+
+<cpp:define pos:line="42" pos:column="1">#<cpp:directive pos:line="42" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="42" pos:column="9">IDWRAP</name></cpp:macro>							<cpp:value pos:line="42" pos:column="65">1606</cpp:value></cpp:define>
+<cpp:define pos:line="43" pos:column="1">#<cpp:directive pos:line="43" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="43" pos:column="9">IDF_WRAP</name></cpp:macro>	<cpp:value pos:line="43" pos:column="25">256</cpp:value></cpp:define>
+<cpp:define pos:line="44" pos:column="1">#<cpp:directive pos:line="44" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="44" pos:column="9">IDUNSLASH</name></cpp:macro>						<cpp:value pos:line="44" pos:column="65">1607</cpp:value></cpp:define>
+<cpp:define pos:line="45" pos:column="1">#<cpp:directive pos:line="45" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="45" pos:column="9">IDREPLACE</name></cpp:macro>						<cpp:value pos:line="45" pos:column="65">1608</cpp:value></cpp:define>
+<cpp:define pos:line="46" pos:column="1">#<cpp:directive pos:line="46" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="46" pos:column="9">IDREPLACEALL</name></cpp:macro>					<cpp:value pos:line="46" pos:column="57">1609</cpp:value></cpp:define>
+<cpp:define pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="47" pos:column="9">IDREPLACEINSEL</name></cpp:macro>					<cpp:value pos:line="47" pos:column="57">1610</cpp:value></cpp:define>
+<cpp:define pos:line="48" pos:column="1">#<cpp:directive pos:line="48" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="48" pos:column="9">ID_STATICTEXT_REPLACE</name></cpp:macro>			<cpp:value pos:line="48" pos:column="49">1611</cpp:value></cpp:define>
+<cpp:define pos:line="49" pos:column="1">#<cpp:directive pos:line="49" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="49" pos:column="9">IDDIRECTIONUP</name></cpp:macro>					<cpp:value pos:line="49" pos:column="57">1612</cpp:value></cpp:define>
+<cpp:define pos:line="50" pos:column="1">#<cpp:directive pos:line="50" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="50" pos:column="9">IDDIRECTIONDOWN</name></cpp:macro> 				<cpp:value pos:line="50" pos:column="57">1613</cpp:value></cpp:define>
+<cpp:define pos:line="51" pos:column="1">#<cpp:directive pos:line="51" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="51" pos:column="9">IDF_WHICH_DIRECTION</name></cpp:macro>	<cpp:value pos:line="51" pos:column="33">512</cpp:value></cpp:define>
+<cpp:define pos:line="52" pos:column="1">#<cpp:directive pos:line="52" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="52" pos:column="9">IDCCOUNTALL</name></cpp:macro>						<cpp:value pos:line="52" pos:column="65">1614</cpp:value></cpp:define>
+<cpp:define pos:line="53" pos:column="1">#<cpp:directive pos:line="53" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="53" pos:column="9">IDCMARKALL</name></cpp:macro>						<cpp:value pos:line="53" pos:column="65">1615</cpp:value></cpp:define>
+<cpp:define pos:line="54" pos:column="1">#<cpp:directive pos:line="54" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="54" pos:column="9">IDC_MARKLINE_CHECK</name></cpp:macro>				<cpp:value pos:line="54" pos:column="57">1616</cpp:value></cpp:define>
+<cpp:define pos:line="55" pos:column="1">#<cpp:directive pos:line="55" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="55" pos:column="9">IDF_MARKLINE_CHECK</name></cpp:macro>	<cpp:value pos:line="55" pos:column="33">16</cpp:value></cpp:define>
+<cpp:define pos:line="56" pos:column="1">#<cpp:directive pos:line="56" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="56" pos:column="9">IDC_STYLEFOUND_CHECK</name></cpp:macro>			<cpp:value pos:line="56" pos:column="49">1617</cpp:value></cpp:define>
+<cpp:define pos:line="57" pos:column="1">#<cpp:directive pos:line="57" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="57" pos:column="9">IDF_STYLEFOUND_CHECK</name></cpp:macro>	<cpp:value pos:line="57" pos:column="33">8</cpp:value></cpp:define>
+<cpp:define pos:line="58" pos:column="1">#<cpp:directive pos:line="58" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="58" pos:column="9">IDC_PURGE_CHECK</name></cpp:macro>					<cpp:value pos:line="58" pos:column="57">1618</cpp:value></cpp:define>
+<cpp:define pos:line="59" pos:column="1">#<cpp:directive pos:line="59" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="59" pos:column="9">IDF_PURGE_CHECK</name></cpp:macro>	<cpp:value pos:line="59" pos:column="25">4</cpp:value></cpp:define>
+<cpp:define pos:line="60" pos:column="1">#<cpp:directive pos:line="60" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="60" pos:column="9">IDC_FINDALL_STATIC</name></cpp:macro>				<cpp:value pos:line="60" pos:column="57">1619</cpp:value></cpp:define>
+<cpp:define pos:line="61" pos:column="1">#<cpp:directive pos:line="61" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="61" pos:column="9">IDFINDWHAT_STATIC</name></cpp:macro>				<cpp:value pos:line="61" pos:column="57">1620</cpp:value></cpp:define>
+<cpp:define pos:line="62" pos:column="1">#<cpp:directive pos:line="62" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="62" pos:column="9">IDC_DIR_STATIC</name></cpp:macro>					<cpp:value pos:line="62" pos:column="57">1621</cpp:value></cpp:define>
+
+<cpp:define pos:line="64" pos:column="1">#<cpp:directive pos:line="64" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="64" pos:column="9">IDC_PERCENTAGE_SLIDER</name></cpp:macro>			<cpp:value pos:line="64" pos:column="49">1622</cpp:value></cpp:define>
+<cpp:define pos:line="65" pos:column="1">#<cpp:directive pos:line="65" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="65" pos:column="9">IDC_TRANSPARENT_GRPBOX</name></cpp:macro> 			<cpp:value pos:line="65" pos:column="49">1623</cpp:value></cpp:define>
+
+<cpp:define pos:line="67" pos:column="1">#<cpp:directive pos:line="67" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="67" pos:column="9">IDC_MODE_STATIC</name></cpp:macro>					<cpp:value pos:line="67" pos:column="57">1624</cpp:value></cpp:define>
+<cpp:define pos:line="68" pos:column="1">#<cpp:directive pos:line="68" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="68" pos:column="9">IDNORMAL</name></cpp:macro>						<cpp:value pos:line="68" pos:column="65">1625</cpp:value></cpp:define>
+<cpp:define pos:line="69" pos:column="1">#<cpp:directive pos:line="69" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="69" pos:column="9">IDEXTENDED</name></cpp:macro>						<cpp:value pos:line="69" pos:column="65">1626</cpp:value></cpp:define>
+
+<cpp:define pos:line="71" pos:column="1">#<cpp:directive pos:line="71" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="71" pos:column="9">IDC_FIND_IN_STATIC</name></cpp:macro>				<cpp:value pos:line="71" pos:column="57">1628</cpp:value></cpp:define>
+<comment type="line" pos:line="72" pos:column="1">//#define	IDC_CURRENT_FILE_RADIO		1629</comment>
+<comment type="line" pos:line="73" pos:column="1">//#define	IDC_OPENED_FILES_RADIO		1630</comment>
+<comment type="line" pos:line="74" pos:column="1">//#define	IDC_FILES_RADIO				1631</comment>
+<cpp:define pos:line="75" pos:column="1">#<cpp:directive pos:line="75" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="75" pos:column="9">IDC_IN_SELECTION_CHECK</name></cpp:macro>   		<cpp:value pos:line="75" pos:column="49">1632</cpp:value></cpp:define>
+<cpp:define pos:line="76" pos:column="1">#<cpp:directive pos:line="76" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="76" pos:column="9">IDF_IN_SELECTION_CHECK</name></cpp:macro>	<cpp:value pos:line="76" pos:column="33">128</cpp:value></cpp:define>
+<cpp:define pos:line="77" pos:column="1">#<cpp:directive pos:line="77" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="77" pos:column="9">IDC_CLEAR_ALL</name></cpp:macro>            		<cpp:value pos:line="77" pos:column="49">1633</cpp:value></cpp:define>
+<cpp:define pos:line="78" pos:column="1">#<cpp:directive pos:line="78" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="78" pos:column="9">IDC_REPLACEINSELECTION</name></cpp:macro>   		<cpp:value pos:line="78" pos:column="49">1634</cpp:value></cpp:define>
+<cpp:define pos:line="79" pos:column="1">#<cpp:directive pos:line="79" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="79" pos:column="9">IDC_REPLACE_OPENEDFILES</name></cpp:macro>  		<cpp:value pos:line="79" pos:column="49">1635</cpp:value></cpp:define>
+<cpp:define pos:line="80" pos:column="1">#<cpp:directive pos:line="80" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="80" pos:column="9">IDC_FINDALL_OPENEDFILES</name></cpp:macro>  		<cpp:value pos:line="80" pos:column="49">1636</cpp:value></cpp:define>
+<comment type="line" pos:line="81" pos:column="1">//#define	IDC_FINDINFILES  1637</comment>
+<cpp:define pos:line="82" pos:column="1">#<cpp:directive pos:line="82" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="82" pos:column="9">IDC_FINDINFILES_LAUNCH</name></cpp:macro>			<cpp:value pos:line="82" pos:column="49">1638</cpp:value></cpp:define>
+<cpp:define pos:line="83" pos:column="1">#<cpp:directive pos:line="83" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="83" pos:column="9">IDC_GETCURRENTDOCTYPE</name></cpp:macro>			<cpp:value pos:line="83" pos:column="49">1639</cpp:value></cpp:define>
+<cpp:define pos:line="84" pos:column="1">#<cpp:directive pos:line="84" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="84" pos:column="9">IDC_FINDALL_CURRENTFILE</name></cpp:macro>			<cpp:value pos:line="84" pos:column="49">1641</cpp:value></cpp:define>
+<comment type="line" pos:line="85" pos:column="1">//#define	IDSWITCH  1640</comment>
+
+<cpp:define pos:line="87" pos:column="1">#<cpp:directive pos:line="87" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="87" pos:column="9">IDD_FINDINFILES_DLG</name></cpp:macro>				<cpp:value pos:line="87" pos:column="57">1650</cpp:value></cpp:define>
+<cpp:define pos:line="88" pos:column="1">#<cpp:directive pos:line="88" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="88" pos:column="9">IDD_FINDINFILES_BROWSE_BUTTON</name></cpp:macro>	<cpp:value pos:line="88" pos:column="41">1651</cpp:value></cpp:define>
+<cpp:define pos:line="89" pos:column="1">#<cpp:directive pos:line="89" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="89" pos:column="9">IDD_FINDINFILES_FILTERS_COMBO</name></cpp:macro>	<cpp:value pos:line="89" pos:column="41">1652</cpp:value></cpp:define>
+<cpp:define pos:line="90" pos:column="1">#<cpp:directive pos:line="90" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="90" pos:column="9">IDD_FINDINFILES_DIR_COMBO</name></cpp:macro>		<cpp:value pos:line="90" pos:column="49">1653</cpp:value></cpp:define>
+<cpp:define pos:line="91" pos:column="1">#<cpp:directive pos:line="91" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="91" pos:column="9">IDD_FINDINFILES_FILTERS_STATIC</name></cpp:macro>	<cpp:value pos:line="91" pos:column="41">1654</cpp:value></cpp:define>
+<cpp:define pos:line="92" pos:column="1">#<cpp:directive pos:line="92" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="92" pos:column="9">IDD_FINDINFILES_DIR_STATIC</name></cpp:macro>		<cpp:value pos:line="92" pos:column="49">1655</cpp:value></cpp:define>
+<cpp:define pos:line="93" pos:column="1">#<cpp:directive pos:line="93" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="93" pos:column="9">IDD_FINDINFILES_FIND_BUTTON</name></cpp:macro>		<cpp:value pos:line="93" pos:column="49">1656</cpp:value></cpp:define>
+<cpp:define pos:line="94" pos:column="1">#<cpp:directive pos:line="94" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="94" pos:column="9">IDD_FINDINFILES_GOBACK_BUTTON</name></cpp:macro>	<cpp:value pos:line="94" pos:column="41">1657</cpp:value></cpp:define>
+<cpp:define pos:line="95" pos:column="1">#<cpp:directive pos:line="95" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="95" pos:column="9">IDD_FINDINFILES_RECURSIVE_CHECK</name></cpp:macro>		<cpp:value pos:line="95" pos:column="49">1658</cpp:value></cpp:define>
+<cpp:define pos:line="96" pos:column="1">#<cpp:directive pos:line="96" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="96" pos:column="9">IDF_FINDINFILES_RECURSIVE_CHECK</name></cpp:macro>	<cpp:value pos:line="96" pos:column="41">32</cpp:value></cpp:define>
+<cpp:define pos:line="97" pos:column="1">#<cpp:directive pos:line="97" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="97" pos:column="9">IDD_FINDINFILES_INHIDDENDIR_CHECK</name></cpp:macro>	<cpp:value pos:line="97" pos:column="49">1659</cpp:value></cpp:define>
+<cpp:define pos:line="98" pos:column="1">#<cpp:directive pos:line="98" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="98" pos:column="9">IDF_FINDINFILES_INHIDDENDIR_CHECK</name></cpp:macro>	<cpp:value pos:line="98" pos:column="49">64</cpp:value></cpp:define>
+<cpp:define pos:line="99" pos:column="1">#<cpp:directive pos:line="99" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="99" pos:column="9">IDD_FINDINFILES_REPLACEINFILES</name></cpp:macro>	<cpp:value pos:line="99" pos:column="41">1660</cpp:value></cpp:define>
+<cpp:define pos:line="100" pos:column="1">#<cpp:directive pos:line="100" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="100" pos:column="9">IDD_FINDINFILES_FOLDERFOLLOWSDOC_CHECK</name></cpp:macro>	<cpp:value pos:line="100" pos:column="49">1661</cpp:value></cpp:define>
+
+<cpp:define pos:line="102" pos:column="1">#<cpp:directive pos:line="102" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="102" pos:column="9">IDD_FINDRESULT</name></cpp:macro>					<cpp:value pos:line="102" pos:column="57">1670</cpp:value></cpp:define>
+
+<cpp:define pos:line="104" pos:column="1">#<cpp:directive pos:line="104" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="104" pos:column="9">IDD_INCREMENT_FIND</name></cpp:macro>				<cpp:value pos:line="104" pos:column="57">1680</cpp:value></cpp:define>
+<cpp:define pos:line="105" pos:column="1">#<cpp:directive pos:line="105" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="105" pos:column="9">IDC_INCSTATIC</name></cpp:macro>					<cpp:value pos:line="105" pos:column="57">1681</cpp:value></cpp:define>
+<cpp:define pos:line="106" pos:column="1">#<cpp:directive pos:line="106" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="106" pos:column="9">IDC_INCFINDTEXT</name></cpp:macro>					<cpp:value pos:line="106" pos:column="57">1682</cpp:value></cpp:define>
+<cpp:define pos:line="107" pos:column="1">#<cpp:directive pos:line="107" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="107" pos:column="9">IDC_INCFINDPREVOK</name></cpp:macro>				<cpp:value pos:line="107" pos:column="57">1683</cpp:value></cpp:define>
+<cpp:define pos:line="108" pos:column="1">#<cpp:directive pos:line="108" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="108" pos:column="9">IDC_INCFINDNXTOK</name></cpp:macro>				<cpp:value pos:line="108" pos:column="57">1684</cpp:value></cpp:define>
+<cpp:define pos:line="109" pos:column="1">#<cpp:directive pos:line="109" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="109" pos:column="9">IDC_INCFINDMATCHCASE</name></cpp:macro>			<cpp:value pos:line="109" pos:column="49">1685</cpp:value></cpp:define>
+<cpp:define pos:line="110" pos:column="1">#<cpp:directive pos:line="110" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="110" pos:column="9">IDC_TRANSPARENT_CHECK</name></cpp:macro>				<cpp:value pos:line="110" pos:column="57">1686</cpp:value></cpp:define>
+<cpp:define pos:line="111" pos:column="1">#<cpp:directive pos:line="111" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="111" pos:column="9">IDC_TRANSPARENT_LOSSFOCUS_RADIO</name></cpp:macro>		<cpp:value pos:line="111" pos:column="49">1687</cpp:value></cpp:define>
+<cpp:define pos:line="112" pos:column="1">#<cpp:directive pos:line="112" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="112" pos:column="9">IDC_TRANSPARENT_ALWAYS_RADIO</name></cpp:macro>		<cpp:value pos:line="112" pos:column="49">1688</cpp:value></cpp:define>
+<cpp:define pos:line="113" pos:column="1">#<cpp:directive pos:line="113" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="113" pos:column="9">IDC_INCFINDSTATUS</name></cpp:macro>				<cpp:value pos:line="113" pos:column="57">1689</cpp:value></cpp:define>
+<cpp:define pos:line="114" pos:column="1">#<cpp:directive pos:line="114" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="114" pos:column="9">IDC_INCFINDHILITEALL</name></cpp:macro>			<cpp:value pos:line="114" pos:column="49">1690</cpp:value></cpp:define>
+
+<cpp:define pos:line="116" pos:column="1">#<cpp:directive pos:line="116" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="116" pos:column="9">IDB_INCREMENTAL_BG</name></cpp:macro>				<cpp:value pos:line="116" pos:column="57">1691</cpp:value></cpp:define>
+
+
+<cpp:define pos:line="119" pos:column="1">#<cpp:directive pos:line="119" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="119" pos:column="9">IDC_FRCOMMAND_INIT</name></cpp:macro>				<cpp:value pos:line="119" pos:column="57">1700</cpp:value></cpp:define>
+<cpp:define pos:line="120" pos:column="1">#<cpp:directive pos:line="120" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="120" pos:column="9">IDC_FRCOMMAND_EXEC</name></cpp:macro>				<cpp:value pos:line="120" pos:column="57">1701</cpp:value></cpp:define>
+<cpp:define pos:line="121" pos:column="1">#<cpp:directive pos:line="121" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="121" pos:column="9">IDC_FRCOMMAND_BOOLEANS</name></cpp:macro>			<cpp:value pos:line="121" pos:column="49">1702</cpp:value></cpp:define>
+
+<cpp:define pos:line="123" pos:column="1">#<cpp:directive pos:line="123" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="123" pos:column="9">IDREDOTMATCHNL</name></cpp:macro>					<cpp:value pos:line="123" pos:column="57">1703</cpp:value></cpp:define>
+<cpp:define pos:line="124" pos:column="1">#<cpp:directive pos:line="124" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="124" pos:column="9">IDF_REDOTMATCHNL</name></cpp:macro>	<cpp:value pos:line="124" pos:column="33">1024</cpp:value></cpp:define>
+<cpp:endif pos:line="125" pos:column="1">#<cpp:directive pos:line="125" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="125" pos:column="8">//FINDREPLACE_DLG_H</comment>
+</unit>

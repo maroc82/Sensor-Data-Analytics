@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\lexers\LexSorcus.cxx" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file LexSorcus.cxx
+** Lexer for SORCUS installation files
+** Written by Eugen Bitter and Christoph Baumann at SORCUS Computer, Heidelberg Germany
+** Based on the ASM Lexer by The Black Horus
+**/</comment>
+
+<comment type="line" pos:line="8" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:include pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">include</cpp:directive> <cpp:file pos:line="10" pos:column="10">&lt;stdlib.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">include</cpp:directive> <cpp:file pos:line="11" pos:column="10">&lt;string.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">include</cpp:directive> <cpp:file pos:line="12" pos:column="10">&lt;stdio.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">include</cpp:directive> <cpp:file pos:line="13" pos:column="10">&lt;stdarg.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="14" pos:column="1">#<cpp:directive pos:line="14" pos:column="2">include</cpp:directive> <cpp:file pos:line="14" pos:column="10">&lt;assert.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:line="15" pos:column="1">#<cpp:directive pos:line="15" pos:column="2">include</cpp:directive> <cpp:file pos:line="15" pos:column="10">&lt;ctype.h&gt;</cpp:file></cpp:include>
+
+<cpp:include pos:line="17" pos:column="1">#<cpp:directive pos:line="17" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="17" pos:column="10">"ILexer.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="18" pos:column="1">#<cpp:directive pos:line="18" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="18" pos:column="10">"Scintilla.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="19" pos:column="1">#<cpp:directive pos:line="19" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="19" pos:column="10">"SciLexer.h"</lit:literal></cpp:file></cpp:include>
+
+<cpp:include pos:line="21" pos:column="1">#<cpp:directive pos:line="21" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="21" pos:column="10">"WordList.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="22" pos:column="1">#<cpp:directive pos:line="22" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="22" pos:column="10">"LexAccessor.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="23" pos:column="1">#<cpp:directive pos:line="23" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="23" pos:column="10">"Accessor.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="24" pos:column="1">#<cpp:directive pos:line="24" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="24" pos:column="10">"StyleContext.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="25" pos:column="1">#<cpp:directive pos:line="25" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="25" pos:column="10">"CharacterSet.h"</lit:literal></cpp:file></cpp:include>
+<cpp:include pos:line="26" pos:column="1">#<cpp:directive pos:line="26" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="26" pos:column="10">"LexerModule.h"</lit:literal></cpp:file></cpp:include>
+
+<cpp:ifdef pos:line="28" pos:column="1">#<cpp:directive pos:line="28" pos:column="2">ifdef</cpp:directive> <name pos:line="28" pos:column="8">SCI_NAMESPACE</name></cpp:ifdef>
+<using pos:line="29" pos:column="1">using namespace <name pos:line="29" pos:column="17">Scintilla</name>;</using>
+<cpp:endif pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">endif</cpp:directive></cpp:endif>
+
+
+<comment type="line" pos:line="33" pos:column="1">//each character a..z and A..Z + '_' can be part of a keyword</comment>
+<comment type="line" pos:line="34" pos:column="1">//additionally numbers that follow 'M' can be contained in a keyword</comment>
+<function><type><specifier pos:line="35" pos:column="1">static</specifier> <specifier pos:line="35" pos:column="8">inline</specifier> <name pos:line="35" pos:column="15">bool</name></type> <name pos:line="35" pos:column="20">IsSWordStart</name><parameter_list pos:line="35" pos:column="32">(<param><decl><type><specifier pos:line="35" pos:column="33">const</specifier> <name pos:line="35" pos:column="39">int</name></type> <name pos:line="35" pos:column="43">ch</name></decl></param>, <param><decl><type><specifier pos:line="35" pos:column="47">const</specifier> <name pos:line="35" pos:column="53">int</name></type> <name pos:line="35" pos:column="57">prev_ch</name></decl></param>)</parameter_list>
+<block pos:line="36" pos:column="1">{
+    <if pos:line="37" pos:column="5">if <condition pos:line="37" pos:column="8">(<expr><call><name pos:line="37" pos:column="9">isalpha</name><argument_list pos:line="37" pos:column="16">(<argument><expr><name pos:line="37" pos:column="17">ch</name></expr></argument>)</argument_list></call> <op:operator pos:line="37" pos:column="21">||</op:operator> <op:operator pos:line="37" pos:column="24">(</op:operator><name pos:line="37" pos:column="25">ch</name> <op:operator pos:line="37" pos:column="28">==</op:operator> <lit:literal type="char" pos:line="37" pos:column="31">'_'</lit:literal><op:operator pos:line="37" pos:column="34">)</op:operator> <op:operator pos:line="37" pos:column="36">||</op:operator> <op:operator pos:line="37" pos:column="39">(</op:operator><op:operator pos:line="37" pos:column="40">(</op:operator><call><name pos:line="37" pos:column="41">isdigit</name><argument_list pos:line="37" pos:column="48">(<argument><expr><name pos:line="37" pos:column="49">ch</name></expr></argument>)</argument_list></call><op:operator pos:line="37" pos:column="52">)</op:operator> <op:operator pos:line="37" pos:column="54">&amp;&amp;</op:operator> <op:operator pos:line="37" pos:column="57">(</op:operator><name pos:line="37" pos:column="58">prev_ch</name> <op:operator pos:line="37" pos:column="66">==</op:operator> <lit:literal type="char" pos:line="37" pos:column="69">'M'</lit:literal><op:operator pos:line="37" pos:column="72">)</op:operator><op:operator pos:line="37" pos:column="73">)</op:operator></expr>)</condition><then pos:line="37" pos:column="75">
+        <return pos:line="38" pos:column="9">return <expr><lit:literal type="boolean" pos:line="38" pos:column="16">true</lit:literal></expr>;</return></then></if>
+
+    <return pos:line="40" pos:column="5">return <expr><lit:literal type="boolean" pos:line="40" pos:column="12">false</lit:literal></expr>;</return>
+}</block></function>
+
+
+<comment type="line" pos:line="44" pos:column="1">//only digits that are not preceded by 'M' count as a number</comment>
+<function><type><specifier pos:line="45" pos:column="1">static</specifier> <specifier pos:line="45" pos:column="8">inline</specifier> <name pos:line="45" pos:column="15">bool</name></type> <name pos:line="45" pos:column="20">IsSorcusNumber</name><parameter_list pos:line="45" pos:column="34">(<param><decl><type><specifier pos:line="45" pos:column="35">const</specifier> <name pos:line="45" pos:column="41">int</name></type> <name pos:line="45" pos:column="45">ch</name></decl></param>, <param><decl><type><specifier pos:line="45" pos:column="49">const</specifier> <name pos:line="45" pos:column="55">int</name></type> <name pos:line="45" pos:column="59">prev_ch</name></decl></param>)</parameter_list>
+<block pos:line="46" pos:column="1">{
+    <if pos:line="47" pos:column="5">if <condition pos:line="47" pos:column="8">(<expr><op:operator pos:line="47" pos:column="9">(</op:operator><call><name pos:line="47" pos:column="10">isdigit</name><argument_list pos:line="47" pos:column="17">(<argument><expr><name pos:line="47" pos:column="18">ch</name></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="21">)</op:operator> <op:operator pos:line="47" pos:column="23">&amp;&amp;</op:operator> <op:operator pos:line="47" pos:column="26">(</op:operator><name pos:line="47" pos:column="27">prev_ch</name> <op:operator pos:line="47" pos:column="35">!=</op:operator> <lit:literal type="char" pos:line="47" pos:column="38">'M'</lit:literal><op:operator pos:line="47" pos:column="41">)</op:operator></expr>)</condition><then pos:line="47" pos:column="43">
+        <return pos:line="48" pos:column="9">return <expr><lit:literal type="boolean" pos:line="48" pos:column="16">true</lit:literal></expr>;</return></then></if>
+
+    <return pos:line="50" pos:column="5">return <expr><lit:literal type="boolean" pos:line="50" pos:column="12">false</lit:literal></expr>;</return>
+}</block></function>
+
+
+<comment type="line" pos:line="54" pos:column="1">//only = is a valid operator</comment>
+<function><type><specifier pos:line="55" pos:column="1">static</specifier> <specifier pos:line="55" pos:column="8">inline</specifier> <name pos:line="55" pos:column="15">bool</name></type> <name pos:line="55" pos:column="20">IsSorcusOperator</name><parameter_list pos:line="55" pos:column="36">(<param><decl><type><specifier pos:line="55" pos:column="37">const</specifier> <name pos:line="55" pos:column="43">int</name></type> <name pos:line="55" pos:column="47">ch</name></decl></param>)</parameter_list>
+<block pos:line="56" pos:column="1">{
+    <if pos:line="57" pos:column="5">if <condition pos:line="57" pos:column="8">(<expr><name pos:line="57" pos:column="9">ch</name> <op:operator pos:line="57" pos:column="12">==</op:operator> <lit:literal type="char" pos:line="57" pos:column="15">'='</lit:literal></expr>)</condition><then pos:line="57" pos:column="19">
+        <return pos:line="58" pos:column="9">return <expr><lit:literal type="boolean" pos:line="58" pos:column="16">true</lit:literal></expr>;</return></then></if>
+
+    <return pos:line="60" pos:column="5">return <expr><lit:literal type="boolean" pos:line="60" pos:column="12">false</lit:literal></expr>;</return>
+}</block></function>
+
+
+<function><type><specifier pos:line="64" pos:column="1">static</specifier> <name pos:line="64" pos:column="8">void</name></type> <name pos:line="64" pos:column="13">ColouriseSorcusDoc</name><parameter_list pos:line="64" pos:column="31">(<param><decl><type><name pos:line="64" pos:column="32">unsigned</name> <name pos:line="64" pos:column="41">int</name></type> <name pos:line="64" pos:column="45">startPos</name></decl></param>, <param><decl><type><name pos:line="64" pos:column="55">int</name></type> <name pos:line="64" pos:column="59">length</name></decl></param>, <param><decl><type><name pos:line="64" pos:column="67">int</name></type> <name pos:line="64" pos:column="71">initStyle</name></decl></param>, <param><decl><type><name pos:line="64" pos:column="82">WordList</name> <type:modifier pos:line="64" pos:column="91">*</type:modifier></type><name><name pos:line="64" pos:column="92">keywordlists</name><index pos:line="64" pos:column="104">[]</index></name></decl></param>,
+                               <param><decl><type><name pos:line="65" pos:column="32">Accessor</name> <type:modifier pos:line="65" pos:column="41">&amp;</type:modifier></type><name pos:line="65" pos:column="42">styler</name></decl></param>)</parameter_list>
+<block pos:line="66" pos:column="1">{
+
+    <decl_stmt><decl><type><name pos:line="68" pos:column="5">WordList</name> <type:modifier pos:line="68" pos:column="14">&amp;</type:modifier></type><name pos:line="68" pos:column="15">Command</name> <init pos:line="68" pos:column="23">= <expr><op:operator pos:line="68" pos:column="25">*</op:operator><name><name pos:line="68" pos:column="26">keywordlists</name><index pos:line="68" pos:column="38">[<expr><lit:literal type="number" pos:line="68" pos:column="39">0</lit:literal></expr>]</index></name></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="69" pos:column="5">WordList</name> <type:modifier pos:line="69" pos:column="14">&amp;</type:modifier></type><name pos:line="69" pos:column="15">Parameter</name> <init pos:line="69" pos:column="25">= <expr><op:operator pos:line="69" pos:column="27">*</op:operator><name><name pos:line="69" pos:column="28">keywordlists</name><index pos:line="69" pos:column="40">[<expr><lit:literal type="number" pos:line="69" pos:column="41">1</lit:literal></expr>]</index></name></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="70" pos:column="5">WordList</name> <type:modifier pos:line="70" pos:column="14">&amp;</type:modifier></type><name pos:line="70" pos:column="15">Constant</name> <init pos:line="70" pos:column="24">= <expr><op:operator pos:line="70" pos:column="26">*</op:operator><name><name pos:line="70" pos:column="27">keywordlists</name><index pos:line="70" pos:column="39">[<expr><lit:literal type="number" pos:line="70" pos:column="40">2</lit:literal></expr>]</index></name></expr></init></decl>;</decl_stmt>
+
+    <comment type="line" pos:line="72" pos:column="5">// Do not leak onto next line</comment>
+    <if pos:line="73" pos:column="5">if <condition pos:line="73" pos:column="8">(<expr><name pos:line="73" pos:column="9">initStyle</name> <op:operator pos:line="73" pos:column="19">==</op:operator> <name pos:line="73" pos:column="22">SCE_SORCUS_STRINGEOL</name></expr>)</condition><then pos:line="73" pos:column="43">
+        <expr_stmt><expr><name pos:line="74" pos:column="9">initStyle</name> <op:operator pos:line="74" pos:column="19">=</op:operator> <name pos:line="74" pos:column="21">SCE_SORCUS_DEFAULT</name></expr>;</expr_stmt></then></if>
+
+    <function_decl><type><name pos:line="76" pos:column="5">StyleContext</name></type> <name pos:line="76" pos:column="18">sc</name><parameter_list pos:line="76" pos:column="20">(<param><decl><type><name pos:line="76" pos:column="21">startPos</name></type></decl></param>, <param><decl><type><name pos:line="76" pos:column="31">length</name></type></decl></param>, <param><decl><type><name pos:line="76" pos:column="39">initStyle</name></type></decl></param>, <param><decl><type><name pos:line="76" pos:column="50">styler</name></type></decl></param>)</parameter_list>;</function_decl>
+
+    <for pos:line="78" pos:column="5">for (<init pos:line="78" pos:column="10">;</init> <condition><expr><call><name><name pos:line="78" pos:column="12">sc</name><op:operator pos:line="78" pos:column="14">.</op:operator><name pos:line="78" pos:column="15">More</name></name><argument_list pos:line="78" pos:column="19">()</argument_list></call></expr>;</condition> <incr><expr><call><name><name pos:line="78" pos:column="23">sc</name><op:operator pos:line="78" pos:column="25">.</op:operator><name pos:line="78" pos:column="26">Forward</name></name><argument_list pos:line="78" pos:column="33">()</argument_list></call></expr></incr>)
+    <block pos:line="79" pos:column="5">{
+
+        <comment type="line" pos:line="81" pos:column="9">// Prevent SCE_SORCUS_STRINGEOL from leaking back to previous line</comment>
+        <if pos:line="82" pos:column="9">if <condition pos:line="82" pos:column="12">(<expr><name><name pos:line="82" pos:column="13">sc</name><op:operator pos:line="82" pos:column="15">.</op:operator><name pos:line="82" pos:column="16">atLineStart</name></name> <op:operator pos:line="82" pos:column="28">&amp;&amp;</op:operator> <op:operator pos:line="82" pos:column="31">(</op:operator><name><name pos:line="82" pos:column="32">sc</name><op:operator pos:line="82" pos:column="34">.</op:operator><name pos:line="82" pos:column="35">state</name></name> <op:operator pos:line="82" pos:column="41">==</op:operator> <name pos:line="82" pos:column="44">SCE_SORCUS_STRING</name><op:operator pos:line="82" pos:column="61">)</op:operator></expr>)</condition><then pos:line="82" pos:column="63">
+        <block pos:line="83" pos:column="9">{
+            <expr_stmt><expr><call><name><name pos:line="84" pos:column="13">sc</name><op:operator pos:line="84" pos:column="15">.</op:operator><name pos:line="84" pos:column="16">SetState</name></name><argument_list pos:line="84" pos:column="24">(<argument><expr><name pos:line="84" pos:column="25">SCE_SORCUS_STRING</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        }</block></then></if>
+
+        <comment type="line" pos:line="87" pos:column="9">// Determine if the current state should terminate.</comment>
+        <if pos:line="88" pos:column="9">if <condition pos:line="88" pos:column="12">(<expr><name><name pos:line="88" pos:column="13">sc</name><op:operator pos:line="88" pos:column="15">.</op:operator><name pos:line="88" pos:column="16">state</name></name> <op:operator pos:line="88" pos:column="22">==</op:operator> <name pos:line="88" pos:column="25">SCE_SORCUS_OPERATOR</name></expr>)</condition><then pos:line="88" pos:column="45">
+        <block pos:line="89" pos:column="9">{
+            <if pos:line="90" pos:column="13">if <condition pos:line="90" pos:column="16">(<expr><op:operator pos:line="90" pos:column="17">!</op:operator><call><name pos:line="90" pos:column="18">IsSorcusOperator</name><argument_list pos:line="90" pos:column="34">(<argument><expr><name><name pos:line="90" pos:column="35">sc</name><op:operator pos:line="90" pos:column="37">.</op:operator><name pos:line="90" pos:column="38">ch</name></name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="90" pos:column="42">
+            <block pos:line="91" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="92" pos:column="17">sc</name><op:operator pos:line="92" pos:column="19">.</op:operator><name pos:line="92" pos:column="20">SetState</name></name><argument_list pos:line="92" pos:column="28">(<argument><expr><name pos:line="92" pos:column="29">SCE_SORCUS_DEFAULT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if>
+        }</block></then>
+        <else pos:line="95" pos:column="9">else <if pos:line="95" pos:column="14">if<condition pos:line="95" pos:column="16">(<expr><name><name pos:line="95" pos:column="17">sc</name><op:operator pos:line="95" pos:column="19">.</op:operator><name pos:line="95" pos:column="20">state</name></name> <op:operator pos:line="95" pos:column="26">==</op:operator> <name pos:line="95" pos:column="29">SCE_SORCUS_NUMBER</name></expr>)</condition><then pos:line="95" pos:column="47">
+        <block pos:line="96" pos:column="9">{
+            <if pos:line="97" pos:column="13">if<condition pos:line="97" pos:column="15">(<expr><op:operator pos:line="97" pos:column="16">!</op:operator><call><name pos:line="97" pos:column="17">IsSorcusNumber</name><argument_list pos:line="97" pos:column="31">(<argument><expr><name><name pos:line="97" pos:column="32">sc</name><op:operator pos:line="97" pos:column="34">.</op:operator><name pos:line="97" pos:column="35">ch</name></name></expr></argument>, <argument><expr><name><name pos:line="97" pos:column="39">sc</name><op:operator pos:line="97" pos:column="41">.</op:operator><name pos:line="97" pos:column="42">chPrev</name></name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="97" pos:column="50">
+            <block pos:line="98" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="99" pos:column="17">sc</name><op:operator pos:line="99" pos:column="19">.</op:operator><name pos:line="99" pos:column="20">SetState</name></name><argument_list pos:line="99" pos:column="28">(<argument><expr><name pos:line="99" pos:column="29">SCE_SORCUS_DEFAULT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if>
+        }</block></then>
+        <else pos:line="102" pos:column="9">else <if pos:line="102" pos:column="14">if <condition pos:line="102" pos:column="17">(<expr><name><name pos:line="102" pos:column="18">sc</name><op:operator pos:line="102" pos:column="20">.</op:operator><name pos:line="102" pos:column="21">state</name></name> <op:operator pos:line="102" pos:column="27">==</op:operator> <name pos:line="102" pos:column="30">SCE_SORCUS_IDENTIFIER</name></expr>)</condition><then pos:line="102" pos:column="52">
+        <block pos:line="103" pos:column="9">{
+            <if pos:line="104" pos:column="13">if <condition pos:line="104" pos:column="16">(<expr><op:operator pos:line="104" pos:column="17">!</op:operator><call><name pos:line="104" pos:column="18">IsSWordStart</name><argument_list pos:line="104" pos:column="30">(<argument><expr><name><name pos:line="104" pos:column="31">sc</name><op:operator pos:line="104" pos:column="33">.</op:operator><name pos:line="104" pos:column="34">ch</name></name></expr></argument>, <argument><expr><name><name pos:line="104" pos:column="38">sc</name><op:operator pos:line="104" pos:column="40">.</op:operator><name pos:line="104" pos:column="41">chPrev</name></name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="104" pos:column="49">
+            <block pos:line="105" pos:column="13">{
+                <decl_stmt><decl><type><name pos:line="106" pos:column="17">char</name></type> <name><name pos:line="106" pos:column="22">s</name><index pos:line="106" pos:column="23">[<expr><lit:literal type="number" pos:line="106" pos:column="24">100</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+
+                <expr_stmt><expr><call><name><name pos:line="108" pos:column="17">sc</name><op:operator pos:line="108" pos:column="19">.</op:operator><name pos:line="108" pos:column="20">GetCurrent</name></name><argument_list pos:line="108" pos:column="30">(<argument><expr><name pos:line="108" pos:column="31">s</name></expr></argument>, <argument><expr><sizeof pos:line="108" pos:column="34">sizeof<argument_list pos:line="108" pos:column="40">(<argument><expr><name pos:line="108" pos:column="41">s</name></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+                <if pos:line="110" pos:column="17">if <condition pos:line="110" pos:column="20">(<expr><call><name><name pos:line="110" pos:column="21">Command</name><op:operator pos:line="110" pos:column="28">.</op:operator><name pos:line="110" pos:column="29">InList</name></name><argument_list pos:line="110" pos:column="35">(<argument><expr><name pos:line="110" pos:column="36">s</name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="110" pos:column="39">
+                <block pos:line="111" pos:column="17">{
+                    <expr_stmt><expr><call><name><name pos:line="112" pos:column="21">sc</name><op:operator pos:line="112" pos:column="23">.</op:operator><name pos:line="112" pos:column="24">ChangeState</name></name><argument_list pos:line="112" pos:column="35">(<argument><expr><name pos:line="112" pos:column="36">SCE_SORCUS_COMMAND</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                }</block></then>
+                <else pos:line="114" pos:column="17">else <if pos:line="114" pos:column="22">if <condition pos:line="114" pos:column="25">(<expr><call><name><name pos:line="114" pos:column="26">Parameter</name><op:operator pos:line="114" pos:column="35">.</op:operator><name pos:line="114" pos:column="36">InList</name></name><argument_list pos:line="114" pos:column="42">(<argument><expr><name pos:line="114" pos:column="43">s</name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="114" pos:column="46">
+                <block pos:line="115" pos:column="17">{
+                    <expr_stmt><expr><call><name><name pos:line="116" pos:column="21">sc</name><op:operator pos:line="116" pos:column="23">.</op:operator><name pos:line="116" pos:column="24">ChangeState</name></name><argument_list pos:line="116" pos:column="35">(<argument><expr><name pos:line="116" pos:column="36">SCE_SORCUS_PARAMETER</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                }</block></then>
+                <else pos:line="118" pos:column="17">else <if pos:line="118" pos:column="22">if <condition pos:line="118" pos:column="25">(<expr><call><name><name pos:line="118" pos:column="26">Constant</name><op:operator pos:line="118" pos:column="34">.</op:operator><name pos:line="118" pos:column="35">InList</name></name><argument_list pos:line="118" pos:column="41">(<argument><expr><name pos:line="118" pos:column="42">s</name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="118" pos:column="45">
+                <block pos:line="119" pos:column="17">{
+                    <expr_stmt><expr><call><name><name pos:line="120" pos:column="21">sc</name><op:operator pos:line="120" pos:column="23">.</op:operator><name pos:line="120" pos:column="24">ChangeState</name></name><argument_list pos:line="120" pos:column="35">(<argument><expr><name pos:line="120" pos:column="36">SCE_SORCUS_CONSTANT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                }</block></then></if></else></if></else></if>
+
+                <expr_stmt><expr><call><name><name pos:line="123" pos:column="17">sc</name><op:operator pos:line="123" pos:column="19">.</op:operator><name pos:line="123" pos:column="20">SetState</name></name><argument_list pos:line="123" pos:column="28">(<argument><expr><name pos:line="123" pos:column="29">SCE_SORCUS_DEFAULT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if>
+        }</block></then>
+        <else pos:line="126" pos:column="9">else <if pos:line="126" pos:column="14">if <condition pos:line="126" pos:column="17">(<expr><name><name pos:line="126" pos:column="18">sc</name><op:operator pos:line="126" pos:column="20">.</op:operator><name pos:line="126" pos:column="21">state</name></name> <op:operator pos:line="126" pos:column="27">==</op:operator> <name pos:line="126" pos:column="30">SCE_SORCUS_COMMENTLINE</name></expr> )</condition><then pos:line="126" pos:column="54">
+        <block pos:line="127" pos:column="9">{
+            <if pos:line="128" pos:column="13">if <condition pos:line="128" pos:column="16">(<expr><name><name pos:line="128" pos:column="17">sc</name><op:operator pos:line="128" pos:column="19">.</op:operator><name pos:line="128" pos:column="20">atLineEnd</name></name></expr>)</condition><then pos:line="128" pos:column="30">
+            <block pos:line="129" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="130" pos:column="17">sc</name><op:operator pos:line="130" pos:column="19">.</op:operator><name pos:line="130" pos:column="20">SetState</name></name><argument_list pos:line="130" pos:column="28">(<argument><expr><name pos:line="130" pos:column="29">SCE_SORCUS_DEFAULT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if>
+        }</block></then>
+        <else pos:line="133" pos:column="9">else <if pos:line="133" pos:column="14">if <condition pos:line="133" pos:column="17">(<expr><name><name pos:line="133" pos:column="18">sc</name><op:operator pos:line="133" pos:column="20">.</op:operator><name pos:line="133" pos:column="21">state</name></name> <op:operator pos:line="133" pos:column="27">==</op:operator> <name pos:line="133" pos:column="30">SCE_SORCUS_STRING</name></expr>)</condition><then pos:line="133" pos:column="48">
+        <block pos:line="134" pos:column="9">{
+            <if pos:line="135" pos:column="13">if <condition pos:line="135" pos:column="16">(<expr><name><name pos:line="135" pos:column="17">sc</name><op:operator pos:line="135" pos:column="19">.</op:operator><name pos:line="135" pos:column="20">ch</name></name> <op:operator pos:line="135" pos:column="23">==</op:operator> <lit:literal type="char" pos:line="135" pos:column="26">'\"'</lit:literal></expr>)</condition><then pos:line="135" pos:column="31">
+            <block pos:line="136" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="137" pos:column="17">sc</name><op:operator pos:line="137" pos:column="19">.</op:operator><name pos:line="137" pos:column="20">ForwardSetState</name></name><argument_list pos:line="137" pos:column="35">(<argument><expr><name pos:line="137" pos:column="36">SCE_SORCUS_DEFAULT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then>
+            <else pos:line="139" pos:column="13">else <if pos:line="139" pos:column="18">if <condition pos:line="139" pos:column="21">(<expr><name><name pos:line="139" pos:column="22">sc</name><op:operator pos:line="139" pos:column="24">.</op:operator><name pos:line="139" pos:column="25">atLineEnd</name></name></expr>)</condition><then pos:line="139" pos:column="35">
+            <block pos:line="140" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="141" pos:column="17">sc</name><op:operator pos:line="141" pos:column="19">.</op:operator><name pos:line="141" pos:column="20">ChangeState</name></name><argument_list pos:line="141" pos:column="31">(<argument><expr><name pos:line="141" pos:column="32">SCE_SORCUS_STRINGEOL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name pos:line="142" pos:column="17">sc</name><op:operator pos:line="142" pos:column="19">.</op:operator><name pos:line="142" pos:column="20">ForwardSetState</name></name><argument_list pos:line="142" pos:column="35">(<argument><expr><name pos:line="142" pos:column="36">SCE_SORCUS_DEFAULT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if></else></if>
+        }</block></then></if></else></if></else></if></else></if></else></if>
+
+        <comment type="line" pos:line="146" pos:column="9">// Determine if a new state should be entered.</comment>
+        <if pos:line="147" pos:column="9">if <condition pos:line="147" pos:column="12">(<expr><name><name pos:line="147" pos:column="13">sc</name><op:operator pos:line="147" pos:column="15">.</op:operator><name pos:line="147" pos:column="16">state</name></name> <op:operator pos:line="147" pos:column="22">==</op:operator> <name pos:line="147" pos:column="25">SCE_SORCUS_DEFAULT</name></expr>)</condition><then pos:line="147" pos:column="44">
+        <block pos:line="148" pos:column="9">{
+            <if pos:line="149" pos:column="13">if <condition pos:line="149" pos:column="16">(<expr><op:operator pos:line="149" pos:column="17">(</op:operator><name><name pos:line="149" pos:column="18">sc</name><op:operator pos:line="149" pos:column="20">.</op:operator><name pos:line="149" pos:column="21">ch</name></name> <op:operator pos:line="149" pos:column="24">==</op:operator> <lit:literal type="char" pos:line="149" pos:column="27">';'</lit:literal><op:operator pos:line="149" pos:column="30">)</op:operator> <op:operator pos:line="149" pos:column="32">||</op:operator> <op:operator pos:line="149" pos:column="35">(</op:operator><name><name pos:line="149" pos:column="36">sc</name><op:operator pos:line="149" pos:column="38">.</op:operator><name pos:line="149" pos:column="39">ch</name></name> <op:operator pos:line="149" pos:column="42">==</op:operator> <lit:literal type="char" pos:line="149" pos:column="45">'\''</lit:literal><op:operator pos:line="149" pos:column="49">)</op:operator></expr>)</condition><then pos:line="149" pos:column="51">
+            <block pos:line="150" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="151" pos:column="17">sc</name><op:operator pos:line="151" pos:column="19">.</op:operator><name pos:line="151" pos:column="20">SetState</name></name><argument_list pos:line="151" pos:column="28">(<argument><expr><name pos:line="151" pos:column="29">SCE_SORCUS_COMMENTLINE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then>
+            <else pos:line="153" pos:column="13">else <if pos:line="153" pos:column="18">if <condition pos:line="153" pos:column="21">(<expr><call><name pos:line="153" pos:column="22">IsSWordStart</name><argument_list pos:line="153" pos:column="34">(<argument><expr><name><name pos:line="153" pos:column="35">sc</name><op:operator pos:line="153" pos:column="37">.</op:operator><name pos:line="153" pos:column="38">ch</name></name></expr></argument>, <argument><expr><name><name pos:line="153" pos:column="42">sc</name><op:operator pos:line="153" pos:column="44">.</op:operator><name pos:line="153" pos:column="45">chPrev</name></name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="153" pos:column="53">
+            <block pos:line="154" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="155" pos:column="17">sc</name><op:operator pos:line="155" pos:column="19">.</op:operator><name pos:line="155" pos:column="20">SetState</name></name><argument_list pos:line="155" pos:column="28">(<argument><expr><name pos:line="155" pos:column="29">SCE_SORCUS_IDENTIFIER</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then>
+            <else pos:line="157" pos:column="13">else <if pos:line="157" pos:column="18">if <condition pos:line="157" pos:column="21">(<expr><name><name pos:line="157" pos:column="22">sc</name><op:operator pos:line="157" pos:column="24">.</op:operator><name pos:line="157" pos:column="25">ch</name></name> <op:operator pos:line="157" pos:column="28">==</op:operator> <lit:literal type="char" pos:line="157" pos:column="31">'\"'</lit:literal></expr>)</condition><then pos:line="157" pos:column="36">
+            <block pos:line="158" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="159" pos:column="17">sc</name><op:operator pos:line="159" pos:column="19">.</op:operator><name pos:line="159" pos:column="20">SetState</name></name><argument_list pos:line="159" pos:column="28">(<argument><expr><name pos:line="159" pos:column="29">SCE_SORCUS_STRING</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then>
+            <else pos:line="161" pos:column="13">else <if pos:line="161" pos:column="18">if <condition pos:line="161" pos:column="21">(<expr><call><name pos:line="161" pos:column="22">IsSorcusOperator</name><argument_list pos:line="161" pos:column="38">(<argument><expr><name><name pos:line="161" pos:column="39">sc</name><op:operator pos:line="161" pos:column="41">.</op:operator><name pos:line="161" pos:column="42">ch</name></name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="161" pos:column="46">
+            <block pos:line="162" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="163" pos:column="17">sc</name><op:operator pos:line="163" pos:column="19">.</op:operator><name pos:line="163" pos:column="20">SetState</name></name><argument_list pos:line="163" pos:column="28">(<argument><expr><name pos:line="163" pos:column="29">SCE_SORCUS_OPERATOR</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then>
+            <else pos:line="165" pos:column="13">else <if pos:line="165" pos:column="18">if <condition pos:line="165" pos:column="21">(<expr><call><name pos:line="165" pos:column="22">IsSorcusNumber</name><argument_list pos:line="165" pos:column="36">(<argument><expr><name><name pos:line="165" pos:column="37">sc</name><op:operator pos:line="165" pos:column="39">.</op:operator><name pos:line="165" pos:column="40">ch</name></name></expr></argument>, <argument><expr><name><name pos:line="165" pos:column="44">sc</name><op:operator pos:line="165" pos:column="46">.</op:operator><name pos:line="165" pos:column="47">chPrev</name></name></expr></argument>)</argument_list></call></expr>)</condition><then pos:line="165" pos:column="55">
+            <block pos:line="166" pos:column="13">{
+                <expr_stmt><expr><call><name><name pos:line="167" pos:column="17">sc</name><op:operator pos:line="167" pos:column="19">.</op:operator><name pos:line="167" pos:column="20">SetState</name></name><argument_list pos:line="167" pos:column="28">(<argument><expr><name pos:line="167" pos:column="29">SCE_SORCUS_NUMBER</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if></else></if></else></if></else></if></else></if>
+        }</block></then></if>
+
+    }</block></for>
+    <expr_stmt><expr><call><name><name pos:line="172" pos:column="5">sc</name><op:operator pos:line="172" pos:column="7">.</op:operator><name pos:line="172" pos:column="8">Complete</name></name><argument_list pos:line="172" pos:column="16">()</argument_list></call></expr>;</expr_stmt>
+}</block></function>
+
+
+<decl_stmt><decl><type><specifier pos:line="176" pos:column="1">static</specifier> <specifier pos:line="176" pos:column="8">const</specifier> <name pos:line="176" pos:column="14">char</name><type:modifier pos:line="176" pos:column="18">*</type:modifier> <specifier pos:line="176" pos:column="20">const</specifier></type> <name><name pos:line="176" pos:column="26">SorcusWordListDesc</name><index pos:line="176" pos:column="44">[]</index></name> <init pos:line="176" pos:column="47">= <expr><block pos:line="176" pos:column="49">{<expr><lit:literal type="string" pos:line="176" pos:column="50">"Command"</lit:literal></expr>,<expr><lit:literal type="string" pos:line="176" pos:column="60">"Parameter"</lit:literal></expr>, <expr><lit:literal type="string" pos:line="176" pos:column="73">"Constant"</lit:literal></expr>, <expr><lit:literal type="number" pos:line="176" pos:column="85">0</lit:literal></expr>}</block></expr></init></decl>;</decl_stmt>
+
+<decl_stmt><decl><type><name pos:line="178" pos:column="1">LexerModule</name></type> <name pos:line="178" pos:column="13">lmSorc</name><argument_list pos:line="178" pos:column="19">(<argument><expr><name pos:line="178" pos:column="20">SCLEX_SORCUS</name></expr></argument>, <argument><expr><name pos:line="178" pos:column="34">ColouriseSorcusDoc</name></expr></argument>, <argument><expr><lit:literal type="string" pos:line="178" pos:column="54">"sorcins"</lit:literal></expr></argument>, <argument><expr><lit:literal type="number" pos:line="178" pos:column="65">0</lit:literal></expr></argument>, <argument><expr><name pos:line="178" pos:column="68">SorcusWordListDesc</name></expr></argument>)</argument_list></decl>;</decl_stmt>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</unit>

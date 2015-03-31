@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\ScitillaComponent\AutoCompletion.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">AUTOCOMPLETION_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">AUTOCOMPLETION_H</name></cpp:macro></cpp:define>
+
+<cpp:ifndef pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">ifndef</cpp:directive> <name pos:line="32" pos:column="9">FUNCTIONCALLTIP_H</name></cpp:ifndef>
+<cpp:include pos:line="33" pos:column="1">#<cpp:directive pos:line="33" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="33" pos:column="10">"FunctionCallTip.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">endif</cpp:directive></cpp:endif><comment type="line" pos:line="34" pos:column="7">// FUNCTIONCALLTIP_H</comment>
+
+<cpp:ifndef pos:line="36" pos:column="1">#<cpp:directive pos:line="36" pos:column="2">ifndef</cpp:directive> <name pos:line="36" pos:column="9">TINYXML_INCLUDED</name></cpp:ifndef>
+<cpp:include pos:line="37" pos:column="1">#<cpp:directive pos:line="37" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="37" pos:column="10">"tinyxml.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="38" pos:column="1">#<cpp:directive pos:line="38" pos:column="2">endif</cpp:directive></cpp:endif><comment type="line" pos:line="38" pos:column="7">// TINYXML_INCLUDED</comment>
+
+<class_decl pos:line="40" pos:column="1">class <name pos:line="40" pos:column="7">ScintillaEditView</name>;</class_decl>
+
+<class pos:line="42" pos:column="1">class <name pos:line="42" pos:column="7">AutoCompletion</name> <block pos:line="42" pos:column="22">{<private type="default" pos:line="42" pos:column="23">
+</private><public pos:line="43" pos:column="1">public:
+	<enum pos:line="44" pos:column="9">enum <name pos:line="44" pos:column="14">ActiveCompletion</name> <block pos:line="44" pos:column="31">{<decl><name pos:line="44" pos:column="32">CompletionNone</name> <init pos:line="44" pos:column="47">= <expr><lit:literal type="number" pos:line="44" pos:column="49">0</lit:literal></expr></init></decl><op:operator pos:line="44" pos:column="50">,</op:operator> <decl><name pos:line="44" pos:column="52">CompletionAuto</name></decl><op:operator pos:line="44" pos:column="66">,</op:operator> <decl><name pos:line="44" pos:column="68">CompletionWord</name></decl><op:operator pos:line="44" pos:column="82">,</op:operator> <decl><name pos:line="44" pos:column="84">CompletionFunc</name></decl>}</block>;</enum>
+
+	<constructor><name pos:line="46" pos:column="9">AutoCompletion</name><parameter_list pos:line="46" pos:column="23">(<param><decl><type><name pos:line="46" pos:column="24">ScintillaEditView</name> <type:modifier pos:line="46" pos:column="42">*</type:modifier></type> <name pos:line="46" pos:column="44">pEditView</name></decl></param>)</parameter_list> <member_list pos:line="46" pos:column="55">: <call><name pos:line="46" pos:column="57">_funcCompletionActive</name><argument_list pos:line="46" pos:column="78">(<argument><expr><lit:literal type="boolean" pos:line="46" pos:column="79">false</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="46" pos:column="85">,</op:operator> <call><name pos:line="46" pos:column="87">_pEditView</name><argument_list pos:line="46" pos:column="97">(<argument><expr><name pos:line="46" pos:column="98">pEditView</name></expr></argument>)</argument_list></call><op:operator pos:line="46" pos:column="108">,</op:operator> <call><name pos:line="46" pos:column="110">_funcCalltip</name><argument_list pos:line="46" pos:column="122">(<argument><expr><name pos:line="46" pos:column="123">pEditView</name></expr></argument>)</argument_list></call><op:operator pos:line="46" pos:column="133">,</op:operator> 
+																<call><name pos:line="47" pos:column="129">_curLang</name><argument_list pos:line="47" pos:column="137">(<argument><expr><name pos:line="47" pos:column="138">L_TEXT</name></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="145">,</op:operator> <call><name pos:line="47" pos:column="147">_pXmlFile</name><argument_list pos:line="47" pos:column="156">(<argument><expr><name pos:line="47" pos:column="157">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="162">,</op:operator> <call><name pos:line="47" pos:column="164">_activeCompletion</name><argument_list pos:line="47" pos:column="181">(<argument><expr><name pos:line="47" pos:column="182">CompletionNone</name></expr></argument>)</argument_list></call><op:operator pos:line="47" pos:column="197">,</op:operator>
+																<call><name pos:line="48" pos:column="129">_pXmlKeyword</name><argument_list pos:line="48" pos:column="141">(<argument><expr><name pos:line="48" pos:column="142">NULL</name></expr></argument>)</argument_list></call><op:operator pos:line="48" pos:column="147">,</op:operator> <call><name pos:line="48" pos:column="149">_ignoreCase</name><argument_list pos:line="48" pos:column="160">(<argument><expr><lit:literal type="boolean" pos:line="48" pos:column="161">true</lit:literal></expr></argument>)</argument_list></call><op:operator pos:line="48" pos:column="166">,</op:operator> <call><name pos:line="48" pos:column="168">_keyWords</name><argument_list pos:line="48" pos:column="177">(<argument><expr><call><name pos:line="48" pos:column="178">TEXT</name><argument_list pos:line="48" pos:column="182">(<argument><expr><lit:literal type="string" pos:line="48" pos:column="183">""</lit:literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> </member_list><block pos:line="48" pos:column="188">{
+		<comment type="line" pos:line="49" pos:column="17">//Do not load any language yet</comment>
+	}</block></constructor><empty_stmt pos:line="50" pos:column="10">;</empty_stmt>
+
+	<destructor><name pos:line="52" pos:column="9">~<name pos:line="52" pos:column="10">AutoCompletion</name></name><parameter_list pos:line="52" pos:column="24">()</parameter_list><block pos:line="52" pos:column="26">{
+		<if pos:line="53" pos:column="17">if <condition pos:line="53" pos:column="20">(<expr><name pos:line="53" pos:column="21">_pXmlFile</name></expr>)</condition><then pos:line="53" pos:column="31">
+			<expr_stmt><expr><op:operator pos:line="54" pos:column="25">delete</op:operator> <name pos:line="54" pos:column="32">_pXmlFile</name></expr>;</expr_stmt></then></if>
+	}</block></destructor><empty_stmt pos:line="55" pos:column="10">;</empty_stmt>
+
+	<function_decl><type><name pos:line="57" pos:column="9">bool</name></type> <name pos:line="57" pos:column="14">setLanguage</name><parameter_list pos:line="57" pos:column="25">(<param><decl><type><name pos:line="57" pos:column="26">LangType</name></type> <name pos:line="57" pos:column="35">language</name></decl></param>)</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="59" pos:column="9">//AutoComplete from the list</comment>
+	<function_decl><type><name pos:line="60" pos:column="9">bool</name></type> <name pos:line="60" pos:column="14">showAutoComplete</name><parameter_list pos:line="60" pos:column="30">()</parameter_list>;</function_decl>
+	<comment type="line" pos:line="61" pos:column="9">//WordCompletion from the current file</comment>
+	<function_decl><type><name pos:line="62" pos:column="9">bool</name></type> <name pos:line="62" pos:column="14">showWordComplete</name><parameter_list pos:line="62" pos:column="30">(<param><decl><type><name pos:line="62" pos:column="31">bool</name></type> <name pos:line="62" pos:column="36">autoInsert</name></decl></param>)</parameter_list>;</function_decl>	<comment type="line" pos:line="62" pos:column="49">//autoInsert true if completion should fill in the word on a single match</comment>
+	<comment type="line" pos:line="63" pos:column="9">//Parameter display from the list</comment>
+	<function_decl><type><name pos:line="64" pos:column="9">bool</name></type> <name pos:line="64" pos:column="14">showFunctionComplete</name><parameter_list pos:line="64" pos:column="34">()</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="66" pos:column="9">void</name></type> <name pos:line="66" pos:column="14">update</name><parameter_list pos:line="66" pos:column="20">(<param><decl><type><name pos:line="66" pos:column="21">int</name></type> <name pos:line="66" pos:column="25">character</name></decl></param>)</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="67" pos:column="9">void</name></type> <name pos:line="67" pos:column="14">callTipClick</name><parameter_list pos:line="67" pos:column="26">(<param><decl><type><name pos:line="67" pos:column="27">int</name></type> <name pos:line="67" pos:column="31">direction</name></decl></param>)</parameter_list>;</function_decl>
+
+</public><private pos:line="69" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="70" pos:column="9">bool</name></type> <name pos:line="70" pos:column="14">_funcCompletionActive</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="71" pos:column="9">ScintillaEditView</name> <type:modifier pos:line="71" pos:column="27">*</type:modifier></type> <name pos:line="71" pos:column="29">_pEditView</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="72" pos:column="9">LangType</name></type> <name pos:line="72" pos:column="18">_curLang</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="73" pos:column="9">TiXmlDocument</name> <type:modifier pos:line="73" pos:column="23">*</type:modifier></type><name pos:line="73" pos:column="24">_pXmlFile</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="74" pos:column="9">TiXmlElement</name> <type:modifier pos:line="74" pos:column="22">*</type:modifier></type><name pos:line="74" pos:column="23">_pXmlKeyword</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="75" pos:column="9">ActiveCompletion</name></type> <name pos:line="75" pos:column="26">_activeCompletion</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="77" pos:column="9">bool</name></type> <name pos:line="77" pos:column="14">_ignoreCase</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="79" pos:column="9">generic_string</name></type> <name pos:line="79" pos:column="24">_keyWords</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name pos:line="81" pos:column="9">FunctionCallTip</name></type> <name pos:line="81" pos:column="25">_funcCalltip</name></decl>;</decl_stmt>
+	<function_decl><type><specifier pos:line="82" pos:column="9">const</specifier> <name pos:line="82" pos:column="15">TCHAR</name> <type:modifier pos:line="82" pos:column="21">*</type:modifier></type> <name pos:line="82" pos:column="23">getApiFileName</name><parameter_list pos:line="82" pos:column="37">()</parameter_list>;</function_decl>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="85" pos:column="1">#<cpp:directive pos:line="85" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="85" pos:column="8">//AUTOCOMPLETION_H</comment>
+</unit>

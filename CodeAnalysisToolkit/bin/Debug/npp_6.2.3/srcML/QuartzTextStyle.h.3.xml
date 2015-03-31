@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\cocoa\QuartzTextStyle.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ *  QuartzTextStyle.h
+ *
+ *  Created by Evan Jones on Wed Oct 02 2002.
+ *
+ */</comment>
+
+<cpp:ifndef pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">ifndef</cpp:directive> <name pos:line="8" pos:column="9">_QUARTZ_TEXT_STYLE_H</name></cpp:ifndef>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">_QUARTZ_TEXT_STYLE_H</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="11" pos:column="10">"QuartzTextStyleAttribute.h"</lit:literal></cpp:file></cpp:include>
+
+<class pos:line="13" pos:column="1">class <name pos:line="13" pos:column="7">QuartzTextStyle</name>
+<block pos:line="14" pos:column="1">{<private type="default" pos:line="14" pos:column="2">
+</private><public pos:line="15" pos:column="1">public:
+    <constructor><name pos:line="16" pos:column="5">QuartzTextStyle</name><parameter_list pos:line="16" pos:column="20">()</parameter_list>
+    <block pos:line="17" pos:column="5">{
+		<expr_stmt><expr><name pos:line="18" pos:column="17">styleDict</name> <op:operator pos:line="18" pos:column="27">=</op:operator> <call><name pos:line="18" pos:column="29">CFDictionaryCreateMutable</name><argument_list pos:line="18" pos:column="54">(<argument><expr><name pos:line="18" pos:column="55">NULL</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="18" pos:column="61">1</lit:literal></expr></argument>, <argument><expr><name pos:line="18" pos:column="64">NULL</name></expr></argument>, <argument><expr><name pos:line="18" pos:column="70">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></constructor>
+
+    <destructor><name pos:line="21" pos:column="5">~<name pos:line="21" pos:column="6">QuartzTextStyle</name></name><parameter_list pos:line="21" pos:column="21">()</parameter_list>
+    <block pos:line="22" pos:column="5">{
+		<if pos:line="23" pos:column="17">if <condition pos:line="23" pos:column="20">(<expr><name pos:line="23" pos:column="21">styleDict</name> <op:operator pos:line="23" pos:column="31">!=</op:operator> <name pos:line="23" pos:column="34">NULL</name></expr>)</condition><then pos:line="23" pos:column="39">
+		<block pos:line="24" pos:column="17">{
+			<expr_stmt><expr><call><name pos:line="25" pos:column="25">CFRelease</name><argument_list pos:line="25" pos:column="34">(<argument><expr><name pos:line="25" pos:column="35">styleDict</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name pos:line="26" pos:column="25">styleDict</name> <op:operator pos:line="26" pos:column="35">=</op:operator> <name pos:line="26" pos:column="37">NULL</name></expr>;</expr_stmt>
+		}</block></then></if>
+    }</block></destructor>
+	
+	<function><type><name pos:line="30" pos:column="9">CFMutableDictionaryRef</name></type> <name pos:line="30" pos:column="32">getCTStyle</name><parameter_list pos:line="30" pos:column="42">()</parameter_list> <specifier pos:line="30" pos:column="45">const</specifier>
+	<block pos:line="31" pos:column="9">{
+		<return pos:line="32" pos:column="17">return <expr><name pos:line="32" pos:column="24">styleDict</name></expr>;</return>
+	}</block></function>
+	 
+	<function><type><name pos:line="35" pos:column="9">void</name></type> <name pos:line="35" pos:column="14">setCTStyleColor</name><parameter_list pos:line="35" pos:column="29">(<param><decl><type><name pos:line="35" pos:column="30">CGColor</name><type:modifier pos:line="35" pos:column="37">*</type:modifier></type> <name pos:line="35" pos:column="39">inColor</name></decl></param> )</parameter_list>
+	<block pos:line="36" pos:column="9">{
+		<expr_stmt><expr><call><name pos:line="37" pos:column="17">CFDictionarySetValue</name><argument_list pos:line="37" pos:column="37">(<argument><expr><name pos:line="37" pos:column="38">styleDict</name></expr></argument>, <argument><expr><name pos:line="37" pos:column="49">kCTForegroundColorAttributeName</name></expr></argument>, <argument><expr><name pos:line="37" pos:column="82">inColor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function>
+	
+	<function><type><name pos:line="40" pos:column="9">float</name></type> <name pos:line="40" pos:column="15">getAscent</name><parameter_list pos:line="40" pos:column="24">()</parameter_list> <specifier pos:line="40" pos:column="27">const</specifier>
+	<block pos:line="41" pos:column="9">{
+		<return pos:line="42" pos:column="17">return <expr><call><name><op:operator pos:line="42" pos:column="24">::</op:operator><name pos:line="42" pos:column="26">CTFontGetAscent</name></name><argument_list pos:line="42" pos:column="41">(<argument><expr><name pos:line="42" pos:column="42">fontRef</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function>
+	
+	<function><type><name pos:line="45" pos:column="9">float</name></type> <name pos:line="45" pos:column="15">getDescent</name><parameter_list pos:line="45" pos:column="25">()</parameter_list> <specifier pos:line="45" pos:column="28">const</specifier>
+	<block pos:line="46" pos:column="9">{
+		<return pos:line="47" pos:column="17">return <expr><call><name><op:operator pos:line="47" pos:column="24">::</op:operator><name pos:line="47" pos:column="26">CTFontGetDescent</name></name><argument_list pos:line="47" pos:column="42">(<argument><expr><name pos:line="47" pos:column="43">fontRef</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function>
+	
+	<function><type><name pos:line="50" pos:column="9">float</name></type> <name pos:line="50" pos:column="15">getLeading</name><parameter_list pos:line="50" pos:column="25">()</parameter_list> <specifier pos:line="50" pos:column="28">const</specifier>
+	<block pos:line="51" pos:column="9">{
+		<return pos:line="52" pos:column="17">return <expr><call><name><op:operator pos:line="52" pos:column="24">::</op:operator><name pos:line="52" pos:column="26">CTFontGetLeading</name></name><argument_list pos:line="52" pos:column="42">(<argument><expr><name pos:line="52" pos:column="43">fontRef</name></expr></argument>)</argument_list></call></expr>;</return>
+	}</block></function>
+	
+	<function><type><name pos:line="55" pos:column="9">void</name></type> <name pos:line="55" pos:column="14">setFontRef</name><parameter_list pos:line="55" pos:column="24">(<param><decl><type><name pos:line="55" pos:column="25">CTFontRef</name></type> <name pos:line="55" pos:column="35">inRef</name></decl></param>)</parameter_list>
+	<block pos:line="56" pos:column="9">{
+		<expr_stmt><expr><name pos:line="57" pos:column="17">fontRef</name> <op:operator pos:line="57" pos:column="25">=</op:operator> <name pos:line="57" pos:column="27">inRef</name></expr>;</expr_stmt>
+		
+		<if pos:line="59" pos:column="17">if <condition pos:line="59" pos:column="20">(<expr><name pos:line="59" pos:column="21">styleDict</name> <op:operator pos:line="59" pos:column="31">!=</op:operator> <name pos:line="59" pos:column="34">NULL</name></expr>)</condition><then pos:line="59" pos:column="39">
+			<expr_stmt><expr><call><name pos:line="60" pos:column="25">CFRelease</name><argument_list pos:line="60" pos:column="34">(<argument><expr><name pos:line="60" pos:column="35">styleDict</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></then></if>
+
+		<expr_stmt><expr><name pos:line="62" pos:column="17">styleDict</name> <op:operator pos:line="62" pos:column="27">=</op:operator> <call><name pos:line="62" pos:column="29">CFDictionaryCreateMutable</name><argument_list pos:line="62" pos:column="54">(<argument><expr><name pos:line="62" pos:column="55">NULL</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="62" pos:column="61">1</lit:literal></expr></argument>, <argument><expr><name pos:line="62" pos:column="64">NULL</name></expr></argument>, <argument><expr><name pos:line="62" pos:column="70">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name pos:line="64" pos:column="17">CFDictionaryAddValue</name><argument_list pos:line="64" pos:column="37">(<argument><expr><name pos:line="64" pos:column="38">styleDict</name></expr></argument>, <argument><expr><name pos:line="64" pos:column="49">kCTFontAttributeName</name></expr></argument>, <argument><expr><name pos:line="64" pos:column="71">fontRef</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></function>
+	
+	<function><type><name pos:line="67" pos:column="9">CTFontRef</name></type> <name pos:line="67" pos:column="19">getFontRef</name><parameter_list pos:line="67" pos:column="29">()</parameter_list>
+	<block pos:line="68" pos:column="9">{
+		<return pos:line="69" pos:column="17">return <expr><name pos:line="69" pos:column="24">fontRef</name></expr>;</return>
+	}</block></function>
+	
+</public><private pos:line="72" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="73" pos:column="9">CFMutableDictionaryRef</name></type> <name pos:line="73" pos:column="32">styleDict</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name pos:line="74" pos:column="9">CTFontRef</name></type> <name pos:line="74" pos:column="19">fontRef</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="77" pos:column="1">#<cpp:directive pos:line="77" pos:column="2">endif</cpp:directive></cpp:endif>
+
+</unit>

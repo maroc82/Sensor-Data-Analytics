@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\gtk\scintilla-marshal.h" pos:tabs="8" pos:line="1" pos:column="1">
+<cpp:ifndef pos:line="2" pos:column="1">#<cpp:directive pos:line="2" pos:column="2">ifndef</cpp:directive> <name pos:line="2" pos:column="9">__scintilla_marshal_MARSHAL_H__</name></cpp:ifndef>
+<cpp:define pos:line="3" pos:column="1">#<cpp:directive pos:line="3" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="3" pos:column="9">__scintilla_marshal_MARSHAL_H__</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="5" pos:column="1">#<cpp:directive pos:line="5" pos:column="2">include</cpp:directive>	<cpp:file pos:line="5" pos:column="17">&lt;glib-object.h&gt;</cpp:file></cpp:include>
+
+<function_decl><type><name pos:line="7" pos:column="1">G_BEGIN_DECLS</name>
+
+<comment type="block" pos:line="9" pos:column="1">/* NONE:INT,POINTER (scintilla-marshal.list:1) */</comment>
+<specifier pos:line="10" pos:column="1">extern</specifier> <name pos:line="10" pos:column="8">void</name></type> <name pos:line="10" pos:column="13">scintilla_marshal_VOID__INT_POINTER</name> <parameter_list pos:line="10" pos:column="49">(<param><decl><type><name pos:line="10" pos:column="50">GClosure</name>     <type:modifier pos:line="10" pos:column="63">*</type:modifier></type><name pos:line="10" pos:column="64">closure</name></decl></param>,
+                                                 <param><decl><type><name pos:line="11" pos:column="50">GValue</name>       <type:modifier pos:line="11" pos:column="63">*</type:modifier></type><name pos:line="11" pos:column="64">return_value</name></decl></param>,
+                                                 <param><decl><type><name pos:line="12" pos:column="50">guint</name></type>         <name pos:line="12" pos:column="64">n_param_values</name></decl></param>,
+                                                 <param><decl><type><specifier pos:line="13" pos:column="50">const</specifier> <name pos:line="13" pos:column="56">GValue</name> <type:modifier pos:line="13" pos:column="63">*</type:modifier></type><name pos:line="13" pos:column="64">param_values</name></decl></param>,
+                                                 <param><decl><type><name pos:line="14" pos:column="50">gpointer</name></type>      <name pos:line="14" pos:column="64">invocation_hint</name></decl></param>,
+                                                 <param><decl><type><name pos:line="15" pos:column="50">gpointer</name></type>      <name pos:line="15" pos:column="64">marshal_data</name></decl></param>)</parameter_list>;</function_decl>
+<cpp:define pos:line="16" pos:column="1">#<cpp:directive pos:line="16" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="16" pos:column="9">scintilla_marshal_NONE__INT_POINTER</name></cpp:macro>	<cpp:value pos:line="16" pos:column="49">scintilla_marshal_VOID__INT_POINTER</cpp:value></cpp:define>
+
+<macro><name pos:line="18" pos:column="1">G_END_DECLS</name></macro>
+
+<cpp:endif pos:line="20" pos:column="1">#<cpp:directive pos:line="20" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="block" pos:line="20" pos:column="8">/* __scintilla_marshal_MARSHAL_H__ */</comment>
+
+</unit>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\cocoa\InfoBarCommunicator.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * InfoBarCommunicator.h - Definitions of a communication protocol and other data types used for
+ *                         the info bar implementation.
+ *
+ * Mike Lischke &lt;mlischke@sun.com&gt;
+ *
+ * Copyright 2009 Sun Microsystems, Inc. All rights reserved.
+ * This file is dual licensed under LGPL v2.1 and the Scintilla license (http://www.scintilla.org/License.txt).
+ */</comment>
+
+<enum pos:line="11" pos:column="1">enum <name pos:line="11" pos:column="6">IBDisplay</name> <block pos:line="11" pos:column="16">{
+  <decl><name pos:line="12" pos:column="3">IBShowZoom</name>          <init pos:line="12" pos:column="23">= <expr><lit:literal type="number" pos:line="12" pos:column="25">0x01</lit:literal></expr></init></decl><op:operator pos:line="12" pos:column="29">,</op:operator>
+  <decl><name pos:line="13" pos:column="3">IBShowCaretPosition</name> <init pos:line="13" pos:column="23">= <expr><lit:literal type="number" pos:line="13" pos:column="25">0x02</lit:literal></expr></init></decl><op:operator pos:line="13" pos:column="29">,</op:operator>
+  <decl><name pos:line="14" pos:column="3">IBShowStatusText</name>    <init pos:line="14" pos:column="23">= <expr><lit:literal type="number" pos:line="14" pos:column="25">0x04</lit:literal></expr></init></decl><op:operator pos:line="14" pos:column="29">,</op:operator>
+  <decl><name pos:line="15" pos:column="3">IBShowAll</name>           <init pos:line="15" pos:column="23">= <expr><lit:literal type="number" pos:line="15" pos:column="25">0xFF</lit:literal></expr></init></decl>
+}</block>;</enum>
+
+<comment type="block" format="doxygen" pos:line="18" pos:column="1">/**
+ * The info bar communicator protocol is used for communication between ScintillaView and its
+ * information bar component. Using this protocol decouples any potential info target from the main
+ * ScintillaView implementation. The protocol is used two-way.
+ */</comment>
+
+<enum pos:line="24" pos:column="1">enum <name pos:line="24" pos:column="6">NotificationType</name> <block pos:line="24" pos:column="23">{
+  <decl><name pos:line="25" pos:column="3">IBNZoomChanged</name></decl><op:operator pos:line="25" pos:column="17">,</op:operator>    <comment type="line" pos:line="25" pos:column="22">// The user selected another zoom value.</comment>
+  <decl><name pos:line="26" pos:column="3">IBNCaretChanged</name></decl><op:operator pos:line="26" pos:column="18">,</op:operator>   <comment type="line" pos:line="26" pos:column="22">// The caret in the editor changed.</comment>
+  <decl><name pos:line="27" pos:column="3">IBNStatusChanged</name></decl><op:operator pos:line="27" pos:column="19">,</op:operator>  <comment type="line" pos:line="27" pos:column="22">// The application set a new status message.</comment>
+}</block>;</enum>
+
+@<expr_stmt><expr><name pos:line="30" pos:column="2">protocol</name> <name pos:line="30" pos:column="11">InfoBarCommunicator</name>
+<op:operator pos:line="31" pos:column="1">-</op:operator> <op:operator pos:line="31" pos:column="3">(</op:operator><name pos:line="31" pos:column="4">void</name><op:operator pos:line="31" pos:column="8">)</op:operator> <name pos:line="31" pos:column="10">notify</name><op:operator pos:line="31" pos:column="16">:</op:operator> <op:operator pos:line="31" pos:column="18">(</op:operator><name pos:line="31" pos:column="19">NotificationType</name><op:operator pos:line="31" pos:column="35">)</op:operator> <name pos:line="31" pos:column="37">type</name> <name pos:line="31" pos:column="42">message</name><op:operator pos:line="31" pos:column="49">:</op:operator> <op:operator pos:line="31" pos:column="51">(</op:operator><name pos:line="31" pos:column="52">NSString</name><op:operator pos:line="31" pos:column="60">*</op:operator><op:operator pos:line="31" pos:column="61">)</op:operator> <name pos:line="31" pos:column="63">message</name> <name pos:line="31" pos:column="71">location</name><op:operator pos:line="31" pos:column="79">:</op:operator> <op:operator pos:line="31" pos:column="81">(</op:operator><name pos:line="31" pos:column="82">NSPoint</name><op:operator pos:line="31" pos:column="89">)</op:operator> <name pos:line="31" pos:column="91">location</name>
+          <name pos:line="32" pos:column="11">value</name><op:operator pos:line="32" pos:column="16">:</op:operator> <op:operator pos:line="32" pos:column="18">(</op:operator><name pos:line="32" pos:column="19">float</name><op:operator pos:line="32" pos:column="24">)</op:operator> <name pos:line="32" pos:column="26">value</name></expr>;</expr_stmt>
+<expr_stmt><expr><op:operator pos:line="33" pos:column="1">-</op:operator> <op:operator pos:line="33" pos:column="3">(</op:operator><name pos:line="33" pos:column="4">void</name><op:operator pos:line="33" pos:column="8">)</op:operator> <name pos:line="33" pos:column="10">setCallback</name><op:operator pos:line="33" pos:column="21">:</op:operator> <op:operator pos:line="33" pos:column="23">(</op:operator><name><name pos:line="33" pos:column="24">id</name> <argument_list pos:line="33" pos:column="27">&lt;<argument><expr><name pos:line="33" pos:column="28">InfoBarCommunicator</name></expr></argument>&gt;</argument_list></name><op:operator pos:line="33" pos:column="48">)</op:operator> <name pos:line="33" pos:column="50">callback</name></expr>;</expr_stmt>
+@<macro><name pos:line="34" pos:column="2">end</name></macro>
+
+</unit>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\TinyXml\tinystr.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+www.sourceforge.net/projects/tinyxml
+Original file by Yves Berquin.
+
+This software is provided 'as-is', without any express or implied 
+warranty. In no event will the authors be held liable for any 
+damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any 
+purpose, including commercial applications, and to alter it and 
+redistribute it freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must 
+not claim that you wrote the original software. If you use this 
+software in a product, an acknowledgment in the product documentation 
+would be appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and
+must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source 
+distribution.
+*/</comment>
+
+<cpp:ifndef pos:line="25" pos:column="1">#<cpp:directive pos:line="25" pos:column="2">ifndef</cpp:directive> <name pos:line="25" pos:column="9">TINYXML_INCLUDED</name></cpp:ifndef>
+<cpp:include pos:line="26" pos:column="1">#<cpp:directive pos:line="26" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="26" pos:column="10">"tinyxml.h"</lit:literal></cpp:file></cpp:include>
+<cpp:endif pos:line="27" pos:column="1">#<cpp:directive pos:line="27" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="27" pos:column="8">//TINYXML_INCLUDED</comment>
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">TIXML_USE_STL</name></cpp:ifndef>
+
+<cpp:ifndef pos:line="31" pos:column="1">#<cpp:directive pos:line="31" pos:column="2">ifndef</cpp:directive> <name pos:line="31" pos:column="9">TIXML_STRING_INCLUDED</name></cpp:ifndef>
+<cpp:define pos:line="32" pos:column="1">#<cpp:directive pos:line="32" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="32" pos:column="9">TIXML_STRING_INCLUDED</name></cpp:macro></cpp:define>
+
+<cpp:pragma pos:line="34" pos:column="1">#<cpp:directive pos:line="34" pos:column="2">pragma</cpp:directive> warning( disable : 4514 )</cpp:pragma>
+
+<comment type="block" pos:line="36" pos:column="1">/*
+   TiXmlString is an emulation of the string template.
+   Its purpose is to allow compiling TinyXML on compilers with no or poor STL support.
+   Only the member functions relevant to the TinyXML project have been implemented.
+   The buffer allocation is made by a simplistic power of 2 like mechanism : if we increase
+   a generic_string and there's no more room, we allocate a buffer twice as big as we need.
+*/</comment>
+<class pos:line="43" pos:column="1">class <name pos:line="43" pos:column="7">TiXmlString</name>
+<block pos:line="44" pos:column="1">{<private type="default" pos:line="44" pos:column="2">
+  </private><public pos:line="45" pos:column="3">public :
+    <comment type="line" pos:line="46" pos:column="5">// TiXmlString constructor, based on a generic_string</comment>
+    <constructor_decl><name pos:line="47" pos:column="5">TiXmlString</name> <parameter_list pos:line="47" pos:column="17">(<param><decl><type><specifier pos:line="47" pos:column="18">const</specifier> <name pos:line="47" pos:column="24">TCHAR</name> <type:modifier pos:line="47" pos:column="30">*</type:modifier></type> <name pos:line="47" pos:column="32">instring</name></decl></param>)</parameter_list>;</constructor_decl>
+
+    <comment type="line" pos:line="49" pos:column="5">// TiXmlString empty constructor</comment>
+    <constructor><name pos:line="50" pos:column="5">TiXmlString</name> <parameter_list pos:line="50" pos:column="17">()</parameter_list>
+    <block pos:line="51" pos:column="5">{
+        <expr_stmt><expr><name pos:line="52" pos:column="9">allocated</name> <op:operator pos:line="52" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="52" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="53" pos:column="9">cstring</name> <op:operator pos:line="53" pos:column="17">=</op:operator> <name pos:line="53" pos:column="19">NULL</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="54" pos:column="9">current_length</name> <op:operator pos:line="54" pos:column="24">=</op:operator> <lit:literal type="number" pos:line="54" pos:column="26">0</lit:literal></expr>;</expr_stmt>
+    }</block></constructor>
+
+    <comment type="line" pos:line="57" pos:column="5">// TiXmlString copy constructor</comment>
+    <constructor_decl><name pos:line="58" pos:column="5">TiXmlString</name> <parameter_list pos:line="58" pos:column="17">(<param><decl><type><specifier pos:line="58" pos:column="18">const</specifier> <name pos:line="58" pos:column="24">TiXmlString</name><type:modifier pos:line="58" pos:column="35">&amp;</type:modifier></type> <name pos:line="58" pos:column="37">copy</name></decl></param>)</parameter_list>;</constructor_decl>
+
+    <comment type="line" pos:line="60" pos:column="5">// TiXmlString destructor</comment>
+    <destructor><name pos:line="61" pos:column="5">~ <name pos:line="61" pos:column="7">TiXmlString</name></name> <parameter_list pos:line="61" pos:column="19">()</parameter_list>
+    <block pos:line="62" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="63" pos:column="9">empty_it</name> <argument_list pos:line="63" pos:column="18">()</argument_list></call></expr>;</expr_stmt>
+    }</block></destructor>
+
+    <comment type="line" pos:line="66" pos:column="5">// Convert a TiXmlString into a classical TCHAR *</comment>
+    <function><type><specifier pos:line="67" pos:column="5">const</specifier> <name pos:line="67" pos:column="11">TCHAR</name> <type:modifier pos:line="67" pos:column="17">*</type:modifier></type> <name pos:line="67" pos:column="19">c_str</name> <parameter_list pos:line="67" pos:column="25">()</parameter_list> <specifier pos:line="67" pos:column="28">const</specifier>
+    <block pos:line="68" pos:column="5">{
+        <if pos:line="69" pos:column="9">if <condition pos:line="69" pos:column="12">(<expr><name pos:line="69" pos:column="13">allocated</name></expr>)</condition><then pos:line="69" pos:column="23">
+            <return pos:line="70" pos:column="13">return <expr><name pos:line="70" pos:column="20">cstring</name></expr>;</return></then></if>
+        <return pos:line="71" pos:column="9">return <expr><call><name pos:line="71" pos:column="16">TEXT</name><argument_list pos:line="71" pos:column="20">(<argument><expr><lit:literal type="string" pos:line="71" pos:column="21">""</lit:literal></expr></argument>)</argument_list></call></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="74" pos:column="5">// Return the length of a TiXmlString</comment>
+    <function><type><name pos:line="75" pos:column="5">unsigned</name></type> <name pos:line="75" pos:column="14">length</name> <parameter_list pos:line="75" pos:column="21">()</parameter_list> <specifier pos:line="75" pos:column="24">const</specifier>
+	<block pos:line="76" pos:column="9">{
+		<return pos:line="77" pos:column="17">return <expr><op:operator pos:line="77" pos:column="24">(</op:operator> <name pos:line="77" pos:column="26">allocated</name> <op:operator pos:line="77" pos:column="36">)</op:operator> <op:operator pos:line="77" pos:column="38">?</op:operator> <name pos:line="77" pos:column="40">current_length</name> <op:operator pos:line="77" pos:column="55">:</op:operator> <lit:literal type="number" pos:line="77" pos:column="57">0</lit:literal></expr>;</return>
+	}</block></function>
+
+    <comment type="line" pos:line="80" pos:column="5">// TiXmlString = operator</comment>
+    <function_decl><type><name pos:line="81" pos:column="5">void</name></type> <name pos:line="81" pos:column="10">operator =</name> <parameter_list pos:line="81" pos:column="21">(<param><decl><type><specifier pos:line="81" pos:column="22">const</specifier> <name pos:line="81" pos:column="28">TCHAR</name> <type:modifier pos:line="81" pos:column="34">*</type:modifier></type> <name pos:line="81" pos:column="36">content</name></decl></param>)</parameter_list>;</function_decl>
+
+    <comment type="line" pos:line="83" pos:column="5">// = operator</comment>
+    <function_decl><type><name pos:line="84" pos:column="5">void</name></type> <name pos:line="84" pos:column="10">operator =</name> <parameter_list pos:line="84" pos:column="21">(<param><decl><type><specifier pos:line="84" pos:column="22">const</specifier> <name pos:line="84" pos:column="28">TiXmlString</name> <type:modifier pos:line="84" pos:column="40">&amp;</type:modifier></type> <name pos:line="84" pos:column="42">copy</name></decl></param>)</parameter_list>;</function_decl>
+
+    <comment type="line" pos:line="86" pos:column="5">// += operator. Maps to append</comment>
+    <function><type><name pos:line="87" pos:column="5">TiXmlString</name><type:modifier pos:line="87" pos:column="16">&amp;</type:modifier></type> <name pos:line="87" pos:column="18">operator +=</name> <parameter_list pos:line="87" pos:column="30">(<param><decl><type><specifier pos:line="87" pos:column="31">const</specifier> <name pos:line="87" pos:column="37">TCHAR</name> <type:modifier pos:line="87" pos:column="43">*</type:modifier></type> <name pos:line="87" pos:column="45">suffix</name></decl></param>)</parameter_list>
+    <block pos:line="88" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="89" pos:column="9">append</name> <argument_list pos:line="89" pos:column="16">(<argument><expr><name pos:line="89" pos:column="17">suffix</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="90" pos:column="17">return <expr><op:operator pos:line="90" pos:column="24">*</op:operator><name pos:line="90" pos:column="25">this</name></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="93" pos:column="5">// += operator. Maps to append</comment>
+    <function><type><name pos:line="94" pos:column="5">TiXmlString</name><type:modifier pos:line="94" pos:column="16">&amp;</type:modifier></type> <name pos:line="94" pos:column="18">operator +=</name> <parameter_list pos:line="94" pos:column="30">(<param><decl><type><name pos:line="94" pos:column="31">TCHAR</name></type> <name pos:line="94" pos:column="37">single</name></decl></param>)</parameter_list>
+    <block pos:line="95" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="96" pos:column="9">append</name> <argument_list pos:line="96" pos:column="16">(<argument><expr><name pos:line="96" pos:column="17">single</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="97" pos:column="17">return <expr><op:operator pos:line="97" pos:column="24">*</op:operator><name pos:line="97" pos:column="25">this</name></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="100" pos:column="5">// += operator. Maps to append</comment>
+    <function><type><name pos:line="101" pos:column="5">TiXmlString</name><type:modifier pos:line="101" pos:column="16">&amp;</type:modifier></type> <name pos:line="101" pos:column="18">operator +=</name> <parameter_list pos:line="101" pos:column="30">(<param><decl><type><name pos:line="101" pos:column="31">TiXmlString</name> <type:modifier pos:line="101" pos:column="43">&amp;</type:modifier></type> <name pos:line="101" pos:column="45">suffix</name></decl></param>)</parameter_list>
+    <block pos:line="102" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="103" pos:column="9">append</name> <argument_list pos:line="103" pos:column="16">(<argument><expr><name pos:line="103" pos:column="17">suffix</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return pos:line="104" pos:column="17">return <expr><op:operator pos:line="104" pos:column="24">*</op:operator><name pos:line="104" pos:column="25">this</name></expr>;</return>
+    }</block></function>
+    <function_decl><type><name pos:line="106" pos:column="5">bool</name></type> <name pos:line="106" pos:column="10">operator ==</name> <parameter_list pos:line="106" pos:column="22">(<param><decl><type><specifier pos:line="106" pos:column="23">const</specifier> <name pos:line="106" pos:column="29">TiXmlString</name> <type:modifier pos:line="106" pos:column="41">&amp;</type:modifier></type> <name pos:line="106" pos:column="43">compare</name></decl></param>)</parameter_list> <specifier pos:line="106" pos:column="52">const</specifier>;</function_decl>
+    <function_decl><type><name pos:line="107" pos:column="5">bool</name></type> <name pos:line="107" pos:column="10">operator &lt;</name> <parameter_list pos:line="107" pos:column="21">(<param><decl><type><specifier pos:line="107" pos:column="22">const</specifier> <name pos:line="107" pos:column="28">TiXmlString</name> <type:modifier pos:line="107" pos:column="40">&amp;</type:modifier></type> <name pos:line="107" pos:column="42">compare</name></decl></param>)</parameter_list> <specifier pos:line="107" pos:column="51">const</specifier>;</function_decl>
+    <function_decl><type><name pos:line="108" pos:column="5">bool</name></type> <name pos:line="108" pos:column="10">operator &gt;</name> <parameter_list pos:line="108" pos:column="21">(<param><decl><type><specifier pos:line="108" pos:column="22">const</specifier> <name pos:line="108" pos:column="28">TiXmlString</name> <type:modifier pos:line="108" pos:column="40">&amp;</type:modifier></type> <name pos:line="108" pos:column="42">compare</name></decl></param>)</parameter_list> <specifier pos:line="108" pos:column="51">const</specifier>;</function_decl>
+
+    <comment type="line" pos:line="110" pos:column="5">// Checks if a TiXmlString is empty</comment>
+    <function><type><name pos:line="111" pos:column="5">bool</name></type> <name pos:line="111" pos:column="10">empty</name> <parameter_list pos:line="111" pos:column="16">()</parameter_list> <specifier pos:line="111" pos:column="19">const</specifier>
+    <block pos:line="112" pos:column="5">{
+        <return pos:line="113" pos:column="9">return <expr><call><name pos:line="113" pos:column="16">length</name> <argument_list pos:line="113" pos:column="23">()</argument_list></call> <op:operator pos:line="113" pos:column="26">?</op:operator> <lit:literal type="boolean" pos:line="113" pos:column="28">false</lit:literal> <op:operator pos:line="113" pos:column="34">:</op:operator> <lit:literal type="boolean" pos:line="113" pos:column="36">true</lit:literal></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="116" pos:column="5">// Checks if a TiXmlString contains only whitespace (same rules as isspace)</comment>
+	<comment type="line" pos:line="117" pos:column="9">// Not actually used in tinyxml. Conflicts with a C macro, TEXT("isblank"),</comment>
+	<comment type="line" pos:line="118" pos:column="9">// which is a problem. Commenting out. -lee</comment>
+<comment type="line" pos:line="119" pos:column="1">//    bool isblank () const;</comment>
+
+    <comment type="line" pos:line="121" pos:column="5">// single TCHAR extraction</comment>
+    <function><type><specifier pos:line="122" pos:column="5">const</specifier> <name pos:line="122" pos:column="11">TCHAR</name><type:modifier pos:line="122" pos:column="16">&amp;</type:modifier></type> <name pos:line="122" pos:column="18">at</name> <parameter_list pos:line="122" pos:column="21">(<param><decl><type><name pos:line="122" pos:column="22">unsigned</name></type> <name pos:line="122" pos:column="31">index</name></decl></param>)</parameter_list> <specifier pos:line="122" pos:column="38">const</specifier>
+    <block pos:line="123" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="124" pos:column="9">assert</name><argument_list pos:line="124" pos:column="15">( <argument><expr><name pos:line="124" pos:column="17">index</name> <op:operator pos:line="124" pos:column="23">&lt;</op:operator> <call><name pos:line="124" pos:column="25">length</name> <argument_list pos:line="124" pos:column="32">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="125" pos:column="9">return <expr><name><name pos:line="125" pos:column="16">cstring</name> <index pos:line="125" pos:column="24">[<expr><name pos:line="125" pos:column="25">index</name></expr>]</index></name></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="128" pos:column="5">// find a TCHAR in a generic_string. Return TiXmlString::notfound if not found</comment>
+    <function><type><name pos:line="129" pos:column="5">unsigned</name></type> <name pos:line="129" pos:column="14">find</name> <parameter_list pos:line="129" pos:column="19">(<param><decl><type><name pos:line="129" pos:column="20">TCHAR</name></type> <name pos:line="129" pos:column="26">lookup</name></decl></param>)</parameter_list> <specifier pos:line="129" pos:column="34">const</specifier>
+    <block pos:line="130" pos:column="5">{
+        <return pos:line="131" pos:column="9">return <expr><call><name pos:line="131" pos:column="16">find</name> <argument_list pos:line="131" pos:column="21">(<argument><expr><name pos:line="131" pos:column="22">lookup</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="131" pos:column="30">0</lit:literal></expr></argument>)</argument_list></call></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="134" pos:column="5">// find a TCHAR in a generic_string from an offset. Return TiXmlString::notfound if not found</comment>
+    <function_decl><type><name pos:line="135" pos:column="5">unsigned</name></type> <name pos:line="135" pos:column="14">find</name> <parameter_list pos:line="135" pos:column="19">(<param><decl><type><name pos:line="135" pos:column="20">TCHAR</name></type> <name pos:line="135" pos:column="26">tofind</name></decl></param>, <param><decl><type><name pos:line="135" pos:column="34">unsigned</name></type> <name pos:line="135" pos:column="43">offset</name></decl></param>)</parameter_list> <specifier pos:line="135" pos:column="51">const</specifier>;</function_decl>
+
+    <comment type="block" pos:line="137" pos:column="5">/*	Function to reserve a big amount of data when we know we'll need it. Be aware that this
+		function clears the content of the TiXmlString if any exists.
+    */</comment>
+    <function><type><name pos:line="140" pos:column="5">void</name></type> <name pos:line="140" pos:column="10">reserve</name> <parameter_list pos:line="140" pos:column="18">(<param><decl><type><name pos:line="140" pos:column="19">unsigned</name></type> <name pos:line="140" pos:column="28">size</name></decl></param>)</parameter_list>
+    <block pos:line="141" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="142" pos:column="9">empty_it</name> <argument_list pos:line="142" pos:column="18">()</argument_list></call></expr>;</expr_stmt>
+        <if pos:line="143" pos:column="9">if <condition pos:line="143" pos:column="12">(<expr><name pos:line="143" pos:column="13">size</name></expr>)</condition><then pos:line="143" pos:column="18">
+        <block pos:line="144" pos:column="9">{
+            <expr_stmt><expr><name pos:line="145" pos:column="13">allocated</name> <op:operator pos:line="145" pos:column="23">=</op:operator> <name pos:line="145" pos:column="25">size</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name pos:line="146" pos:column="13">cstring</name> <op:operator pos:line="146" pos:column="21">=</op:operator> <op:operator pos:line="146" pos:column="23">new</op:operator> <name><name pos:line="146" pos:column="27">TCHAR</name> <index pos:line="146" pos:column="33">[<expr><name pos:line="146" pos:column="34">size</name></expr>]</index></name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name pos:line="147" pos:column="13">cstring</name> <index pos:line="147" pos:column="21">[<expr><lit:literal type="number" pos:line="147" pos:column="22">0</lit:literal></expr>]</index></name> <op:operator pos:line="147" pos:column="25">=</op:operator> <lit:literal type="number" pos:line="147" pos:column="27">0</lit:literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name pos:line="148" pos:column="13">current_length</name> <op:operator pos:line="148" pos:column="28">=</op:operator> <lit:literal type="number" pos:line="148" pos:column="30">0</lit:literal></expr>;</expr_stmt>
+        }</block></then></if>
+    }</block></function>
+
+    <comment type="line" pos:line="152" pos:column="5">// [] operator </comment>
+    <function><type><name pos:line="153" pos:column="5">TCHAR</name><type:modifier pos:line="153" pos:column="10">&amp;</type:modifier></type> <name pos:line="153" pos:column="12">operator []</name> <parameter_list pos:line="153" pos:column="24">(<param><decl><type><name pos:line="153" pos:column="25">unsigned</name></type> <name pos:line="153" pos:column="34">index</name></decl></param>)</parameter_list> <specifier pos:line="153" pos:column="41">const</specifier>
+    <block pos:line="154" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="155" pos:column="9">assert</name><argument_list pos:line="155" pos:column="15">( <argument><expr><name pos:line="155" pos:column="17">index</name> <op:operator pos:line="155" pos:column="23">&lt;</op:operator> <call><name pos:line="155" pos:column="25">length</name> <argument_list pos:line="155" pos:column="32">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="156" pos:column="9">return <expr><name><name pos:line="156" pos:column="16">cstring</name> <index pos:line="156" pos:column="24">[<expr><name pos:line="156" pos:column="25">index</name></expr>]</index></name></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="159" pos:column="5">// Error value for find primitive </comment>
+    <enum pos:line="160" pos:column="5">enum <block pos:line="160" pos:column="10">{	<decl><name pos:line="160" pos:column="17">notfound</name> <init pos:line="160" pos:column="26">= <expr><lit:literal type="number" pos:line="160" pos:column="28">0xffffffff</lit:literal></expr></init></decl><op:operator pos:line="160" pos:column="38">,</op:operator>
+            <decl><name pos:line="161" pos:column="13">npos</name> <init pos:line="161" pos:column="18">= <expr><name pos:line="161" pos:column="20">notfound</name></expr></init></decl> }</block>;</enum>
+
+    <function_decl><type><name pos:line="163" pos:column="5">void</name></type> <name pos:line="163" pos:column="10">append</name> <parameter_list pos:line="163" pos:column="17">(<param><decl><type><specifier pos:line="163" pos:column="18">const</specifier> <name pos:line="163" pos:column="24">TCHAR</name> <type:modifier pos:line="163" pos:column="30">*</type:modifier></type><name pos:line="163" pos:column="31">str</name></decl></param>, <param><decl><type><name pos:line="163" pos:column="36">int</name></type> <name pos:line="163" pos:column="40">len</name></decl></param> )</parameter_list>;</function_decl>
+
+  </public><protected pos:line="165" pos:column="3">protected :
+
+    <comment type="line" pos:line="167" pos:column="5">// The base generic_string</comment>
+    <decl_stmt><decl><type><name pos:line="168" pos:column="5">TCHAR</name> <type:modifier pos:line="168" pos:column="11">*</type:modifier></type> <name pos:line="168" pos:column="13">cstring</name></decl>;</decl_stmt>
+    <comment type="line" pos:line="169" pos:column="5">// Number of chars allocated</comment>
+    <decl_stmt><decl><type><name pos:line="170" pos:column="5">unsigned</name></type> <name pos:line="170" pos:column="14">allocated</name></decl>;</decl_stmt>
+    <comment type="line" pos:line="171" pos:column="5">// Current generic_string size</comment>
+    <decl_stmt><decl><type><name pos:line="172" pos:column="5">unsigned</name></type> <name pos:line="172" pos:column="14">current_length</name></decl>;</decl_stmt>
+
+    <comment type="line" pos:line="174" pos:column="5">// New size computation. It is simplistic right now : it returns twice the amount</comment>
+    <comment type="line" pos:line="175" pos:column="5">// we need</comment>
+    <function><type><name pos:line="176" pos:column="5">unsigned</name></type> <name pos:line="176" pos:column="14">assign_new_size</name> <parameter_list pos:line="176" pos:column="30">(<param><decl><type><name pos:line="176" pos:column="31">unsigned</name></type> <name pos:line="176" pos:column="40">minimum_to_allocate</name></decl></param>)</parameter_list>
+    <block pos:line="177" pos:column="5">{
+        <return pos:line="178" pos:column="9">return <expr><name pos:line="178" pos:column="16">minimum_to_allocate</name> <op:operator pos:line="178" pos:column="36">*</op:operator> <lit:literal type="number" pos:line="178" pos:column="38">2</lit:literal></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="181" pos:column="5">// Internal function that clears the content of a TiXmlString</comment>
+    <function><type><name pos:line="182" pos:column="5">void</name></type> <name pos:line="182" pos:column="10">empty_it</name> <parameter_list pos:line="182" pos:column="19">()</parameter_list>
+    <block pos:line="183" pos:column="5">{
+        <if pos:line="184" pos:column="9">if <condition pos:line="184" pos:column="12">(<expr><name pos:line="184" pos:column="13">cstring</name></expr>)</condition><then pos:line="184" pos:column="21">
+            <expr_stmt><expr><op:operator pos:line="185" pos:column="13">delete</op:operator> <index pos:line="185" pos:column="20">[]</index> <name pos:line="185" pos:column="23">cstring</name></expr>;</expr_stmt></then></if>
+        <expr_stmt><expr><name pos:line="186" pos:column="9">cstring</name> <op:operator pos:line="186" pos:column="17">=</op:operator> <name pos:line="186" pos:column="19">NULL</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="187" pos:column="9">allocated</name> <op:operator pos:line="187" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="187" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="188" pos:column="9">current_length</name> <op:operator pos:line="188" pos:column="24">=</op:operator> <lit:literal type="number" pos:line="188" pos:column="26">0</lit:literal></expr>;</expr_stmt>
+    }</block></function>
+
+    <function_decl><type><name pos:line="191" pos:column="5">void</name></type> <name pos:line="191" pos:column="10">append</name> <parameter_list pos:line="191" pos:column="17">(<param><decl><type><specifier pos:line="191" pos:column="18">const</specifier> <name pos:line="191" pos:column="24">TCHAR</name> <type:modifier pos:line="191" pos:column="30">*</type:modifier></type><name pos:line="191" pos:column="31">suffix</name></decl></param> )</parameter_list>;</function_decl>
+
+    <comment type="line" pos:line="193" pos:column="5">// append function for another TiXmlString</comment>
+    <function><type><name pos:line="194" pos:column="5">void</name></type> <name pos:line="194" pos:column="10">append</name> <parameter_list pos:line="194" pos:column="17">(<param><decl><type><specifier pos:line="194" pos:column="18">const</specifier> <name pos:line="194" pos:column="24">TiXmlString</name> <type:modifier pos:line="194" pos:column="36">&amp;</type:modifier></type> <name pos:line="194" pos:column="38">suffix</name></decl></param>)</parameter_list>
+    <block pos:line="195" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="196" pos:column="9">append</name> <argument_list pos:line="196" pos:column="16">(<argument><expr><call><name><name pos:line="196" pos:column="17">suffix</name> <op:operator pos:line="196" pos:column="24">.</op:operator> <name pos:line="196" pos:column="26">c_str</name></name> <argument_list pos:line="196" pos:column="32">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+
+    <comment type="line" pos:line="199" pos:column="5">// append for a single TCHAR. This could be improved a lot if needed</comment>
+    <function><type><name pos:line="200" pos:column="5">void</name></type> <name pos:line="200" pos:column="10">append</name> <parameter_list pos:line="200" pos:column="17">(<param><decl><type><name pos:line="200" pos:column="18">TCHAR</name></type> <name pos:line="200" pos:column="24">single</name></decl></param>)</parameter_list>
+    <block pos:line="201" pos:column="5">{
+        <decl_stmt><decl><type><name pos:line="202" pos:column="9">TCHAR</name></type> <name><name pos:line="202" pos:column="15">smallstr</name> <index pos:line="202" pos:column="24">[<expr><lit:literal type="number" pos:line="202" pos:column="25">2</lit:literal></expr>]</index></name></decl>;</decl_stmt>
+        <expr_stmt><expr><name><name pos:line="203" pos:column="9">smallstr</name> <index pos:line="203" pos:column="18">[<expr><lit:literal type="number" pos:line="203" pos:column="19">0</lit:literal></expr>]</index></name> <op:operator pos:line="203" pos:column="22">=</op:operator> <name pos:line="203" pos:column="24">single</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name pos:line="204" pos:column="9">smallstr</name> <index pos:line="204" pos:column="18">[<expr><lit:literal type="number" pos:line="204" pos:column="19">1</lit:literal></expr>]</index></name> <op:operator pos:line="204" pos:column="22">=</op:operator> <lit:literal type="number" pos:line="204" pos:column="24">0</lit:literal></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name pos:line="205" pos:column="9">append</name> <argument_list pos:line="205" pos:column="16">(<argument><expr><name pos:line="205" pos:column="17">smallstr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+
+</protected>}</block> ;</class>
+
+<comment type="block" pos:line="210" pos:column="1">/* 
+   TiXmlOutStream is an emulation of std::ostream. It is based on TiXmlString.
+   Only the operators that we need for TinyXML have been developped.
+*/</comment>
+<class pos:line="214" pos:column="1">class <name pos:line="214" pos:column="7">TiXmlOutStream</name> <super pos:line="214" pos:column="22">: <specifier pos:line="214" pos:column="24">public</specifier> <name pos:line="214" pos:column="31">TiXmlString</name></super>
+<block pos:line="215" pos:column="1">{<private type="default" pos:line="215" pos:column="2">
+</private><public pos:line="216" pos:column="1">public :
+    <constructor><name pos:line="217" pos:column="5">TiXmlOutStream</name> <parameter_list pos:line="217" pos:column="20">()</parameter_list> <member_list pos:line="217" pos:column="23">: <call><name pos:line="217" pos:column="25">TiXmlString</name> <argument_list pos:line="217" pos:column="37">()</argument_list></call> </member_list><block pos:line="217" pos:column="40">{}</block></constructor>
+
+    <comment type="line" pos:line="219" pos:column="5">// TiXmlOutStream &lt;&lt; operator. Maps to TiXmlString::append</comment>
+    <function><type><name pos:line="220" pos:column="5">TiXmlOutStream</name> <type:modifier pos:line="220" pos:column="20">&amp;</type:modifier></type> <name pos:line="220" pos:column="22">operator &lt;&lt;</name> <parameter_list pos:line="220" pos:column="34">(<param><decl><type><specifier pos:line="220" pos:column="35">const</specifier> <name pos:line="220" pos:column="41">TCHAR</name> <type:modifier pos:line="220" pos:column="47">*</type:modifier></type> <name pos:line="220" pos:column="49">in</name></decl></param>)</parameter_list>
+    <block pos:line="221" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="222" pos:column="9">append</name> <argument_list pos:line="222" pos:column="16">(<argument><expr><name pos:line="222" pos:column="17">in</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="223" pos:column="9">return <expr><op:operator pos:line="223" pos:column="16">(</op:operator><op:operator pos:line="223" pos:column="17">*</op:operator> <name pos:line="223" pos:column="19">this</name><op:operator pos:line="223" pos:column="23">)</op:operator></expr>;</return>
+    }</block></function>
+
+    <comment type="line" pos:line="226" pos:column="5">// TiXmlOutStream &lt;&lt; operator. Maps to TiXmlString::append</comment>
+    <function><type><name pos:line="227" pos:column="5">TiXmlOutStream</name> <type:modifier pos:line="227" pos:column="20">&amp;</type:modifier></type> <name pos:line="227" pos:column="22">operator &lt;&lt;</name> <parameter_list pos:line="227" pos:column="34">(<param><decl><type><specifier pos:line="227" pos:column="35">const</specifier> <name pos:line="227" pos:column="41">TiXmlString</name> <type:modifier pos:line="227" pos:column="53">&amp;</type:modifier></type> <name pos:line="227" pos:column="55">in</name></decl></param>)</parameter_list>
+    <block pos:line="228" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="229" pos:column="9">append</name> <argument_list pos:line="229" pos:column="16">(<argument><expr><call><name><name pos:line="229" pos:column="17">in</name> <op:operator pos:line="229" pos:column="20">.</op:operator> <name pos:line="229" pos:column="22">c_str</name></name> <argument_list pos:line="229" pos:column="28">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="230" pos:column="9">return <expr><op:operator pos:line="230" pos:column="16">(</op:operator><op:operator pos:line="230" pos:column="17">*</op:operator> <name pos:line="230" pos:column="19">this</name><op:operator pos:line="230" pos:column="23">)</op:operator></expr>;</return>
+    }</block></function>
+</public>}</block> ;</class>
+
+<cpp:endif pos:line="234" pos:column="1">#<cpp:directive pos:line="234" pos:column="2">endif</cpp:directive></cpp:endif>	<comment type="line" pos:line="234" pos:column="9">// TIXML_STRING_INCLUDED</comment>
+<cpp:endif pos:line="235" pos:column="1">#<cpp:directive pos:line="235" pos:column="2">endif</cpp:directive></cpp:endif>	<comment type="line" pos:line="235" pos:column="9">// TIXML_USE_STL</comment>
+</unit>

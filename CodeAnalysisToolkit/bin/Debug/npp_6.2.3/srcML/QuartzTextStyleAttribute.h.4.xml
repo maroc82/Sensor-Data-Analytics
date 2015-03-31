@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\macosx\QuartzTextStyleAttribute.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ *  QuartzTextStyleAttribute.h
+ *
+ *  Original Code by Evan Jones on Wed Oct 02 2002.
+ *  Contributors:
+ *  Shane Caraveo, ActiveState
+ *  Bernd Paradies, Adobe
+ *
+ */</comment>
+
+
+<cpp:include pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">include</cpp:directive> <cpp:file pos:line="12" pos:column="10">&lt;Carbon/Carbon.h&gt;</cpp:file></cpp:include>
+
+<cpp:ifndef pos:line="14" pos:column="1">#<cpp:directive pos:line="14" pos:column="2">ifndef</cpp:directive> <name pos:line="14" pos:column="9">_QUARTZ_TEXT_STYLE_ATTRIBUTE_H</name></cpp:ifndef>
+<cpp:define pos:line="15" pos:column="1">#<cpp:directive pos:line="15" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="15" pos:column="9">_QUARTZ_TEXT_STYLE_ATTRIBUTE_H</name></cpp:macro></cpp:define>
+
+<class pos:line="17" pos:column="1">class <name pos:line="17" pos:column="7">QuartzTextStyleAttribute</name>
+<block pos:line="18" pos:column="1">{<private type="default" pos:line="18" pos:column="2">
+</private><public pos:line="19" pos:column="1">public:
+    <constructor><name pos:line="20" pos:column="5">QuartzTextStyleAttribute</name><parameter_list pos:line="20" pos:column="29">()</parameter_list> <block pos:line="20" pos:column="32">{}</block></constructor>
+    <destructor><specifier pos:line="21" pos:column="5">virtual</specifier> <name pos:line="21" pos:column="13">~<name pos:line="21" pos:column="14">QuartzTextStyleAttribute</name></name><parameter_list pos:line="21" pos:column="38">()</parameter_list> <block pos:line="21" pos:column="41">{}</block></destructor>
+    <function_decl><type><specifier pos:line="22" pos:column="5">virtual</specifier> <name pos:line="22" pos:column="13">ByteCount</name></type> <name pos:line="22" pos:column="23">getSize</name><parameter_list pos:line="22" pos:column="30">()</parameter_list> <specifier pos:line="22" pos:column="33">const</specifier> = <lit:literal type="number" pos:line="22" pos:column="41">0</lit:literal>;</function_decl>
+    <function_decl><type><specifier pos:line="23" pos:column="5">virtual</specifier> <name pos:line="23" pos:column="13">ATSUAttributeValuePtr</name></type> <name pos:line="23" pos:column="35">getValuePtr</name><parameter_list pos:line="23" pos:column="46">()</parameter_list> = <lit:literal type="number" pos:line="23" pos:column="51">0</lit:literal>;</function_decl>
+    <function_decl><type><specifier pos:line="24" pos:column="5">virtual</specifier> <name pos:line="24" pos:column="13">ATSUAttributeTag</name></type> <name pos:line="24" pos:column="30">getTag</name><parameter_list pos:line="24" pos:column="36">()</parameter_list> <specifier pos:line="24" pos:column="39">const</specifier> = <lit:literal type="number" pos:line="24" pos:column="47">0</lit:literal>;</function_decl>
+</public>}</block>;</class>
+
+<class pos:line="27" pos:column="1">class <name pos:line="27" pos:column="7">QuartzTextSize</name> <super pos:line="27" pos:column="22">: <specifier pos:line="27" pos:column="24">public</specifier> <name pos:line="27" pos:column="31">QuartzTextStyleAttribute</name></super>
+<block pos:line="28" pos:column="1">{<private type="default" pos:line="28" pos:column="2">
+</private><public pos:line="29" pos:column="1">public: 
+    <constructor><name pos:line="30" pos:column="5">QuartzTextSize</name><parameter_list pos:line="30" pos:column="19">( <param><decl><type><name pos:line="30" pos:column="21">float</name></type> <name pos:line="30" pos:column="27">points</name></decl></param> )</parameter_list>
+    <block pos:line="31" pos:column="5">{
+        <expr_stmt><expr><name pos:line="32" pos:column="9">size</name> <op:operator pos:line="32" pos:column="14">=</op:operator> <call><name pos:line="32" pos:column="16">X2Fix</name><argument_list pos:line="32" pos:column="21">( <argument><expr><name pos:line="32" pos:column="23">points</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    }</block></constructor>
+    
+    <function><type><name pos:line="35" pos:column="5">ByteCount</name></type> <name pos:line="35" pos:column="15">getSize</name><parameter_list pos:line="35" pos:column="22">()</parameter_list> <specifier pos:line="35" pos:column="25">const</specifier>
+    <block pos:line="36" pos:column="5">{
+        <return pos:line="37" pos:column="9">return <expr><sizeof pos:line="37" pos:column="16">sizeof<argument_list pos:line="37" pos:column="22">( <argument><expr><name pos:line="37" pos:column="24">size</name></expr></argument> )</argument_list></sizeof></expr>;</return>
+    }</block></function>
+
+    <function><type><name pos:line="40" pos:column="5">ATSUAttributeValuePtr</name></type> <name pos:line="40" pos:column="27">getValuePtr</name><parameter_list pos:line="40" pos:column="38">()</parameter_list>
+    <block pos:line="41" pos:column="5">{
+        <return pos:line="42" pos:column="9">return <expr><op:operator pos:line="42" pos:column="16">&amp;</op:operator><name pos:line="42" pos:column="17">size</name></expr>;</return>
+    }</block></function>
+
+    <function><type><name pos:line="45" pos:column="5">ATSUAttributeTag</name></type> <name pos:line="45" pos:column="22">getTag</name><parameter_list pos:line="45" pos:column="28">()</parameter_list> <specifier pos:line="45" pos:column="31">const</specifier>
+    <block pos:line="46" pos:column="5">{
+        <return pos:line="47" pos:column="9">return <expr><name pos:line="47" pos:column="16">kATSUSizeTag</name></expr>;</return>
+    }</block></function>
+    
+</public><private pos:line="50" pos:column="1">private:
+        <decl_stmt><decl><type><name pos:line="51" pos:column="9">Fixed</name></type> <name pos:line="51" pos:column="15">size</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<class pos:line="54" pos:column="1">class <name pos:line="54" pos:column="7">QuartzTextStyleAttributeBoolean</name> <super pos:line="54" pos:column="39">: <specifier pos:line="54" pos:column="41">public</specifier> <name pos:line="54" pos:column="48">QuartzTextStyleAttribute</name></super>
+<block pos:line="55" pos:column="1">{<private type="default" pos:line="55" pos:column="2">
+</private><public pos:line="56" pos:column="1">public:
+    <constructor><name pos:line="57" pos:column="5">QuartzTextStyleAttributeBoolean</name><parameter_list pos:line="57" pos:column="36">( <param><decl><type><name pos:line="57" pos:column="38">bool</name></type> <name pos:line="57" pos:column="43">newVal</name></decl></param> )</parameter_list> <member_list pos:line="57" pos:column="52">: <call><name pos:line="57" pos:column="54">value</name><argument_list pos:line="57" pos:column="59">( <argument><expr><name pos:line="57" pos:column="61">newVal</name></expr></argument> )</argument_list></call> </member_list><block pos:line="57" pos:column="70">{}</block></constructor>
+
+    <function><type><name pos:line="59" pos:column="5">ByteCount</name></type> <name pos:line="59" pos:column="15">getSize</name><parameter_list pos:line="59" pos:column="22">()</parameter_list> <specifier pos:line="59" pos:column="25">const</specifier>
+    <block pos:line="60" pos:column="5">{
+        <return pos:line="61" pos:column="9">return <expr><sizeof pos:line="61" pos:column="16">sizeof<argument_list pos:line="61" pos:column="22">( <argument><expr><name pos:line="61" pos:column="24">value</name></expr></argument> )</argument_list></sizeof></expr>;</return>
+    }</block></function>
+    <function><type><name pos:line="63" pos:column="5">ATSUAttributeValuePtr</name></type> <name pos:line="63" pos:column="27">getValuePtr</name><parameter_list pos:line="63" pos:column="38">()</parameter_list>
+    <block pos:line="64" pos:column="5">{
+        <return pos:line="65" pos:column="9">return <expr><op:operator pos:line="65" pos:column="16">&amp;</op:operator><name pos:line="65" pos:column="17">value</name></expr>;</return>
+    }</block></function>
+    
+    <function_decl><type><specifier pos:line="68" pos:column="5">virtual</specifier> <name pos:line="68" pos:column="13">ATSUAttributeTag</name></type> <name pos:line="68" pos:column="30">getTag</name><parameter_list pos:line="68" pos:column="36">()</parameter_list> <specifier pos:line="68" pos:column="39">const</specifier> = <lit:literal type="number" pos:line="68" pos:column="47">0</lit:literal>;</function_decl>
+    
+</public><private pos:line="70" pos:column="1">private:
+        <decl_stmt><decl><type><name pos:line="71" pos:column="9">Boolean</name></type> <name pos:line="71" pos:column="17">value</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<class pos:line="74" pos:column="1">class <name pos:line="74" pos:column="7">QuartzTextBold</name> <super pos:line="74" pos:column="22">: <specifier pos:line="74" pos:column="24">public</specifier> <name pos:line="74" pos:column="31">QuartzTextStyleAttributeBoolean</name></super>
+<block pos:line="75" pos:column="1">{<private type="default" pos:line="75" pos:column="2">
+</private><public pos:line="76" pos:column="1">public:
+    <constructor><name pos:line="77" pos:column="5">QuartzTextBold</name><parameter_list pos:line="77" pos:column="19">( <param><decl><type><name pos:line="77" pos:column="21">bool</name></type> <name pos:line="77" pos:column="26">newVal</name></decl></param> )</parameter_list> <member_list pos:line="77" pos:column="35">: <call><name pos:line="77" pos:column="37">QuartzTextStyleAttributeBoolean</name><argument_list pos:line="77" pos:column="68">( <argument><expr><name pos:line="77" pos:column="70">newVal</name></expr></argument> )</argument_list></call> </member_list><block pos:line="77" pos:column="79">{}</block></constructor>
+    <function><type><name pos:line="78" pos:column="5">ATSUAttributeTag</name></type> <name pos:line="78" pos:column="22">getTag</name><parameter_list pos:line="78" pos:column="28">()</parameter_list> <specifier pos:line="78" pos:column="31">const</specifier>
+    <block pos:line="79" pos:column="5">{
+        <return pos:line="80" pos:column="9">return <expr><name pos:line="80" pos:column="16">kATSUQDBoldfaceTag</name></expr>;</return>
+    }</block></function>
+</public>}</block>;</class>
+
+<class pos:line="84" pos:column="1">class <name pos:line="84" pos:column="7">QuartzTextItalic</name> <super pos:line="84" pos:column="24">: <specifier pos:line="84" pos:column="26">public</specifier> <name pos:line="84" pos:column="33">QuartzTextStyleAttributeBoolean</name></super>
+<block pos:line="85" pos:column="1">{<private type="default" pos:line="85" pos:column="2">
+</private><public pos:line="86" pos:column="1">public:
+    <constructor><name pos:line="87" pos:column="5">QuartzTextItalic</name><parameter_list pos:line="87" pos:column="21">( <param><decl><type><name pos:line="87" pos:column="23">bool</name></type> <name pos:line="87" pos:column="28">newVal</name></decl></param> )</parameter_list> <member_list pos:line="87" pos:column="37">: <call><name pos:line="87" pos:column="39">QuartzTextStyleAttributeBoolean</name><argument_list pos:line="87" pos:column="70">( <argument><expr><name pos:line="87" pos:column="72">newVal</name></expr></argument> )</argument_list></call> </member_list><block pos:line="87" pos:column="81">{}</block></constructor>
+    <function><type><name pos:line="88" pos:column="5">ATSUAttributeTag</name></type> <name pos:line="88" pos:column="22">getTag</name><parameter_list pos:line="88" pos:column="28">()</parameter_list> <specifier pos:line="88" pos:column="31">const</specifier>
+    <block pos:line="89" pos:column="5">{
+        <return pos:line="90" pos:column="9">return <expr><name pos:line="90" pos:column="16">kATSUQDItalicTag</name></expr>;</return>
+    }</block></function>
+</public>}</block>;</class>
+
+<class pos:line="94" pos:column="1">class <name pos:line="94" pos:column="7">QuartzTextUnderline</name> <super pos:line="94" pos:column="27">: <specifier pos:line="94" pos:column="29">public</specifier> <name pos:line="94" pos:column="36">QuartzTextStyleAttributeBoolean</name></super>
+<block pos:line="95" pos:column="1">{<private type="default" pos:line="95" pos:column="2">
+</private><public pos:line="96" pos:column="1">public:
+    <constructor><name pos:line="97" pos:column="5">QuartzTextUnderline</name><parameter_list pos:line="97" pos:column="24">( <param><decl><type><name pos:line="97" pos:column="26">bool</name></type> <name pos:line="97" pos:column="31">newVal</name></decl></param> )</parameter_list> <member_list pos:line="97" pos:column="40">: <call><name pos:line="97" pos:column="42">QuartzTextStyleAttributeBoolean</name><argument_list pos:line="97" pos:column="73">( <argument><expr><name pos:line="97" pos:column="75">newVal</name></expr></argument> )</argument_list></call> </member_list><block pos:line="97" pos:column="84">{}</block></constructor>
+    <function><type><name pos:line="98" pos:column="5">ATSUAttributeTag</name></type> <name pos:line="98" pos:column="22">getTag</name><parameter_list pos:line="98" pos:column="28">()</parameter_list> <specifier pos:line="98" pos:column="31">const</specifier> <block pos:line="98" pos:column="37">{
+        <return pos:line="99" pos:column="9">return <expr><name pos:line="99" pos:column="16">kATSUQDUnderlineTag</name></expr>;</return>
+    }</block></function>
+</public>}</block>;</class>
+
+<class pos:line="103" pos:column="1">class <name pos:line="103" pos:column="7">QuartzFont</name> <super pos:line="103" pos:column="18">: <specifier pos:line="103" pos:column="20">public</specifier> <name pos:line="103" pos:column="27">QuartzTextStyleAttribute</name></super>
+<block pos:line="104" pos:column="1">{<private type="default" pos:line="104" pos:column="2">
+</private><public pos:line="105" pos:column="1">public:
+    <comment type="block" format="doxygen" pos:line="106" pos:column="5">/** Create a font style from a name. */</comment>
+    <constructor><name pos:line="107" pos:column="5">QuartzFont</name><parameter_list pos:line="107" pos:column="15">( <param><decl><type><specifier pos:line="107" pos:column="17">const</specifier> <name pos:line="107" pos:column="23">char</name><type:modifier pos:line="107" pos:column="27">*</type:modifier></type> <name pos:line="107" pos:column="29">name</name></decl></param>, <param><decl><type><name pos:line="107" pos:column="35">int</name></type> <name pos:line="107" pos:column="39">length</name></decl></param> )</parameter_list>
+    <block pos:line="108" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="109" pos:column="9">assert</name><argument_list pos:line="109" pos:column="15">( <argument><expr><name pos:line="109" pos:column="17">name</name> <op:operator pos:line="109" pos:column="22">!=</op:operator> <name pos:line="109" pos:column="25">NULL</name> <op:operator pos:line="109" pos:column="30">&amp;&amp;</op:operator> <name pos:line="109" pos:column="33">length</name> <op:operator pos:line="109" pos:column="40">&gt;</op:operator> <lit:literal type="number" pos:line="109" pos:column="42">0</lit:literal> <op:operator pos:line="109" pos:column="44">&amp;&amp;</op:operator> <name><name pos:line="109" pos:column="47">name</name><index pos:line="109" pos:column="51">[<expr><name pos:line="109" pos:column="52">length</name></expr>]</index></name> <op:operator pos:line="109" pos:column="60">==</op:operator> <lit:literal type="char" pos:line="109" pos:column="63">'\0'</lit:literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <comment type="line" pos:line="110" pos:column="9">// try to create font</comment>
+        <decl_stmt><decl><type><name pos:line="111" pos:column="9">OSStatus</name></type> <name pos:line="111" pos:column="18">err</name> <init pos:line="111" pos:column="22">= <expr><call><name pos:line="111" pos:column="24">ATSUFindFontFromName</name><argument_list pos:line="111" pos:column="44">( <argument><expr><call><name><name pos:line="111" pos:column="46">const_cast</name><argument_list pos:line="111" pos:column="56">&lt;<argument><expr><name pos:line="111" pos:column="57">char</name><op:operator pos:line="111" pos:column="61">*</op:operator></expr></argument>&gt;</argument_list></name><argument_list pos:line="111" pos:column="63">( <argument><expr><name pos:line="111" pos:column="65">name</name></expr></argument> )</argument_list></call></expr></argument>, <argument><expr><name pos:line="111" pos:column="73">length</name></expr></argument>, <argument><expr><name pos:line="111" pos:column="81">kFontFullName</name></expr></argument>, <argument><expr><op:operator pos:line="111" pos:column="96">(</op:operator><name pos:line="111" pos:column="97">unsigned</name><op:operator pos:line="111" pos:column="105">)</op:operator> <name pos:line="111" pos:column="107">kFontNoPlatform</name></expr></argument>, <argument><expr><name pos:line="111" pos:column="124">kFontRomanScript</name></expr></argument>, <argument><expr><op:operator pos:line="111" pos:column="142">(</op:operator><name pos:line="111" pos:column="143">unsigned</name><op:operator pos:line="111" pos:column="151">)</op:operator> <name pos:line="111" pos:column="153">kFontNoLanguage</name></expr></argument>, <argument><expr><op:operator pos:line="111" pos:column="170">&amp;</op:operator><name pos:line="111" pos:column="171">fontid</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line" pos:line="113" pos:column="9">// need a fallback if font isn't installed</comment>
+        <if pos:line="114" pos:column="9">if<condition pos:line="114" pos:column="11">( <expr><name pos:line="114" pos:column="13">err</name> <op:operator pos:line="114" pos:column="17">!=</op:operator> <name pos:line="114" pos:column="20">noErr</name> <op:operator pos:line="114" pos:column="26">||</op:operator> <name pos:line="114" pos:column="29">fontid</name> <op:operator pos:line="114" pos:column="36">==</op:operator> <name pos:line="114" pos:column="39">kATSUInvalidFontID</name></expr> )</condition><then pos:line="114" pos:column="59">
+                <expr_stmt><expr><call><name><op:operator pos:line="115" pos:column="17">::</op:operator><name pos:line="115" pos:column="19">ATSUFindFontFromName</name></name><argument_list pos:line="115" pos:column="39">( <argument><expr><lit:literal type="string" pos:line="115" pos:column="41">"Lucida Grande"</lit:literal></expr></argument>, <argument><expr><lit:literal type="number" pos:line="115" pos:column="58">13</lit:literal></expr></argument>, <argument><expr><name pos:line="115" pos:column="62">kFontFullName</name></expr></argument>, <argument><expr><op:operator pos:line="115" pos:column="77">(</op:operator><name pos:line="115" pos:column="78">unsigned</name><op:operator pos:line="115" pos:column="86">)</op:operator> <name pos:line="115" pos:column="88">kFontNoPlatform</name></expr></argument>, <argument><expr><name pos:line="115" pos:column="105">kFontRomanScript</name></expr></argument>, <argument><expr><op:operator pos:line="115" pos:column="123">(</op:operator><name pos:line="115" pos:column="124">unsigned</name><op:operator pos:line="115" pos:column="132">)</op:operator> <name pos:line="115" pos:column="134">kFontNoLanguage</name></expr></argument>, <argument><expr><op:operator pos:line="115" pos:column="151">&amp;</op:operator><name pos:line="115" pos:column="152">fontid</name></expr></argument> )</argument_list></call></expr>;</expr_stmt></then></if>
+    }</block></constructor>
+
+    <function><type><name pos:line="118" pos:column="5">ByteCount</name></type> <name pos:line="118" pos:column="15">getSize</name><parameter_list pos:line="118" pos:column="22">()</parameter_list> <specifier pos:line="118" pos:column="25">const</specifier>
+    <block pos:line="119" pos:column="5">{
+        <return pos:line="120" pos:column="9">return <expr><sizeof pos:line="120" pos:column="16">sizeof<argument_list pos:line="120" pos:column="22">( <argument><expr><name pos:line="120" pos:column="24">fontid</name></expr></argument> )</argument_list></sizeof></expr>;</return>
+    }</block></function>
+
+    <function><type><name pos:line="123" pos:column="5">ATSUAttributeValuePtr</name></type> <name pos:line="123" pos:column="27">getValuePtr</name><parameter_list pos:line="123" pos:column="38">()</parameter_list>
+    <block pos:line="124" pos:column="5">{
+        <return pos:line="125" pos:column="9">return <expr><op:operator pos:line="125" pos:column="16">&amp;</op:operator><name pos:line="125" pos:column="17">fontid</name></expr>;</return>
+    }</block></function>
+
+    <function><type><name pos:line="128" pos:column="5">ATSUAttributeTag</name></type> <name pos:line="128" pos:column="22">getTag</name><parameter_list pos:line="128" pos:column="28">()</parameter_list> <specifier pos:line="128" pos:column="31">const</specifier>
+    <block pos:line="129" pos:column="5">{
+        <return pos:line="130" pos:column="9">return <expr><name pos:line="130" pos:column="16">kATSUFontTag</name></expr>;</return>
+    }</block></function>
+
+    <function><type><name pos:line="133" pos:column="5">ATSUFontID</name></type> <name pos:line="133" pos:column="16">getFontID</name><parameter_list pos:line="133" pos:column="25">()</parameter_list> <specifier pos:line="133" pos:column="28">const</specifier>
+    <block pos:line="134" pos:column="5">{
+        <return pos:line="135" pos:column="9">return <expr><name pos:line="135" pos:column="16">fontid</name></expr>;</return>
+    }</block></function>
+
+</public><private pos:line="138" pos:column="1">private:
+    <decl_stmt><decl><type><name pos:line="139" pos:column="5">ATSUFontID</name></type> <name pos:line="139" pos:column="16">fontid</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+
+<cpp:endif pos:line="143" pos:column="1">#<cpp:directive pos:line="143" pos:column="2">endif</cpp:directive></cpp:endif>
+
+</unit>

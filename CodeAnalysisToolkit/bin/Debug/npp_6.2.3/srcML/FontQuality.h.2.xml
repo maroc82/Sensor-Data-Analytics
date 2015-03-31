@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\src\FontQuality.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// Scintilla source code edit control</comment>
+<comment type="block" format="doxygen" pos:line="2" pos:column="1">/** @file FontQuality.h
+ ** Definitions to control font anti-aliasing.
+ **/</comment>
+<comment type="line" pos:line="5" pos:column="1">// Copyright 1998-2009 by Neil Hodgson &lt;neilh@scintilla.org&gt;</comment>
+<comment type="line" pos:line="6" pos:column="1">// The License.txt file describes the conditions under which this software may be distributed.</comment>
+
+<cpp:define pos:line="8" pos:column="1">#<cpp:directive pos:line="8" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="8" pos:column="9">SC_EFF_QUALITY_MASK</name></cpp:macro>            <cpp:value pos:line="8" pos:column="40">0xF</cpp:value></cpp:define>
+<cpp:define pos:line="9" pos:column="1">#<cpp:directive pos:line="9" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="9" pos:column="9">SC_EFF_QUALITY_DEFAULT</name></cpp:macro>           <cpp:value pos:line="9" pos:column="42">0</cpp:value></cpp:define>
+<cpp:define pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="10" pos:column="9">SC_EFF_QUALITY_NON_ANTIALIASED</name></cpp:macro>   <cpp:value pos:line="10" pos:column="42">1</cpp:value></cpp:define>
+<cpp:define pos:line="11" pos:column="1">#<cpp:directive pos:line="11" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="11" pos:column="9">SC_EFF_QUALITY_ANTIALIASED</name></cpp:macro>       <cpp:value pos:line="11" pos:column="42">2</cpp:value></cpp:define>
+<cpp:define pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="12" pos:column="9">SC_EFF_QUALITY_LCD_OPTIMIZED</name></cpp:macro>     <cpp:value pos:line="12" pos:column="42">3</cpp:value></cpp:define>
+</unit>

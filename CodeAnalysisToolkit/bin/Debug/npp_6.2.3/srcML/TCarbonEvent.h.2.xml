@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\macosx\TCarbonEvent.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+    File:		TCarbonEvent.h
+    
+    Version:	1.0
+
+	Disclaimer:	IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc.
+				("Apple") in consideration of your agreement to the following terms, and your
+				use, installation, modification or redistribution of this Apple software
+				constitutes acceptance of these terms.  If you do not agree with these terms,
+				please do not use, install, modify or redistribute this Apple software.
+
+				In consideration of your agreement to abide by the following terms, and subject
+				to these terms, Apple grants you a personal, non-exclusive license, under AppleÕs
+				copyrights in this original Apple software (the "Apple Software"), to use,
+				reproduce, modify and redistribute the Apple Software, with or without
+				modifications, in source and/or binary forms; provided that if you redistribute
+				the Apple Software in its entirety and without modifications, you must retain
+				this notice and the following text and disclaimers in all such redistributions of
+				the Apple Software.  Neither the name, trademarks, service marks or logos of
+				Apple Computer, Inc. may be used to endorse or promote products derived from the
+				Apple Software without specific prior written permission from Apple.  Except as
+				expressly stated in this notice, no other rights or licenses, express or implied,
+				are granted by Apple herein, including but not limited to any patent rights that
+				may be infringed by your derivative works or by other works in which the Apple
+				Software may be incorporated.
+
+				The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+				WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+				WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+				PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
+				COMBINATION WITH YOUR PRODUCTS.
+
+				IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
+				CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+				GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+				ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION
+				OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+				(INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN
+				ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+	Copyright © 2002 Apple Computer, Inc., All Rights Reserved
+*/</comment>
+
+<cpp:ifndef pos:line="44" pos:column="1">#<cpp:directive pos:line="44" pos:column="2">ifndef</cpp:directive> <name pos:line="44" pos:column="9">TCarbonEvent_H_</name></cpp:ifndef>
+<cpp:define pos:line="45" pos:column="1">#<cpp:directive pos:line="45" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="45" pos:column="9">TCarbonEvent_H_</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="47" pos:column="1">#<cpp:directive pos:line="47" pos:column="2">include</cpp:directive> <cpp:file pos:line="47" pos:column="10">&lt;Carbon/Carbon.h&gt;</cpp:file></cpp:include>
+
+<class pos:line="49" pos:column="1">class <name pos:line="49" pos:column="7">TCarbonEvent</name>
+<block pos:line="50" pos:column="1">{<private type="default" pos:line="50" pos:column="2">
+</private><public pos:line="51" pos:column="1">public:
+	<comment type="line" pos:line="52" pos:column="9">// Construction/Destruction</comment>
+	<constructor_decl><name pos:line="53" pos:column="9">TCarbonEvent</name><parameter_list pos:line="53" pos:column="21">(
+					<param><decl><type><name pos:line="54" pos:column="41">UInt32</name></type>				<name pos:line="54" pos:column="73">inClass</name></decl></param>,
+					<param><decl><type><name pos:line="55" pos:column="41">UInt32</name></type>				<name pos:line="55" pos:column="73">inKind</name></decl></param> )</parameter_list>;</constructor_decl>
+	<constructor_decl><name pos:line="56" pos:column="9">TCarbonEvent</name><parameter_list pos:line="56" pos:column="21">(
+					<param><decl><type><name pos:line="57" pos:column="41">EventRef</name></type>			<name pos:line="57" pos:column="73">inEvent</name></decl></param> )</parameter_list>;</constructor_decl>
+	<destructor_decl><specifier pos:line="58" pos:column="9">virtual</specifier> <name pos:line="58" pos:column="17">~<name pos:line="58" pos:column="18">TCarbonEvent</name></name><parameter_list pos:line="58" pos:column="30">()</parameter_list>;</destructor_decl>
+	
+	<function_decl><type><name pos:line="60" pos:column="9">UInt32</name></type>		<name pos:line="60" pos:column="25">GetClass</name><parameter_list pos:line="60" pos:column="33">()</parameter_list> <specifier pos:line="60" pos:column="36">const</specifier>;</function_decl>
+	<function_decl><type><name pos:line="61" pos:column="9">UInt32</name></type>		<name pos:line="61" pos:column="25">GetKind</name><parameter_list pos:line="61" pos:column="32">()</parameter_list> <specifier pos:line="61" pos:column="35">const</specifier>;</function_decl>
+	
+	<comment type="line" pos:line="63" pos:column="9">// Time</comment>
+	<function_decl><type><name pos:line="64" pos:column="9">void</name></type>		<name pos:line="64" pos:column="25">SetTime</name><parameter_list pos:line="64" pos:column="32">(
+					<param><decl><type><name pos:line="65" pos:column="41">EventTime</name></type> <name pos:line="65" pos:column="51">inTime</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="66" pos:column="9">EventTime</name></type>	<name pos:line="66" pos:column="25">GetTime</name><parameter_list pos:line="66" pos:column="32">()</parameter_list> <specifier pos:line="66" pos:column="35">const</specifier>;</function_decl>
+	
+	<comment type="line" pos:line="68" pos:column="9">// Retention</comment>
+	<function_decl><type><name pos:line="69" pos:column="9">void</name></type>		<name pos:line="69" pos:column="25">Retain</name><parameter_list pos:line="69" pos:column="31">()</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="70" pos:column="9">void</name></type>		<name pos:line="70" pos:column="25">Release</name><parameter_list pos:line="70" pos:column="32">()</parameter_list>;</function_decl>
+	
+	<comment type="line" pos:line="72" pos:column="9">// Accessors</comment>
+	<function><name pos:line="73" pos:column="9">operator	EventRef&amp;</name><parameter_list pos:line="73" pos:column="34">()</parameter_list>
+					<block pos:line="74" pos:column="41">{ <return pos:line="74" pos:column="43">return <expr><name pos:line="74" pos:column="50">fEvent</name></expr>;</return> }</block></function><empty_stmt pos:line="74" pos:column="59">;</empty_stmt>
+	<function><type><name pos:line="75" pos:column="9">EventRef</name></type>	<name pos:line="75" pos:column="25">GetEventRef</name><parameter_list pos:line="75" pos:column="36">()</parameter_list>
+					<block pos:line="76" pos:column="41">{ <return pos:line="76" pos:column="43">return <expr><name pos:line="76" pos:column="50">fEvent</name></expr>;</return> }</block></function>
+	
+	<comment type="line" pos:line="78" pos:column="9">// Posting</comment>
+	<function_decl><type><name pos:line="79" pos:column="9">OSStatus</name></type> 	<name pos:line="79" pos:column="25">PostToQueue</name><parameter_list pos:line="79" pos:column="36">(
+					<param><decl><type><name pos:line="80" pos:column="41">EventQueueRef</name></type>		<name pos:line="80" pos:column="65">inQueue</name></decl></param>,
+					<param><decl><type><name pos:line="81" pos:column="41">EventPriority</name></type>		<name pos:line="81" pos:column="65">inPriority</name> <init pos:line="81" pos:column="76">= <expr><name pos:line="81" pos:column="78">kEventPriorityStandard</name></expr></init></decl></param> )</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="83" pos:column="9">// Parameters</comment>
+	<function_decl><type><name pos:line="84" pos:column="9">OSStatus</name></type>	<name pos:line="84" pos:column="25">SetParameter</name><parameter_list pos:line="84" pos:column="37">(
+					<param><decl><type><name pos:line="85" pos:column="41">EventParamName</name></type>		<name pos:line="85" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="86" pos:column="41">EventParamType</name></type>		<name pos:line="86" pos:column="65">inType</name></decl></param>,
+					<param><decl><type><name pos:line="87" pos:column="41">UInt32</name></type>				<name pos:line="87" pos:column="73">inSize</name></decl></param>,
+					<param><decl><type><specifier pos:line="88" pos:column="41">const</specifier> <name pos:line="88" pos:column="47">void</name><type:modifier pos:line="88" pos:column="51">*</type:modifier></type>			<name pos:line="88" pos:column="73">inData</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="89" pos:column="9">OSStatus</name></type>	<name pos:line="89" pos:column="25">GetParameter</name><parameter_list pos:line="89" pos:column="37">(
+					<param><decl><type><name pos:line="90" pos:column="41">EventParamName</name></type>		<name pos:line="90" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="91" pos:column="41">EventParamType</name></type>		<name pos:line="91" pos:column="65">inType</name></decl></param>,
+					<param><decl><type><name pos:line="92" pos:column="41">UInt32</name></type>				<name pos:line="92" pos:column="73">inBufferSize</name></decl></param>,
+					<param><decl><type><name pos:line="93" pos:column="41">void</name><type:modifier pos:line="93" pos:column="45">*</type:modifier></type>				<name pos:line="93" pos:column="73">outData</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="95" pos:column="9">OSStatus</name></type>	<name pos:line="95" pos:column="25">GetParameterType</name><parameter_list pos:line="95" pos:column="41">(
+					<param><decl><type><name pos:line="96" pos:column="41">EventParamName</name></type>		<name pos:line="96" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="97" pos:column="41">EventParamType</name><type:modifier pos:line="97" pos:column="55">*</type:modifier></type>		<name pos:line="97" pos:column="65">outType</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="98" pos:column="9">OSStatus</name></type>	<name pos:line="98" pos:column="25">GetParameterSize</name><parameter_list pos:line="98" pos:column="41">(
+					<param><decl><type><name pos:line="99" pos:column="41">EventParamName</name></type>		<name pos:line="99" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="100" pos:column="41">UInt32</name><type:modifier pos:line="100" pos:column="47">*</type:modifier></type>				<name pos:line="100" pos:column="73">outSize</name></decl></param> )</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="102" pos:column="9">// Simple parameters</comment>
+	<function_decl><type><name pos:line="103" pos:column="9">OSStatus</name></type>	<name pos:line="103" pos:column="25">SetParameter</name><parameter_list pos:line="103" pos:column="37">(
+					<param><decl><type><name pos:line="104" pos:column="41">EventParamName</name></type>		<name pos:line="104" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="105" pos:column="41">Boolean</name></type>				<name pos:line="105" pos:column="73">inValue</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="106" pos:column="9">OSStatus</name></type>	<name pos:line="106" pos:column="25">GetParameter</name><parameter_list pos:line="106" pos:column="37">(
+					<param><decl><type><name pos:line="107" pos:column="41">EventParamName</name></type>		<name pos:line="107" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="108" pos:column="41">Boolean</name><type:modifier pos:line="108" pos:column="48">*</type:modifier></type>			<name pos:line="108" pos:column="73">outValue</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="110" pos:column="9">OSStatus</name></type>	<name pos:line="110" pos:column="25">SetParameter</name><parameter_list pos:line="110" pos:column="37">(
+					<param><decl><type><name pos:line="111" pos:column="41">EventParamName</name></type>		<name pos:line="111" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="112" pos:column="41">bool</name></type>				<name pos:line="112" pos:column="73">inValue</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="113" pos:column="9">OSStatus</name></type>	<name pos:line="113" pos:column="25">GetParameter</name><parameter_list pos:line="113" pos:column="37">(
+					<param><decl><type><name pos:line="114" pos:column="41">EventParamName</name></type>		<name pos:line="114" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="115" pos:column="41">bool</name><type:modifier pos:line="115" pos:column="45">*</type:modifier></type>				<name pos:line="115" pos:column="73">outValue</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="117" pos:column="9">OSStatus</name></type>	<name pos:line="117" pos:column="25">SetParameter</name><parameter_list pos:line="117" pos:column="37">(
+					<param><decl><type><name pos:line="118" pos:column="41">EventParamName</name></type>		<name pos:line="118" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="119" pos:column="41">Point</name></type>				<name pos:line="119" pos:column="73">inPt</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="120" pos:column="9">OSStatus</name></type>	<name pos:line="120" pos:column="25">GetParameter</name><parameter_list pos:line="120" pos:column="37">(
+					<param><decl><type><name pos:line="121" pos:column="41">EventParamName</name></type>		<name pos:line="121" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="122" pos:column="41">Point</name><type:modifier pos:line="122" pos:column="46">*</type:modifier></type>				<name pos:line="122" pos:column="73">outPt</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="124" pos:column="9">OSStatus</name></type>	<name pos:line="124" pos:column="25">SetParameter</name><parameter_list pos:line="124" pos:column="37">(
+					<param><decl><type><name pos:line="125" pos:column="41">EventParamName</name></type>		<name pos:line="125" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><specifier pos:line="126" pos:column="41">const</specifier> <name pos:line="126" pos:column="47">HIPoint</name><type:modifier pos:line="126" pos:column="54">&amp;</type:modifier></type>		<name pos:line="126" pos:column="65">inPt</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="128" pos:column="9">OSStatus</name></type>	<name pos:line="128" pos:column="25">GetParameter</name><parameter_list pos:line="128" pos:column="37">(
+					<param><decl><type><name pos:line="129" pos:column="41">EventParamName</name></type>		<name pos:line="129" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="130" pos:column="41">HIPoint</name><type:modifier pos:line="130" pos:column="48">*</type:modifier></type>			<name pos:line="130" pos:column="73">outPt</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="132" pos:column="9">OSStatus</name></type>	<name pos:line="132" pos:column="25">SetParameter</name><parameter_list pos:line="132" pos:column="37">(
+					<param><decl><type><name pos:line="133" pos:column="41">EventParamName</name></type>		<name pos:line="133" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><specifier pos:line="134" pos:column="41">const</specifier> <name pos:line="134" pos:column="47">Rect</name><type:modifier pos:line="134" pos:column="51">&amp;</type:modifier></type>			<name pos:line="134" pos:column="73">inRect</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="135" pos:column="9">OSStatus</name></type>	<name pos:line="135" pos:column="25">GetParameter</name><parameter_list pos:line="135" pos:column="37">(
+					<param><decl><type><name pos:line="136" pos:column="41">EventParamName</name></type>		<name pos:line="136" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="137" pos:column="41">Rect</name><type:modifier pos:line="137" pos:column="45">*</type:modifier></type>				<name pos:line="137" pos:column="73">outRect</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="139" pos:column="9">OSStatus</name></type>	<name pos:line="139" pos:column="25">SetParameter</name><parameter_list pos:line="139" pos:column="37">(
+					<param><decl><type><name pos:line="140" pos:column="41">EventParamName</name></type>		<name pos:line="140" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><specifier pos:line="141" pos:column="41">const</specifier> <name pos:line="141" pos:column="47">HIRect</name><type:modifier pos:line="141" pos:column="53">&amp;</type:modifier></type>		<name pos:line="141" pos:column="65">inRect</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="142" pos:column="9">OSStatus</name></type>	<name pos:line="142" pos:column="25">GetParameter</name><parameter_list pos:line="142" pos:column="37">(
+					<param><decl><type><name pos:line="143" pos:column="41">EventParamName</name></type>		<name pos:line="143" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="144" pos:column="41">HIRect</name><type:modifier pos:line="144" pos:column="47">*</type:modifier></type>				<name pos:line="144" pos:column="73">outRect</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="146" pos:column="9">OSStatus</name></type>	<name pos:line="146" pos:column="25">SetParameter</name><parameter_list pos:line="146" pos:column="37">(
+					<param><decl><type><name pos:line="147" pos:column="41">EventParamName</name></type>		<name pos:line="147" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><specifier pos:line="148" pos:column="41">const</specifier> <name pos:line="148" pos:column="47">HISize</name><type:modifier pos:line="148" pos:column="53">&amp;</type:modifier></type>		<name pos:line="148" pos:column="65">inSize</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="149" pos:column="9">OSStatus</name></type>	<name pos:line="149" pos:column="25">GetParameter</name><parameter_list pos:line="149" pos:column="37">(
+					<param><decl><type><name pos:line="150" pos:column="41">EventParamName</name></type>		<name pos:line="150" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="151" pos:column="41">HISize</name><type:modifier pos:line="151" pos:column="47">*</type:modifier></type>				<name pos:line="151" pos:column="73">outSize</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="153" pos:column="9">OSStatus</name></type>	<name pos:line="153" pos:column="25">SetParameter</name><parameter_list pos:line="153" pos:column="37">(
+					<param><decl><type><name pos:line="154" pos:column="41">EventParamName</name></type>		<name pos:line="154" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="155" pos:column="41">RgnHandle</name></type>			<name pos:line="155" pos:column="73">inRegion</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="156" pos:column="9">OSStatus</name></type>	<name pos:line="156" pos:column="25">GetParameter</name><parameter_list pos:line="156" pos:column="37">(
+					<param><decl><type><name pos:line="157" pos:column="41">EventParamName</name></type>		<name pos:line="157" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="158" pos:column="41">RgnHandle</name><type:modifier pos:line="158" pos:column="50">*</type:modifier></type>			<name pos:line="158" pos:column="73">outRegion</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="160" pos:column="9">OSStatus</name></type>	<name pos:line="160" pos:column="25">SetParameter</name><parameter_list pos:line="160" pos:column="37">(
+					<param><decl><type><name pos:line="161" pos:column="41">EventParamName</name></type>		<name pos:line="161" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="162" pos:column="41">WindowRef</name></type>			<name pos:line="162" pos:column="73">inWindow</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="163" pos:column="9">OSStatus</name></type>	<name pos:line="163" pos:column="25">GetParameter</name><parameter_list pos:line="163" pos:column="37">(
+					<param><decl><type><name pos:line="164" pos:column="41">EventParamName</name></type>		<name pos:line="164" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="165" pos:column="41">WindowRef</name><type:modifier pos:line="165" pos:column="50">*</type:modifier></type>			<name pos:line="165" pos:column="73">outWindow</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="167" pos:column="9">OSStatus</name></type>	<name pos:line="167" pos:column="25">SetParameter</name><parameter_list pos:line="167" pos:column="37">(
+					<param><decl><type><name pos:line="168" pos:column="41">EventParamName</name></type>		<name pos:line="168" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="169" pos:column="41">ControlRef</name></type>			<name pos:line="169" pos:column="73">inControl</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="170" pos:column="9">OSStatus</name></type>	<name pos:line="170" pos:column="25">GetParameter</name><parameter_list pos:line="170" pos:column="37">(
+					<param><decl><type><name pos:line="171" pos:column="41">EventParamName</name></type>		<name pos:line="171" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="172" pos:column="41">ControlRef</name><type:modifier pos:line="172" pos:column="51">*</type:modifier></type> <name pos:line="172" pos:column="53">outControl</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="174" pos:column="9">OSStatus</name></type>	<name pos:line="174" pos:column="25">SetParameter</name><parameter_list pos:line="174" pos:column="37">(
+					<param><decl><type><name pos:line="175" pos:column="41">EventParamName</name></type>		<name pos:line="175" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="176" pos:column="41">MenuRef</name></type>				<name pos:line="176" pos:column="73">inMenu</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="177" pos:column="9">OSStatus</name></type>	<name pos:line="177" pos:column="25">GetParameter</name><parameter_list pos:line="177" pos:column="37">(
+					<param><decl><type><name pos:line="178" pos:column="41">EventParamName</name></type>		<name pos:line="178" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="179" pos:column="41">MenuRef</name><type:modifier pos:line="179" pos:column="48">*</type:modifier></type>			<name pos:line="179" pos:column="73">outMenu</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="181" pos:column="9">OSStatus</name></type>	<name pos:line="181" pos:column="25">SetParameter</name><parameter_list pos:line="181" pos:column="37">(
+					<param><decl><type><name pos:line="182" pos:column="41">EventParamName</name></type>		<name pos:line="182" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="183" pos:column="41">DragRef</name></type>				<name pos:line="183" pos:column="73">inDrag</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="184" pos:column="9">OSStatus</name></type>	<name pos:line="184" pos:column="25">GetParameter</name><parameter_list pos:line="184" pos:column="37">(
+					<param><decl><type><name pos:line="185" pos:column="41">EventParamName</name></type>		<name pos:line="185" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="186" pos:column="41">DragRef</name><type:modifier pos:line="186" pos:column="48">*</type:modifier></type>			<name pos:line="186" pos:column="73">outDrag</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="188" pos:column="9">OSStatus</name></type>	<name pos:line="188" pos:column="25">SetParameter</name><parameter_list pos:line="188" pos:column="37">(
+					<param><decl><type><name pos:line="189" pos:column="41">EventParamName</name></type>		<name pos:line="189" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="190" pos:column="41">UInt32</name></type>				<name pos:line="190" pos:column="73">inValue</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="191" pos:column="9">OSStatus</name></type>	<name pos:line="191" pos:column="25">GetParameter</name><parameter_list pos:line="191" pos:column="37">(
+					<param><decl><type><name pos:line="192" pos:column="41">EventParamName</name></type>		<name pos:line="192" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="193" pos:column="41">UInt32</name><type:modifier pos:line="193" pos:column="47">*</type:modifier></type>				<name pos:line="193" pos:column="73">outValue</name></decl></param> )</parameter_list>;</function_decl>
+	
+	<function_decl><type><name pos:line="195" pos:column="9">OSStatus</name></type>	<name pos:line="195" pos:column="25">SetParameter</name><parameter_list pos:line="195" pos:column="37">(
+					<param><decl><type><name pos:line="196" pos:column="41">EventParamName</name></type>		<name pos:line="196" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><specifier pos:line="197" pos:column="41">const</specifier> <name pos:line="197" pos:column="47">HICommand</name><type:modifier pos:line="197" pos:column="56">&amp;</type:modifier></type>	<name pos:line="197" pos:column="65">inValue</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="198" pos:column="9">OSStatus</name></type>	<name pos:line="198" pos:column="25">GetParameter</name><parameter_list pos:line="198" pos:column="37">(
+					<param><decl><type><name pos:line="199" pos:column="41">EventParamName</name></type>		<name pos:line="199" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="200" pos:column="41">HICommand</name><type:modifier pos:line="200" pos:column="50">*</type:modifier></type>			<name pos:line="200" pos:column="73">outValue</name></decl></param> )</parameter_list>;</function_decl>
+
+	<function_decl><type><name pos:line="202" pos:column="9">OSStatus</name></type>	<name pos:line="202" pos:column="25">SetParameter</name><parameter_list pos:line="202" pos:column="37">(
+					<param><decl><type><name pos:line="203" pos:column="41">EventParamName</name></type>		<name pos:line="203" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><specifier pos:line="204" pos:column="41">const</specifier> <name pos:line="204" pos:column="47">ControlPartCode</name><type:modifier pos:line="204" pos:column="62">&amp;</type:modifier></type>	<name pos:line="204" pos:column="65">inValue</name></decl></param> )</parameter_list>;</function_decl>
+	<function_decl><type><name pos:line="205" pos:column="9">OSStatus</name></type>	<name pos:line="205" pos:column="25">GetParameter</name><parameter_list pos:line="205" pos:column="37">(
+					<param><decl><type><name pos:line="206" pos:column="41">EventParamName</name></type>		<name pos:line="206" pos:column="65">inName</name></decl></param>,
+					<param><decl><type><name pos:line="207" pos:column="41">ControlPartCode</name><type:modifier pos:line="207" pos:column="56">*</type:modifier></type>			<name pos:line="207" pos:column="81">outValue</name></decl></param> )</parameter_list>;</function_decl>
+
+	<comment type="line" pos:line="209" pos:column="9">// Template parameters</comment>
+	<template pos:line="210" pos:column="9">template <parameter_list pos:line="210" pos:column="18">&lt;<param><type><name pos:line="210" pos:column="19">class</name></type> <name pos:line="210" pos:column="25">T</name></param>&gt;</parameter_list> <function><type><name pos:line="210" pos:column="28">OSStatus</name></type> <name pos:line="210" pos:column="37">SetParameter</name><parameter_list pos:line="210" pos:column="49">(
+		<param><decl><type><name pos:line="211" pos:column="17">EventParamName</name></type>	<name pos:line="211" pos:column="33">inName</name></decl></param>,
+		<param><decl><type><name pos:line="212" pos:column="17">EventParamType</name></type>	<name pos:line="212" pos:column="33">inType</name></decl></param>,
+		<param><decl><type><specifier pos:line="213" pos:column="17">const</specifier> <name pos:line="213" pos:column="23">T</name><type:modifier pos:line="213" pos:column="24">&amp;</type:modifier></type>		<name pos:line="213" pos:column="41">inValue</name></decl></param> )</parameter_list>
+	<block pos:line="214" pos:column="9">{
+		<return pos:line="215" pos:column="17">return <expr><call><name pos:line="215" pos:column="24">SetParameter</name><argument_list pos:line="215" pos:column="36">( <argument><expr><name pos:line="215" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="215" pos:column="46">inType</name></expr></argument>, <argument><expr><sizeof pos:line="215" pos:column="54">sizeof<argument_list pos:line="215" pos:column="60">( <argument><expr><name pos:line="215" pos:column="62">T</name></expr></argument> )</argument_list></sizeof></expr></argument>, <argument><expr><op:operator pos:line="215" pos:column="67">&amp;</op:operator><name pos:line="215" pos:column="68">inValue</name></expr></argument> )</argument_list></call></expr>;</return>
+	}</block></function></template>
+			
+	<template pos:line="218" pos:column="9">template <parameter_list pos:line="218" pos:column="18">&lt;<param><type><name pos:line="218" pos:column="19">class</name></type> <name pos:line="218" pos:column="25">T</name></param>&gt;</parameter_list> <function><type><name pos:line="218" pos:column="28">OSStatus</name></type> <name pos:line="218" pos:column="37">GetParameter</name><parameter_list pos:line="218" pos:column="49">(
+		<param><decl><type><name pos:line="219" pos:column="17">EventParamName</name></type>	<name pos:line="219" pos:column="33">inName</name></decl></param>,
+		<param><decl><type><name pos:line="220" pos:column="17">EventParamType</name></type>	<name pos:line="220" pos:column="33">inType</name></decl></param>,
+		<param><decl><type><name pos:line="221" pos:column="17">T</name><type:modifier pos:line="221" pos:column="18">*</type:modifier></type>				<name pos:line="221" pos:column="49">outValue</name></decl></param> )</parameter_list>
+	<block pos:line="222" pos:column="9">{
+		<return pos:line="223" pos:column="17">return <expr><call><name pos:line="223" pos:column="24">GetParameter</name><argument_list pos:line="223" pos:column="36">( <argument><expr><name pos:line="223" pos:column="38">inName</name></expr></argument>, <argument><expr><name pos:line="223" pos:column="46">inType</name></expr></argument>, <argument><expr><sizeof pos:line="223" pos:column="54">sizeof<argument_list pos:line="223" pos:column="60">( <argument><expr><name pos:line="223" pos:column="62">T</name></expr></argument> )</argument_list></sizeof></expr></argument>, <argument><expr><name pos:line="223" pos:column="67">outValue</name></expr></argument> )</argument_list></call></expr>;</return>
+	}</block></function></template>
+	
+</public><private pos:line="226" pos:column="1">private:
+	<decl_stmt><decl><type><name pos:line="227" pos:column="9">EventRef</name></type>	<name pos:line="227" pos:column="25">fEvent</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="230" pos:column="1">#<cpp:directive pos:line="230" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="230" pos:column="8">// TCarbonEvent_H_</comment>
+</unit>

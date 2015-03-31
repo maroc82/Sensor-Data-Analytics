@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter\AppDelegate.designer.cs" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// WARNING</comment>
+<comment type="line" pos:line="2" pos:column="1">//</comment>
+<comment type="line" pos:line="3" pos:column="1">// This file has been generated automatically by Xamarin Studio to store outlets and</comment>
+<comment type="line" pos:line="4" pos:column="1">// actions made in the UI designer. If it is removed, they will be lost.</comment>
+<comment type="line" pos:line="5" pos:column="1">// Manual changes to this file may not be handled correctly.</comment>
+<comment type="line" pos:line="6" pos:column="1">//</comment>
+<using pos:line="7" pos:column="1">using <name><name pos:line="7" pos:column="7">MonoTouch</name><op:operator pos:line="7" pos:column="16">.</op:operator><name pos:line="7" pos:column="17">Foundation</name></name>;</using>
+<using pos:line="8" pos:column="1">using <name><name pos:line="8" pos:column="7">System</name><op:operator pos:line="8" pos:column="13">.</op:operator><name pos:line="8" pos:column="14">CodeDom</name><op:operator pos:line="8" pos:column="21">.</op:operator><name pos:line="8" pos:column="22">Compiler</name></name>;</using>
+
+<namespace pos:line="10" pos:column="1">namespace <name pos:line="10" pos:column="11">StepCounter</name>
+<block pos:line="11" pos:column="1">{
+	<class><specifier pos:line="12" pos:column="9">partial</specifier> class <name pos:line="12" pos:column="23">AppDelegate</name>
+	<block pos:line="13" pos:column="9">{
+		
+		<function><type><name pos:line="15" pos:column="17">void</name></type> <name pos:line="15" pos:column="22">ReleaseDesignerOutlets</name> <parameter_list pos:line="15" pos:column="45">()</parameter_list>
+		<block pos:line="16" pos:column="17">{
+		}</block></function>
+	}</block></class>
+}</block></namespace>
+</unit>

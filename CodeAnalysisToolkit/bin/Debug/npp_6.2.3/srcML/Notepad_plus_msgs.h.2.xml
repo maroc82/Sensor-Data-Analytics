@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\PowerEditor\src\MISC\PluginsManager\Notepad_plus_msgs.h" pos:tabs="8"><comment type="line" pos:line="1" pos:column="1">// This file is part of Notepad++ project</comment>
+<comment type="line" pos:line="2" pos:column="1">// Copyright (C)2003 Don HO &lt;don.h@free.fr&gt;</comment>
+<comment type="line" pos:line="3" pos:column="1">//</comment>
+<comment type="line" pos:line="4" pos:column="1">// This program is free software; you can redistribute it and/or</comment>
+<comment type="line" pos:line="5" pos:column="1">// modify it under the terms of the GNU General Public License</comment>
+<comment type="line" pos:line="6" pos:column="1">// as published by the Free Software Foundation; either</comment>
+<comment type="line" pos:line="7" pos:column="1">// version 2 of the License, or (at your option) any later version.</comment>
+<comment type="line" pos:line="8" pos:column="1">//</comment>
+<comment type="line" pos:line="9" pos:column="1">// Note that the GPL places important restrictions on "derived works", yet</comment>
+<comment type="line" pos:line="10" pos:column="1">// it does not provide a detailed definition of that term.  To avoid      </comment>
+<comment type="line" pos:line="11" pos:column="1">// misunderstandings, we consider an application to constitute a          </comment>
+<comment type="line" pos:line="12" pos:column="1">// "derivative work" for the purpose of this license if it does any of the</comment>
+<comment type="line" pos:line="13" pos:column="1">// following:                                                             </comment>
+<comment type="line" pos:line="14" pos:column="1">// 1. Integrates source code from Notepad++.</comment>
+<comment type="line" pos:line="15" pos:column="1">// 2. Integrates/includes/aggregates Notepad++ into a proprietary executable</comment>
+<comment type="line" pos:line="16" pos:column="1">//    installer, such as those produced by InstallShield.</comment>
+<comment type="line" pos:line="17" pos:column="1">// 3. Links to a library or executes a program that does any of the above.</comment>
+<comment type="line" pos:line="18" pos:column="1">//</comment>
+<comment type="line" pos:line="19" pos:column="1">// This program is distributed in the hope that it will be useful,</comment>
+<comment type="line" pos:line="20" pos:column="1">// but WITHOUT ANY WARRANTY; without even the implied warranty of</comment>
+<comment type="line" pos:line="21" pos:column="1">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</comment>
+<comment type="line" pos:line="22" pos:column="1">// GNU General Public License for more details.</comment>
+<comment type="line" pos:line="23" pos:column="1">//</comment>
+<comment type="line" pos:line="24" pos:column="1">// You should have received a copy of the GNU General Public License</comment>
+<comment type="line" pos:line="25" pos:column="1">// along with this program; if not, write to the Free Software</comment>
+<comment type="line" pos:line="26" pos:column="1">// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</comment>
+
+
+<cpp:ifndef pos:line="29" pos:column="1">#<cpp:directive pos:line="29" pos:column="2">ifndef</cpp:directive> <name pos:line="29" pos:column="9">NOTEPAD_PLUS_MSGS_H</name></cpp:ifndef>
+<cpp:define pos:line="30" pos:column="1">#<cpp:directive pos:line="30" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="30" pos:column="9">NOTEPAD_PLUS_MSGS_H</name></cpp:macro></cpp:define>
+
+
+<enum pos:line="33" pos:column="1">enum <name pos:line="33" pos:column="6">LangType</name> <block pos:line="33" pos:column="15">{<decl><name pos:line="33" pos:column="16">L_TEXT</name></decl><op:operator pos:line="33" pos:column="22">,</op:operator> <decl><name pos:line="33" pos:column="24">L_PHP</name></decl> <op:operator pos:line="33" pos:column="30">,</op:operator> <decl><name pos:line="33" pos:column="32">L_C</name></decl><op:operator pos:line="33" pos:column="35">,</op:operator> <decl><name pos:line="33" pos:column="37">L_CPP</name></decl><op:operator pos:line="33" pos:column="42">,</op:operator> <decl><name pos:line="33" pos:column="44">L_CS</name></decl><op:operator pos:line="33" pos:column="48">,</op:operator> <decl><name pos:line="33" pos:column="50">L_OBJC</name></decl><op:operator pos:line="33" pos:column="56">,</op:operator> <decl><name pos:line="33" pos:column="58">L_JAVA</name></decl><op:operator pos:line="33" pos:column="64">,</op:operator> <decl><name pos:line="33" pos:column="66">L_RC</name></decl><op:operator pos:line="33" pos:column="70">,</op:operator>\
+			   <decl><name pos:line="34" pos:column="28">L_HTML</name></decl><op:operator pos:line="34" pos:column="34">,</op:operator> <decl><name pos:line="34" pos:column="36">L_XML</name></decl><op:operator pos:line="34" pos:column="41">,</op:operator> <decl><name pos:line="34" pos:column="43">L_MAKEFILE</name></decl><op:operator pos:line="34" pos:column="53">,</op:operator> <decl><name pos:line="34" pos:column="55">L_PASCAL</name></decl><op:operator pos:line="34" pos:column="63">,</op:operator> <decl><name pos:line="34" pos:column="65">L_BATCH</name></decl><op:operator pos:line="34" pos:column="72">,</op:operator> <decl><name pos:line="34" pos:column="74">L_INI</name></decl><op:operator pos:line="34" pos:column="79">,</op:operator> <decl><name pos:line="34" pos:column="81">L_ASCII</name></decl><op:operator pos:line="34" pos:column="88">,</op:operator> <decl><name pos:line="34" pos:column="90">L_USER</name></decl><op:operator pos:line="34" pos:column="96">,</op:operator>\
+			   <decl><name pos:line="35" pos:column="28">L_ASP</name></decl><op:operator pos:line="35" pos:column="33">,</op:operator> <decl><name pos:line="35" pos:column="35">L_SQL</name></decl><op:operator pos:line="35" pos:column="40">,</op:operator> <decl><name pos:line="35" pos:column="42">L_VB</name></decl><op:operator pos:line="35" pos:column="46">,</op:operator> <decl><name pos:line="35" pos:column="48">L_JS</name></decl><op:operator pos:line="35" pos:column="52">,</op:operator> <decl><name pos:line="35" pos:column="54">L_CSS</name></decl><op:operator pos:line="35" pos:column="59">,</op:operator> <decl><name pos:line="35" pos:column="61">L_PERL</name></decl><op:operator pos:line="35" pos:column="67">,</op:operator> <decl><name pos:line="35" pos:column="69">L_PYTHON</name></decl><op:operator pos:line="35" pos:column="77">,</op:operator> <decl><name pos:line="35" pos:column="79">L_LUA</name></decl><op:operator pos:line="35" pos:column="84">,</op:operator>\
+			   <decl><name pos:line="36" pos:column="28">L_TEX</name></decl><op:operator pos:line="36" pos:column="33">,</op:operator> <decl><name pos:line="36" pos:column="35">L_FORTRAN</name></decl><op:operator pos:line="36" pos:column="44">,</op:operator> <decl><name pos:line="36" pos:column="46">L_BASH</name></decl><op:operator pos:line="36" pos:column="52">,</op:operator> <decl><name pos:line="36" pos:column="54">L_FLASH</name></decl><op:operator pos:line="36" pos:column="61">,</op:operator> <decl><name pos:line="36" pos:column="63">L_NSIS</name></decl><op:operator pos:line="36" pos:column="69">,</op:operator> <decl><name pos:line="36" pos:column="71">L_TCL</name></decl><op:operator pos:line="36" pos:column="76">,</op:operator> <decl><name pos:line="36" pos:column="78">L_LISP</name></decl><op:operator pos:line="36" pos:column="84">,</op:operator> <decl><name pos:line="36" pos:column="86">L_SCHEME</name></decl><op:operator pos:line="36" pos:column="94">,</op:operator>\
+			   <decl><name pos:line="37" pos:column="28">L_ASM</name></decl><op:operator pos:line="37" pos:column="33">,</op:operator> <decl><name pos:line="37" pos:column="35">L_DIFF</name></decl><op:operator pos:line="37" pos:column="41">,</op:operator> <decl><name pos:line="37" pos:column="43">L_PROPS</name></decl><op:operator pos:line="37" pos:column="50">,</op:operator> <decl><name pos:line="37" pos:column="52">L_PS</name></decl><op:operator pos:line="37" pos:column="56">,</op:operator> <decl><name pos:line="37" pos:column="58">L_RUBY</name></decl><op:operator pos:line="37" pos:column="64">,</op:operator> <decl><name pos:line="37" pos:column="66">L_SMALLTALK</name></decl><op:operator pos:line="37" pos:column="77">,</op:operator> <decl><name pos:line="37" pos:column="79">L_VHDL</name></decl><op:operator pos:line="37" pos:column="85">,</op:operator> <decl><name pos:line="37" pos:column="87">L_KIX</name></decl><op:operator pos:line="37" pos:column="92">,</op:operator> <decl><name pos:line="37" pos:column="94">L_AU3</name></decl><op:operator pos:line="37" pos:column="99">,</op:operator>\
+			   <decl><name pos:line="38" pos:column="28">L_CAML</name></decl><op:operator pos:line="38" pos:column="34">,</op:operator> <decl><name pos:line="38" pos:column="36">L_ADA</name></decl><op:operator pos:line="38" pos:column="41">,</op:operator> <decl><name pos:line="38" pos:column="43">L_VERILOG</name></decl><op:operator pos:line="38" pos:column="52">,</op:operator> <decl><name pos:line="38" pos:column="54">L_MATLAB</name></decl><op:operator pos:line="38" pos:column="62">,</op:operator> <decl><name pos:line="38" pos:column="64">L_HASKELL</name></decl><op:operator pos:line="38" pos:column="73">,</op:operator> <decl><name pos:line="38" pos:column="75">L_INNO</name></decl><op:operator pos:line="38" pos:column="81">,</op:operator> <decl><name pos:line="38" pos:column="83">L_SEARCHRESULT</name></decl><op:operator pos:line="38" pos:column="97">,</op:operator>\
+			   <decl><name pos:line="39" pos:column="28">L_CMAKE</name></decl><op:operator pos:line="39" pos:column="35">,</op:operator> <decl><name pos:line="39" pos:column="37">L_YAML</name></decl><op:operator pos:line="39" pos:column="43">,</op:operator> <decl><name pos:line="39" pos:column="45">L_COBOL</name></decl><op:operator pos:line="39" pos:column="52">,</op:operator> <decl><name pos:line="39" pos:column="54">L_GUI4CLI</name></decl><op:operator pos:line="39" pos:column="63">,</op:operator> <decl><name pos:line="39" pos:column="65">L_D</name></decl><op:operator pos:line="39" pos:column="68">,</op:operator> <decl><name pos:line="39" pos:column="70">L_POWERSHELL</name></decl><op:operator pos:line="39" pos:column="82">,</op:operator> <decl><name pos:line="39" pos:column="84">L_R</name></decl><op:operator pos:line="39" pos:column="87">,</op:operator> <decl><name pos:line="39" pos:column="89">L_JSP</name></decl><op:operator pos:line="39" pos:column="94">,</op:operator>\
+			   <comment type="line" pos:line="40" pos:column="28">// The end of enumated language type, so it should be always at the end</comment>
+			   <decl><name pos:line="41" pos:column="28">L_EXTERNAL</name></decl>}</block>;</enum>
+<enum pos:line="42" pos:column="1">enum <name pos:line="42" pos:column="6">winVer</name><block pos:line="42" pos:column="12">{<decl><name pos:line="42" pos:column="13">WV_UNKNOWN</name></decl><op:operator pos:line="42" pos:column="23">,</op:operator> <decl><name pos:line="42" pos:column="25">WV_WIN32S</name></decl><op:operator pos:line="42" pos:column="34">,</op:operator> <decl><name pos:line="42" pos:column="36">WV_95</name></decl><op:operator pos:line="42" pos:column="41">,</op:operator> <decl><name pos:line="42" pos:column="43">WV_98</name></decl><op:operator pos:line="42" pos:column="48">,</op:operator> <decl><name pos:line="42" pos:column="50">WV_ME</name></decl><op:operator pos:line="42" pos:column="55">,</op:operator> <decl><name pos:line="42" pos:column="57">WV_NT</name></decl><op:operator pos:line="42" pos:column="62">,</op:operator> <decl><name pos:line="42" pos:column="64">WV_W2K</name></decl><op:operator pos:line="42" pos:column="70">,</op:operator> <decl><name pos:line="42" pos:column="72">WV_XP</name></decl><op:operator pos:line="42" pos:column="77">,</op:operator> <decl><name pos:line="42" pos:column="79">WV_S2003</name></decl><op:operator pos:line="42" pos:column="87">,</op:operator> <decl><name pos:line="42" pos:column="89">WV_XPX64</name></decl><op:operator pos:line="42" pos:column="97">,</op:operator> <decl><name pos:line="42" pos:column="99">WV_VISTA</name></decl><op:operator pos:line="42" pos:column="107">,</op:operator> <decl><name pos:line="42" pos:column="109">WV_WIN7</name></decl><op:operator pos:line="42" pos:column="116">,</op:operator> <decl><name pos:line="42" pos:column="118">WV_WIN8</name></decl>}</block>;</enum>
+
+
+<comment type="line" pos:line="45" pos:column="1">//#include "deprecatedSymbols.h"</comment>
+
+<comment type="line" pos:line="47" pos:column="1">//Here you can find how to use these messages : http://notepad-plus.sourceforge.net/uk/plugins-HOWTO.php </comment>
+<cpp:define pos:line="48" pos:column="1">#<cpp:directive pos:line="48" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="48" pos:column="9">NPPMSG</name></cpp:macro>  <cpp:value pos:line="48" pos:column="17">(WM_USER + 1000)</cpp:value></cpp:define>
+
+	<cpp:define pos:line="50" pos:column="9">#<cpp:directive pos:line="50" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="50" pos:column="17">NPPM_GETCURRENTSCINTILLA</name></cpp:macro>  <cpp:value pos:line="50" pos:column="43">(NPPMSG + 4)</cpp:value></cpp:define>
+	<cpp:define pos:line="51" pos:column="9">#<cpp:directive pos:line="51" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="51" pos:column="17">NPPM_GETCURRENTLANGTYPE</name></cpp:macro>  <cpp:value pos:line="51" pos:column="42">(NPPMSG + 5)</cpp:value></cpp:define>
+	<cpp:define pos:line="52" pos:column="9">#<cpp:directive pos:line="52" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="52" pos:column="17">NPPM_SETCURRENTLANGTYPE</name></cpp:macro>  <cpp:value pos:line="52" pos:column="42">(NPPMSG + 6)</cpp:value></cpp:define>
+
+	<cpp:define pos:line="54" pos:column="9">#<cpp:directive pos:line="54" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="54" pos:column="17">NPPM_GETNBOPENFILES</name></cpp:macro>			<cpp:value pos:line="54" pos:column="57">(NPPMSG + 7)</cpp:value></cpp:define>
+		<cpp:define pos:line="55" pos:column="17">#<cpp:directive pos:line="55" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="55" pos:column="25">ALL_OPEN_FILES</name></cpp:macro>			<cpp:value pos:line="55" pos:column="57">0</cpp:value></cpp:define>
+		<cpp:define pos:line="56" pos:column="17">#<cpp:directive pos:line="56" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="56" pos:column="25">PRIMARY_VIEW</name></cpp:macro>			<cpp:value pos:line="56" pos:column="57">1</cpp:value></cpp:define>
+		<cpp:define pos:line="57" pos:column="17">#<cpp:directive pos:line="57" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="57" pos:column="25">SECOND_VIEW</name></cpp:macro>				<cpp:value pos:line="57" pos:column="65">2</cpp:value></cpp:define>
+
+	<cpp:define pos:line="59" pos:column="9">#<cpp:directive pos:line="59" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="59" pos:column="17">NPPM_GETOPENFILENAMES</name></cpp:macro>		<cpp:value pos:line="59" pos:column="49">(NPPMSG + 8)</cpp:value></cpp:define>
+
+
+	<cpp:define pos:line="62" pos:column="9">#<cpp:directive pos:line="62" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="62" pos:column="17">NPPM_MODELESSDIALOG</name></cpp:macro>		 <cpp:value pos:line="62" pos:column="50">(NPPMSG + 12)</cpp:value></cpp:define>
+		<cpp:define pos:line="63" pos:column="17">#<cpp:directive pos:line="63" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="63" pos:column="25">MODELESSDIALOGADD</name></cpp:macro>		<cpp:value pos:line="63" pos:column="57">0</cpp:value></cpp:define>
+		<cpp:define pos:line="64" pos:column="17">#<cpp:directive pos:line="64" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="64" pos:column="25">MODELESSDIALOGREMOVE</name></cpp:macro>	<cpp:value pos:line="64" pos:column="49">1</cpp:value></cpp:define>
+
+	<cpp:define pos:line="66" pos:column="9">#<cpp:directive pos:line="66" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="66" pos:column="17">NPPM_GETNBSESSIONFILES</name></cpp:macro> <cpp:value pos:line="66" pos:column="40">(NPPMSG + 13)</cpp:value></cpp:define>
+	<cpp:define pos:line="67" pos:column="9">#<cpp:directive pos:line="67" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="67" pos:column="17">NPPM_GETSESSIONFILES</name></cpp:macro> <cpp:value pos:line="67" pos:column="38">(NPPMSG + 14)</cpp:value></cpp:define>
+	<cpp:define pos:line="68" pos:column="9">#<cpp:directive pos:line="68" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="68" pos:column="17">NPPM_SAVESESSION</name></cpp:macro> <cpp:value pos:line="68" pos:column="34">(NPPMSG + 15)</cpp:value></cpp:define>
+	<cpp:define pos:line="69" pos:column="9">#<cpp:directive pos:line="69" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="69" pos:column="17">NPPM_SAVECURRENTSESSION</name></cpp:macro> <cpp:value pos:line="69" pos:column="41">(NPPMSG + 16)</cpp:value></cpp:define>
+
+		<struct pos:line="71" pos:column="17">struct <name pos:line="71" pos:column="24">sessionInfo</name> <block pos:line="71" pos:column="36">{<public type="default" pos:line="71" pos:column="37">
+			<decl_stmt><decl><type><name pos:line="72" pos:column="25">TCHAR</name><type:modifier pos:line="72" pos:column="30">*</type:modifier></type> <name pos:line="72" pos:column="32">sessionFilePathName</name></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="73" pos:column="25">int</name></type> <name pos:line="73" pos:column="29">nbFile</name></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="74" pos:column="25">TCHAR</name><type:modifier pos:line="74" pos:column="30">*</type:modifier><type:modifier pos:line="74" pos:column="31">*</type:modifier></type> <name pos:line="74" pos:column="33">files</name></decl>;</decl_stmt>
+		</public>}</block>;</struct>
+
+	<cpp:define pos:line="77" pos:column="9">#<cpp:directive pos:line="77" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="77" pos:column="17">NPPM_GETOPENFILENAMESPRIMARY</name></cpp:macro> <cpp:value pos:line="77" pos:column="46">(NPPMSG + 17)</cpp:value></cpp:define>
+	<cpp:define pos:line="78" pos:column="9">#<cpp:directive pos:line="78" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="78" pos:column="17">NPPM_GETOPENFILENAMESSECOND</name></cpp:macro> <cpp:value pos:line="78" pos:column="45">(NPPMSG + 18)</cpp:value></cpp:define>
+	
+	<cpp:define pos:line="80" pos:column="9">#<cpp:directive pos:line="80" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="80" pos:column="17">NPPM_CREATESCINTILLAHANDLE</name></cpp:macro> <cpp:value pos:line="80" pos:column="44">(NPPMSG + 20)</cpp:value></cpp:define>
+	<cpp:define pos:line="81" pos:column="9">#<cpp:directive pos:line="81" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="81" pos:column="17">NPPM_DESTROYSCINTILLAHANDLE</name></cpp:macro> <cpp:value pos:line="81" pos:column="45">(NPPMSG + 21)</cpp:value></cpp:define>
+	<cpp:define pos:line="82" pos:column="9">#<cpp:directive pos:line="82" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="82" pos:column="17">NPPM_GETNBUSERLANG</name></cpp:macro> <cpp:value pos:line="82" pos:column="36">(NPPMSG + 22)</cpp:value></cpp:define>
+
+	<cpp:define pos:line="84" pos:column="9">#<cpp:directive pos:line="84" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="84" pos:column="17">NPPM_GETCURRENTDOCINDEX</name></cpp:macro> <cpp:value pos:line="84" pos:column="41">(NPPMSG + 23)</cpp:value></cpp:define>
+		<cpp:define pos:line="85" pos:column="17">#<cpp:directive pos:line="85" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="85" pos:column="25">MAIN_VIEW</name></cpp:macro> <cpp:value pos:line="85" pos:column="35">0</cpp:value></cpp:define>
+		<cpp:define pos:line="86" pos:column="17">#<cpp:directive pos:line="86" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="86" pos:column="25">SUB_VIEW</name></cpp:macro> <cpp:value pos:line="86" pos:column="34">1</cpp:value></cpp:define>
+
+	<cpp:define pos:line="88" pos:column="9">#<cpp:directive pos:line="88" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="88" pos:column="17">NPPM_SETSTATUSBAR</name></cpp:macro> <cpp:value pos:line="88" pos:column="35">(NPPMSG + 24)</cpp:value></cpp:define>
+		<cpp:define pos:line="89" pos:column="17">#<cpp:directive pos:line="89" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="89" pos:column="25">STATUSBAR_DOC_TYPE</name></cpp:macro> <cpp:value pos:line="89" pos:column="44">0</cpp:value></cpp:define>
+		<cpp:define pos:line="90" pos:column="17">#<cpp:directive pos:line="90" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="90" pos:column="25">STATUSBAR_DOC_SIZE</name></cpp:macro> <cpp:value pos:line="90" pos:column="44">1</cpp:value></cpp:define>
+		<cpp:define pos:line="91" pos:column="17">#<cpp:directive pos:line="91" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="91" pos:column="25">STATUSBAR_CUR_POS</name></cpp:macro> <cpp:value pos:line="91" pos:column="43">2</cpp:value></cpp:define>
+		<cpp:define pos:line="92" pos:column="17">#<cpp:directive pos:line="92" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="92" pos:column="25">STATUSBAR_EOF_FORMAT</name></cpp:macro> <cpp:value pos:line="92" pos:column="46">3</cpp:value></cpp:define>
+		<cpp:define pos:line="93" pos:column="17">#<cpp:directive pos:line="93" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="93" pos:column="25">STATUSBAR_UNICODE_TYPE</name></cpp:macro> <cpp:value pos:line="93" pos:column="48">4</cpp:value></cpp:define>
+		<cpp:define pos:line="94" pos:column="17">#<cpp:directive pos:line="94" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="94" pos:column="25">STATUSBAR_TYPING_MODE</name></cpp:macro> <cpp:value pos:line="94" pos:column="47">5</cpp:value></cpp:define>
+
+	<cpp:define pos:line="96" pos:column="9">#<cpp:directive pos:line="96" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="96" pos:column="17">NPPM_GETMENUHANDLE</name></cpp:macro> <cpp:value pos:line="96" pos:column="36">(NPPMSG + 25)</cpp:value></cpp:define>
+		<cpp:define pos:line="97" pos:column="17">#<cpp:directive pos:line="97" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="97" pos:column="25">NPPPLUGINMENU</name></cpp:macro> <cpp:value pos:line="97" pos:column="39">0</cpp:value></cpp:define>
+
+	<cpp:define pos:line="99" pos:column="9">#<cpp:directive pos:line="99" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="99" pos:column="17">NPPM_ENCODESCI</name></cpp:macro> <cpp:value pos:line="99" pos:column="32">(NPPMSG + 26)</cpp:value></cpp:define>
+	<comment type="line" pos:line="100" pos:column="9">//ascii file to unicode</comment>
+	<comment type="line" pos:line="101" pos:column="9">//int NPPM_ENCODESCI(MAIN_VIEW/SUB_VIEW, 0)</comment>
+	<comment type="line" pos:line="102" pos:column="9">//return new unicodeMode</comment>
+	
+	<cpp:define pos:line="104" pos:column="9">#<cpp:directive pos:line="104" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="104" pos:column="17">NPPM_DECODESCI</name></cpp:macro> <cpp:value pos:line="104" pos:column="32">(NPPMSG + 27)</cpp:value></cpp:define>
+	<comment type="line" pos:line="105" pos:column="9">//unicode file to ascii</comment>
+	<comment type="line" pos:line="106" pos:column="9">//int NPPM_DECODESCI(MAIN_VIEW/SUB_VIEW, 0)</comment>
+	<comment type="line" pos:line="107" pos:column="9">//return old unicodeMode</comment>
+
+	<cpp:define pos:line="109" pos:column="9">#<cpp:directive pos:line="109" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="109" pos:column="17">NPPM_ACTIVATEDOC</name></cpp:macro> <cpp:value pos:line="109" pos:column="34">(NPPMSG + 28)</cpp:value></cpp:define>
+	<comment type="line" pos:line="110" pos:column="9">//void NPPM_ACTIVATEDOC(int view, int index2Activate)</comment>
+
+	<cpp:define pos:line="112" pos:column="9">#<cpp:directive pos:line="112" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="112" pos:column="17">NPPM_LAUNCHFINDINFILESDLG</name></cpp:macro> <cpp:value pos:line="112" pos:column="43">(NPPMSG + 29)</cpp:value></cpp:define>
+	<comment type="line" pos:line="113" pos:column="9">//void NPPM_LAUNCHFINDINFILESDLG(TCHAR * dir2Search, TCHAR * filtre)</comment>
+
+	<cpp:define pos:line="115" pos:column="9">#<cpp:directive pos:line="115" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="115" pos:column="17">NPPM_DMMSHOW</name></cpp:macro> <cpp:value pos:line="115" pos:column="30">(NPPMSG + 30)</cpp:value></cpp:define>
+	<cpp:define pos:line="116" pos:column="9">#<cpp:directive pos:line="116" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="116" pos:column="17">NPPM_DMMHIDE</name></cpp:macro>	<cpp:value pos:line="116" pos:column="33">(NPPMSG + 31)</cpp:value></cpp:define>
+	<cpp:define pos:line="117" pos:column="9">#<cpp:directive pos:line="117" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="117" pos:column="17">NPPM_DMMUPDATEDISPINFO</name></cpp:macro> <cpp:value pos:line="117" pos:column="40">(NPPMSG + 32)</cpp:value></cpp:define>
+	<comment type="line" pos:line="118" pos:column="9">//void NPPM_DMMxxx(0, tTbData-&gt;hClient)</comment>
+
+	<cpp:define pos:line="120" pos:column="9">#<cpp:directive pos:line="120" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="120" pos:column="17">NPPM_DMMREGASDCKDLG</name></cpp:macro> <cpp:value pos:line="120" pos:column="37">(NPPMSG + 33)</cpp:value></cpp:define>
+	<comment type="line" pos:line="121" pos:column="9">//void NPPM_DMMREGASDCKDLG(0, &amp;tTbData)</comment>
+
+	<cpp:define pos:line="123" pos:column="9">#<cpp:directive pos:line="123" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="123" pos:column="17">NPPM_LOADSESSION</name></cpp:macro> <cpp:value pos:line="123" pos:column="34">(NPPMSG + 34)</cpp:value></cpp:define>
+	<comment type="line" pos:line="124" pos:column="9">//void NPPM_LOADSESSION(0, const TCHAR* file name)</comment>
+
+	<cpp:define pos:line="126" pos:column="9">#<cpp:directive pos:line="126" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="126" pos:column="17">NPPM_DMMVIEWOTHERTAB</name></cpp:macro> <cpp:value pos:line="126" pos:column="38">(NPPMSG + 35)</cpp:value></cpp:define>
+	<comment type="line" pos:line="127" pos:column="9">//void WM_DMM_VIEWOTHERTAB(0, tTbData-&gt;pszName)</comment>
+
+	<cpp:define pos:line="129" pos:column="9">#<cpp:directive pos:line="129" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="129" pos:column="17">NPPM_RELOADFILE</name></cpp:macro> <cpp:value pos:line="129" pos:column="33">(NPPMSG + 36)</cpp:value></cpp:define>
+	<comment type="line" pos:line="130" pos:column="9">//BOOL NPPM_RELOADFILE(BOOL withAlert, TCHAR *filePathName2Reload)</comment>
+
+	<cpp:define pos:line="132" pos:column="9">#<cpp:directive pos:line="132" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="132" pos:column="17">NPPM_SWITCHTOFILE</name></cpp:macro> <cpp:value pos:line="132" pos:column="35">(NPPMSG + 37)</cpp:value></cpp:define>
+	<comment type="line" pos:line="133" pos:column="9">//BOOL NPPM_SWITCHTOFILE(0, TCHAR *filePathName2switch)</comment>
+
+	<cpp:define pos:line="135" pos:column="9">#<cpp:directive pos:line="135" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="135" pos:column="17">NPPM_SAVECURRENTFILE</name></cpp:macro> <cpp:value pos:line="135" pos:column="38">(NPPMSG + 38)</cpp:value></cpp:define>
+	<comment type="line" pos:line="136" pos:column="9">//BOOL NPPM_SAVECURRENTFILE(0, 0)</comment>
+
+	<cpp:define pos:line="138" pos:column="9">#<cpp:directive pos:line="138" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="138" pos:column="17">NPPM_SAVEALLFILES</name></cpp:macro>	<cpp:value pos:line="138" pos:column="41">(NPPMSG + 39)</cpp:value></cpp:define>
+	<comment type="line" pos:line="139" pos:column="9">//BOOL NPPM_SAVEALLFILES(0, 0)</comment>
+
+	<cpp:define pos:line="141" pos:column="9">#<cpp:directive pos:line="141" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="141" pos:column="17">NPPM_SETMENUITEMCHECK</name></cpp:macro>	<cpp:value pos:line="141" pos:column="41">(NPPMSG + 40)</cpp:value></cpp:define>
+	<comment type="line" pos:line="142" pos:column="9">//void WM_PIMENU_CHECK(UINT	funcItem[X]._cmdID, TRUE/FALSE)</comment>
+
+	<cpp:define pos:line="144" pos:column="9">#<cpp:directive pos:line="144" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="144" pos:column="17">NPPM_ADDTOOLBARICON</name></cpp:macro> <cpp:value pos:line="144" pos:column="37">(NPPMSG + 41)</cpp:value></cpp:define>
+	<comment type="line" pos:line="145" pos:column="9">//void WM_ADDTOOLBARICON(UINT funcItem[X]._cmdID, toolbarIcons icon)</comment>
+		<struct pos:line="146" pos:column="17">struct <name pos:line="146" pos:column="24">toolbarIcons</name> <block pos:line="146" pos:column="37">{<public type="default" pos:line="146" pos:column="38">
+			<decl_stmt><decl><type><name pos:line="147" pos:column="25">HBITMAP</name></type>	<name pos:line="147" pos:column="33">hToolbarBmp</name></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="148" pos:column="25">HICON</name></type>	<name pos:line="148" pos:column="33">hToolbarIcon</name></decl>;</decl_stmt>
+		</public>}</block>;</struct>
+
+	<cpp:define pos:line="151" pos:column="9">#<cpp:directive pos:line="151" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="151" pos:column="17">NPPM_GETWINDOWSVERSION</name></cpp:macro> <cpp:value pos:line="151" pos:column="40">(NPPMSG + 42)</cpp:value></cpp:define>
+	<comment type="line" pos:line="152" pos:column="9">//winVer NPPM_GETWINDOWSVERSION(0, 0)</comment>
+
+	<cpp:define pos:line="154" pos:column="9">#<cpp:directive pos:line="154" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="154" pos:column="17">NPPM_DMMGETPLUGINHWNDBYNAME</name></cpp:macro> <cpp:value pos:line="154" pos:column="45">(NPPMSG + 43)</cpp:value></cpp:define>
+	<comment type="line" pos:line="155" pos:column="9">//HWND WM_DMM_GETPLUGINHWNDBYNAME(const TCHAR *windowName, const TCHAR *moduleName)</comment>
+	<comment type="line" pos:line="156" pos:column="9">// if moduleName is NULL, then return value is NULL</comment>
+	<comment type="line" pos:line="157" pos:column="9">// if windowName is NULL, then the first found window handle which matches with the moduleName will be returned</comment>
+	
+	<cpp:define pos:line="159" pos:column="9">#<cpp:directive pos:line="159" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="159" pos:column="17">NPPM_MAKECURRENTBUFFERDIRTY</name></cpp:macro> <cpp:value pos:line="159" pos:column="45">(NPPMSG + 44)</cpp:value></cpp:define>
+	<comment type="line" pos:line="160" pos:column="9">//BOOL NPPM_MAKECURRENTBUFFERDIRTY(0, 0)</comment>
+
+	<cpp:define pos:line="162" pos:column="9">#<cpp:directive pos:line="162" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="162" pos:column="17">NPPM_GETENABLETHEMETEXTUREFUNC</name></cpp:macro> <cpp:value pos:line="162" pos:column="48">(NPPMSG + 45)</cpp:value></cpp:define>
+	<comment type="line" pos:line="163" pos:column="9">//BOOL NPPM_GETENABLETHEMETEXTUREFUNC(0, 0)</comment>
+
+	<cpp:define pos:line="165" pos:column="9">#<cpp:directive pos:line="165" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="165" pos:column="17">NPPM_GETPLUGINSCONFIGDIR</name></cpp:macro> <cpp:value pos:line="165" pos:column="42">(NPPMSG + 46)</cpp:value></cpp:define>
+	<comment type="line" pos:line="166" pos:column="9">//void NPPM_GETPLUGINSCONFIGDIR(int strLen, TCHAR *str)</comment>
+
+	<cpp:define pos:line="168" pos:column="9">#<cpp:directive pos:line="168" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="168" pos:column="17">NPPM_MSGTOPLUGIN</name></cpp:macro> <cpp:value pos:line="168" pos:column="34">(NPPMSG + 47)</cpp:value></cpp:define>
+	<comment type="line" pos:line="169" pos:column="9">//BOOL NPPM_MSGTOPLUGIN(TCHAR *destModuleName, CommunicationInfo *info)</comment>
+	<comment type="line" pos:line="170" pos:column="9">// return value is TRUE when the message arrive to the destination plugins.</comment>
+	<comment type="line" pos:line="171" pos:column="9">// if destModule or info is NULL, then return value is FALSE</comment>
+		<struct pos:line="172" pos:column="17">struct <name pos:line="172" pos:column="24">CommunicationInfo</name> <block pos:line="172" pos:column="42">{<public type="default" pos:line="172" pos:column="43">
+			<decl_stmt><decl><type><name pos:line="173" pos:column="25">long</name></type> <name pos:line="173" pos:column="30">internalMsg</name></decl>;</decl_stmt>
+			<decl_stmt><decl><type><specifier pos:line="174" pos:column="25">const</specifier> <name pos:line="174" pos:column="31">TCHAR</name> <type:modifier pos:line="174" pos:column="37">*</type:modifier></type> <name pos:line="174" pos:column="39">srcModuleName</name></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name pos:line="175" pos:column="25">void</name> <type:modifier pos:line="175" pos:column="30">*</type:modifier></type> <name pos:line="175" pos:column="32">info</name></decl>;</decl_stmt> <comment type="line" pos:line="175" pos:column="38">// defined by plugin</comment>
+		</public>}</block>;</struct>
+
+	<cpp:define pos:line="178" pos:column="9">#<cpp:directive pos:line="178" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="178" pos:column="17">NPPM_MENUCOMMAND</name></cpp:macro> <cpp:value pos:line="178" pos:column="34">(NPPMSG + 48)</cpp:value></cpp:define>
+	<comment type="line" pos:line="179" pos:column="9">//void NPPM_MENUCOMMAND(0, int cmdID)</comment>
+	<comment type="line" pos:line="180" pos:column="9">// uncomment //#include "menuCmdID.h"</comment>
+	<comment type="line" pos:line="181" pos:column="9">// in the beginning of this file then use the command symbols defined in "menuCmdID.h" file</comment>
+	<comment type="line" pos:line="182" pos:column="9">// to access all the Notepad++ menu command items</comment>
+	
+	<cpp:define pos:line="184" pos:column="9">#<cpp:directive pos:line="184" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="184" pos:column="17">NPPM_TRIGGERTABBARCONTEXTMENU</name></cpp:macro> <cpp:value pos:line="184" pos:column="47">(NPPMSG + 49)</cpp:value></cpp:define>
+	<comment type="line" pos:line="185" pos:column="9">//void NPPM_TRIGGERTABBARCONTEXTMENU(int view, int index2Activate)</comment>
+
+	<cpp:define pos:line="187" pos:column="9">#<cpp:directive pos:line="187" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="187" pos:column="17">NPPM_GETNPPVERSION</name></cpp:macro> <cpp:value pos:line="187" pos:column="36">(NPPMSG + 50)</cpp:value></cpp:define>
+	<comment type="line" pos:line="188" pos:column="9">// int NPPM_GETNPPVERSION(0, 0)</comment>
+	<comment type="line" pos:line="189" pos:column="9">// return version </comment>
+	<comment type="line" pos:line="190" pos:column="9">// ex : v4.6</comment>
+	<comment type="line" pos:line="191" pos:column="9">// HIWORD(version) == 4</comment>
+	<comment type="line" pos:line="192" pos:column="9">// LOWORD(version) == 6</comment>
+
+	<cpp:define pos:line="194" pos:column="9">#<cpp:directive pos:line="194" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="194" pos:column="17">NPPM_HIDETABBAR</name></cpp:macro> <cpp:value pos:line="194" pos:column="33">(NPPMSG + 51)</cpp:value></cpp:define>
+	<comment type="line" pos:line="195" pos:column="9">// BOOL NPPM_HIDETABBAR(0, BOOL hideOrNot)</comment>
+	<comment type="line" pos:line="196" pos:column="9">// if hideOrNot is set as TRUE then tab bar will be hidden</comment>
+	<comment type="line" pos:line="197" pos:column="9">// otherwise it'll be shown.</comment>
+	<comment type="line" pos:line="198" pos:column="9">// return value : the old status value</comment>
+
+	<cpp:define pos:line="200" pos:column="9">#<cpp:directive pos:line="200" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="200" pos:column="17">NPPM_ISTABBARHIDDEN</name></cpp:macro> <cpp:value pos:line="200" pos:column="37">(NPPMSG + 52)</cpp:value></cpp:define>
+	<comment type="line" pos:line="201" pos:column="9">// BOOL NPPM_ISTABBARHIDDEN(0, 0)</comment>
+	<comment type="line" pos:line="202" pos:column="9">// returned value : TRUE if tab bar is hidden, otherwise FALSE</comment>
+
+	<cpp:define pos:line="204" pos:column="9">#<cpp:directive pos:line="204" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="204" pos:column="17">NPPM_GETPOSFROMBUFFERID</name></cpp:macro> <cpp:value pos:line="204" pos:column="41">(NPPMSG + 57)</cpp:value></cpp:define>
+	<comment type="line" pos:line="205" pos:column="9">// INT NPPM_GETPOSFROMBUFFERID(INT bufferID, INT priorityView)</comment>
+	<comment type="line" pos:line="206" pos:column="9">// Return VIEW|INDEX from a buffer ID. -1 if the bufferID non existing</comment>
+	<comment type="line" pos:line="207" pos:column="9">// if priorityView set to SUB_VIEW, then SUB_VIEW will be search firstly</comment>
+	<comment type="line" pos:line="208" pos:column="9">//</comment>
+	<comment type="line" pos:line="209" pos:column="9">// VIEW takes 2 highest bits and INDEX (0 based) takes the rest (30 bits) </comment>
+	<comment type="line" pos:line="210" pos:column="9">// Here's the values for the view :</comment>
+	<comment type="line" pos:line="211" pos:column="9">//  MAIN_VIEW 0</comment>
+	<comment type="line" pos:line="212" pos:column="9">//  SUB_VIEW  1</comment>
+
+	<cpp:define pos:line="214" pos:column="9">#<cpp:directive pos:line="214" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="214" pos:column="17">NPPM_GETFULLPATHFROMBUFFERID</name></cpp:macro> <cpp:value pos:line="214" pos:column="46">(NPPMSG + 58)</cpp:value></cpp:define>
+	<comment type="line" pos:line="215" pos:column="9">// INT NPPM_GETFULLPATHFROMBUFFERID(INT bufferID, TCHAR *fullFilePath)</comment>
+	<comment type="line" pos:line="216" pos:column="9">// Get full path file name from a bufferID. </comment>
+	<comment type="line" pos:line="217" pos:column="9">// Return -1 if the bufferID non existing, otherwise the number of TCHAR copied/to copy</comment>
+	<comment type="line" pos:line="218" pos:column="9">// User should call it with fullFilePath be NULL to get the number of TCHAR (not including the nul character),</comment>
+	<comment type="line" pos:line="219" pos:column="9">// allocate fullFilePath with the return values + 1, then call it again to get  full path file name</comment>
+
+	<cpp:define pos:line="221" pos:column="9">#<cpp:directive pos:line="221" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="221" pos:column="17">NPPM_GETBUFFERIDFROMPOS</name></cpp:macro> <cpp:value pos:line="221" pos:column="41">(NPPMSG + 59)</cpp:value></cpp:define>
+	<comment type="line" pos:line="222" pos:column="9">//wParam: Position of document</comment>
+	<comment type="line" pos:line="223" pos:column="9">//lParam: View to use, 0 = Main, 1 = Secondary</comment>
+	<comment type="line" pos:line="224" pos:column="9">//Returns 0 if invalid</comment>
+
+	<cpp:define pos:line="226" pos:column="9">#<cpp:directive pos:line="226" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="226" pos:column="17">NPPM_GETCURRENTBUFFERID</name></cpp:macro> <cpp:value pos:line="226" pos:column="41">(NPPMSG + 60)</cpp:value></cpp:define>
+	<comment type="line" pos:line="227" pos:column="9">//Returns active Buffer</comment>
+
+	<cpp:define pos:line="229" pos:column="9">#<cpp:directive pos:line="229" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="229" pos:column="17">NPPM_RELOADBUFFERID</name></cpp:macro> <cpp:value pos:line="229" pos:column="37">(NPPMSG + 61)</cpp:value></cpp:define>
+	<comment type="line" pos:line="230" pos:column="9">//Reloads Buffer</comment>
+	<comment type="line" pos:line="231" pos:column="9">//wParam: Buffer to reload</comment>
+	<comment type="line" pos:line="232" pos:column="9">//lParam: 0 if no alert, else alert</comment>
+
+
+	<cpp:define pos:line="235" pos:column="9">#<cpp:directive pos:line="235" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="235" pos:column="17">NPPM_GETBUFFERLANGTYPE</name></cpp:macro> <cpp:value pos:line="235" pos:column="40">(NPPMSG + 64)</cpp:value></cpp:define>
+	<comment type="line" pos:line="236" pos:column="9">//wParam: BufferID to get LangType from</comment>
+	<comment type="line" pos:line="237" pos:column="9">//lParam: 0</comment>
+	<comment type="line" pos:line="238" pos:column="9">//Returns as int, see LangType. -1 on error</comment>
+
+	<cpp:define pos:line="240" pos:column="9">#<cpp:directive pos:line="240" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="240" pos:column="17">NPPM_SETBUFFERLANGTYPE</name></cpp:macro> <cpp:value pos:line="240" pos:column="40">(NPPMSG + 65)</cpp:value></cpp:define>
+	<comment type="line" pos:line="241" pos:column="9">//wParam: BufferID to set LangType of</comment>
+	<comment type="line" pos:line="242" pos:column="9">//lParam: LangType</comment>
+	<comment type="line" pos:line="243" pos:column="9">//Returns TRUE on success, FALSE otherwise</comment>
+	<comment type="line" pos:line="244" pos:column="9">//use int, see LangType for possible values</comment>
+	<comment type="line" pos:line="245" pos:column="9">//L_USER and L_EXTERNAL are not supported</comment>
+
+	<cpp:define pos:line="247" pos:column="9">#<cpp:directive pos:line="247" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="247" pos:column="17">NPPM_GETBUFFERENCODING</name></cpp:macro> <cpp:value pos:line="247" pos:column="40">(NPPMSG + 66)</cpp:value></cpp:define>
+	<comment type="line" pos:line="248" pos:column="9">//wParam: BufferID to get encoding from</comment>
+	<comment type="line" pos:line="249" pos:column="9">//lParam: 0</comment>
+	<comment type="line" pos:line="250" pos:column="9">//returns as int, see UniMode. -1 on error</comment>
+
+	<cpp:define pos:line="252" pos:column="9">#<cpp:directive pos:line="252" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="252" pos:column="17">NPPM_SETBUFFERENCODING</name></cpp:macro> <cpp:value pos:line="252" pos:column="40">(NPPMSG + 67)</cpp:value></cpp:define>
+	<comment type="line" pos:line="253" pos:column="9">//wParam: BufferID to set encoding of</comment>
+	<comment type="line" pos:line="254" pos:column="9">//lParam: format</comment>
+	<comment type="line" pos:line="255" pos:column="9">//Returns TRUE on success, FALSE otherwise</comment>
+	<comment type="line" pos:line="256" pos:column="9">//use int, see UniMode</comment>
+	<comment type="line" pos:line="257" pos:column="9">//Can only be done on new, unedited files</comment>
+
+	<cpp:define pos:line="259" pos:column="9">#<cpp:directive pos:line="259" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="259" pos:column="17">NPPM_GETBUFFERFORMAT</name></cpp:macro> <cpp:value pos:line="259" pos:column="38">(NPPMSG + 68)</cpp:value></cpp:define>
+	<comment type="line" pos:line="260" pos:column="9">//wParam: BufferID to get format from</comment>
+	<comment type="line" pos:line="261" pos:column="9">//lParam: 0</comment>
+	<comment type="line" pos:line="262" pos:column="9">//returns as int, see formatType. -1 on error</comment>
+
+	<cpp:define pos:line="264" pos:column="9">#<cpp:directive pos:line="264" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="264" pos:column="17">NPPM_SETBUFFERFORMAT</name></cpp:macro> <cpp:value pos:line="264" pos:column="38">(NPPMSG + 69)</cpp:value></cpp:define>
+	<comment type="line" pos:line="265" pos:column="9">//wParam: BufferID to set format of</comment>
+	<comment type="line" pos:line="266" pos:column="9">//lParam: format</comment>
+	<comment type="line" pos:line="267" pos:column="9">//Returns TRUE on success, FALSE otherwise</comment>
+	<comment type="line" pos:line="268" pos:column="9">//use int, see formatType</comment>
+
+<comment type="block" pos:line="270" pos:column="1">/*
+	#define NPPM_ADDREBAR (NPPMSG + 57)
+	// BOOL NPPM_ADDREBAR(0, REBARBANDINFO *)
+	// Returns assigned ID in wID value of struct pointer
+	#define NPPM_UPDATEREBAR (NPPMSG + 58)
+	// BOOL NPPM_ADDREBAR(INT ID, REBARBANDINFO *)
+	//Use ID assigned with NPPM_ADDREBAR
+	#define NPPM_REMOVEREBAR (NPPMSG + 59)
+	// BOOL NPPM_ADDREBAR(INT ID, 0)
+	//Use ID assigned with NPPM_ADDREBAR
+*/</comment>
+
+	<cpp:define pos:line="282" pos:column="9">#<cpp:directive pos:line="282" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="282" pos:column="17">NPPM_HIDETOOLBAR</name></cpp:macro> <cpp:value pos:line="282" pos:column="34">(NPPMSG + 70)</cpp:value></cpp:define>
+	<comment type="line" pos:line="283" pos:column="9">// BOOL NPPM_HIDETOOLBAR(0, BOOL hideOrNot)</comment>
+	<comment type="line" pos:line="284" pos:column="9">// if hideOrNot is set as TRUE then tool bar will be hidden</comment>
+	<comment type="line" pos:line="285" pos:column="9">// otherwise it'll be shown.</comment>
+	<comment type="line" pos:line="286" pos:column="9">// return value : the old status value</comment>
+
+	<cpp:define pos:line="288" pos:column="9">#<cpp:directive pos:line="288" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="288" pos:column="17">NPPM_ISTOOLBARHIDDEN</name></cpp:macro> <cpp:value pos:line="288" pos:column="38">(NPPMSG + 71)</cpp:value></cpp:define>
+	<comment type="line" pos:line="289" pos:column="9">// BOOL NPPM_ISTOOLBARHIDDEN(0, 0)</comment>
+	<comment type="line" pos:line="290" pos:column="9">// returned value : TRUE if tool bar is hidden, otherwise FALSE</comment>
+
+	<cpp:define pos:line="292" pos:column="9">#<cpp:directive pos:line="292" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="292" pos:column="17">NPPM_HIDEMENU</name></cpp:macro> <cpp:value pos:line="292" pos:column="31">(NPPMSG + 72)</cpp:value></cpp:define>
+	<comment type="line" pos:line="293" pos:column="9">// BOOL NPPM_HIDEMENU(0, BOOL hideOrNot)</comment>
+	<comment type="line" pos:line="294" pos:column="9">// if hideOrNot is set as TRUE then menu will be hidden</comment>
+	<comment type="line" pos:line="295" pos:column="9">// otherwise it'll be shown.</comment>
+	<comment type="line" pos:line="296" pos:column="9">// return value : the old status value</comment>
+
+	<cpp:define pos:line="298" pos:column="9">#<cpp:directive pos:line="298" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="298" pos:column="17">NPPM_ISMENUHIDDEN</name></cpp:macro> <cpp:value pos:line="298" pos:column="35">(NPPMSG + 73)</cpp:value></cpp:define>
+	<comment type="line" pos:line="299" pos:column="9">// BOOL NPPM_ISMENUHIDDEN(0, 0)</comment>
+	<comment type="line" pos:line="300" pos:column="9">// returned value : TRUE if menu is hidden, otherwise FALSE</comment>
+
+	<cpp:define pos:line="302" pos:column="9">#<cpp:directive pos:line="302" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="302" pos:column="17">NPPM_HIDESTATUSBAR</name></cpp:macro> <cpp:value pos:line="302" pos:column="36">(NPPMSG + 74)</cpp:value></cpp:define>
+	<comment type="line" pos:line="303" pos:column="9">// BOOL NPPM_HIDESTATUSBAR(0, BOOL hideOrNot)</comment>
+	<comment type="line" pos:line="304" pos:column="9">// if hideOrNot is set as TRUE then STATUSBAR will be hidden</comment>
+	<comment type="line" pos:line="305" pos:column="9">// otherwise it'll be shown.</comment>
+	<comment type="line" pos:line="306" pos:column="9">// return value : the old status value</comment>
+
+	<cpp:define pos:line="308" pos:column="9">#<cpp:directive pos:line="308" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="308" pos:column="17">NPPM_ISSTATUSBARHIDDEN</name></cpp:macro> <cpp:value pos:line="308" pos:column="40">(NPPMSG + 75)</cpp:value></cpp:define>
+	<comment type="line" pos:line="309" pos:column="9">// BOOL NPPM_ISSTATUSBARHIDDEN(0, 0)</comment>
+	<comment type="line" pos:line="310" pos:column="9">// returned value : TRUE if STATUSBAR is hidden, otherwise FALSE</comment>
+
+	<cpp:define pos:line="312" pos:column="9">#<cpp:directive pos:line="312" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="312" pos:column="17">NPPM_GETSHORTCUTBYCMDID</name></cpp:macro> <cpp:value pos:line="312" pos:column="41">(NPPMSG + 76)</cpp:value></cpp:define>
+	<comment type="line" pos:line="313" pos:column="9">// BOOL NPPM_GETSHORTCUTBYCMDID(int cmdID, ShortcutKey *sk)</comment>
+	<comment type="line" pos:line="314" pos:column="9">// get your plugin command current mapped shortcut into sk via cmdID</comment>
+	<comment type="line" pos:line="315" pos:column="9">// You may need it after getting NPPN_READY notification</comment>
+	<comment type="line" pos:line="316" pos:column="9">// returned value : TRUE if this function call is successful and shorcut is enable, otherwise FALSE</comment>
+
+	<cpp:define pos:line="318" pos:column="9">#<cpp:directive pos:line="318" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="318" pos:column="17">NPPM_DOOPEN</name></cpp:macro> <cpp:value pos:line="318" pos:column="29">(NPPMSG + 77)</cpp:value></cpp:define>
+	<comment type="line" pos:line="319" pos:column="9">// BOOL NPPM_DOOPEN(0, const TCHAR *fullPathName2Open)</comment>
+	<comment type="line" pos:line="320" pos:column="9">// fullPathName2Open indicates the full file path name to be opened.</comment>
+	<comment type="line" pos:line="321" pos:column="9">// The return value is TRUE (1) if the operation is successful, otherwise FALSE (0).</comment>
+
+	<cpp:define pos:line="323" pos:column="9">#<cpp:directive pos:line="323" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="323" pos:column="17">NPPM_SAVECURRENTFILEAS</name></cpp:macro> <cpp:value pos:line="323" pos:column="40">(NPPMSG + 78)</cpp:value></cpp:define>
+	<comment type="line" pos:line="324" pos:column="9">// BOOL NPPM_SAVECURRENTFILEAS (BOOL asCopy, const TCHAR* filename)</comment>
+
+    <cpp:define pos:line="326" pos:column="5">#<cpp:directive pos:line="326" pos:column="6">define</cpp:directive> <cpp:macro><name pos:line="326" pos:column="13">NPPM_GETCURRENTNATIVELANGENCODING</name></cpp:macro> <cpp:value pos:line="326" pos:column="47">(NPPMSG + 79)</cpp:value></cpp:define>
+	<comment type="line" pos:line="327" pos:column="9">// INT NPPM_GETCURRENTNATIVELANGENCODING(0, 0)</comment>
+	<comment type="line" pos:line="328" pos:column="9">// returned value : the current native language enconding</comment>
+
+    <cpp:define pos:line="330" pos:column="5">#<cpp:directive pos:line="330" pos:column="6">define</cpp:directive> <cpp:macro><name pos:line="330" pos:column="13">NPPM_ALLOCATESUPPORTED</name></cpp:macro>   <cpp:value pos:line="330" pos:column="38">(NPPMSG + 80)</cpp:value></cpp:define>
+    <comment type="line" pos:line="331" pos:column="5">// returns TRUE if NPPM_ALLOCATECMDID is supported</comment>
+    <comment type="line" pos:line="332" pos:column="5">// Use to identify if subclassing is necessary</comment>
+
+	<cpp:define pos:line="334" pos:column="9">#<cpp:directive pos:line="334" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="334" pos:column="17">NPPM_ALLOCATECMDID</name></cpp:macro>   <cpp:value pos:line="334" pos:column="38">(NPPMSG + 81)</cpp:value></cpp:define>
+    <comment type="line" pos:line="335" pos:column="5">// BOOL NPPM_ALLOCATECMDID(int numberRequested, int* startNumber)</comment>
+    <comment type="line" pos:line="336" pos:column="5">// sets startNumber to the initial command ID if successful</comment>
+    <comment type="line" pos:line="337" pos:column="5">// Returns: TRUE if successful, FALSE otherwise. startNumber will also be set to 0 if unsuccessful</comment>
+
+	<cpp:define pos:line="339" pos:column="9">#<cpp:directive pos:line="339" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="339" pos:column="17">NPPM_ALLOCATEMARKER</name></cpp:macro>  <cpp:value pos:line="339" pos:column="38">(NPPMSG + 82)</cpp:value></cpp:define>
+    <comment type="line" pos:line="340" pos:column="5">// BOOL NPPM_ALLOCATEMARKER(int numberRequested, int* startNumber)</comment>
+    <comment type="line" pos:line="341" pos:column="5">// sets startNumber to the initial command ID if successful</comment>
+    <comment type="line" pos:line="342" pos:column="5">// Allocates a marker number to a plugin</comment>
+    <comment type="line" pos:line="343" pos:column="5">// Returns: TRUE if successful, FALSE otherwise. startNumber will also be set to 0 if unsuccessful</comment>
+
+	<cpp:define pos:line="345" pos:column="9">#<cpp:directive pos:line="345" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="345" pos:column="17">NPPM_GETLANGUAGENAME</name></cpp:macro>  <cpp:value pos:line="345" pos:column="39">(NPPMSG + 83)</cpp:value></cpp:define>
+	<comment type="line" pos:line="346" pos:column="9">// INT NPPM_GETLANGUAGENAME(int langType, TCHAR *langName)</comment>
+	<comment type="line" pos:line="347" pos:column="9">// Get programing language name from the given language type (LangType)</comment>
+	<comment type="line" pos:line="348" pos:column="9">// Return value is the number of copied character / number of character to copy (\0 is not included)</comment>
+	<comment type="line" pos:line="349" pos:column="9">// You should call this function 2 times - the first time you pass langName as NULL to get the number of characters to copy.</comment>
+    <comment type="line" pos:line="350" pos:column="5">// You allocate a buffer of the length of (the number of characters + 1) then call NPPM_GETLANGUAGENAME function the 2nd time </comment>
+	<comment type="line" pos:line="351" pos:column="9">// by passing allocated buffer as argument langName</comment>
+
+	<cpp:define pos:line="353" pos:column="9">#<cpp:directive pos:line="353" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="353" pos:column="17">NPPM_GETLANGUAGEDESC</name></cpp:macro>  <cpp:value pos:line="353" pos:column="39">(NPPMSG + 84)</cpp:value></cpp:define>
+	<comment type="line" pos:line="354" pos:column="9">// INT NPPM_GETLANGUAGEDESC(int langType, TCHAR *langDesc)</comment>
+	<comment type="line" pos:line="355" pos:column="9">// Get programing language short description from the given language type (LangType)</comment>
+	<comment type="line" pos:line="356" pos:column="9">// Return value is the number of copied character / number of character to copy (\0 is not included)</comment>
+	<comment type="line" pos:line="357" pos:column="9">// You should call this function 2 times - the first time you pass langDesc as NULL to get the number of characters to copy.</comment>
+    <comment type="line" pos:line="358" pos:column="5">// You allocate a buffer of the length of (the number of characters + 1) then call NPPM_GETLANGUAGEDESC function the 2nd time </comment>
+	<comment type="line" pos:line="359" pos:column="9">// by passing allocated buffer as argument langDesc</comment>
+
+	<cpp:define pos:line="361" pos:column="9">#<cpp:directive pos:line="361" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="361" pos:column="17">NPPM_SHOWDOCSWITCHER</name></cpp:macro>    <cpp:value pos:line="361" pos:column="41">(NPPMSG + 85)</cpp:value></cpp:define>
+	<comment type="line" pos:line="362" pos:column="9">// VOID NPPM_ISDOCSWITCHERSHOWN(0, BOOL toShowOrNot)</comment>
+	<comment type="line" pos:line="363" pos:column="9">// Send this message to show or hide doc switcher.</comment>
+	<comment type="line" pos:line="364" pos:column="9">// if toShowOrNot is TRUE then show doc switcher, otherwise hide it.</comment>
+
+	<cpp:define pos:line="366" pos:column="9">#<cpp:directive pos:line="366" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="366" pos:column="17">NPPM_ISDOCSWITCHERSHOWN</name></cpp:macro>    <cpp:value pos:line="366" pos:column="44">(NPPMSG + 86)</cpp:value></cpp:define>
+	<comment type="line" pos:line="367" pos:column="9">// BOOL NPPM_ISDOCSWITCHERSHOWN(0, 0)</comment>
+	<comment type="line" pos:line="368" pos:column="9">// Check to see if doc switcher is shown.</comment>
+
+	<cpp:define pos:line="370" pos:column="9">#<cpp:directive pos:line="370" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="370" pos:column="17">NPPM_GETAPPDATAPLUGINSALLOWED</name></cpp:macro>    <cpp:value pos:line="370" pos:column="50">(NPPMSG + 87)</cpp:value></cpp:define>
+	<comment type="line" pos:line="371" pos:column="9">// BOOL NPPM_GETAPPDATAPLUGINSALLOWED(0, 0)</comment>
+	<comment type="line" pos:line="372" pos:column="9">// Check to see if loading plugins from "%APPDATA%\Notepad++\plugins" is allowed.</comment>
+
+<cpp:define pos:line="374" pos:column="1">#<cpp:directive pos:line="374" pos:column="2">define</cpp:directive>	<cpp:macro><name pos:line="374" pos:column="9">RUNCOMMAND_USER</name></cpp:macro>    <cpp:value pos:line="374" pos:column="28">(WM_USER + 3000)</cpp:value></cpp:define>
+	<cpp:define pos:line="375" pos:column="9">#<cpp:directive pos:line="375" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="375" pos:column="17">NPPM_GETFULLCURRENTPATH</name></cpp:macro>		<cpp:value pos:line="375" pos:column="49">(RUNCOMMAND_USER + FULL_CURRENT_PATH)</cpp:value></cpp:define>
+	<cpp:define pos:line="376" pos:column="9">#<cpp:directive pos:line="376" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="376" pos:column="17">NPPM_GETCURRENTDIRECTORY</name></cpp:macro>	<cpp:value pos:line="376" pos:column="49">(RUNCOMMAND_USER + CURRENT_DIRECTORY)</cpp:value></cpp:define>
+	<cpp:define pos:line="377" pos:column="9">#<cpp:directive pos:line="377" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="377" pos:column="17">NPPM_GETFILENAME</name></cpp:macro>			<cpp:value pos:line="377" pos:column="57">(RUNCOMMAND_USER + FILE_NAME)</cpp:value></cpp:define>
+	<cpp:define pos:line="378" pos:column="9">#<cpp:directive pos:line="378" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="378" pos:column="17">NPPM_GETNAMEPART</name></cpp:macro>			<cpp:value pos:line="378" pos:column="57">(RUNCOMMAND_USER + NAME_PART)</cpp:value></cpp:define>
+	<cpp:define pos:line="379" pos:column="9">#<cpp:directive pos:line="379" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="379" pos:column="17">NPPM_GETEXTPART</name></cpp:macro>				<cpp:value pos:line="379" pos:column="57">(RUNCOMMAND_USER + EXT_PART)</cpp:value></cpp:define>
+	<cpp:define pos:line="380" pos:column="9">#<cpp:directive pos:line="380" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="380" pos:column="17">NPPM_GETCURRENTWORD</name></cpp:macro>			<cpp:value pos:line="380" pos:column="57">(RUNCOMMAND_USER + CURRENT_WORD)</cpp:value></cpp:define>
+	<cpp:define pos:line="381" pos:column="9">#<cpp:directive pos:line="381" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="381" pos:column="17">NPPM_GETNPPDIRECTORY</name></cpp:macro>		<cpp:value pos:line="381" pos:column="49">(RUNCOMMAND_USER + NPP_DIRECTORY)</cpp:value></cpp:define>
+	<comment type="line" pos:line="382" pos:column="9">// BOOL NPPM_GETXXXXXXXXXXXXXXXX(size_t strLen, TCHAR *str)</comment>
+	<comment type="line" pos:line="383" pos:column="9">// where str is the allocated TCHAR array,</comment>
+	<comment type="line" pos:line="384" pos:column="9">//	     strLen is the allocated array size</comment>
+	<comment type="line" pos:line="385" pos:column="9">// The return value is TRUE when get generic_string operation success</comment>
+	<comment type="line" pos:line="386" pos:column="9">// Otherwise (allocated array size is too small) FALSE</comment>
+
+	<cpp:define pos:line="388" pos:column="9">#<cpp:directive pos:line="388" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="388" pos:column="17">NPPM_GETCURRENTLINE</name></cpp:macro>			<cpp:value pos:line="388" pos:column="57">(RUNCOMMAND_USER + CURRENT_LINE)</cpp:value></cpp:define>
+	<comment type="line" pos:line="389" pos:column="9">// INT NPPM_GETCURRENTLINE(0, 0)</comment>
+	<comment type="line" pos:line="390" pos:column="9">// return the caret current position line</comment>
+	<cpp:define pos:line="391" pos:column="9">#<cpp:directive pos:line="391" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="391" pos:column="17">NPPM_GETCURRENTCOLUMN</name></cpp:macro>			<cpp:value pos:line="391" pos:column="57">(RUNCOMMAND_USER + CURRENT_COLUMN)</cpp:value></cpp:define>
+	<comment type="line" pos:line="392" pos:column="9">// INT NPPM_GETCURRENTCOLUMN(0, 0)</comment>
+	<comment type="line" pos:line="393" pos:column="9">// return the caret current position column</comment>
+
+		<cpp:define pos:line="395" pos:column="17">#<cpp:directive pos:line="395" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="395" pos:column="25">VAR_NOT_RECOGNIZED</name></cpp:macro> <cpp:value pos:line="395" pos:column="44">0</cpp:value></cpp:define>
+		<cpp:define pos:line="396" pos:column="17">#<cpp:directive pos:line="396" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="396" pos:column="25">FULL_CURRENT_PATH</name></cpp:macro> <cpp:value pos:line="396" pos:column="43">1</cpp:value></cpp:define>
+		<cpp:define pos:line="397" pos:column="17">#<cpp:directive pos:line="397" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="397" pos:column="25">CURRENT_DIRECTORY</name></cpp:macro> <cpp:value pos:line="397" pos:column="43">2</cpp:value></cpp:define>
+		<cpp:define pos:line="398" pos:column="17">#<cpp:directive pos:line="398" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="398" pos:column="25">FILE_NAME</name></cpp:macro> <cpp:value pos:line="398" pos:column="35">3</cpp:value></cpp:define>
+		<cpp:define pos:line="399" pos:column="17">#<cpp:directive pos:line="399" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="399" pos:column="25">NAME_PART</name></cpp:macro> <cpp:value pos:line="399" pos:column="35">4</cpp:value></cpp:define>
+		<cpp:define pos:line="400" pos:column="17">#<cpp:directive pos:line="400" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="400" pos:column="25">EXT_PART</name></cpp:macro> <cpp:value pos:line="400" pos:column="34">5</cpp:value></cpp:define>
+		<cpp:define pos:line="401" pos:column="17">#<cpp:directive pos:line="401" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="401" pos:column="25">CURRENT_WORD</name></cpp:macro> <cpp:value pos:line="401" pos:column="38">6</cpp:value></cpp:define>
+		<cpp:define pos:line="402" pos:column="17">#<cpp:directive pos:line="402" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="402" pos:column="25">NPP_DIRECTORY</name></cpp:macro> <cpp:value pos:line="402" pos:column="39">7</cpp:value></cpp:define>
+		<cpp:define pos:line="403" pos:column="17">#<cpp:directive pos:line="403" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="403" pos:column="25">CURRENT_LINE</name></cpp:macro> <cpp:value pos:line="403" pos:column="38">8</cpp:value></cpp:define>
+		<cpp:define pos:line="404" pos:column="17">#<cpp:directive pos:line="404" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="404" pos:column="25">CURRENT_COLUMN</name></cpp:macro> <cpp:value pos:line="404" pos:column="40">9</cpp:value></cpp:define>
+
+
+<comment type="line" pos:line="407" pos:column="1">// Notification code</comment>
+<cpp:define pos:line="408" pos:column="1">#<cpp:directive pos:line="408" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="408" pos:column="9">NPPN_FIRST</name></cpp:macro> <cpp:value pos:line="408" pos:column="20">1000</cpp:value></cpp:define>
+	<cpp:define pos:line="409" pos:column="9">#<cpp:directive pos:line="409" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="409" pos:column="17">NPPN_READY</name></cpp:macro> <cpp:value pos:line="409" pos:column="28">(NPPN_FIRST + 1)</cpp:value></cpp:define> <comment type="line" pos:line="409" pos:column="45">// To notify plugins that all the procedures of launchment of notepad++ are done.</comment>
+	<comment type="line" pos:line="410" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_READY;</comment>
+	<comment type="line" pos:line="411" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="412" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = 0;</comment>
+
+	<cpp:define pos:line="414" pos:column="9">#<cpp:directive pos:line="414" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="414" pos:column="17">NPPN_TBMODIFICATION</name></cpp:macro> <cpp:value pos:line="414" pos:column="37">(NPPN_FIRST + 2)</cpp:value></cpp:define> <comment type="line" pos:line="414" pos:column="54">// To notify plugins that toolbar icons can be registered</comment>
+	<comment type="line" pos:line="415" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_TB_MODIFICATION;</comment>
+	<comment type="line" pos:line="416" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="417" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = 0;</comment>
+
+	<cpp:define pos:line="419" pos:column="9">#<cpp:directive pos:line="419" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="419" pos:column="17">NPPN_FILEBEFORECLOSE</name></cpp:macro> <cpp:value pos:line="419" pos:column="38">(NPPN_FIRST + 3)</cpp:value></cpp:define> <comment type="line" pos:line="419" pos:column="55">// To notify plugins that the current file is about to be closed</comment>
+	<comment type="line" pos:line="420" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILEBEFORECLOSE;</comment>
+	<comment type="line" pos:line="421" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="422" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+
+	<cpp:define pos:line="424" pos:column="9">#<cpp:directive pos:line="424" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="424" pos:column="17">NPPN_FILEOPENED</name></cpp:macro> <cpp:value pos:line="424" pos:column="33">(NPPN_FIRST + 4)</cpp:value></cpp:define> <comment type="line" pos:line="424" pos:column="50">// To notify plugins that the current file is just opened</comment>
+	<comment type="line" pos:line="425" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILEOPENED;</comment>
+	<comment type="line" pos:line="426" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="427" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+
+	<cpp:define pos:line="429" pos:column="9">#<cpp:directive pos:line="429" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="429" pos:column="17">NPPN_FILECLOSED</name></cpp:macro> <cpp:value pos:line="429" pos:column="33">(NPPN_FIRST + 5)</cpp:value></cpp:define> <comment type="line" pos:line="429" pos:column="50">// To notify plugins that the current file is just closed</comment>
+	<comment type="line" pos:line="430" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILECLOSED;</comment>
+	<comment type="line" pos:line="431" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="432" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+
+	<cpp:define pos:line="434" pos:column="9">#<cpp:directive pos:line="434" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="434" pos:column="17">NPPN_FILEBEFOREOPEN</name></cpp:macro> <cpp:value pos:line="434" pos:column="37">(NPPN_FIRST + 6)</cpp:value></cpp:define> <comment type="line" pos:line="434" pos:column="54">// To notify plugins that the current file is about to be opened</comment>
+	<comment type="line" pos:line="435" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILEBEFOREOPEN;</comment>
+	<comment type="line" pos:line="436" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="437" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+	
+	<cpp:define pos:line="439" pos:column="9">#<cpp:directive pos:line="439" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="439" pos:column="17">NPPN_FILEBEFORESAVE</name></cpp:macro> <cpp:value pos:line="439" pos:column="37">(NPPN_FIRST + 7)</cpp:value></cpp:define> <comment type="line" pos:line="439" pos:column="54">// To notify plugins that the current file is about to be saved</comment>
+	<comment type="line" pos:line="440" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILEBEFOREOPEN;</comment>
+	<comment type="line" pos:line="441" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="442" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+	
+	<cpp:define pos:line="444" pos:column="9">#<cpp:directive pos:line="444" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="444" pos:column="17">NPPN_FILESAVED</name></cpp:macro> <cpp:value pos:line="444" pos:column="32">(NPPN_FIRST + 8)</cpp:value></cpp:define> <comment type="line" pos:line="444" pos:column="49">// To notify plugins that the current file is just saved</comment>
+	<comment type="line" pos:line="445" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILESAVED;</comment>
+	<comment type="line" pos:line="446" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="447" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+
+	<cpp:define pos:line="449" pos:column="9">#<cpp:directive pos:line="449" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="449" pos:column="17">NPPN_SHUTDOWN</name></cpp:macro> <cpp:value pos:line="449" pos:column="31">(NPPN_FIRST + 9)</cpp:value></cpp:define> <comment type="line" pos:line="449" pos:column="48">// To notify plugins that Notepad++ is about to be shutdowned.</comment>
+	<comment type="line" pos:line="450" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_SHUTDOWN;</comment>
+	<comment type="line" pos:line="451" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="452" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = 0;</comment>
+
+	<cpp:define pos:line="454" pos:column="9">#<cpp:directive pos:line="454" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="454" pos:column="17">NPPN_BUFFERACTIVATED</name></cpp:macro> <cpp:value pos:line="454" pos:column="38">(NPPN_FIRST + 10)</cpp:value></cpp:define> <comment type="line" pos:line="454" pos:column="56">// To notify plugins that a buffer was activated (put to foreground).</comment>
+	<comment type="line" pos:line="455" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_BUFFERACTIVATED;</comment>
+	<comment type="line" pos:line="456" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="457" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = activatedBufferID;</comment>
+
+	<cpp:define pos:line="459" pos:column="9">#<cpp:directive pos:line="459" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="459" pos:column="17">NPPN_LANGCHANGED</name></cpp:macro> <cpp:value pos:line="459" pos:column="34">(NPPN_FIRST + 11)</cpp:value></cpp:define> <comment type="line" pos:line="459" pos:column="52">// To notify plugins that the language in the current doc is just changed.</comment>
+	<comment type="line" pos:line="460" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_LANGCHANGED;</comment>
+	<comment type="line" pos:line="461" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="462" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = currentBufferID;</comment>
+
+	<cpp:define pos:line="464" pos:column="9">#<cpp:directive pos:line="464" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="464" pos:column="17">NPPN_WORDSTYLESUPDATED</name></cpp:macro> <cpp:value pos:line="464" pos:column="40">(NPPN_FIRST + 12)</cpp:value></cpp:define> <comment type="line" pos:line="464" pos:column="58">// To notify plugins that user initiated a WordStyleDlg change.</comment>
+	<comment type="line" pos:line="465" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_WORDSTYLESUPDATED;</comment>
+	<comment type="line" pos:line="466" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="467" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = currentBufferID;</comment>
+
+	<cpp:define pos:line="469" pos:column="9">#<cpp:directive pos:line="469" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="469" pos:column="17">NPPN_SHORTCUTREMAPPED</name></cpp:macro> <cpp:value pos:line="469" pos:column="39">(NPPN_FIRST + 13)</cpp:value></cpp:define> <comment type="line" pos:line="469" pos:column="57">// To notify plugins that plugin command shortcut is remapped.</comment>
+	<comment type="line" pos:line="470" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_SHORTCUTSREMAPPED;</comment>
+	<comment type="line" pos:line="471" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = ShortcutKeyStructurePointer;</comment>
+	<comment type="line" pos:line="472" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = cmdID;</comment>
+		<comment type="line" pos:line="473" pos:column="17">//where ShortcutKeyStructurePointer is pointer of struct ShortcutKey:</comment>
+		<comment type="line" pos:line="474" pos:column="17">//struct ShortcutKey {</comment>
+		<comment type="line" pos:line="475" pos:column="17">//	bool _isCtrl;</comment>
+		<comment type="line" pos:line="476" pos:column="17">//	bool _isAlt;</comment>
+		<comment type="line" pos:line="477" pos:column="17">//	bool _isShift;</comment>
+		<comment type="line" pos:line="478" pos:column="17">//	UCHAR _key;</comment>
+		<comment type="line" pos:line="479" pos:column="17">//};</comment>
+
+	<cpp:define pos:line="481" pos:column="9">#<cpp:directive pos:line="481" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="481" pos:column="17">NPPN_FILEBEFORELOAD</name></cpp:macro> <cpp:value pos:line="481" pos:column="37">(NPPN_FIRST + 14)</cpp:value></cpp:define> <comment type="line" pos:line="481" pos:column="55">// To notify plugins that the current file is about to be loaded</comment>
+	<comment type="line" pos:line="482" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILEBEFOREOPEN;</comment>
+	<comment type="line" pos:line="483" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="484" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = NULL;</comment>
+
+	<cpp:define pos:line="486" pos:column="9">#<cpp:directive pos:line="486" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="486" pos:column="17">NPPN_FILELOADFAILED</name></cpp:macro> <cpp:value pos:line="486" pos:column="37">(NPPN_FIRST + 15)</cpp:value></cpp:define>  <comment type="line" pos:line="486" pos:column="56">// To notify plugins that file open operation failed</comment>
+	<comment type="line" pos:line="487" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_FILEOPENFAILED;</comment>
+	<comment type="line" pos:line="488" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = hwndNpp;</comment>
+	<comment type="line" pos:line="489" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+
+	<cpp:define pos:line="491" pos:column="9">#<cpp:directive pos:line="491" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="491" pos:column="17">NPPN_READONLYCHANGED</name></cpp:macro> <cpp:value pos:line="491" pos:column="38">(NPPN_FIRST + 16)</cpp:value></cpp:define>  <comment type="line" pos:line="491" pos:column="57">// To notify plugins that current document change the readonly status,</comment>
+	<comment type="line" pos:line="492" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_READONLYCHANGED;</comment>
+	<comment type="line" pos:line="493" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = bufferID;</comment>
+	<comment type="line" pos:line="494" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = docStatus;</comment>
+		<comment type="line" pos:line="495" pos:column="17">// where bufferID is BufferID</comment>
+		<comment type="line" pos:line="496" pos:column="17">//       docStatus can be combined by DOCSTAUS_READONLY and DOCSTAUS_BUFFERDIRTY</comment>
+
+		<cpp:define pos:line="498" pos:column="17">#<cpp:directive pos:line="498" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="498" pos:column="25">DOCSTAUS_READONLY</name></cpp:macro> <cpp:value pos:line="498" pos:column="43">1</cpp:value></cpp:define>
+		<cpp:define pos:line="499" pos:column="17">#<cpp:directive pos:line="499" pos:column="18">define</cpp:directive> <cpp:macro><name pos:line="499" pos:column="25">DOCSTAUS_BUFFERDIRTY</name></cpp:macro> <cpp:value pos:line="499" pos:column="46">2</cpp:value></cpp:define>
+
+	<cpp:define pos:line="501" pos:column="9">#<cpp:directive pos:line="501" pos:column="10">define</cpp:directive> <cpp:macro><name pos:line="501" pos:column="17">NPPN_DOCORDERCHANGED</name></cpp:macro> <cpp:value pos:line="501" pos:column="38">(NPPN_FIRST + 16)</cpp:value></cpp:define>  <comment type="line" pos:line="501" pos:column="57">// To notify plugins that document order is changed</comment>
+	<comment type="line" pos:line="502" pos:column="9">//scnNotification-&gt;nmhdr.code = NPPN_DOCORDERCHANGED;</comment>
+	<comment type="line" pos:line="503" pos:column="9">//scnNotification-&gt;nmhdr.hwndFrom = newIndex;</comment>
+	<comment type="line" pos:line="504" pos:column="9">//scnNotification-&gt;nmhdr.idFrom = BufferID;</comment>
+
+<cpp:endif pos:line="506" pos:column="1">#<cpp:directive pos:line="506" pos:column="2">endif</cpp:directive></cpp:endif> <comment type="line" pos:line="506" pos:column="8">//NOTEPAD_PLUS_MSGS_H</comment>
+</unit>

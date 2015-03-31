@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C++" filename="C:\School\Grad School (Comp Sci)\CSCI 685 (Software Engneering)\CodeAnalysisToolkit\projects\npp_6.2.3\scintilla\macosx\QuartzTextStyle.h" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ *  QuartzTextStyle.h
+ *  wtf
+ *
+ *  Created by Evan Jones on Wed Oct 02 2002.
+ *  Copyright (c) 2002 __MyCompanyName__. All rights reserved.
+ *
+ */</comment>
+
+<cpp:include pos:line="10" pos:column="1">#<cpp:directive pos:line="10" pos:column="2">include</cpp:directive> <cpp:file pos:line="10" pos:column="10">&lt;Carbon/Carbon.h&gt;</cpp:file></cpp:include>
+
+<cpp:ifndef pos:line="12" pos:column="1">#<cpp:directive pos:line="12" pos:column="2">ifndef</cpp:directive> <name pos:line="12" pos:column="9">_QUARTZ_TEXT_STYLE_H</name></cpp:ifndef>
+<cpp:define pos:line="13" pos:column="1">#<cpp:directive pos:line="13" pos:column="2">define</cpp:directive> <cpp:macro><name pos:line="13" pos:column="9">_QUARTZ_TEXT_STYLE_H</name></cpp:macro></cpp:define>
+
+<cpp:include pos:line="15" pos:column="1">#<cpp:directive pos:line="15" pos:column="2">include</cpp:directive> <cpp:file><lit:literal type="string" pos:line="15" pos:column="10">"QuartzTextStyleAttribute.h"</lit:literal></cpp:file></cpp:include>
+
+<class pos:line="17" pos:column="1">class <name pos:line="17" pos:column="7">QuartzTextStyle</name>
+<block pos:line="18" pos:column="1">{<private type="default" pos:line="18" pos:column="2">
+</private><public pos:line="19" pos:column="1">public:
+    <constructor><name pos:line="20" pos:column="5">QuartzTextStyle</name><parameter_list pos:line="20" pos:column="20">()</parameter_list>
+    <block pos:line="21" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="22" pos:column="9">ATSUCreateStyle</name><argument_list pos:line="22" pos:column="24">( <argument><expr><op:operator pos:line="22" pos:column="26">&amp;</op:operator><name pos:line="22" pos:column="27">style</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    }</block></constructor>
+
+    <destructor><name pos:line="25" pos:column="5">~<name pos:line="25" pos:column="6">QuartzTextStyle</name></name><parameter_list pos:line="25" pos:column="21">()</parameter_list>
+    <block pos:line="26" pos:column="5">{
+        <if pos:line="27" pos:column="9">if <condition pos:line="27" pos:column="12">( <expr><name pos:line="27" pos:column="14">style</name> <op:operator pos:line="27" pos:column="20">!=</op:operator> <name pos:line="27" pos:column="23">NULL</name></expr> )</condition><then pos:line="27" pos:column="29">
+            <expr_stmt><expr><call><name pos:line="28" pos:column="13">ATSUDisposeStyle</name><argument_list pos:line="28" pos:column="29">( <argument><expr><name pos:line="28" pos:column="31">style</name></expr></argument> )</argument_list></call></expr>;</expr_stmt></then></if>
+        <expr_stmt><expr><name pos:line="29" pos:column="9">style</name> <op:operator pos:line="29" pos:column="15">=</op:operator> <name pos:line="29" pos:column="17">NULL</name></expr>;</expr_stmt>
+    }</block></destructor>
+
+    <function><type><name pos:line="32" pos:column="5">void</name></type> <name pos:line="32" pos:column="10">setAttribute</name><parameter_list pos:line="32" pos:column="22">( <param><decl><type><name pos:line="32" pos:column="24">ATSUAttributeTag</name></type> <name pos:line="32" pos:column="41">tag</name></decl></param>, <param><decl><type><name pos:line="32" pos:column="46">ByteCount</name></type> <name pos:line="32" pos:column="56">size</name></decl></param>, <param><decl><type><name pos:line="32" pos:column="62">ATSUAttributeValuePtr</name></type> <name pos:line="32" pos:column="84">value</name></decl></param> )</parameter_list>
+    <block pos:line="33" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="34" pos:column="9">ATSUSetAttributes</name><argument_list pos:line="34" pos:column="26">( <argument><expr><name pos:line="34" pos:column="28">style</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="34" pos:column="35">1</lit:literal></expr></argument>, <argument><expr><op:operator pos:line="34" pos:column="38">&amp;</op:operator><name pos:line="34" pos:column="39">tag</name></expr></argument>, <argument><expr><op:operator pos:line="34" pos:column="44">&amp;</op:operator><name pos:line="34" pos:column="45">size</name></expr></argument>, <argument><expr><op:operator pos:line="34" pos:column="51">&amp;</op:operator><name pos:line="34" pos:column="52">value</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+
+    <function><type><name pos:line="37" pos:column="5">void</name></type> <name pos:line="37" pos:column="10">setAttribute</name><parameter_list pos:line="37" pos:column="22">( <param><decl><type><name pos:line="37" pos:column="24">QuartzTextStyleAttribute</name><type:modifier pos:line="37" pos:column="48">&amp;</type:modifier></type> <name pos:line="37" pos:column="50">attribute</name></decl></param> )</parameter_list>
+    <block pos:line="38" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="39" pos:column="9">setAttribute</name><argument_list pos:line="39" pos:column="21">( <argument><expr><call><name><name pos:line="39" pos:column="23">attribute</name><op:operator pos:line="39" pos:column="32">.</op:operator><name pos:line="39" pos:column="33">getTag</name></name><argument_list pos:line="39" pos:column="39">()</argument_list></call></expr></argument>, <argument><expr><call><name><name pos:line="39" pos:column="43">attribute</name><op:operator pos:line="39" pos:column="52">.</op:operator><name pos:line="39" pos:column="53">getSize</name></name><argument_list pos:line="39" pos:column="60">()</argument_list></call></expr></argument>, <argument><expr><call><name><name pos:line="39" pos:column="64">attribute</name><op:operator pos:line="39" pos:column="73">.</op:operator><name pos:line="39" pos:column="74">getValuePtr</name></name><argument_list pos:line="39" pos:column="85">()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+
+    <function><type><name pos:line="42" pos:column="5">void</name></type> <name pos:line="42" pos:column="10">getAttribute</name><parameter_list pos:line="42" pos:column="22">( <param><decl><type><name pos:line="42" pos:column="24">ATSUAttributeTag</name></type> <name pos:line="42" pos:column="41">tag</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="46">ByteCount</name></type> <name pos:line="42" pos:column="56">size</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="62">ATSUAttributeValuePtr</name></type> <name pos:line="42" pos:column="84">value</name></decl></param>, <param><decl><type><name pos:line="42" pos:column="91">ByteCount</name><type:modifier pos:line="42" pos:column="100">*</type:modifier></type> <name pos:line="42" pos:column="102">actualSize</name></decl></param> )</parameter_list>
+    <block pos:line="43" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="44" pos:column="9">ATSUGetAttribute</name><argument_list pos:line="44" pos:column="25">( <argument><expr><name pos:line="44" pos:column="27">style</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="34">tag</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="39">size</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="45">value</name></expr></argument>, <argument><expr><name pos:line="44" pos:column="52">actualSize</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+
+    <template pos:line="47" pos:column="5">template <parameter_list pos:line="47" pos:column="14">&lt;<param><type><name pos:line="47" pos:column="15">class</name></type> <name pos:line="47" pos:column="21">T</name></param>&gt;</parameter_list>
+    <function><type><name pos:line="48" pos:column="5">T</name></type> <name pos:line="48" pos:column="7">getAttribute</name><parameter_list pos:line="48" pos:column="19">( <param><decl><type><name pos:line="48" pos:column="21">ATSUAttributeTag</name></type> <name pos:line="48" pos:column="38">tag</name></decl></param> )</parameter_list>
+    <block pos:line="49" pos:column="5">{
+        <decl_stmt><decl><type><name pos:line="50" pos:column="9">T</name></type> <name pos:line="50" pos:column="11">value</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name pos:line="51" pos:column="9">ByteCount</name></type> <name pos:line="51" pos:column="19">actualSize</name></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name pos:line="52" pos:column="9">ATSUGetAttribute</name><argument_list pos:line="52" pos:column="25">( <argument><expr><name pos:line="52" pos:column="27">style</name></expr></argument>, <argument><expr><name pos:line="52" pos:column="34">tag</name></expr></argument>, <argument><expr><sizeof pos:line="52" pos:column="39">sizeof<argument_list pos:line="52" pos:column="45">( <argument><expr><name pos:line="52" pos:column="47">T</name></expr></argument> )</argument_list></sizeof></expr></argument>, <argument><expr><op:operator pos:line="52" pos:column="52">&amp;</op:operator><name pos:line="52" pos:column="53">value</name></expr></argument>, <argument><expr><op:operator pos:line="52" pos:column="60">&amp;</op:operator><name pos:line="52" pos:column="61">actualSize</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <return pos:line="53" pos:column="9">return <expr><name pos:line="53" pos:column="16">value</name></expr>;</return>
+    }</block></function></template>
+
+    <comment type="line" pos:line="56" pos:column="5">// TODO: Is calling this actually faster than calling setAttribute multiple times?</comment>
+    <function><type><name pos:line="57" pos:column="5">void</name></type> <name pos:line="57" pos:column="10">setAttributes</name><parameter_list pos:line="57" pos:column="23">( <param><decl><type><name pos:line="57" pos:column="25">QuartzTextStyleAttribute</name><type:modifier pos:line="57" pos:column="49">*</type:modifier></type> <name><name pos:line="57" pos:column="51">attributes</name><index pos:line="57" pos:column="61">[]</index></name></decl></param>, <param><decl><type><name pos:line="57" pos:column="65">int</name></type> <name pos:line="57" pos:column="69">number</name></decl></param> )</parameter_list>
+    <block pos:line="58" pos:column="5">{
+        <comment type="line" pos:line="59" pos:column="9">// Create the parallel arrays and initialize them properly</comment>
+        <decl_stmt><decl><type><name pos:line="60" pos:column="9">ATSUAttributeTag</name><type:modifier pos:line="60" pos:column="25">*</type:modifier></type> <name pos:line="60" pos:column="27">tags</name> <init pos:line="60" pos:column="32">= <expr><op:operator pos:line="60" pos:column="34">new</op:operator> <name><name pos:line="60" pos:column="38">ATSUAttributeTag</name><index pos:line="60" pos:column="54">[ <expr><name pos:line="60" pos:column="56">number</name></expr> ]</index></name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name pos:line="61" pos:column="9">ByteCount</name><type:modifier pos:line="61" pos:column="18">*</type:modifier></type> <name pos:line="61" pos:column="20">sizes</name> <init pos:line="61" pos:column="26">= <expr><op:operator pos:line="61" pos:column="28">new</op:operator> <name><name pos:line="61" pos:column="32">ByteCount</name><index pos:line="61" pos:column="41">[ <expr><name pos:line="61" pos:column="43">number</name></expr> ]</index></name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name pos:line="62" pos:column="9">ATSUAttributeValuePtr</name><type:modifier pos:line="62" pos:column="30">*</type:modifier></type> <name pos:line="62" pos:column="32">values</name> <init pos:line="62" pos:column="39">= <expr><op:operator pos:line="62" pos:column="41">new</op:operator> <name><name pos:line="62" pos:column="45">ATSUAttributeValuePtr</name><index pos:line="62" pos:column="66">[ <expr><name pos:line="62" pos:column="68">number</name></expr> ]</index></name></expr></init></decl>;</decl_stmt>
+
+        <for pos:line="64" pos:column="9">for ( <init><decl><type><name pos:line="64" pos:column="15">int</name></type> <name pos:line="64" pos:column="19">i</name> <init pos:line="64" pos:column="21">= <expr><lit:literal type="number" pos:line="64" pos:column="23">0</lit:literal></expr></init></decl>;</init> <condition><expr><name pos:line="64" pos:column="26">i</name> <op:operator pos:line="64" pos:column="28">&lt;</op:operator> <name pos:line="64" pos:column="30">number</name></expr>;</condition> <incr><expr><op:operator pos:line="64" pos:column="38">++</op:operator> <name pos:line="64" pos:column="41">i</name></expr></incr> )
+        <block pos:line="65" pos:column="9">{
+            <expr_stmt><expr><name><name pos:line="66" pos:column="13">tags</name><index pos:line="66" pos:column="17">[<expr><name pos:line="66" pos:column="18">i</name></expr>]</index></name> <op:operator pos:line="66" pos:column="21">=</op:operator> <name><name pos:line="66" pos:column="23">attributes</name><index pos:line="66" pos:column="33">[<expr><name pos:line="66" pos:column="34">i</name></expr>]</index></name><op:operator pos:line="66" pos:column="36">-&gt;</op:operator><call><name pos:line="66" pos:column="38">getTag</name><argument_list pos:line="66" pos:column="44">()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name pos:line="67" pos:column="13">sizes</name><index pos:line="67" pos:column="18">[<expr><name pos:line="67" pos:column="19">i</name></expr>]</index></name> <op:operator pos:line="67" pos:column="22">=</op:operator> <name><name pos:line="67" pos:column="24">attributes</name><index pos:line="67" pos:column="34">[<expr><name pos:line="67" pos:column="35">i</name></expr>]</index></name><op:operator pos:line="67" pos:column="37">-&gt;</op:operator><call><name pos:line="67" pos:column="39">getSize</name><argument_list pos:line="67" pos:column="46">()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name pos:line="68" pos:column="13">values</name><index pos:line="68" pos:column="19">[<expr><name pos:line="68" pos:column="20">i</name></expr>]</index></name> <op:operator pos:line="68" pos:column="23">=</op:operator> <name><name pos:line="68" pos:column="25">attributes</name><index pos:line="68" pos:column="35">[<expr><name pos:line="68" pos:column="36">i</name></expr>]</index></name><op:operator pos:line="68" pos:column="38">-&gt;</op:operator><call><name pos:line="68" pos:column="40">getValuePtr</name><argument_list pos:line="68" pos:column="51">()</argument_list></call></expr>;</expr_stmt>
+        }</block></for>
+        
+        <expr_stmt><expr><call><name pos:line="71" pos:column="9">ATSUSetAttributes</name><argument_list pos:line="71" pos:column="26">( <argument><expr><name pos:line="71" pos:column="28">style</name></expr></argument>, <argument><expr><name pos:line="71" pos:column="35">number</name></expr></argument>, <argument><expr><name pos:line="71" pos:column="43">tags</name></expr></argument>, <argument><expr><name pos:line="71" pos:column="49">sizes</name></expr></argument>, <argument><expr><name pos:line="71" pos:column="56">values</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line" pos:line="73" pos:column="9">// Free the arrays that were allocated</comment>
+        <expr_stmt><expr><op:operator pos:line="74" pos:column="9">delete</op:operator><index pos:line="74" pos:column="15">[]</index> <name pos:line="74" pos:column="18">tags</name></expr>;</expr_stmt>
+        <expr_stmt><expr><op:operator pos:line="75" pos:column="9">delete</op:operator><index pos:line="75" pos:column="15">[]</index> <name pos:line="75" pos:column="18">sizes</name></expr>;</expr_stmt>
+        <expr_stmt><expr><op:operator pos:line="76" pos:column="9">delete</op:operator><index pos:line="76" pos:column="15">[]</index> <name pos:line="76" pos:column="18">values</name></expr>;</expr_stmt>
+    }</block></function>
+
+    <function><type><name pos:line="79" pos:column="5">void</name></type> <name pos:line="79" pos:column="10">setFontFeature</name><parameter_list pos:line="79" pos:column="24">( <param><decl><type><name pos:line="79" pos:column="26">ATSUFontFeatureType</name></type> <name pos:line="79" pos:column="46">featureType</name></decl></param>, <param><decl><type><name pos:line="79" pos:column="59">ATSUFontFeatureSelector</name></type> <name pos:line="79" pos:column="83">selector</name></decl></param> )</parameter_list>
+    <block pos:line="80" pos:column="5">{
+        <expr_stmt><expr><call><name pos:line="81" pos:column="9">ATSUSetFontFeatures</name><argument_list pos:line="81" pos:column="28">( <argument><expr><name pos:line="81" pos:column="30">style</name></expr></argument>, <argument><expr><lit:literal type="number" pos:line="81" pos:column="37">1</lit:literal></expr></argument>, <argument><expr><op:operator pos:line="81" pos:column="40">&amp;</op:operator><name pos:line="81" pos:column="41">featureType</name></expr></argument>, <argument><expr><op:operator pos:line="81" pos:column="54">&amp;</op:operator><name pos:line="81" pos:column="55">selector</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+
+    <function><type><specifier pos:line="84" pos:column="5">const</specifier> <name pos:line="84" pos:column="11">ATSUStyle</name><type:modifier pos:line="84" pos:column="20">&amp;</type:modifier></type> <name pos:line="84" pos:column="22">getATSUStyle</name><parameter_list pos:line="84" pos:column="34">()</parameter_list> <specifier pos:line="84" pos:column="37">const</specifier>
+    <block pos:line="85" pos:column="5">{
+        <return pos:line="86" pos:column="9">return <expr><name pos:line="86" pos:column="16">style</name></expr>;</return>
+    }</block></function>
+
+</public><private pos:line="89" pos:column="1">private:
+    <decl_stmt><decl><type><name pos:line="90" pos:column="5">ATSUStyle</name></type> <name pos:line="90" pos:column="15">style</name></decl>;</decl_stmt>
+</private>}</block>;</class>
+
+<cpp:endif pos:line="93" pos:column="1">#<cpp:directive pos:line="93" pos:column="2">endif</cpp:directive></cpp:endif>
+
+</unit>

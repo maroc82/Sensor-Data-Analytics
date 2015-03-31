@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ABB.SrcML.Data</id>
+    <version>4.1.14.49</version>
+    <title>ABB.SrcML.Data</title>
+    <authors>ABB</authors>
+    <owners>ABB</owners>
+    <licenseUrl>https://raw.github.com/abb-iss/SrcML.NET/master/epl-v10.txt</licenseUrl>
+    <projectUrl>https://github.com/abb-iss/SrcML.NET</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SrcML.Data functionality (including parsing and querying code)</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>SrcML.NET program_analysis</tags>
+    <dependencies>
+      <dependency id="log4net" version="2.0.0" />
+      <dependency id="ABB.SrcML" version="4.1.14.49" />
+    </dependencies>
+  </metadata>
+</package>

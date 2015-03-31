@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Database\StepEntry.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name pos:line="20" pos:column="7">System</name>;</using>
+
+<namespace pos:line="22" pos:column="1">namespace <name><name pos:line="22" pos:column="11">StepCounter</name><op:operator pos:line="22" pos:column="22">.</op:operator><name pos:line="22" pos:column="23">Database</name></name>
+<block pos:line="23" pos:column="1">{
+	<class><specifier pos:line="24" pos:column="9">public</specifier> class <name pos:line="24" pos:column="22">StepEntry</name>
+	<block pos:line="25" pos:column="9">{
+		<constructor><specifier pos:line="26" pos:column="17">public</specifier> <name pos:line="26" pos:column="24">StepEntry</name> <parameter_list pos:line="26" pos:column="34">()</parameter_list>
+		<block pos:line="27" pos:column="17">{
+		}</block></constructor>
+
+		<decl_stmt><decl><type><specifier pos:line="30" pos:column="17">public</specifier> <name pos:line="30" pos:column="24">int</name></type> <name pos:line="30" pos:column="28">ID</name> <block pos:line="30" pos:column="31">{ <function_decl><name pos:line="30" pos:column="33">get</name>;</function_decl> <function_decl><name pos:line="30" pos:column="38">set</name>;</function_decl> }</block></decl></decl_stmt>
+
+		<decl_stmt><decl><type><specifier pos:line="32" pos:column="17">public</specifier> <name pos:line="32" pos:column="24">Int64</name></type> <name pos:line="32" pos:column="30">Steps</name> <block pos:line="32" pos:column="36">{ <function_decl><name pos:line="32" pos:column="38">get</name>;</function_decl> <function_decl><name pos:line="32" pos:column="43">set</name>;</function_decl> }</block></decl></decl_stmt>
+
+		<decl_stmt><decl><type><specifier pos:line="34" pos:column="17">public</specifier> <name pos:line="34" pos:column="24">DateTime</name></type> <name pos:line="34" pos:column="33">Date</name> <block pos:line="34" pos:column="38">{ <function_decl><name pos:line="34" pos:column="40">get</name>;</function_decl> <function_decl><name pos:line="34" pos:column="45">set</name>;</function_decl> }</block></decl></decl_stmt>
+	}</block></class>
+}</block></namespace></unit>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:cpp="http://www.sdml.info/srcML/cpp" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="C#" filename="C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master\StepCounter.Android\Controls\ProgressView.cs" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */</comment>
+<using pos:line="20" pos:column="1">using <name pos:line="20" pos:column="7">System</name>;</using>
+<using pos:line="21" pos:column="1">using <name><name pos:line="21" pos:column="7">Android</name><op:operator pos:line="21" pos:column="14">.</op:operator><name pos:line="21" pos:column="15">Content</name></name>;</using>
+<using pos:line="22" pos:column="1">using <name><name pos:line="22" pos:column="7">Android</name><op:operator pos:line="22" pos:column="14">.</op:operator><name pos:line="22" pos:column="15">Util</name></name>;</using>
+<using pos:line="23" pos:column="1">using <name><name pos:line="23" pos:column="7">Android</name><op:operator pos:line="23" pos:column="14">.</op:operator><name pos:line="23" pos:column="15">Widget</name></name>;</using>
+<using pos:line="24" pos:column="1">using <name><name pos:line="24" pos:column="7">Android</name><op:operator pos:line="24" pos:column="14">.</op:operator><name pos:line="24" pos:column="15">Graphics</name></name>;</using>
+<using pos:line="25" pos:column="1">using <name><name pos:line="25" pos:column="7">Android</name><op:operator pos:line="25" pos:column="14">.</op:operator><name pos:line="25" pos:column="15">Runtime</name></name>;</using>
+
+<namespace pos:line="27" pos:column="1">namespace <name><name pos:line="27" pos:column="11">StepCounter</name><op:operator pos:line="27" pos:column="22">.</op:operator><name pos:line="27" pos:column="23">Controls</name></name>
+<block pos:line="28" pos:column="1">{
+	<class><specifier pos:line="29" pos:column="9">public</specifier> <specifier pos:line="29" pos:column="16">partial</specifier> class <name pos:line="29" pos:column="30">ProgressView</name> <super pos:line="29" pos:column="43">: <name pos:line="29" pos:column="45">FrameLayout</name></super>
+	<block pos:line="30" pos:column="9">{
+
+	
+
+		<constructor><specifier pos:line="34" pos:column="17">public</specifier> <name pos:line="34" pos:column="24">ProgressView</name> <parameter_list pos:line="34" pos:column="37">(<param><decl><type><name pos:line="34" pos:column="38">Context</name></type> <name pos:line="34" pos:column="46">context</name></decl></param>)</parameter_list> <member_list pos:line="34" pos:column="55">:
+			<call><name pos:line="35" pos:column="25">base</name> <argument_list pos:line="35" pos:column="30">(<argument><expr><name pos:line="35" pos:column="31">context</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="36" pos:column="17">{
+			<expr_stmt><expr><call><name pos:line="37" pos:column="25">Initialize</name> <argument_list pos:line="37" pos:column="36">()</argument_list></call></expr>;</expr_stmt>
+		}</block></constructor>
+
+		<constructor><specifier pos:line="40" pos:column="17">public</specifier> <name pos:line="40" pos:column="24">ProgressView</name> <parameter_list pos:line="40" pos:column="37">(<param><decl><type><name pos:line="40" pos:column="38">Context</name></type> <name pos:line="40" pos:column="46">context</name></decl></param>, <param><decl><type><name pos:line="40" pos:column="55">IAttributeSet</name></type> <name pos:line="40" pos:column="69">attrs</name></decl></param>)</parameter_list> <member_list pos:line="40" pos:column="76">:
+			<call><name pos:line="41" pos:column="25">base</name> <argument_list pos:line="41" pos:column="30">(<argument><expr><name pos:line="41" pos:column="31">context</name></expr></argument>, <argument><expr><name pos:line="41" pos:column="40">attrs</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="42" pos:column="17">{
+			<expr_stmt><expr><call><name pos:line="43" pos:column="25">Initialize</name> <argument_list pos:line="43" pos:column="36">()</argument_list></call></expr>;</expr_stmt>
+		}</block></constructor>
+
+		<constructor><specifier pos:line="46" pos:column="17">public</specifier> <name pos:line="46" pos:column="24">ProgressView</name> <parameter_list pos:line="46" pos:column="37">(<param><decl><type><name pos:line="46" pos:column="38">Context</name></type> <name pos:line="46" pos:column="46">context</name></decl></param>, <param><decl><type><name pos:line="46" pos:column="55">IAttributeSet</name></type> <name pos:line="46" pos:column="69">attrs</name></decl></param>, <param><decl><type><name pos:line="46" pos:column="76">int</name></type> <name pos:line="46" pos:column="80">defStyle</name></decl></param>)</parameter_list> <member_list pos:line="46" pos:column="90">:
+			<call><name pos:line="47" pos:column="25">base</name> <argument_list pos:line="47" pos:column="30">(<argument><expr><name pos:line="47" pos:column="31">context</name></expr></argument>, <argument><expr><name pos:line="47" pos:column="40">attrs</name></expr></argument>, <argument><expr><name pos:line="47" pos:column="47">defStyle</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="48" pos:column="17">{
+			<expr_stmt><expr><call><name pos:line="49" pos:column="25">Initialize</name> <argument_list pos:line="49" pos:column="36">()</argument_list></call></expr>;</expr_stmt>
+		}</block></constructor>
+		<constructor><specifier pos:line="51" pos:column="17">public</specifier> <name pos:line="51" pos:column="24">ProgressView</name><parameter_list pos:line="51" pos:column="36">(<param><decl><type><name pos:line="51" pos:column="37">IntPtr</name></type> <name pos:line="51" pos:column="44">pointer</name></decl></param>, <param><decl><type><name pos:line="51" pos:column="53">JniHandleOwnership</name></type> <name pos:line="51" pos:column="72">handle</name></decl></param>)</parameter_list> <member_list pos:line="51" pos:column="80">: <call><name pos:line="51" pos:column="82">base</name> <argument_list pos:line="51" pos:column="87">(<argument><expr><name pos:line="51" pos:column="88">pointer</name></expr></argument>, <argument><expr><name pos:line="51" pos:column="97">handle</name></expr></argument>)</argument_list></call>
+		</member_list><block pos:line="52" pos:column="17">{
+			<expr_stmt><expr><call><name pos:line="53" pos:column="25">Initialize</name> <argument_list pos:line="53" pos:column="36">()</argument_list></call></expr>;</expr_stmt>
+		}</block></constructor>
+
+
+	}</block></class>
+}</block></namespace>
+
+</unit>
