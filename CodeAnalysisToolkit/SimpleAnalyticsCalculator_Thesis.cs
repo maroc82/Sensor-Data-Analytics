@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace CodeAnalysisToolkit
                 Path.GetFullPath("..//..//..//projects//android-pedometer-studio"),
                 "..//..//..//SrcML");           
 
+            Debug.WriteLine("Parsing android-pedometer-studio....");
+
             dataProject.UpdateAsync().Wait();
 
             NamespaceDefinition globalNamespace;
@@ -28,20 +31,30 @@ namespace CodeAnalysisToolkit
 
             DisplaySensorTypes(globalNamespace);
             //DisplayWhetherAppIsUnitTested();           
-            //DisplayCallsToOnSensorChanged(globalNamespace);            
+            DisplayCallsToOnSensorChanged(globalNamespace);            
         }
 
         private void DisplaySensorTypes(NamespaceDefinition globalNamespace)
         {
-            var getDefaultSensorCalls = from call in globalNamespace.GetDescendants<MethodCall>()
-                                        //where call.Name == "getDefaultSensor"
+            var getDefaultSensorCalls = from statement in globalNamespace.GetDescendantsAndSelf()
+                                        from expression in statement.GetExpressions()
+                                        from call in expression.GetDescendantsAndSelf<MethodCall>()                                     
+                                        where call.Name == "getDefaultSensor"
                                         select call;
 
             foreach (var call in getDefaultSensorCalls)
             {
-                var firstArg = call.Arguments.First();
-                var x = firstArg.Components;
-
+                if (call.Arguments.Any())
+                {
+                    var firstArg = call.Arguments.First();
+                    var components = firstArg.Components;
+                    if (components.Count() == 3 &&
+                        components.ElementAt(0).ToString() == "Sensor" &&
+                        components.ElementAt(1).ToString() == ".")
+                    {
+                        Debug.WriteLine("sensor " + components.ElementAt(2).ToString() + " found");
+                    }
+                }
             }
         }
 
