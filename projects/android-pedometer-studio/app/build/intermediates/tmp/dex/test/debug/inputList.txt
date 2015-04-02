@@ -1,0 +1,7 @@
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\classes\test\debug
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\classes-d216559e7263849cbb6e4aae499f30e538f85450.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\dexmaker-mockito-1.2-d486c091a66dddcbc2820177da63a9781b160b3b.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\objenesis-1.0-7cfdc94ec29e3f095c37432073ded60fb626dd18.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\hamcrest-core-1.1-67f68c9565ce5f7a3691a990f4418c11ded45164.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\dexmaker-1.2-e314062cc959a2c38fc0e8f7e3749ac6732decab.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\mockito-core-1.9.5-c544a410badf3a137d3e3a085187ef8c3993d8d2.jar

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\exploded-aar\android-pedometer-studio\sensee-data-replayer\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1bf4b63e8176c1a2a03f06707e4546a832b21833">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\classes-d216559e7263849cbb6e4aae499f30e538f85450.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\.gradle\caches\modules-2\files-2.1\com.google.dexmaker\dexmaker-mockito\1.2\b99884a4c6ef6335ba376f79aa79632b2421c17c\dexmaker-mockito-1.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b99884a4c6ef6335ba376f79aa79632b2421c17c">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\dexmaker-mockito-1.2-d486c091a66dddcbc2820177da63a9781b160b3b.jar" />
+    </item>
+    <item
+        jar="C:\Program Files (x86)\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-64e830d146342acfc335bdcbbf1416619dfd86a2.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\.gradle\caches\modules-2\files-2.1\com.google.dexmaker\dexmaker\1.2\4d5045fefa6d286c5ddf733e321fe6e5e632efb6\dexmaker-1.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4d5045fefa6d286c5ddf733e321fe6e5e632efb6">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\dexmaker-1.2-e314062cc959a2c38fc0e8f7e3749ac6732decab.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\debug\classes-5d3d0000b90bf249c43f5ecf535d18f6d3c40b8e.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-core\1.9.5\c3264abeea62c4d2f367e21484fbb40c7e256393\mockito-core-1.9.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c3264abeea62c4d2f367e21484fbb40c7e256393">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\mockito-core-1.9.5-c544a410badf3a137d3e3a085187ef8c3993d8d2.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-d0474cd4933329b0460cdf607113d5a4bd2f7790.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\.gradle\caches\modules-2\files-2.1\org.objenesis\objenesis\1.0\9b473564e792c2bdf1449da1f0b1b5bff9805704\objenesis-1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9b473564e792c2bdf1449da1f0b1b5bff9805704">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\objenesis-1.0-7cfdc94ec29e3f095c37432073ded60fb626dd18.jar" />
+    </item>
+    <item
+        jar="C:\Users\kosta\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.1\860340562250678d1a344907ac75754e259cdb14\hamcrest-core-1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="860340562250678d1a344907ac75754e259cdb14">
+        <dex dex="C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\test\debug\hamcrest-core-1.1-67f68c9565ce5f7a3691a990f4418c11ded45164.jar" />
+    </item>
+
+</items>

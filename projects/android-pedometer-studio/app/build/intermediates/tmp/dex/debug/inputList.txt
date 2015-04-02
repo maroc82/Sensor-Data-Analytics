@@ -1,0 +1,4 @@
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\classes\debug
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-64e830d146342acfc335bdcbbf1416619dfd86a2.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-d0474cd4933329b0460cdf607113d5a4bd2f7790.jar
+C:\Users\kosta\Dropbox\SenSeeTesting\ExampleApps\android-pedometer-studio\app\build\intermediates\pre-dexed\debug\classes-5d3d0000b90bf249c43f5ecf535d18f6d3c40b8e.jar

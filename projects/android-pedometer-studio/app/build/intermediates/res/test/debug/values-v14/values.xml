@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/kosta/Dropbox/SenSeeTesting/ExampleApps/android-pedometer-studio/app/build/intermediates/exploded-aar/android-pedometer-studio/sensee-data-replayer/unspecified/res/values-v14/values.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+</resources>

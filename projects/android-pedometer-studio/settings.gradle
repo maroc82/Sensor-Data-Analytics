@@ -1,0 +1,4 @@
+include ':app',':sensee-data-replayer'
+
+
+project(':sensee-data-replayer').projectDir = file("C:\\Users\\kosta\\Documents\\SenSee\\SenSeeDataReplayer.Library\\app")

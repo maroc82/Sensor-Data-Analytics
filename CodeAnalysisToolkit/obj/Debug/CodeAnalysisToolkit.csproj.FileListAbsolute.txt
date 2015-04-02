@@ -37,3 +37,16 @@ C:\School\Grad School (Comp Sci)\Thesis\CodeAnalysisToolkit\CodeAnalysisToolkit\
 C:\School\Grad School (Comp Sci)\Thesis\CodeAnalysisToolkit\CodeAnalysisToolkit\bin\Debug\ABB.SrcML.Data.xml
 C:\School\Grad School (Comp Sci)\Thesis\CodeAnalysisToolkit\CodeAnalysisToolkit\bin\Debug\log4net.xml
 C:\School\Grad School (Comp Sci)\Thesis\CodeAnalysisToolkit\CodeAnalysisToolkit\bin\Debug\nunit.framework.xml
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\CodeAnalysisToolkit.dll
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\CodeAnalysisToolkit.pdb
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\ABB.SrcML.Data.dll
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\ABB.SrcML.dll
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\log4net.dll
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\nunit.framework.dll
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\ABB.SrcML.xml
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\ABB.SrcML.Data.xml
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\log4net.xml
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\nunit.framework.xml
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\obj\Debug\CodeAnalysisToolkit.csprojResolveAssemblyReference.cache
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\obj\Debug\CodeAnalysisToolkit.dll
+C:\Users\kosta\Documents\Sensor-Data-Analytics\CodeAnalysisToolkit\obj\Debug\CodeAnalysisToolkit.pdb
