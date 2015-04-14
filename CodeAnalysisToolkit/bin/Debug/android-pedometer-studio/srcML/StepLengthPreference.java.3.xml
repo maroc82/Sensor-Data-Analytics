@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="Java" filename="C:\School\Grad School (Comp Sci)\Thesis\android-pedometer-studio\app\src\main\java\name\bagi\levente\pedometer\preferences\StepLengthPreference.java" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ *  Pedometer - Android App
+ *  Copyright (C) 2009 Levente Bagi
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */</comment>
+
+<package pos:line="19" pos:column="1">package <name><name pos:line="19" pos:column="9">name</name><op:operator pos:line="19" pos:column="13">.</op:operator><name pos:line="19" pos:column="14">bagi</name><op:operator pos:line="19" pos:column="18">.</op:operator><name pos:line="19" pos:column="19">levente</name><op:operator pos:line="19" pos:column="26">.</op:operator><name pos:line="19" pos:column="27">pedometer</name><op:operator pos:line="19" pos:column="36">.</op:operator><name pos:line="19" pos:column="37">preferences</name></name>;</package>
+
+<import pos:line="21" pos:column="1">import <name><name pos:line="21" pos:column="8">name</name><op:operator pos:line="21" pos:column="12">.</op:operator><name pos:line="21" pos:column="13">bagi</name><op:operator pos:line="21" pos:column="17">.</op:operator><name pos:line="21" pos:column="18">levente</name><op:operator pos:line="21" pos:column="25">.</op:operator><name pos:line="21" pos:column="26">pedometer</name><op:operator pos:line="21" pos:column="35">.</op:operator><name pos:line="21" pos:column="36">R</name></name>;</import>
+<import pos:line="22" pos:column="1">import <name><name pos:line="22" pos:column="8">android</name><op:operator pos:line="22" pos:column="15">.</op:operator><name pos:line="22" pos:column="16">content</name><op:operator pos:line="22" pos:column="23">.</op:operator><name pos:line="22" pos:column="24">Context</name></name>;</import>
+<import pos:line="23" pos:column="1">import <name><name pos:line="23" pos:column="8">android</name><op:operator pos:line="23" pos:column="15">.</op:operator><name pos:line="23" pos:column="16">preference</name><op:operator pos:line="23" pos:column="26">.</op:operator><name pos:line="23" pos:column="27">EditTextPreference</name></name>;</import>
+<import pos:line="24" pos:column="1">import <name><name pos:line="24" pos:column="8">android</name><op:operator pos:line="24" pos:column="15">.</op:operator><name pos:line="24" pos:column="16">util</name><op:operator pos:line="24" pos:column="20">.</op:operator><name pos:line="24" pos:column="21">AttributeSet</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:line="26" pos:column="1">/**
+ * An {@link EditTextPreference} that only allows float values.
+ * @author Levente Bagi
+ */</comment>
+<class><specifier pos:line="30" pos:column="1">public</specifier> class <name pos:line="30" pos:column="14">StepLengthPreference</name> <super><extends pos:line="30" pos:column="35">extends <name pos:line="30" pos:column="43">EditMeasurementPreference</name></extends></super> <block pos:line="30" pos:column="69">{
+
+	<constructor><specifier pos:line="32" pos:column="9">public</specifier> <name pos:line="32" pos:column="16">StepLengthPreference</name><parameter_list pos:line="32" pos:column="36">(<param><decl><type><name pos:line="32" pos:column="37">Context</name></type> <name pos:line="32" pos:column="45">context</name></decl></param>)</parameter_list> <block pos:line="32" pos:column="54">{
+		<expr_stmt><expr><call><name pos:line="33" pos:column="17">super</name><argument_list pos:line="33" pos:column="22">(<argument><expr><name pos:line="33" pos:column="23">context</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></constructor>
+	<constructor><specifier pos:line="35" pos:column="9">public</specifier> <name pos:line="35" pos:column="16">StepLengthPreference</name><parameter_list pos:line="35" pos:column="36">(<param><decl><type><name pos:line="35" pos:column="37">Context</name></type> <name pos:line="35" pos:column="45">context</name></decl></param>, <param><decl><type><name pos:line="35" pos:column="54">AttributeSet</name></type> <name pos:line="35" pos:column="67">attr</name></decl></param>)</parameter_list> <block pos:line="35" pos:column="73">{
+		<expr_stmt><expr><call><name pos:line="36" pos:column="17">super</name><argument_list pos:line="36" pos:column="22">(<argument><expr><name pos:line="36" pos:column="23">context</name></expr></argument>, <argument><expr><name pos:line="36" pos:column="32">attr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></constructor>
+	<constructor><specifier pos:line="38" pos:column="9">public</specifier> <name pos:line="38" pos:column="16">StepLengthPreference</name><parameter_list pos:line="38" pos:column="36">(<param><decl><type><name pos:line="38" pos:column="37">Context</name></type> <name pos:line="38" pos:column="45">context</name></decl></param>, <param><decl><type><name pos:line="38" pos:column="54">AttributeSet</name></type> <name pos:line="38" pos:column="67">attr</name></decl></param>, <param><decl><type><name pos:line="38" pos:column="73">int</name></type> <name pos:line="38" pos:column="77">defStyle</name></decl></param>)</parameter_list> <block pos:line="38" pos:column="87">{
+		<expr_stmt><expr><call><name pos:line="39" pos:column="17">super</name><argument_list pos:line="39" pos:column="22">(<argument><expr><name pos:line="39" pos:column="23">context</name></expr></argument>, <argument><expr><name pos:line="39" pos:column="32">attr</name></expr></argument>, <argument><expr><name pos:line="39" pos:column="38">defStyle</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}</block></constructor>
+
+	<function><type><specifier pos:line="42" pos:column="9">protected</specifier> <name pos:line="42" pos:column="19">void</name></type> <name pos:line="42" pos:column="24">initPreferenceDetails</name><parameter_list pos:line="42" pos:column="45">()</parameter_list> <block pos:line="42" pos:column="48">{
+		<expr_stmt><expr><name pos:line="43" pos:column="17">mTitleResource</name> <op:operator pos:line="43" pos:column="32">=</op:operator> <name><name pos:line="43" pos:column="34">R</name><op:operator pos:line="43" pos:column="35">.</op:operator><name pos:line="43" pos:column="36">string</name><op:operator pos:line="43" pos:column="42">.</op:operator><name pos:line="43" pos:column="43">step_length_setting_title</name></name></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="44" pos:column="17">mMetricUnitsResource</name> <op:operator pos:line="44" pos:column="38">=</op:operator> <name><name pos:line="44" pos:column="40">R</name><op:operator pos:line="44" pos:column="41">.</op:operator><name pos:line="44" pos:column="42">string</name><op:operator pos:line="44" pos:column="48">.</op:operator><name pos:line="44" pos:column="49">centimeters</name></name></expr>;</expr_stmt>
+		<expr_stmt><expr><name pos:line="45" pos:column="17">mImperialUnitsResource</name> <op:operator pos:line="45" pos:column="40">=</op:operator> <name><name pos:line="45" pos:column="42">R</name><op:operator pos:line="45" pos:column="43">.</op:operator><name pos:line="45" pos:column="44">string</name><op:operator pos:line="45" pos:column="50">.</op:operator><name pos:line="45" pos:column="51">inches</name></name></expr>;</expr_stmt>
+	}</block></function>
+}</block></class>
+
+</unit>

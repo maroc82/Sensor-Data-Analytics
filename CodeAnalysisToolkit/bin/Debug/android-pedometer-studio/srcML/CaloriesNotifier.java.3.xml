@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.sdml.info/srcML/src" xmlns:lit="http://www.sdml.info/srcML/literal" xmlns:op="http://www.sdml.info/srcML/operator" xmlns:type="http://www.sdml.info/srcML/modifier" xmlns:pos="http://www.sdml.info/srcML/position" language="Java" filename="C:\School\Grad School (Comp Sci)\Thesis\android-pedometer-studio\app\src\main\java\name\bagi\levente\pedometer\CaloriesNotifier.java" pos:tabs="8"><comment type="block" pos:line="1" pos:column="1">/*
+ *  Pedometer - Android App
+ *  Copyright (C) 2009 Levente Bagi
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */</comment>
+
+<package pos:line="19" pos:column="1">package <name><name pos:line="19" pos:column="9">name</name><op:operator pos:line="19" pos:column="13">.</op:operator><name pos:line="19" pos:column="14">bagi</name><op:operator pos:line="19" pos:column="18">.</op:operator><name pos:line="19" pos:column="19">levente</name><op:operator pos:line="19" pos:column="26">.</op:operator><name pos:line="19" pos:column="27">pedometer</name></name>;</package>
+
+
+<comment type="block" format="javadoc" pos:line="22" pos:column="1">/**
+ * Calculates and displays the approximate calories.  
+ * @author Levente Bagi
+ */</comment>
+<class><specifier pos:line="26" pos:column="1">public</specifier> class <name pos:line="26" pos:column="14">CaloriesNotifier</name> <super><implements pos:line="26" pos:column="31">implements <name pos:line="26" pos:column="42">StepListener</name>, <name><name pos:line="26" pos:column="56">SpeakingTimer</name><op:operator pos:line="26" pos:column="69">.</op:operator><name pos:line="26" pos:column="70">Listener</name></name></implements></super> <block pos:line="26" pos:column="79">{
+
+    <class type="interface"><specifier pos:line="28" pos:column="5">public</specifier> interface <name pos:line="28" pos:column="22">Listener</name> <block pos:line="28" pos:column="31">{
+        <function_decl><type><specifier pos:line="29" pos:column="9">public</specifier> <name pos:line="29" pos:column="16">void</name></type> <name pos:line="29" pos:column="21">valueChanged</name><parameter_list pos:line="29" pos:column="33">(<param><decl><type><name pos:line="29" pos:column="34">float</name></type> <name pos:line="29" pos:column="40">value</name></decl></param>)</parameter_list>;</function_decl>
+        <function_decl><type><specifier pos:line="30" pos:column="9">public</specifier> <name pos:line="30" pos:column="16">void</name></type> <name pos:line="30" pos:column="21">passValue</name><parameter_list pos:line="30" pos:column="30">()</parameter_list>;</function_decl>
+    }</block></class>
+    <decl_stmt><decl><type><specifier pos:line="32" pos:column="5">private</specifier> <name pos:line="32" pos:column="13">Listener</name></type> <name pos:line="32" pos:column="22">mListener</name></decl>;</decl_stmt>
+    
+    <decl_stmt><decl><type><specifier pos:line="34" pos:column="5">private</specifier> <specifier pos:line="34" pos:column="13">static</specifier> <name pos:line="34" pos:column="20">double</name></type> <name pos:line="34" pos:column="27">METRIC_RUNNING_FACTOR</name> <init pos:line="34" pos:column="49">= <expr><lit:literal type="number" pos:line="34" pos:column="51">1.02784823</lit:literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier pos:line="35" pos:column="5">private</specifier> <specifier pos:line="35" pos:column="13">static</specifier> <name pos:line="35" pos:column="20">double</name></type> <name pos:line="35" pos:column="27">IMPERIAL_RUNNING_FACTOR</name> <init pos:line="35" pos:column="51">= <expr><lit:literal type="number" pos:line="35" pos:column="53">0.75031498</lit:literal></expr></init></decl>;</decl_stmt>
+
+    <decl_stmt><decl><type><specifier pos:line="37" pos:column="5">private</specifier> <specifier pos:line="37" pos:column="13">static</specifier> <name pos:line="37" pos:column="20">double</name></type> <name pos:line="37" pos:column="27">METRIC_WALKING_FACTOR</name> <init pos:line="37" pos:column="49">= <expr><lit:literal type="number" pos:line="37" pos:column="51">0.708</lit:literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier pos:line="38" pos:column="5">private</specifier> <specifier pos:line="38" pos:column="13">static</specifier> <name pos:line="38" pos:column="20">double</name></type> <name pos:line="38" pos:column="27">IMPERIAL_WALKING_FACTOR</name> <init pos:line="38" pos:column="51">= <expr><lit:literal type="number" pos:line="38" pos:column="53">0.517</lit:literal></expr></init></decl>;</decl_stmt>
+
+    <decl_stmt><decl><type><specifier pos:line="40" pos:column="5">private</specifier> <name pos:line="40" pos:column="13">double</name></type> <name pos:line="40" pos:column="20">mCalories</name> <init pos:line="40" pos:column="30">= <expr><lit:literal type="number" pos:line="40" pos:column="32">0</lit:literal></expr></init></decl>;</decl_stmt>
+    
+    <decl_stmt><decl><type><name pos:line="42" pos:column="5">PedometerSettings</name></type> <name pos:line="42" pos:column="23">mSettings</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="43" pos:column="5">Utils</name></type> <name pos:line="43" pos:column="11">mUtils</name></decl>;</decl_stmt>
+    
+    <decl_stmt><decl><type><name pos:line="45" pos:column="5">boolean</name></type> <name pos:line="45" pos:column="13">mIsMetric</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="46" pos:column="5">boolean</name></type> <name pos:line="46" pos:column="13">mIsRunning</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="47" pos:column="5">float</name></type> <name pos:line="47" pos:column="11">mStepLength</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name pos:line="48" pos:column="5">float</name></type> <name pos:line="48" pos:column="11">mBodyWeight</name></decl>;</decl_stmt>
+
+    <constructor><specifier pos:line="50" pos:column="5">public</specifier> <name pos:line="50" pos:column="12">CaloriesNotifier</name><parameter_list pos:line="50" pos:column="28">(<param><decl><type><name pos:line="50" pos:column="29">Listener</name></type> <name pos:line="50" pos:column="38">listener</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="48">PedometerSettings</name></type> <name pos:line="50" pos:column="66">settings</name></decl></param>, <param><decl><type><name pos:line="50" pos:column="76">Utils</name></type> <name pos:line="50" pos:column="82">utils</name></decl></param>)</parameter_list> <block pos:line="50" pos:column="89">{
+        <expr_stmt><expr><name pos:line="51" pos:column="9">mListener</name> <op:operator pos:line="51" pos:column="19">=</op:operator> <name pos:line="51" pos:column="21">listener</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="52" pos:column="9">mUtils</name> <op:operator pos:line="52" pos:column="16">=</op:operator> <name pos:line="52" pos:column="18">utils</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="53" pos:column="9">mSettings</name> <op:operator pos:line="53" pos:column="19">=</op:operator> <name pos:line="53" pos:column="21">settings</name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name pos:line="54" pos:column="9">reloadSettings</name><argument_list pos:line="54" pos:column="23">()</argument_list></call></expr>;</expr_stmt>
+    }</block></constructor>
+    <function><type><specifier pos:line="56" pos:column="5">public</specifier> <name pos:line="56" pos:column="12">void</name></type> <name pos:line="56" pos:column="17">setCalories</name><parameter_list pos:line="56" pos:column="28">(<param><decl><type><name pos:line="56" pos:column="29">float</name></type> <name pos:line="56" pos:column="35">calories</name></decl></param>)</parameter_list> <block pos:line="56" pos:column="45">{
+        <expr_stmt><expr><name pos:line="57" pos:column="9">mCalories</name> <op:operator pos:line="57" pos:column="19">=</op:operator> <name pos:line="57" pos:column="21">calories</name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name pos:line="58" pos:column="9">notifyListener</name><argument_list pos:line="58" pos:column="23">()</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+    <function><type><specifier pos:line="60" pos:column="5">public</specifier> <name pos:line="60" pos:column="12">void</name></type> <name pos:line="60" pos:column="17">reloadSettings</name><parameter_list pos:line="60" pos:column="31">()</parameter_list> <block pos:line="60" pos:column="34">{
+        <expr_stmt><expr><name pos:line="61" pos:column="9">mIsMetric</name> <op:operator pos:line="61" pos:column="19">=</op:operator> <call><name><name pos:line="61" pos:column="21">mSettings</name><op:operator pos:line="61" pos:column="30">.</op:operator><name pos:line="61" pos:column="31">isMetric</name></name><argument_list pos:line="61" pos:column="39">()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="62" pos:column="9">mIsRunning</name> <op:operator pos:line="62" pos:column="20">=</op:operator> <call><name><name pos:line="62" pos:column="22">mSettings</name><op:operator pos:line="62" pos:column="31">.</op:operator><name pos:line="62" pos:column="32">isRunning</name></name><argument_list pos:line="62" pos:column="41">()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="63" pos:column="9">mStepLength</name> <op:operator pos:line="63" pos:column="21">=</op:operator> <call><name><name pos:line="63" pos:column="23">mSettings</name><op:operator pos:line="63" pos:column="32">.</op:operator><name pos:line="63" pos:column="33">getStepLength</name></name><argument_list pos:line="63" pos:column="46">()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name pos:line="64" pos:column="9">mBodyWeight</name> <op:operator pos:line="64" pos:column="21">=</op:operator> <call><name><name pos:line="64" pos:column="23">mSettings</name><op:operator pos:line="64" pos:column="32">.</op:operator><name pos:line="64" pos:column="33">getBodyWeight</name></name><argument_list pos:line="64" pos:column="46">()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name pos:line="65" pos:column="9">notifyListener</name><argument_list pos:line="65" pos:column="23">()</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+    <function><type><specifier pos:line="67" pos:column="5">public</specifier> <name pos:line="67" pos:column="12">void</name></type> <name pos:line="67" pos:column="17">resetValues</name><parameter_list pos:line="67" pos:column="28">()</parameter_list> <block pos:line="67" pos:column="31">{
+        <expr_stmt><expr><name pos:line="68" pos:column="9">mCalories</name> <op:operator pos:line="68" pos:column="19">=</op:operator> <lit:literal type="number" pos:line="68" pos:column="21">0</lit:literal></expr>;</expr_stmt>
+    }</block></function>
+    
+    <function><type><specifier pos:line="71" pos:column="5">public</specifier> <name pos:line="71" pos:column="12">void</name></type> <name pos:line="71" pos:column="17">isMetric</name><parameter_list pos:line="71" pos:column="25">(<param><decl><type><name pos:line="71" pos:column="26">boolean</name></type> <name pos:line="71" pos:column="34">isMetric</name></decl></param>)</parameter_list> <block pos:line="71" pos:column="44">{
+        <expr_stmt><expr><name pos:line="72" pos:column="9">mIsMetric</name> <op:operator pos:line="72" pos:column="19">=</op:operator> <name pos:line="72" pos:column="21">isMetric</name></expr>;</expr_stmt>
+    }</block></function>
+    <function><type><specifier pos:line="74" pos:column="5">public</specifier> <name pos:line="74" pos:column="12">void</name></type> <name pos:line="74" pos:column="17">setStepLength</name><parameter_list pos:line="74" pos:column="30">(<param><decl><type><name pos:line="74" pos:column="31">float</name></type> <name pos:line="74" pos:column="37">stepLength</name></decl></param>)</parameter_list> <block pos:line="74" pos:column="49">{
+        <expr_stmt><expr><name pos:line="75" pos:column="9">mStepLength</name> <op:operator pos:line="75" pos:column="21">=</op:operator> <name pos:line="75" pos:column="23">stepLength</name></expr>;</expr_stmt>
+    }</block></function>
+    
+    <function><type><specifier pos:line="78" pos:column="5">public</specifier> <name pos:line="78" pos:column="12">void</name></type> <name pos:line="78" pos:column="17">onStep</name><parameter_list pos:line="78" pos:column="23">()</parameter_list> <block pos:line="78" pos:column="26">{
+        
+        <if pos:line="80" pos:column="9">if <condition pos:line="80" pos:column="12">(<expr><name pos:line="80" pos:column="13">mIsMetric</name></expr>)</condition><then pos:line="80" pos:column="23"> <block pos:line="80" pos:column="24">{
+            <expr_stmt><expr><name pos:line="81" pos:column="13">mCalories</name> <op:operator pos:line="81" pos:column="23">+=</op:operator> 
+                <op:operator pos:line="82" pos:column="17">(</op:operator><name pos:line="82" pos:column="18">mBodyWeight</name> <op:operator pos:line="82" pos:column="30">*</op:operator> <op:operator pos:line="82" pos:column="32">(</op:operator><name pos:line="82" pos:column="33">mIsRunning</name> <op:operator pos:line="82" pos:column="44">?</op:operator> <name pos:line="82" pos:column="46">METRIC_RUNNING_FACTOR</name> <op:operator pos:line="82" pos:column="68">:</op:operator> <name pos:line="82" pos:column="70">METRIC_WALKING_FACTOR</name><op:operator pos:line="82" pos:column="91">)</op:operator><op:operator pos:line="82" pos:column="92">)</op:operator>
+                <comment type="line" pos:line="83" pos:column="17">// Distance:</comment>
+                <op:operator pos:line="84" pos:column="17">*</op:operator> <name pos:line="84" pos:column="19">mStepLength</name> <comment type="line" pos:line="84" pos:column="31">// centimeters</comment>
+                <op:operator pos:line="85" pos:column="17">/</op:operator> <lit:literal type="number" pos:line="85" pos:column="19">100000.0</lit:literal></expr>;</expr_stmt> <comment type="line" pos:line="85" pos:column="29">// centimeters/kilometer</comment>
+        }</block></then>
+        <else pos:line="87" pos:column="9">else <block pos:line="87" pos:column="14">{
+            <expr_stmt><expr><name pos:line="88" pos:column="13">mCalories</name> <op:operator pos:line="88" pos:column="23">+=</op:operator> 
+                <op:operator pos:line="89" pos:column="17">(</op:operator><name pos:line="89" pos:column="18">mBodyWeight</name> <op:operator pos:line="89" pos:column="30">*</op:operator> <op:operator pos:line="89" pos:column="32">(</op:operator><name pos:line="89" pos:column="33">mIsRunning</name> <op:operator pos:line="89" pos:column="44">?</op:operator> <name pos:line="89" pos:column="46">IMPERIAL_RUNNING_FACTOR</name> <op:operator pos:line="89" pos:column="70">:</op:operator> <name pos:line="89" pos:column="72">IMPERIAL_WALKING_FACTOR</name><op:operator pos:line="89" pos:column="95">)</op:operator><op:operator pos:line="89" pos:column="96">)</op:operator>
+                <comment type="line" pos:line="90" pos:column="17">// Distance:</comment>
+                <op:operator pos:line="91" pos:column="17">*</op:operator> <name pos:line="91" pos:column="19">mStepLength</name> <comment type="line" pos:line="91" pos:column="31">// inches</comment>
+                <op:operator pos:line="92" pos:column="17">/</op:operator> <lit:literal type="number" pos:line="92" pos:column="19">63360.0</lit:literal></expr>;</expr_stmt> <comment type="line" pos:line="92" pos:column="28">// inches/mile            </comment>
+        }</block></else></if>
+        
+        <expr_stmt><expr><call><name pos:line="95" pos:column="9">notifyListener</name><argument_list pos:line="95" pos:column="23">()</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+    
+    <function><type><specifier pos:line="98" pos:column="5">private</specifier> <name pos:line="98" pos:column="13">void</name></type> <name pos:line="98" pos:column="18">notifyListener</name><parameter_list pos:line="98" pos:column="32">()</parameter_list> <block pos:line="98" pos:column="35">{
+        <expr_stmt><expr><call><name><name pos:line="99" pos:column="9">mListener</name><op:operator pos:line="99" pos:column="18">.</op:operator><name pos:line="99" pos:column="19">valueChanged</name></name><argument_list pos:line="99" pos:column="31">(<argument><expr><op:operator pos:line="99" pos:column="32">(</op:operator><name pos:line="99" pos:column="33">float</name><op:operator pos:line="99" pos:column="38">)</op:operator><name pos:line="99" pos:column="39">mCalories</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }</block></function>
+    
+    <function><type><specifier pos:line="102" pos:column="5">public</specifier> <name pos:line="102" pos:column="12">void</name></type> <name pos:line="102" pos:column="17">passValue</name><parameter_list pos:line="102" pos:column="26">()</parameter_list> <block pos:line="102" pos:column="29">{
+        
+    }</block></function>
+    
+    <function><type><specifier pos:line="106" pos:column="5">public</specifier> <name pos:line="106" pos:column="12">void</name></type> <name pos:line="106" pos:column="17">speak</name><parameter_list pos:line="106" pos:column="22">()</parameter_list> <block pos:line="106" pos:column="25">{
+        <if pos:line="107" pos:column="9">if <condition pos:line="107" pos:column="12">(<expr><call><name><name pos:line="107" pos:column="13">mSettings</name><op:operator pos:line="107" pos:column="22">.</op:operator><name pos:line="107" pos:column="23">shouldTellCalories</name></name><argument_list pos:line="107" pos:column="41">()</argument_list></call></expr>)</condition><then pos:line="107" pos:column="44"> <block pos:line="107" pos:column="45">{
+            <if pos:line="108" pos:column="13">if <condition pos:line="108" pos:column="16">(<expr><name pos:line="108" pos:column="17">mCalories</name> <op:operator pos:line="108" pos:column="27">&gt;</op:operator> <lit:literal type="number" pos:line="108" pos:column="29">0</lit:literal></expr>)</condition><then pos:line="108" pos:column="31"> <block pos:line="108" pos:column="32">{
+                <expr_stmt><expr><call><name><name pos:line="109" pos:column="17">mUtils</name><op:operator pos:line="109" pos:column="23">.</op:operator><name pos:line="109" pos:column="24">say</name></name><argument_list pos:line="109" pos:column="27">(<argument><expr><lit:literal type="string" pos:line="109" pos:column="28">""</lit:literal> <op:operator pos:line="109" pos:column="31">+</op:operator> <op:operator pos:line="109" pos:column="33">(</op:operator><name pos:line="109" pos:column="34">int</name><op:operator pos:line="109" pos:column="37">)</op:operator><name pos:line="109" pos:column="38">mCalories</name> <op:operator pos:line="109" pos:column="48">+</op:operator> <lit:literal type="string" pos:line="109" pos:column="50">" calories burned"</lit:literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            }</block></then></if>
+        }</block></then></if>
+        
+    }</block></function>
+    
+
+}</block></class>
+
+</unit>

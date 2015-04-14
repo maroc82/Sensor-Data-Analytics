@@ -9,30 +9,84 @@ using System.Threading.Tasks;
 using ABB.SrcML;
 using ABB.SrcML.Data;
 using NUnit.Framework;
+using System.Collections;
 
 namespace CodeAnalysisToolkit
 {
     [TestFixture]
     public class SimpleAnalyticsCalculator_Thesis
     {
+        //------Test Case Class------------------------------------------------------------------------
+
         [TestCase]
         public void CalculateSimpleProjectStats()
-        {         
-            var dataProject = new DataProject<CompleteWorkingSet>("android-pedometer-studio",
-                Path.GetFullPath("..//..//..//projects//android-pedometer-studio"),
-                "..//..//..//SrcML");           
+        {
+            int NumOfApps = 30;
 
-            Debug.WriteLine("Parsing android-pedometer-studio....");
+            //========= Get sub directories Attempt 1 ================================
 
-            dataProject.UpdateAsync().Wait();
+            //Directory.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps");
+            //String[] allfiles = System.IO.Directory.GetFiles(@"C:\School\Grad School (Comp Sci)\Thesis\Apps", "*.*", System.IO.SearchOption.AllDirectories);
+            //Debug.WriteLine(allfiles);
 
-            NamespaceDefinition globalNamespace;
-            Assert.That(dataProject.WorkingSet.TryObtainReadLock(5000, out globalNamespace));
 
-            DisplaySensorTypes(globalNamespace);
-            //DisplayWhetherAppIsUnitTested();           
-            DisplayCallsToOnSensorChanged(globalNamespace);            
+            //========= Get sub directories Attempt 2 ================================
+
+            //Debug.WriteLine(Directory.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps"));
+
+
+
+            //========= Get sub directories Attempt 3 ================================-
+
+            //var di = new DirectoryInfo("..//..//..//SrcML");
+            //var subDirectories = di.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps\accelerometer-app-master");
+            //Debug.WriteLine(subDirectories);
+
+
+
+
+            //-----------Current Working Method to Get sub directories -------------------------
+
+            // Get list of files in the specific directory.
+            string[] TopDirectories = Directory.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps\",
+                "*.*",
+                SearchOption.TopDirectoryOnly);
+
+            // Display all the files.
+            //for (int i = 0; i <= NumOfApps; i++)
+            //{
+            //    Console.WriteLine(TopDirectories[i]);
+            //}
+
+            foreach (string file in TopDirectories)
+            {
+                Console.WriteLine(file);
+            }
+
+            //----------End of Print Sub directory Method----------------------------------------
+
+
+            for (int i = 0; i <= NumOfApps; i++)
+            {
+                var dataProject = new DataProject<CompleteWorkingSet>("Android Apps",
+                    Path.GetFullPath(TopDirectories[i]),
+                    "..//..//..//SrcML");
+
+                Debug.WriteLine("Parsing android-pedometer-studio....");
+
+                dataProject.UpdateAsync().Wait();
+
+                NamespaceDefinition globalNamespace;
+                Assert.That(dataProject.WorkingSet.TryObtainReadLock(5000, out globalNamespace));
+
+                DisplaySensorTypes(globalNamespace);
+                //DisplayWhetherAppIsUnitTested();           
+                DisplayCallsToOnSensorChanged(globalNamespace);
+            }
         }
+
+
+        //-------Display Sensor Type Class--------------------------------------------------------------
 
         private void DisplaySensorTypes(NamespaceDefinition globalNamespace)
         {
@@ -58,10 +112,16 @@ namespace CodeAnalysisToolkit
             }
         }
 
+
         private void DisplayWhetherAppIsUnitTested()
         {
             throw new NotImplementedException();
         }
+
+
+
+
+        //-------Display Calls to OnSensorChanged Class------------------------------------------------
 
         private void DisplayCallsToOnSensorChanged(NamespaceDefinition globalNamespace)
         {
