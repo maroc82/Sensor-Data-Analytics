@@ -58,22 +58,25 @@ namespace CodeAnalysisToolkit
             //    Console.WriteLine(TopDirectories[i]);
             //}
 
-            foreach (string file in TopDirectories)
-            {
-                Console.WriteLine(file);
-            }
+            //Print out all Top Sub Directoies for Specified Path 
+            //foreach (string file in TopDirectories)
+            //{
+            //    Console.WriteLine(file);
+            //}
 
             //----------End of Print Sub directory Method----------------------------------------
 
 
-            for (int i = 0; i <= NumOfApps; i++)
+            for (int i = 0; i < NumOfApps; i++)
             {
-                var dataProject = new DataProject<CompleteWorkingSet>("Android Apps",
+                var dataProject = new DataProject<CompleteWorkingSet>(TopDirectories[i],
                     Path.GetFullPath(TopDirectories[i]),
                     "..//..//..//SrcML");
 
-                Debug.WriteLine("Parsing android-pedometer-studio....");
-
+                Console.WriteLine();
+                Debug.WriteLine("#############################################");
+                Debug.WriteLine("Parsing " + TopDirectories[i]);
+                            
                 dataProject.UpdateAsync().Wait();
 
                 NamespaceDefinition globalNamespace;
@@ -129,31 +132,45 @@ namespace CodeAnalysisToolkit
                 where method.Name == "onSensorChanged"
                 select method;
 
-            Debug.WriteLine("#####");
-            Debug.WriteLine("#####");
-            Debug.WriteLine("----- ");
-            Debug.WriteLine("\r\n");
-            Debug.WriteLine(senChangedMethods.Count() + " Implementations of " + senChangedMethods.First().GetFullName());
-            Debug.WriteLine("----- ");
-
-            int n = senChangedMethods.Count();
-            for (int i = 0; i < n; i++)
+            if (senChangedMethods.Count() == 0)
             {
-                var senChangedMethod = senChangedMethods.ElementAt(i);
-                Debug.WriteLine("Implementations of onSensorChaged # " + (i + 1) + ": " + senChangedMethod.GetFullName());
-
-                //"GetCallsToSelf" returns the number of times the number is called
-                var callsToSenChanged = senChangedMethod.GetCallsToSelf();
-                for (int j = 0; j < callsToSenChanged.Count(); j++)
-                {
-                    var callerMethod = callsToSenChanged.ElementAt(j).ParentStatement.GetAncestorsAndSelf<MethodDefinition>();
-                    if (callerMethod.Any())
-                    {
-                        Debug.WriteLine("   Called by --> " + callerMethod.ElementAt(0).GetFullName());
-                    }
-                }
-                Debug.WriteLine("----- ");
+                Debug.WriteLine("This File Does not contain any Sensor Change Mehtods");
             }
+
+            else
+            {
+
+                Debug.WriteLine("----- ");
+                Debug.WriteLine("\r\n");
+                Debug.WriteLine(senChangedMethods.Count() + " Implementations of " + senChangedMethods.First().GetFullName());
+                Debug.WriteLine("----- ");
+
+                int n = senChangedMethods.Count();
+                for (int i = 0; i < n; i++)
+                {
+                    var senChangedMethod = senChangedMethods.ElementAt(i);
+                    Debug.WriteLine("Implementations of onSensorChaged # " + (i + 1) + ": " + senChangedMethod.GetFullName());
+
+                    //"GetCallsToSelf" returns the number of times the number is called
+                    var callsToSenChanged = senChangedMethod.GetCallsToSelf();
+                    for (int j = 0; j < callsToSenChanged.Count(); j++)
+                    {
+                        var callerMethod = callsToSenChanged.ElementAt(j).ParentStatement.GetAncestorsAndSelf<MethodDefinition>();
+                        if (callerMethod.Any())
+                        {
+                            Debug.WriteLine("   Called by --> " + callerMethod.ElementAt(0).GetFullName());
+                        }
+                    }
+                    //Debug.WriteLine("----- ");
+                }
+            }  //End of Else does not Equal 0 Check
         }
+
+
+
+        //-------Display Test Class--------------------------------------------------------------
+
+
+
     }
 }
