@@ -21,7 +21,7 @@ namespace CodeAnalysisToolkit
         [TestCase]
         public void CalculateSimpleProjectStats()
         {
-            int NumOfApps = 30;
+            int NumOfApps = 5;
 
             //========= Get sub directories Attempt 1 ================================
 
@@ -85,6 +85,7 @@ namespace CodeAnalysisToolkit
                 DisplaySensorTypes(globalNamespace);
                 //DisplayWhetherAppIsUnitTested();           
                 DisplayCallsToOnSensorChanged(globalNamespace);
+                GetTypeForKeyword(globalNamespace);
             }
         }
 
@@ -170,6 +171,36 @@ namespace CodeAnalysisToolkit
 
         //-------Display Test Class--------------------------------------------------------------
 
+        private void GetTypeForKeyword(NamespaceDefinition use)
+        {
+            if (use == null) { throw new ArgumentNullException("use"); }
+            if (use.ParentStatement == null)
+            {
+                throw new ArgumentException("ParentStatement is null", "use");
+            }
+
+            if (use.Name == "this")
+            {
+                //return the surrounding type definition
+                Debug.WriteLine(use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().Take(1));
+            }
+            if ((use.Name == "base" && use.ProgrammingLanguage == Language.CSharp) ||
+               (use.Name == "super" && use.ProgrammingLanguage == Language.Java))
+            {
+                //return all the parent classes of the surrounding type definition
+                var enclosingType = use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().FirstOrDefault();
+                if (enclosingType == null)
+                {
+                    Debug.WriteLine(Enumerable.Empty<TypeDefinition>());
+                }
+                else
+                {
+                    Debug.WriteLine(enclosingType.GetParentTypes(true));
+                }
+            }
+
+            Debug.WriteLine(Enumerable.Empty<TypeDefinition>());
+        }
 
 
     }
