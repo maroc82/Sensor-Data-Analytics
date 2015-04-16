@@ -86,6 +86,7 @@ namespace CodeAnalysisToolkit
                 //DisplayWhetherAppIsUnitTested();           
                 DisplayCallsToOnSensorChanged(globalNamespace);
                 GetTypeForKeyword(globalNamespace);
+
             }
         }
 
@@ -179,14 +180,12 @@ namespace CodeAnalysisToolkit
                 throw new ArgumentException("ParentStatement is null", "use");
             }
 
-            if (use.Name == "this")
+            if (use.Name == "ServiceTestCase")
             {
                 //return the surrounding type definition
                 Debug.WriteLine(use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().Take(1));
             }
-            if ((use.Name == "base" && use.ProgrammingLanguage == Language.CSharp) ||
-               (use.Name == "super" && use.ProgrammingLanguage == Language.Java))
-            {
+            
                 //return all the parent classes of the surrounding type definition
                 var enclosingType = use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().FirstOrDefault();
                 if (enclosingType == null)
