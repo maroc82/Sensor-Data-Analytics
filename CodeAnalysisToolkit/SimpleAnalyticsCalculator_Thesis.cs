@@ -83,7 +83,7 @@ namespace CodeAnalysisToolkit
                 Assert.That(dataProject.WorkingSet.TryObtainReadLock(5000, out globalNamespace));
 
                 DisplaySensorTypes(globalNamespace);
-                //DisplayWhetherAppIsUnitTested();           
+                DisplayWhetherAppIsUnitTested(globalNamespace);           
                 DisplayCallsToOnSensorChanged(globalNamespace);
                 GetTypeForKeyword(globalNamespace);
 
@@ -118,9 +118,29 @@ namespace CodeAnalysisToolkit
         }
 
 
-        private void DisplayWhetherAppIsUnitTested()
+        private void DisplayWhetherAppIsUnitTested(NamespaceDefinition globalNamespace)
         {
-            throw new NotImplementedException();
+            var testClasses = from klas in globalNamespace.GetDescendants<TypeDefinition>()
+                where klas.GetParentTypes(false).Any(t => t.Name == "ServiceTestCase")
+                select klas;        
+        
+            if (testClasses.Count() == 0)
+            {
+                Debug.WriteLine("This File Does not contain any tests");
+            }
+            else
+            {
+
+                Debug.WriteLine("----- ");
+                Debug.WriteLine("\r\n");
+                Debug.WriteLine(testClasses.Count() + " TestClasses ");
+                Debug.WriteLine("----- ");
+
+                foreach(var testClass in testClasses)
+                {
+                    Debug.WriteLine(testClass.GetFullName() + " is a test class");
+                }
+            }
         }
 
 
@@ -174,31 +194,31 @@ namespace CodeAnalysisToolkit
 
         private void GetTypeForKeyword(NamespaceDefinition use)
         {
-            if (use == null) { throw new ArgumentNullException("use"); }
-            if (use.ParentStatement == null)
-            {
-                throw new ArgumentException("ParentStatement is null", "use");
-            }
+            //if (use == null) { throw new ArgumentNullException("use"); }
+            //if (use.ParentStatement == null)
+            //{
+            //    throw new ArgumentException("ParentStatement is null", "use");
+            //}
 
-            if (use.Name == "ServiceTestCase")
-            {
-                //return the surrounding type definition
-                Debug.WriteLine(use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().Take(1));
-            }
+            //if (use.Name == "ServiceTestCase")
+            //{
+            //    //return the surrounding type definition
+            //    Debug.WriteLine(use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().Take(1));
+            //}
             
-                //return all the parent classes of the surrounding type definition
-                var enclosingType = use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().FirstOrDefault();
-                if (enclosingType == null)
-                {
-                    Debug.WriteLine(Enumerable.Empty<TypeDefinition>());
-                }
-                else
-                {
-                    Debug.WriteLine(enclosingType.GetParentTypes(true));
-                }
-            }
+            //    //return all the parent classes of the surrounding type definition
+            //    var enclosingType = use.ParentStatement.GetAncestorsAndSelf<TypeDefinition>().FirstOrDefault();
+            //    if (enclosingType == null)
+            //    {
+            //        Debug.WriteLine(Enumerable.Empty<TypeDefinition>());
+            //    }
+            //    else
+            //    {
+            //        Debug.WriteLine(enclosingType.GetParentTypes(true));
+            //    }
+            //}
 
-            Debug.WriteLine(Enumerable.Empty<TypeDefinition>());
+            //Debug.WriteLine(Enumerable.Empty<TypeDefinition>());
         }
 
 
