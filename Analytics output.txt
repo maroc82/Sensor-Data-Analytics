@@ -1,0 +1,264 @@
+------ Run test started ------
+NUnit 1.2.0.0 executing tests is started
+Loading tests from C:\School\Grad School (Comp Sci)\Thesis\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\CodeAnalysisToolkit.dll
+Run started: C:\School\Grad School (Comp Sci)\Thesis\Sensor-Data-Analytics\CodeAnalysisToolkit\bin\Debug\CodeAnalysisToolkit.dll
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\accelerometer-app-master
+sensor TYPE_ACCELEROMETER found
+----- 
+1 Implementations of com.dml.learningaccelerometer.AccelerometerActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.dml.learningaccelerometer.AccelerometerActivity.onSensorChanged
+----- 
+1 Test Classes found 
+----- 
+com.vogella.android.test.simpleactivity.test.MainActivityUnitTest
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\alekseyt-compass-41d8dc3b1d40
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_MAGNETIC_FIELD found
+sensor TYPE_MAGNETIC_FIELD found
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_MAGNETIC_FIELD found
+----- 
+2 Implementations of com.sgr_b2.compass.activities.DistressCallService.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.sgr_b2.compass.activities.DistressCallService.onSensorChanged
+Implementations of onSensorChaged # 2: com.sgr_b2.compass.navigation.Monitor.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Altimeter-master
+sensor TYPE_PRESSURE found
+----- 
+1 Implementations of com.gmail.januszkozerski.altimeter.MainActivity.PresureListener.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.gmail.januszkozerski.altimeter.MainActivity.PresureListener.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Altimeter-master 2
+sensor TYPE_PRESSURE found
+----- 
+1 Implementations of org.efalk.altimeter.AltimeterActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: org.efalk.altimeter.AltimeterActivity.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Android-AudioRecorder-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Android-Compass-master
+sensor TYPE_ORIENTATION found
+----- 
+1 Implementations of com.liuapps.compass.CompassActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.liuapps.compass.CompassActivity.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\android-pedometer-master
+sensor TYPE_ACCELEROMETER found
+----- 
+1 Implementations of name.bagi.levente.pedometer.StepDetector.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: name.bagi.levente.pedometer.StepDetector.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\android-sensorium-master
+sensor TYPE_PRESSURE found
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\AudioRecorder-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\cartsbusboarding-master
+sensor TYPE_ACCELEROMETER found
+----- 
+1 Implementations of in.ac.iitb.cse.cartsbusboarding.acc.AccListener.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: in.ac.iitb.cse.cartsbusboarding.acc.AccListener.onSensorChanged
+----- 
+2 Test Classes found 
+----- 
+in.ac.iitb.cse.cartsbusboarding.test.ApplicationTest
+in.ac.iitb.cse.cartsbusboarding.test.acc.FeatureCalculatorTest
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\face-recognition-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\getback_gps-master
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_MAGNETIC_FIELD found
+sensor TYPE_ORIENTATION found
+----- 
+1 Implementations of com.github.ruleant.getback_gps.lib.SensorOrientation.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.github.ruleant.getback_gps.lib.SensorOrientation.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\GlassSensorTest-master
+sensor TYPE_ORIENTATION found
+----- 
+1 Implementations of com.neatocode.yelparound.MainActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.neatocode.yelparound.MainActivity.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\KineticSensors-master
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_GYROSCOPE found
+----- 
+1 Implementations of net.splashe.kineticsensors.SensorRecordingService.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: net.splashe.kineticsensors.SensorRecordingService.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\My-StepCounter-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\nhundredthings-master
+sensor TYPE_ACCELEROMETER found
+----- 
+2 Implementations of com.kinnack.nthings.activity.SitupAccelCounterActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.kinnack.nthings.activity.SitupAccelCounterActivity.onSensorChanged
+Implementations of onSensorChaged # 2: com.kinnack.nthings.activity.ProximityCounterActivity.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\org.thecongers.mtpms-master
+sensor TYPE_LIGHT found
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Pedometer-master
+sensor TYPE_STEP_COUNTER found
+sensor TYPE_STEP_COUNTER found
+sensor TYPE_STEP_COUNTER found
+sensor TYPE_STEP_COUNTER found
+----- 
+2 Implementations of de.j4velin.pedometer.ui.Fragment_Overview.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: de.j4velin.pedometer.ui.Fragment_Overview.onSensorChanged
+Implementations of onSensorChaged # 2: de.j4velin.pedometer.SensorListener.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\pushup-master
+sensor TYPE_PROXIMITY found
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_PROXIMITY found
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_PROXIMITY found
+----- 
+3 Implementations of me.pjq.pushup.fragment.PushupsFragment.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: me.pjq.pushup.fragment.PushupsFragment.onSensorChanged
+Implementations of onSensorChaged # 2: me.pjq.pushup.fragment.MultiPlayerFragment.onSensorChanged
+Implementations of onSensorChaged # 3: me.pjq.pushup.fragment.WristGameFragment.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\pushup_counter-master
+sensor TYPE_LINEAR_ACCELERATION found
+sensor TYPE_GRAVITY found
+----- 
+1 Implementations of com.yahdav.liron.pushupcounter.PushupCounterActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.yahdav.liron.pushupcounter.PushupCounterActivity.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\QRCodeReaderView-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Recognize Facial Expression-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\RightHear-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\SAnd-master
+sensor TYPE_ORIENTATION found
+sensor TYPE_PRESSURE found
+----- 
+1 Implementations of com.platypus.SAnd.MainActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.platypus.SAnd.MainActivity.onSensorChanged
+----- 
+1 Test Classes found 
+----- 
+com.platypus.SAnd.ApplicationTest
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\satstat-master
+sensor TYPE_ORIENTATION found
+sensor TYPE_ACCELEROMETER found
+sensor TYPE_GYROSCOPE found
+sensor TYPE_MAGNETIC_FIELD found
+sensor TYPE_LIGHT found
+sensor TYPE_PROXIMITY found
+sensor TYPE_PRESSURE found
+sensor TYPE_RELATIVE_HUMIDITY found
+sensor TYPE_AMBIENT_TEMPERATURE found
+----- 
+1 Implementations of com.vonglasow.michael.satstat.MainActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.vonglasow.michael.satstat.MainActivity.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\sensorreadout-master
+----- 
+1 Implementations of de.onyxbits.sensorreadout.Ticker.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: de.onyxbits.sensorreadout.Ticker.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\sosmobileclient-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\ThermometerExtended2-master
+----- 
+16 Implementations of pl.narfsoftware.thermometer.service.listeners.BaseServiceListener.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: pl.narfsoftware.thermometer.service.listeners.BaseServiceListener.onSensorChanged
+Implementations of onSensorChaged # 2: pl.narfsoftware.thermometer.service.listeners.LightListener.onSensorChanged
+Implementations of onSensorChaged # 3: pl.narfsoftware.thermometer.service.listeners.AbsoluteHumidityListener.onSensorChanged
+Implementations of onSensorChaged # 4: pl.narfsoftware.thermometer.service.listeners.DewPointListener.onSensorChanged
+Implementations of onSensorChaged # 5: pl.narfsoftware.thermometer.service.listeners.MagneticFieldListener.onSensorChanged
+Implementations of onSensorChaged # 6: pl.narfsoftware.thermometer.service.listeners.PressureListener.onSensorChanged
+Implementations of onSensorChaged # 7: pl.narfsoftware.thermometer.service.listeners.TemperatureListener.onSensorChanged
+Implementations of onSensorChaged # 8: pl.narfsoftware.thermometer.service.listeners.RelativeHumidityListener.onSensorChanged
+Implementations of onSensorChaged # 9: pl.narfsoftware.thermometer.ui.listeners.RelativeHumidityListener.onSensorChanged
+Implementations of onSensorChaged # 10: pl.narfsoftware.thermometer.ui.listeners.BaseUIListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.RelativeHumidityListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.LightListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.AbsoluteHumidityListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.MagneticFieldListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.DewPointListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.PressureListener.onSensorChanged
+   Called by --> pl.narfsoftware.thermometer.ui.listeners.TemperatureListener.onSensorChanged
+Implementations of onSensorChaged # 11: pl.narfsoftware.thermometer.ui.listeners.LightListener.onSensorChanged
+Implementations of onSensorChaged # 12: pl.narfsoftware.thermometer.ui.listeners.AbsoluteHumidityListener.onSensorChanged
+Implementations of onSensorChaged # 13: pl.narfsoftware.thermometer.ui.listeners.MagneticFieldListener.onSensorChanged
+Implementations of onSensorChaged # 14: pl.narfsoftware.thermometer.ui.listeners.DewPointListener.onSensorChanged
+Implementations of onSensorChaged # 15: pl.narfsoftware.thermometer.ui.listeners.PressureListener.onSensorChanged
+Implementations of onSensorChaged # 16: pl.narfsoftware.thermometer.ui.listeners.TemperatureListener.onSensorChanged
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\Tilt-snake-master
+This File Does not contain any Sensor Change Mehtods
+This File Does not contain any test case classes
+#############################################
+Parsing C:\School\Grad School (Comp Sci)\Thesis\Apps\TiltPong-master
+sensor TYPE_ACCELEROMETER found
+----- 
+1 Implementations of com.hoyle.tiltpong.TiltPongMainActivity.onSensorChanged
+----- 
+Implementations of onSensorChaged # 1: com.hoyle.tiltpong.TiltPongMainActivity.onSensorChanged
+This File Does not contain any test case classes
+NUnit 1.2.0.0 executing tests is finished
+========== Run test finished: 1 run (0:00:07.0203606) ==========

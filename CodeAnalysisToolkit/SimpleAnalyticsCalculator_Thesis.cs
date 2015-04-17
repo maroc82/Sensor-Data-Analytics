@@ -21,28 +21,7 @@ namespace CodeAnalysisToolkit
         [TestCase]
         public void CalculateSimpleProjectStats()
         {
-            int NumOfApps = 5;
-
-            //========= Get sub directories Attempt 1 ================================
-
-            //Directory.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps");
-            //String[] allfiles = System.IO.Directory.GetFiles(@"C:\School\Grad School (Comp Sci)\Thesis\Apps", "*.*", System.IO.SearchOption.AllDirectories);
-            //Debug.WriteLine(allfiles);
-
-
-            //========= Get sub directories Attempt 2 ================================
-
-            //Debug.WriteLine(Directory.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps"));
-
-
-
-            //========= Get sub directories Attempt 3 ================================-
-
-            //var di = new DirectoryInfo("..//..//..//SrcML");
-            //var subDirectories = di.GetDirectories(@"C:\School\Grad School (Comp Sci)\Thesis\Apps\accelerometer-app-master");
-            //Debug.WriteLine(subDirectories);
-
-
+            int NumOfApps = 30;
 
 
             //-----------Current Working Method to Get sub directories -------------------------
@@ -83,9 +62,10 @@ namespace CodeAnalysisToolkit
                 Assert.That(dataProject.WorkingSet.TryObtainReadLock(5000, out globalNamespace));
 
                 DisplaySensorTypes(globalNamespace);
-                DisplayWhetherAppIsUnitTested(globalNamespace);           
+                //DisplayWhetherAppIsUnitTested(globalNamespace);           
                 DisplayCallsToOnSensorChanged(globalNamespace);
-                GetTypeForKeyword(globalNamespace);
+                //GetTypeForKeyword(globalNamespace);
+                DisplayTestCaseClasses(globalNamespace);
 
             }
         }
@@ -117,6 +97,7 @@ namespace CodeAnalysisToolkit
             }
         }
 
+        //-------Display If this class has a Unit test--------------------------------------------------------------
 
         private void DisplayWhetherAppIsUnitTested(NamespaceDefinition globalNamespace)
         {
@@ -139,6 +120,45 @@ namespace CodeAnalysisToolkit
                 foreach(var testClass in testClasses)
                 {
                     Debug.WriteLine(testClass.GetFullName() + " is a test class");
+                }
+            }
+        }
+
+
+
+
+        //-------Display If ActivityUnitTestCase test--------------------------------------------------------------
+
+        private void DisplayTestCaseClasses(NamespaceDefinition globalNamespace)
+        {
+            var testClasses = from klas in globalNamespace.GetDescendants<TypeDefinition>()
+                              where klas.ParentTypeNames.Any(t => t.Name.Contains("ActivityUnitTestCase") || 
+                                                                  t.Name.Contains("ServiceTestCase") ||
+                                                                  t.Name.Contains("ApplicationTestCase") ||
+                                                                  t.Name.Contains("ProviderTestCase2") ||
+                                                                  t.Name.Contains("LoaderTestCase") || 
+                                                                  t.Name.Contains("ActivityInstrumentationTestCase2"))
+                              select klas;
+
+            if (testClasses.Count() == 0)
+            {
+                Debug.WriteLine("This File Does not contain any test case classes");
+            }
+            else
+            {
+
+                Debug.WriteLine("----- ");
+                Debug.WriteLine("\r\n");
+                Debug.WriteLine(testClasses.Count() + " Test Classes found ");
+                Debug.WriteLine("----- ");
+
+                foreach (var testClass in testClasses)
+                {
+                    Debug.WriteLine(testClass.GetFullName());
+                    //foreach(var parent in testClass.ParentTypeNames)
+                    //{
+                    //    Debug.WriteLine("parent: " + parent);
+                    //}
                 }
             }
         }
